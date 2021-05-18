@@ -1,0 +1,5 @@
+import { NOTIFICATION_TYPE as NOTIFICATION_TYPE_BASE } from 'mavennet-dto';
+declare enum NOTIFICATION_TYPE_EXTEND {
+}
+export declare type NOTIFICATION_TYPE = NOTIFICATION_TYPE_BASE | NOTIFICATION_TYPE_EXTEND;
+export {};

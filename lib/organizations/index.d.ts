@@ -1,2 +1,2 @@
 export * from './constants';
-export * from './createOrganization.dto';
+export * from './dto';

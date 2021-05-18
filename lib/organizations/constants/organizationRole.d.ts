@@ -1,0 +1,5 @@
+import { ORGANIZATION_ROLE as ORGANIZATION_ROLE_BASE } from 'mavennet-dto';
+declare enum ORGANIZATION_ROLE_EXTEND {
+}
+export declare type ORGANIZATION_ROLE = ORGANIZATION_ROLE_BASE | ORGANIZATION_ROLE_EXTEND;
+export {};
