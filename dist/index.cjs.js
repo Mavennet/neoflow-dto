@@ -755,6 +755,76 @@ __decorate([
     __metadata("design:type", Map)
 ], CreateOrganizationDto.prototype, "uwi", void 0);
 
+class ProductDTO {
+}
+__decorate([
+    classValidator__default['default'].IsArray(),
+    classValidator__default['default'].ArrayNotEmpty(),
+    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator__default['default'].Validate(o => o.type === [exports.JSON_TYPE.PRODUCT]),
+    __metadata("design:type", Array)
+], ProductDTO.prototype, "type", void 0);
+__decorate([
+    classValidator__default['default'].IsNotEmptyObject(),
+    classValidator__default['default'].ValidateNested(),
+    classTransformer__default['default'].Type(() => OrganizationDTO),
+    __metadata("design:type", OrganizationDTO)
+], ProductDTO.prototype, "manufacturer", void 0);
+__decorate([
+    classValidator__default['default'].IsNotEmpty(),
+    classValidator__default['default'].IsString(),
+    __metadata("design:type", String)
+], ProductDTO.prototype, "name", void 0);
+__decorate([
+    classValidator__default['default'].IsOptional(),
+    classValidator__default['default'].IsString(),
+    __metadata("design:type", String)
+], ProductDTO.prototype, "description", void 0);
+__decorate([
+    classValidator__default['default'].IsNotEmptyObject(),
+    classValidator__default['default'].ValidateNested(),
+    classTransformer__default['default'].Type(() => MeasurementDTO),
+    __metadata("design:type", MeasurementDTO)
+], ProductDTO.prototype, "sizeOrAmount", void 0);
+
+class ProductCredentialSubjectDTO {
+}
+__decorate([
+    classValidator__default['default'].IsArray(),
+    classValidator__default['default'].ArrayNotEmpty(),
+    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
+    __metadata("design:type", Array)
+], ProductCredentialSubjectDTO.prototype, "type", void 0);
+__decorate([
+    classValidator__default['default'].IsNotEmpty(),
+    classValidator__default['default'].IsNumberString(),
+    __metadata("design:type", String)
+], ProductCredentialSubjectDTO.prototype, "HSCode", void 0);
+__decorate([
+    classValidator__default['default'].IsNotEmpty(),
+    classValidator__default['default'].IsString(),
+    classValidator__default['default'].Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/),
+    __metadata("design:type", String)
+], ProductCredentialSubjectDTO.prototype, "productionDate", void 0);
+__decorate([
+    classValidator__default['default'].IsNotEmptyObject(),
+    classValidator__default['default'].ValidateNested(),
+    classTransformer__default['default'].Type(() => PlaceDTO),
+    __metadata("design:type", PlaceDTO)
+], ProductCredentialSubjectDTO.prototype, "facility", void 0);
+__decorate([
+    classValidator__default['default'].IsNotEmptyObject(),
+    classValidator__default['default'].ValidateNested(),
+    classTransformer__default['default'].Type(() => ProductDTO),
+    __metadata("design:type", ProductDTO)
+], ProductCredentialSubjectDTO.prototype, "product", void 0);
+__decorate([
+    classValidator__default['default'].IsArray(),
+    classValidator__default['default'].ValidateNested({ each: true }),
+    classTransformer__default['default'].Type(() => ObservationDTO),
+    __metadata("design:type", Array)
+], ProductCredentialSubjectDTO.prototype, "observation", void 0);
+
 exports.AddressDTO = AddressDTO;
 exports.AnalyticsDTO = AnalyticsDTO;
 exports.CategorizedNotificationsDTO = CategorizedNotificationsDTO;
@@ -771,6 +841,8 @@ exports.OrganizationDTO = OrganizationDTO;
 exports.ParcelDeliveryDTO = ParcelDeliveryDTO;
 exports.PlaceDTO = PlaceDTO;
 exports.PostalAddressDTO = PostalAddressDTO;
+exports.ProductCredentialSubjectDTO = ProductCredentialSubjectDTO;
+exports.ProductDTO = ProductDTO;
 exports.ProofDTO = ProofDTO;
 exports.PropertyDTO = PropertyDTO;
 exports.ReadNotificationDTO = ReadNotificationDTO;
@@ -805,15 +877,17 @@ var index_cjs_19 = index_cjs.OrganizationDTO;
 var index_cjs_20 = index_cjs.ParcelDeliveryDTO;
 var index_cjs_21 = index_cjs.PlaceDTO;
 var index_cjs_22 = index_cjs.PostalAddressDTO;
-var index_cjs_23 = index_cjs.ProofDTO;
-var index_cjs_24 = index_cjs.PropertyDTO;
-var index_cjs_25 = index_cjs.ReadNotificationDTO;
+var index_cjs_23 = index_cjs.ProductCredentialSubjectDTO;
+var index_cjs_24 = index_cjs.ProductDTO;
+var index_cjs_25 = index_cjs.ProofDTO;
+var index_cjs_26 = index_cjs.PropertyDTO;
+var index_cjs_27 = index_cjs.ReadNotificationDTO;
 index_cjs.SaveS3DocumentsFolderPathDTO;
-var index_cjs_27 = index_cjs.SocketEventDTO;
-var index_cjs_28 = index_cjs.UpdateContractDTO;
-var index_cjs_29 = index_cjs.UpdateNotificationSettingsDTO;
-var index_cjs_30 = index_cjs.ValidationDTO;
-var index_cjs_31 = index_cjs.VerifiableCredentialDTO;
+var index_cjs_29 = index_cjs.SocketEventDTO;
+var index_cjs_30 = index_cjs.UpdateContractDTO;
+var index_cjs_31 = index_cjs.UpdateNotificationSettingsDTO;
+var index_cjs_32 = index_cjs.ValidationDTO;
+var index_cjs_33 = index_cjs.VerifiableCredentialDTO;
 
 class AnalyticsDTO extends index_cjs_8 {
 }
@@ -902,7 +976,7 @@ __decorate([
     __metadata("design:type", Number)
 ], AnalyticsDTO.prototype, "tan", void 0);
 
-class ValidationDTO extends index_cjs_30 {
+class ValidationDTO extends index_cjs_32 {
 }
 
 class ConfirmContractDTO extends index_cjs_10 {
@@ -914,7 +988,7 @@ class CreateContractDTO extends index_cjs_11 {
 class DeleteContractsDTO extends index_cjs_13 {
 }
 
-class UpdateContractDTO extends index_cjs_28 {
+class UpdateContractDTO extends index_cjs_30 {
 }
 
 var _a;
@@ -976,13 +1050,13 @@ class PlaceDTO extends index_cjs_21 {
 class PostalAddressDTO extends index_cjs_22 {
 }
 
-class ProofDTO extends index_cjs_23 {
+class ProofDTO extends index_cjs_25 {
 }
 
-class PropertyDTO extends index_cjs_24 {
+class PropertyDTO extends index_cjs_26 {
 }
 
-class VerifiableCredentialDTO extends index_cjs_31 {
+class VerifiableCredentialDTO extends index_cjs_33 {
 }
 __decorate([
     classValidator.IsArray(),
@@ -994,31 +1068,216 @@ __decorate([
     __metadata("design:type", Array)
 ], VerifiableCredentialDTO.prototype, "@context", void 0);
 
+class EventCreateCredentialSubjectDTO {
+}
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsUUID(),
+    __metadata("design:type", String)
+], EventCreateCredentialSubjectDTO.prototype, "eventId", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsUUID(),
+    __metadata("design:type", String)
+], EventCreateCredentialSubjectDTO.prototype, "productId", void 0);
+__decorate([
+    classValidator.IsOptional(),
+    classValidator.IsString(),
+    __metadata("design:type", String)
+], EventCreateCredentialSubjectDTO.prototype, "description", void 0);
+__decorate([
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => AddressDTO),
+    __metadata("design:type", AddressDTO)
+], EventCreateCredentialSubjectDTO.prototype, "geo", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^did:/),
+    __metadata("design:type", String)
+], EventCreateCredentialSubjectDTO.prototype, "eventCreator", void 0);
+
+class EventCreateVCDTO extends VerifiableCredentialDTO {
+}
+__decorate([
+    classValidator.IsArray(),
+    classValidator.ArrayMinSize(3),
+    classValidator.ArrayMaxSize(3),
+    classValidator.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+        o['@context'].includes('https://schema.org/') &&
+        o['@context'].includes('https://mavennet.github.io/contexts/metal-product-EVENT-v1.0.jsonld')),
+    __metadata("design:type", Array)
+], EventCreateVCDTO.prototype, "@context", void 0);
+__decorate([
+    classValidator.IsArray(),
+    classValidator.ArrayMinSize(2),
+    classValidator.ArrayMaxSize(2),
+    classValidator.Validate(o => o.type.includes('VerifiableCredential') &&
+        o.type.includes('CreationEventCredential')),
+    __metadata("design:type", Array)
+], EventCreateVCDTO.prototype, "type", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => EventCreateCredentialSubjectDTO),
+    __metadata("design:type", EventCreateCredentialSubjectDTO)
+], EventCreateVCDTO.prototype, "credentialSubject", void 0);
+
 class CategorizedNotificationsDTO extends index_cjs_9 {
 }
 
 class NotificationDTO extends index_cjs_17 {
 }
 
-class ReadNotificationDTO extends index_cjs_25 {
+class ReadNotificationDTO extends index_cjs_27 {
 }
 
-class SocketEventDTO extends index_cjs_27 {
+class SocketEventDTO extends index_cjs_29 {
 }
 
-class UpdateNotificationSettingsDTO extends index_cjs_29 {
+class UpdateNotificationSettingsDTO extends index_cjs_31 {
 }
 
 class CreateOrganizationDto extends index_cjs_12 {
 }
 
+exports.PRODUCT_NAME = void 0;
+(function (PRODUCT_NAME) {
+    PRODUCT_NAME["METALLURGICAL_COKE"] = "Metallurgical Coke";
+    PRODUCT_NAME["IRON_ORE"] = "Iron Ore";
+    PRODUCT_NAME["SCRAP_STEEL"] = "Scrap Steel";
+    PRODUCT_NAME["HEAT"] = "Heat";
+    PRODUCT_NAME["CARBON_ALLOY_SEMI"] = "Carbon and alloy semi-finished products";
+    PRODUCT_NAME["CARBON_ALLOY_FLAT"] = "Carbon and alloy flat product";
+    PRODUCT_NAME["CARBON_ALLOY_PIPE_TUBE"] = "Carbon and alloy pipe and tube products";
+})(exports.PRODUCT_NAME || (exports.PRODUCT_NAME = {}));
+
+class ProductDTO extends index_cjs_24 {
+}
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsEnum(exports.PRODUCT_NAME),
+    __metadata("design:type", String)
+], ProductDTO.prototype, "name", void 0);
+
+class ProductCredentialSubjectDTO extends index_cjs_23 {
+}
+__decorate([
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.Validate(o => o.type === [exports.JSON_TYPE.METAL_PRODUCT]),
+    __metadata("design:type", Array)
+], ProductCredentialSubjectDTO.prototype, "type", void 0);
+__decorate([
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => ProductDTO),
+    __metadata("design:type", ProductDTO)
+], ProductCredentialSubjectDTO.prototype, "product", void 0);
+
+class ProductVCDTO extends VerifiableCredentialDTO {
+}
+__decorate([
+    classValidator.IsArray(),
+    classValidator.ArrayMinSize(3),
+    classValidator.ArrayMaxSize(3),
+    classValidator.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+        o['@context'].includes('https://schema.org/') &&
+        o['@context'].includes('https://mavennet.github.io/contexts/metal-product-v1.0.jsonld')),
+    __metadata("design:type", Array)
+], ProductVCDTO.prototype, "@context", void 0);
+__decorate([
+    classValidator.IsArray(),
+    classValidator.ArrayMinSize(2),
+    classValidator.ArrayMaxSize(2),
+    classValidator.Validate(o => o.type.includes('VerifiableCredential') &&
+        o.type.includes('MetalProductCredential')),
+    __metadata("design:type", Array)
+], ProductVCDTO.prototype, "type", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => ProductCredentialSubjectDTO),
+    __metadata("design:type", ProductCredentialSubjectDTO)
+], ProductVCDTO.prototype, "credentialSubject", void 0);
+
+class AGENT_CreateProductDTO {
+}
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsUUID(),
+    __metadata("design:type", String)
+], AGENT_CreateProductDTO.prototype, "productId", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => ProductCredentialSubjectDTO),
+    __metadata("design:type", ProductCredentialSubjectDTO)
+], AGENT_CreateProductDTO.prototype, "productCredentialSubject", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => EventCreateCredentialSubjectDTO),
+    __metadata("design:type", EventCreateCredentialSubjectDTO)
+], AGENT_CreateProductDTO.prototype, "eventCredentialSubject", void 0);
+class CORE_CreateProductDTO {
+}
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsUUID(),
+    __metadata("design:type", String)
+], CORE_CreateProductDTO.prototype, "productId", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => ProductVCDTO),
+    __metadata("design:type", ProductVCDTO)
+], CORE_CreateProductDTO.prototype, "productVC", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    __metadata("design:type", String)
+], CORE_CreateProductDTO.prototype, "productVCHash", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsUUID(),
+    __metadata("design:type", String)
+], CORE_CreateProductDTO.prototype, "eventId", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => EventCreateVCDTO),
+    __metadata("design:type", EventCreateVCDTO)
+], CORE_CreateProductDTO.prototype, "eventVC", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    __metadata("design:type", String)
+], CORE_CreateProductDTO.prototype, "eventVCHash", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    __metadata("design:type", String)
+], CORE_CreateProductDTO.prototype, "txHash", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    __metadata("design:type", String)
+], CORE_CreateProductDTO.prototype, "txTimestamp", void 0);
+
+exports.AGENT_CreateProductDTO = AGENT_CreateProductDTO;
 exports.AddressDTO = AddressDTO;
 exports.AnalyticsDTO = AnalyticsDTO;
+exports.CORE_CreateProductDTO = CORE_CreateProductDTO;
 exports.CategorizedNotificationsDTO = CategorizedNotificationsDTO;
 exports.ConfirmContractDTO = ConfirmContractDTO;
 exports.CreateContractDTO = CreateContractDTO;
 exports.CreateOrganizationDto = CreateOrganizationDto;
 exports.DeleteContractsDTO = DeleteContractsDTO;
+exports.EventCreateCredentialSubjectDTO = EventCreateCredentialSubjectDTO;
+exports.EventCreateVCDTO = EventCreateVCDTO;
 exports.GeoCoordinatesDTO = GeoCoordinatesDTO;
 exports.IssuerDTO = IssuerDTO;
 exports.MeasurementDTO = MeasurementDTO;
@@ -1028,6 +1287,8 @@ exports.OrganizationDTO = OrganizationDTO;
 exports.ParcelDeliveryDTO = ParcelDeliveryDTO;
 exports.PlaceDTO = PlaceDTO;
 exports.PostalAddressDTO = PostalAddressDTO;
+exports.ProductCredentialSubjectDTO = ProductCredentialSubjectDTO;
+exports.ProductVCDTO = ProductVCDTO;
 exports.ProofDTO = ProofDTO;
 exports.PropertyDTO = PropertyDTO;
 exports.ReadNotificationDTO = ReadNotificationDTO;

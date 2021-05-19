@@ -1,13 +1,17 @@
 import {
+  IsNotEmptyObject,
   IsEnum,
   IsArray,
   ArrayNotEmpty,
-  Validate
+  Validate,
+  ValidateNested
 } from 'class-validator'
+import { Type } from 'class-transformer'
+import { JSON_TYPE } from '../../general'
+import { ProductDTO } from './product.dto'
 import {
 	ProductCredentialSubjectDTO as ProductCredentialSubjectDTOBase	
 } from 'mavennet-dto'
-import { JSON_TYPE } from '../../general'
 
 export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {	
   @IsArray()
@@ -15,4 +19,9 @@ export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase
   @IsEnum(JSON_TYPE, { each: true })
   @Validate(o => o.type === [JSON_TYPE.METAL_PRODUCT])
   type: JSON_TYPE[]
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => ProductDTO)
+  product: ProductDTO
 }
