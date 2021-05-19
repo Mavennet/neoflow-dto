@@ -8,7 +8,9 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { VerifiableCredentialDTO } from '../../general'
-import { EventCreateCredentialSubjectDTO } from './eventCreate.credentialSubject.dto'
+import {
+  EventCreateCredentialSubjectDTO
+} from './eventCreate.credentialSubject.dto'
 
 export class EventCreateVCDTO extends VerifiableCredentialDTO {
   @IsArray()

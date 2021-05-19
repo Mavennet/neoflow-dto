@@ -1,5 +1,9 @@
-import { IsEnum, IsNotEmpty, IsString, ValidateIf } from 'class-validator'
-// import { UPLOAD_TYPE } from '../constants'
+import {
+  IsEnum,
+  IsNotEmpty,
+  IsString,
+  ValidateIf
+} from 'class-validator'
 import { UPLOAD_TYPE } from 'mavennet-dto'
 
 export class SaveS3DocumentsFolderPathDTO {
