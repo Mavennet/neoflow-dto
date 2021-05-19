@@ -1068,35 +1068,49 @@ __decorate([
     __metadata("design:type", Array)
 ], VerifiableCredentialDTO.prototype, "@context", void 0);
 
-class EventCreateCredentialSubjectDTO {
+class EventCreateCredentialSubjectDTOBase {
 }
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsUUID(),
-    __metadata("design:type", String)
-], EventCreateCredentialSubjectDTO.prototype, "eventId", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsUUID(),
-    __metadata("design:type", String)
-], EventCreateCredentialSubjectDTO.prototype, "productId", void 0);
 __decorate([
     classValidator.IsOptional(),
     classValidator.IsString(),
     __metadata("design:type", String)
-], EventCreateCredentialSubjectDTO.prototype, "description", void 0);
+], EventCreateCredentialSubjectDTOBase.prototype, "description", void 0);
 __decorate([
     classValidator.IsNotEmptyObject(),
     classValidator.ValidateNested(),
     classTransformer.Type(() => AddressDTO),
     __metadata("design:type", AddressDTO)
-], EventCreateCredentialSubjectDTO.prototype, "geo", void 0);
+], EventCreateCredentialSubjectDTOBase.prototype, "geo", void 0);
 __decorate([
     classValidator.IsNotEmpty(),
     classValidator.IsString(),
     classValidator.Matches(/^did:/),
     __metadata("design:type", String)
-], EventCreateCredentialSubjectDTO.prototype, "eventCreator", void 0);
+], EventCreateCredentialSubjectDTOBase.prototype, "eventCreator", void 0);
+class AGENT_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
+}
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsUUID(),
+    __metadata("design:type", String)
+], AGENT_EventCreateCredentialSubjectDTO.prototype, "eventId", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsUUID(),
+    __metadata("design:type", String)
+], AGENT_EventCreateCredentialSubjectDTO.prototype, "productId", void 0);
+class CORE_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
+}
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsUrl(),
+    __metadata("design:type", String)
+], CORE_EventCreateCredentialSubjectDTO.prototype, "eventId", void 0);
+__decorate([
+    classValidator.IsNotEmpty(),
+    classValidator.IsUrl(),
+    __metadata("design:type", String)
+], CORE_EventCreateCredentialSubjectDTO.prototype, "productId", void 0);
 
 class EventCreateVCDTO extends VerifiableCredentialDTO {
 }
@@ -1120,8 +1134,8 @@ __decorate([
 __decorate([
     classValidator.IsNotEmpty(),
     classValidator.ValidateNested(),
-    classTransformer.Type(() => EventCreateCredentialSubjectDTO),
-    __metadata("design:type", EventCreateCredentialSubjectDTO)
+    classTransformer.Type(() => CORE_EventCreateCredentialSubjectDTO),
+    __metadata("design:type", CORE_EventCreateCredentialSubjectDTO)
 ], EventCreateVCDTO.prototype, "credentialSubject", void 0);
 
 class CategorizedNotificationsDTO extends index_cjs_9 {
@@ -1219,8 +1233,8 @@ __decorate([
 __decorate([
     classValidator.IsNotEmpty(),
     classValidator.ValidateNested(),
-    classTransformer.Type(() => EventCreateCredentialSubjectDTO),
-    __metadata("design:type", EventCreateCredentialSubjectDTO)
+    classTransformer.Type(() => AGENT_EventCreateCredentialSubjectDTO),
+    __metadata("design:type", AGENT_EventCreateCredentialSubjectDTO)
 ], AGENT_CreateProductDTO.prototype, "eventCredentialSubject", void 0);
 class CORE_CreateProductDTO {
 }
@@ -1268,15 +1282,16 @@ __decorate([
 ], CORE_CreateProductDTO.prototype, "txTimestamp", void 0);
 
 exports.AGENT_CreateProductDTO = AGENT_CreateProductDTO;
+exports.AGENT_EventCreateCredentialSubjectDTO = AGENT_EventCreateCredentialSubjectDTO;
 exports.AddressDTO = AddressDTO;
 exports.AnalyticsDTO = AnalyticsDTO;
 exports.CORE_CreateProductDTO = CORE_CreateProductDTO;
+exports.CORE_EventCreateCredentialSubjectDTO = CORE_EventCreateCredentialSubjectDTO;
 exports.CategorizedNotificationsDTO = CategorizedNotificationsDTO;
 exports.ConfirmContractDTO = ConfirmContractDTO;
 exports.CreateContractDTO = CreateContractDTO;
 exports.CreateOrganizationDto = CreateOrganizationDto;
 exports.DeleteContractsDTO = DeleteContractsDTO;
-exports.EventCreateCredentialSubjectDTO = EventCreateCredentialSubjectDTO;
 exports.EventCreateVCDTO = EventCreateVCDTO;
 exports.GeoCoordinatesDTO = GeoCoordinatesDTO;
 exports.IssuerDTO = IssuerDTO;

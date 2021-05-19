@@ -4,7 +4,7 @@ import { ProductVCDTO } from './product.vc.dto'
 import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto'
 import { 
 	EventCreateVCDTO,
-	EventCreateCredentialSubjectDTO
+	AGENT_EventCreateCredentialSubjectDTO
 } from '../../events'
 
 export class AGENT_CreateProductDTO {
@@ -19,8 +19,8 @@ export class AGENT_CreateProductDTO {
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => EventCreateCredentialSubjectDTO)
-  eventCredentialSubject: EventCreateCredentialSubjectDTO
+  @Type(() => AGENT_EventCreateCredentialSubjectDTO)
+  eventCredentialSubject: AGENT_EventCreateCredentialSubjectDTO
 }
 
 export class CORE_CreateProductDTO {

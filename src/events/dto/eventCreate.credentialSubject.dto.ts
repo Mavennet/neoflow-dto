@@ -3,6 +3,7 @@ import {
   IsNotEmptyObject,
   IsOptional,
   IsUUID,
+  IsUrl,
   IsString,
   ValidateNested,
   Matches
@@ -10,15 +11,7 @@ import {
 import { Type } from 'class-transformer'
 import { AddressDTO } from '../../general'
 
-export class EventCreateCredentialSubjectDTO {
-  @IsNotEmpty()
-  @IsUUID()
-  eventId: string
-
-  @IsNotEmpty()
-  @IsUUID()
-  productId: string
-
+class EventCreateCredentialSubjectDTOBase {
   @IsOptional()
   @IsString()
   description: string
@@ -32,4 +25,24 @@ export class EventCreateCredentialSubjectDTO {
   @IsString()
   @Matches(/^did:/)
   eventCreator: string
+}
+
+export class AGENT_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
+  @IsNotEmpty()
+  @IsUUID()
+  eventId: string
+
+  @IsNotEmpty()
+  @IsUUID()
+  productId: string
+}
+
+export class CORE_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
+  @IsNotEmpty()
+  @IsUrl()
+  eventId: string
+
+  @IsNotEmpty()
+  @IsUrl()
+  productId: string
 }
