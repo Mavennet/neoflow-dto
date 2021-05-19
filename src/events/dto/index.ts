@@ -1,2 +1,2 @@
-// export * from './eventCreate.credentialSubject.dto'
-// export * from './eventCreate.vc.dto'
+export * from './eventCreate.credentialSubject.dto'
+export * from './eventCreate.vc.dto'

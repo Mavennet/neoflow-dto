@@ -1,51 +1,18 @@
-// import {
-//   IsNotEmpty,
-//   IsNotEmptyObject,
-//   IsEnum,
-//   IsString,
-//   IsNumberString,
-//   IsArray,
-//   ValidateNested,
-//   Validate,
-//   Matches,
-//   ArrayNotEmpty
-// } from 'class-validator'
-// import { Type } from 'class-transformer'
-// import {
-//   PlaceDTO,
-//   ObservationDTO,
-//   JSON_TYPE
-// } from '../../general'
-// import { ProductDTO } from './product.dto'
+import {
+  IsEnum,
+  IsArray,
+  ArrayNotEmpty,
+  Validate
+} from 'class-validator'
+import {
+	ProductCredentialSubjectDTO as ProductCredentialSubjectDTOBase	
+} from 'mavennet-dto'
+import { JSON_TYPE } from '../../general'
 
-// export class ProductCredentialSubjectDTO {
-//   @IsArray()
-//   @ArrayNotEmpty()
-//   @IsEnum(JSON_TYPE, { each: true })
-//   @Validate(o => o.type === [JSON_TYPE.CRUDE_OIL_PRODUCT] || o.type === [JSON_TYPE.NATURAL_GAS_PRODUCT])
-//   type: JSON_TYPE[]
-
-//   @IsNotEmpty()
-//   @IsNumberString()
-//   HSCode: string
-
-//   @IsNotEmpty()
-//   @IsString()
-//   @Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
-//   productionDate: string
-
-//   @IsNotEmptyObject()
-//   @ValidateNested()
-//   @Type(() => PlaceDTO)
-//   facility: PlaceDTO
-
-//   @IsNotEmptyObject()
-//   @ValidateNested()
-//   @Type(() => ProductDTO)
-//   product: ProductDTO
-
-//   @IsArray()
-//   @ValidateNested({ each: true })
-//   @Type(() => ObservationDTO)
-//   observation: ObservationDTO[]
-// }
+export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {	
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(JSON_TYPE, { each: true })
+  @Validate(o => o.type === [JSON_TYPE.METAL_PRODUCT])
+  type: JSON_TYPE[]
+}

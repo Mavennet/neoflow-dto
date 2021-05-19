@@ -8,16 +8,16 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { VerifiableCredentialDTO } from '../../general'
-import { EventCreateCredentialSubjectDTO } from './eventCreate.credentialSubject.dto'
+import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto'
 
-export class EventCreateVCDTO extends VerifiableCredentialDTO {
+export class ProductVCDTO extends VerifiableCredentialDTO {
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
   @Validate(o =>
     o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
     o['@context'].includes('https://schema.org/') &&
-    o['@context'].includes('https://mavennet.github.io/contexts/metal-product-EVENT-v1.0.jsonld')
+    o['@context'].includes('https://mavennet.github.io/contexts/metal-product-v1.0.jsonld')
   )
   '@context': string[]
 
@@ -26,12 +26,12 @@ export class EventCreateVCDTO extends VerifiableCredentialDTO {
   @ArrayMaxSize(2)
   @Validate(o =>
     o.type.includes('VerifiableCredential') &&
-    o.type.includes('CreationEventCredential')
+    o.type.includes('MetalProductCredential')
   )
   type: string[]
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => EventCreateCredentialSubjectDTO)
-  credentialSubject: EventCreateCredentialSubjectDTO
+  @Type(() => ProductCredentialSubjectDTO)
+  credentialSubject: ProductCredentialSubjectDTO
 }

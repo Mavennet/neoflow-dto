@@ -1,61 +1,60 @@
-// import { IsNotEmpty, IsString, ValidateNested, IsUUID } from 'class-validator'
-// import { Type } from 'class-transformer'
-// // import { ProductVCDTO } from './product.vc.dto'
-// // import { CreationEventVCDTO } from '../../events/dto/creationEvent.vc.dto'
+import { IsNotEmpty, IsString, ValidateNested, IsUUID } from 'class-validator'
+import { Type } from 'class-transformer'
+import { ProductVCDTO } from './product.vc.dto'
+import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto'
+import { 
+	EventCreateVCDTO,
+	EventCreateCredentialSubjectDTO
+} from '../../events'
 
-// // import { CreationEventCredentialSubjectDTO } from '../../events/dto/creationEventCredentialSubject.dto'
+export class AGENT_CreateProductDTO {
+  @IsNotEmpty()
+  @IsUUID()
+  productId: string
 
-// import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto'
-// import { CreationEventCredentialSubjectDTO } from '../../events'
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => ProductCredentialSubjectDTO)
+  productCredentialSubject: ProductCredentialSubjectDTO
 
-// export class AGENT_CreateProductDTO {
-//   @IsNotEmpty()
-//   @IsUUID()
-//   productId: string
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => EventCreateCredentialSubjectDTO)
+  eventCredentialSubject: EventCreateCredentialSubjectDTO
+}
 
-//   @IsNotEmpty()
-//   @ValidateNested()
-//   @Type(() => ProductCredentialSubjectDTO)
-//   productCredentialSubject: ProductCredentialSubjectDTO
+export class CORE_CreateProductDTO {
+  @IsNotEmpty()
+  @IsUUID()
+  productId: string
 
-//   @IsNotEmpty()
-//   @ValidateNested()
-//   @Type(() => CreationEventCredentialSubjectDTO)
-//   eventCredentialSubject: CreationEventCredentialSubjectDTO
-// }
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => ProductVCDTO)
+  productVC: ProductVCDTO
 
-// export class CORE_CreateProductDTO {
-//   @IsNotEmpty()
-//   @IsUUID()
-//   productId: string
+  @IsNotEmpty()
+  @IsString()
+  productVCHash: string
 
-//   @IsNotEmpty()
-//   @ValidateNested()
-//   @Type(() => ProductVCDTO)
-//   productVC: ProductVCDTO
+  @IsNotEmpty()
+  @IsUUID()
+  eventId: string
 
-//   @IsNotEmpty()
-//   @IsString()
-//   productVCHash: string
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => EventCreateVCDTO)
+  eventVC: EventCreateVCDTO
 
-//   @IsNotEmpty()
-//   @IsUUID()
-//   eventId: string
+  @IsNotEmpty()
+  @IsString()
+  eventVCHash: string
 
-//   @IsNotEmpty()
-//   @ValidateNested()
-//   @Type(() => CreationEventVCDTO)
-//   eventVC: CreationEventVCDTO
+  @IsNotEmpty()
+  @IsString()
+  txHash: string
 
-//   @IsNotEmpty()
-//   @IsString()
-//   eventVCHash: string
-
-//   @IsNotEmpty()
-//   @IsString()
-//   txHash: string
-
-//   @IsNotEmpty()
-//   @IsString() // TODO fix data type
-//   txTimestamp: string
-// }
+  @IsNotEmpty()
+  @IsString()
+  txTimestamp: string
+}

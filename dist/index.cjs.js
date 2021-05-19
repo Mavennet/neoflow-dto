@@ -89,90 +89,6 @@ __decorate([
     classValidator__default['default'].IsUUID(),
     __metadata("design:type", String)
 ], AnalyticsDTO.prototype, "productId", void 0);
-__decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsDateString(),
-    __metadata("design:type", Date)
-], AnalyticsDTO.prototype, "eventCreatedAt", void 0);
-__decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "eventType", void 0);
-__decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsDateString(),
-    __metadata("design:type", Date)
-], AnalyticsDTO.prototype, "productCreatedAt", void 0);
-__decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "productionMonth", void 0);
-__decorate([
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "aging", void 0);
-__decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "buyerName", void 0);
-__decorate([
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "qpInBond", void 0);
-__decorate([
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "entryId", void 0);
-__decorate([
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "ftzNo", void 0);
-__decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "origin", void 0);
-__decorate([
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "portOfEntry", void 0);
-__decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "streamType", void 0);
-__decorate([
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "startTransportMonth", void 0);
-__decorate([
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "refineryName", void 0);
-__decorate([
-    classValidator__default['default'].IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "sulphur", void 0);
-__decorate([
-    classValidator__default['default'].IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "density", void 0);
-__decorate([
-    classValidator__default['default'].IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "tan", void 0);
-__decorate([
-    classValidator__default['default'].IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "price", void 0);
-__decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "volume", void 0);
 
 class ValidationDTO {
 }
@@ -597,35 +513,75 @@ __decorate([
     __metadata("design:type", PostalAddressDTO)
 ], PlaceDTO.prototype, "address", void 0);
 
-class VerifiableCredentialDTO {
+class ProofDTO {
 }
 __decorate([
     classValidator__default['default'].IsNotEmpty(),
     classValidator__default['default'].IsEnum(exports.JSON_TYPE),
     classValidator__default['default'].Equals(exports.JSON_TYPE.ED25519_SIGNATURE_2018),
     __metadata("design:type", String)
-], VerifiableCredentialDTO.prototype, "type", void 0);
+], ProofDTO.prototype, "type", void 0);
 __decorate([
     classValidator__default['default'].IsNotEmpty(),
     classValidator__default['default'].IsDateString(),
     __metadata("design:type", Date)
-], VerifiableCredentialDTO.prototype, "created", void 0);
+], ProofDTO.prototype, "created", void 0);
 __decorate([
     classValidator__default['default'].IsNotEmpty(),
     classValidator__default['default'].IsString(),
     __metadata("design:type", String)
-], VerifiableCredentialDTO.prototype, "jws", void 0);
+], ProofDTO.prototype, "jws", void 0);
 __decorate([
     classValidator__default['default'].IsNotEmpty(),
     classValidator__default['default'].IsEnum(exports.PROOF_PURPOSE_TYPE),
     __metadata("design:type", String)
-], VerifiableCredentialDTO.prototype, "proofPurpose", void 0);
+], ProofDTO.prototype, "proofPurpose", void 0);
 __decorate([
     classValidator__default['default'].IsNotEmpty(),
     classValidator__default['default'].IsString(),
     classValidator__default['default'].Matches(/^did:/),
     __metadata("design:type", String)
-], VerifiableCredentialDTO.prototype, "verificationMethod", void 0);
+], ProofDTO.prototype, "verificationMethod", void 0);
+
+class VerifiableCredentialDTO {
+}
+__decorate([
+    classValidator__default['default'].IsArray(),
+    classValidator__default['default'].ArrayMinSize(2),
+    classValidator__default['default'].ArrayMaxSize(2),
+    classValidator__default['default'].Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+        o['@context'].includes('https://schema.org/')),
+    __metadata("design:type", Array)
+], VerifiableCredentialDTO.prototype, "@context", void 0);
+__decorate([
+    classValidator__default['default'].IsNotEmpty(),
+    classValidator__default['default'].IsUrl(),
+    __metadata("design:type", String)
+], VerifiableCredentialDTO.prototype, "id", void 0);
+__decorate([
+    classValidator__default['default'].IsArray(),
+    classValidator__default['default'].ArrayMinSize(2),
+    classValidator__default['default'].ArrayMaxSize(2),
+    classValidator__default['default'].Validate(o => o.type.includes('VerifiableCredential')),
+    __metadata("design:type", Array)
+], VerifiableCredentialDTO.prototype, "type", void 0);
+__decorate([
+    classValidator__default['default'].IsNotEmpty(),
+    classValidator__default['default'].IsString(),
+    classValidator__default['default'].Matches(/^did:/),
+    __metadata("design:type", String)
+], VerifiableCredentialDTO.prototype, "issuer", void 0);
+__decorate([
+    classValidator__default['default'].IsNotEmpty(),
+    classValidator__default['default'].IsDateString(),
+    __metadata("design:type", Date)
+], VerifiableCredentialDTO.prototype, "issuanceDate", void 0);
+__decorate([
+    classValidator__default['default'].IsNotEmpty(),
+    classValidator__default['default'].ValidateNested(),
+    classTransformer__default['default'].Type(() => ProofDTO),
+    __metadata("design:type", ProofDTO)
+], VerifiableCredentialDTO.prototype, "proof", void 0);
 
 exports.NOTIFICATION_TYPE = void 0;
 (function (NOTIFICATION_TYPE) {
@@ -650,25 +606,6 @@ exports.NOTIFICATION_TYPE = void 0;
     NOTIFICATION_TYPE["TRANSFER_OWNERSHIP_UPDATED"] = "TRANSFER_OWNERSHIP_UPDATED";
     NOTIFICATION_TYPE["TRANSFER_CUSTODY_UPDATED"] = "TRANSFER_CUSTODY_UPDATED";
 })(exports.NOTIFICATION_TYPE || (exports.NOTIFICATION_TYPE = {}));
-
-const ActionableNotifications = new Map([
-    [exports.NOTIFICATION_TYPE.CONTRACT_CREATED, true],
-    [exports.NOTIFICATION_TYPE.CONTRACT_ACCEPTED, false],
-    [exports.NOTIFICATION_TYPE.TRANSPORT_STARTED, false],
-    [exports.NOTIFICATION_TYPE.TRANSPORT_FINISHED, false],
-    [exports.NOTIFICATION_TYPE.STORAGE_STARTED, false],
-    [exports.NOTIFICATION_TYPE.STORAGE_FINISHED, false],
-    [exports.NOTIFICATION_TYPE.TRANSFER_OWNERSHIP_CREATED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_OWNERSHIP_ACCEPTED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_OWNERSHIP_CHANGE_REQUESTED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_OWNERSHIP_FINISHED, false],
-    [exports.NOTIFICATION_TYPE.TRANSFER_CUSTODY_CREATED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_CUSTODY_ACCEPTED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_CUSTODY_CHANGE_REQUESTED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_CUSTODY_FINISHED, false],
-    [exports.NOTIFICATION_TYPE.TRANSFER_OWNERSHIP_UPDATED, true],
-    [exports.NOTIFICATION_TYPE.TRANSFER_CUSTODY_UPDATED, true]
-]);
 
 exports.SOCKET_EVENT_NAME = void 0;
 (function (SOCKET_EVENT_NAME) {
@@ -799,16 +736,6 @@ __decorate([
 ], CreateOrganizationDto.prototype, "phone", void 0);
 __decorate([
     classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], CreateOrganizationDto.prototype, "mid", void 0);
-__decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    __metadata("design:type", String)
-], CreateOrganizationDto.prototype, "cbpImporterRecord", void 0);
-__decorate([
-    classValidator__default['default'].IsNotEmpty(),
     classValidator__default['default'].IsEnum(exports.ORGANIZATION_ROLE),
     __metadata("design:type", String)
 ], CreateOrganizationDto.prototype, "role", void 0);
@@ -828,7 +755,6 @@ __decorate([
     __metadata("design:type", Map)
 ], CreateOrganizationDto.prototype, "uwi", void 0);
 
-exports.ActionableNotifications = ActionableNotifications;
 exports.AddressDTO = AddressDTO;
 exports.AnalyticsDTO = AnalyticsDTO;
 exports.CategorizedNotificationsDTO = CategorizedNotificationsDTO;
@@ -845,6 +771,7 @@ exports.OrganizationDTO = OrganizationDTO;
 exports.ParcelDeliveryDTO = ParcelDeliveryDTO;
 exports.PlaceDTO = PlaceDTO;
 exports.PostalAddressDTO = PostalAddressDTO;
+exports.ProofDTO = ProofDTO;
 exports.PropertyDTO = PropertyDTO;
 exports.ReadNotificationDTO = ReadNotificationDTO;
 exports.SaveS3DocumentsFolderPathDTO = SaveS3DocumentsFolderPathDTO;
@@ -862,23 +789,23 @@ index_cjs.PROOF_PURPOSE_TYPE;
 index_cjs.NOTIFICATION_TYPE;
 index_cjs.SOCKET_EVENT_NAME;
 index_cjs.ORGANIZATION_ROLE;
-index_cjs.ActionableNotifications;
-var index_cjs_8 = index_cjs.AddressDTO;
-var index_cjs_9 = index_cjs.AnalyticsDTO;
-var index_cjs_10 = index_cjs.CategorizedNotificationsDTO;
-var index_cjs_11 = index_cjs.ConfirmContractDTO;
-var index_cjs_12 = index_cjs.CreateContractDTO;
-var index_cjs_13 = index_cjs.CreateOrganizationDto;
-var index_cjs_14 = index_cjs.DeleteContractsDTO;
-var index_cjs_15 = index_cjs.GeoCoordinatesDTO;
-var index_cjs_16 = index_cjs.IssuerDTO;
-var index_cjs_17 = index_cjs.MeasurementDTO;
-var index_cjs_18 = index_cjs.NotificationDTO;
-var index_cjs_19 = index_cjs.ObservationDTO;
-var index_cjs_20 = index_cjs.OrganizationDTO;
-var index_cjs_21 = index_cjs.ParcelDeliveryDTO;
-var index_cjs_22 = index_cjs.PlaceDTO;
-var index_cjs_23 = index_cjs.PostalAddressDTO;
+var index_cjs_7 = index_cjs.AddressDTO;
+var index_cjs_8 = index_cjs.AnalyticsDTO;
+var index_cjs_9 = index_cjs.CategorizedNotificationsDTO;
+var index_cjs_10 = index_cjs.ConfirmContractDTO;
+var index_cjs_11 = index_cjs.CreateContractDTO;
+var index_cjs_12 = index_cjs.CreateOrganizationDto;
+var index_cjs_13 = index_cjs.DeleteContractsDTO;
+var index_cjs_14 = index_cjs.GeoCoordinatesDTO;
+var index_cjs_15 = index_cjs.IssuerDTO;
+var index_cjs_16 = index_cjs.MeasurementDTO;
+var index_cjs_17 = index_cjs.NotificationDTO;
+var index_cjs_18 = index_cjs.ObservationDTO;
+var index_cjs_19 = index_cjs.OrganizationDTO;
+var index_cjs_20 = index_cjs.ParcelDeliveryDTO;
+var index_cjs_21 = index_cjs.PlaceDTO;
+var index_cjs_22 = index_cjs.PostalAddressDTO;
+var index_cjs_23 = index_cjs.ProofDTO;
 var index_cjs_24 = index_cjs.PropertyDTO;
 var index_cjs_25 = index_cjs.ReadNotificationDTO;
 index_cjs.SaveS3DocumentsFolderPathDTO;
@@ -888,7 +815,7 @@ var index_cjs_29 = index_cjs.UpdateNotificationSettingsDTO;
 var index_cjs_30 = index_cjs.ValidationDTO;
 var index_cjs_31 = index_cjs.VerifiableCredentialDTO;
 
-class AnalyticsDTO extends index_cjs_9 {
+class AnalyticsDTO extends index_cjs_8 {
 }
 __decorate([
     classValidator.IsNotEmpty(),
@@ -978,13 +905,13 @@ __decorate([
 class ValidationDTO extends index_cjs_30 {
 }
 
-class ConfirmContractDTO extends index_cjs_11 {
+class ConfirmContractDTO extends index_cjs_10 {
 }
 
-class CreateContractDTO extends index_cjs_12 {
+class CreateContractDTO extends index_cjs_11 {
 }
 
-class DeleteContractsDTO extends index_cjs_14 {
+class DeleteContractsDTO extends index_cjs_13 {
 }
 
 class UpdateContractDTO extends index_cjs_28 {
@@ -1022,31 +949,34 @@ exports.JSON_TYPE = void 0;
     JSON_TYPE["METAL_PRODUCT"] = "MetalProduct";
 })(exports.JSON_TYPE || (exports.JSON_TYPE = {}));
 
-class AddressDTO extends index_cjs_8 {
+class AddressDTO extends index_cjs_7 {
 }
 
-class GeoCoordinatesDTO extends index_cjs_15 {
+class GeoCoordinatesDTO extends index_cjs_14 {
 }
 
-class IssuerDTO extends index_cjs_16 {
+class IssuerDTO extends index_cjs_15 {
 }
 
-class MeasurementDTO extends index_cjs_17 {
+class MeasurementDTO extends index_cjs_16 {
 }
 
-class ObservationDTO extends index_cjs_19 {
+class ObservationDTO extends index_cjs_18 {
 }
 
-class OrganizationDTO extends index_cjs_20 {
+class OrganizationDTO extends index_cjs_19 {
 }
 
-class ParcelDeliveryDTO extends index_cjs_21 {
+class ParcelDeliveryDTO extends index_cjs_20 {
 }
 
-class PlaceDTO extends index_cjs_22 {
+class PlaceDTO extends index_cjs_21 {
 }
 
-class PostalAddressDTO extends index_cjs_23 {
+class PostalAddressDTO extends index_cjs_22 {
+}
+
+class ProofDTO extends index_cjs_23 {
 }
 
 class PropertyDTO extends index_cjs_24 {
@@ -1054,11 +984,20 @@ class PropertyDTO extends index_cjs_24 {
 
 class VerifiableCredentialDTO extends index_cjs_31 {
 }
+__decorate([
+    classValidator.IsArray(),
+    classValidator.ArrayMinSize(3),
+    classValidator.ArrayMaxSize(3),
+    classValidator.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+        o['@context'].includes('https://schema.org/') &&
+        o['@context'].includes('https://mavennet.github.io/contexts/metal-EVENT-v1.0.jsonld')),
+    __metadata("design:type", Array)
+], VerifiableCredentialDTO.prototype, "@context", void 0);
 
-class CategorizedNotificationsDTO extends index_cjs_10 {
+class CategorizedNotificationsDTO extends index_cjs_9 {
 }
 
-class NotificationDTO extends index_cjs_18 {
+class NotificationDTO extends index_cjs_17 {
 }
 
 class ReadNotificationDTO extends index_cjs_25 {
@@ -1070,7 +1009,7 @@ class SocketEventDTO extends index_cjs_27 {
 class UpdateNotificationSettingsDTO extends index_cjs_29 {
 }
 
-class CreateOrganizationDto extends index_cjs_13 {
+class CreateOrganizationDto extends index_cjs_12 {
 }
 
 exports.AddressDTO = AddressDTO;
@@ -1089,6 +1028,7 @@ exports.OrganizationDTO = OrganizationDTO;
 exports.ParcelDeliveryDTO = ParcelDeliveryDTO;
 exports.PlaceDTO = PlaceDTO;
 exports.PostalAddressDTO = PostalAddressDTO;
+exports.ProofDTO = ProofDTO;
 exports.PropertyDTO = PropertyDTO;
 exports.ReadNotificationDTO = ReadNotificationDTO;
 exports.SaveS3DocumentsFolderPathDTO = SaveS3DocumentsFolderPathDTO;
