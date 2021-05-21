@@ -7,8 +7,8 @@ import {
   Validate
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { VerifiableCredentialDTO } from '../../general'
 import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto'
+import { VerifiableCredentialDTO } from 'mavennet-dto'
 
 export class ProductVCDTO extends VerifiableCredentialDTO {
   @IsArray()
