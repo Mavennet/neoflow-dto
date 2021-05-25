@@ -27,6 +27,6 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "mavennet-dto": "github:Mavennet/mavennet-dto"
+    "mavennet-dto": "Mavennet/mavennet-dto"
   }
 }
