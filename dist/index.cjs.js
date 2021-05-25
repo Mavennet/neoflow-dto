@@ -1071,7 +1071,7 @@ __decorate([
     __metadata("design:type", String)
 ], ProductCredentialSubjectDTO.prototype, "grade", void 0);
 
-class ProductVCDTO extends VerifiableCredentialDTO {
+class ProductVCDTO extends index_cjs.VerifiableCredentialDTO {
 }
 __decorate([
     require$$0.IsArray(),
