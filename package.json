@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.cjs.js",
-  "type": "module",
   "source": "src/index.ts",
   "scripts": {
     "build": "tsc && rollup -c",
