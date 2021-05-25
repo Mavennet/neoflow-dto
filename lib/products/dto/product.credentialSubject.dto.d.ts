@@ -4,4 +4,5 @@ import { ProductCredentialSubjectDTO as ProductCredentialSubjectDTOBase } from '
 export declare class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {
     type: JSON_TYPE[];
     product: ProductDTO;
+    grade: string;
 }

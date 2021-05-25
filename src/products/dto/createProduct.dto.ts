@@ -7,6 +7,8 @@ import {
 	AGENT_EventCreateCredentialSubjectDTO
 } from '../../events'
 
+// https://w3c-ccg.github.io/traceability-vocab/#SteelProduct
+
 export class AGENT_CreateProductDTO {
   @IsNotEmpty()
   @IsUUID()

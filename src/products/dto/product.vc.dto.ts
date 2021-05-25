@@ -7,8 +7,12 @@ import {
   Validate
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { VerifiableCredentialDTO } from '../../general'
+import {
+  VerifiableCredentialDTO,
+  JSON_TYPE as JSON_TYPE_METAL
+} from '../../general'
 import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto'
+import { JSON_TYPE } from 'mavennet-dto'
 
 export class ProductVCDTO extends VerifiableCredentialDTO {
   @IsArray()
@@ -25,8 +29,8 @@ export class ProductVCDTO extends VerifiableCredentialDTO {
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
   @Validate(o =>
-    o.type.includes('VerifiableCredential') &&
-    o.type.includes('MetalProductCredential')
+    o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
+    o.type.includes(JSON_TYPE_METAL.METAL_PRODUCT)
   )
   type: string[]
 

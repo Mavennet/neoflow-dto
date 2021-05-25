@@ -1,5 +1,7 @@
 import {
+  IsOptional,
   IsNotEmptyObject,
+  IsString,
   IsEnum,
   IsArray,
   ArrayNotEmpty,
@@ -24,4 +26,8 @@ export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase
   @ValidateNested()
   @Type(() => ProductDTO)
   product: ProductDTO
+
+  @IsOptional()
+  @IsString()
+  grade: string
 }

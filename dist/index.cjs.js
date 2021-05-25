@@ -2,54 +2,22 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var classValidator = require('class-validator');
-var classTransformer = require('class-transformer');
+var require$$0 = require('class-validator');
+var require$$1 = require('class-transformer');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var classValidator__default = /*#__PURE__*/_interopDefaultLegacy(classValidator);
-var classTransformer__default = /*#__PURE__*/_interopDefaultLegacy(classTransformer);
+var require$$0__default = /*#__PURE__*/_interopDefaultLegacy(require$$0);
+var require$$1__default = /*#__PURE__*/_interopDefaultLegacy(require$$1);
 
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation.
+var index_cjs = {};
 
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-
-function __decorate(decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __metadata(metadataKey, metadataValue) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function unwrapExports (x) {
-	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-}
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-var index_cjs = createCommonjsModule(function (module, exports) {
+(function (exports) {
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-
-
+var classValidator = require$$0__default['default'];
+var classTransformer = require$$1__default['default'];
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -80,13 +48,13 @@ function __metadata(metadataKey, metadataValue) {
 class AnalyticsDTO {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsNumber(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsNumber(),
     __metadata("design:type", Number)
 ], AnalyticsDTO.prototype, "currentMillis", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsUUID(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsUUID(),
     __metadata("design:type", String)
 ], AnalyticsDTO.prototype, "productId", void 0);
 
@@ -96,85 +64,85 @@ class ValidationDTO {
 class ConfirmContractDTO {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsNumber(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsNumber(),
     __metadata("design:type", Number)
 ], ConfirmContractDTO.prototype, "contractId", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    classValidator__default['default'].Matches(/^did:/),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^did:/),
     __metadata("design:type", String)
 ], ConfirmContractDTO.prototype, "receiver", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsBoolean(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsBoolean(),
     __metadata("design:type", Boolean)
 ], ConfirmContractDTO.prototype, "status", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], ConfirmContractDTO.prototype, "destination", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], ConfirmContractDTO.prototype, "comment", void 0);
 
 class CreateContractDTO {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    classValidator__default['default'].Matches(/^did:/),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^did:/),
     __metadata("design:type", String)
 ], CreateContractDTO.prototype, "sender", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    classValidator__default['default'].Matches(/^did:/),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^did:/),
     __metadata("design:type", String)
 ], CreateContractDTO.prototype, "receiver", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], CreateContractDTO.prototype, "destination", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/),
+    classValidator.IsNotEmpty(),
+    classValidator.Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/),
     __metadata("design:type", String)
 ], CreateContractDTO.prototype, "startDate", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/),
+    classValidator.IsNotEmpty(),
+    classValidator.Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/),
     __metadata("design:type", String)
 ], CreateContractDTO.prototype, "endDate", void 0);
 
 class DeleteContractsDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayMinSize(1),
+    classValidator.IsArray(),
+    classValidator.ArrayMinSize(1),
     __metadata("design:type", Array)
 ], DeleteContractsDTO.prototype, "contractIds", void 0);
 
 class UpdateContractDTO {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsNumber(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsNumber(),
     __metadata("design:type", Number)
 ], UpdateContractDTO.prototype, "contractId", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].Matches(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/),
+    classValidator.IsNotEmpty(),
+    classValidator.Matches(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/),
     __metadata("design:type", String)
 ], UpdateContractDTO.prototype, "startDate", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].Matches(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/),
+    classValidator.IsNotEmpty(),
+    classValidator.Matches(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/),
     __metadata("design:type", String)
 ], UpdateContractDTO.prototype, "endDate", void 0);
 
@@ -188,26 +156,26 @@ exports.UPLOAD_TYPE = void 0;
 class SaveS3DocumentsFolderPathDTO {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.UPLOAD_TYPE),
+    classValidator.IsNotEmpty(),
+    classValidator.IsEnum(exports.UPLOAD_TYPE),
     __metadata("design:type", String)
 ], SaveS3DocumentsFolderPathDTO.prototype, "uploadType", void 0);
 __decorate([
-    classValidator__default['default'].ValidateIf(o => o.uploadType === exports.UPLOAD_TYPE.TRANSFER_REQUEST && !o.receiverS3DocumentsFolderPath),
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.ValidateIf(o => o.uploadType === exports.UPLOAD_TYPE.TRANSFER_REQUEST && !o.receiverS3DocumentsFolderPath),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], SaveS3DocumentsFolderPathDTO.prototype, "senderS3DocumentsFolderPath", void 0);
 __decorate([
-    classValidator__default['default'].ValidateIf(o => o.uploadType === exports.UPLOAD_TYPE.TRANSFER_REQUEST && !o.senderS3DocumentsFolderPath),
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.ValidateIf(o => o.uploadType === exports.UPLOAD_TYPE.TRANSFER_REQUEST && !o.senderS3DocumentsFolderPath),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], SaveS3DocumentsFolderPathDTO.prototype, "receiverS3DocumentsFolderPath", void 0);
 __decorate([
-    classValidator__default['default'].ValidateIf(o => o.uploadType === exports.UPLOAD_TYPE.CONTRACT || o.uploadType === exports.UPLOAD_TYPE.PRODUCT_EVENT),
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.ValidateIf(o => o.uploadType === exports.UPLOAD_TYPE.CONTRACT || o.uploadType === exports.UPLOAD_TYPE.PRODUCT_EVENT),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], SaveS3DocumentsFolderPathDTO.prototype, "s3DocumentsFolderPath", void 0);
 
@@ -240,346 +208,346 @@ exports.PROOF_PURPOSE_TYPE = void 0;
 class AddressDTO {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], AddressDTO.prototype, "address", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsLatitude(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsLatitude(),
     __metadata("design:type", String)
 ], AddressDTO.prototype, "latitude", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsLongitude(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsLongitude(),
     __metadata("design:type", String)
 ], AddressDTO.prototype, "longitude", void 0);
 
 class GeoCoordinatesDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
-    classValidator__default['default'].Validate(o => o.type === [exports.JSON_TYPE.GEO_COORDINATES]),
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.Validate(o => o.type === [exports.JSON_TYPE.GEO_COORDINATES]),
     __metadata("design:type", Array)
 ], GeoCoordinatesDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsLatitude(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsLatitude(),
     __metadata("design:type", String)
 ], GeoCoordinatesDTO.prototype, "latitude", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsLongitude(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsLongitude(),
     __metadata("design:type", String)
 ], GeoCoordinatesDTO.prototype, "longitude", void 0);
 
 class IssuerDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayMinSize(1),
-    classValidator__default['default'].ValidateNested({ each: true }),
+    classValidator.IsArray(),
+    classValidator.ArrayMinSize(1),
+    classValidator.ValidateNested({ each: true }),
     __metadata("design:type", Array)
 ], IssuerDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    classValidator__default['default'].Matches(/^did:/),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^did:/),
     __metadata("design:type", String)
 ], IssuerDTO.prototype, "id", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsUrl(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsUrl(),
     __metadata("design:type", String)
 ], IssuerDTO.prototype, "url", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], IssuerDTO.prototype, "name", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], IssuerDTO.prototype, "description", void 0);
 
 class MeasurementDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
-    classValidator__default['default'].Validate(o => o.type === [exports.JSON_TYPE.MEASURED_VALUE] || o.type === [exports.JSON_TYPE.QUANTITATIVE_VALUE]),
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.Validate(o => o.type === [exports.JSON_TYPE.MEASURED_VALUE] || o.type === [exports.JSON_TYPE.QUANTITATIVE_VALUE]),
     __metadata("design:type", Array)
 ], MeasurementDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], MeasurementDTO.prototype, "unitCode", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], MeasurementDTO.prototype, "value", void 0);
 
 class PropertyDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
-    classValidator__default['default'].Validate(o => o.type === [exports.JSON_TYPE.MECHANICAL_PROPERTY] ||
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.Validate(o => o.type === [exports.JSON_TYPE.MECHANICAL_PROPERTY] ||
         o.type === [exports.JSON_TYPE.CHEMICAL_PROPERTY]),
     __metadata("design:type", Array)
 ], PropertyDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], PropertyDTO.prototype, "identifier", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], PropertyDTO.prototype, "name", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], PropertyDTO.prototype, "description", void 0);
 
 class ObservationDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
-    classValidator__default['default'].Validate(o => o.type === [exports.JSON_TYPE.OBSERVATION]),
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.Validate(o => o.type === [exports.JSON_TYPE.OBSERVATION]),
     __metadata("design:type", Array)
 ], ObservationDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmptyObject(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => PropertyDTO),
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => PropertyDTO),
     __metadata("design:type", PropertyDTO)
 ], ObservationDTO.prototype, "property", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmptyObject(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => MeasurementDTO),
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => MeasurementDTO),
     __metadata("design:type", MeasurementDTO)
 ], ObservationDTO.prototype, "measurement", void 0);
 
 class PostalAddressDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
-    classValidator__default['default'].Validate(o => o.type === [exports.JSON_TYPE.POSTAL_ADDRESS]),
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.Validate(o => o.type === [exports.JSON_TYPE.POSTAL_ADDRESS]),
     __metadata("design:type", Array)
 ], PostalAddressDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], PostalAddressDTO.prototype, "organizationName", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], PostalAddressDTO.prototype, "streetAddress", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], PostalAddressDTO.prototype, "addressLocality", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], PostalAddressDTO.prototype, "addressRegion", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], PostalAddressDTO.prototype, "postalCode", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], PostalAddressDTO.prototype, "addressCountry", void 0);
 
 class OrganizationDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
-    classValidator__default['default'].Validate(o => o.type === [exports.JSON_TYPE.ORGANIZATION]),
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.Validate(o => o.type === [exports.JSON_TYPE.ORGANIZATION]),
     __metadata("design:type", Array)
 ], OrganizationDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], OrganizationDTO.prototype, "name", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], OrganizationDTO.prototype, "description", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => PostalAddressDTO),
+    classValidator.IsOptional(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => PostalAddressDTO),
     __metadata("design:type", PostalAddressDTO)
 ], OrganizationDTO.prototype, "address", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsEmail(),
+    classValidator.IsOptional(),
+    classValidator.IsEmail(),
     __metadata("design:type", String)
 ], OrganizationDTO.prototype, "email", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], OrganizationDTO.prototype, "phoneNumber", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], OrganizationDTO.prototype, "faxNumber", void 0);
 
 class ParcelDeliveryDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
-    classValidator__default['default'].Validate(o => o.type === [exports.JSON_TYPE.PARCEL_DELIVERY]),
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.Validate(o => o.type === [exports.JSON_TYPE.PARCEL_DELIVERY]),
     __metadata("design:type", String)
 ], ParcelDeliveryDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmptyObject(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => PostalAddressDTO),
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => PostalAddressDTO),
     __metadata("design:type", PostalAddressDTO)
 ], ParcelDeliveryDTO.prototype, "originAddress", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmptyObject(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => PostalAddressDTO),
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => PostalAddressDTO),
     __metadata("design:type", PostalAddressDTO)
 ], ParcelDeliveryDTO.prototype, "deliveryAddress", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], ParcelDeliveryDTO.prototype, "deliveryMethod", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], ParcelDeliveryDTO.prototype, "trackingNumber", void 0);
 
 class PlaceDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
-    classValidator__default['default'].Validate(o => o.type === [exports.JSON_TYPE.PLACE]),
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.Validate(o => o.type === [exports.JSON_TYPE.PLACE]),
     __metadata("design:type", Array)
 ], PlaceDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], PlaceDTO.prototype, "globalLocationNumber", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmptyObject(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => GeoCoordinatesDTO),
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => GeoCoordinatesDTO),
     __metadata("design:type", GeoCoordinatesDTO)
 ], PlaceDTO.prototype, "geo", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmptyObject(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => PostalAddressDTO),
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => PostalAddressDTO),
     __metadata("design:type", PostalAddressDTO)
 ], PlaceDTO.prototype, "address", void 0);
 
 class ProofDTO {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.JSON_TYPE),
-    classValidator__default['default'].Equals(exports.JSON_TYPE.ED25519_SIGNATURE_2018),
+    classValidator.IsNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE),
+    classValidator.Equals(exports.JSON_TYPE.ED25519_SIGNATURE_2018),
     __metadata("design:type", String)
 ], ProofDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsDateString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsDateString(),
     __metadata("design:type", Date)
 ], ProofDTO.prototype, "created", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], ProofDTO.prototype, "jws", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.PROOF_PURPOSE_TYPE),
+    classValidator.IsNotEmpty(),
+    classValidator.IsEnum(exports.PROOF_PURPOSE_TYPE),
     __metadata("design:type", String)
 ], ProofDTO.prototype, "proofPurpose", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    classValidator__default['default'].Matches(/^did:/),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^did:/),
     __metadata("design:type", String)
 ], ProofDTO.prototype, "verificationMethod", void 0);
 
 class VerifiableCredentialDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayMinSize(2),
-    classValidator__default['default'].ArrayMaxSize(2),
-    classValidator__default['default'].Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+    classValidator.IsArray(),
+    classValidator.ArrayMinSize(2),
+    classValidator.ArrayMaxSize(2),
+    classValidator.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
         o['@context'].includes('https://schema.org/')),
     __metadata("design:type", Array)
 ], VerifiableCredentialDTO.prototype, "@context", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsUrl(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsUrl(),
     __metadata("design:type", String)
 ], VerifiableCredentialDTO.prototype, "id", void 0);
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayMinSize(2),
-    classValidator__default['default'].ArrayMaxSize(2),
-    classValidator__default['default'].Validate(o => o.type.includes('VerifiableCredential')),
+    classValidator.IsArray(),
+    classValidator.ArrayMinSize(2),
+    classValidator.ArrayMaxSize(2),
+    classValidator.Validate(o => o.type.includes('VerifiableCredential')),
     __metadata("design:type", Array)
 ], VerifiableCredentialDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    classValidator__default['default'].Matches(/^did:/),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^did:/),
     __metadata("design:type", String)
 ], VerifiableCredentialDTO.prototype, "issuer", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsDateString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsDateString(),
     __metadata("design:type", Date)
 ], VerifiableCredentialDTO.prototype, "issuanceDate", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => ProofDTO),
+    classValidator.IsNotEmpty(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => ProofDTO),
     __metadata("design:type", ProofDTO)
 ], VerifiableCredentialDTO.prototype, "proof", void 0);
 
@@ -620,88 +588,88 @@ exports.SOCKET_EVENT_NAME = void 0;
 class NotificationDTO {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsNumber(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsNumber(),
     __metadata("design:type", Number)
 ], NotificationDTO.prototype, "notificationId", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.NOTIFICATION_TYPE),
+    classValidator.IsNotEmpty(),
+    classValidator.IsEnum(exports.NOTIFICATION_TYPE),
     __metadata("design:type", String)
 ], NotificationDTO.prototype, "notificationType", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsUUID(),
+    classValidator.IsOptional(),
+    classValidator.IsUUID(),
     __metadata("design:type", String)
 ], NotificationDTO.prototype, "productId", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsNumber(),
+    classValidator.IsOptional(),
+    classValidator.IsNumber(),
     __metadata("design:type", Number)
 ], NotificationDTO.prototype, "contractId", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsNumber(),
+    classValidator.IsOptional(),
+    classValidator.IsNumber(),
     __metadata("design:type", Number)
 ], NotificationDTO.prototype, "transferRequestId", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    classValidator__default['default'].Matches(/^did:/),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^did:/),
     __metadata("design:type", String)
 ], NotificationDTO.prototype, "sender", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], NotificationDTO.prototype, "senderName", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsBoolean(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsBoolean(),
     __metadata("design:type", Boolean)
 ], NotificationDTO.prototype, "read", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsDateString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsDateString(),
     __metadata("design:type", Date)
 ], NotificationDTO.prototype, "createdAt", void 0);
 
 class CategorizedNotificationsDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ValidateNested({ each: true }),
-    classTransformer__default['default'].Type(() => NotificationDTO),
+    classValidator.IsArray(),
+    classValidator.ValidateNested({ each: true }),
+    classTransformer.Type(() => NotificationDTO),
     __metadata("design:type", Array)
 ], CategorizedNotificationsDTO.prototype, "new", void 0);
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ValidateNested({ each: true }),
-    classTransformer__default['default'].Type(() => NotificationDTO),
+    classValidator.IsArray(),
+    classValidator.ValidateNested({ each: true }),
+    classTransformer.Type(() => NotificationDTO),
     __metadata("design:type", Array)
 ], CategorizedNotificationsDTO.prototype, "previous", void 0);
 
 class ReadNotificationDTO {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsNumberString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsNumberString(),
     __metadata("design:type", Number)
 ], ReadNotificationDTO.prototype, "notificationId", void 0);
 
 class SocketEventDTO {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], SocketEventDTO.prototype, "eventName", void 0);
 
 class UpdateNotificationSettingsDTO {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsBoolean(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsBoolean(),
     __metadata("design:type", Boolean)
 ], UpdateNotificationSettingsDTO.prototype, "actionableOnly", void 0);
 
@@ -715,113 +683,113 @@ exports.ORGANIZATION_ROLE = void 0;
 class CreateOrganizationDto {
 }
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], CreateOrganizationDto.prototype, "name", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsEmail(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsEmail(),
     __metadata("design:type", String)
 ], CreateOrganizationDto.prototype, "email", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], CreateOrganizationDto.prototype, "address", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsPhoneNumber('CA'),
+    classValidator.IsNotEmpty(),
+    classValidator.IsPhoneNumber('CA'),
     __metadata("design:type", String)
 ], CreateOrganizationDto.prototype, "phone", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.ORGANIZATION_ROLE),
+    classValidator.IsNotEmpty(),
+    classValidator.IsEnum(exports.ORGANIZATION_ROLE),
     __metadata("design:type", String)
 ], CreateOrganizationDto.prototype, "role", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    classValidator__default['default'].Matches(/^did:/),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^did:/),
     __metadata("design:type", String)
 ], CreateOrganizationDto.prototype, "did", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], CreateOrganizationDto.prototype, "backendLink", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmptyObject(),
+    classValidator.IsNotEmptyObject(),
     __metadata("design:type", Map)
 ], CreateOrganizationDto.prototype, "uwi", void 0);
 
 class ProductDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
-    classValidator__default['default'].Validate(o => o.type === [exports.JSON_TYPE.PRODUCT]),
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.Validate(o => o.type === [exports.JSON_TYPE.PRODUCT]),
     __metadata("design:type", Array)
 ], ProductDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmptyObject(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => OrganizationDTO),
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => OrganizationDTO),
     __metadata("design:type", OrganizationDTO)
 ], ProductDTO.prototype, "manufacturer", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], ProductDTO.prototype, "name", void 0);
 __decorate([
-    classValidator__default['default'].IsOptional(),
-    classValidator__default['default'].IsString(),
+    classValidator.IsOptional(),
+    classValidator.IsString(),
     __metadata("design:type", String)
 ], ProductDTO.prototype, "description", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmptyObject(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => MeasurementDTO),
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => MeasurementDTO),
     __metadata("design:type", MeasurementDTO)
 ], ProductDTO.prototype, "sizeOrAmount", void 0);
 
 class ProductCredentialSubjectDTO {
 }
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ArrayNotEmpty(),
-    classValidator__default['default'].IsEnum(exports.JSON_TYPE, { each: true }),
+    classValidator.IsArray(),
+    classValidator.ArrayNotEmpty(),
+    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
     __metadata("design:type", Array)
 ], ProductCredentialSubjectDTO.prototype, "type", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsNumberString(),
+    classValidator.IsNotEmpty(),
+    classValidator.IsNumberString(),
     __metadata("design:type", String)
 ], ProductCredentialSubjectDTO.prototype, "HSCode", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmpty(),
-    classValidator__default['default'].IsString(),
-    classValidator__default['default'].Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/),
+    classValidator.IsNotEmpty(),
+    classValidator.IsString(),
+    classValidator.Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/),
     __metadata("design:type", String)
 ], ProductCredentialSubjectDTO.prototype, "productionDate", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmptyObject(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => PlaceDTO),
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => PlaceDTO),
     __metadata("design:type", PlaceDTO)
 ], ProductCredentialSubjectDTO.prototype, "facility", void 0);
 __decorate([
-    classValidator__default['default'].IsNotEmptyObject(),
-    classValidator__default['default'].ValidateNested(),
-    classTransformer__default['default'].Type(() => ProductDTO),
+    classValidator.IsNotEmptyObject(),
+    classValidator.ValidateNested(),
+    classTransformer.Type(() => ProductDTO),
     __metadata("design:type", ProductDTO)
 ], ProductCredentialSubjectDTO.prototype, "product", void 0);
 __decorate([
-    classValidator__default['default'].IsArray(),
-    classValidator__default['default'].ValidateNested({ each: true }),
-    classTransformer__default['default'].Type(() => ObservationDTO),
+    classValidator.IsArray(),
+    classValidator.ValidateNested({ each: true }),
+    classTransformer.Type(() => ObservationDTO),
     __metadata("design:type", Array)
 ], ProductCredentialSubjectDTO.prototype, "observation", void 0);
 
@@ -852,169 +820,76 @@ exports.UpdateContractDTO = UpdateContractDTO;
 exports.UpdateNotificationSettingsDTO = UpdateNotificationSettingsDTO;
 exports.ValidationDTO = ValidationDTO;
 exports.VerifiableCredentialDTO = VerifiableCredentialDTO;
-});
+}(index_cjs));
 
-unwrapExports(index_cjs);
-var index_cjs_1 = index_cjs.UPLOAD_TYPE;
-index_cjs.JSON_TYPE;
-index_cjs.PROOF_PURPOSE_TYPE;
-index_cjs.NOTIFICATION_TYPE;
-index_cjs.SOCKET_EVENT_NAME;
-index_cjs.ORGANIZATION_ROLE;
-var index_cjs_7 = index_cjs.AddressDTO;
-var index_cjs_8 = index_cjs.AnalyticsDTO;
-var index_cjs_9 = index_cjs.CategorizedNotificationsDTO;
-var index_cjs_10 = index_cjs.ConfirmContractDTO;
-var index_cjs_11 = index_cjs.CreateContractDTO;
-var index_cjs_12 = index_cjs.CreateOrganizationDto;
-var index_cjs_13 = index_cjs.DeleteContractsDTO;
-var index_cjs_14 = index_cjs.GeoCoordinatesDTO;
-var index_cjs_15 = index_cjs.IssuerDTO;
-var index_cjs_16 = index_cjs.MeasurementDTO;
-var index_cjs_17 = index_cjs.NotificationDTO;
-var index_cjs_18 = index_cjs.ObservationDTO;
-var index_cjs_19 = index_cjs.OrganizationDTO;
-var index_cjs_20 = index_cjs.ParcelDeliveryDTO;
-var index_cjs_21 = index_cjs.PlaceDTO;
-var index_cjs_22 = index_cjs.PostalAddressDTO;
-var index_cjs_23 = index_cjs.ProductCredentialSubjectDTO;
-var index_cjs_24 = index_cjs.ProductDTO;
-var index_cjs_25 = index_cjs.ProofDTO;
-var index_cjs_26 = index_cjs.PropertyDTO;
-var index_cjs_27 = index_cjs.ReadNotificationDTO;
-index_cjs.SaveS3DocumentsFolderPathDTO;
-var index_cjs_29 = index_cjs.SocketEventDTO;
-var index_cjs_30 = index_cjs.UpdateContractDTO;
-var index_cjs_31 = index_cjs.UpdateNotificationSettingsDTO;
-var index_cjs_32 = index_cjs.ValidationDTO;
-var index_cjs_33 = index_cjs.VerifiableCredentialDTO;
-
-class AnalyticsDTO extends index_cjs_8 {
-}
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsDateString(),
-    __metadata("design:type", Date)
-], AnalyticsDTO.prototype, "eventCreatedAt", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "eventType", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsDateString(),
-    __metadata("design:type", Date)
-], AnalyticsDTO.prototype, "productCreatedAt", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "productionMonth", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "buyerName", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "origin", void 0);
-__decorate([
-    classValidator.IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "price", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "volume", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "aging", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "qpInBond", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "entryId", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "ftzNo", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "portOfEntry", void 0);
-__decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "streamType", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "startTransportMonth", void 0);
-__decorate([
-    classValidator.IsString(),
-    __metadata("design:type", String)
-], AnalyticsDTO.prototype, "refineryName", void 0);
-__decorate([
-    classValidator.IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "sulphur", void 0);
-__decorate([
-    classValidator.IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "density", void 0);
-__decorate([
-    classValidator.IsNumber(),
-    __metadata("design:type", Number)
-], AnalyticsDTO.prototype, "tan", void 0);
-
-class ValidationDTO extends index_cjs_32 {
+class AnalyticsDTO extends index_cjs.AnalyticsDTO {
 }
 
-class ConfirmContractDTO extends index_cjs_10 {
+class ValidationDTO extends index_cjs.ValidationDTO {
 }
 
-class CreateContractDTO extends index_cjs_11 {
+class ConfirmContractDTO extends index_cjs.ConfirmContractDTO {
 }
 
-class DeleteContractsDTO extends index_cjs_13 {
+class CreateContractDTO extends index_cjs.CreateContractDTO {
 }
 
-class UpdateContractDTO extends index_cjs_30 {
+class DeleteContractsDTO extends index_cjs.DeleteContractsDTO {
+}
+
+class UpdateContractDTO extends index_cjs.UpdateContractDTO {
+}
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
 }
 
 var _a;
 class SaveS3DocumentsFolderPathDTO {
 }
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsEnum(index_cjs_1),
-    __metadata("design:type", typeof (_a = typeof index_cjs_1 !== "undefined" && index_cjs_1) === "function" ? _a : Object)
+    require$$0.IsNotEmpty(),
+    require$$0.IsEnum(index_cjs.UPLOAD_TYPE),
+    __metadata("design:type", typeof (_a = typeof index_cjs.UPLOAD_TYPE !== "undefined" && index_cjs.UPLOAD_TYPE) === "function" ? _a : Object)
 ], SaveS3DocumentsFolderPathDTO.prototype, "uploadType", void 0);
 __decorate([
-    classValidator.ValidateIf(o => o.uploadType === index_cjs_1.TRANSFER_REQUEST && !o.receiverS3DocumentsFolderPath),
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
+    require$$0.ValidateIf(o => o.uploadType === index_cjs.UPLOAD_TYPE.TRANSFER_REQUEST && !o.receiverS3DocumentsFolderPath),
+    require$$0.IsNotEmpty(),
+    require$$0.IsString(),
     __metadata("design:type", String)
 ], SaveS3DocumentsFolderPathDTO.prototype, "senderS3DocumentsFolderPath", void 0);
 __decorate([
-    classValidator.ValidateIf(o => o.uploadType === index_cjs_1.TRANSFER_REQUEST && !o.senderS3DocumentsFolderPath),
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
+    require$$0.ValidateIf(o => o.uploadType === index_cjs.UPLOAD_TYPE.TRANSFER_REQUEST && !o.senderS3DocumentsFolderPath),
+    require$$0.IsNotEmpty(),
+    require$$0.IsString(),
     __metadata("design:type", String)
 ], SaveS3DocumentsFolderPathDTO.prototype, "receiverS3DocumentsFolderPath", void 0);
 __decorate([
-    classValidator.ValidateIf(o => o.uploadType === index_cjs_1.CONTRACT || o.uploadType === index_cjs_1.PRODUCT_EVENT),
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
+    require$$0.ValidateIf(o => o.uploadType === index_cjs.UPLOAD_TYPE.CONTRACT || o.uploadType === index_cjs.UPLOAD_TYPE.PRODUCT_EVENT),
+    require$$0.IsNotEmpty(),
+    require$$0.IsString(),
     __metadata("design:type", String)
 ], SaveS3DocumentsFolderPathDTO.prototype, "s3DocumentsFolderPath", void 0);
 
@@ -1023,46 +898,46 @@ exports.JSON_TYPE = void 0;
     JSON_TYPE["METAL_PRODUCT"] = "MetalProduct";
 })(exports.JSON_TYPE || (exports.JSON_TYPE = {}));
 
-class AddressDTO extends index_cjs_7 {
+class AddressDTO extends index_cjs.AddressDTO {
 }
 
-class GeoCoordinatesDTO extends index_cjs_14 {
+class GeoCoordinatesDTO extends index_cjs.GeoCoordinatesDTO {
 }
 
-class IssuerDTO extends index_cjs_15 {
+class IssuerDTO extends index_cjs.IssuerDTO {
 }
 
-class MeasurementDTO extends index_cjs_16 {
+class MeasurementDTO extends index_cjs.MeasurementDTO {
 }
 
-class ObservationDTO extends index_cjs_18 {
+class ObservationDTO extends index_cjs.ObservationDTO {
 }
 
-class OrganizationDTO extends index_cjs_19 {
+class OrganizationDTO extends index_cjs.OrganizationDTO {
 }
 
-class ParcelDeliveryDTO extends index_cjs_20 {
+class ParcelDeliveryDTO extends index_cjs.ParcelDeliveryDTO {
 }
 
-class PlaceDTO extends index_cjs_21 {
+class PlaceDTO extends index_cjs.PlaceDTO {
 }
 
-class PostalAddressDTO extends index_cjs_22 {
+class PostalAddressDTO extends index_cjs.PostalAddressDTO {
 }
 
-class ProofDTO extends index_cjs_25 {
+class ProofDTO extends index_cjs.ProofDTO {
 }
 
-class PropertyDTO extends index_cjs_26 {
+class PropertyDTO extends index_cjs.PropertyDTO {
 }
 
-class VerifiableCredentialDTO extends index_cjs_33 {
+class VerifiableCredentialDTO extends index_cjs.VerifiableCredentialDTO {
 }
 __decorate([
-    classValidator.IsArray(),
-    classValidator.ArrayMinSize(3),
-    classValidator.ArrayMaxSize(3),
-    classValidator.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+    require$$0.IsArray(),
+    require$$0.ArrayMinSize(3),
+    require$$0.ArrayMaxSize(3),
+    require$$0.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
         o['@context'].includes('https://schema.org/') &&
         o['@context'].includes('https://mavennet.github.io/contexts/metal-EVENT-v1.0.jsonld')),
     __metadata("design:type", Array)
@@ -1071,89 +946,89 @@ __decorate([
 class EventCreateCredentialSubjectDTOBase {
 }
 __decorate([
-    classValidator.IsOptional(),
-    classValidator.IsString(),
+    require$$0.IsOptional(),
+    require$$0.IsString(),
     __metadata("design:type", String)
 ], EventCreateCredentialSubjectDTOBase.prototype, "description", void 0);
 __decorate([
-    classValidator.IsNotEmptyObject(),
-    classValidator.ValidateNested(),
-    classTransformer.Type(() => AddressDTO),
+    require$$0.IsNotEmptyObject(),
+    require$$0.ValidateNested(),
+    require$$1.Type(() => AddressDTO),
     __metadata("design:type", AddressDTO)
 ], EventCreateCredentialSubjectDTOBase.prototype, "geo", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
-    classValidator.Matches(/^did:/),
+    require$$0.IsNotEmpty(),
+    require$$0.IsString(),
+    require$$0.Matches(/^did:/),
     __metadata("design:type", String)
 ], EventCreateCredentialSubjectDTOBase.prototype, "eventCreator", void 0);
 class AGENT_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
 }
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsUUID(),
+    require$$0.IsNotEmpty(),
+    require$$0.IsUUID(),
     __metadata("design:type", String)
 ], AGENT_EventCreateCredentialSubjectDTO.prototype, "eventId", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsUUID(),
+    require$$0.IsNotEmpty(),
+    require$$0.IsUUID(),
     __metadata("design:type", String)
 ], AGENT_EventCreateCredentialSubjectDTO.prototype, "productId", void 0);
 class CORE_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
 }
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsUrl(),
+    require$$0.IsNotEmpty(),
+    require$$0.IsUrl(),
     __metadata("design:type", String)
 ], CORE_EventCreateCredentialSubjectDTO.prototype, "eventId", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsUrl(),
+    require$$0.IsNotEmpty(),
+    require$$0.IsUrl(),
     __metadata("design:type", String)
 ], CORE_EventCreateCredentialSubjectDTO.prototype, "productId", void 0);
 
 class EventCreateVCDTO extends VerifiableCredentialDTO {
 }
 __decorate([
-    classValidator.IsArray(),
-    classValidator.ArrayMinSize(3),
-    classValidator.ArrayMaxSize(3),
-    classValidator.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+    require$$0.IsArray(),
+    require$$0.ArrayMinSize(3),
+    require$$0.ArrayMaxSize(3),
+    require$$0.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
         o['@context'].includes('https://schema.org/') &&
         o['@context'].includes('https://mavennet.github.io/contexts/metal-product-EVENT-v1.0.jsonld')),
     __metadata("design:type", Array)
 ], EventCreateVCDTO.prototype, "@context", void 0);
 __decorate([
-    classValidator.IsArray(),
-    classValidator.ArrayMinSize(2),
-    classValidator.ArrayMaxSize(2),
-    classValidator.Validate(o => o.type.includes('VerifiableCredential') &&
+    require$$0.IsArray(),
+    require$$0.ArrayMinSize(2),
+    require$$0.ArrayMaxSize(2),
+    require$$0.Validate(o => o.type.includes('VerifiableCredential') &&
         o.type.includes('CreationEventCredential')),
     __metadata("design:type", Array)
 ], EventCreateVCDTO.prototype, "type", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.ValidateNested(),
-    classTransformer.Type(() => CORE_EventCreateCredentialSubjectDTO),
+    require$$0.IsNotEmpty(),
+    require$$0.ValidateNested(),
+    require$$1.Type(() => CORE_EventCreateCredentialSubjectDTO),
     __metadata("design:type", CORE_EventCreateCredentialSubjectDTO)
 ], EventCreateVCDTO.prototype, "credentialSubject", void 0);
 
-class CategorizedNotificationsDTO extends index_cjs_9 {
+class CategorizedNotificationsDTO extends index_cjs.CategorizedNotificationsDTO {
 }
 
-class NotificationDTO extends index_cjs_17 {
+class NotificationDTO extends index_cjs.NotificationDTO {
 }
 
-class ReadNotificationDTO extends index_cjs_27 {
+class ReadNotificationDTO extends index_cjs.ReadNotificationDTO {
 }
 
-class SocketEventDTO extends index_cjs_29 {
+class SocketEventDTO extends index_cjs.SocketEventDTO {
 }
 
-class UpdateNotificationSettingsDTO extends index_cjs_31 {
+class UpdateNotificationSettingsDTO extends index_cjs.UpdateNotificationSettingsDTO {
 }
 
-class CreateOrganizationDto extends index_cjs_12 {
+class CreateOrganizationDto extends index_cjs.CreateOrganizationDto {
 }
 
 exports.PRODUCT_NAME = void 0;
@@ -1167,117 +1042,122 @@ exports.PRODUCT_NAME = void 0;
     PRODUCT_NAME["CARBON_ALLOY_PIPE_TUBE"] = "Carbon and alloy pipe and tube products";
 })(exports.PRODUCT_NAME || (exports.PRODUCT_NAME = {}));
 
-class ProductDTO extends index_cjs_24 {
+class ProductDTO extends index_cjs.ProductDTO {
 }
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsEnum(exports.PRODUCT_NAME),
+    require$$0.IsNotEmpty(),
+    require$$0.IsEnum(exports.PRODUCT_NAME),
     __metadata("design:type", String)
 ], ProductDTO.prototype, "name", void 0);
 
-class ProductCredentialSubjectDTO extends index_cjs_23 {
+class ProductCredentialSubjectDTO extends index_cjs.ProductCredentialSubjectDTO {
 }
 __decorate([
-    classValidator.IsArray(),
-    classValidator.ArrayNotEmpty(),
-    classValidator.IsEnum(exports.JSON_TYPE, { each: true }),
-    classValidator.Validate(o => o.type === [exports.JSON_TYPE.METAL_PRODUCT]),
+    require$$0.IsArray(),
+    require$$0.ArrayNotEmpty(),
+    require$$0.IsEnum(exports.JSON_TYPE, { each: true }),
+    require$$0.Validate(o => o.type === [exports.JSON_TYPE.METAL_PRODUCT]),
     __metadata("design:type", Array)
 ], ProductCredentialSubjectDTO.prototype, "type", void 0);
 __decorate([
-    classValidator.IsNotEmptyObject(),
-    classValidator.ValidateNested(),
-    classTransformer.Type(() => ProductDTO),
+    require$$0.IsNotEmptyObject(),
+    require$$0.ValidateNested(),
+    require$$1.Type(() => ProductDTO),
     __metadata("design:type", ProductDTO)
 ], ProductCredentialSubjectDTO.prototype, "product", void 0);
+__decorate([
+    require$$0.IsOptional(),
+    require$$0.IsString(),
+    __metadata("design:type", String)
+], ProductCredentialSubjectDTO.prototype, "grade", void 0);
 
 class ProductVCDTO extends VerifiableCredentialDTO {
 }
 __decorate([
-    classValidator.IsArray(),
-    classValidator.ArrayMinSize(3),
-    classValidator.ArrayMaxSize(3),
-    classValidator.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+    require$$0.IsArray(),
+    require$$0.ArrayMinSize(3),
+    require$$0.ArrayMaxSize(3),
+    require$$0.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
         o['@context'].includes('https://schema.org/') &&
         o['@context'].includes('https://mavennet.github.io/contexts/metal-product-v1.0.jsonld')),
     __metadata("design:type", Array)
 ], ProductVCDTO.prototype, "@context", void 0);
 __decorate([
-    classValidator.IsArray(),
-    classValidator.ArrayMinSize(2),
-    classValidator.ArrayMaxSize(2),
-    classValidator.Validate(o => o.type.includes('VerifiableCredential') &&
-        o.type.includes('MetalProductCredential')),
+    require$$0.IsArray(),
+    require$$0.ArrayMinSize(2),
+    require$$0.ArrayMaxSize(2),
+    require$$0.Validate(o => o.type.includes(index_cjs.JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
+        o.type.includes(exports.JSON_TYPE.METAL_PRODUCT)),
     __metadata("design:type", Array)
 ], ProductVCDTO.prototype, "type", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.ValidateNested(),
-    classTransformer.Type(() => ProductCredentialSubjectDTO),
+    require$$0.IsNotEmpty(),
+    require$$0.ValidateNested(),
+    require$$1.Type(() => ProductCredentialSubjectDTO),
     __metadata("design:type", ProductCredentialSubjectDTO)
 ], ProductVCDTO.prototype, "credentialSubject", void 0);
 
 class AGENT_CreateProductDTO {
 }
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsUUID(),
+    require$$0.IsNotEmpty(),
+    require$$0.IsUUID(),
     __metadata("design:type", String)
 ], AGENT_CreateProductDTO.prototype, "productId", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.ValidateNested(),
-    classTransformer.Type(() => ProductCredentialSubjectDTO),
+    require$$0.IsNotEmpty(),
+    require$$0.ValidateNested(),
+    require$$1.Type(() => ProductCredentialSubjectDTO),
     __metadata("design:type", ProductCredentialSubjectDTO)
 ], AGENT_CreateProductDTO.prototype, "productCredentialSubject", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.ValidateNested(),
-    classTransformer.Type(() => AGENT_EventCreateCredentialSubjectDTO),
+    require$$0.IsNotEmpty(),
+    require$$0.ValidateNested(),
+    require$$1.Type(() => AGENT_EventCreateCredentialSubjectDTO),
     __metadata("design:type", AGENT_EventCreateCredentialSubjectDTO)
 ], AGENT_CreateProductDTO.prototype, "eventCredentialSubject", void 0);
 class CORE_CreateProductDTO {
 }
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsUUID(),
+    require$$0.IsNotEmpty(),
+    require$$0.IsUUID(),
     __metadata("design:type", String)
 ], CORE_CreateProductDTO.prototype, "productId", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.ValidateNested(),
-    classTransformer.Type(() => ProductVCDTO),
+    require$$0.IsNotEmpty(),
+    require$$0.ValidateNested(),
+    require$$1.Type(() => ProductVCDTO),
     __metadata("design:type", ProductVCDTO)
 ], CORE_CreateProductDTO.prototype, "productVC", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
+    require$$0.IsNotEmpty(),
+    require$$0.IsString(),
     __metadata("design:type", String)
 ], CORE_CreateProductDTO.prototype, "productVCHash", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsUUID(),
+    require$$0.IsNotEmpty(),
+    require$$0.IsUUID(),
     __metadata("design:type", String)
 ], CORE_CreateProductDTO.prototype, "eventId", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.ValidateNested(),
-    classTransformer.Type(() => EventCreateVCDTO),
+    require$$0.IsNotEmpty(),
+    require$$0.ValidateNested(),
+    require$$1.Type(() => EventCreateVCDTO),
     __metadata("design:type", EventCreateVCDTO)
 ], CORE_CreateProductDTO.prototype, "eventVC", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
+    require$$0.IsNotEmpty(),
+    require$$0.IsString(),
     __metadata("design:type", String)
 ], CORE_CreateProductDTO.prototype, "eventVCHash", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
+    require$$0.IsNotEmpty(),
+    require$$0.IsString(),
     __metadata("design:type", String)
 ], CORE_CreateProductDTO.prototype, "txHash", void 0);
 __decorate([
-    classValidator.IsNotEmpty(),
-    classValidator.IsString(),
+    require$$0.IsNotEmpty(),
+    require$$0.IsString(),
     __metadata("design:type", String)
 ], CORE_CreateProductDTO.prototype, "txTimestamp", void 0);
 
