@@ -893,10 +893,10 @@ __decorate([
     __metadata("design:type", String)
 ], SaveS3DocumentsFolderPathDTO.prototype, "s3DocumentsFolderPath", void 0);
 
-exports.JSON_TYPE = void 0;
-(function (JSON_TYPE) {
-    JSON_TYPE["METAL_PRODUCT"] = "MetalProduct";
-})(exports.JSON_TYPE || (exports.JSON_TYPE = {}));
+exports.JSON_TYPE_METAL = void 0;
+(function (JSON_TYPE_METAL) {
+    JSON_TYPE_METAL["METAL_PRODUCT"] = "MetalProduct";
+})(exports.JSON_TYPE_METAL || (exports.JSON_TYPE_METAL = {}));
 
 class AddressDTO extends index_cjs.AddressDTO {
 }
@@ -1055,8 +1055,8 @@ class ProductCredentialSubjectDTO extends index_cjs.ProductCredentialSubjectDTO 
 __decorate([
     require$$0.IsArray(),
     require$$0.ArrayNotEmpty(),
-    require$$0.IsEnum(exports.JSON_TYPE, { each: true }),
-    require$$0.Validate(o => o.type === [exports.JSON_TYPE.METAL_PRODUCT]),
+    require$$0.IsEnum(index_cjs.JSON_TYPE, { each: true }),
+    require$$0.Validate(o => o.type === [index_cjs.JSON_TYPE.METAL_PRODUCT]),
     __metadata("design:type", Array)
 ], ProductCredentialSubjectDTO.prototype, "type", void 0);
 __decorate([
@@ -1087,7 +1087,7 @@ __decorate([
     require$$0.ArrayMinSize(2),
     require$$0.ArrayMaxSize(2),
     require$$0.Validate(o => o.type.includes(index_cjs.JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
-        o.type.includes(exports.JSON_TYPE.METAL_PRODUCT)),
+        o.type.includes(exports.JSON_TYPE_METAL.METAL_PRODUCT)),
     __metadata("design:type", Array)
 ], ProductVCDTO.prototype, "type", void 0);
 __decorate([
@@ -1175,6 +1175,7 @@ exports.DeleteContractsDTO = DeleteContractsDTO;
 exports.EventCreateVCDTO = EventCreateVCDTO;
 exports.GeoCoordinatesDTO = GeoCoordinatesDTO;
 exports.IssuerDTO = IssuerDTO;
+exports.JSON_TYPE = index_cjs.JSON_TYPE;
 exports.MeasurementDTO = MeasurementDTO;
 exports.NotificationDTO = NotificationDTO;
 exports.ObservationDTO = ObservationDTO;
