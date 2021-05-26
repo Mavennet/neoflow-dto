@@ -1,5 +1,5 @@
 {
-	"@context":[
+  "@context":[
     "https://www.w3.org/2018/credentials/v1",
     "https://w3id.org/traceability/v1",
     "https://mavennet.github.io/contexts/metal-product-v1.0.jsonld"
@@ -17,21 +17,21 @@
     "proofPurpose":"assertionMethod",
     "verificationMethod":"did:key:z6MkiTsvjrrPNDZ1rrg9QDEYCFWCmEswT6U2cEkScb7edQ9b#z6MkiTsvjrrPNDZ1rrg9QDEYCFWCmEswT6U2cEkScb7edQ9b"
   },
-  "credentialSubject": {
-  	"@context": [
+  "credentialSubject":{
+    "@context":[
       "https://w3id.org/traceability/v1"
     ],
-  	"type":[
+    "type":[
       "MetalProduct"
     ],
-    "heatNumber": "30714",
+    "heatNumber":"30714",
     "HSCode":"270900",
     "productionDate":"2021-05-19",
     "product":{
       "type":[
         "Product"
       ],
-    	"name":"Metallurgical Coke",
+      "name":"Metallurgical Coke",
       "description":"Coke and semi-coke of coal, of lignite or of peat, whether or not agglomerated; retort carbon",
       "manufacturer":{
         "type":[
