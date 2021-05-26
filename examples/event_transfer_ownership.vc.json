@@ -25,7 +25,6 @@
       "EventCredential",
       "TransferOwnershipEventCredential"
     ],
-    "eventType": "ownershipTransfer",
     "eventTime": "2021-02-04T20:29:37+00:00",
     "place": {
       "geo":{
