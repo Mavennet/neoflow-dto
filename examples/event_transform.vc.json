@@ -7,7 +7,7 @@
   "type":[
     "VerifiableCredential"
   ],
-  "id":"https://supplier-api.metaltrail.ca/v1/credentials/verify/7c2111ec-d201-4935-8871-d272632b310a",
+  "id":"https://producer-api.metaltrail.ca/v1/credentials/verify/7c2111ec-d201-4935-8871-d272632b310a",
   "issuanceDate":"2021-02-04T20:29:37+00:00",
   "issuer":"did:key:z6MktHQo3fRRohk44dsbE76CuiTpBmyMWq2VVjvV6aBSeE3U",
   "proof":{
@@ -25,7 +25,7 @@
       "EventCredential",
       "ProductTransformationEventCredential"
     ],
-    "eventId":"https://supplier-api.metaltrail.ca/v1/credentials/verify/7c2111ec-d201-4935-8871-d272632b310a",
+    "eventId":"https://producer-api.metaltrail.ca/v1/credentials/verify/7c2111ec-d201-4935-8871-d272632b310a",
     "eventType":"smelt", // finishing, fabricate, casting
     "eventTime":"2021-02-04T20:29:37+00:00",
     "initiator":{
@@ -61,7 +61,7 @@
         "type":[
           "MetalProduct"
         ],
-        "id":"https://supplier-api.metaltrail.ca/v1/credentials/verify/13bc60dd-d936-45be-ac23-ec72ac89144c",
+        "id":"https://producer-api.metaltrail.ca/v1/credentials/verify/13bc60dd-d936-45be-ac23-ec72ac89144c",
         "name":"Heat",
         "description":"",
         "manufacturer":{
