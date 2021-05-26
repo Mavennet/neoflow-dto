@@ -718,10 +718,6 @@ __decorate([
     classValidator.IsString(),
     __metadata("design:type", String)
 ], CreateOrganizationDto.prototype, "backendLink", void 0);
-__decorate([
-    classValidator.IsNotEmptyObject(),
-    __metadata("design:type", Map)
-], CreateOrganizationDto.prototype, "uwi", void 0);
 
 class ProductDTO {
 }
