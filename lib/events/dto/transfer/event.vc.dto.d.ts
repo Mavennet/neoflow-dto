@@ -1,7 +1,7 @@
 import { VerifiableCredentialDTO } from '../../../general';
-import { TransferEventCredentialSubjectDTO } from './event.credentialSubject.dto';
+import { CORE_TransferEventCredentialSubjectDTO } from './event.credentialSubject.dto';
 export declare class TransferEventVCDTO extends VerifiableCredentialDTO {
     '@context': string[];
     type: string[];
-    credentialSubject: TransferEventCredentialSubjectDTO | TransferEventCredentialSubjectDTO;
+    credentialSubject: CORE_TransferEventCredentialSubjectDTO;
 }

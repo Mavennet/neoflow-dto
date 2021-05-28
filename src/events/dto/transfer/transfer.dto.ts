@@ -9,23 +9,30 @@ import {
 import { Type } from 'class-transformer'
 import { AddressDTO } from '../../../general'
 import { TransferEventVCDTO } from './event.vc.dto'
+import {
+  AGENT_TransferEventCredentialSubjectDTO
+} from './event.credentialSubject.dto'
 
-export class AGENT_TransferOwnershipDTO {
+export class AGENT_TransferDTO {
   @IsNotEmpty()
   @IsNumber()
   requestId: number
 
   @IsNotEmpty()
   @IsUUID()
+  productId: string
+
+  @IsNotEmpty()
+  @IsUUID()
   eventId: string
 
-  @IsNotEmptyObject()
+  @IsNotEmpty()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  geo: AddressDTO
+  @Type(() => AGENT_TransferEventCredentialSubjectDTO)
+  eventCredentialSubject: AGENT_TransferEventCredentialSubjectDTO
 }
 
-export class CORE_TransferOwnershipDTO {
+export class CORE_TransferDTO {
   @IsNotEmpty()
   @IsNumber()
   requestId: number

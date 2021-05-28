@@ -24,15 +24,7 @@ import {
   ProductDTO
 } from '../../../products'
 
-export class TransferEventCredentialSubjectDTO {
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
-
-  @IsArray()
-  @ArrayMinSize(1)
-  type: string[]
-
+export class AGENT_TransferEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
   eventType: EVENT_TYPE
@@ -91,4 +83,15 @@ export class TransferEventCredentialSubjectDTO {
   @IsNumber()
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_OWNERSHIP)
   price: number
+}
+
+export class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {
+  @IsArray()
+  @ArrayMinSize(1)
+  '@context': string[]
+
+  @IsArray()
+  @ArrayMinSize(1)
+  type: string[]
+
 }

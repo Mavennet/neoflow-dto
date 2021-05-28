@@ -9,7 +9,7 @@ import {
 import { Type } from 'class-transformer'
 import { VerifiableCredentialDTO } from '../../../general'
 import {
-  TransferEventCredentialSubjectDTO
+  CORE_TransferEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 
 export class TransferEventVCDTO extends VerifiableCredentialDTO {
@@ -31,6 +31,6 @@ export class TransferEventVCDTO extends VerifiableCredentialDTO {
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => TransferEventCredentialSubjectDTO)
-  credentialSubject: TransferEventCredentialSubjectDTO | TransferEventCredentialSubjectDTO
+  @Type(() => CORE_TransferEventCredentialSubjectDTO)
+  credentialSubject: CORE_TransferEventCredentialSubjectDTO
 }

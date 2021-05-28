@@ -1,11 +1,12 @@
-import { AddressDTO } from '../../../general';
 import { TransferEventVCDTO } from './event.vc.dto';
-export declare class AGENT_TransferOwnershipDTO {
+import { AGENT_TransferEventCredentialSubjectDTO } from './event.credentialSubject.dto';
+export declare class AGENT_TransferDTO {
     requestId: number;
+    productId: string;
     eventId: string;
-    geo: AddressDTO;
+    eventCredentialSubject: AGENT_TransferEventCredentialSubjectDTO;
 }
-export declare class CORE_TransferOwnershipDTO {
+export declare class CORE_TransferDTO {
     requestId: number;
     productId: string;
     eventId: string;
