@@ -1,13 +1,14 @@
 import { IsNotEmpty, IsString, ValidateNested, IsUUID } from 'class-validator'
 import { Type } from 'class-transformer'
-import { ProductVCDTO } from './product.vc.dto'
-import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto'
 import { 
-	EventCreateVCDTO,
-	AGENT_EventCreateCredentialSubjectDTO
-} from '../../events'
+  ProductVCDTO,
+  ProductCredentialSubjectDTO
+} from '../../../products'
+import { EventCreateVCDTO } from './event.vc.dto'
+import {	
+  AGENT_EventCreateCredentialSubjectDTO 
+} from './event.credentialSubject.dto'
 
-// https://w3c-ccg.github.io/traceability-vocab/#SteelProduct
 
 export class AGENT_CreateProductDTO {
   @IsNotEmpty()

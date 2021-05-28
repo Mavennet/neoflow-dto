@@ -7,12 +7,12 @@ import {
   Validate
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { VerifiableCredentialDTO } from '../../general'
+import { VerifiableCredentialDTO } from '../../../general'
 import {
-  CORE_EventCreateCredentialSubjectDTO
-} from './eventCreate.credentialSubject.dto'
+  CORE_TransferEventCredentialSubjectDTO
+} from './event.credentialSubject.dto'
 
-export class EventCreateVCDTO extends VerifiableCredentialDTO {
+export class TransferEventVCDTO extends VerifiableCredentialDTO {
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -24,16 +24,13 @@ export class EventCreateVCDTO extends VerifiableCredentialDTO {
   '@context': string[]
 
   @IsArray()
-  @ArrayMinSize(2)
-  @ArrayMaxSize(2)
-  @Validate(o =>
-    o.type.includes('VerifiableCredential') &&
-    o.type.includes('CreationEventCredential')
-  )
+  @ArrayMinSize(1)
+  @ArrayMaxSize(1)
+  @Validate(o => o.type.includes('VerifiableCredential'))
   type: string[]
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => CORE_EventCreateCredentialSubjectDTO)
-  credentialSubject: CORE_EventCreateCredentialSubjectDTO
+  @Type(() => CORE_TransferEventCredentialSubjectDTO)
+  credentialSubject: CORE_TransferEventCredentialSubjectDTO
 }
