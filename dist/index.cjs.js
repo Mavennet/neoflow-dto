@@ -889,6 +889,34 @@ __decorate([
     __metadata("design:type", String)
 ], SaveS3DocumentsFolderPathDTO.prototype, "s3DocumentsFolderPath", void 0);
 
+exports.PRODUCT_NAME = void 0;
+(function (PRODUCT_NAME) {
+    PRODUCT_NAME["METALLURGICAL_COKE"] = "Metallurgical Coke";
+    PRODUCT_NAME["IRON_ORE"] = "Iron Ore";
+    PRODUCT_NAME["SCRAP_STEEL"] = "Scrap Steel";
+    PRODUCT_NAME["HEAT"] = "Heat";
+    PRODUCT_NAME["CARBON_ALLOY_SEMI"] = "Carbon and alloy semi-finished products";
+    PRODUCT_NAME["CARBON_ALLOY_FLAT"] = "Carbon and alloy flat product";
+    PRODUCT_NAME["CARBON_ALLOY_PIPE_TUBE"] = "Carbon and alloy pipe and tube products";
+})(exports.PRODUCT_NAME || (exports.PRODUCT_NAME = {}));
+
+exports.EVENT_TYPE = void 0;
+(function (EVENT_TYPE) {
+    EVENT_TYPE["CREATE"] = "create";
+    EVENT_TYPE["TRANSFER_CUSTODY"] = "transferCustody";
+    EVENT_TYPE["TRANSFER_OWNERSHIP"] = "transferOwnership";
+    EVENT_TYPE["CASTING"] = "casting";
+    EVENT_TYPE["SMELT"] = "smelt";
+    EVENT_TYPE["FINISHING"] = "finishing";
+    EVENT_TYPE["FABRICATING"] = "fabricating";
+    EVENT_TYPE["TRANSPORT_START"] = "startTransport";
+    EVENT_TYPE["TRANSPORT_END"] = "endTransport";
+    EVENT_TYPE["STORAGE_START"] = "storageStart";
+    EVENT_TYPE["STORAGE_END"] = "storageEnd";
+    EVENT_TYPE["INSPECT"] = "inspect";
+    EVENT_TYPE["INBOND"] = "inbond";
+})(exports.EVENT_TYPE || (exports.EVENT_TYPE = {}));
+
 exports.JSON_TYPE_METAL = void 0;
 (function (JSON_TYPE_METAL) {
     JSON_TYPE_METAL["METAL_PRODUCT"] = "MetalProduct";
@@ -929,15 +957,61 @@ class PropertyDTO extends index_cjs.PropertyDTO {
 
 class VerifiableCredentialDTO extends index_cjs.VerifiableCredentialDTO {
 }
+
+class ProductDTO extends index_cjs.ProductDTO {
+}
+__decorate([
+    require$$0.IsNotEmpty(),
+    require$$0.IsEnum(exports.PRODUCT_NAME),
+    __metadata("design:type", String)
+], ProductDTO.prototype, "name", void 0);
+
+class ProductCredentialSubjectDTO extends index_cjs.ProductCredentialSubjectDTO {
+}
+__decorate([
+    require$$0.IsArray(),
+    require$$0.ArrayNotEmpty(),
+    require$$0.IsEnum(index_cjs.JSON_TYPE, { each: true }),
+    require$$0.Validate(o => o.type === [index_cjs.JSON_TYPE.METAL_PRODUCT]),
+    __metadata("design:type", Array)
+], ProductCredentialSubjectDTO.prototype, "type", void 0);
+__decorate([
+    require$$0.IsNotEmptyObject(),
+    require$$0.ValidateNested(),
+    require$$1.Type(() => ProductDTO),
+    __metadata("design:type", ProductDTO)
+], ProductCredentialSubjectDTO.prototype, "product", void 0);
+__decorate([
+    require$$0.IsOptional(),
+    require$$0.IsString(),
+    __metadata("design:type", String)
+], ProductCredentialSubjectDTO.prototype, "grade", void 0);
+
+class ProductVCDTO extends VerifiableCredentialDTO {
+}
 __decorate([
     require$$0.IsArray(),
     require$$0.ArrayMinSize(3),
     require$$0.ArrayMaxSize(3),
     require$$0.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
         o['@context'].includes('https://schema.org/') &&
-        o['@context'].includes('https://mavennet.github.io/contexts/metal-EVENT-v1.0.jsonld')),
+        o['@context'].includes('https://mavennet.github.io/contexts/metal-product-v1.0.jsonld')),
     __metadata("design:type", Array)
-], VerifiableCredentialDTO.prototype, "@context", void 0);
+], ProductVCDTO.prototype, "@context", void 0);
+__decorate([
+    require$$0.IsArray(),
+    require$$0.ArrayMinSize(2),
+    require$$0.ArrayMaxSize(2),
+    require$$0.Validate(o => o.type.includes(index_cjs.JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
+        o.type.includes(exports.JSON_TYPE_METAL.METAL_PRODUCT)),
+    __metadata("design:type", Array)
+], ProductVCDTO.prototype, "type", void 0);
+__decorate([
+    require$$0.IsNotEmpty(),
+    require$$0.ValidateNested(),
+    require$$1.Type(() => ProductCredentialSubjectDTO),
+    __metadata("design:type", ProductCredentialSubjectDTO)
+], ProductVCDTO.prototype, "credentialSubject", void 0);
 
 class EventCreateCredentialSubjectDTOBase {
 }
@@ -972,6 +1046,15 @@ __decorate([
 ], AGENT_EventCreateCredentialSubjectDTO.prototype, "productId", void 0);
 class CORE_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
 }
+__decorate([
+    require$$0.IsArray(),
+    require$$0.ArrayMinSize(1),
+    __metadata("design:type", Array)
+], CORE_EventCreateCredentialSubjectDTO.prototype, "@context", void 0);
+__decorate([
+    require$$0.IsArray(),
+    __metadata("design:type", Array)
+], CORE_EventCreateCredentialSubjectDTO.prototype, "type", void 0);
 __decorate([
     require$$0.IsNotEmpty(),
     require$$0.IsUrl(),
@@ -1008,90 +1091,6 @@ __decorate([
     require$$1.Type(() => CORE_EventCreateCredentialSubjectDTO),
     __metadata("design:type", CORE_EventCreateCredentialSubjectDTO)
 ], EventCreateVCDTO.prototype, "credentialSubject", void 0);
-
-class CategorizedNotificationsDTO extends index_cjs.CategorizedNotificationsDTO {
-}
-
-class NotificationDTO extends index_cjs.NotificationDTO {
-}
-
-class ReadNotificationDTO extends index_cjs.ReadNotificationDTO {
-}
-
-class SocketEventDTO extends index_cjs.SocketEventDTO {
-}
-
-class UpdateNotificationSettingsDTO extends index_cjs.UpdateNotificationSettingsDTO {
-}
-
-class CreateOrganizationDto extends index_cjs.CreateOrganizationDto {
-}
-
-exports.PRODUCT_NAME = void 0;
-(function (PRODUCT_NAME) {
-    PRODUCT_NAME["METALLURGICAL_COKE"] = "Metallurgical Coke";
-    PRODUCT_NAME["IRON_ORE"] = "Iron Ore";
-    PRODUCT_NAME["SCRAP_STEEL"] = "Scrap Steel";
-    PRODUCT_NAME["HEAT"] = "Heat";
-    PRODUCT_NAME["CARBON_ALLOY_SEMI"] = "Carbon and alloy semi-finished products";
-    PRODUCT_NAME["CARBON_ALLOY_FLAT"] = "Carbon and alloy flat product";
-    PRODUCT_NAME["CARBON_ALLOY_PIPE_TUBE"] = "Carbon and alloy pipe and tube products";
-})(exports.PRODUCT_NAME || (exports.PRODUCT_NAME = {}));
-
-class ProductDTO extends index_cjs.ProductDTO {
-}
-__decorate([
-    require$$0.IsNotEmpty(),
-    require$$0.IsEnum(exports.PRODUCT_NAME),
-    __metadata("design:type", String)
-], ProductDTO.prototype, "name", void 0);
-
-class ProductCredentialSubjectDTO extends index_cjs.ProductCredentialSubjectDTO {
-}
-__decorate([
-    require$$0.IsArray(),
-    require$$0.ArrayNotEmpty(),
-    require$$0.IsEnum(index_cjs.JSON_TYPE, { each: true }),
-    require$$0.Validate(o => o.type === [index_cjs.JSON_TYPE.METAL_PRODUCT]),
-    __metadata("design:type", Array)
-], ProductCredentialSubjectDTO.prototype, "type", void 0);
-__decorate([
-    require$$0.IsNotEmptyObject(),
-    require$$0.ValidateNested(),
-    require$$1.Type(() => ProductDTO),
-    __metadata("design:type", ProductDTO)
-], ProductCredentialSubjectDTO.prototype, "product", void 0);
-__decorate([
-    require$$0.IsOptional(),
-    require$$0.IsString(),
-    __metadata("design:type", String)
-], ProductCredentialSubjectDTO.prototype, "grade", void 0);
-
-class ProductVCDTO extends index_cjs.VerifiableCredentialDTO {
-}
-__decorate([
-    require$$0.IsArray(),
-    require$$0.ArrayMinSize(3),
-    require$$0.ArrayMaxSize(3),
-    require$$0.Validate(o => o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
-        o['@context'].includes('https://schema.org/') &&
-        o['@context'].includes('https://mavennet.github.io/contexts/metal-product-v1.0.jsonld')),
-    __metadata("design:type", Array)
-], ProductVCDTO.prototype, "@context", void 0);
-__decorate([
-    require$$0.IsArray(),
-    require$$0.ArrayMinSize(2),
-    require$$0.ArrayMaxSize(2),
-    require$$0.Validate(o => o.type.includes(index_cjs.JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
-        o.type.includes(exports.JSON_TYPE_METAL.METAL_PRODUCT)),
-    __metadata("design:type", Array)
-], ProductVCDTO.prototype, "type", void 0);
-__decorate([
-    require$$0.IsNotEmpty(),
-    require$$0.ValidateNested(),
-    require$$1.Type(() => ProductCredentialSubjectDTO),
-    __metadata("design:type", ProductCredentialSubjectDTO)
-], ProductVCDTO.prototype, "credentialSubject", void 0);
 
 class AGENT_CreateProductDTO {
 }
@@ -1157,6 +1156,24 @@ __decorate([
     __metadata("design:type", String)
 ], CORE_CreateProductDTO.prototype, "txTimestamp", void 0);
 
+class CategorizedNotificationsDTO extends index_cjs.CategorizedNotificationsDTO {
+}
+
+class NotificationDTO extends index_cjs.NotificationDTO {
+}
+
+class ReadNotificationDTO extends index_cjs.ReadNotificationDTO {
+}
+
+class SocketEventDTO extends index_cjs.SocketEventDTO {
+}
+
+class UpdateNotificationSettingsDTO extends index_cjs.UpdateNotificationSettingsDTO {
+}
+
+class CreateOrganizationDto extends index_cjs.CreateOrganizationDto {
+}
+
 exports.AGENT_CreateProductDTO = AGENT_CreateProductDTO;
 exports.AGENT_EventCreateCredentialSubjectDTO = AGENT_EventCreateCredentialSubjectDTO;
 exports.AddressDTO = AddressDTO;
@@ -1180,6 +1197,7 @@ exports.ParcelDeliveryDTO = ParcelDeliveryDTO;
 exports.PlaceDTO = PlaceDTO;
 exports.PostalAddressDTO = PostalAddressDTO;
 exports.ProductCredentialSubjectDTO = ProductCredentialSubjectDTO;
+exports.ProductDTO = ProductDTO;
 exports.ProductVCDTO = ProductVCDTO;
 exports.ProofDTO = ProofDTO;
 exports.PropertyDTO = PropertyDTO;

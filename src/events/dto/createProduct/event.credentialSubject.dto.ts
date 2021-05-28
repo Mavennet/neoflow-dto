@@ -1,15 +1,17 @@
 import {
   IsNotEmpty,
   IsNotEmptyObject,
+  IsArray,
   IsOptional,
   IsUUID,
   IsUrl,
   IsString,
   ValidateNested,
-  Matches
+  Matches,
+  ArrayMinSize
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { AddressDTO } from '../../general'
+import { AddressDTO } from '../../../general'
 
 class EventCreateCredentialSubjectDTOBase {
   @IsOptional()
@@ -38,6 +40,13 @@ export class AGENT_EventCreateCredentialSubjectDTO extends EventCreateCredential
 }
 
 export class CORE_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
+  @IsArray()
+  @ArrayMinSize(1)
+  '@context': string[]
+
+  @IsArray()
+  type: string[]
+
   @IsNotEmpty()
   @IsUrl()
   eventId: string

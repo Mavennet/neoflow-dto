@@ -4,7 +4,7 @@ import {
   IsString,
   ValidateIf
 } from 'class-validator'
-import { UPLOAD_TYPE } from 'mavennet-dto'
+import { UPLOAD_TYPE } from '../constants'
 
 export class SaveS3DocumentsFolderPathDTO {
   @IsNotEmpty()

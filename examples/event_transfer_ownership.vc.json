@@ -81,6 +81,51 @@
       ],
       "name":"Steel Co."
     },
-    "price":100
+    "price":100,
+    "portOfEntry":{
+      "type":[
+        "Place"
+      ],
+      "geo":{
+        "type":[
+          "GeoCoordinates"
+        ],
+        "latitude":"40.8067546",
+        "longitude":"-74.1854209"
+      },
+      "address":{
+        "type":[
+          "PostalAddress"
+        ],
+        "postalCode":"",
+        "addressRegion":"NB",
+        "streetAddress":"",
+        "addressCountry":"Canada",
+        "addressLocality":"Bloomfield"
+      }
+    },
+    "portOfDestination":{
+      "type":[
+        "Place"
+      ],
+      "geo":{
+        "type":[
+          "GeoCoordinates"
+        ],
+        "latitude":"49.2082",
+        "longitude":"-108.3896"
+      },
+      "address":{
+        "type":[
+          "PostalAddress"
+        ],
+        "postalCode":"",
+        "addressRegion":"SK",
+        "streetAddress":"",
+        "addressCountry":"Canada",
+        "addressLocality":"Climax"
+      }
+    },
+    "countryOfDestination":"Canada"
   }
 }

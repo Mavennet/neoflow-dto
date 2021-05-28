@@ -7,10 +7,13 @@ import {
   Validate
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { JSON_TYPE_METAL } from '../../general'
-import { JSON_TYPE } from 'mavennet-dto'
+import {
+  JSON_TYPE,
+  JSON_TYPE_METAL,
+  VerifiableCredentialDTO
+} from '../../general'
+import {  } from 'mavennet-dto'
 import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto'
-import { VerifiableCredentialDTO } from 'mavennet-dto'
 
 export class ProductVCDTO extends VerifiableCredentialDTO {
   @IsArray()
