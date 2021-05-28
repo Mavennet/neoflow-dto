@@ -21,7 +21,7 @@ class EventCreateCredentialSubjectDTOBase {
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => AddressDTO)
-  geo: AddressDTO
+  geo: AddressDTO // todo: update to PlaceDTO
 
   @IsNotEmpty()
   @IsString()

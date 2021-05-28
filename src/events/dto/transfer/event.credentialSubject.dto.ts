@@ -93,5 +93,4 @@ export class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventC
   @IsArray()
   @ArrayMinSize(1)
   type: string[]
-
 }
