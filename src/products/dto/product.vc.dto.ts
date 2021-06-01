@@ -12,7 +12,6 @@ import {
   JSON_TYPE_METAL,
   VerifiableCredentialDTO
 } from '../../general'
-import {  } from 'mavennet-dto'
 import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto'
 
 export class ProductVCDTO extends VerifiableCredentialDTO {

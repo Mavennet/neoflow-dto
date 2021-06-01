@@ -1,8 +1,8 @@
-import { AddressDTO } from '../../../general';
+import { PlaceDTO } from '../../../general';
 export declare class TransferOwnershipConfirmationDTO {
     transferOwnershipRequestId: number;
-    portOfEntry: AddressDTO;
-    portOfDestination: AddressDTO;
+    portOfEntry: PlaceDTO;
+    portOfDestination: PlaceDTO;
     countryOfDestination: string;
     confirmationStatus: boolean;
     comment: string;
