@@ -7,7 +7,11 @@ import {
   Validate
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { VerifiableCredentialDTO } from '../../../general'
+import {
+  VerifiableCredentialDTO,
+  JSON_TYPE,
+  JSON_TYPE_METAL
+} from '../../../general'
 import {
   CORE_EventCreateCredentialSubjectDTO
 } from './event.credentialSubject.dto'
@@ -27,10 +31,10 @@ export class EventCreateVCDTO extends VerifiableCredentialDTO {
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
   @Validate(o =>
-    o.type.includes('VerifiableCredential') &&
-    o.type.includes('CreationEventCredential')
+    o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
+    o.type.includes(JSON_TYPE_METAL.CREATION_EVENT_CREDENTIAL)
   )
-  type: string[]
+  type: Array<JSON_TYPE | JSON_TYPE_METAL>
 
   @IsNotEmpty()
   @ValidateNested()

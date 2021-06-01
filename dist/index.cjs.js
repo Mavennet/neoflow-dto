@@ -920,6 +920,7 @@ exports.EVENT_TYPE = void 0;
 exports.JSON_TYPE_METAL = void 0;
 (function (JSON_TYPE_METAL) {
     JSON_TYPE_METAL["METAL_PRODUCT"] = "MetalProduct";
+    JSON_TYPE_METAL["CREATION_EVENT_CREDENTIAL"] = "CreationEventCredential";
 })(exports.JSON_TYPE_METAL || (exports.JSON_TYPE_METAL = {}));
 
 class AddressDTO extends index_cjs.AddressDTO {
@@ -957,6 +958,15 @@ class PropertyDTO extends index_cjs.PropertyDTO {
 
 class VerifiableCredentialDTO extends index_cjs.VerifiableCredentialDTO {
 }
+__decorate([
+    require$$0.IsArray(),
+    require$$0.ArrayNotEmpty(),
+    require$$0.IsEnum({
+        ...index_cjs.JSON_TYPE,
+        ...exports.JSON_TYPE_METAL
+    }, { each: true }),
+    __metadata("design:type", Array)
+], VerifiableCredentialDTO.prototype, "type", void 0);
 
 class ProductDTO extends index_cjs.ProductDTO {
 }
@@ -1081,8 +1091,8 @@ __decorate([
     require$$0.IsArray(),
     require$$0.ArrayMinSize(2),
     require$$0.ArrayMaxSize(2),
-    require$$0.Validate(o => o.type.includes('VerifiableCredential') &&
-        o.type.includes('CreationEventCredential')),
+    require$$0.Validate(o => o.type.includes(index_cjs.JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
+        o.type.includes(exports.JSON_TYPE_METAL.CREATION_EVENT_CREDENTIAL)),
     __metadata("design:type", Array)
 ], EventCreateVCDTO.prototype, "type", void 0);
 __decorate([

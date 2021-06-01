@@ -1,4 +1,5 @@
 export { JSON_TYPE } from 'mavennet-dto';
 export declare enum JSON_TYPE_METAL {
-    METAL_PRODUCT = "MetalProduct"
+    METAL_PRODUCT = "MetalProduct",
+    CREATION_EVENT_CREDENTIAL = "CreationEventCredential"
 }

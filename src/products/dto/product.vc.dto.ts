@@ -32,7 +32,7 @@ export class ProductVCDTO extends VerifiableCredentialDTO {
     o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
     o.type.includes(JSON_TYPE_METAL.METAL_PRODUCT)
   )
-  type: string[]
+  type: Array<JSON_TYPE | JSON_TYPE_METAL>
 
   @IsNotEmpty()
   @ValidateNested()
