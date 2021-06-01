@@ -9,7 +9,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { JSON_TYPE } from '../../general'
+import { JSON_TYPE_METAL } from '../../general'
 import { ProductDTO } from './product.dto'
 import {
 	ProductCredentialSubjectDTO as ProductCredentialSubjectDTOBase	
@@ -18,9 +18,9 @@ import {
 export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {	
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  @Validate(o => o.type === [JSON_TYPE.METAL_PRODUCT])
-  type: JSON_TYPE[]
+  @IsEnum(JSON_TYPE_METAL, { each: true })
+  @Validate(o => o.type === [JSON_TYPE_METAL.METAL_PRODUCT])
+  type: JSON_TYPE_METAL[]
 
   @IsNotEmptyObject()
   @ValidateNested()

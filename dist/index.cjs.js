@@ -971,8 +971,8 @@ class ProductCredentialSubjectDTO extends index_cjs.ProductCredentialSubjectDTO 
 __decorate([
     require$$0.IsArray(),
     require$$0.ArrayNotEmpty(),
-    require$$0.IsEnum(index_cjs.JSON_TYPE, { each: true }),
-    require$$0.Validate(o => o.type === [index_cjs.JSON_TYPE.METAL_PRODUCT]),
+    require$$0.IsEnum(exports.JSON_TYPE_METAL, { each: true }),
+    require$$0.Validate(o => o.type === [exports.JSON_TYPE_METAL.METAL_PRODUCT]),
     __metadata("design:type", Array)
 ], ProductCredentialSubjectDTO.prototype, "type", void 0);
 __decorate([
