@@ -1191,6 +1191,7 @@ exports.IssuerDTO = IssuerDTO;
 exports.JSON_TYPE = index_cjs.JSON_TYPE;
 exports.MeasurementDTO = MeasurementDTO;
 exports.NotificationDTO = NotificationDTO;
+exports.ORGANIZATION_ROLE = index_cjs.ORGANIZATION_ROLE;
 exports.ObservationDTO = ObservationDTO;
 exports.OrganizationDTO = OrganizationDTO;
 exports.ParcelDeliveryDTO = ParcelDeliveryDTO;
