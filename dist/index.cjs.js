@@ -921,6 +921,8 @@ exports.JSON_TYPE_METAL = void 0;
 (function (JSON_TYPE_METAL) {
     JSON_TYPE_METAL["METAL_PRODUCT"] = "MetalProduct";
     JSON_TYPE_METAL["CREATION_EVENT_CREDENTIAL"] = "CreationEventCredential";
+    JSON_TYPE_METAL["EVENT_CREDENTIAL"] = "EventCredential";
+    JSON_TYPE_METAL["PRODUCT_CREATION_EVENT_CREDENTIAL"] = "ProductCreationEventCredential";
 })(exports.JSON_TYPE_METAL || (exports.JSON_TYPE_METAL = {}));
 
 class AddressDTO extends index_cjs.AddressDTO {
@@ -1063,6 +1065,10 @@ __decorate([
 ], CORE_EventCreateCredentialSubjectDTO.prototype, "@context", void 0);
 __decorate([
     require$$0.IsArray(),
+    require$$0.ArrayMinSize(2),
+    require$$0.ArrayMaxSize(2),
+    require$$0.Validate(o => o.type.includes(exports.JSON_TYPE_METAL.EVENT_CREDENTIAL) &&
+        o.type.includes(exports.JSON_TYPE_METAL.PRODUCT_CREATION_EVENT_CREDENTIAL)),
     __metadata("design:type", Array)
 ], CORE_EventCreateCredentialSubjectDTO.prototype, "type", void 0);
 __decorate([

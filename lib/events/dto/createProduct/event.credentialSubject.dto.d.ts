@@ -1,4 +1,4 @@
-import { AddressDTO } from '../../../general';
+import { AddressDTO, JSON_TYPE_METAL } from '../../../general';
 declare class EventCreateCredentialSubjectDTOBase {
     description: string;
     geo: AddressDTO;
@@ -10,7 +10,7 @@ export declare class AGENT_EventCreateCredentialSubjectDTO extends EventCreateCr
 }
 export declare class CORE_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
     '@context': string[];
-    type: string[];
+    type: Array<JSON_TYPE_METAL>;
     eventId: string;
     productId: string;
 }

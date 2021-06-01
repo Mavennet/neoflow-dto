@@ -8,10 +8,15 @@ import {
   IsString,
   ValidateNested,
   Matches,
-  ArrayMinSize
+  ArrayMinSize,
+  ArrayMaxSize,
+  Validate
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { AddressDTO } from '../../../general'
+import {
+  AddressDTO,
+  JSON_TYPE_METAL
+} from '../../../general'
 
 class EventCreateCredentialSubjectDTOBase {
   @IsOptional()
@@ -45,7 +50,13 @@ export class CORE_EventCreateCredentialSubjectDTO extends EventCreateCredentialS
   '@context': string[]
 
   @IsArray()
-  type: string[]
+  @ArrayMinSize(2)
+  @ArrayMaxSize(2)
+  @Validate(o =>
+    o.type.includes(JSON_TYPE_METAL.EVENT_CREDENTIAL) &&
+    o.type.includes(JSON_TYPE_METAL.PRODUCT_CREATION_EVENT_CREDENTIAL)
+  )
+  type: Array<JSON_TYPE_METAL>
 
   @IsNotEmpty()
   @IsUrl()
