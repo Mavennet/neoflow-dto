@@ -8,12 +8,11 @@ export declare class AGENT_TransferEventCredentialSubjectDTO {
     initiator: OrganizationDTO;
     receiver: OrganizationDTO;
     portOfEntry: PlaceDTO;
-    portOfArrival: PlaceDTO;
     portOfDestination: PlaceDTO;
     countryOfDestination: string;
     recipientLocation: PlaceDTO;
-    price: number;
     transferedWeight: MeasurementDTO;
+    price: number;
 }
 export declare class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {
     '@context': string[];

@@ -62,12 +62,6 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
-  portOfArrival: PlaceDTO
-
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => PlaceDTO)
   portOfDestination: PlaceDTO
 
   @IsNotEmpty()
@@ -80,16 +74,16 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
   recipientLocation: PlaceDTO
 
-  @IsNotEmpty()
-  @IsNumber()
-  @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_OWNERSHIP)
-  price: number
-
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => MeasurementDTO)
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
   transferedWeight: MeasurementDTO
+
+  @IsNotEmpty()
+  @IsNumber()
+  @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_OWNERSHIP)
+  price: number
 }
 
 export class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {
