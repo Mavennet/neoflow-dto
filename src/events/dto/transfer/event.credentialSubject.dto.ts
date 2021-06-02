@@ -17,6 +17,7 @@ import { Type } from 'class-transformer'
 import {
   EVENT_TYPE,
   PlaceDTO,
+  MeasurementDTO,
   OrganizationDTO,
   VerifiableCredentialDTO
 } from '../../../general'
@@ -83,6 +84,12 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @IsNumber()
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_OWNERSHIP)
   price: number
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => MeasurementDTO)
+  @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
+  transferedWeight: MeasurementDTO
 }
 
 export class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {

@@ -1,4 +1,4 @@
-import { EVENT_TYPE, PlaceDTO, OrganizationDTO } from '../../../general';
+import { EVENT_TYPE, PlaceDTO, MeasurementDTO, OrganizationDTO } from '../../../general';
 import { ProductDTO } from '../../../products';
 export declare class AGENT_TransferEventCredentialSubjectDTO {
     eventType: EVENT_TYPE;
@@ -13,6 +13,7 @@ export declare class AGENT_TransferEventCredentialSubjectDTO {
     countryOfDestination: string;
     recipientLocation: PlaceDTO;
     price: number;
+    transferedWeight: MeasurementDTO;
 }
 export declare class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {
     '@context': string[];
