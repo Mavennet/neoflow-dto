@@ -1,4 +1,5 @@
-import { EVENT_TYPE, PlaceDTO, MeasurementDTO, OrganizationDTO } from '../../../general';
+import { EVENT_TYPE } from '../../constants';
+import { PlaceDTO, MeasurementDTO, OrganizationDTO } from '../../../general';
 import { ProductDTO } from '../../../products';
 export declare class AGENT_TransferEventCredentialSubjectDTO {
     eventType: EVENT_TYPE;

@@ -14,8 +14,8 @@ import {
   ValidateIf
 } from 'class-validator'
 import { Type } from 'class-transformer'
+import { EVENT_TYPE } from '../../constants'
 import {
-  EVENT_TYPE,
   PlaceDTO,
   MeasurementDTO,
   OrganizationDTO,

@@ -900,23 +900,6 @@ exports.PRODUCT_NAME = void 0;
     PRODUCT_NAME["CARBON_ALLOY_PIPE_TUBE"] = "Carbon and alloy pipe and tube products";
 })(exports.PRODUCT_NAME || (exports.PRODUCT_NAME = {}));
 
-exports.EVENT_TYPE = void 0;
-(function (EVENT_TYPE) {
-    EVENT_TYPE["CREATE"] = "Create";
-    EVENT_TYPE["TRANSFER_CUSTODY"] = "TransferCustody";
-    EVENT_TYPE["TRANSFER_OWNERSHIP"] = "TransferOwnership";
-    EVENT_TYPE["CASTING"] = "Casting";
-    EVENT_TYPE["SMELT"] = "Smelt";
-    EVENT_TYPE["FINISHING"] = "Finishing";
-    EVENT_TYPE["FABRICATING"] = "Fabricating";
-    EVENT_TYPE["TRANSPORT_START"] = "TransportStart";
-    EVENT_TYPE["TRANSPORT_END"] = "TransportEnd";
-    EVENT_TYPE["STORAGE_START"] = "StorageStart";
-    EVENT_TYPE["STORAGE_END"] = "StorageEnd";
-    EVENT_TYPE["INSPECT"] = "Inspect";
-    EVENT_TYPE["INBOND"] = "Inbond";
-})(exports.EVENT_TYPE || (exports.EVENT_TYPE = {}));
-
 exports.JSON_TYPE_METAL = void 0;
 (function (JSON_TYPE_METAL) {
     JSON_TYPE_METAL["METAL_PRODUCT"] = "MetalProduct";
