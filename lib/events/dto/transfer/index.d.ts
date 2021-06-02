@@ -1,3 +1,5 @@
+export * from './custodyRequest.dto';
+export * from './custodyConfirm.dto';
 export * from './event.credentialSubject.dto';
 export * from './event.vc.dto';
 export * from './ownershipConfirm.dto';
