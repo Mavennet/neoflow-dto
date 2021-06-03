@@ -104,28 +104,6 @@
         "addressLocality":"Bloomfield"
       }
     },
-    "portOfArrival":{
-      "type":[
-        "Place"
-      ],
-      "geo":{
-        "type":[
-          "GeoCoordinates"
-        ],
-        "latitude":"49.0004",
-        "longitude":"-117.2994"
-      },
-      "address":{
-        "type":[
-          "PostalAddress"
-        ],
-        "postalCode":"",
-        "addressRegion":"BC",
-        "streetAddress":"",
-        "addressCountry":"Canada",
-        "addressLocality":"Nelway"
-      }
-    },
     "portOfDestination":{
       "type":[
         "Place"
@@ -170,6 +148,13 @@
         "addressLocality":"Hamilton"
       }
     },
-    "countryOfDestination":"Canada"
+    "countryOfDestination":"Canada",
+    "transferedWeight": {
+      "type":[
+        "QuantitativeValue"
+      ],
+      "value":"1000",
+      "unitCode":"Kg"
+    }
   }
 }

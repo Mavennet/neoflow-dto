@@ -17,6 +17,7 @@ import { Type } from 'class-transformer'
 import {
   EVENT_TYPE,
   PlaceDTO,
+  MeasurementDTO,
   OrganizationDTO,
   VerifiableCredentialDTO
 } from '../../../general'
@@ -61,12 +62,6 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
-  portOfArrival: PlaceDTO
-
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => PlaceDTO)
   portOfDestination: PlaceDTO
 
   @IsNotEmpty()
@@ -78,6 +73,12 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @Type(() => PlaceDTO)
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
   recipientLocation: PlaceDTO
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => MeasurementDTO)
+  @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
+  transferedWeight: MeasurementDTO
 
   @IsNotEmpty()
   @IsNumber()

@@ -4,7 +4,8 @@ import {
   IsString,
   IsNumber,
   IsNumberString,
-  IsOptional
+  IsOptional,
+  Matches
 } from 'class-validator'
 
 export class TransferOwnershipRequestDTO {
@@ -18,6 +19,7 @@ export class TransferOwnershipRequestDTO {
 
   @IsNotEmpty()
   @IsString()
+  @Matches(/^did:/)
   receiver: string
 
   @IsNotEmpty()
