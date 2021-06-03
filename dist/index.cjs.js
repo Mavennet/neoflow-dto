@@ -889,6 +889,28 @@ __decorate([
     __metadata("design:type", String)
 ], SaveS3DocumentsFolderPathDTO.prototype, "s3DocumentsFolderPath", void 0);
 
+exports.EVENT_TYPE = void 0;
+(function (EVENT_TYPE) {
+    EVENT_TYPE["CREATE"] = "Create";
+    EVENT_TYPE["TRANSFER_CUSTODY"] = "TransferCustody";
+    EVENT_TYPE["TRANSFER_OWNERSHIP"] = "TransferOwnership";
+    EVENT_TYPE["TRANSFORMATION"] = "Transformation";
+    EVENT_TYPE["TRANSPORT_START"] = "TransportStart";
+    EVENT_TYPE["TRANSPORT_END"] = "TransportEnd";
+    EVENT_TYPE["STORAGE_START"] = "StorageStart";
+    EVENT_TYPE["STORAGE_END"] = "StorageEnd";
+    EVENT_TYPE["INSPECT"] = "Inspect";
+    EVENT_TYPE["INBOND"] = "Inbond";
+})(exports.EVENT_TYPE || (exports.EVENT_TYPE = {}));
+
+exports.TRANSFORM_TYPE = void 0;
+(function (TRANSFORM_TYPE) {
+    TRANSFORM_TYPE["CASTING"] = "Casting";
+    TRANSFORM_TYPE["FABRICATE"] = "Fabricate";
+    TRANSFORM_TYPE["FINISHING"] = "Finishing";
+    TRANSFORM_TYPE["SMELT"] = "Smelt";
+})(exports.TRANSFORM_TYPE || (exports.TRANSFORM_TYPE = {}));
+
 exports.PRODUCT_NAME = void 0;
 (function (PRODUCT_NAME) {
     PRODUCT_NAME["METALLURGICAL_COKE"] = "Metallurgical Coke";
