@@ -982,6 +982,12 @@ __decorate([
     require$$0.IsEnum(exports.PRODUCT_NAME),
     __metadata("design:type", String)
 ], ProductDTO.prototype, "name", void 0);
+__decorate([
+    require$$0.IsNotEmptyObject(),
+    require$$0.ValidateNested(),
+    require$$1.Type(() => MeasurementDTO),
+    __metadata("design:type", MeasurementDTO)
+], ProductDTO.prototype, "weight", void 0);
 
 class ProductCredentialSubjectDTO extends index_cjs.ProductCredentialSubjectDTO {
 }
