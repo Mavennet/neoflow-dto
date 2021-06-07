@@ -9,12 +9,13 @@ import {
 } from 'mavennet-dto'
 import { JSON_TYPE_METAL } from '../constants'
 
-export abstract class VerifiableCredentialDTO extends VerifiableCredentialDTOBase {
+export class VerifiableCredentialDTO extends  VerifiableCredentialDTOBase {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum({
     ...JSON_TYPE,
     ...JSON_TYPE_METAL
   }, { each: true })
-  abstract type: any
+  type: Array<JSON_TYPE | JSON_TYPE_METAL>
 }
+
