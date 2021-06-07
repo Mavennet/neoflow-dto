@@ -15,13 +15,8 @@
   },
   "homepage": "https://github.com/Mavennet/metaltrail-dto#readme",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-typescript": "^8.2.1",
     "class-transformer": ">=0.3.1",
     "class-validator": "^0.12.2",
-    "rollup": "^2.45.2",
-    "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
     "typescript": "^4.2.4"
   },
   "dependencies": {
