@@ -16,5 +16,5 @@ export abstract class VerifiableCredentialDTO extends VerifiableCredentialDTOBas
     ...JSON_TYPE,
     ...JSON_TYPE_METAL
   }, { each: true })
-  type: Array<JSON_TYPE | JSON_TYPE_METAL>
+  abstract type: any
 }
