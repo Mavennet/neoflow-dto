@@ -20,7 +20,7 @@ export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE_METAL, { each: true })
   @Validate(o => o.type === [JSON_TYPE_METAL.METAL_PRODUCT])
-  type: any
+  type: JSON_TYPE_METAL[]
 
   @IsNotEmptyObject()
   @ValidateNested()
