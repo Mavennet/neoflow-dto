@@ -1,6 +1,7 @@
 import {
   IsNotEmpty,
   IsArray,
+  IsUrl,
   ArrayMinSize,
   ArrayMaxSize,
   ValidateNested,
@@ -38,4 +39,8 @@ export class ProductVCDTO extends VerifiableCredentialDTO {
   @ValidateNested()
   @Type(() => ProductCredentialSubjectDTO)
   credentialSubject: ProductCredentialSubjectDTO
+
+  @IsNotEmpty()
+  @IsUrl()
+  id: string
 }

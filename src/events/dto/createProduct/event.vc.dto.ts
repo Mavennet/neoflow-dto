@@ -1,6 +1,7 @@
 import {
   IsNotEmpty,
   IsArray,
+  IsUrl,
   ArrayMinSize,
   ArrayMaxSize,
   ValidateNested,
@@ -35,6 +36,10 @@ export class EventCreateVCDTO extends VerifiableCredentialDTO {
     o.type.includes(JSON_TYPE_METAL.CREATION_EVENT_CREDENTIAL)
   )
   type: Array<JSON_TYPE | JSON_TYPE_METAL>
+  
+  @IsNotEmpty()
+  @IsUrl()
+  id: string
 
   @IsNotEmpty()
   @ValidateNested()
