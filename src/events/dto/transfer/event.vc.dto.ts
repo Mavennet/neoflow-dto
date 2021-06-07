@@ -27,7 +27,7 @@ export class TransferEventVCDTO extends VerifiableCredentialDTO {
   @ArrayMinSize(1)
   @ArrayMaxSize(1)
   @Validate(o => o.type.includes('VerifiableCredential'))
-  type: string[]
+  type: any
 
   @IsNotEmpty()
   @ValidateNested()

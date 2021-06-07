@@ -34,7 +34,7 @@ export class EventCreateVCDTO extends VerifiableCredentialDTO {
     o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
     o.type.includes(JSON_TYPE_METAL.CREATION_EVENT_CREDENTIAL)
   )
-  type: Array<JSON_TYPE | JSON_TYPE_METAL>
+  type: any
 
   @IsNotEmpty()
   @ValidateNested()
