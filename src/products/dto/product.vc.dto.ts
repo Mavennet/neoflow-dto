@@ -36,11 +36,11 @@ export class ProductVCDTO extends VerifiableCredentialDTO {
   type: Array<JSON_TYPE | JSON_TYPE_METAL>
 
   @IsNotEmpty()
+  @IsUrl()
+  id: string
+
+  @IsNotEmpty()
   @ValidateNested()
   @Type(() => ProductCredentialSubjectDTO)
   credentialSubject: ProductCredentialSubjectDTO
-
-  @IsNotEmpty()
-  @IsUrl()
-  id: string
 }
