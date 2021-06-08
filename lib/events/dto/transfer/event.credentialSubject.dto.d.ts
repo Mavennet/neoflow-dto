@@ -1,4 +1,4 @@
-import { EVENT_TYPE, PlaceDTO, MeasurementDTO, OrganizationDTO } from '../../../general';
+import { EVENT_TYPE, PlaceDTO, OrganizationDTO } from '../../../general';
 import { ProductDTO } from '../../../products';
 export declare class AGENT_TransferEventCredentialSubjectDTO {
     eventType: EVENT_TYPE;
@@ -11,7 +11,6 @@ export declare class AGENT_TransferEventCredentialSubjectDTO {
     portOfDestination: PlaceDTO;
     countryOfDestination: string;
     recipientLocation: PlaceDTO;
-    transferedWeight: MeasurementDTO;
     price: number;
 }
 export declare class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {

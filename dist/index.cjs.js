@@ -1040,9 +1040,9 @@ __decorate([
 __decorate([
     require$$0.IsNotEmptyObject(),
     require$$0.ValidateNested(),
-    require$$1.Type(() => AddressDTO),
-    __metadata("design:type", AddressDTO)
-], EventCreateCredentialSubjectDTOBase.prototype, "geo", void 0);
+    require$$1.Type(() => PlaceDTO),
+    __metadata("design:type", PlaceDTO)
+], EventCreateCredentialSubjectDTOBase.prototype, "place", void 0);
 __decorate([
     require$$0.IsNotEmpty(),
     require$$0.IsString(),

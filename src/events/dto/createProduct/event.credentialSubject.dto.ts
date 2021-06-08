@@ -14,7 +14,7 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import {
-  AddressDTO,
+  PlaceDTO,
   JSON_TYPE_METAL
 } from '../../../general'
 
@@ -25,8 +25,8 @@ class EventCreateCredentialSubjectDTOBase {
 
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  geo: AddressDTO // todo: update to PlaceDTO
+  @Type(() => PlaceDTO)
+  place: PlaceDTO
 
   @IsNotEmpty()
   @IsString()
