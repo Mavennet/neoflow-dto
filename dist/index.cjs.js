@@ -744,12 +744,6 @@ __decorate([
     classValidator.IsString(),
     __metadata("design:type", String)
 ], ProductDTO.prototype, "description", void 0);
-__decorate([
-    classValidator.IsNotEmptyObject(),
-    classValidator.ValidateNested(),
-    classTransformer.Type(() => MeasurementDTO),
-    __metadata("design:type", MeasurementDTO)
-], ProductDTO.prototype, "sizeOrAmount", void 0);
 
 class ProductCredentialSubjectDTO {
 }
