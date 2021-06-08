@@ -1025,6 +1025,11 @@ __decorate([
 ], ProductVCDTO.prototype, "type", void 0);
 __decorate([
     require$$0.IsNotEmpty(),
+    require$$0.IsUrl(),
+    __metadata("design:type", String)
+], ProductVCDTO.prototype, "id", void 0);
+__decorate([
+    require$$0.IsNotEmpty(),
     require$$0.ValidateNested(),
     require$$1.Type(() => ProductCredentialSubjectDTO),
     __metadata("design:type", ProductCredentialSubjectDTO)
@@ -1040,9 +1045,9 @@ __decorate([
 __decorate([
     require$$0.IsNotEmptyObject(),
     require$$0.ValidateNested(),
-    require$$1.Type(() => AddressDTO),
-    __metadata("design:type", AddressDTO)
-], EventCreateCredentialSubjectDTOBase.prototype, "geo", void 0);
+    require$$1.Type(() => PlaceDTO),
+    __metadata("design:type", PlaceDTO)
+], EventCreateCredentialSubjectDTOBase.prototype, "place", void 0);
 __decorate([
     require$$0.IsNotEmpty(),
     require$$0.IsString(),
@@ -1106,6 +1111,11 @@ __decorate([
         o.type.includes(exports.JSON_TYPE_METAL.CREATION_EVENT_CREDENTIAL)),
     __metadata("design:type", Array)
 ], EventCreateVCDTO.prototype, "type", void 0);
+__decorate([
+    require$$0.IsNotEmpty(),
+    require$$0.IsUrl(),
+    __metadata("design:type", String)
+], EventCreateVCDTO.prototype, "id", void 0);
 __decorate([
     require$$0.IsNotEmpty(),
     require$$0.ValidateNested(),

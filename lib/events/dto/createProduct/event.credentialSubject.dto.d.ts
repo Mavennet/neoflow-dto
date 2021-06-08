@@ -1,7 +1,7 @@
-import { AddressDTO, JSON_TYPE_METAL } from '../../../general';
+import { PlaceDTO, JSON_TYPE_METAL } from '../../../general';
 declare class EventCreateCredentialSubjectDTOBase {
     description: string;
-    geo: AddressDTO;
+    place: PlaceDTO;
     eventCreator: string;
 }
 export declare class AGENT_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {

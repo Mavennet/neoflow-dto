@@ -1,6 +1,7 @@
 import {
   IsNotEmpty,
   IsArray,
+  IsUrl,
   ArrayMinSize,
   ArrayMaxSize,
   ValidateNested,
@@ -33,6 +34,10 @@ export class ProductVCDTO extends VerifiableCredentialDTO {
     o.type.includes(JSON_TYPE_METAL.METAL_PRODUCT)
   )
   type: Array<JSON_TYPE | JSON_TYPE_METAL>
+
+  @IsNotEmpty()
+  @IsUrl()
+  id: string
 
   @IsNotEmpty()
   @ValidateNested()

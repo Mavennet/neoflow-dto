@@ -3,5 +3,6 @@ import { CORE_EventCreateCredentialSubjectDTO } from './event.credentialSubject.
 export declare class EventCreateVCDTO extends VerifiableCredentialDTO {
     '@context': string[];
     type: Array<JSON_TYPE | JSON_TYPE_METAL>;
+    id: string;
     credentialSubject: CORE_EventCreateCredentialSubjectDTO;
 }

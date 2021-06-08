@@ -74,12 +74,6 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
   recipientLocation: PlaceDTO
 
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => MeasurementDTO)
-  @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
-  transferedWeight: MeasurementDTO
-
   @IsNotEmpty()
   @IsNumber()
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_OWNERSHIP)
