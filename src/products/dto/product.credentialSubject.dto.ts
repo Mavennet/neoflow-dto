@@ -28,12 +28,12 @@ export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase
 
   @IsNotEmpty()
   @IsNumberString()
-  @ValidateIf(o => o.name !== PRODUCT_NAME.HEAT)
+  @ValidateIf(o => o.product.name !== PRODUCT_NAME.HEAT)
   HSCode: string
 
   @IsNotEmpty()
   @IsNumberString()
-  @ValidateIf(o => o.name === PRODUCT_NAME.HEAT)
+  @ValidateIf(o => o.product.name === PRODUCT_NAME.HEAT)
   heatNumber: string
 
   @IsNotEmptyObject()
