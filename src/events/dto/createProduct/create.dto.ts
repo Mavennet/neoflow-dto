@@ -1,4 +1,9 @@
-import { IsNotEmpty, IsString, ValidateNested, IsUUID } from 'class-validator'
+import {
+  IsNotEmpty,
+  IsString,
+  ValidateNested,
+  IsUUID
+} from 'class-validator'
 import { Type } from 'class-transformer'
 import { 
   ProductVCDTO,
@@ -8,7 +13,6 @@ import { EventCreateVCDTO } from './event.vc.dto'
 import {	
   AGENT_EventCreateCredentialSubjectDTO 
 } from './event.credentialSubject.dto'
-
 
 export class AGENT_CreateProductDTO {
   @IsNotEmpty()
