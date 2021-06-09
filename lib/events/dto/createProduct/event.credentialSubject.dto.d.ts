@@ -1,10 +1,11 @@
-import { PlaceDTO, JSON_TYPE_METAL } from '../../../general';
+import { PlaceDTO, JSON_TYPE_METAL, OrganizationDTO } from '../../../general';
 import { EVENT_TYPE } from '../../constants';
 declare class EventCreateCredentialSubjectDTOBase {
     eventType: EVENT_TYPE;
     description?: string;
     place: PlaceDTO;
     eventCreator: string;
+    initiator: OrganizationDTO;
 }
 export declare class AGENT_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
     eventId: string;
