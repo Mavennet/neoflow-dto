@@ -57,13 +57,13 @@ export class AGENT_TransformEventCredentialSubjectDTO {
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
   @Type(() => ProductDTO)
-  newProduct: ProductDTO
+  newProduct: ProductDTO[]
 
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
   @Type(() => ProductDTO)
-  consumedProducts: ProductDTO
+  consumedProducts: ProductDTO[]
 }
 
 export class CORE_TransformEventCredentialSubjectDTO extends AGENT_TransformEventCredentialSubjectDTO {

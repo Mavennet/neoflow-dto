@@ -7,8 +7,8 @@ export declare class AGENT_TransformEventCredentialSubjectDTO {
     eventType: TRANSFORM_TYPE;
     place: PlaceDTO;
     initiator: OrganizationDTO;
-    newProduct: ProductDTO;
-    consumedProducts: ProductDTO;
+    newProduct: ProductDTO[];
+    consumedProducts: ProductDTO[];
 }
 export declare class CORE_TransformEventCredentialSubjectDTO extends AGENT_TransformEventCredentialSubjectDTO {
     '@context': string[];
