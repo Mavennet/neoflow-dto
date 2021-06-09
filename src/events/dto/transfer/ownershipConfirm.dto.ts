@@ -8,7 +8,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { PlaceDTO } from '../../../general'
+import { AddressDTO } from '../../../general'
 
 export class TransferOwnershipConfirmationDTO {
   @IsNotEmpty()
@@ -17,13 +17,13 @@ export class TransferOwnershipConfirmationDTO {
 
   @IsOptional()
   @ValidateNested()
-  @Type(() => PlaceDTO)
-  portOfEntry: PlaceDTO
+  @Type(() => AddressDTO)
+  portOfEntry: AddressDTO
 
   @IsOptional()
   @ValidateNested()
-  @Type(() => PlaceDTO)
-  portOfDestination: PlaceDTO
+  @Type(() => AddressDTO)
+  portOfDestination: AddressDTO
 
   @IsOptional()
   @IsString()

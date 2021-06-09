@@ -4,7 +4,7 @@ import {
   IsUrl,
   IsEnum,
   IsArray,
-  IsNumber,
+  IsNumberString,
   IsString,
   IsDateString,
   ArrayMinSize,
@@ -14,8 +14,8 @@ import {
   ValidateIf
 } from 'class-validator'
 import { Type } from 'class-transformer'
+import { EVENT_TYPE } from '../../constants'
 import {
-  EVENT_TYPE,
   PlaceDTO,
   MeasurementDTO,
   OrganizationDTO,
@@ -28,11 +28,15 @@ import {
 export class AGENT_TransferEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
+  @Validate(o => (
+    o.eventType === EVENT_TYPE.TRANSFER_CUSTODY || 
+    o.eventType === EVENT_TYPE.TRANSFER_CUSTODY
+  ))
   eventType: EVENT_TYPE
 
   @IsNotEmpty()
   @IsDateString()
-  eventTime: Date
+  eventTime: string
 
   @IsNotEmptyObject()
   @ValidateNested()
@@ -72,12 +76,12 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @ValidateNested()
   @Type(() => PlaceDTO)
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
-  recipientLocation: PlaceDTO
+  receiptLocation?: PlaceDTO
 
   @IsNotEmpty()
-  @IsNumber()
+  @IsNumberString()
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_OWNERSHIP)
-  price: number
+  price?: string
 }
 
 export class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {

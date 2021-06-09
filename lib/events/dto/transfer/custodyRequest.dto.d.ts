@@ -1,12 +1,10 @@
-import { PlaceDTO } from '../../../general';
+import { AddressDTO } from '../../../general';
 export declare class TransferCustodyRequestDTO {
     productId: string;
     countryOfDestination: string;
-    portOfEntry: PlaceDTO;
-    portOfDestination: PlaceDTO;
-    receiptLocation: PlaceDTO;
+    portOfEntry: AddressDTO;
+    portOfDestination: AddressDTO;
+    receiptLocation: AddressDTO;
     receiver: string;
-    weight: number;
-    unit: string;
     hasDocuments: boolean;
 }

@@ -7,7 +7,10 @@ import {
   Validate
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { VerifiableCredentialDTO } from '../../../general'
+import {
+  JSON_TYPE,
+  VerifiableCredentialDTO
+} from '../../../general'
 import {
   CORE_TransferEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
@@ -26,8 +29,8 @@ export class TransferEventVCDTO extends VerifiableCredentialDTO {
   @IsArray()
   @ArrayMinSize(1)
   @ArrayMaxSize(1)
-  @Validate(o => o.type.includes('VerifiableCredential'))
-  type: string[]
+  @Validate(o => o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL))
+  type: JSON_TYPE[]
 
   @IsNotEmpty()
   @ValidateNested()

@@ -1,6 +1,7 @@
 import {
   IsNotEmpty,
   IsNotEmptyObject,
+  IsEnum,
   IsArray,
   IsOptional,
   IsUUID,
@@ -15,13 +16,20 @@ import {
 import { Type } from 'class-transformer'
 import {
   PlaceDTO,
-  JSON_TYPE_METAL
+  JSON_TYPE_METAL,
+  OrganizationDTO
 } from '../../../general'
+import { EVENT_TYPE } from '../../constants'
 
 class EventCreateCredentialSubjectDTOBase {
+  @IsNotEmpty()
+  @IsEnum(EVENT_TYPE)
+  @Matches(EVENT_TYPE.CREATE)
+  eventType: EVENT_TYPE
+
   @IsOptional()
   @IsString()
-  description: string
+  description?: string
 
   @IsNotEmptyObject()
   @ValidateNested()
@@ -32,6 +40,11 @@ class EventCreateCredentialSubjectDTOBase {
   @IsString()
   @Matches(/^did:/)
   eventCreator: string
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => OrganizationDTO)
+  initiator: OrganizationDTO
 }
 
 export class AGENT_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {

@@ -27,6 +27,7 @@
     ],
     "eventId":"https://supplier-api.metaltrail.ca/v1/credentials/verify/7c2111ec-d201-4935-8871-d272632b310a",
     "eventTime":"2021-02-04T20:29:37+00:00",
+    "eventType":"create",
     "initiator":{
       "type":[
         "Organization"
