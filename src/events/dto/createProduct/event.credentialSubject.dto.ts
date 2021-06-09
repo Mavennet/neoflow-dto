@@ -1,6 +1,7 @@
 import {
   IsNotEmpty,
   IsNotEmptyObject,
+  IsEnum,
   IsArray,
   IsOptional,
   IsUUID,
@@ -17,8 +18,14 @@ import {
   PlaceDTO,
   JSON_TYPE_METAL
 } from '../../../general'
+import { EVENT_TYPE } from '../../constants'
 
 class EventCreateCredentialSubjectDTOBase {
+  @IsNotEmpty()
+  @IsEnum(EVENT_TYPE)
+  @Matches(EVENT_TYPE.CREATE)
+  eventType: EVENT_TYPE
+
   @IsOptional()
   @IsString()
   description?: string

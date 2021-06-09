@@ -38,6 +38,10 @@ export class AGENT_TransformEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsDateString()
   eventTime: Date
+  
+  @IsNotEmpty()
+  @IsEnum(TRANSFORM_TYPE)
+  eventType: TRANSFORM_TYPE
 
   @IsNotEmptyObject()
   @ValidateNested()
@@ -70,10 +74,6 @@ export class CORE_TransformEventCredentialSubjectDTO extends AGENT_TransformEven
   @IsArray()
   @ArrayMinSize(1)
   type: string[]
-
-  @IsNotEmpty()
-  @IsEnum(TRANSFORM_TYPE)
-  eventType: TRANSFORM_TYPE
 
   @IsNotEmpty()
   @IsUrl()

@@ -28,6 +28,10 @@ import {
 export class AGENT_TransferEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
+  @Validate(o => (
+    o.eventType === EVENT_TYPE.TRANSFER_CUSTODY || 
+    o.eventType === EVENT_TYPE.TRANSFER_CUSTODY
+  ))
   eventType: EVENT_TYPE
 
   @IsNotEmpty()
