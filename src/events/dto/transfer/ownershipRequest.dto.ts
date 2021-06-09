@@ -5,8 +5,11 @@ import {
   IsNumber,
   IsNumberString,
   IsOptional,
-  Matches
+  Matches,
+  ValidateNested
 } from 'class-validator'
+import { Type } from 'class-transformer'
+import { PlaceDTO } from '../../../general'
 
 export class TransferOwnershipRequestDTO {
   @IsNotEmpty()
@@ -15,7 +18,7 @@ export class TransferOwnershipRequestDTO {
 
   @IsOptional()
   @IsNumber()
-  contractId: number
+  contractId?: number
 
   @IsNotEmpty()
   @IsString()
@@ -26,6 +29,20 @@ export class TransferOwnershipRequestDTO {
   @IsNumberString()
   price: number
 
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => PlaceDTO)
+  portOfEntry: PlaceDTO
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => PlaceDTO)
+  portOfDestination: PlaceDTO
+
+  @IsOptional()
+  @IsString()
+  countryOfDestination: string
+  
   @IsNotEmpty()
   @IsBoolean()
   hasDocuments: boolean
