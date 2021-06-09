@@ -24,7 +24,7 @@ import { EVENT_TYPE } from '../../constants'
 class EventCreateCredentialSubjectDTOBase {
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
-  @Matches(EVENT_TYPE.CREATE)
+  @Validate(o => o.eventType === EVENT_TYPE.CREATE)
   eventType: EVENT_TYPE
 
   @IsOptional()
