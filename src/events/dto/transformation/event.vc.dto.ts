@@ -1,6 +1,7 @@
 import {
   IsNotEmpty,
   IsArray,
+  IsUrl,
   ArrayMinSize,
   ArrayMaxSize,
   ValidateNested,
@@ -8,14 +9,15 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import {
+  VerifiableCredentialDTO,
   JSON_TYPE,
-  VerifiableCredentialDTO
+  JSON_TYPE_METAL
 } from '../../../general'
 import {
-  CORE_TransferEventCredentialSubjectDTO
+  CORE_TransformEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 
-export class TransferEventVCDTO extends VerifiableCredentialDTO {
+export class TransformEventVCDTO extends VerifiableCredentialDTO {
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -31,9 +33,13 @@ export class TransferEventVCDTO extends VerifiableCredentialDTO {
   @ArrayMaxSize(1)
   @Validate(o => o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL))
   type: JSON_TYPE[]
+  
+  @IsNotEmpty()
+  @IsUrl()
+  id: string
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => CORE_TransferEventCredentialSubjectDTO)
-  credentialSubject: CORE_TransferEventCredentialSubjectDTO
+  @Type(() => CORE_TransformEventCredentialSubjectDTO)
+  credentialSubject: CORE_TransformEventCredentialSubjectDTO
 }

@@ -4,4 +4,5 @@ import { ProductDTO as ProductDTOBase } from 'mavennet-dto';
 export declare class ProductDTO extends ProductDTOBase {
     name: PRODUCT_NAME;
     weight: MeasurementDTO;
+    id: string;
 }

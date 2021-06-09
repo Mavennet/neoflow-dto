@@ -1,14 +1,18 @@
 import {
   IsOptional,
+  IsNotEmpty,
   IsNotEmptyObject,
+  IsNumberString,
   IsString,
   IsEnum,
   IsArray,
   ArrayNotEmpty,
   Validate,
-  ValidateNested
+  ValidateNested,
+  ValidateIf
 } from 'class-validator'
 import { Type } from 'class-transformer'
+import { PRODUCT_NAME } from '../constants'
 import { JSON_TYPE_METAL } from '../../general'
 import { ProductDTO } from './product.dto'
 import {
@@ -21,6 +25,16 @@ export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase
   @IsEnum(JSON_TYPE_METAL, { each: true })
   @Validate(o => o.type === [JSON_TYPE_METAL.METAL_PRODUCT])
   type: JSON_TYPE_METAL[]
+
+  @IsNotEmpty()
+  @IsNumberString()
+  @ValidateIf(o => o.name !== PRODUCT_NAME.HEAT)
+  HSCode: string
+
+  @IsNotEmpty()
+  @IsNumberString()
+  @ValidateIf(o => o.name === PRODUCT_NAME.HEAT)
+  heatNumber: string
 
   @IsNotEmptyObject()
   @ValidateNested()

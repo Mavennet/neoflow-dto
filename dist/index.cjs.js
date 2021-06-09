@@ -982,6 +982,11 @@ __decorate([
     require$$1.Type(() => MeasurementDTO),
     __metadata("design:type", MeasurementDTO)
 ], ProductDTO.prototype, "weight", void 0);
+__decorate([
+    require$$0.IsOptional(),
+    require$$0.IsString(),
+    __metadata("design:type", String)
+], ProductDTO.prototype, "id", void 0);
 
 class ProductCredentialSubjectDTO extends index_cjs.ProductCredentialSubjectDTO {
 }
@@ -992,6 +997,18 @@ __decorate([
     require$$0.Validate(o => o.type === [exports.JSON_TYPE_METAL.METAL_PRODUCT]),
     __metadata("design:type", Array)
 ], ProductCredentialSubjectDTO.prototype, "type", void 0);
+__decorate([
+    require$$0.IsNotEmpty(),
+    require$$0.IsNumberString(),
+    require$$0.ValidateIf(o => o.name !== exports.PRODUCT_NAME.HEAT),
+    __metadata("design:type", String)
+], ProductCredentialSubjectDTO.prototype, "HSCode", void 0);
+__decorate([
+    require$$0.IsNotEmpty(),
+    require$$0.IsNumberString(),
+    require$$0.ValidateIf(o => o.name === exports.PRODUCT_NAME.HEAT),
+    __metadata("design:type", String)
+], ProductCredentialSubjectDTO.prototype, "heatNumber", void 0);
 __decorate([
     require$$0.IsNotEmptyObject(),
     require$$0.ValidateNested(),

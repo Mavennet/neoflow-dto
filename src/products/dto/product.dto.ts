@@ -1,7 +1,9 @@
 import {
   IsNotEmpty,
   IsNotEmptyObject,
+  IsOptional,
   IsEnum,
+  IsString,
   ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
@@ -20,4 +22,8 @@ export class ProductDTO extends ProductDTOBase {
   @ValidateNested()
   @Type(() => MeasurementDTO)
   weight: MeasurementDTO
+
+  @IsOptional()
+  @IsString()
+  id: string
 }
