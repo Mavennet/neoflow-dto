@@ -1,6 +1,6 @@
 import { PlaceDTO, JSON_TYPE_METAL } from '../../../general';
 declare class EventCreateCredentialSubjectDTOBase {
-    description: string;
+    description?: string;
     place: PlaceDTO;
     eventCreator: string;
 }

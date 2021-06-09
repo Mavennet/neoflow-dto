@@ -21,7 +21,7 @@ import {
 class EventCreateCredentialSubjectDTOBase {
   @IsOptional()
   @IsString()
-  description: string
+  description?: string
 
   @IsNotEmptyObject()
   @ValidateNested()
