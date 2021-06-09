@@ -9,7 +9,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { PostalAddressDTO } from '../../../general'
+import { PlaceDTO } from '../../../general'
 
 export class TransferCustodyRequestDTO {
   @IsNotEmpty()
@@ -22,18 +22,18 @@ export class TransferCustodyRequestDTO {
 
   @IsOptional()
   @ValidateNested()
-  @Type(() => PostalAddressDTO)
-  portOfEntry: PostalAddressDTO
+  @Type(() => PlaceDTO)
+  portOfEntry: PlaceDTO
 
   @IsOptional()
   @ValidateNested()
-  @Type(() => PostalAddressDTO)
-  portOfDestination: PostalAddressDTO
+  @Type(() => PlaceDTO)
+  portOfDestination: PlaceDTO
 
   @IsOptional()
   @ValidateNested()
-  @Type(() => PostalAddressDTO)
-  receiptLocation: PostalAddressDTO
+  @Type(() => PlaceDTO)
+  receiptLocation: PlaceDTO
 
   @IsNotEmpty()
   @IsString()
