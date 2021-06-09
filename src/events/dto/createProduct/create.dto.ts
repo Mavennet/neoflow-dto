@@ -12,6 +12,10 @@ import {
 
 export class AGENT_CreateProductDTO {
   @IsNotEmpty()
+  @IsString()
+  status: string
+
+  @IsNotEmpty()
   @IsUUID()
   productId: string
 
