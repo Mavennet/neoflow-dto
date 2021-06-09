@@ -9,6 +9,7 @@ import {
 import { Type } from 'class-transformer'
 import {
   JSON_TYPE,
+  JSON_TYPE_METAL,
   VerifiableCredentialDTO
 } from '../../../general'
 import {
@@ -27,9 +28,12 @@ export class TransferEventVCDTO extends VerifiableCredentialDTO {
   '@context': string[]
 
   @IsArray()
-  @ArrayMinSize(1)
-  @ArrayMaxSize(1)
-  @Validate(o => o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL))
+  @ArrayMinSize(2)
+  @ArrayMaxSize(2)
+  @Validate(o => 
+    o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
+    o.type.includes(JSON_TYPE_METAL.TRANSFER_EVENT_CREDENTIAL)
+  )
   type: JSON_TYPE[]
 
   @IsNotEmpty()
