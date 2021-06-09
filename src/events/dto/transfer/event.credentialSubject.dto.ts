@@ -4,7 +4,7 @@ import {
   IsUrl,
   IsEnum,
   IsArray,
-  IsNumber,
+  IsNumberString,
   IsString,
   IsDateString,
   ArrayMinSize,
@@ -32,7 +32,7 @@ export class AGENT_TransferEventCredentialSubjectDTO {
 
   @IsNotEmpty()
   @IsDateString()
-  eventTime: Date
+  eventTime: string
 
   @IsNotEmptyObject()
   @ValidateNested()
@@ -72,12 +72,12 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @ValidateNested()
   @Type(() => PlaceDTO)
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
-  recipientLocation: PlaceDTO
+  receiptLocation?: PlaceDTO
 
   @IsNotEmpty()
-  @IsNumber()
+  @IsNumberString()
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_OWNERSHIP)
-  price: number
+  price?: string
 }
 
 export class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {

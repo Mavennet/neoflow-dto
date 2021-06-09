@@ -6,5 +6,5 @@ export declare class ProductCredentialSubjectDTO extends ProductCredentialSubjec
     HSCode: string;
     heatNumber: string;
     product: ProductDTO;
-    grade: string;
+    grade?: string;
 }

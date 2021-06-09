@@ -27,14 +27,6 @@ export class TransferOwnershipRequestDTO {
   price: number
 
   @IsNotEmpty()
-  @IsNumberString()
-  weight: number
-
-  @IsNotEmpty()
-  @IsString()
-  unit: string
-
-  @IsNotEmpty()
   @IsBoolean()
   hasDocuments: boolean
 }

@@ -43,5 +43,5 @@ export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase
 
   @IsOptional()
   @IsString()
-  grade: string
+  grade?: string
 }
