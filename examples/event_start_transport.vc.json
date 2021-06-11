@@ -74,6 +74,7 @@
         "Organization"
       ],
       "name":"Mining Co."
-    }
+    },
+    "shippingDocumentID": "S-123456"
   }
 }
