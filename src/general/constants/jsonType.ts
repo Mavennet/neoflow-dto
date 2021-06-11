@@ -7,4 +7,6 @@ export enum JSON_TYPE_METAL {
   PRODUCT_CREATION_EVENT_CREDENTIAL = 'ProductCreationEventCredential',
   TRANSFER_EVENT_CREDENTIAL = 'TransferEventCredential',
   TRANSFORM_EVENT_CREDENTIAL = 'TransformEventCredential',
+  START_TRANSPORT_EVENT_CREDENTIAL = 'StartTransportEventCredential',
+  END_TRANSPORT_EVENT_CREDENTIAL = 'EndTransportEventCredential'
 }
