@@ -4,10 +4,8 @@ import {
   IsNumber,
   IsString,
   IsBoolean,
-  ValidateIf,
-  ValidateNested
+  ValidateIf
 } from 'class-validator'
-import { Type } from 'class-transformer'
 
 export class TransferCustodyConfirmationDTO {
   @IsNotEmpty()

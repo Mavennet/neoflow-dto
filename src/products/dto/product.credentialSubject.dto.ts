@@ -16,10 +16,10 @@ import { PRODUCT_NAME } from '../constants'
 import { JSON_TYPE_METAL } from '../../general'
 import { ProductDTO } from './product.dto'
 import {
-	ProductCredentialSubjectDTO as ProductCredentialSubjectDTOBase	
+  ProductCredentialSubjectDTO as ProductCredentialSubjectDTOBase
 } from 'mavennet-dto'
 
-export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {	
+export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE_METAL, { each: true })

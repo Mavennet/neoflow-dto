@@ -1,7 +1,6 @@
 import {
-	PlaceDTO as PlaceDTOBase
+  PlaceDTO as PlaceDTOBase
 } from 'mavennet-dto'
 
-export class PlaceDTO extends  PlaceDTOBase {
+export class PlaceDTO extends PlaceDTOBase {
 }
-

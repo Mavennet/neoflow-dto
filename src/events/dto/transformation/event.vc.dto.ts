@@ -31,12 +31,12 @@ export class TransformEventVCDTO extends VerifiableCredentialDTO {
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
-  @Validate(o => 
+  @Validate(o =>
     o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
     o.type.includes(JSON_TYPE_METAL.TRANSFORM_EVENT_CREDENTIAL)
   )
   type: JSON_TYPE[]
-  
+
   @IsNotEmpty()
   @IsUrl()
   id: string

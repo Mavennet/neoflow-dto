@@ -1,6 +1,6 @@
 import {
-	GeoCoordinatesDTO as GeoCoordinatesDTOBase
+  GeoCoordinatesDTO as GeoCoordinatesDTOBase
 } from 'mavennet-dto'
 
-export class GeoCoordinatesDTO extends  GeoCoordinatesDTOBase {
+export class GeoCoordinatesDTO extends GeoCoordinatesDTOBase {
 }

@@ -1,6 +1,6 @@
 import {
-	ReadNotificationDTO as ReadNotificationDTOBase
+  ReadNotificationDTO as ReadNotificationDTOBase
 } from 'mavennet-dto'
 
-export class ReadNotificationDTO extends  ReadNotificationDTOBase {
+export class ReadNotificationDTO extends ReadNotificationDTOBase {
 }

@@ -1,6 +1,6 @@
 import {
-	IssuerDTO as IssuerDTOBase
+  IssuerDTO as IssuerDTOBase
 } from 'mavennet-dto'
 
-export class IssuerDTO extends  IssuerDTOBase {
+export class IssuerDTO extends IssuerDTOBase {
 }
