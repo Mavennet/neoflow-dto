@@ -9,14 +9,14 @@ export declare class AGENT_TransportEventCredentialSubjectDTO {
     eventTime: Date;
     place: PlaceDTO;
     product: ProductDTO;
-    bol: string;
+    trackingNumber: string;
 }
 export declare class AGENT_BillOfLadingCredentialSubjectDTO {
     eventId: string;
     productId: string;
     eventType: EVENT_TYPE;
     initiator: OrganizationDTO;
-    bol: string;
+    billOfLadingNumber: string;
     shippingDate: string;
     arrivalDate: string;
     expectedWeight: MeasurementDTO;

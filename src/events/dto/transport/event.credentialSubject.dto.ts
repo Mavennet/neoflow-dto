@@ -55,7 +55,7 @@ export class AGENT_TransportEventCredentialSubjectDTO {
 
   @IsNotEmpty()
   @IsString()
-  bol: string
+  trackingNumber: string
 }
 
 export class AGENT_BillOfLadingCredentialSubjectDTO {
@@ -78,7 +78,7 @@ export class AGENT_BillOfLadingCredentialSubjectDTO {
 
   @IsNotEmpty()
   @IsString()
-  bol: string
+  billOfLadingNumber: string
 
   @IsNotEmpty()
   @IsDateString()
