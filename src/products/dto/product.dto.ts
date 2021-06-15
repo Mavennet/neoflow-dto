@@ -25,5 +25,5 @@ export class ProductDTO extends ProductDTOBase {
 
   @IsOptional()
   @IsString()
-  id: string
+  id?: string
 }
