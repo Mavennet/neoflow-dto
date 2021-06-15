@@ -2,6 +2,7 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsUUID,
+  IsUrl,
   IsEnum,
   IsArray,
   IsString,
@@ -112,6 +113,14 @@ export class CORE_TransportEventCredentialSubjectDTO extends AGENT_TransportEven
   @IsArray()
   @ArrayMinSize(1)
   type: string[]
+
+  @IsNotEmpty()
+  @IsUrl()
+  eventId: string
+
+  @IsNotEmpty()
+  @IsUrl()
+  productId: string
 }
 
 export class CORE_BillOfLadingCredentialSubjectDTO extends AGENT_BillOfLadingCredentialSubjectDTO {
