@@ -11,7 +11,7 @@ import {
   TransportEventVCDTO,
   BillOfLadingVCDTO
 } from './event.vc.dto'
-import {	
+import {
   AGENT_TransportEventCredentialSubjectDTO,
   AGENT_BillOfLadingCredentialSubjectDTO
 } from './event.credentialSubject.dto'

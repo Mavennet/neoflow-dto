@@ -16,7 +16,7 @@ import {
   PlaceDTO,
   ParcelDeliveryDTO,
   MeasurementDTO,
-  OrganizationDTO,
+  OrganizationDTO
 } from '../../../general'
 import {
   ProductDTO
@@ -30,7 +30,7 @@ export class AGENT_TransportEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsUUID()
   productId: string
-  
+
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
   eventType: EVENT_TYPE
