@@ -30,7 +30,7 @@ export class TransferEventVCDTO extends VerifiableCredentialDTO {
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
-  @Validate(o => 
+  @Validate(o =>
     o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
     o.type.includes(JSON_TYPE_METAL.TRANSFER_EVENT_CREDENTIAL)
   )

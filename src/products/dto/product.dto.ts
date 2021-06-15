@@ -10,7 +10,7 @@ import { Type } from 'class-transformer'
 import { PRODUCT_NAME } from '../constants'
 import { MeasurementDTO } from '../../general'
 import {
-  ProductDTO as ProductDTOBase  
+  ProductDTO as ProductDTOBase
 } from 'mavennet-dto'
 
 export class ProductDTO extends ProductDTOBase {

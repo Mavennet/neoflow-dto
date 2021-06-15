@@ -1,5 +1,5 @@
 import {
-	ValidationDTO as ValidationDTOBase
+  ValidationDTO as ValidationDTOBase
 } from 'mavennet-dto'
 
 export class ValidationDTO extends ValidationDTOBase {

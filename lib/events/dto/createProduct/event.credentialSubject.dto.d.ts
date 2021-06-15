@@ -13,7 +13,7 @@ export declare class AGENT_EventCreateCredentialSubjectDTO extends EventCreateCr
 }
 export declare class CORE_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
     '@context': string[];
-    type: Array<JSON_TYPE_METAL>;
+    type: JSON_TYPE_METAL[];
     eventId: string;
     productId: string;
 }

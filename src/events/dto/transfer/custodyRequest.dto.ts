@@ -2,8 +2,6 @@ import {
   IsBoolean,
   IsNotEmpty,
   IsString,
-  IsNumber,
-  IsNumberString,
   IsOptional,
   Matches,
   ValidateNested

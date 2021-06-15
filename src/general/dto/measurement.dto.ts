@@ -1,6 +1,6 @@
 import {
-	MeasurementDTO as MeasurementDTOBase
+  MeasurementDTO as MeasurementDTOBase
 } from 'mavennet-dto'
 
-export class MeasurementDTO extends  MeasurementDTOBase {
+export class MeasurementDTO extends MeasurementDTOBase {
 }
