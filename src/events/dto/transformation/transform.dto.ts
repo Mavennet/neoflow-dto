@@ -7,16 +7,16 @@ import {
   IsUUID
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { 
+import {
   ProductVCDTO,
   ProductCredentialSubjectDTO
 } from '../../../products'
 import { TransformEventVCDTO } from './event.vc.dto'
-import {	
-  AGENT_TransformEventCredentialSubjectDTO 
+import {
+  AGENT_TransformEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 
-export class AGENT_TransformOutputProductDTO{
+export class AGENT_TransformOutputProductDTO {
   @IsNotEmpty()
   @IsUUID()
   productId: string

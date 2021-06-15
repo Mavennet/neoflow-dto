@@ -1,6 +1,6 @@
 import {
-	UpdateContractDTO as UpdateContractDTOBase
+  UpdateContractDTO as UpdateContractDTOBase
 } from 'mavennet-dto'
 
-export class UpdateContractDTO extends  UpdateContractDTOBase {
+export class UpdateContractDTO extends UpdateContractDTOBase {
 }

@@ -5,13 +5,13 @@ import {
   IsUUID
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { 
+import {
   ProductVCDTO,
   ProductCredentialSubjectDTO
 } from '../../../products'
 import { EventCreateVCDTO } from './event.vc.dto'
-import {	
-  AGENT_EventCreateCredentialSubjectDTO 
+import {
+  AGENT_EventCreateCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 
 export class AGENT_CreateProductDTO {

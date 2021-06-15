@@ -1,6 +1,6 @@
 import {
-	DeleteContractsDTO as DeleteContractsDTOBase
+  DeleteContractsDTO as DeleteContractsDTOBase
 } from 'mavennet-dto'
 
-export class DeleteContractsDTO extends  DeleteContractsDTOBase {
+export class DeleteContractsDTO extends DeleteContractsDTOBase {
 }

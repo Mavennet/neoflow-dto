@@ -1,6 +1,6 @@
 import {
-	AddressDTO as AddressDTOBase
+  AddressDTO as AddressDTOBase
 } from 'mavennet-dto'
 
-export class AddressDTO extends  AddressDTOBase {
+export class AddressDTO extends AddressDTOBase {
 }

@@ -1,7 +1,6 @@
 import {
-	PostalAddressDTO as PostalAddressDTOBase
+  PostalAddressDTO as PostalAddressDTOBase
 } from 'mavennet-dto'
 
-export class PostalAddressDTO extends  PostalAddressDTOBase {
+export class PostalAddressDTO extends PostalAddressDTOBase {
 }
-

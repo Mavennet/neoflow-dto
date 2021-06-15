@@ -1,6 +1,6 @@
 import {
-	ObservationDTO as ObservationDTOBase
+  ObservationDTO as ObservationDTOBase
 } from 'mavennet-dto'
 
-export class ObservationDTO extends  ObservationDTOBase {
+export class ObservationDTO extends ObservationDTOBase {
 }

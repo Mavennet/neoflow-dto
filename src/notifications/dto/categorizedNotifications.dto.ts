@@ -1,6 +1,6 @@
 import {
-	CategorizedNotificationsDTO as CategorizedNotificationsDTOBase
+  CategorizedNotificationsDTO as CategorizedNotificationsDTOBase
 } from 'mavennet-dto'
 
-export class CategorizedNotificationsDTO extends  CategorizedNotificationsDTOBase {
+export class CategorizedNotificationsDTO extends CategorizedNotificationsDTOBase {
 }

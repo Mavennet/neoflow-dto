@@ -1,6 +1,6 @@
 import {
-	OrganizationDTO as OrganizationDTOBase
+  OrganizationDTO as OrganizationDTOBase
 } from 'mavennet-dto'
 
-export class OrganizationDTO extends  OrganizationDTOBase {
+export class OrganizationDTO extends OrganizationDTOBase {
 }

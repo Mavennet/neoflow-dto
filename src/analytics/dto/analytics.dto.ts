@@ -1,10 +1,4 @@
 import {
-  IsNotEmpty,
-  IsNumber,
-  IsString,
-  IsDateString
-} from 'class-validator'
-import {
   AnalyticsDTO as AnalyticsDTOBase
 } from 'mavennet-dto'
 
