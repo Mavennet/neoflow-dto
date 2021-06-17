@@ -1,6 +1,6 @@
 import {
-	UpdateNotificationSettingsDTO as UpdateNotificationSettingsDTOBase
+  UpdateNotificationSettingsDTO as UpdateNotificationSettingsDTOBase
 } from 'mavennet-dto'
 
-export class UpdateNotificationSettingsDTO extends  UpdateNotificationSettingsDTOBase {
+export class UpdateNotificationSettingsDTO extends UpdateNotificationSettingsDTOBase {
 }

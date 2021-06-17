@@ -1,30 +1,21 @@
 import {
   IsNotEmpty,
   IsNotEmptyObject,
-  ArrayNotEmpty,
   IsUUID,
   IsUrl,
   IsEnum,
   IsArray,
-  IsNumber,
-  IsString,
   IsDateString,
   ArrayMinSize,
-  ArrayMaxSize,
-  ValidateNested,
-  Validate,
-  ValidateIf
+  ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import {
-  EVENT_TYPE,
   TRANSFORM_TYPE
 } from '../../constants'
 import {
   PlaceDTO,
-  MeasurementDTO,
-  OrganizationDTO,
-  VerifiableCredentialDTO
+  OrganizationDTO
 } from '../../../general'
 import {
   ProductDTO
@@ -38,7 +29,7 @@ export class AGENT_TransformEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsDateString()
   eventTime: Date
-  
+
   @IsNotEmpty()
   @IsEnum(TRANSFORM_TYPE)
   eventType: TRANSFORM_TYPE

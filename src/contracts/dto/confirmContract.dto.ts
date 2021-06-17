@@ -1,6 +1,6 @@
 import {
-	ConfirmContractDTO as ConfirmContractDTOBase
+  ConfirmContractDTO as ConfirmContractDTOBase
 } from 'mavennet-dto'
 
-export class ConfirmContractDTO extends  ConfirmContractDTOBase {
+export class ConfirmContractDTO extends ConfirmContractDTOBase {
 }

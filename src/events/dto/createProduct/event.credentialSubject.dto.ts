@@ -69,7 +69,7 @@ export class CORE_EventCreateCredentialSubjectDTO extends EventCreateCredentialS
     o.type.includes(JSON_TYPE_METAL.EVENT_CREDENTIAL) &&
     o.type.includes(JSON_TYPE_METAL.PRODUCT_CREATION_EVENT_CREDENTIAL)
   )
-  type: Array<JSON_TYPE_METAL>
+  type: JSON_TYPE_METAL[]
 
   @IsNotEmpty()
   @IsUrl()

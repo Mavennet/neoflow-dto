@@ -1,14 +1,12 @@
 import {
   IsNotEmpty,
   IsNotEmptyObject,
-  IsUrl,
   IsEnum,
   IsArray,
   IsNumberString,
   IsString,
   IsDateString,
   ArrayMinSize,
-  ArrayMaxSize,
   ValidateNested,
   Validate,
   ValidateIf
@@ -17,9 +15,7 @@ import { Type } from 'class-transformer'
 import { EVENT_TYPE } from '../../constants'
 import {
   PlaceDTO,
-  MeasurementDTO,
-  OrganizationDTO,
-  VerifiableCredentialDTO
+  OrganizationDTO
 } from '../../../general'
 import {
   ProductDTO
@@ -29,7 +25,7 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
   @Validate(o => (
-    o.eventType === EVENT_TYPE.TRANSFER_CUSTODY || 
+    o.eventType === EVENT_TYPE.TRANSFER_CUSTODY ||
     o.eventType === EVENT_TYPE.TRANSFER_CUSTODY
   ))
   eventType: EVENT_TYPE
@@ -70,7 +66,7 @@ export class AGENT_TransferEventCredentialSubjectDTO {
 
   @IsNotEmpty()
   @IsString()
-  countryOfDestination: string  
+  countryOfDestination: string
 
   @IsNotEmptyObject()
   @ValidateNested()

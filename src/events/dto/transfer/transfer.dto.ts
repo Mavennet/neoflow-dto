@@ -3,15 +3,11 @@ import {
   IsString,
   IsNumber,
   IsUUID,
-  IsNotEmptyObject,
   ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { AddressDTO } from '../../../general'
 import { TransferEventVCDTO } from './event.vc.dto'
-import {
-  AGENT_TransferEventCredentialSubjectDTO
-} from './event.credentialSubject.dto'
+import { AGENT_TransferEventCredentialSubjectDTO } from './event.credentialSubject.dto'
 
 export class AGENT_TransferDTO {
   @IsNotEmpty()
@@ -54,7 +50,7 @@ export class CORE_TransferDTO {
   txHash: string
 
   @IsNotEmpty()
-  @IsString() // TODO fix data type
+  @IsString()
   txTimestamp: string
 
   @IsNotEmpty()
