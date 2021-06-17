@@ -131,4 +131,12 @@ export class CORE_BillOfLadingCredentialSubjectDTO extends AGENT_BillOfLadingCre
   @IsArray()
   @ArrayMinSize(1)
   type: string[]
+
+  @IsNotEmpty()
+  @IsUrl()
+  eventId: string
+
+  @IsNotEmpty()
+  @IsUrl()
+  productId: string
 }
