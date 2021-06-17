@@ -32,4 +32,6 @@ export declare class CORE_TransportEventCredentialSubjectDTO extends AGENT_Trans
 export declare class CORE_BillOfLadingCredentialSubjectDTO extends AGENT_BillOfLadingCredentialSubjectDTO {
     '@context': string[];
     type: string[];
+    eventId: string;
+    productId: string;
 }
