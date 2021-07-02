@@ -2,7 +2,7 @@ import {
   IsNotEmpty,
   IsArray,
   ArrayMinSize,
-  IsNumberString
+  IsNumber
 } from 'class-validator'
 import { MeasurementDTO } from 'mavennet-dto'
 
@@ -13,15 +13,15 @@ interface FuelTypesDetails {
 
 export class StationaryCombustionDTO {
   @IsNotEmpty()
-  @IsNumberString()
+  @IsNumber()
   co2EmissionsInTonnes: number
 
   @IsNotEmpty()
-  @IsNumberString()
+  @IsNumber()
   ch4EmissionsInTonnes: number
 
   @IsNotEmpty()
-  @IsNumberString()
+  @IsNumber()
   no2EmissionsInTonnes: number
 
   @IsNotEmpty()

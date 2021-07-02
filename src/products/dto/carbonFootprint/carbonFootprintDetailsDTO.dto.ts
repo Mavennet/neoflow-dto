@@ -1,5 +1,5 @@
 import {
-  IsDate,
+  IsDateString,
   IsString,
   IsOptional,
   IsNotEmpty,
@@ -17,12 +17,12 @@ import {
 
 export class CarbonFootprintDetailsDTO {
   @IsNotEmpty()
-  @IsDate()
-  startDate: Date
+  @IsDateString()
+  startDate: string
 
   @IsNotEmpty()
-  @IsDate()
-  endDate: Date
+  @IsDateString()
+  endDate: string
 
   @IsNotEmpty()
   @IsString()
