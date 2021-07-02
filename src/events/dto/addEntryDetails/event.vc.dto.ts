@@ -1,7 +1,6 @@
 import {
   IsNotEmpty,
   IsArray,
-  IsUrl,
   ArrayMinSize,
   ArrayMaxSize,
   ValidateNested,
