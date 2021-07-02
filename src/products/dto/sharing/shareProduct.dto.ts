@@ -1,5 +1,5 @@
 import {
-	ShareProductDTO as ShareProductDTOBase
+  ShareProductDTO as ShareProductDTOBase
 } from 'mavennet-dto'
 
 export class ShareProductDTO extends ShareProductDTOBase {
