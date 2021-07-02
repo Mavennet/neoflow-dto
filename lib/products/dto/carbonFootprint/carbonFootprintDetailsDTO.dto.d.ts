@@ -1,7 +1,7 @@
 import { MobileCombustionDistanceDTO, MobileCombustionUsageDTO, ProcessEmissionDTO, PurchasedElectricityDTO, StationaryCombustionDTO } from './';
 export declare class CarbonFootprintDetailsDTO {
-    startDate: Date;
-    endDate: Date;
+    startDate: string;
+    endDate: string;
     role: string;
     processEmission?: ProcessEmissionDTO;
     stationaryCombustion?: StationaryCombustionDTO;

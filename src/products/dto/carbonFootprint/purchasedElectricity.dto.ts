@@ -2,7 +2,7 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsString,
-  IsNumberString,
+  IsNumber,
   ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
@@ -10,7 +10,7 @@ import { MeasurementDTO } from 'mavennet-dto'
 
 export class PurchasedElectricityDTO {
   @IsNotEmpty()
-  @IsNumberString()
+  @IsNumber()
   co2EmissionsInTonnes: number
 
   @IsNotEmpty()

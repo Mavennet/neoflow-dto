@@ -2,7 +2,7 @@ import {
   IsNotEmpty,
   IsArray,
   ArrayMinSize,
-  IsNumberString
+  IsNumber
 } from 'class-validator'
 import { MeasurementDTO } from 'mavennet-dto'
 
@@ -13,7 +13,7 @@ interface ProcessMaterialsDetails {
 
 export class ProcessEmissionDTO {
   @IsNotEmpty()
-  @IsNumberString()
+  @IsNumber()
   co2EmissionsInTonnes: number
 
   @IsNotEmpty()
