@@ -8,7 +8,7 @@ export declare class AGENT_AddEntryDetailsDTO {
 export declare class CORE_AddEntryDetailsDTO {
     productId: string;
     eventId: string;
-    addEntryDetailsVC?: AddEntryDetailsVCDTO;
+    addEntryDetailsVC: AddEntryDetailsVCDTO;
     eventVCHash: string;
     txHash: string;
     txTimestamp: string;
