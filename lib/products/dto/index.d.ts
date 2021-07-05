@@ -1,3 +1,4 @@
+export * from './carbonFootprint';
 export * from './sharing';
 export * from './product.credentialSubject.dto';
 export * from './product.dto';
