@@ -60,13 +60,13 @@ export class CORE_TransportProductDTO {
   @ValidateNested()
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSPORT_START)
   @Type(() => TransportEventVCDTO)
-  transportVC?: TransportEventVCDTO
+  transportVC: TransportEventVCDTO
 
   @IsNotEmpty()
   @ValidateNested()
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSPORT_END)
   @Type(() => BillOfLadingVCDTO)
-  bolVC?: BillOfLadingVCDTO
+  bolVC: BillOfLadingVCDTO
 
   @IsNotEmpty()
   @IsString()
