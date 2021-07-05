@@ -4,7 +4,6 @@ import {
   IsUUID,
   IsUrl,
   IsString,
-  IsEnum,
   IsArray,
   IsDateString,
   ArrayMinSize,
@@ -12,15 +11,13 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import {
-  TRANSFORM_TYPE
-} from '../../constants'
-import {
   PlaceDTO,
   OrganizationDTO
 } from '../../../general'
 import {
   ProductDTO
 } from '../../../products'
+import { ParcelDeliveryDTO } from 'mavennet-dto'
 
 export class AGENT_AddEntryDetailsCredentialSubjectDTO {
   @IsNotEmpty()
@@ -28,41 +25,66 @@ export class AGENT_AddEntryDetailsCredentialSubjectDTO {
   eventId: string
 
   @IsNotEmpty()
+  @IsUrl()
+  productId: string
+
+  @IsNotEmpty()
   @IsDateString()
   eventTime: Date
 
-  @IsNotEmpty()
-  @IsEnum(TRANSFORM_TYPE)
-  eventType: TRANSFORM_TYPE
+  @IsArray()
+  @ArrayMinSize(1)
+  type: string[]
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  place: PlaceDTO
+  portOfEntry: PlaceDTO
 
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => OrganizationDTO)
-  initiator: OrganizationDTO
+  carrier: OrganizationDTO
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => OrganizationDTO)
+  recipient: OrganizationDTO
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => PlaceDTO)
+  portOfDestination: PlaceDTO
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => ParcelDeliveryDTO)
+  shipment: ParcelDeliveryDTO
+
+  @IsNotEmpty()
+  @IsString()
+  transactionNumber: string
+
+  @IsNotEmpty()
+  @IsDateString()
+  expectedDeliveryDate: Date
+
+  @IsNotEmpty()
+  valuePerItem: string
+
+  @IsNotEmpty()
+  totalOrderValue: string
 
   @IsNotEmptyObject()
   @ValidateNested({ each: true })
   @Type(() => ProductDTO)
   product: ProductDTO
-
-  @IsNotEmpty()
-  @IsString()
-  transactionNumber: string
 }
 
 export class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDetailsCredentialSubjectDTO {
   @IsArray()
   @ArrayMinSize(1)
   '@context': string[]
-
-  @IsArray()
-  @ArrayMinSize(1)
-  type: string[]
 
   @IsNotEmpty()
   @IsUrl()
