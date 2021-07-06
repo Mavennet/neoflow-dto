@@ -1,0 +1,161 @@
+{
+  "@context":[
+    "https://www.w3.org/2018/credentials/v1",
+    "https://w3id.org/traceability/v1",
+    "https://mavennet.github.io/contexts/metal-product-v1.0.jsonld"
+  ],
+  "type":[
+    "VerifiableCredential"
+  ],
+  "id":"https://supplier-api.metaltrail.ca/v1/credentials/verify/f1679ef6-cf1d-4885-a64a-e01fc363dba2",
+  "issuanceDate":"2021-05-19T14:24:53-04:00",
+  "issuer":"did:key:z6MkiTsvjrrPNDZ1rrg9QDEYCFWCmEswT6U2cEkScb7edQ9b",
+  "proof":{
+    "type":"Ed25519Signature2018",
+    "created":"2020-04-02T03:50:55Z",
+    "jws":"eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..zN4f5XdDTnUiYeUMI7KoxsPvPJOFFhvCXS1RJiFsF4S7A-I-pxuTiuQ2AuZ44JG_LRZQlrLjFeQdILprZKDtBQ",
+    "proofPurpose":"assertionMethod",
+    "verificationMethod":"did:key:z6MkiTsvjrrPNDZ1rrg9QDEYCFWCmEswT6U2cEkScb7edQ9b#z6MkiTsvjrrPNDZ1rrg9QDEYCFWCmEswT6U2cEkScb7edQ9b"
+  },
+  "credentialSubject":{
+    "@context":[
+      "https://w3id.org/traceability/v1"
+    ],
+    "type":[
+      "MillTestReport"
+    ],
+    "manufacturer":{
+      "type":[
+        "Organization"
+      ],
+      "name":"Keebler, Hahn and Jacobi",
+      "description":"Compatible client-server definition",
+      "address":{
+        "type":[
+          "PostalAddress"
+        ],
+        "streetAddress":"99511 Estel Corner",
+        "addressLocality":"Hintzville",
+        "addressRegion":"Hawaii",
+        "postalCode":"59490-9358",
+        "addressCountry":"Guatemala"
+      },
+      "email":"Rico_Daniel49@example.com",
+      "phoneNumber":"555-720-1065",
+      "faxNumber":"555-752-1548"
+    },
+    "product":{
+      "type":[
+        "SteelProduct"
+      ],
+      "heatNumber":"7509",
+      "specification":"ASTM-52722",
+      "grade":"94335",
+      "originalCountryOfMeltAndPour":"Ghana",
+      "inspection":{
+        "type":[
+          "InspectionReport"
+        ],
+        "observation":[
+          {
+            "type":[
+              "Observation"
+            ],
+            "property":{
+              "type":[
+                "ChemicalProperty"
+              ],
+              "name":"Bohrium"
+            },
+            "measurement":{
+              "type":[
+                "MeasuredValue"
+              ],
+              "value":"00.00",
+              "unitCode":"UNKNOWN"
+            }
+          },
+          {
+            "type":[
+              "Observation"
+            ],
+            "property":{
+              "type":[
+                "ChemicalProperty"
+              ],
+              "name":"Lanthanum"
+            },
+            "measurement":{
+              "type":[
+                "MeasuredValue"
+              ],
+              "value":"100.00",
+              "unitCode":"P1"
+            }
+          },
+          {
+            "type":[
+              "Observation"
+            ],
+            "property":{
+              "type":[
+                "MechanicalProperty"
+              ],
+              "identifier":"ISO 1352",
+              "name":"Torque-controlled fatigue testing",
+              "description":"ISO 1352:2011 specifies the conditions for performing torsional, constant-amplitude, nominally elastic stress fatigue tests on metallic specimens without deliberately introducing stress concentrations. The tests are carried out at ambient temperature (ideally at between 10 °C and 35 °C) in air by applying a pure couple to the specimen about its longitudinal axis."
+            },
+            "measurement":{
+              "type":[
+                "MeasuredValue"
+              ],
+              "value":"00.00",
+              "unitCode":"UNKNOWN"
+            }
+          }
+        ]
+      }
+    },
+    "purchase":{
+      "type":[
+        "Purchase"
+      ],
+      "customer":{
+        "type":[
+          "Person"
+        ],
+        "email":"Alicia_Smitham@example.net",
+        "phoneNumber":"555-761-6137"
+      }
+    },
+    "shipment":{
+      "type":[
+        "ParcelDelivery"
+      ],
+      "deliveryAddress":{
+        "type":[
+          "PostalAddress"
+        ],
+        "organizationName":"Mertz, Abshire and Medhurst",
+        "streetAddress":"1813 Huels Wall",
+        "addressLocality":"East Mona",
+        "addressRegion":"Florida",
+        "postalCode":"62616",
+        "addressCountry":"Seychelles"
+      },
+      "originAddress":{
+        "type":[
+          "PostalAddress"
+        ],
+        "organizationName":"Trantow LLC",
+        "streetAddress":"3374 Buckridge Vista",
+        "addressLocality":"Haleyside",
+        "addressRegion":"South Dakota",
+        "postalCode":"28278",
+        "addressCountry":"Ukraine"
+      },
+      "deliveryMethod":"Rail freight transport",
+      "trackingNumber":"987082494145"
+    }
+  }
+}
