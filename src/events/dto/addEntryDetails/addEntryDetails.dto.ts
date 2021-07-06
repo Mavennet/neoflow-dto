@@ -5,7 +5,7 @@ import {
   IsUUID
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { AddEntryDetailsVCDTO } from './event.vc.dto'
+import { BASE_AddEntryDetailsVCDTO } from './event.vc.dto'
 import {
   AGENT_AddEntryDetailsCredentialSubjectDTO
 } from './event.credentialSubject.dto'
@@ -36,8 +36,8 @@ export class CORE_AddEntryDetailsDTO {
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => AddEntryDetailsVCDTO)
-  addEntryDetailsVC: AddEntryDetailsVCDTO
+  @Type(() => BASE_AddEntryDetailsVCDTO)
+  addEntryDetailsVC: BASE_AddEntryDetailsVCDTO
 
   @IsNotEmpty()
   @IsString()

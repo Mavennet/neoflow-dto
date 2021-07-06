@@ -13,10 +13,37 @@ import {
   JSON_TYPE_METAL
 } from '../../../general'
 import {
+  AGENT_AddEntryDetailsCredentialSubjectDTO,
   CORE_AddEntryDetailsCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 
-export class AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
+export class BASE_AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
+  @IsArray()
+  @ArrayMinSize(3)
+  @ArrayMaxSize(3)
+  @Validate(o =>
+    o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+    o['@context'].includes('https://schema.org/') &&
+    o['@context'].includes('https://mavennet.github.io/contexts/metal-product-EVENT-v1.0.jsonld')
+  )
+  '@context': string[]
+
+  @IsArray()
+  @ArrayMinSize(2)
+  @ArrayMaxSize(2)
+  @Validate(o =>
+    o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
+    o.type.includes(JSON_TYPE_METAL.ADD_ENTRY_DETAILS_EVENT_CREDENTIAL)
+  )
+  type: JSON_TYPE[]
+
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => AGENT_AddEntryDetailsCredentialSubjectDTO)
+  credentialSubject: AGENT_AddEntryDetailsCredentialSubjectDTO
+}
+
+export class CORE_AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)

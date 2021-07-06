@@ -28,13 +28,23 @@ export class AGENT_AddEntryDetailsCredentialSubjectDTO {
   @IsUrl()
   productId: string
 
-  @IsNotEmpty()
-  @IsDateString()
-  eventTime: Date
-
   @IsArray()
   @ArrayMinSize(1)
   type: string[]
+
+  @IsNotEmpty()
+  @IsString()
+  transactionNumber: string
+}
+
+export class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDetailsCredentialSubjectDTO {
+  @IsArray()
+  @ArrayMinSize(1)
+  '@context': string[]
+
+  @IsNotEmpty()
+  @IsDateString()
+  eventTime: Date
 
   @IsNotEmptyObject()
   @ValidateNested()
@@ -62,10 +72,6 @@ export class AGENT_AddEntryDetailsCredentialSubjectDTO {
   shipment: ParcelDeliveryDTO
 
   @IsNotEmpty()
-  @IsString()
-  transactionNumber: string
-
-  @IsNotEmpty()
   @IsDateString()
   expectedDeliveryDate: Date
 
@@ -79,18 +85,4 @@ export class AGENT_AddEntryDetailsCredentialSubjectDTO {
   @ValidateNested({ each: true })
   @Type(() => ProductDTO)
   product: ProductDTO
-}
-
-export class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDetailsCredentialSubjectDTO {
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
-
-  @IsNotEmpty()
-  @IsUrl()
-  eventId: string
-
-  @IsNotEmpty()
-  @IsUrl()
-  productId: string
 }
