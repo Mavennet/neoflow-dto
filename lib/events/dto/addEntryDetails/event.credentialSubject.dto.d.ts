@@ -7,6 +7,9 @@ export declare class AGENT_AddEntryDetailsCredentialSubjectDTO {
     type: string[];
     transactionNumber: string;
 }
+export declare class BASE_AddEntryDetailsCredentialSubject extends AGENT_AddEntryDetailsCredentialSubjectDTO {
+    '@context': string[];
+}
 export declare class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDetailsCredentialSubjectDTO {
     '@context': string[];
     eventTime: string;
