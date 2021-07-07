@@ -44,7 +44,7 @@ export class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDeta
 
   @IsNotEmpty()
   @IsDateString()
-  eventTime: Date
+  eventTime: string
 
   @IsNotEmptyObject()
   @ValidateNested()
@@ -73,7 +73,7 @@ export class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDeta
 
   @IsNotEmpty()
   @IsDateString()
-  expectedDeliveryDate: Date
+  expectedDeliveryDate: string
 
   @IsNotEmpty()
   valuePerItem: string

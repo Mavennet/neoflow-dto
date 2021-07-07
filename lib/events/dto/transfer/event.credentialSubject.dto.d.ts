@@ -12,7 +12,7 @@ export declare class AGENT_TransferEventCredentialSubjectDTO {
     portOfDestination: PlaceDTO;
     countryOfDestination: string;
     receiptLocation?: PlaceDTO;
-    price?: string;
+    price: string;
 }
 export declare class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {
     '@context': string[];

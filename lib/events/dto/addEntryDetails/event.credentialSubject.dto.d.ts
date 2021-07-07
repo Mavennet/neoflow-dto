@@ -9,13 +9,13 @@ export declare class AGENT_AddEntryDetailsCredentialSubjectDTO {
 }
 export declare class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDetailsCredentialSubjectDTO {
     '@context': string[];
-    eventTime: Date;
+    eventTime: string;
     portOfEntry: PlaceDTO;
     carrier: OrganizationDTO;
     recipient: OrganizationDTO;
     portOfDestination: PlaceDTO;
     shipment: ParcelDeliveryDTO;
-    expectedDeliveryDate: Date;
+    expectedDeliveryDate: string;
     valuePerItem: string;
     totalOrderValue: string;
     product: ProductDTO;
