@@ -14,7 +14,8 @@ import {
 } from '../../../general'
 import {
   AGENT_AddEntryDetailsCredentialSubjectDTO,
-  CORE_AddEntryDetailsCredentialSubjectDTO
+  CORE_AddEntryDetailsCredentialSubjectDTO,
+  BASE_AddEntryDetailsCredentialSubject
 } from './event.credentialSubject.dto'
 
 export class BASE_AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
@@ -40,7 +41,7 @@ export class BASE_AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => AGENT_AddEntryDetailsCredentialSubjectDTO)
-  credentialSubject: AGENT_AddEntryDetailsCredentialSubjectDTO
+  credentialSubject: BASE_AddEntryDetailsCredentialSubject
 }
 
 export class CORE_AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
