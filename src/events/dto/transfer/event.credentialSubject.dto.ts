@@ -77,7 +77,7 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsNumberString()
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_OWNERSHIP)
-  price: string
+  price?: string
 }
 
 export class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {
