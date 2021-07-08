@@ -37,12 +37,6 @@ export class AGENT_AddEntryDetailsCredentialSubjectDTO {
   transactionNumber: string
 }
 
-export class BASE_AddEntryDetailsCredentialSubject extends  AGENT_AddEntryDetailsCredentialSubjectDTO {
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
-}
-
 export class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDetailsCredentialSubjectDTO {
   @IsArray()
   @ArrayMinSize(1)
