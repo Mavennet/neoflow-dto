@@ -1,4 +1,4 @@
-import { CORE_AddEntryDetailsVCDTO } from './event.vc.dto';
+import { AddEntryDetailsVCDTO } from './event.vc.dto';
 import { AGENT_AddEntryDetailsCredentialSubjectDTO } from './event.credentialSubject.dto';
 export declare class AGENT_AddEntryDetailsDTO {
     productId: string;
@@ -8,7 +8,7 @@ export declare class AGENT_AddEntryDetailsDTO {
 export declare class CORE_AddEntryDetailsDTO {
     productId: string;
     eventId: string;
-    addEntryDetailsVC: CORE_AddEntryDetailsVCDTO;
+    addEntryDetailsVC: AddEntryDetailsVCDTO;
     eventVCHash: string;
     txHash: string;
     txTimestamp: string;

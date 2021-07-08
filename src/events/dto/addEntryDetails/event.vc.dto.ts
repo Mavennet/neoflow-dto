@@ -16,7 +16,7 @@ import {
   CORE_AddEntryDetailsCredentialSubjectDTO,
 } from './event.credentialSubject.dto'
 
-export class CORE_AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
+export class AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)

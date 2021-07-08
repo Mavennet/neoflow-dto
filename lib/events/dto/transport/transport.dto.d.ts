@@ -12,8 +12,8 @@ export declare class CORE_TransportProductDTO {
     productId: string;
     eventId: string;
     eventType: EVENT_TYPE;
-    transportVC: TransportEventVCDTO;
-    bolVC: BillOfLadingVCDTO;
+    transportVC?: TransportEventVCDTO;
+    bolVC?: BillOfLadingVCDTO;
     eventVCHash: string;
     txHash: string;
     txTimestamp: string;
