@@ -37,7 +37,7 @@ export class CORE_AddEntryDetailsDTO {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => AddEntryDetailsVCDTO)
-  addEntryDetailsVC?: AddEntryDetailsVCDTO
+  addEntryDetailsVC: AddEntryDetailsVCDTO
 
   @IsNotEmpty()
   @IsString()
