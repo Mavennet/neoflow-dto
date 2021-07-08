@@ -34,7 +34,7 @@ export class AGENT_TransportProductDTO {
   @ValidateNested()
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSPORT_START)
   @Type(() => AGENT_TransportEventCredentialSubjectDTO)
-  transportCredentialSubject: AGENT_TransportEventCredentialSubjectDTO
+  transportCredentialSubject?: AGENT_TransportEventCredentialSubjectDTO
 
   @IsNotEmpty()
   @ValidateNested()

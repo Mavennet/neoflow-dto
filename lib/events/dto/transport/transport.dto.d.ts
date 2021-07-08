@@ -5,7 +5,7 @@ export declare class AGENT_TransportProductDTO {
     eventType: EVENT_TYPE;
     productId: string;
     eventId: string;
-    transportCredentialSubject: AGENT_TransportEventCredentialSubjectDTO;
+    transportCredentialSubject?: AGENT_TransportEventCredentialSubjectDTO;
     billOfLadingCredentialSubject?: AGENT_BillOfLadingCredentialSubjectDTO;
 }
 export declare class CORE_TransportProductDTO {
