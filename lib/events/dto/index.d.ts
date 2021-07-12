@@ -3,3 +3,4 @@ export * from './transfer';
 export * from './transformation';
 export * from './transport';
 export * from './addEntryDetails';
+export * from './inspect';
