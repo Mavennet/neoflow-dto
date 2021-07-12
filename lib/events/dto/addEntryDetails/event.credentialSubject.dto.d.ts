@@ -6,9 +6,6 @@ export declare class AGENT_AddEntryDetailsCredentialSubjectDTO {
     productId: string;
     type: string[];
     transactionNumber: string;
-}
-export declare class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDetailsCredentialSubjectDTO {
-    '@context': string[];
     eventTime: string;
     portOfEntry: PlaceDTO;
     carrier: OrganizationDTO;
@@ -19,4 +16,7 @@ export declare class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddE
     valuePerItem: string;
     totalOrderValue: string;
     product: ProductDTO;
+}
+export declare class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDetailsCredentialSubjectDTO {
+    '@context': string[];
 }

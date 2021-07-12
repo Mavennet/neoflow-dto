@@ -35,12 +35,6 @@ export class AGENT_AddEntryDetailsCredentialSubjectDTO {
   @IsNotEmpty()
   @IsString()
   transactionNumber: string
-}
-
-export class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDetailsCredentialSubjectDTO {
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
 
   @IsNotEmpty()
   @IsDateString()
@@ -85,4 +79,10 @@ export class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDeta
   @ValidateNested({ each: true })
   @Type(() => ProductDTO)
   product: ProductDTO
+}
+
+export class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDetailsCredentialSubjectDTO {
+  @IsArray()
+  @ArrayMinSize(1)
+  '@context': string[]
 }
