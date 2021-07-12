@@ -8,7 +8,7 @@ export declare class AGENT_InspectDTO {
 export declare class CORE_InspectDTO {
     productId: string;
     eventId: string;
-    addEntryDetailsVC: InspectVCDTO;
+    eventVC: InspectVCDTO;
     eventVCHash: string;
     txHash: string;
     txTimestamp: string;

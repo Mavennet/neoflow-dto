@@ -37,7 +37,7 @@ export class CORE_InspectDTO {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => InspectVCDTO)
-  addEntryDetailsVC: InspectVCDTO
+  eventVC: InspectVCDTO
 
   @IsNotEmpty()
   @IsString()
