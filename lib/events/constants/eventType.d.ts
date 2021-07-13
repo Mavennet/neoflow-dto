@@ -8,5 +8,6 @@ export declare enum EVENT_TYPE {
     STORAGE_START = "StorageStart",
     STORAGE_END = "StorageEnd",
     INSPECT = "Inspect",
-    INBOND = "Inbond"
+    INBOND = "Inbond",
+    MILL_TEST_REPORT = "MillTestReport"
 }

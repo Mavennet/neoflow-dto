@@ -24,6 +24,9 @@
     "type":[
       "MillTestReport"
     ],
+    "eventId":"https://producer-api.metaltrail.ca/v1/credentials/verify/7c2111ec-d201-4935-8871-d272632b310a",
+    "eventType":"MillTestReport",
+    "eventTime":"2021-02-04T20:29:37+00:00",
     "manufacturer":{
       "type":[
         "Organization"
@@ -48,9 +51,7 @@
       "type":[
         "SteelProduct"
       ],
-      "heatNumber":"7509",
       "specification":"ASTM-52722",
-      "grade":"94335",
       "originalCountryOfMeltAndPour":"Ghana",
       "inspection":{
         "type":[
@@ -114,18 +115,6 @@
             }
           }
         ]
-      }
-    },
-    "purchase":{
-      "type":[
-        "Purchase"
-      ],
-      "customer":{
-        "type":[
-          "Person"
-        ],
-        "email":"Alicia_Smitham@example.net",
-        "phoneNumber":"555-761-6137"
       }
     },
     "shipment":{
