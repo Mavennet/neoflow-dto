@@ -2,6 +2,7 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsUUID,
+  IsString,
   IsUrl,
   IsEnum,
   IsArray,
@@ -31,6 +32,10 @@ export class AGENT_MillTestCredentialSubjectDTO {
   @IsEnum(EVENT_TYPE)
   @Validate(o => o.eventType === EVENT_TYPE.MILL_TEST_REPORT)
   eventType: EVENT_TYPE
+
+  @IsNotEmpty()
+  @IsString()
+  Certifier: string
 
   @IsNotEmptyObject()
   @ValidateNested()

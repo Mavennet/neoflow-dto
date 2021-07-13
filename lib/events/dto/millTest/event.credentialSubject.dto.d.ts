@@ -5,6 +5,7 @@ export declare class AGENT_MillTestCredentialSubjectDTO {
     eventId: string;
     eventTime: Date;
     eventType: EVENT_TYPE;
+    Certifier: string;
     manufacturer: OrganizationDTO;
     product: SteelProductDTO;
     shipment: ParcelDeliveryDTO;
