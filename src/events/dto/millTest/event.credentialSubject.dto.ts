@@ -35,7 +35,7 @@ export class AGENT_MillTestCredentialSubjectDTO {
 
   @IsNotEmpty()
   @IsString()
-  Certifier: string
+  certifier: string
 
   @IsNotEmptyObject()
   @ValidateNested()
