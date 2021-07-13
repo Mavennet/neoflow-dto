@@ -10,5 +10,5 @@ export enum JSON_TYPE_METAL {
   START_TRANSPORT_EVENT_CREDENTIAL = 'StartTransportEventCredential',
   END_TRANSPORT_EVENT_CREDENTIAL = 'EndTransportEventCredential',
   ADD_ENTRY_DETAILS_EVENT_CREDENTIAL = 'AddEntryDetailsEventCredential',
-  INSPECT_EVENT_CREDENTIAL = 'InspectEventCredential'
+  INSPECT_EVENT_CREDENTIAL = 'InspectionEventCredential'
 }
