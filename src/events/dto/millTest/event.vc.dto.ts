@@ -1,6 +1,7 @@
 import {
   IsNotEmpty,
   IsArray,
+  IsUrl,
   ArrayMinSize,
   ArrayMaxSize,
   ValidateNested,
@@ -13,10 +14,10 @@ import {
   JSON_TYPE_METAL
 } from '../../../general'
 import {
-  CORE_AddEntryDetailsCredentialSubjectDTO
+  CORE_MillTestCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 
-export class AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
+export class MillTestVCDTO extends VerifiableCredentialDTO {
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -32,12 +33,16 @@ export class AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
   @ArrayMaxSize(2)
   @Validate(o =>
     o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
-    o.type.includes(JSON_TYPE_METAL.ADD_ENTRY_DETAILS_EVENT_CREDENTIAL)
+    o.type.includes(JSON_TYPE_METAL.MILL_TEST_CREDENTIAL)
   )
   type: JSON_TYPE[]
 
   @IsNotEmpty()
+  @IsUrl()
+  id: string
+
+  @IsNotEmpty()
   @ValidateNested()
-  @Type(() => CORE_AddEntryDetailsCredentialSubjectDTO)
-  credentialSubject: CORE_AddEntryDetailsCredentialSubjectDTO
+  @Type(() => CORE_MillTestCredentialSubjectDTO)
+  credentialSubject: CORE_MillTestCredentialSubjectDTO
 }

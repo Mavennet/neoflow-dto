@@ -1,5 +1,6 @@
 export * from './address.dto';
 export * from './geoCoordinates.dto';
+export * from './inspection.dto';
 export * from './issuer.dto';
 export * from './measurement.dto';
 export * from './observation.dto';
