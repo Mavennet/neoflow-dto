@@ -25,7 +25,7 @@ export class AGENT_AddEntryDetailsCredentialSubjectDTO {
   eventId: string
 
   @IsNotEmpty()
-  @IsUUID()
+  @IsUrl()
   productId: string
 
   @IsArray()
@@ -85,4 +85,8 @@ export class CORE_AddEntryDetailsCredentialSubjectDTO extends AGENT_AddEntryDeta
   @IsArray()
   @ArrayMinSize(1)
   '@context': string[]
+
+  @IsNotEmpty()
+  @IsUrl()
+  eventId: string
 }
