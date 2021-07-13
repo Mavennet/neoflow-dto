@@ -3,12 +3,12 @@ import { AGENT_MillTestCredentialSubjectDTO } from './event.credentialSubject.dt
 export declare class AGENT_MillTestDTO {
     productId: string;
     eventId: string;
-    MillTestCredentialSubject: AGENT_MillTestCredentialSubjectDTO;
+    millTestCredentialSubject: AGENT_MillTestCredentialSubjectDTO;
 }
 export declare class CORE_MillTestDTO {
     productId: string;
     eventId: string;
-    MillTestVC: MillTestVCDTO;
+    millTestVC: MillTestVCDTO;
     eventVCHash: string;
     txHash: string;
     txTimestamp: string;

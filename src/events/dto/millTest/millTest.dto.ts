@@ -6,9 +6,7 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { MillTestVCDTO } from './event.vc.dto'
-import {
-  AGENT_MillTestCredentialSubjectDTO
-} from './event.credentialSubject.dto'
+import { AGENT_MillTestCredentialSubjectDTO } from './event.credentialSubject.dto'
 
 export class AGENT_MillTestDTO {
   @IsNotEmpty()
@@ -22,7 +20,7 @@ export class AGENT_MillTestDTO {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => AGENT_MillTestCredentialSubjectDTO)
-  MillTestCredentialSubject: AGENT_MillTestCredentialSubjectDTO
+  millTestCredentialSubject: AGENT_MillTestCredentialSubjectDTO
 }
 
 export class CORE_MillTestDTO {
@@ -37,7 +35,7 @@ export class CORE_MillTestDTO {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => MillTestVCDTO)
-  MillTestVC: MillTestVCDTO
+  millTestVC: MillTestVCDTO
 
   @IsNotEmpty()
   @IsString()

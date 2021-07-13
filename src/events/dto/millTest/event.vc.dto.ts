@@ -13,9 +13,7 @@ import {
   JSON_TYPE,
   JSON_TYPE_METAL
 } from '../../../general'
-import {
-  CORE_MillTestCredentialSubjectDTO
-} from './event.credentialSubject.dto'
+import { CORE_MillTestCredentialSubjectDTO } from './event.credentialSubject.dto'
 
 export class MillTestVCDTO extends VerifiableCredentialDTO {
   @IsArray()
