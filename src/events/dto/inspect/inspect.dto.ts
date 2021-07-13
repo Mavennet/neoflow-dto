@@ -22,7 +22,7 @@ export class AGENT_InspectDTO {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => AGENT_InspectCredentialSubjectDTO)
-  addEntryDetailsCredentialSubject: AGENT_InspectCredentialSubjectDTO
+  inspectCredentailSubject: AGENT_InspectCredentialSubjectDTO
 }
 
 export class CORE_InspectDTO {
