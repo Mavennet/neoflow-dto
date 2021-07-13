@@ -3,7 +3,7 @@ import { AGENT_InspectCredentialSubjectDTO } from './event.credentialSubject.dto
 export declare class AGENT_InspectDTO {
     productId: string;
     eventId: string;
-    inspectCredentailSubject: AGENT_InspectCredentialSubjectDTO;
+    inspectCredentialSubject: AGENT_InspectCredentialSubjectDTO;
 }
 export declare class CORE_InspectDTO {
     productId: string;
