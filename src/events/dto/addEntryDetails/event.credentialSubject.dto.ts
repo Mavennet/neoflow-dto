@@ -25,7 +25,7 @@ export class AGENT_AddEntryDetailsCredentialSubjectDTO {
   eventId: string
 
   @IsNotEmpty()
-  @IsUrl()
+  @IsUUID()
   productId: string
 
   @IsArray()
