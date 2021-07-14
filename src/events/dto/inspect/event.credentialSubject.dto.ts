@@ -28,24 +28,14 @@ export class AGENT_InspectCredentialSubjectDTO {
   @IsDateString()
   eventTime: Date
 
-  @IsArray()
-  @ValidateNested({ each: true })
-  observations: ObservationDTO[]
-}
-
-export class CORE_InspectCredentialSubjectDTO extends AGENT_InspectCredentialSubjectDTO {
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
-
   @IsNotEmptyObject()
   @ValidateNested({ each: true })
   @Type(() => OrganizationDTO)
   initiator: OrganizationDTO
 
   @IsArray()
-  @ArrayMinSize(1)
-  type: string[]
+  @ValidateNested({ each: true })
+  observations: ObservationDTO[]
 
   @IsNotEmptyObject()
   @ValidateNested({ each: true })
@@ -56,4 +46,14 @@ export class CORE_InspectCredentialSubjectDTO extends AGENT_InspectCredentialSub
   @ValidateNested({ each: true })
   @Type(() => ProductDTO)
   product: ProductDTO
+}
+
+export class CORE_InspectCredentialSubjectDTO extends AGENT_InspectCredentialSubjectDTO {
+  @IsArray()
+  @ArrayMinSize(1)
+  '@context': string[]
+
+  @IsArray()
+  @ArrayMinSize(1)
+  type: string[]
 }
