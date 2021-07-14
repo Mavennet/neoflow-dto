@@ -24,10 +24,6 @@ export class AGENT_InspectCredentialSubjectDTO {
   @IsUUID()
   eventId: string
 
-  @IsArray()
-  @ArrayMinSize(1)
-  type: string[]
-
   @IsNotEmpty()
   @IsDateString()
   eventTime: Date
@@ -46,6 +42,10 @@ export class CORE_InspectCredentialSubjectDTO extends AGENT_InspectCredentialSub
   @ValidateNested({ each: true })
   @Type(() => OrganizationDTO)
   initiator: OrganizationDTO
+
+  @IsArray()
+  @ArrayMinSize(1)
+  type: string[]
 
   @IsNotEmptyObject()
   @ValidateNested({ each: true })
