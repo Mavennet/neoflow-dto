@@ -4,6 +4,7 @@ import { ObservationDTO } from 'mavennet-dto';
 export declare class AGENT_InspectCredentialSubjectDTO {
     eventId: string;
     eventTime: Date;
+    type: string[];
     initiator: OrganizationDTO;
     observations: ObservationDTO[];
     place: PlaceDTO;
@@ -12,5 +13,4 @@ export declare class AGENT_InspectCredentialSubjectDTO {
 export declare class CORE_InspectCredentialSubjectDTO extends AGENT_InspectCredentialSubjectDTO {
     '@context': string[];
     eventId: string;
-    type: string[];
 }
