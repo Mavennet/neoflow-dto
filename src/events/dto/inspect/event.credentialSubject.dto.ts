@@ -3,7 +3,6 @@ import {
   IsNotEmptyObject,
   IsUUID,
   IsUrl,
-  IsString,
   IsArray,
   IsDateString,
   ArrayMinSize,
@@ -52,6 +51,10 @@ export class CORE_InspectCredentialSubjectDTO extends AGENT_InspectCredentialSub
   @IsArray()
   @ArrayMinSize(1)
   '@context': string[]
+
+  @IsNotEmpty()
+  @IsUrl()
+  eventId: string
 
   @IsArray()
   @ArrayMinSize(1)

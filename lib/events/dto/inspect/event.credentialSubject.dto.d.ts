@@ -11,5 +11,6 @@ export declare class AGENT_InspectCredentialSubjectDTO {
 }
 export declare class CORE_InspectCredentialSubjectDTO extends AGENT_InspectCredentialSubjectDTO {
     '@context': string[];
+    eventId: string;
     type: string[];
 }
