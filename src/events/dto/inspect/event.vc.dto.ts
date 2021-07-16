@@ -12,9 +12,7 @@ import {
   JSON_TYPE,
   JSON_TYPE_METAL
 } from '../../../general'
-import {
-  CORE_InspectCredentialSubjectDTO,
-} from './event.credentialSubject.dto'
+import { CORE_InspectCredentialSubjectDTO } from './event.credentialSubject.dto'
 
 export class InspectVCDTO extends VerifiableCredentialDTO {
   @IsArray()

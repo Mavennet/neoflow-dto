@@ -11,12 +11,12 @@ import {
 import { Type } from 'class-transformer'
 import {
   PlaceDTO,
-  OrganizationDTO
+  OrganizationDTO,
+  ObservationDTO
 } from '../../../general'
 import {
   ProductDTO
 } from '../../../products'
-import { ObservationDTO, ParcelDeliveryDTO } from 'mavennet-dto'
 
 export class AGENT_InspectCredentialSubjectDTO {
   @IsNotEmpty()

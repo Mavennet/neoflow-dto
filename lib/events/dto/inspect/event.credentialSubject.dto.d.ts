@@ -1,6 +1,5 @@
-import { PlaceDTO, OrganizationDTO } from '../../../general';
+import { PlaceDTO, OrganizationDTO, ObservationDTO } from '../../../general';
 import { ProductDTO } from '../../../products';
-import { ObservationDTO } from 'mavennet-dto';
 export declare class AGENT_InspectCredentialSubjectDTO {
     eventId: string;
     eventTime: Date;
