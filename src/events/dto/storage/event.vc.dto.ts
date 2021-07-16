@@ -12,9 +12,9 @@ import {
   JSON_TYPE,
   JSON_TYPE_METAL
 } from '../../../general'
-import { CORE_InspectCredentialSubjectDTO } from './event.credentialSubject.dto'
+import { CORE_StorageEventCredentialSubjectDTO } from './event.credentialSubject.dto'
 
-export class InspectVCDTO extends VerifiableCredentialDTO {
+export class StorageEventVCDTO extends VerifiableCredentialDTO {
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -30,12 +30,12 @@ export class InspectVCDTO extends VerifiableCredentialDTO {
   @ArrayMaxSize(2)
   @Validate(o =>
     o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
-    o.type.includes(JSON_TYPE_METAL.INSPECT_EVENT_CREDENTIAL)
+    (o.type.includes(JSON_TYPE_METAL.START_STORAGE_EVENT_CREDENTIAL) || o.type.includes(JSON_TYPE_METAL.END_STORAGE_EVENT_CREDENTIAL))
   )
   type: JSON_TYPE[]
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => CORE_InspectCredentialSubjectDTO)
-  credentialSubject: CORE_InspectCredentialSubjectDTO
+  @Type(() => CORE_StorageEventCredentialSubjectDTO)
+  credentialSubject: CORE_StorageEventCredentialSubjectDTO
 }
