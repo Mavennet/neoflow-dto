@@ -1,6 +1,7 @@
 import {
   IsNotEmpty,
   IsNotEmptyObject,
+  IsOptional,
   IsEnum,
   IsArray,
   IsNumberString,
@@ -64,9 +65,9 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @Type(() => PlaceDTO)
   portOfDestination: PlaceDTO
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  countryOfDestination: string
+  countryOfDestination?: string
 
   @IsNotEmptyObject()
   @ValidateNested()

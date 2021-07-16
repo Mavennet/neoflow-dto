@@ -18,7 +18,7 @@ export class TransferCustodyConfirmationDTO {
 
   @IsOptional()
   @IsString()
-  comment: string
+  comment?: string
 
   @ValidateIf(o => o.confirmationStatus === false)
   @IsNotEmpty()

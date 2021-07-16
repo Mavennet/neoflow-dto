@@ -1,8 +1,9 @@
 import {
-  IsBoolean,
   IsNotEmpty,
-  IsString,
+  IsNotEmptyObject,
   IsOptional,
+  IsBoolean,
+  IsString,
   Matches,
   ValidateNested
 } from 'class-validator'
@@ -16,14 +17,14 @@ export class TransferCustodyRequestDTO {
 
   @IsOptional()
   @IsString()
-  countryOfDestination: string
+  countryOfDestination?: string
 
-  @IsOptional()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfEntry: PlaceDTO
 
-  @IsOptional()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfDestination: PlaceDTO
@@ -31,7 +32,7 @@ export class TransferCustodyRequestDTO {
   @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  receiptLocation: PlaceDTO
+  receiptLocation?: PlaceDTO
 
   @IsNotEmpty()
   @IsString()

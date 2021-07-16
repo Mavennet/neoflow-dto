@@ -8,9 +8,9 @@ export declare class AGENT_TransferEventCredentialSubjectDTO {
     product: ProductDTO;
     initiator: OrganizationDTO;
     receiver: OrganizationDTO;
-    portOfEntry: PlaceDTO;
-    portOfDestination: PlaceDTO;
-    countryOfDestination: string;
+    portOfEntry?: PlaceDTO;
+    portOfDestination?: PlaceDTO;
+    countryOfDestination?: string;
     receiptLocation?: PlaceDTO;
     price?: string;
 }
