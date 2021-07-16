@@ -12,5 +12,7 @@ export declare enum JSON_TYPE_METAL {
     ADD_ENTRY_DETAILS_EVENT_CREDENTIAL = "AddEntryDetailsEventCredential",
     INSPECT_EVENT_CREDENTIAL = "InspectionEventCredential",
     MILL_TEST_CREDENTIAL = "MillTestCredential",
-    INSPECTION_REPORT = "InspectionReport"
+    INSPECTION_REPORT = "InspectionReport",
+    START_STORAGE_EVENT_CREDENTIAL = "StartStorageEventCredential",
+    END_STORAGE_EVENT_CREDENTIAL = "EndStorageEventCredential"
 }

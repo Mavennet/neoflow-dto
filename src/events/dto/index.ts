@@ -1,5 +1,6 @@
 export * from './createProduct'
 export * from './millTest'
+export * from './storage'
 export * from './transfer'
 export * from './transformation'
 export * from './transport'
