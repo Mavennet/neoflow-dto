@@ -1,46 +1,45 @@
 import {
+  IsBoolean,
   IsNotEmpty,
   IsNotEmptyObject,
-  IsOptional,
-  IsNumber,
   IsString,
-  IsBoolean,
-  ValidateIf,
-  ValidateNested
+  IsNumberString,
+  IsOptional,
+  ValidateNested,
+  Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { PlaceDTO } from '../../../general'
 
-export class TransferOwnershipConfirmationDTO {
+export class TransferCustodyUpdateDTO {
   @IsNotEmpty()
-  @IsNumber()
-  transferOwnershipRequestId: number
-
-  @IsOptional()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => PlaceDTO)
-  portOfEntry?: PlaceDTO
-
-  @IsOptional()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => PlaceDTO)
-  portOfDestination?: PlaceDTO
+  @IsNumberString()
+  requestId: string
 
   @IsOptional()
   @IsString()
   countryOfDestination?: string
 
-  @IsNotEmpty()
-  @IsBoolean()
-  confirmationStatus: boolean
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => PlaceDTO)
+  portOfEntry: PlaceDTO
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => PlaceDTO)
+  portOfDestination: PlaceDTO
 
   @IsOptional()
-  @IsString()
-  comment?: string
+  @ValidateNested()
+  @Type(() => PlaceDTO)
+  receiptLocation?: PlaceDTO
 
-  @ValidateIf(o => o.confirmationStatus === false)
+  @IsNotEmpty()
+  @IsString()
+  @Matches(/^did:/)
+  receiver: string
+
   @IsNotEmpty()
   @IsBoolean()
   hasDocuments: boolean
