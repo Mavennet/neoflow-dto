@@ -10,7 +10,7 @@ import { MeasurementDTO } from 'mavennet-dto'
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 
-export class FuelTypesDetails {
+class FuelTypesDetails {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
