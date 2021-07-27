@@ -33,7 +33,9 @@
     "@nestjs/common": "^8.0.5",
     "@nestjs/core": "^8.0.4",
     "@nestjs/swagger": "^5.0.4",
-    "mavennet-dto": "git+ssh://git@github.com/mavennet/mavennet-dto.git"
+    "lib": "^4.3.3",
+    "mavennet-dto": "git+ssh://git@github.com/mavennet/mavennet-dto.git",
+    "src": "^1.1.2"
   },
   "peerDependencies": {
     "class-transformer": ">=0.3.1",

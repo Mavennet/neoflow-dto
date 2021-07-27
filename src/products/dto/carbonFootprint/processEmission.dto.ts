@@ -2,7 +2,8 @@ import {
   IsNotEmpty,
   IsArray,
   ArrayMinSize,
-  IsNumber
+  IsNumber,
+  ValidateNested
 } from 'class-validator'
 import { MeasurementDTO } from 'mavennet-dto'
 import { ApiProperty } from '@nestjs/swagger'
@@ -22,5 +23,6 @@ export class ProcessEmissionDTO {
   @IsNotEmpty()
   @IsArray()
   @ArrayMinSize(1)
+  @ValidateNested({ each: true })
   processMaterialsDetails: ProcessMaterialsDetails[]
 }
