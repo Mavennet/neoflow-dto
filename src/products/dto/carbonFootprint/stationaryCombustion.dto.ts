@@ -40,9 +40,9 @@ export class StationaryCombustionDTO {
   no2EmissionsInTonnes: number
 
   // @ApiProperty()
-  @IsNotEmpty()
-  @IsArray()
-  @ArrayMinSize(1)
-  @ValidateNested({ each: true })
-  fuelTypesDetails: FuelTypesDetails[]
+  // @IsNotEmpty()
+  // @IsArray()
+  // @ArrayMinSize(1)
+  // @ValidateNested({ each: true })
+  // fuelTypesDetails: FuelTypesDetails[]
 }
