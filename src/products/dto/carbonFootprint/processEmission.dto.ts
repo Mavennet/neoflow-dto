@@ -20,9 +20,9 @@ export class ProcessEmissionDTO {
   co2EmissionsInTonnes: number
 
   // @ApiProperty()
-  @IsNotEmpty()
-  @IsArray()
-  @ArrayMinSize(1)
-  @ValidateNested({ each: true })
-  processMaterialsDetails: ProcessMaterialsDetails[]
+  // @IsNotEmpty()
+  // @IsArray()
+  // @ArrayMinSize(1)
+  // @ValidateNested({ each: true })
+  // processMaterialsDetails: ProcessMaterialsDetails[]
 }
