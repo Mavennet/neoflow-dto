@@ -24,25 +24,25 @@ class FuelTypesDetails {
 }
 
 export class StationaryCombustionDTO {
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  co2EmissionsInTonnes: number
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  ch4EmissionsInTonnes: number
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  no2EmissionsInTonnes: number
+  // @ApiProperty()
+  // @IsNotEmpty()
+  // @IsNumber()
+  // co2EmissionsInTonnes: number
 
   // @ApiProperty()
   // @IsNotEmpty()
-  // @IsArray()
-  // @ArrayMinSize(1)
-  // @ValidateNested({ each: true })
-  // fuelTypesDetails: FuelTypesDetails[]
+  // @IsNumber()
+  // ch4EmissionsInTonnes: number
+
+  // @ApiProperty()
+  // @IsNotEmpty()
+  // @IsNumber()
+  // no2EmissionsInTonnes: number
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsArray()
+  @ArrayMinSize(1)
+  @ValidateNested({ each: true })
+  fuelTypesDetails: FuelTypesDetails[]
 }
