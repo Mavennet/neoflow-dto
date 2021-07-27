@@ -14,7 +14,7 @@ import { ApiProperty } from '@nestjs/swagger'
 // }
 
 export class ProcessEmissionDTO {
-  @ApiProperty()
+  // @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   co2EmissionsInTonnes: number
