@@ -2,13 +2,24 @@ import {
   IsNotEmpty,
   IsArray,
   ArrayMinSize,
-  IsNumber
+  IsNumber,
+  IsString,
+  ValidateNested
 } from 'class-validator'
 import { MeasurementDTO } from 'mavennet-dto'
 import { ApiProperty } from '@nestjs/swagger'
+import { Type } from 'class-transformer'
 
-interface FuelTypesDetails {
+export class FuelTypesDetails {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
   fuelType: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => MeasurementDTO)
   fuelUsage: MeasurementDTO
 }
 
@@ -32,5 +43,6 @@ export class StationaryCombustionDTO {
   @IsNotEmpty()
   @IsArray()
   @ArrayMinSize(1)
+  @ValidateNested({ each: true })
   fuelTypesDetails: FuelTypesDetails[]
 }
