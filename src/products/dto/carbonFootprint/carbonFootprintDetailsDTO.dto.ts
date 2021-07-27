@@ -6,7 +6,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { ApiProperty } from '@nestjs/swagger'
 import {
   MobileCombustionDistanceDTO,
   MobileCombustionUsageDTO,
@@ -36,25 +36,21 @@ export class CarbonFootprintDetailsDTO {
   @Type(() => ProcessEmissionDTO)
   processEmission?: ProcessEmissionDTO
 
-  @ApiProperty()
   @IsOptional()
   @ValidateNested()
   @Type(() => StationaryCombustionDTO)
   stationaryCombustion?: StationaryCombustionDTO
 
-  @ApiProperty()
   @IsOptional()
   @ValidateNested()
   @Type(() => MobileCombustionUsageDTO)
   mobileCombustionUsage?: MobileCombustionUsageDTO
 
-  @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => MobileCombustionDistanceDTO)
   mobileCombustionDistance?: MobileCombustionDistanceDTO
 
-  @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => PurchasedElectricityDTO)

@@ -14,10 +14,10 @@ interface ProcessMaterialsDetails {
 }
 
 export class ProcessEmissionDTO {
-  // @ApiProperty()
-  // @IsNotEmpty()
-  // @IsNumber()
-  // co2EmissionsInTonnes: number
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsNumber()
+  co2EmissionsInTonnes: number
 
   @ApiProperty()
   @IsNotEmpty()
