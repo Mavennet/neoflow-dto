@@ -14,7 +14,7 @@ import {
   PurchasedElectricityDTO,
   StationaryCombustionDTO
 } from './'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class CarbonFootprintDetailsDTO {
   @ApiProperty()
@@ -32,7 +32,7 @@ export class CarbonFootprintDetailsDTO {
   @IsString()
   role: string
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => ProcessEmissionDTO)
@@ -50,13 +50,13 @@ export class CarbonFootprintDetailsDTO {
   @Type(() => MobileCombustionUsageDTO)
   mobileCombustionUsage?: MobileCombustionUsageDTO
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => MobileCombustionDistanceDTO)
   mobileCombustionDistance?: MobileCombustionDistanceDTO
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => PurchasedElectricityDTO)

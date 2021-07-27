@@ -20,7 +20,7 @@ import {
   OrganizationDTO
 } from '../../../general'
 import { EVENT_TYPE } from '../../constants'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 class EventCreateCredentialSubjectDTOBase {
   @ApiProperty()
@@ -29,7 +29,7 @@ class EventCreateCredentialSubjectDTOBase {
   @Validate(o => o.eventType === EVENT_TYPE.CREATE)
   eventType: EVENT_TYPE
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   description?: string

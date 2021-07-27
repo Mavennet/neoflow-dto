@@ -9,7 +9,7 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { PlaceDTO } from '../../../general'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class TransferCustodyRequestDTO {
   @ApiProperty()
@@ -17,7 +17,7 @@ export class TransferCustodyRequestDTO {
   @IsString()
   productId: string
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   countryOfDestination?: string
@@ -34,7 +34,7 @@ export class TransferCustodyRequestDTO {
   @Type(() => PlaceDTO)
   portOfDestination: PlaceDTO
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)

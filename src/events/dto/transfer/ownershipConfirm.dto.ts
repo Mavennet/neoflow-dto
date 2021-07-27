@@ -10,7 +10,7 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { PlaceDTO } from '../../../general'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class TransferOwnershipConfirmationDTO {
   @ApiProperty()
@@ -18,21 +18,21 @@ export class TransferOwnershipConfirmationDTO {
   @IsNumber()
   transferOwnershipRequestId: number
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfEntry?: PlaceDTO
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfDestination?: PlaceDTO
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   countryOfDestination?: string
@@ -42,7 +42,7 @@ export class TransferOwnershipConfirmationDTO {
   @IsBoolean()
   confirmationStatus: boolean
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   comment?: string

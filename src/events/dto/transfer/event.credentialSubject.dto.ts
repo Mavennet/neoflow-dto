@@ -21,7 +21,7 @@ import {
 import {
   ProductDTO
 } from '../../../products'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class AGENT_TransferEventCredentialSubjectDTO {
   @ApiProperty()
@@ -74,7 +74,7 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @Type(() => PlaceDTO)
   portOfDestination: PlaceDTO
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   countryOfDestination?: string

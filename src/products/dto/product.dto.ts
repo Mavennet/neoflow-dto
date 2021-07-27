@@ -12,7 +12,7 @@ import { MeasurementDTO } from '../../general'
 import {
   ProductDTO as ProductDTOBase
 } from 'mavennet-dto'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class ProductDTO extends ProductDTOBase {
   @ApiProperty()
@@ -26,7 +26,7 @@ export class ProductDTO extends ProductDTOBase {
   @Type(() => MeasurementDTO)
   weight: MeasurementDTO
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   id?: string

@@ -18,7 +18,7 @@ import { ProductDTO } from './product.dto'
 import {
   ProductCredentialSubjectDTO as ProductCredentialSubjectDTOBase
 } from 'mavennet-dto'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {
   @ApiProperty()
@@ -46,7 +46,7 @@ export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase
   @Type(() => ProductDTO)
   product: ProductDTO
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   grade?: string

@@ -6,7 +6,7 @@ import {
   IsOptional,
   Matches
 } from 'class-validator'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class TransferOwnershipUpdateDTO {
   @ApiProperty()
@@ -14,7 +14,7 @@ export class TransferOwnershipUpdateDTO {
   @IsString()
   requestId: string
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
   contractId?: string
