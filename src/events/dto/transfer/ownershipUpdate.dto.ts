@@ -2,20 +2,19 @@ import {
   IsBoolean,
   IsNotEmpty,
   IsString,
-  IsNumber,
   IsNumberString,
   IsOptional,
   Matches
 } from 'class-validator'
 
-export class TransferOwnershipRequestDTO {
+export class TransferOwnershipUpdateDTO {
   @IsNotEmpty()
   @IsString()
-  productId: string
+  requestId: string
 
   @IsOptional()
-  @IsNumber()
-  contractId?: number
+  @IsNumberString()
+  contractId?: string
 
   @IsNotEmpty()
   @IsString()

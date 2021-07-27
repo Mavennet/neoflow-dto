@@ -1,5 +1,6 @@
 import {
   IsNotEmpty,
+  IsNotEmptyObject,
   IsOptional,
   IsNumber,
   IsString,
@@ -16,18 +17,20 @@ export class TransferOwnershipConfirmationDTO {
   transferOwnershipRequestId: number
 
   @IsOptional()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  portOfEntry: PlaceDTO
+  portOfEntry?: PlaceDTO
 
   @IsOptional()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  portOfDestination: PlaceDTO
+  portOfDestination?: PlaceDTO
 
   @IsOptional()
   @IsString()
-  countryOfDestination: string
+  countryOfDestination?: string
 
   @IsNotEmpty()
   @IsBoolean()
@@ -35,7 +38,7 @@ export class TransferOwnershipConfirmationDTO {
 
   @IsOptional()
   @IsString()
-  comment: string
+  comment?: string
 
   @ValidateIf(o => o.confirmationStatus === false)
   @IsNotEmpty()

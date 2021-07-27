@@ -1,19 +1,20 @@
 import {
+  IsBoolean,
   IsNotEmpty,
   IsNotEmptyObject,
-  IsOptional,
-  IsBoolean,
   IsString,
-  Matches,
-  ValidateNested
+  IsNumberString,
+  IsOptional,
+  ValidateNested,
+  Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { PlaceDTO } from '../../../general'
 
-export class TransferCustodyRequestDTO {
+export class TransferCustodyUpdateDTO {
   @IsNotEmpty()
-  @IsString()
-  productId: string
+  @IsNumberString()
+  requestId: string
 
   @IsOptional()
   @IsString()

@@ -1,6 +1,6 @@
 import { PlaceDTO } from '../../../general';
-export declare class TransferCustodyRequestDTO {
-    productId: string;
+export declare class TransferCustodyUpdateDTO {
+    requestId: string;
     countryOfDestination?: string;
     portOfEntry: PlaceDTO;
     portOfDestination: PlaceDTO;
