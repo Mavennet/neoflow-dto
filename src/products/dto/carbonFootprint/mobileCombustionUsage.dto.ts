@@ -30,7 +30,7 @@ export class MobileCombustionUsageDTO {
   @IsString()
   fuelType: string
 
-  @ApiProperty()
+  // @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => MeasurementDTO)

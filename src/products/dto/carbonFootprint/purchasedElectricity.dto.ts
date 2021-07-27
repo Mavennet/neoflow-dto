@@ -20,7 +20,7 @@ export class PurchasedElectricityDTO {
   @IsString()
   subregion: string
 
-  @ApiProperty()
+  // @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => MeasurementDTO)

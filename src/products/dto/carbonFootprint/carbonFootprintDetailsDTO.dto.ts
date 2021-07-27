@@ -31,7 +31,7 @@ export class CarbonFootprintDetailsDTO {
   @IsString()
   role: string
 
-  // @ApiPropertyOptional()
+  @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => ProcessEmissionDTO)

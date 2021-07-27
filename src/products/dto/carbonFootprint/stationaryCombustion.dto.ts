@@ -39,7 +39,7 @@ export class StationaryCombustionDTO {
   @IsNumber()
   no2EmissionsInTonnes: number
 
-  @ApiProperty()
+  // @ApiProperty()
   @IsNotEmpty()
   @IsArray()
   @ArrayMinSize(1)

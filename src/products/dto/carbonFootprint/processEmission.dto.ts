@@ -6,7 +6,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { MeasurementDTO } from 'mavennet-dto'
-// import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty } from '@nestjs/swagger'
 
 interface ProcessMaterialsDetails {
   processMaterial: string
@@ -14,7 +14,7 @@ interface ProcessMaterialsDetails {
 }
 
 export class ProcessEmissionDTO {
-  // @ApiProperty()
+  @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   co2EmissionsInTonnes: number
@@ -23,6 +23,6 @@ export class ProcessEmissionDTO {
   @IsNotEmpty()
   @IsArray()
   @ArrayMinSize(1)
-  // @ValidateNested({ each: true })
+  @ValidateNested({ each: true })
   processMaterialsDetails: ProcessMaterialsDetails[]
 }
