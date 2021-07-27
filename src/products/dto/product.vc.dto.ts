@@ -14,8 +14,10 @@ import {
   VerifiableCredentialDTO
 } from '../../general'
 import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto'
+import { ApiProperty } from '@nestjs/swagger'
 
 export class ProductVCDTO extends VerifiableCredentialDTO {
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -26,6 +28,7 @@ export class ProductVCDTO extends VerifiableCredentialDTO {
   )
   '@context': string[]
 
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
@@ -35,10 +38,12 @@ export class ProductVCDTO extends VerifiableCredentialDTO {
   )
   type: Array<JSON_TYPE | JSON_TYPE_METAL>
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsUrl()
   id: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => ProductCredentialSubjectDTO)

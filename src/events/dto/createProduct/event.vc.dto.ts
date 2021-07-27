@@ -16,8 +16,10 @@ import {
 import {
   CORE_EventCreateCredentialSubjectDTO
 } from './event.credentialSubject.dto'
+import { ApiProperty } from '@nestjs/swagger'
 
 export class EventCreateVCDTO extends VerifiableCredentialDTO {
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -28,6 +30,7 @@ export class EventCreateVCDTO extends VerifiableCredentialDTO {
   )
   '@context': string[]
 
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
@@ -37,10 +40,12 @@ export class EventCreateVCDTO extends VerifiableCredentialDTO {
   )
   type: Array<JSON_TYPE | JSON_TYPE_METAL>
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsUrl()
   id: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CORE_EventCreateCredentialSubjectDTO)

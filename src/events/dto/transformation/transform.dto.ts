@@ -15,12 +15,15 @@ import { TransformEventVCDTO } from './event.vc.dto'
 import {
   AGENT_TransformEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
+import { ApiProperty } from '@nestjs/swagger'
 
 export class AGENT_TransformOutputProductDTO {
+  @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
   productId: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => ProductCredentialSubjectDTO)
@@ -28,17 +31,20 @@ export class AGENT_TransformOutputProductDTO {
 }
 
 export class AGENT_TransformProductDTO {
+  @ApiProperty()
   @IsNotEmpty()
   @IsArray()
   @ArrayMinSize(1)
   inputProductIds: string[]
 
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
   @Type(() => AGENT_TransformOutputProductDTO)
   outputProducts: AGENT_TransformOutputProductDTO[]
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => AGENT_TransformEventCredentialSubjectDTO)

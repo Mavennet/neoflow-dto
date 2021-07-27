@@ -21,8 +21,10 @@ import {
 import {
   ProductDTO
 } from '../../../products'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class AGENT_TransferEventCredentialSubjectDTO {
+  @ApiProperty()
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
   @Validate(o => (
@@ -31,50 +33,60 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   ))
   eventType: EVENT_TYPE
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
   eventTime: string
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
   place: PlaceDTO
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => ProductDTO)
   product: ProductDTO
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => OrganizationDTO)
   initiator: OrganizationDTO
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => OrganizationDTO)
   receiver: OrganizationDTO
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfEntry: PlaceDTO
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfDestination: PlaceDTO
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   countryOfDestination?: string
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_CUSTODY)
   receiptLocation?: PlaceDTO
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsNumberString()
   @ValidateIf(o => o.eventType === EVENT_TYPE.TRANSFER_OWNERSHIP)
@@ -82,10 +94,12 @@ export class AGENT_TransferEventCredentialSubjectDTO {
 }
 
 export class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
   '@context': string[]
 
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
   type: string[]

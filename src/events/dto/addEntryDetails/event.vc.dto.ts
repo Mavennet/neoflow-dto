@@ -15,8 +15,10 @@ import {
 import {
   CORE_AddEntryDetailsCredentialSubjectDTO
 } from './event.credentialSubject.dto'
+import { ApiProperty } from '@nestjs/swagger'
 
 export class AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -27,6 +29,7 @@ export class AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
   )
   '@context': string[]
 
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
@@ -36,6 +39,7 @@ export class AddEntryDetailsVCDTO extends VerifiableCredentialDTO {
   )
   type: JSON_TYPE[]
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CORE_AddEntryDetailsCredentialSubjectDTO)
