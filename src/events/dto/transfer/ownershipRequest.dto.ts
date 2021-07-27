@@ -24,7 +24,7 @@ export class TransferOwnershipRequestDTO {
 
   @IsNotEmpty()
   @IsNumberString()
-  price: number
+  price: string
 
   @IsNotEmpty()
   @IsBoolean()
