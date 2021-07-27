@@ -16,8 +16,10 @@ import {
   CORE_TransportEventCredentialSubjectDTO,
   CORE_BillOfLadingCredentialSubjectDTO
 } from './event.credentialSubject.dto'
+import { ApiProperty } from '@nestjs/swagger'
 
 export class TransportEventVCDTO extends VerifiableCredentialDTO {
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -28,6 +30,7 @@ export class TransportEventVCDTO extends VerifiableCredentialDTO {
   )
   '@context': string[]
 
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
@@ -37,6 +40,7 @@ export class TransportEventVCDTO extends VerifiableCredentialDTO {
   )
   type: JSON_TYPE[]
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CORE_TransportEventCredentialSubjectDTO)
@@ -44,6 +48,7 @@ export class TransportEventVCDTO extends VerifiableCredentialDTO {
 }
 
 export class BillOfLadingVCDTO extends VerifiableCredentialDTO {
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -54,6 +59,7 @@ export class BillOfLadingVCDTO extends VerifiableCredentialDTO {
   )
   '@context': string[]
 
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
@@ -63,6 +69,7 @@ export class BillOfLadingVCDTO extends VerifiableCredentialDTO {
   )
   type: JSON_TYPE[]
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CORE_BillOfLadingCredentialSubjectDTO)

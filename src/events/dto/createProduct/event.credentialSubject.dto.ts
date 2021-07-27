@@ -20,27 +20,33 @@ import {
   OrganizationDTO
 } from '../../../general'
 import { EVENT_TYPE } from '../../constants'
+import { ApiProperty } from '@nestjs/swagger'
 
 class EventCreateCredentialSubjectDTOBase {
+  @ApiProperty()
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
   @Validate(o => o.eventType === EVENT_TYPE.CREATE)
   eventType: EVENT_TYPE
 
+  @ApiProperty()
   @IsOptional()
   @IsString()
   description?: string
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
   place: PlaceDTO
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
   eventCreator: string
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => OrganizationDTO)
@@ -48,20 +54,24 @@ class EventCreateCredentialSubjectDTOBase {
 }
 
 export class AGENT_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
+  @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
   eventId: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
   productId: string
 }
 
 export class CORE_EventCreateCredentialSubjectDTO extends EventCreateCredentialSubjectDTOBase {
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
   '@context': string[]
 
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
@@ -71,10 +81,12 @@ export class CORE_EventCreateCredentialSubjectDTO extends EventCreateCredentialS
   )
   type: JSON_TYPE_METAL[]
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsUrl()
   eventId: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsUrl()
   productId: string
