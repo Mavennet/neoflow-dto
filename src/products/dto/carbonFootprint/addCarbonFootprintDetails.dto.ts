@@ -7,15 +7,15 @@ import {
 import { Type } from 'class-transformer'
 
 import { CarbonFootprintDetailsDTO } from './'
-import { ApiProperty } from '@nestjs/swagger'
+// import { ApiProperty } from '@nestjs/swagger'
 
 export class AddCarbonFootprintDetailsDTO {
-  @ApiProperty()
+  // @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
   productId: string
 
-  @ApiProperty()
+  // @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => CarbonFootprintDetailsDTO)
