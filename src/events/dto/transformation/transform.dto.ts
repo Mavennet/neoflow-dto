@@ -52,44 +52,53 @@ export class AGENT_TransformProductDTO {
 }
 
 export class CORE_TransformOutputProductDTO {
+  @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
   productId: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => ProductVCDTO)
   productVC: ProductVCDTO
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsString()
   productVCHash: string
 }
 
 export class CORE_TransformProductDTO {
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
   @Type(() => CORE_TransformOutputProductDTO)
   outputProducts: CORE_TransformOutputProductDTO[]
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
   eventId: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => TransformEventVCDTO)
   eventVC: TransformEventVCDTO
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsString()
   txHash: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsString()
   txTimestamp: string
