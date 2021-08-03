@@ -14,8 +14,10 @@ import {
   JSON_TYPE_METAL
 } from '../../../general'
 import { CORE_MillTestCredentialSubjectDTO } from './event.credentialSubject.dto'
+import { ApiProperty } from '@nestjs/swagger'
 
 export class MillTestVCDTO extends VerifiableCredentialDTO {
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -26,6 +28,7 @@ export class MillTestVCDTO extends VerifiableCredentialDTO {
   )
   '@context': string[]
 
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
@@ -35,10 +38,12 @@ export class MillTestVCDTO extends VerifiableCredentialDTO {
   )
   type: JSON_TYPE[]
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsUrl()
   id: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CORE_MillTestCredentialSubjectDTO)

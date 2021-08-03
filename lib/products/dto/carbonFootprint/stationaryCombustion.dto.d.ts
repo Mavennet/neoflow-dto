@@ -1,5 +1,5 @@
 import { MeasurementDTO } from 'mavennet-dto';
-interface FuelTypesDetails {
+declare class FuelTypesDetails {
     fuelType: string;
     fuelUsage: MeasurementDTO;
 }

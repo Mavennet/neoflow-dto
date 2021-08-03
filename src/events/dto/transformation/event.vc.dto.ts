@@ -16,8 +16,10 @@ import {
 import {
   CORE_TransformEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
+import { ApiProperty } from '@nestjs/swagger'
 
 export class TransformEventVCDTO extends VerifiableCredentialDTO {
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -28,6 +30,7 @@ export class TransformEventVCDTO extends VerifiableCredentialDTO {
   )
   '@context': string[]
 
+  @ApiProperty()
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
@@ -37,10 +40,12 @@ export class TransformEventVCDTO extends VerifiableCredentialDTO {
   )
   type: JSON_TYPE[]
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsUrl()
   id: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CORE_TransformEventCredentialSubjectDTO)

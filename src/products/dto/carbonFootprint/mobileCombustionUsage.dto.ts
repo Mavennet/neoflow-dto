@@ -7,12 +7,15 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { MeasurementDTO } from 'mavennet-dto'
+import { ApiProperty } from '@nestjs/swagger'
 
 export class MobileCombustionUsageDTO {
+  @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   co2EmissionsInTonnes: number
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   co2eEmissionsInTonnes: number
@@ -21,14 +24,17 @@ export class MobileCombustionUsageDTO {
   @IsNumber()
   ch4EmissionsInTonnes: number
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   no2EmissionsInTonnes: number
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsString()
   fuelType: string
 
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => MeasurementDTO)
