@@ -24,6 +24,7 @@ export class ProcessEmissionDTO {
   @IsNumber()
   co2eEmissionsInTonnes: number
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsArray()
   @ArrayMinSize(1)

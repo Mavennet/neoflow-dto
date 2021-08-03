@@ -4,6 +4,7 @@ import {
   IsArray,
   ArrayMinSize
 } from 'class-validator'
+import { ApiProperty } from '@nestjs/swagger'
 import { MeasurementDTO } from 'mavennet-dto'
 
 interface Events {
@@ -12,10 +13,12 @@ interface Events {
 }
 
 export class CarbonFootprintEventsDTO {
+  @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   co2eEmissionsInTonnes: number
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsArray()
   @ArrayMinSize(1)

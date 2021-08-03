@@ -34,6 +34,7 @@ export class StationaryCombustionDTO {
   @IsNumber()
   co2eEmissionsInTonnes: number
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   ch4EmissionsInTonnes: number
