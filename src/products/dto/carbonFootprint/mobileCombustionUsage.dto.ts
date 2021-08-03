@@ -15,6 +15,10 @@ export class MobileCombustionUsageDTO {
 
   @IsNotEmpty()
   @IsNumber()
+  co2eEmissionsInTonnes: number
+
+  @IsNotEmpty()
+  @IsNumber()
   ch4EmissionsInTonnes: number
 
   @IsNotEmpty()

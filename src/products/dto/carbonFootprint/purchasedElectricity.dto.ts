@@ -14,6 +14,10 @@ export class PurchasedElectricityDTO {
   co2EmissionsInTonnes: number
 
   @IsNotEmpty()
+  @IsNumber()
+  co2eEmissionsInTonnes: number
+
+  @IsNotEmpty()
   @IsString()
   subregion: string
 

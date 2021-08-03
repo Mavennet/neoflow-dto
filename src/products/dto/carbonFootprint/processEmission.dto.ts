@@ -17,6 +17,10 @@ export class ProcessEmissionDTO {
   co2EmissionsInTonnes: number
 
   @IsNotEmpty()
+  @IsNumber()
+  co2eEmissionsInTonnes: number
+
+  @IsNotEmpty()
   @IsArray()
   @ArrayMinSize(1)
   processMaterialsDetails: ProcessMaterialsDetails[]

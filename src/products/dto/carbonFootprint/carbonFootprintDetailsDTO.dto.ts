@@ -8,6 +8,7 @@ import {
 import { Type } from 'class-transformer'
 
 import {
+  CarbonFootprintEventsDTO,
   MobileCombustionDistanceDTO,
   MobileCombustionUsageDTO,
   ProcessEmissionDTO,
@@ -52,4 +53,9 @@ export class CarbonFootprintDetailsDTO {
   @ValidateNested()
   @Type(() => PurchasedElectricityDTO)
   purchasedElectricity?: PurchasedElectricityDTO
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => CarbonFootprintEventsDTO)
+  carbonFootprintEvents?: CarbonFootprintEventsDTO
 }
