@@ -5,6 +5,7 @@ declare class FuelTypesDetails {
 }
 export declare class StationaryCombustionDTO {
     co2EmissionsInTonnes: number;
+    co2eEmissionsInTonnes: number;
     ch4EmissionsInTonnes: number;
     no2EmissionsInTonnes: number;
     fuelTypesDetails: FuelTypesDetails[];

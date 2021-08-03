@@ -1,4 +1,4 @@
-import { MobileCombustionDistanceDTO, MobileCombustionUsageDTO, ProcessEmissionDTO, PurchasedElectricityDTO, StationaryCombustionDTO } from './';
+import { CarbonFootprintEventsDTO, MobileCombustionDistanceDTO, MobileCombustionUsageDTO, ProcessEmissionDTO, PurchasedElectricityDTO, StationaryCombustionDTO } from './';
 export declare class CarbonFootprintDetailsDTO {
     startDate: string;
     endDate: string;
@@ -8,4 +8,5 @@ export declare class CarbonFootprintDetailsDTO {
     mobileCombustionUsage?: MobileCombustionUsageDTO;
     mobileCombustionDistance?: MobileCombustionDistanceDTO;
     purchasedElectricity?: PurchasedElectricityDTO;
+    carbonFootprintEvents?: CarbonFootprintEventsDTO;
 }

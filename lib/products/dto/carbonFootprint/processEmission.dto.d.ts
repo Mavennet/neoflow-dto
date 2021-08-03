@@ -5,6 +5,7 @@ interface ProcessMaterialsDetails {
 }
 export declare class ProcessEmissionDTO {
     co2EmissionsInTonnes: number;
+    co2eEmissionsInTonnes: number;
     processMaterialsDetails: ProcessMaterialsDetails[];
 }
 export {};

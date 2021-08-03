@@ -17,6 +17,11 @@ export class PurchasedElectricityDTO {
 
   @ApiProperty()
   @IsNotEmpty()
+  @IsNumber()
+  co2eEmissionsInTonnes: number
+
+  @ApiProperty()
+  @IsNotEmpty()
   @IsString()
   subregion: string
 
