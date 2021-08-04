@@ -15,7 +15,7 @@ export class AddCarbonFootprintDetailsDTO {
   @IsUUID()
   productId: string
 
-  @ApiProperty()
+  @ApiProperty({ type: () => CarbonFootprintDetailsDTO })
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => CarbonFootprintDetailsDTO)

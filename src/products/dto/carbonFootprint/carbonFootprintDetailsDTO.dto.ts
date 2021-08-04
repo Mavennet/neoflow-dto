@@ -32,37 +32,37 @@ export class CarbonFootprintDetailsDTO {
   @IsString()
   role: string
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: () => ProcessEmissionDTO })
   @IsOptional()
   @ValidateNested()
   @Type(() => ProcessEmissionDTO)
   processEmission?: ProcessEmissionDTO
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: () => StationaryCombustionDTO })
   @IsOptional()
   @ValidateNested()
   @Type(() => StationaryCombustionDTO)
   stationaryCombustion?: StationaryCombustionDTO
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: () => MobileCombustionUsageDTO })
   @IsOptional()
   @ValidateNested()
   @Type(() => MobileCombustionUsageDTO)
   mobileCombustionUsage?: MobileCombustionUsageDTO
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: () => MobileCombustionDistanceDTO })
   @IsOptional()
   @ValidateNested()
   @Type(() => MobileCombustionDistanceDTO)
   mobileCombustionDistance?: MobileCombustionDistanceDTO
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: () => PurchasedElectricityDTO })
   @IsOptional()
   @ValidateNested()
   @Type(() => PurchasedElectricityDTO)
   purchasedElectricity?: PurchasedElectricityDTO
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: () => CarbonFootprintEventsDTO })
   @IsOptional()
   @ValidateNested()
   @Type(() => CarbonFootprintEventsDTO)
