@@ -20,6 +20,11 @@ export class TransferCustodyUpdateDTO {
 
   @ApiPropertyOptional()
   @IsOptional()
+  @IsNumberString()
+  contractId?: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsString()
   countryOfDestination?: string
 

@@ -4,6 +4,7 @@ import {
   IsOptional,
   IsBoolean,
   IsString,
+  IsNumberString,
   Matches,
   ValidateNested
 } from 'class-validator'
@@ -16,6 +17,11 @@ export class TransferCustodyRequestDTO {
   @IsNotEmpty()
   @IsString()
   productId: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsNumberString()
+  contractId?: string
 
   @ApiPropertyOptional()
   @IsOptional()
