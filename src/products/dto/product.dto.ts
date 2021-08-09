@@ -27,16 +27,16 @@ export class ProductDTO extends ProductDTOBase {
   weight: MeasurementDTO
 
   @ApiPropertyOptional()
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => MeasurementDTO)
-  length: MeasurementDTO
+  length?: MeasurementDTO
 
   @ApiPropertyOptional()
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => MeasurementDTO)
-  width: MeasurementDTO
+  width?: MeasurementDTO
 
   @ApiPropertyOptional()
   @IsOptional()
