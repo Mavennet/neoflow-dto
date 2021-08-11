@@ -16,7 +16,8 @@ import { Type } from 'class-transformer'
 import { EVENT_TYPE } from '../../constants'
 import {
   OrganizationDTO,
-  ParcelDeliveryDTO
+  ParcelDeliveryDTO,
+  PlaceDTO
 } from '../../../general'
 import { SteelProductDTO } from '../../../products'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
@@ -60,6 +61,12 @@ export class AGENT_MillTestCredentialSubjectDTO {
   @ValidateNested()
   @Type(() => ParcelDeliveryDTO)
   shipment?: ParcelDeliveryDTO
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => PlaceDTO)
+  place: PlaceDTO
 }
 
 export class CORE_MillTestCredentialSubjectDTO extends AGENT_MillTestCredentialSubjectDTO {

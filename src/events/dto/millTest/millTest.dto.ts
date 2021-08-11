@@ -10,7 +10,7 @@ import { Type } from 'class-transformer'
 import { MillTestVCDTO } from './event.vc.dto'
 import { AGENT_MillTestCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { ApiProperty } from '@nestjs/swagger'
-import { Organization, Observation } from '../../../general'
+import { Organization, Observation, Place } from '../../../general'
 
 export class MillTest {
   @ApiProperty()
@@ -38,6 +38,12 @@ export class MillTest {
   @IsNotEmpty()
   @IsString()
   originalCountryOfMeltAndPour: string
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => Place)
+  place: Place
 
   @ApiProperty()
   @IsArray()
