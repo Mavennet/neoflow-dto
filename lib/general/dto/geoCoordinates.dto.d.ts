@@ -1,3 +1,1 @@
-import { GeoCoordinatesDTO as GeoCoordinatesDTOBase } from 'mavennet-dto';
-export declare class GeoCoordinatesDTO extends GeoCoordinatesDTOBase {
-}
+export { GeoCoordinatesDTO } from 'mavennet-dto';

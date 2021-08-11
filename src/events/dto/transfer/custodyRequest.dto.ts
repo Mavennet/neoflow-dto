@@ -9,8 +9,54 @@ import {
   ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { PlaceDTO } from '../../../general'
+import { PlaceDTO, Place } from '../../../general'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+
+export class TransferCustodyRequest {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  productId: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsNumberString()
+  contractId?: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  countryOfDestination?: string
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => Place)
+  portOfEntry: Place
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => Place)
+  portOfDestination: Place
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => Place)
+  receiptLocation?: Place
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  @Matches(/^did:/)
+  receiver: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsBoolean()
+  hasDocuments: boolean
+}
 
 export class TransferCustodyRequestDTO {
   @ApiProperty()

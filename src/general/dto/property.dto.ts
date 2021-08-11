@@ -1,6 +1,1 @@
-import {
-  PropertyDTO as PropertyDTOBase
-} from 'mavennet-dto'
-
-export class PropertyDTO extends PropertyDTOBase {
-}
+export { PropertyDTO } from 'mavennet-dto'

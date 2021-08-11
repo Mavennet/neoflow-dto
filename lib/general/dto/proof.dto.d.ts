@@ -1,3 +1,1 @@
-import { ProofDTO as ProofDTOBase } from 'mavennet-dto';
-export declare class ProofDTO extends ProofDTOBase {
-}
+export { ProofDTO } from 'mavennet-dto';

@@ -1,3 +1,1 @@
-import { OrganizationDTO as OrganizationDTOBase } from 'mavennet-dto';
-export declare class OrganizationDTO extends OrganizationDTOBase {
-}
+export { OrganizationDTO, Organization } from 'mavennet-dto';

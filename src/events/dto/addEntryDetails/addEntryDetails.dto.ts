@@ -1,15 +1,81 @@
 import {
   IsNotEmpty,
+  IsNotEmptyObject,
+  IsUUID,
   IsString,
-  ValidateNested,
-  IsUUID
+  IsDateString,
+  ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { AddEntryDetailsVCDTO } from './event.vc.dto'
 import {
   AGENT_AddEntryDetailsCredentialSubjectDTO
 } from './event.credentialSubject.dto'
+import { Place, Organization, PostalAddress } from '../../../general'
+import { ProductBrief } from '../../../products'
 import { ApiProperty } from '@nestjs/swagger'
+
+export class AddEntryDetails {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  transactionNumber: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsDateString()
+  expectedDeliveryDate: string
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => Place)
+  portOfEntry: Place
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => Place)
+  portOfDestination: Place
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => Organization)
+  carrier: Organization
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => Organization)
+  recipient: Organization
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => PostalAddress)
+  originAddress: PostalAddress
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => PostalAddress)
+  deliveryAddress: PostalAddress
+
+  @ApiProperty()
+  @IsNotEmpty()
+  valuePerItem: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  totalOrderValue: string
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => ProductBrief)
+  product: ProductBrief
+}
 
 export class AGENT_AddEntryDetailsDTO {
   @ApiProperty()

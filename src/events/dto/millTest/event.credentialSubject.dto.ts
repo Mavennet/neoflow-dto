@@ -1,6 +1,7 @@
 import {
   IsNotEmpty,
   IsNotEmptyObject,
+  IsOptional,
   IsUUID,
   IsString,
   IsUrl,
@@ -18,7 +19,7 @@ import {
   ParcelDeliveryDTO
 } from '../../../general'
 import { SteelProductDTO } from '../../../products'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class AGENT_MillTestCredentialSubjectDTO {
   @ApiProperty()
@@ -29,7 +30,7 @@ export class AGENT_MillTestCredentialSubjectDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
-  eventTime: Date
+  eventTime: string
 
   @ApiProperty()
   @IsNotEmpty()
@@ -54,11 +55,11 @@ export class AGENT_MillTestCredentialSubjectDTO {
   @Type(() => SteelProductDTO)
   product: SteelProductDTO
 
-  @ApiProperty()
-  @IsNotEmptyObject()
+  @ApiPropertyOptional()
+  @IsOptional()
   @ValidateNested()
   @Type(() => ParcelDeliveryDTO)
-  shipment: ParcelDeliveryDTO
+  shipment?: ParcelDeliveryDTO
 }
 
 export class CORE_MillTestCredentialSubjectDTO extends AGENT_MillTestCredentialSubjectDTO {

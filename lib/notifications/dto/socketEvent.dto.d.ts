@@ -1,3 +1,1 @@
-import { SocketEventDTO as SocketEventDTOBase } from 'mavennet-dto';
-export declare class SocketEventDTO extends SocketEventDTOBase {
-}
+export { SocketEventDTO } from 'mavennet-dto';

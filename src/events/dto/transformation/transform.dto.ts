@@ -2,20 +2,43 @@ import {
   IsNotEmpty,
   IsArray,
   ArrayMinSize,
+  IsEnum,
   IsString,
   ValidateNested,
   IsUUID
 } from 'class-validator'
 import { Type } from 'class-transformer'
+import { TRANSFORM_TYPE } from '../../constants'
 import {
   ProductVCDTO,
-  ProductCredentialSubjectDTO
+  ProductCredentialSubjectDTO,
+  ProductBrief
 } from '../../../products'
+import { CreateProduct } from '../createProduct'
 import { TransformEventVCDTO } from './event.vc.dto'
 import {
   AGENT_TransformEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 import { ApiProperty } from '@nestjs/swagger'
+
+export class TransformProduct {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsEnum(TRANSFORM_TYPE)
+  eventType: TRANSFORM_TYPE
+
+  @ApiProperty()
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => CreateProduct)
+  newProducts: CreateProduct[]
+
+  @ApiProperty()
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => ProductBrief)
+  consumedProducts: ProductBrief[]
+}
 
 export class AGENT_TransformOutputProductDTO {
   @ApiProperty()

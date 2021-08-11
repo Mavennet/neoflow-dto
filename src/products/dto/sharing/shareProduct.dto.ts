@@ -1,6 +1,1 @@
-import {
-  ShareProductDTO as ShareProductDTOBase
-} from 'mavennet-dto'
-
-export class ShareProductDTO extends ShareProductDTOBase {
-}
+export { ShareProductDTO } from 'mavennet-dto'
