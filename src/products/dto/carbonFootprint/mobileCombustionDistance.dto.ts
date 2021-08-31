@@ -1,4 +1,6 @@
 import {
+  ArrayMinSize,
+  IsArray,
   IsNotEmpty,
   IsNotEmptyObject,
   IsString,
@@ -8,6 +10,24 @@ import {
 import { Type } from 'class-transformer'
 import { MeasurementDTO } from 'mavennet-dto'
 import { ApiProperty } from '@nestjs/swagger'
+
+class DistanceDetails {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  vehicleType: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  fuelType: string
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => MeasurementDTO)
+  distance: MeasurementDTO
+}
 
 export class MobileCombustionDistanceDTO {
   @ApiProperty()
@@ -31,18 +51,8 @@ export class MobileCombustionDistanceDTO {
   no2EmissionsInTonnes: number
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  vehicleType: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  fuelType: string
-
-  @ApiProperty()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => MeasurementDTO)
-  distance: MeasurementDTO
+  @IsArray()
+  @ArrayMinSize(1)
+  @ValidateNested({ each: true })
+  distanceDetails: DistanceDetails[]
 }
