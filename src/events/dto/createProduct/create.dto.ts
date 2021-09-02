@@ -22,13 +22,13 @@ import {
 } from './event.credentialSubject.dto'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import {
-  Place,
-  Organization,
-  Measurement,
-  Observation
+  FLAT_PlaceDTO,
+  FLAT_OrganizationDTO,
+  FLAT_MeasurementDTO,
+  FLAT_ObservationDTO
 } from '../../../general'
 
-export class CreateProduct {
+export class AGENT_FLAT_CreateProductDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(PRODUCT_NAME)
@@ -59,38 +59,38 @@ export class CreateProduct {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Place)
-  facility: Place
+  @Type(() => FLAT_PlaceDTO)
+  facility: FLAT_PlaceDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Organization)
-  manufacturer: Organization
+  @Type(() => FLAT_OrganizationDTO)
+  manufacturer: FLAT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Measurement)
-  weight: Measurement
+  @Type(() => FLAT_MeasurementDTO)
+  weight: FLAT_MeasurementDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => Measurement)
-  width?: Measurement
+  @Type(() => FLAT_MeasurementDTO)
+  width?: FLAT_MeasurementDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => Measurement)
-  length?: Measurement
+  @Type(() => FLAT_MeasurementDTO)
+  length?: FLAT_MeasurementDTO
 
   @ApiProperty()
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => Observation)
-  observation: Observation[]
+  @Type(() => FLAT_ObservationDTO)
+  observation: FLAT_ObservationDTO[]
 }
 
 export class AGENT_CreateProductDTO {

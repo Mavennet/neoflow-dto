@@ -20,11 +20,11 @@ import {
   AGENT_BillOfLadingCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 import { EVENT_TYPE, TRANSPORT_TYPE } from '../../constants'
-import { Organization, Place, Measurement, PostalAddress } from '../../../general'
+import { FLAT_OrganizationDTO, FLAT_PlaceDTO, FLAT_MeasurementDTO, FLAT_PostalAddressDTO } from '../../../general'
 import { ProductBrief } from '../../../products'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
-export class TransportStart {
+export class AGENT_FLAT_TransportStartDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(TRANSPORT_TYPE)
@@ -34,8 +34,8 @@ export class TransportStart {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Organization)
-  initiator: Organization
+  @Type(() => FLAT_OrganizationDTO)
+  initiator: FLAT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -51,11 +51,11 @@ export class TransportStart {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Place)
-  place: Place
+  @Type(() => FLAT_PlaceDTO)
+  place: FLAT_PlaceDTO
 }
 
-export class TransportEnd {
+export class AGENT_FLAT_TransportEndDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
@@ -70,8 +70,8 @@ export class TransportEnd {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Organization)
-  initiator: Organization
+  @Type(() => FLAT_OrganizationDTO)
+  initiator: FLAT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmpty()
@@ -91,26 +91,26 @@ export class TransportEnd {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Measurement)
-  expectedWeight: Measurement
+  @Type(() => FLAT_MeasurementDTO)
+  expectedWeight: FLAT_MeasurementDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Measurement)
-  deliveredWeight: Measurement
+  @Type(() => FLAT_MeasurementDTO)
+  deliveredWeight: FLAT_MeasurementDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => PostalAddress)
-  originAddress: PostalAddress
+  @Type(() => FLAT_PostalAddressDTO)
+  originAddress: FLAT_PostalAddressDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => PostalAddress)
-  deliveryAddress: PostalAddress
+  @Type(() => FLAT_PostalAddressDTO)
+  deliveryAddress: FLAT_PostalAddressDTO
 
   @ApiPropertyOptional()
   @IsOptional()

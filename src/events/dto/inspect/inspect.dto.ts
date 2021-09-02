@@ -8,25 +8,25 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { InspectVCDTO } from './event.vc.dto'
-import { Organization, Place, Observation } from '../../../general'
+import { FLAT_OrganizationDTO, FLAT_PlaceDTO, FLAT_ObservationDTO } from '../../../general'
 import {
   AGENT_InspectCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 import { ProductBrief } from '../../../products'
 import { ApiProperty } from '@nestjs/swagger'
 
-export class Inspection {
+export class AGENT_FLAT_InspectionDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Organization)
-  initiator: Organization
+  @Type(() => FLAT_OrganizationDTO)
+  initiator: FLAT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Place)
-  place: Place
+  @Type(() => FLAT_PlaceDTO)
+  place: FLAT_PlaceDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -37,8 +37,8 @@ export class Inspection {
   @ApiProperty()
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => Observation)
-  observation: Observation[]
+  @Type(() => FLAT_ObservationDTO)
+  observation: FLAT_ObservationDTO[]
 }
 
 export class AGENT_InspectDTO {

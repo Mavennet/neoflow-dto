@@ -1,26 +1,26 @@
 import { TransportEventVCDTO, BillOfLadingVCDTO } from './event.vc.dto';
 import { AGENT_TransportEventCredentialSubjectDTO, AGENT_BillOfLadingCredentialSubjectDTO } from './event.credentialSubject.dto';
 import { EVENT_TYPE, TRANSPORT_TYPE } from '../../constants';
-import { Organization, Place, Measurement, PostalAddress } from '../../../general';
+import { FLAT_OrganizationDTO, FLAT_PlaceDTO, FLAT_MeasurementDTO, FLAT_PostalAddressDTO } from '../../../general';
 import { ProductBrief } from '../../../products';
-export declare class TransportStart {
+export declare class AGENT_FLAT_TransportStartDTO {
     eventType: TRANSPORT_TYPE;
-    initiator: Organization;
+    initiator: FLAT_OrganizationDTO;
     product: ProductBrief;
     billOfLadingNumber: string;
-    place: Place;
+    place: FLAT_PlaceDTO;
 }
-export declare class TransportEnd {
+export declare class AGENT_FLAT_TransportEndDTO {
     productId: string;
     eventType: TRANSPORT_TYPE;
-    initiator: Organization;
+    initiator: FLAT_OrganizationDTO;
     billOfLadingNumber: string;
     shippingDate: string;
     arrivalDate: string;
-    expectedWeight: Measurement;
-    deliveredWeight: Measurement;
-    originAddress: PostalAddress;
-    deliveryAddress: PostalAddress;
+    expectedWeight: FLAT_MeasurementDTO;
+    deliveredWeight: FLAT_MeasurementDTO;
+    originAddress: FLAT_PostalAddressDTO;
+    deliveryAddress: FLAT_PostalAddressDTO;
     deliveryMethod?: string;
 }
 export declare class AGENT_TransportProductDTO {

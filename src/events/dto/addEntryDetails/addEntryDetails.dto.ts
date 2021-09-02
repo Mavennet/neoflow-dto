@@ -11,11 +11,11 @@ import { AddEntryDetailsVCDTO } from './event.vc.dto'
 import {
   AGENT_AddEntryDetailsCredentialSubjectDTO
 } from './event.credentialSubject.dto'
-import { Place, Organization, PostalAddress } from '../../../general'
+import { FLAT_PlaceDTO, FLAT_OrganizationDTO, FLAT_PostalAddressDTO } from '../../../general'
 import { ProductBrief } from '../../../products'
 import { ApiProperty } from '@nestjs/swagger'
 
-export class AddEntryDetails {
+export class AGENT_FLAT_AddEntryDetailsDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
@@ -29,38 +29,38 @@ export class AddEntryDetails {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Place)
-  portOfEntry: Place
+  @Type(() => FLAT_PlaceDTO)
+  portOfEntry: FLAT_PlaceDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Place)
-  portOfDestination: Place
+  @Type(() => FLAT_PlaceDTO)
+  portOfDestination: FLAT_PlaceDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Organization)
-  carrier: Organization
+  @Type(() => FLAT_OrganizationDTO)
+  carrier: FLAT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => Organization)
-  recipient: Organization
+  @Type(() => FLAT_OrganizationDTO)
+  recipient: FLAT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => PostalAddress)
-  originAddress: PostalAddress
+  @Type(() => FLAT_PostalAddressDTO)
+  originAddress: FLAT_PostalAddressDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => PostalAddress)
-  deliveryAddress: PostalAddress
+  @Type(() => FLAT_PostalAddressDTO)
+  deliveryAddress: FLAT_PostalAddressDTO
 
   @ApiProperty()
   @IsNotEmpty()

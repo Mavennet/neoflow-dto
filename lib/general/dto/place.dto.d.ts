@@ -1,1 +1,1 @@
-export { PlaceDTO, Place } from 'mavennet-dto';
+export { PlaceDTO, FLAT_PlaceDTO } from 'mavennet-dto';

@@ -14,14 +14,14 @@ import {
   ProductCredentialSubjectDTO,
   ProductBrief
 } from '../../../products'
-import { CreateProduct } from '../createProduct'
+import { AGENT_FLAT_CreateProductDTO } from '../createProduct'
 import { TransformEventVCDTO } from './event.vc.dto'
 import {
   AGENT_TransformEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 import { ApiProperty } from '@nestjs/swagger'
 
-export class TransformProduct {
+export class AGENT_FLAT_TransformProductDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(TRANSFORM_TYPE)
@@ -30,8 +30,8 @@ export class TransformProduct {
   @ApiProperty()
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => CreateProduct)
-  newProducts: CreateProduct[]
+  @Type(() => AGENT_FLAT_CreateProductDTO)
+  newProducts: AGENT_FLAT_CreateProductDTO[]
 
   @ApiProperty()
   @IsArray()

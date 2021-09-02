@@ -1,1 +1,1 @@
-export { ObservationDTO, Observation } from 'mavennet-dto';
+export { ObservationDTO, FLAT_ObservationDTO } from 'mavennet-dto';

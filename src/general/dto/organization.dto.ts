@@ -1,1 +1,1 @@
-export { OrganizationDTO, Organization } from 'mavennet-dto'
+export { OrganizationDTO, FLAT_OrganizationDTO } from 'mavennet-dto'

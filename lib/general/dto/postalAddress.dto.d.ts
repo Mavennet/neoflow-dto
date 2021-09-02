@@ -1,1 +1,1 @@
-export { PostalAddressDTO, PostalAddress } from 'mavennet-dto';
+export { PostalAddressDTO, FLAT_PostalAddressDTO } from 'mavennet-dto';

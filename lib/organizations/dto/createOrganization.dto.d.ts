@@ -1,1 +1,1 @@
-export { CreateOrganizationDto } from 'mavennet-dto';
+export { CreateOrganizationDTO } from 'mavennet-dto';

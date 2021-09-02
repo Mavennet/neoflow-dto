@@ -1,16 +1,16 @@
 import { AddEntryDetailsVCDTO } from './event.vc.dto';
 import { AGENT_AddEntryDetailsCredentialSubjectDTO } from './event.credentialSubject.dto';
-import { Place, Organization, PostalAddress } from '../../../general';
+import { FLAT_PlaceDTO, FLAT_OrganizationDTO, FLAT_PostalAddressDTO } from '../../../general';
 import { ProductBrief } from '../../../products';
-export declare class AddEntryDetails {
+export declare class AGENT_FLAT_AddEntryDetailsDTO {
     transactionNumber: string;
     expectedDeliveryDate: string;
-    portOfEntry: Place;
-    portOfDestination: Place;
-    carrier: Organization;
-    recipient: Organization;
-    originAddress: PostalAddress;
-    deliveryAddress: PostalAddress;
+    portOfEntry: FLAT_PlaceDTO;
+    portOfDestination: FLAT_PlaceDTO;
+    carrier: FLAT_OrganizationDTO;
+    recipient: FLAT_OrganizationDTO;
+    originAddress: FLAT_PostalAddressDTO;
+    deliveryAddress: FLAT_PostalAddressDTO;
     valuePerItem: string;
     totalOrderValue: string;
     product: ProductBrief;

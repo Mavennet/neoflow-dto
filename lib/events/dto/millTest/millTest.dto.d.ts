@@ -1,14 +1,14 @@
 import { MillTestVCDTO } from './event.vc.dto';
 import { AGENT_MillTestCredentialSubjectDTO } from './event.credentialSubject.dto';
-import { Organization, Observation, Place } from '../../../general';
-export declare class MillTest {
+import { FLAT_OrganizationDTO, FLAT_ObservationDTO, FLAT_PlaceDTO } from '../../../general';
+export declare class AGENT_FLAT_MillTestDTO {
     productId: string;
     certifier: string;
-    manufacturer: Organization;
+    manufacturer: FLAT_OrganizationDTO;
     specification: string;
     originalCountryOfMeltAndPour: string;
-    place: Place;
-    observation: Observation[];
+    place: FLAT_PlaceDTO;
+    observation: FLAT_ObservationDTO[];
 }
 export declare class AGENT_MillTestDTO {
     productId: string;

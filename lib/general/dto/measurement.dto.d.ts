@@ -1,1 +1,1 @@
-export { MeasurementDTO, Measurement } from 'mavennet-dto';
+export { MeasurementDTO, FLAT_MeasurementDTO } from 'mavennet-dto';
