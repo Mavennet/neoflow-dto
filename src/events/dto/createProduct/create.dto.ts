@@ -56,6 +56,11 @@ export class CreateProduct {
   @IsString()
   grade?: string
 
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  sku?: string
+
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()

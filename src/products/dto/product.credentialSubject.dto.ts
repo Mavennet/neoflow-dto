@@ -34,6 +34,11 @@ export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase
   @ValidateIf(o => o.product.name !== PRODUCT_NAME.HEAT)
   HSCode: string
 
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  sku?: string
+
   @ApiProperty()
   @IsNotEmpty()
   @IsNumberString()

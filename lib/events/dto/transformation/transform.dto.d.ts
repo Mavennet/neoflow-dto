@@ -7,6 +7,7 @@ export declare class TransformProduct {
     eventType: TRANSFORM_TYPE;
     newProducts: CreateProduct[];
     consumedProducts: ProductBrief[];
+    sku?: string;
 }
 export declare class AGENT_TransformOutputProductDTO {
     productId: string;

@@ -8,6 +8,7 @@ export declare class CreateProduct {
     hsCode: string;
     heatNumber: string;
     grade?: string;
+    sku?: string;
     facility: Place;
     manufacturer: Organization;
     weight: Measurement;
