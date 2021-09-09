@@ -29,4 +29,6 @@ export declare class CORE_CreateProductDTO {
     eventId: string;
     eventVC: EventCreateVCDTO;
     eventVCHash: string;
+    txHash: string;
+    txTimestamp: string;
 }
