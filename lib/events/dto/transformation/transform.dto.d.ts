@@ -28,6 +28,4 @@ export declare class CORE_TransformProductDTO {
     eventId: string;
     eventVC: TransformEventVCDTO;
     eventVCHash: string;
-    txHash: string;
-    txTimestamp: string;
 }

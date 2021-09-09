@@ -91,14 +91,4 @@ export class CORE_MillTestDTO {
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txTimestamp: string
 }

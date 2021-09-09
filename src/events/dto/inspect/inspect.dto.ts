@@ -80,14 +80,4 @@ export class CORE_InspectDTO {
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txTimestamp: string
 }

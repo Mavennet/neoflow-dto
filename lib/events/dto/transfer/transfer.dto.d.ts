@@ -11,7 +11,5 @@ export declare class CORE_TransferDTO {
     productId: string;
     eventId: string;
     eventVCHash: string;
-    txHash: string;
-    txTimestamp: string;
     eventVC: TransferEventVCDTO;
 }

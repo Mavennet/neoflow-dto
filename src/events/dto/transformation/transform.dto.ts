@@ -121,14 +121,4 @@ export class CORE_TransformProductDTO {
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txTimestamp: string
 }
