@@ -34,7 +34,7 @@
     "@nestjs/core": "^8.0.4",
     "@nestjs/swagger": "^5.0.4",
     "lib": "^4.3.3",
-    "mavennet-dto": "git+ssh://git@github.com/mavennet/mavennet-dto.git",
+    "mavennet-dto": "git+ssh://git@github.com/mavennet/mavennet-dto.git#naming-convention",
     "src": "^1.1.2"
   },
   "peerDependencies": {

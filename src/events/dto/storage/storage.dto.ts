@@ -11,12 +11,12 @@ import {
 import { Type } from 'class-transformer'
 import { AGENT_StorageEventCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { StorageEventVCDTO } from './event.vc.dto'
-import { FLAT_OrganizationDTO, FLAT_MeasurementDTO, FLAT_ObservationDTO , FLAT_PlaceDTO} from '../../../general'
+import { COMPACT_OrganizationDTO, COMPACT_MeasurementDTO, COMPACT_ObservationDTO , COMPACT_PlaceDTO} from '../../../general'
 import { ProductBrief } from '../../../products'
 import { EVENT_TYPE, STORAGE_TYPE } from '../../constants'
 import { ApiProperty } from '@nestjs/swagger'
 
-export class AGENT_FLAT_StoreProductDTO {
+export class AGENT_COMPACT_StoreProductDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(STORAGE_TYPE)
@@ -26,14 +26,14 @@ export class AGENT_FLAT_StoreProductDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_OrganizationDTO)
-  initiator: FLAT_OrganizationDTO
+  @Type(() => COMPACT_OrganizationDTO)
+  initiator: COMPACT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PlaceDTO)
-  place: FLAT_PlaceDTO
+  @Type(() => COMPACT_PlaceDTO)
+  place: COMPACT_PlaceDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -44,14 +44,14 @@ export class AGENT_FLAT_StoreProductDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_MeasurementDTO)
-  storedWeight: FLAT_MeasurementDTO
+  @Type(() => COMPACT_MeasurementDTO)
+  storedWeight: COMPACT_MeasurementDTO
 
   @ApiProperty()
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => FLAT_ObservationDTO)
-  observation: FLAT_ObservationDTO[]
+  @Type(() => COMPACT_ObservationDTO)
+  observation: COMPACT_ObservationDTO[]
 }
 
 export class AGENT_StorageProductDTO {

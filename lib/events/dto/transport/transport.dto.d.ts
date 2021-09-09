@@ -1,26 +1,26 @@
 import { TransportEventVCDTO, BillOfLadingVCDTO } from './event.vc.dto';
 import { AGENT_TransportEventCredentialSubjectDTO, AGENT_BillOfLadingCredentialSubjectDTO } from './event.credentialSubject.dto';
 import { EVENT_TYPE, TRANSPORT_TYPE } from '../../constants';
-import { FLAT_OrganizationDTO, FLAT_PlaceDTO, FLAT_MeasurementDTO, FLAT_PostalAddressDTO } from '../../../general';
+import { COMPACT_OrganizationDTO, COMPACT_PlaceDTO, COMPACT_MeasurementDTO, COMPACT_PostalAddressDTO } from '../../../general';
 import { ProductBrief } from '../../../products';
-export declare class AGENT_FLAT_TransportStartDTO {
+export declare class AGENT_COMPACT_TransportStartDTO {
     eventType: TRANSPORT_TYPE;
-    initiator: FLAT_OrganizationDTO;
+    initiator: COMPACT_OrganizationDTO;
     product: ProductBrief;
     billOfLadingNumber: string;
-    place: FLAT_PlaceDTO;
+    place: COMPACT_PlaceDTO;
 }
-export declare class AGENT_FLAT_TransportEndDTO {
+export declare class AGENT_COMPACT_TransportEndDTO {
     productId: string;
     eventType: TRANSPORT_TYPE;
-    initiator: FLAT_OrganizationDTO;
+    initiator: COMPACT_OrganizationDTO;
     billOfLadingNumber: string;
     shippingDate: string;
     arrivalDate: string;
-    expectedWeight: FLAT_MeasurementDTO;
-    deliveredWeight: FLAT_MeasurementDTO;
-    originAddress: FLAT_PostalAddressDTO;
-    deliveryAddress: FLAT_PostalAddressDTO;
+    expectedWeight: COMPACT_MeasurementDTO;
+    deliveredWeight: COMPACT_MeasurementDTO;
+    originAddress: COMPACT_PostalAddressDTO;
+    deliveryAddress: COMPACT_PostalAddressDTO;
     deliveryMethod?: string;
 }
 export declare class AGENT_TransportProductDTO {

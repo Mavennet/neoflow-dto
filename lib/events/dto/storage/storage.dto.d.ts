@@ -1,15 +1,15 @@
 import { AGENT_StorageEventCredentialSubjectDTO } from './event.credentialSubject.dto';
 import { StorageEventVCDTO } from './event.vc.dto';
-import { FLAT_OrganizationDTO, FLAT_MeasurementDTO, FLAT_ObservationDTO, FLAT_PlaceDTO } from '../../../general';
+import { COMPACT_OrganizationDTO, COMPACT_MeasurementDTO, COMPACT_ObservationDTO, COMPACT_PlaceDTO } from '../../../general';
 import { ProductBrief } from '../../../products';
 import { EVENT_TYPE, STORAGE_TYPE } from '../../constants';
-export declare class AGENT_FLAT_StoreProductDTO {
+export declare class AGENT_COMPACT_StoreProductDTO {
     eventType: STORAGE_TYPE;
-    initiator: FLAT_OrganizationDTO;
-    place: FLAT_PlaceDTO;
+    initiator: COMPACT_OrganizationDTO;
+    place: COMPACT_PlaceDTO;
     product: ProductBrief;
-    storedWeight: FLAT_MeasurementDTO;
-    observation: FLAT_ObservationDTO[];
+    storedWeight: COMPACT_MeasurementDTO;
+    observation: COMPACT_ObservationDTO[];
 }
 export declare class AGENT_StorageProductDTO {
     eventType: EVENT_TYPE;

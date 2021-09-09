@@ -1,12 +1,12 @@
 import { InspectVCDTO } from './event.vc.dto';
-import { FLAT_OrganizationDTO, FLAT_PlaceDTO, FLAT_ObservationDTO } from '../../../general';
+import { COMPACT_OrganizationDTO, COMPACT_PlaceDTO, COMPACT_ObservationDTO } from '../../../general';
 import { AGENT_InspectCredentialSubjectDTO } from './event.credentialSubject.dto';
 import { ProductBrief } from '../../../products';
-export declare class AGENT_FLAT_InspectionDTO {
-    initiator: FLAT_OrganizationDTO;
-    place: FLAT_PlaceDTO;
+export declare class AGENT_COMPACT_InspectionDTO {
+    initiator: COMPACT_OrganizationDTO;
+    place: COMPACT_PlaceDTO;
     product: ProductBrief;
-    observation: FLAT_ObservationDTO[];
+    observation: COMPACT_ObservationDTO[];
 }
 export declare class AGENT_InspectDTO {
     productId: string;

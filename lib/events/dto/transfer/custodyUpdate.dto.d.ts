@@ -1,11 +1,11 @@
-import { PlaceDTO, FLAT_PlaceDTO } from '../../../general';
-export declare class FLAT_TransferCustodyUpdateDTO {
+import { PlaceDTO, COMPACT_PlaceDTO } from '../../../general';
+export declare class COMPACT_TransferCustodyUpdateDTO {
     requestId: string;
     contractId?: string;
     countryOfDestination?: string;
-    portOfEntry: FLAT_PlaceDTO;
-    portOfDestination: FLAT_PlaceDTO;
-    receiptLocation?: FLAT_PlaceDTO;
+    portOfEntry: COMPACT_PlaceDTO;
+    portOfDestination: COMPACT_PlaceDTO;
+    receiptLocation?: COMPACT_PlaceDTO;
     receiver: string;
     hasDocuments: boolean;
 }

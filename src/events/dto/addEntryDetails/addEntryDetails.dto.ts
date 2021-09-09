@@ -11,11 +11,11 @@ import { AddEntryDetailsVCDTO } from './event.vc.dto'
 import {
   AGENT_AddEntryDetailsCredentialSubjectDTO
 } from './event.credentialSubject.dto'
-import { FLAT_PlaceDTO, FLAT_OrganizationDTO, FLAT_PostalAddressDTO } from '../../../general'
+import { COMPACT_PlaceDTO, COMPACT_OrganizationDTO, COMPACT_PostalAddressDTO } from '../../../general'
 import { ProductBrief } from '../../../products'
 import { ApiProperty } from '@nestjs/swagger'
 
-export class AGENT_FLAT_AddEntryDetailsDTO {
+export class AGENT_COMPACT_AddEntryDetailsDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
@@ -29,38 +29,38 @@ export class AGENT_FLAT_AddEntryDetailsDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PlaceDTO)
-  portOfEntry: FLAT_PlaceDTO
+  @Type(() => COMPACT_PlaceDTO)
+  portOfEntry: COMPACT_PlaceDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PlaceDTO)
-  portOfDestination: FLAT_PlaceDTO
+  @Type(() => COMPACT_PlaceDTO)
+  portOfDestination: COMPACT_PlaceDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_OrganizationDTO)
-  carrier: FLAT_OrganizationDTO
+  @Type(() => COMPACT_OrganizationDTO)
+  carrier: COMPACT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_OrganizationDTO)
-  recipient: FLAT_OrganizationDTO
+  @Type(() => COMPACT_OrganizationDTO)
+  recipient: COMPACT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PostalAddressDTO)
-  originAddress: FLAT_PostalAddressDTO
+  @Type(() => COMPACT_PostalAddressDTO)
+  originAddress: COMPACT_PostalAddressDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PostalAddressDTO)
-  deliveryAddress: FLAT_PostalAddressDTO
+  @Type(() => COMPACT_PostalAddressDTO)
+  deliveryAddress: COMPACT_PostalAddressDTO
 
   @ApiProperty()
   @IsNotEmpty()

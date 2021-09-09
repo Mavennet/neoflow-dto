@@ -20,11 +20,11 @@ import {
   AGENT_BillOfLadingCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 import { EVENT_TYPE, TRANSPORT_TYPE } from '../../constants'
-import { FLAT_OrganizationDTO, FLAT_PlaceDTO, FLAT_MeasurementDTO, FLAT_PostalAddressDTO } from '../../../general'
+import { COMPACT_OrganizationDTO, COMPACT_PlaceDTO, COMPACT_MeasurementDTO, COMPACT_PostalAddressDTO } from '../../../general'
 import { ProductBrief } from '../../../products'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
-export class AGENT_FLAT_TransportStartDTO {
+export class AGENT_COMPACT_TransportStartDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(TRANSPORT_TYPE)
@@ -34,8 +34,8 @@ export class AGENT_FLAT_TransportStartDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_OrganizationDTO)
-  initiator: FLAT_OrganizationDTO
+  @Type(() => COMPACT_OrganizationDTO)
+  initiator: COMPACT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -51,11 +51,11 @@ export class AGENT_FLAT_TransportStartDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PlaceDTO)
-  place: FLAT_PlaceDTO
+  @Type(() => COMPACT_PlaceDTO)
+  place: COMPACT_PlaceDTO
 }
 
-export class AGENT_FLAT_TransportEndDTO {
+export class AGENT_COMPACT_TransportEndDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
@@ -70,8 +70,8 @@ export class AGENT_FLAT_TransportEndDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_OrganizationDTO)
-  initiator: FLAT_OrganizationDTO
+  @Type(() => COMPACT_OrganizationDTO)
+  initiator: COMPACT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmpty()
@@ -91,26 +91,26 @@ export class AGENT_FLAT_TransportEndDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_MeasurementDTO)
-  expectedWeight: FLAT_MeasurementDTO
+  @Type(() => COMPACT_MeasurementDTO)
+  expectedWeight: COMPACT_MeasurementDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_MeasurementDTO)
-  deliveredWeight: FLAT_MeasurementDTO
+  @Type(() => COMPACT_MeasurementDTO)
+  deliveredWeight: COMPACT_MeasurementDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PostalAddressDTO)
-  originAddress: FLAT_PostalAddressDTO
+  @Type(() => COMPACT_PostalAddressDTO)
+  originAddress: COMPACT_PostalAddressDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PostalAddressDTO)
-  deliveryAddress: FLAT_PostalAddressDTO
+  @Type(() => COMPACT_PostalAddressDTO)
+  deliveryAddress: COMPACT_PostalAddressDTO
 
   @ApiPropertyOptional()
   @IsOptional()

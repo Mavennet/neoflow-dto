@@ -1,19 +1,19 @@
 import { PRODUCT_NAME, ProductVCDTO, ProductCredentialSubjectDTO } from '../../../products';
 import { EventCreateVCDTO } from './event.vc.dto';
 import { AGENT_EventCreateCredentialSubjectDTO } from './event.credentialSubject.dto';
-import { FLAT_PlaceDTO, FLAT_OrganizationDTO, FLAT_MeasurementDTO, FLAT_ObservationDTO } from '../../../general';
-export declare class AGENT_FLAT_CreateProductDTO {
+import { COMPACT_PlaceDTO, COMPACT_OrganizationDTO, COMPACT_MeasurementDTO, COMPACT_ObservationDTO } from '../../../general';
+export declare class AGENT_COMPACT_CreateProductDTO {
     productName: PRODUCT_NAME;
     description?: string;
     hsCode: string;
     heatNumber: string;
     grade?: string;
-    facility: FLAT_PlaceDTO;
-    manufacturer: FLAT_OrganizationDTO;
-    weight: FLAT_MeasurementDTO;
-    width?: FLAT_MeasurementDTO;
-    length?: FLAT_MeasurementDTO;
-    observation: FLAT_ObservationDTO[];
+    facility: COMPACT_PlaceDTO;
+    manufacturer: COMPACT_OrganizationDTO;
+    weight: COMPACT_MeasurementDTO;
+    width?: COMPACT_MeasurementDTO;
+    length?: COMPACT_MeasurementDTO;
+    observation: COMPACT_ObservationDTO[];
 }
 export declare class AGENT_CreateProductDTO {
     status: string;

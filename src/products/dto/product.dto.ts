@@ -8,7 +8,7 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { PRODUCT_NAME } from '../constants'
-import { MeasurementDTO, FLAT_MeasurementDTO, FLAT_OrganizationDTO } from '../../general'
+import { MeasurementDTO, COMPACT_MeasurementDTO, COMPACT_OrganizationDTO } from '../../general'
 import {
   ProductDTO as ProductDTOBase
 } from 'mavennet-dto'
@@ -58,26 +58,26 @@ export class ProductBrief {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_MeasurementDTO)
-  weight: FLAT_MeasurementDTO
+  @Type(() => COMPACT_MeasurementDTO)
+  weight: COMPACT_MeasurementDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => FLAT_MeasurementDTO)
-  width?: FLAT_MeasurementDTO
+  @Type(() => COMPACT_MeasurementDTO)
+  width?: COMPACT_MeasurementDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => FLAT_MeasurementDTO)
-  length?: FLAT_MeasurementDTO
+  @Type(() => COMPACT_MeasurementDTO)
+  length?: COMPACT_MeasurementDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_OrganizationDTO)
-  manufacturer: FLAT_OrganizationDTO
+  @Type(() => COMPACT_OrganizationDTO)
+  manufacturer: COMPACT_OrganizationDTO
 
   @ApiPropertyOptional()
   @IsOptional()

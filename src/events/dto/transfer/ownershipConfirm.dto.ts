@@ -9,10 +9,10 @@ import {
   ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { PlaceDTO, FLAT_PlaceDTO } from '../../../general'
+import { PlaceDTO, COMPACT_PlaceDTO } from '../../../general'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
-export class FLAT_TransferOwnershipConfirmationDTO {
+export class COMPACT_TransferOwnershipConfirmationDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
@@ -22,15 +22,15 @@ export class FLAT_TransferOwnershipConfirmationDTO {
   @IsOptional()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PlaceDTO)
-  portOfEntry?: FLAT_PlaceDTO
+  @Type(() => COMPACT_PlaceDTO)
+  portOfEntry?: COMPACT_PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PlaceDTO)
-  portOfDestination?: FLAT_PlaceDTO
+  @Type(() => COMPACT_PlaceDTO)
+  portOfDestination?: COMPACT_PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()

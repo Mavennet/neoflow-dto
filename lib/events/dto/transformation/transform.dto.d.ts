@@ -1,11 +1,11 @@
 import { TRANSFORM_TYPE } from '../../constants';
 import { ProductVCDTO, ProductCredentialSubjectDTO, ProductBrief } from '../../../products';
-import { AGENT_FLAT_CreateProductDTO } from '../createProduct';
+import { AGENT_COMPACT_CreateProductDTO } from '../createProduct';
 import { TransformEventVCDTO } from './event.vc.dto';
 import { AGENT_TransformEventCredentialSubjectDTO } from './event.credentialSubject.dto';
-export declare class AGENT_FLAT_TransformProductDTO {
+export declare class AGENT_COMPACT_TransformProductDTO {
     eventType: TRANSFORM_TYPE;
-    newProducts: AGENT_FLAT_CreateProductDTO[];
+    newProducts: AGENT_COMPACT_CreateProductDTO[];
     consumedProducts: ProductBrief[];
 }
 export declare class AGENT_TransformOutputProductDTO {

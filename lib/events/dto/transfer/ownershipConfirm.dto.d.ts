@@ -1,8 +1,8 @@
-import { PlaceDTO, FLAT_PlaceDTO } from '../../../general';
-export declare class FLAT_TransferOwnershipConfirmationDTO {
+import { PlaceDTO, COMPACT_PlaceDTO } from '../../../general';
+export declare class COMPACT_TransferOwnershipConfirmationDTO {
     transferOwnershipRequestId: number;
-    portOfEntry?: FLAT_PlaceDTO;
-    portOfDestination?: FLAT_PlaceDTO;
+    portOfEntry?: COMPACT_PlaceDTO;
+    portOfDestination?: COMPACT_PlaceDTO;
     countryOfDestination?: string;
     confirmationStatus: boolean;
     comment?: string;

@@ -8,25 +8,25 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { InspectVCDTO } from './event.vc.dto'
-import { FLAT_OrganizationDTO, FLAT_PlaceDTO, FLAT_ObservationDTO } from '../../../general'
+import { COMPACT_OrganizationDTO, COMPACT_PlaceDTO, COMPACT_ObservationDTO } from '../../../general'
 import {
   AGENT_InspectCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 import { ProductBrief } from '../../../products'
 import { ApiProperty } from '@nestjs/swagger'
 
-export class AGENT_FLAT_InspectionDTO {
+export class AGENT_COMPACT_InspectionDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_OrganizationDTO)
-  initiator: FLAT_OrganizationDTO
+  @Type(() => COMPACT_OrganizationDTO)
+  initiator: COMPACT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PlaceDTO)
-  place: FLAT_PlaceDTO
+  @Type(() => COMPACT_PlaceDTO)
+  place: COMPACT_PlaceDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -37,8 +37,8 @@ export class AGENT_FLAT_InspectionDTO {
   @ApiProperty()
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => FLAT_ObservationDTO)
-  observation: FLAT_ObservationDTO[]
+  @Type(() => COMPACT_ObservationDTO)
+  observation: COMPACT_ObservationDTO[]
 }
 
 export class AGENT_InspectDTO {

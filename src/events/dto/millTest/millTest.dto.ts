@@ -10,9 +10,9 @@ import { Type } from 'class-transformer'
 import { MillTestVCDTO } from './event.vc.dto'
 import { AGENT_MillTestCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { ApiProperty } from '@nestjs/swagger'
-import { FLAT_OrganizationDTO, FLAT_ObservationDTO, FLAT_PlaceDTO } from '../../../general'
+import { COMPACT_OrganizationDTO, COMPACT_ObservationDTO, COMPACT_PlaceDTO } from '../../../general'
 
-export class AGENT_FLAT_MillTestDTO {
+export class AGENT_COMPACT_MillTestDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
@@ -26,8 +26,8 @@ export class AGENT_FLAT_MillTestDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_OrganizationDTO)
-  manufacturer: FLAT_OrganizationDTO
+  @Type(() => COMPACT_OrganizationDTO)
+  manufacturer: COMPACT_OrganizationDTO
 
   @ApiProperty()
   @IsNotEmpty()
@@ -42,14 +42,14 @@ export class AGENT_FLAT_MillTestDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => FLAT_PlaceDTO)
-  place: FLAT_PlaceDTO
+  @Type(() => COMPACT_PlaceDTO)
+  place: COMPACT_PlaceDTO
 
   @ApiProperty()
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => FLAT_ObservationDTO)
-  observation: FLAT_ObservationDTO[]
+  @Type(() => COMPACT_ObservationDTO)
+  observation: COMPACT_ObservationDTO[]
 }
 
 export class AGENT_MillTestDTO {
