@@ -7,6 +7,7 @@ export declare class AGENT_COMPACT_TransformProductDTO {
     eventType: TRANSFORM_TYPE;
     newProducts: AGENT_COMPACT_CreateProductDTO[];
     consumedProducts: ProductBrief[];
+    sku?: string;
 }
 export declare class AGENT_TransformOutputProductDTO {
     productId: string;
@@ -27,6 +28,4 @@ export declare class CORE_TransformProductDTO {
     eventId: string;
     eventVC: TransformEventVCDTO;
     eventVCHash: string;
-    txHash: string;
-    txTimestamp: string;
 }

@@ -8,6 +8,7 @@ export declare class AGENT_COMPACT_CreateProductDTO {
     hsCode: string;
     heatNumber: string;
     grade?: string;
+    sku?: string;
     facility: COMPACT_PlaceDTO;
     manufacturer: COMPACT_OrganizationDTO;
     weight: COMPACT_MeasurementDTO;
@@ -28,6 +29,4 @@ export declare class CORE_CreateProductDTO {
     eventId: string;
     eventVC: EventCreateVCDTO;
     eventVCHash: string;
-    txHash: string;
-    txTimestamp: string;
 }

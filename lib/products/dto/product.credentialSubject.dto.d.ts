@@ -4,6 +4,7 @@ import { ProductCredentialSubjectDTO as ProductCredentialSubjectDTOBase } from '
 export declare class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {
     type: JSON_TYPE_METAL[];
     HSCode: string;
+    sku?: string;
     heatNumber: string;
     product: ProductDTO;
     grade?: string;

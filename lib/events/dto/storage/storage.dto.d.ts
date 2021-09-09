@@ -21,6 +21,4 @@ export declare class CORE_StorageProductDTO {
     eventId: string;
     eventVC: StorageEventVCDTO;
     eventVCHash: string;
-    txHash: string;
-    txTimestamp: string;
 }

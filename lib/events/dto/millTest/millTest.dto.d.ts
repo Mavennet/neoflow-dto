@@ -20,6 +20,4 @@ export declare class CORE_MillTestDTO {
     eventId: string;
     millTestVC: MillTestVCDTO;
     eventVCHash: string;
-    txHash: string;
-    txTimestamp: string;
 }

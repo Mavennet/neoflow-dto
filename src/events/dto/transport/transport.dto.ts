@@ -183,14 +183,4 @@ export class CORE_TransportProductDTO {
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txTimestamp: string
 }

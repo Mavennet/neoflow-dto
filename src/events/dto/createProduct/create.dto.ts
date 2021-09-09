@@ -56,6 +56,11 @@ export class AGENT_COMPACT_CreateProductDTO {
   @IsString()
   grade?: string
 
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  sku?: string
+
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
@@ -148,14 +153,4 @@ export class CORE_CreateProductDTO {
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txTimestamp: string
 }

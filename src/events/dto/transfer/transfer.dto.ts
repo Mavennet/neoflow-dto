@@ -51,14 +51,6 @@ export class CORE_TransferDTO {
   eventVCHash: string
 
   @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @IsNotEmpty()
-  @IsString()
-  txTimestamp: string
-
-  @IsNotEmpty()
   @ValidateNested()
   @Type(() => TransferEventVCDTO)
   eventVC: TransferEventVCDTO

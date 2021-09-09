@@ -1,5 +1,6 @@
 import {
   IsNotEmpty,
+  IsOptional,
   IsArray,
   ArrayMinSize,
   IsEnum,
@@ -19,7 +20,7 @@ import { TransformEventVCDTO } from './event.vc.dto'
 import {
   AGENT_TransformEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class AGENT_COMPACT_TransformProductDTO {
   @ApiProperty()
@@ -38,6 +39,11 @@ export class AGENT_COMPACT_TransformProductDTO {
   @ValidateNested({ each: true })
   @Type(() => ProductBrief)
   consumedProducts: ProductBrief[]
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  sku?: string
 }
 
 export class AGENT_TransformOutputProductDTO {
@@ -115,14 +121,4 @@ export class CORE_TransformProductDTO {
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  txTimestamp: string
 }

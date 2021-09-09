@@ -37,6 +37,4 @@ export declare class CORE_TransportProductDTO {
     transportVC?: TransportEventVCDTO;
     bolVC?: BillOfLadingVCDTO;
     eventVCHash: string;
-    txHash: string;
-    txTimestamp: string;
 }
