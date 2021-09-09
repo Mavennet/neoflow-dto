@@ -18,4 +18,6 @@ export declare class CORE_InspectDTO {
     eventId: string;
     eventVC: InspectVCDTO;
     eventVCHash: string;
+    txHash: string;
+    txTimestamp: string;
 }

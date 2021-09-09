@@ -154,4 +154,14 @@ export class CORE_CreateProductDTO {
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  txHash: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  txTimestamp: string
 }

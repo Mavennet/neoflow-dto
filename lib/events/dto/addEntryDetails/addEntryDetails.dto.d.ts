@@ -25,4 +25,6 @@ export declare class CORE_AddEntryDetailsDTO {
     eventId: string;
     addEntryDetailsVC: AddEntryDetailsVCDTO;
     eventVCHash: string;
+    txHash: string;
+    txTimestamp: string;
 }
