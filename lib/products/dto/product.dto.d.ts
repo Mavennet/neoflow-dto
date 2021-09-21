@@ -1,19 +1,13 @@
-import { PRODUCT_NAME } from '../constants';
-import { MeasurementDTO, COMPACT_MeasurementDTO, COMPACT_OrganizationDTO } from '../../general';
-import { ProductDTO as ProductDTOBase } from 'mavennet-dto';
-export declare class ProductDTO extends ProductDTOBase {
+import { JSON_TYPE } from '../../general/constants';
+import { OrganizationDTO, MeasurementDTO } from '../../general/dto';
+import { PRODUCT_NAME, CRUDE_STREAM } from '../constants';
+export declare class ProductDTO {
+    type: JSON_TYPE[];
+    manufacturer: OrganizationDTO;
     name: PRODUCT_NAME;
-    weight: MeasurementDTO;
-    length?: MeasurementDTO;
-    width?: MeasurementDTO;
-    id?: string;
-}
-export declare class ProductBrief {
-    id: string;
-    name: PRODUCT_NAME;
-    weight: COMPACT_MeasurementDTO;
-    width?: COMPACT_MeasurementDTO;
-    length?: COMPACT_MeasurementDTO;
-    manufacturer: COMPACT_OrganizationDTO;
+    category: CRUDE_STREAM;
     description: string;
+    sizeOrAmount: MeasurementDTO;
+    wight: MeasurementDTO;
+    sku: string;
 }

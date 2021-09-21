@@ -1,8 +1,12 @@
-import { JSON_TYPE, JSON_TYPE_METAL, VerifiableCredentialDTO } from '../../general';
-import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto';
-export declare class ProductVCDTO extends VerifiableCredentialDTO {
+import { JSON_TYPE } from '../../general/constants';
+import { VerifiableCredentialDTO } from '../../general/dto/verifiableCredential.dto';
+import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto';
+export declare class ProductVCDTO {
     '@context': string[];
-    type: Array<JSON_TYPE | JSON_TYPE_METAL>;
     id: string;
+    type: JSON_TYPE[];
+    issuer: string;
+    issuanceDate: Date;
     credentialSubject: ProductCredentialSubjectDTO;
+    proof: VerifiableCredentialDTO;
 }

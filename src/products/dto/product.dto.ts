@@ -4,83 +4,53 @@ import {
   IsOptional,
   IsEnum,
   IsString,
-  ValidateNested
+  ValidateNested,
+  IsArray,
+  ArrayNotEmpty,
+  Validate,
+  ValidateIf
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { PRODUCT_NAME } from '../constants'
-import { MeasurementDTO, COMPACT_MeasurementDTO, COMPACT_OrganizationDTO } from '../../general'
-import {
-  ProductDTO as ProductDTOBase
-} from 'mavennet-dto'
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { JSON_TYPE } from '../../general/constants'
+import { OrganizationDTO, MeasurementDTO } from '../../general/dto'
+import { PRODUCT_NAME, CRUDE_STREAM } from '../constants'
 
-export class ProductDTO extends ProductDTOBase {
-  @ApiProperty()
+export class ProductDTO {
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(JSON_TYPE, { each: true })
+  @Validate((o) => o.type === [JSON_TYPE.PRODUCT])
+  type: JSON_TYPE[]
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => OrganizationDTO)
+  manufacturer: OrganizationDTO
+
   @IsNotEmpty()
   @IsEnum(PRODUCT_NAME)
   name: PRODUCT_NAME
 
-  @ApiProperty()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => MeasurementDTO)
-  weight: MeasurementDTO
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => MeasurementDTO)
-  length?: MeasurementDTO
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => MeasurementDTO)
-  width?: MeasurementDTO
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsString()
-  id?: string
-}
-
-export class ProductBrief {
-  @ApiProperty()
+  @ValidateIf((o) => o.name === PRODUCT_NAME.CRUDE_OIL)
   @IsNotEmpty()
-  @IsString()
-  id: string
+  @IsEnum(CRUDE_STREAM)
+  category: CRUDE_STREAM
 
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsEnum(PRODUCT_NAME)
-  name: PRODUCT_NAME
-
-  @ApiProperty()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => COMPACT_MeasurementDTO)
-  weight: COMPACT_MeasurementDTO
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => COMPACT_MeasurementDTO)
-  width?: COMPACT_MeasurementDTO
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => COMPACT_MeasurementDTO)
-  length?: COMPACT_MeasurementDTO
-
-  @ApiProperty()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => COMPACT_OrganizationDTO)
-  manufacturer: COMPACT_OrganizationDTO
-
-  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   description: string
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => MeasurementDTO)
+  sizeOrAmount: MeasurementDTO
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => MeasurementDTO)
+  wight: MeasurementDTO
+
+  @IsOptional()
+  @IsString()
+  sku: string
 }

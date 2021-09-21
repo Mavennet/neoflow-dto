@@ -1,1 +1,6 @@
-export { MeasurementDTO, COMPACT_MeasurementDTO } from 'mavennet-dto';
+import { JSON_TYPE } from '../constants';
+export declare class MeasurementDTO {
+    type: JSON_TYPE[];
+    unitCode: string;
+    value: string;
+}

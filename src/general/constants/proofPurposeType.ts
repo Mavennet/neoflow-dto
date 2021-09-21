@@ -1,1 +1,4 @@
-export { PROOF_PURPOSE_TYPE } from 'mavennet-dto'
+export enum PROOF_PURPOSE_TYPE {
+  ASSERTION_METHOD = 'assertionMethod',
+  AUTHENTICATION = 'authentication'
+}

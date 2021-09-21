@@ -1,1 +1,5 @@
-export { UPLOAD_TYPE } from 'mavennet-dto'
+export enum UPLOAD_TYPE {
+  CONTRACT = 'contract',
+  PRODUCT_EVENT = 'product_event',
+  TRANSFER_REQUEST = 'transfer_request'
+}

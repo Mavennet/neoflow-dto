@@ -1,5 +1,5 @@
 {
-  "name": "metaltrail-dto",
+  "name": "neoflow-dto",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -13,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mavennet/metaltrail-dto/issues"
+    "url": "https://github.com/Mavennet/neoflow-dto/issues"
   },
-  "homepage": "https://github.com/Mavennet/metaltrail-dto#readme",
+  "homepage": "https://github.com/Mavennet/neoflow-dto#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",

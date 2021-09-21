@@ -1,1 +1,3 @@
-export { UpdateNotificationSettingsDTO } from 'mavennet-dto';
+export declare class UpdateNotificationSettingsDTO {
+    actionableOnly: boolean;
+}

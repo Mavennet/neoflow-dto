@@ -1,51 +1,48 @@
 import {
   IsNotEmpty,
-  IsArray,
+  IsNotEmptyObject,
   IsUrl,
+  IsString,
+  IsArray,
+  IsDateString,
   ArrayMinSize,
-  ArrayMaxSize,
   ValidateNested,
-  Validate
+  Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import {
-  JSON_TYPE,
-  JSON_TYPE_METAL,
-  VerifiableCredentialDTO
-} from '../../general'
-import { ProductCredentialSubjectDTO } from './product.credentialSubject.dto'
-import { ApiProperty } from '@nestjs/swagger'
+import { JSON_TYPE } from '../../general/constants'
+import { VerifiableCredentialDTO } from '../../general/dto/verifiableCredential.dto'
+import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto'
 
-export class ProductVCDTO extends VerifiableCredentialDTO {
-  @ApiProperty()
+export class ProductVCDTO {
   @IsArray()
-  @ArrayMinSize(3)
-  @ArrayMaxSize(3)
-  @Validate(o =>
-    o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
-    o['@context'].includes('https://schema.org/') &&
-    o['@context'].includes('https://mavennet.github.io/contexts/metal-product-v1.0.jsonld')
-  )
+  @ArrayMinSize(1)
   '@context': string[]
 
-  @ApiProperty()
-  @IsArray()
-  @ArrayMinSize(2)
-  @ArrayMaxSize(2)
-  @Validate(o =>
-    o.type.includes(JSON_TYPE.VERIFIABLE_CREDENTIAL) &&
-    o.type.includes(JSON_TYPE_METAL.METAL_PRODUCT)
-  )
-  type: Array<JSON_TYPE | JSON_TYPE_METAL>
-
-  @ApiProperty()
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: false })
   id: string
 
-  @ApiProperty()
+  @IsArray()
+  @ArrayMinSize(1)
+  type: JSON_TYPE[]
+
+  @IsNotEmpty()
+  @IsString()
+  @Matches(/^did:/)
+  issuer: string
+
+  @IsNotEmpty()
+  @IsDateString()
+  issuanceDate: Date
+
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => ProductCredentialSubjectDTO)
   credentialSubject: ProductCredentialSubjectDTO
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => VerifiableCredentialDTO)
+  proof: VerifiableCredentialDTO
 }

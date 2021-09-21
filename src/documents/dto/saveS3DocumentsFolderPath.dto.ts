@@ -1,11 +1,7 @@
-import {
-  IsEnum,
-  IsNotEmpty,
-  IsString,
-  ValidateIf
-} from 'class-validator'
-import { UPLOAD_TYPE } from '../constants'
 import { ApiProperty } from '@nestjs/swagger'
+import { IsEnum, IsNotEmpty, IsString, ValidateIf } from 'class-validator'
+
+import { UPLOAD_TYPE } from '../constants'
 
 export class SaveS3DocumentsFolderPathDTO {
   @ApiProperty()
@@ -14,19 +10,19 @@ export class SaveS3DocumentsFolderPathDTO {
   uploadType: UPLOAD_TYPE
 
   @ApiProperty()
-  @ValidateIf(o => o.uploadType === UPLOAD_TYPE.TRANSFER_REQUEST && !o.receiverS3DocumentsFolderPath)
+  @ValidateIf((o) => o.uploadType === UPLOAD_TYPE.TRANSFER_REQUEST && !o.receiverS3DocumentsFolderPath)
   @IsNotEmpty()
   @IsString()
   senderS3DocumentsFolderPath: string
 
   @ApiProperty()
-  @ValidateIf(o => o.uploadType === UPLOAD_TYPE.TRANSFER_REQUEST && !o.senderS3DocumentsFolderPath)
+  @ValidateIf((o) => o.uploadType === UPLOAD_TYPE.TRANSFER_REQUEST && !o.senderS3DocumentsFolderPath)
   @IsNotEmpty()
   @IsString()
   receiverS3DocumentsFolderPath: string
 
   @ApiProperty()
-  @ValidateIf(o => o.uploadType === UPLOAD_TYPE.CONTRACT || o.uploadType === UPLOAD_TYPE.PRODUCT_EVENT)
+  @ValidateIf((o) => o.uploadType === UPLOAD_TYPE.CONTRACT || o.uploadType === UPLOAD_TYPE.PRODUCT_EVENT)
   @IsNotEmpty()
   @IsString()
   s3DocumentsFolderPath: string

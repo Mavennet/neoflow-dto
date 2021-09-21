@@ -1,1 +1,3 @@
-export { ReadNotificationDTO } from 'mavennet-dto';
+export declare class ReadNotificationDTO {
+    notificationId: number;
+}

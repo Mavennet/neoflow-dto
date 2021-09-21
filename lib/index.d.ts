@@ -1,5 +1,6 @@
 export * from './analytics';
 export * from './auth';
+export * from './autoShareSettings';
 export * from './contracts';
 export * from './documents';
 export * from './events';

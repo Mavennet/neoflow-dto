@@ -1,3 +1,5 @@
+export * from './productCategoryType'
 export * from './productName'
-export * from './productStatus'
-export * from './productCategory'
+export * from './originCriterion'
+export * from './crudeStream'
+export * from './htsCode'

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.25, for Linux (x86_64)
 --
--- Host: localhost    Database: metaltrail_pilot
+-- Host: localhost    Database: neoflow_pilot
 -- ------------------------------------------------------
 -- Server version	8.0.25-0ubuntu0.20.04.1
 
