@@ -2,7 +2,7 @@ import { IsNotEmpty, IsOptional, IsString, Matches, ValidateNested } from 'class
 import { Type } from 'class-transformer'
 import { AddressDTO } from '../../../general/dto/address.dto'
 
-export class CertifierDTO {
+class CertifierDTOBase {
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
@@ -20,4 +20,7 @@ export class CertifierDTO {
   @ValidateNested()
   @Type(() => AddressDTO)
   geo: AddressDTO
+}
+
+export class CertifierDTO extends CertifierDTOBase {
 }

@@ -1,9 +1,9 @@
 import { IsNotEmpty, IsUUID, IsString, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
-import { InspectionEventCredentialSubjectDTO } from './inspectionEventCredentialSubject.dto'
+import { AGENT_InspectionEventCredentialSubjectDTO } from './inspectionEventCredentialSubject.dto'
 import { InspectionEventDetailsDTO } from './inspectionEvent.vc.dto'
 
-export class InspectProductDTO {
+export class CORE_InspectProductDTO {
   @IsNotEmpty()
   @IsUUID()
   productId: string
@@ -28,9 +28,11 @@ export class InspectProductDTO {
   @IsNotEmpty()
   @IsString() // TODO fix data type
   txTimestamp: string
+}
 
+export class AGENT_InspectProductDTO extends CORE_InspectProductDTO {
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => InspectionEventCredentialSubjectDTO)
-  inspectCredentialSubject: InspectionEventCredentialSubjectDTO
+  @Type(() => AGENT_InspectionEventCredentialSubjectDTO)
+  inspectCredentialSubject: AGENT_InspectionEventCredentialSubjectDTO
 }

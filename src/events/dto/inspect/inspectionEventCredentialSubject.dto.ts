@@ -14,12 +14,7 @@ import { Type } from 'class-transformer'
 import { AddressDTO, ChemicalSpecsDTO, GasSpecsDTO, PhysicalSpecsDTO } from '../../../general/dto'
 import { HTS_CODE, PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
-export class InspectionEventCredentialSubjectDTO {
-  @IsNotEmpty()
-  @IsUrl()
-  @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
-  eventId: string
-
+export class CORE_InspectionEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsUrl()
   @ValidateIf((o) => o.productId.startsWith('http://neo-flow.com/credentials/'))
@@ -74,4 +69,11 @@ export class InspectionEventCredentialSubjectDTO {
   @Type(() => GasSpecsDTO)
   @ValidateIf((o) => o.category === PRODUCT_CATEGORY_TYPE.GAS)
   gasSpecs: GasSpecsDTO
+}
+
+export class AGENT_InspectionEventCredentialSubjectDTO extends CORE_InspectionEventCredentialSubjectDTO {
+  @IsNotEmpty()
+  @IsUrl()
+  @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
+  eventId: string
 }

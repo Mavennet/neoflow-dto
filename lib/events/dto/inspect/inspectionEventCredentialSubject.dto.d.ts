@@ -1,6 +1,5 @@
 import { AddressDTO, ChemicalSpecsDTO, GasSpecsDTO, PhysicalSpecsDTO } from '../../../general/dto';
-export declare class InspectionEventCredentialSubjectDTO {
-    eventId: string;
+export declare class CORE_InspectionEventCredentialSubjectDTO {
     productId: string;
     description: string;
     geo: AddressDTO;
@@ -12,4 +11,7 @@ export declare class InspectionEventCredentialSubjectDTO {
     physicalSpecs: PhysicalSpecsDTO;
     chemicalSpecs: ChemicalSpecsDTO;
     gasSpecs: GasSpecsDTO;
+}
+export declare class AGENT_InspectionEventCredentialSubjectDTO extends CORE_InspectionEventCredentialSubjectDTO {
+    eventId: string;
 }

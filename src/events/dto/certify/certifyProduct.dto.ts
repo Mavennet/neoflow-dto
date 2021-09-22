@@ -13,7 +13,7 @@ import { ORIGIN_CRITERION } from '../../../products/constants'
 import { Type } from 'class-transformer'
 import { CertifierDTO } from './certifier.dto'
 
-export class CertifyProductDTO {
+class CertifyProductDTOBase {
   @IsNotEmpty()
   @ApiProperty()
   @IsUUID()
@@ -67,4 +67,7 @@ export class CertifyProductDTO {
   @ApiProperty()
   @IsDateString()
   authDate: Date
+}
+
+export class CertifyProductDTO extends CertifyProductDTOBase {
 }

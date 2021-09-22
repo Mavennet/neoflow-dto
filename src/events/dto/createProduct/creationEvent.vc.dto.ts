@@ -12,9 +12,9 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
-import { CreationEventCredentialSubjectDTO } from './creationEventCredentialSubject.dto'
+import { CORE_CreationEventCredentialSubjectDTO } from './creationEventCredentialSubject.dto'
 
-export class CreationEventDetailsDTO {
+class CreationEventDetailsDTOBase {
   @IsArray()
   @ArrayMinSize(3)
   @ArrayMaxSize(3)
@@ -48,11 +48,14 @@ export class CreationEventDetailsDTO {
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => CreationEventCredentialSubjectDTO)
-  credentialSubject: CreationEventCredentialSubjectDTO
+  @Type(() => CORE_CreationEventCredentialSubjectDTO)
+  credentialSubject: CORE_CreationEventCredentialSubjectDTO
 
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => VerifiableCredentialDTO)
   proof: VerifiableCredentialDTO
+}
+
+export class CreationEventDetailsDTO extends CreationEventDetailsDTOBase {
 }

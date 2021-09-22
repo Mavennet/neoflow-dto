@@ -1,6 +1,6 @@
 import { ORIGIN_CRITERION } from '../../../products/constants';
 import { CertifierDTO } from './certifier.dto';
-export declare class CertifyProductDTO {
+declare class CertifyProductDTOBase {
     productId: string;
     certifier: CertifierDTO;
     exporter: CertifierDTO;
@@ -12,3 +12,6 @@ export declare class CertifyProductDTO {
     authName: string;
     authDate: Date;
 }
+export declare class CertifyProductDTO extends CertifyProductDTOBase {
+}
+export {};
