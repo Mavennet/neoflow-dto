@@ -1,4 +1,5 @@
-export declare class AnalyticsDTO {
+import { AnalyticsDTO as AnalyticsDTOBase } from 'mavennet-dto';
+export declare class AnalyticsDTO extends AnalyticsDTOBase {
     productId: string;
     entryId: string;
     eventType: string;

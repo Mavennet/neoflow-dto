@@ -1,7 +1,8 @@
 import { IsNotEmpty, IsOptional, IsNumber, IsString, IsUUID, IsDateString } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
+import { AnalyticsDTO as AnalyticsDTOBase } from 'mavennet-dto'
 
-export class AnalyticsDTO {
+export class AnalyticsDTO extends AnalyticsDTOBase {
   @ApiProperty()
   @IsNotEmpty()
   @IsUUID()

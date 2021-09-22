@@ -1,4 +1,4 @@
-export declare class Credential {
+export declare class CredentialDTO {
     '@context': any;
     id: string;
     type: any;

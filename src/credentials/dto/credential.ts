@@ -1,6 +1,6 @@
 import { IsArray, ArrayMinSize, IsUrl, IsOptional, IsNotEmpty } from 'class-validator'
 
-export class Credential {
+export class CredentialDTO {
   @IsArray()
   @ArrayMinSize(1)
   @IsUrl({}, { each: true })

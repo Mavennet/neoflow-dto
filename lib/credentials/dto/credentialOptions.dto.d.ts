@@ -1,4 +1,4 @@
-export declare class CredentialOptions {
+export declare class CredentialOptionsDTO {
     proofPurpose?: 'assertionMethod' | 'authentication';
     assertionMethod?: string;
     issuanceDate?: string;

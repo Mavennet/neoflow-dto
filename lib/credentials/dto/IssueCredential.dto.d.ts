@@ -1,6 +1,6 @@
-import { CredentialOptions } from './credentialOptions.dto';
-import { Credential } from './credential';
+import { CredentialOptionsDTO } from './credentialOptions.dto';
+import { CredentialDTO } from './credential';
 export declare class IssueCredentialDTO {
-    credential: Credential;
-    options?: CredentialOptions;
+    credential: CredentialDTO;
+    options?: CredentialOptionsDTO;
 }

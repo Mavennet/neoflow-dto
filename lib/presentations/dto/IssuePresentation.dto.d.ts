@@ -1,5 +1,5 @@
-import { CredentialOptions } from '../../credentials/dto/credentialOptions.dto';
+import { CredentialOptionsDTO } from '../../credentials/dto/credentialOptions.dto';
 export declare class IssuePresentationDTO {
     presentation: any;
-    options?: CredentialOptions;
+    options?: CredentialOptionsDTO;
 }

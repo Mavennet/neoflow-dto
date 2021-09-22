@@ -1,6 +1,6 @@
 import { IsIn, IsOptional } from 'class-validator'
 
-export class CredentialOptions {
+export class CredentialOptionsDTO {
   @IsOptional()
   @IsIn(['assertionMethod', 'authentication'])
   proofPurpose?: 'assertionMethod' | 'authentication'
