@@ -4,6 +4,7 @@ import {
   IsOptional,
   IsEnum,
   IsString,
+  IsUrl,
   IsUUID,
   ValidateNested,
   Matches,
@@ -16,13 +17,9 @@ import { AddressDTO, ChemicalSpecsDTO, GasSpecsDTO, PhysicalSpecsDTO } from '../
 import { STORAGE_EVENT_TYPE } from '../../constants'
 import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
-export class StorageEventCredentialSubjectDTO {
+export class CORE_StorageEventCredentialSubjectDTO {
   @IsNotEmpty()
-  @IsUUID()
-  eventId: string
-
-  @IsNotEmpty()
-  @IsUUID()
+  @IsUrl()
   productId: string
 
   @IsNotEmpty()
@@ -78,4 +75,14 @@ export class StorageEventCredentialSubjectDTO {
   @Type(() => GasSpecsDTO)
   @ValidateIf((o) => o.category === PRODUCT_CATEGORY_TYPE.GAS)
   gasSpecs: GasSpecsDTO
+}
+
+export class AGENT_StorageEventCredentialSubjectDTO extends CORE_StorageEventCredentialSubjectDTO {
+  @IsNotEmpty()
+  @IsUUID()
+  eventId: string
+
+  @IsNotEmpty()
+  @IsUUID()
+  productId: string
 }

@@ -12,25 +12,9 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
-import { StorageEventCredentialSubjectDTO } from './storageEventCredentialSubject.dto'
+import { CORE_StorageEventCredentialSubjectDTO, AGENT_StorageEventCredentialSubjectDTO} from './storageEventCredentialSubject.dto'
 
-export class StorageEventDetailsDTO {
-  @IsArray()
-  @ArrayMinSize(3)
-  @ArrayMaxSize(3)
-  @ValidateIf(
-    (o) =>
-      o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
-      o['@context'].includes('https://schema.org/') &&
-      o['@context'].includes('https://mavennet.github.io/contexts/v1.jsonld')
-  )
-  '@context': string[]
-
-  @IsNotEmpty()
-  @IsUrl()
-  @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
-  id: string
-
+class StorageEventDetailsDTOBase {
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
@@ -48,11 +32,51 @@ export class StorageEventDetailsDTO {
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => StorageEventCredentialSubjectDTO)
-  credentialSubject: StorageEventCredentialSubjectDTO
+  @Type(() => VerifiableCredentialDTO)
+  proof: VerifiableCredentialDTO
+}
+
+export class AGENT_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
+  @IsArray()
+  @ArrayMinSize(3)
+  @ArrayMaxSize(3)
+  @ValidateIf(
+    (o) =>
+      o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+      o['@context'].includes('https://schema.org/') &&
+      o['@context'].includes('https://mavennet.github.io/contexts/v1.jsonld')
+  )
+  '@context': string[]
+
+  @IsNotEmpty()
+  @IsUrl()
+  @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
+  id: string
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => VerifiableCredentialDTO)
-  proof: VerifiableCredentialDTO
+  @Type(() => AGENT_StorageEventCredentialSubjectDTO)
+  credentialSubject: AGENT_StorageEventCredentialSubjectDTO
+}
+
+export class CORE_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
+  @IsArray()
+  @ArrayMinSize(3)
+  @ArrayMaxSize(3)
+  @ValidateIf(
+    (o) =>
+      o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+      o['@context'].includes('https://schema.org/') &&
+      o['@context'].includes('https://mavennet.github.io/contexts/crude-product-EVENT-v1.0.jsonld')
+  )
+  '@context': string[]
+
+  @IsNotEmpty()
+  @IsUrl()
+  id: string
+
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => CORE_StorageEventCredentialSubjectDTO)
+  credentialSubject: CORE_StorageEventCredentialSubjectDTO
 }

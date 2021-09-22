@@ -1,5 +1,5 @@
 import { ChemicalSpecsDTO, GasSpecsDTO, PhysicalSpecsDTO } from '../../../general/dto';
-export declare class UpdateStorageProductDTO {
+export declare class AGENT_UpdateStorageProductDTO {
     productId: string;
     eventId: string;
     revokeEventId: string;

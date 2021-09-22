@@ -3,7 +3,7 @@ import { Type } from 'class-transformer'
 import { ChemicalSpecsDTO, GasSpecsDTO, PhysicalSpecsDTO } from '../../../general/dto'
 import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
-export class UpdateStorageProductDTO {
+export class AGENT_UpdateStorageProductDTO {
   @IsNotEmpty()
   @IsUUID()
   productId: string
