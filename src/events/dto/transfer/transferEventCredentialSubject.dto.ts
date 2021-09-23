@@ -14,15 +14,9 @@ import { Type } from 'class-transformer'
 import { AddressDTO } from '../../../general/dto/address.dto'
 import { TRANSFER_EVENT_TYPE } from '../../constants'
 
-export class TransferEventCredentialSubjectDTO {
+export class CORE_TransferEventCredentialSubjectDTO {
   @IsNotEmpty()
-  @IsUrl()
-  @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
-  eventId: string
-
-  @IsNotEmpty()
-  @IsUrl()
-  @ValidateIf((o) => o.productId.startsWith('http://neo-flow.com/credentials/'))
+  @IsUrl({ require_tld: process.env.NODE_ENV !== "development"})
   productId: string
 
   @IsNotEmpty()
@@ -61,11 +55,6 @@ export class TransferEventCredentialSubjectDTO {
   @IsOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
-  portOfEntry: AddressDTO
-
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => AddressDTO)
   portOfArrival: AddressDTO
 
   @IsOptional()
@@ -81,4 +70,16 @@ export class TransferEventCredentialSubjectDTO {
   @ValidateNested()
   @Type(() => AddressDTO)
   receiptLocation: AddressDTO
+}
+
+export class AGENT_TransferEventCredentialSubjectDTO extends CORE_TransferEventCredentialSubjectDTO {
+  @IsNotEmpty()
+  @IsUrl()
+  @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
+  eventId: string
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => AddressDTO)
+  portOfEntry: AddressDTO
 }

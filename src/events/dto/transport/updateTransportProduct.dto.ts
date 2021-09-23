@@ -2,7 +2,7 @@ import { IsNotEmpty, IsUrl, ValidateIf, IsOptional, IsString, IsEnum, IsNumberSt
 import { TRANSPORTATION_TYPE, TRANSPORT_EVENT_TYPE } from '../../constants'
 import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
-export class UpdateTransportProductDTO {
+export class AGENT_UpdateTransportProductDTO {
   @IsNotEmpty()
   @IsUrl()
   @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))

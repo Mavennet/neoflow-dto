@@ -4,6 +4,11 @@ import {
   IsArray,
   IsString,
   IsDateString,
+  IsOptional,
+  IsLongitude,
+  IsLatitude,
+  IsEnum,
+  IsNumberString,
   ArrayMinSize,
   ArrayMaxSize,
   ValidateNested,
@@ -12,29 +17,22 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
-import { TransferEventCredentialSubjectDTO } from './transferEventCredentialSubject.dto'
+import { CORE_TransferEventCredentialSubjectDTO, AGENT_TransferEventCredentialSubjectDTO } from './transferEventCredentialSubject.dto'
+import { EVENT_TYPE } from '../../../events/constants/eventType'
+import { AddressDTO } from '../../../general/dto/address.dto'
 
-export class TransferEventDetailsDTO {
-  @IsArray()
-  @ArrayMinSize(3)
-  @ArrayMaxSize(3)
-  @ValidateIf(
-    (o) =>
-      o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
-      o['@context'].includes('https://schema.org/') &&
-      o['@context'].includes('https://mavennet.github.io/contexts/v1.jsonld')
-  )
-  '@context': string[]
-
+export class CORE_TransferEventDetailsDTO {
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== "development" })
   @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
   id: string
 
   @IsArray()
-  @ArrayMinSize(2)
-  @ArrayMaxSize(2)
-  @ValidateIf((o) => o.type.includes('VerifiableCredential') && o.type.includes('TransferEventCredential'))
+  @ArrayMinSize(1)
+  '@context': string[]
+
+  @IsArray()
+  @ArrayMinSize(1)
   type: string[]
 
   @IsNotEmpty()
@@ -48,11 +46,76 @@ export class TransferEventDetailsDTO {
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => TransferEventCredentialSubjectDTO)
-  credentialSubject: TransferEventCredentialSubjectDTO
+  @Type(() => CORE_TransferEventCredentialSubjectDTO)
+  credentialSubject: CORE_TransferEventCredentialSubjectDTO
 
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => VerifiableCredentialDTO)
   proof: VerifiableCredentialDTO
+}
+
+export class AGENT_TransferEventDetailsDTO extends CORE_TransferEventDetailsDTO {
+  @IsNotEmpty()
+  @IsEnum(EVENT_TYPE)
+  eventName: EVENT_TYPE
+
+  @IsNotEmpty()
+  @IsDateString()
+  timestamp: string
+
+  @IsNotEmpty()
+  @IsString()
+  address: string
+
+  @IsNotEmpty()
+  @IsLatitude()
+  latitude: string
+
+  @IsNotEmpty()
+  @IsLongitude()
+  longitude: string
+
+  @IsNotEmpty()
+  @IsString()
+  @Matches(/^did:/)
+  eventSubmitter: string
+
+  @IsNotEmpty()
+  @IsNumberString()
+  price: string
+
+  @IsNotEmpty()
+  @IsString()
+  @Matches(/^did:/)
+  sender: string
+
+  @IsOptional()
+  @IsString()
+  @Matches(/^did:/)
+  receiver: string
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => AddressDTO)
+  portOfArrival: AddressDTO
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => AddressDTO)
+  portOfDestination: AddressDTO
+
+  @IsOptional()
+  @IsString()
+  countryOfDestination: string
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => AddressDTO)
+  receiptLocation: AddressDTO
+
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => AGENT_TransferEventCredentialSubjectDTO)
+  credentialSubject: AGENT_TransferEventCredentialSubjectDTO
 }

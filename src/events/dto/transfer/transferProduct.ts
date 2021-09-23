@@ -2,9 +2,9 @@ import { IsString, IsNotEmpty, IsNumber, IsUUID, IsNotEmptyObject, ValidateNeste
 import { ApiProperty } from '@nestjs/swagger'
 import { AddressDTO } from '../../../general/dto/address.dto'
 import { Type } from 'class-transformer'
-import { TransferEventDetailsDTO } from './transferEvent.vc.dto'
+import { CORE_TransferEventDetailsDTO } from './transferEvent.vc.dto'
 
-export class TransferDTO {
+export class CORE_TransferProductDTO {
   @IsNotEmpty()
   @ApiProperty()
   @IsNumber()
@@ -23,8 +23,8 @@ export class TransferDTO {
   @IsNotEmpty()
   @ApiProperty()
   @ValidateNested()
-  @Type(() => TransferEventDetailsDTO)
-  eventVC: TransferEventDetailsDTO
+  @Type(() => CORE_TransferEventDetailsDTO)
+  eventVC: CORE_TransferEventDetailsDTO
 
   @IsNotEmpty()
   @ApiProperty()
@@ -40,7 +40,9 @@ export class TransferDTO {
   @ApiProperty()
   @IsString() // TODO fix data type
   txTimestamp: string
+}
 
+export class AGENT_TransferProductDTO extends CORE_TransferProductDTO {
   @IsNotEmptyObject()
   @ApiProperty()
   @ValidateNested()

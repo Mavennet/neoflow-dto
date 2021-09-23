@@ -1,6 +1,6 @@
 import { TRANSPORTATION_TYPE, TRANSPORT_EVENT_TYPE } from '../../constants';
 import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants';
-export declare class UpdateTransportProductDTO {
+export declare class AGENT_UpdateTransportProductDTO {
     productId: string;
     eventId: string;
     revokeEventId: string;

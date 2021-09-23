@@ -1,16 +1,16 @@
-import { IsNotEmpty, IsEnum, IsUUID, IsString, ValidateNested, ValidateIf } from 'class-validator'
+import { IsNotEmpty, IsEnum, IsUrl, IsUUID, IsString, ValidateNested, ValidateIf } from 'class-validator'
 import { Type } from 'class-transformer'
 import {
-  TransportationEventCredentialSubjectDTO,
+  AGENT_TransportationEventCredentialSubjectDTO,
   OGBillOfLadingCredentialSubjectDTO,
-  TransportationEventDetailsDTO,
+  CORE_TransportationEventDetailsDTO,
   OGBillOfLadingVCDTO
 } from './'
 import { TRANSPORT_EVENT_TYPE } from '../../constants'
 
-export class TransportProductDTO {
+class TransportProductDTOBase {
   @IsNotEmpty()
-  @IsUUID()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== "development" })
   productId: string
 
   @IsNotEmpty()
@@ -20,12 +20,14 @@ export class TransportProductDTO {
   @IsNotEmpty()
   @IsEnum(TRANSPORT_EVENT_TYPE)
   eventType: TRANSPORT_EVENT_TYPE
+}
 
+export class CORE_TransportProductDTO extends TransportProductDTOBase {
   @IsNotEmpty()
   @ValidateNested()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START)
-  @Type(() => TransportationEventDetailsDTO)
-  transportVC: TransportationEventDetailsDTO
+  @Type(() => CORE_TransportationEventDetailsDTO)
+  transportVC: CORE_TransportationEventDetailsDTO
 
   @IsNotEmpty()
   @ValidateNested()
@@ -44,12 +46,14 @@ export class TransportProductDTO {
   @IsNotEmpty()
   @IsString() // TODO fix data type
   txTimestamp: string
+}
 
+export class AGENT_TransportProductDTO extends TransportProductDTOBase {
   @IsNotEmpty()
   @ValidateNested()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START)
-  @Type(() => TransportationEventCredentialSubjectDTO)
-  transportCredentialSubject: TransportationEventCredentialSubjectDTO
+  @Type(() => AGENT_TransportationEventCredentialSubjectDTO)
+  transportCredentialSubject: AGENT_TransportationEventCredentialSubjectDTO
 
   @IsNotEmpty()
   @ValidateNested()

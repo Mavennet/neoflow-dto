@@ -1,14 +1,19 @@
-import { TransportationEventCredentialSubjectDTO, OGBillOfLadingCredentialSubjectDTO, TransportationEventDetailsDTO, OGBillOfLadingVCDTO } from './';
+import { AGENT_TransportationEventCredentialSubjectDTO, OGBillOfLadingCredentialSubjectDTO, CORE_TransportationEventDetailsDTO, OGBillOfLadingVCDTO } from './';
 import { TRANSPORT_EVENT_TYPE } from '../../constants';
-export declare class TransportProductDTO {
+declare class TransportProductDTOBase {
     productId: string;
     eventId: string;
     eventType: TRANSPORT_EVENT_TYPE;
-    transportVC: TransportationEventDetailsDTO;
+}
+export declare class CORE_TransportProductDTO extends TransportProductDTOBase {
+    transportVC: CORE_TransportationEventDetailsDTO;
     bolVC: OGBillOfLadingVCDTO;
     eventVCHash: string;
     txHash: string;
     txTimestamp: string;
-    transportCredentialSubject: TransportationEventCredentialSubjectDTO;
+}
+export declare class AGENT_TransportProductDTO extends TransportProductDTOBase {
+    transportCredentialSubject: AGENT_TransportationEventCredentialSubjectDTO;
     billOfLadingCredentialSubject: OGBillOfLadingCredentialSubjectDTO;
 }
+export {};

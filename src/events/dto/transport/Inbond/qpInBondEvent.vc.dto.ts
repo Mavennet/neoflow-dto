@@ -13,7 +13,7 @@ import {
 } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
 import { VerifiableCredentialDTO } from '../../../../general/dto'
-import { QPInbondCredentialSubjectDto } from './qpInbondCredentialSubject.dto'
+import { QPInbondCredentialSubjectDTO } from './qpInbondCredentialSubject.dto'
 
 export class QPInBondEventVCDTO {
   @IsArray()
@@ -40,8 +40,8 @@ export class QPInBondEventVCDTO {
 
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => QPInbondCredentialSubjectDto)
-  credentialSubject: QPInbondCredentialSubjectDto
+  @Type(() => QPInbondCredentialSubjectDTO)
+  credentialSubject: QPInbondCredentialSubjectDTO
 
   @IsNotEmptyObject()
   @ValidateNested()

@@ -14,7 +14,7 @@ import { Type } from 'class-transformer'
 import { EVENT_TYPE } from '../../constants/eventType'
 import { AddressDTO } from '../../../general/dto/address.dto'
 
-export class TransferEventDTO {
+export class AGENT_TransferEventDTO {
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
   eventName: EVENT_TYPE

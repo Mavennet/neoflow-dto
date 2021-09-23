@@ -6,7 +6,7 @@ export * from './transferCustodyRequest.dto';
 export * from './transferOwnershipConfirmation.dto';
 export * from './transferOwnershipRequest.dto';
 export * from './transferProductCustody.dto';
-export * from './transfer.dto';
+export * from './transferProduct';
 export * from './updateTransferOwnershipRequest.dto';
 export * from './updateTransferCustodyRequest.dto';
 export * from './deleteTransferRequests.dto';

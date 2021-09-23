@@ -12,7 +12,7 @@ import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../../../../general/constants'
 import { DocumentDTO, ParcelDeliveryDTO } from '../../../../general/dto'
 
-export class BillOfLadingCredentialSubjectDTO {
+class BillOfLadingCredentialSubjectDTOBase {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
@@ -32,4 +32,7 @@ export class BillOfLadingCredentialSubjectDTO {
   @ValidateNested()
   @Type(() => ParcelDeliveryDTO)
   freight: ParcelDeliveryDTO
+}
+
+export class BillOfLadingCredentialSubjectDTO extends BillOfLadingCredentialSubjectDTOBase {
 }

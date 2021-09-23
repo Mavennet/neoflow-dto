@@ -1,6 +1,6 @@
 import { EVENT_TYPE } from '../../constants/eventType';
 import { AddressDTO } from '../../../general/dto/address.dto';
-export declare class TransferEventDTO {
+export declare class AGENT_TransferEventDTO {
     eventName: EVENT_TYPE;
     timestamp: string;
     address: string;

@@ -14,11 +14,7 @@ import { Type } from 'class-transformer'
 import { AddressDTO } from '../../../general/dto/address.dto'
 import { TRANSFORMATION_EVENT_TYPE } from '../../constants/transformationEventType'
 
-export class TransformationEventCredentialSubjectDTO {
-  @IsNotEmpty()
-  @IsUUID()
-  eventId: string
-
+export class CORE_TransformationEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsEnum(TRANSFORMATION_EVENT_TYPE)
   eventType: TRANSFORMATION_EVENT_TYPE
@@ -44,4 +40,10 @@ export class TransformationEventCredentialSubjectDTO {
   @IsArray()
   @ArrayMinSize(1)
   productSuccessors: string[]
+}
+
+export class AGENT_TransformationEventCredentialSubjectDTO extends CORE_TransformationEventCredentialSubjectDTO {
+  @IsNotEmpty()
+  @IsUUID()
+  eventId: string
 }

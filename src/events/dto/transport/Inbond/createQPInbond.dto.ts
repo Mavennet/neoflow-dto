@@ -1,6 +1,6 @@
 import { IsString, IsNotEmpty, IsNotEmptyObject, IsUrl, ValidateNested, ValidateIf } from 'class-validator'
 import { Type } from 'class-transformer'
-import { QPInbondCredentialSubjectDto } from './qpInbondCredentialSubject.dto'
+import { QPInbondCredentialSubjectDTO } from './qpInbondCredentialSubject.dto'
 import { QPInBondEventVCDTO } from './qpInBondEvent.vc.dto'
 
 export class CreateQPInbondDTO {
@@ -16,8 +16,8 @@ export class CreateQPInbondDTO {
 
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => QPInbondCredentialSubjectDto)
-  credentialSubject: QPInbondCredentialSubjectDto
+  @Type(() => QPInbondCredentialSubjectDTO)
+  credentialSubject: QPInbondCredentialSubjectDTO
 
   @IsNotEmptyObject()
   @ValidateNested()

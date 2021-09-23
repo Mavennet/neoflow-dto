@@ -1,11 +1,17 @@
 import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto';
-import { TransportationEventCredentialSubjectDTO } from './transportationEventCredentialSubject.dto';
-export declare class TransportationEventDetailsDTO {
+import { CORE_TransportationEventCredentialSubjectDTO, AGENT_TransportationEventCredentialSubjectDTO } from './transportationEventCredentialSubject.dto';
+declare class TransportationEventDetailsDTOBase {
     '@context': string[];
     id: string;
     type: string[];
     issuer: string;
     issuanceDate: Date;
-    credentialSubject: TransportationEventCredentialSubjectDTO;
     proof: VerifiableCredentialDTO;
 }
+export declare class CORE_TransportationEventDetailsDTO extends TransportationEventDetailsDTOBase {
+    credentialSubject: CORE_TransportationEventCredentialSubjectDTO;
+}
+export declare class AGENT_TransportationEventDetailsDTO extends TransportationEventDetailsDTOBase {
+    credentialSubject: AGENT_TransportationEventCredentialSubjectDTO;
+}
+export {};

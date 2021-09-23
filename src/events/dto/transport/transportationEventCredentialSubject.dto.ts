@@ -1,11 +1,13 @@
-import { IsNotEmpty, IsOptional, IsUUID, IsEnum, IsString, Matches, ValidateIf } from 'class-validator'
+import { IsNotEmpty, IsOptional, IsUrl, IsEnum, IsString, IsNotEmptyObject, ValidateNested, Matches, ValidateIf } from 'class-validator'
+import { Type } from 'class-transformer'
+import { AddressDTO } from '../../../general/dto/address.dto'
 
 import { TRANSPORTATION_TYPE, TRANSPORT_EVENT_TYPE } from '../../constants'
 import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
-export class TransportationEventCredentialSubjectDTO {
+class TransportationEventCredentialSubjectDTOBase {
   @IsNotEmpty()
-  @IsUUID()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== "development" })
   productId: string
 
   @IsNotEmpty()
@@ -64,4 +66,18 @@ export class TransportationEventCredentialSubjectDTO {
   @IsString()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START && o.category === PRODUCT_CATEGORY_TYPE.GAS)
   displacementId: string
+}
+
+export class CORE_TransportationEventCredentialSubjectDTO extends TransportationEventCredentialSubjectDTOBase {
+  @IsOptional()
+  @IsString()
+  description: string
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => AddressDTO)
+  geo: AddressDTO
+}
+
+export class AGENT_TransportationEventCredentialSubjectDTO extends TransportationEventCredentialSubjectDTOBase {
 }

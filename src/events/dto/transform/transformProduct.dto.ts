@@ -2,11 +2,11 @@ import { IsNotEmpty, IsUUID, IsString, IsNotEmptyObject, IsArray, ArrayMinSize, 
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { TransformProductSuccessorDTO } from './transformProductSuccessor.dto'
-import { TransformationEventCredentialSubjectDTO } from './transformationEventCredentialSubject.dto'
+import { AGENT_TransformationEventCredentialSubjectDTO } from './transformationEventCredentialSubject.dto'
 
-import { TransformationEventDetailsDTO } from './transformationEvent.vc.dto'
+import { CORE_TransformationEventDetailsDTO, AGENT_TransformationEventDetailsDTO } from './transformationEvent.vc.dto'
 
-export class TransformProductsDTO {
+export class CORE_TransformProductsDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
@@ -28,15 +28,10 @@ export class TransformProductsDTO {
   txTimestamp: string
 
   @ApiProperty()
-  @IsArray()
-  @ArrayMinSize(1)
-  productParents: string[] // array of uuid
-
-  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => TransformationEventDetailsDTO)
-  eventVC: TransformationEventDetailsDTO
+  @Type(() => CORE_TransformationEventDetailsDTO)
+  eventVC: CORE_TransformationEventDetailsDTO
 
   @ApiProperty()
   @IsArray()
@@ -44,10 +39,23 @@ export class TransformProductsDTO {
   @ValidateNested({ each: true })
   @Type(() => TransformProductSuccessorDTO)
   productSuccessors: TransformProductSuccessorDTO[]
+}
+
+export class AGENT_TransformProductsDTO extends CORE_TransformProductsDTO {
+  @ApiProperty()
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => AGENT_TransformationEventDetailsDTO)
+  eventVC: AGENT_TransformationEventDetailsDTO
+
+  @ApiProperty()
+  @IsArray()
+  @ArrayMinSize(1)
+  productParents: string[] // array of uuid
 
   @IsNotEmptyObject()
   @ApiProperty()
   @ValidateNested()
-  @Type(() => TransformationEventCredentialSubjectDTO)
-  eventCredentialSubject: TransformationEventCredentialSubjectDTO
+  @Type(() => AGENT_TransformationEventCredentialSubjectDTO)
+  eventCredentialSubject: AGENT_TransformationEventCredentialSubjectDTO
 }

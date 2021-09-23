@@ -1,7 +1,6 @@
 import { AddressDTO } from '../../../general/dto/address.dto';
 import { TRANSFER_EVENT_TYPE } from '../../constants';
-export declare class TransferEventCredentialSubjectDTO {
-    eventId: string;
+export declare class CORE_TransferEventCredentialSubjectDTO {
     productId: string;
     eventType: TRANSFER_EVENT_TYPE;
     description: string;
@@ -10,9 +9,12 @@ export declare class TransferEventCredentialSubjectDTO {
     sender: string;
     receiver: string;
     price: string;
-    portOfEntry: AddressDTO;
     portOfArrival: AddressDTO;
     portOfDestination: AddressDTO;
     countryOfDestination: string;
     receiptLocation: AddressDTO;
+}
+export declare class AGENT_TransferEventCredentialSubjectDTO extends CORE_TransferEventCredentialSubjectDTO {
+    eventId: string;
+    portOfEntry: AddressDTO;
 }
