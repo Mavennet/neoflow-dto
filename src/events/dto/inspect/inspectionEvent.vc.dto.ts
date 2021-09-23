@@ -16,18 +16,11 @@ import { AGENT_InspectionEventCredentialSubjectDTO } from './inspectionEventCred
 
 class InspectionEventDetailsDTOBase {
   @IsArray()
-  @ArrayMinSize(3)
-  @ArrayMaxSize(3)
-  @ValidateIf(
-    (o) =>
-      o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
-      o['@context'].includes('https://schema.org/') &&
-      o['@context'].includes('https://mavennet.github.io/contexts/v1.jsonld')
-  )
+  @ArrayMinSize(1)
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== "development" })
   @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
   id: string
 

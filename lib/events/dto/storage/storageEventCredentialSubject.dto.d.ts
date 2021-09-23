@@ -16,5 +16,4 @@ export declare class CORE_StorageEventCredentialSubjectDTO {
 }
 export declare class AGENT_StorageEventCredentialSubjectDTO extends CORE_StorageEventCredentialSubjectDTO {
     eventId: string;
-    productId: string;
 }

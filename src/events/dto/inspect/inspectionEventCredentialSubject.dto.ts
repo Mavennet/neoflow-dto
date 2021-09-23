@@ -16,7 +16,7 @@ import { HTS_CODE, PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
 export class CORE_InspectionEventCredentialSubjectDTO {
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== "development"})
   @ValidateIf((o) => o.productId.startsWith('http://neo-flow.com/credentials/'))
   productId: string
 

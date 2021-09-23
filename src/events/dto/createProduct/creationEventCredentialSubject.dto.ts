@@ -4,7 +4,11 @@ import { Type } from 'class-transformer'
 import { PlaceDTO } from '../../../general/dto/place.dto'
 import { ApiProperty } from '@nestjs/swagger'
 
-class CreationEventCredentialSubjectDTOBase {
+export class CORE_CreationEventCredentialSubjectDTO {
+  @IsNotEmpty()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== "development"})
+  productId: string
+
   @ApiProperty()
   @IsOptional()
   @IsString()
@@ -23,20 +27,9 @@ class CreationEventCredentialSubjectDTOBase {
   eventCreator: string
 }
 
-export class AGENT_CreationEventCredentialSubjectDTO extends CreationEventCredentialSubjectDTOBase {
+export class AGENT_CreationEventCredentialSubjectDTO extends CORE_CreationEventCredentialSubjectDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
   eventId: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsUUID()
-  productId: string
-}
-
-export class CORE_CreationEventCredentialSubjectDTO extends CreationEventCredentialSubjectDTOBase {
-  @IsNotEmpty()
-  @IsUrl({ require_tld: false })
-  productId: string
 }

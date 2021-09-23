@@ -19,7 +19,7 @@ import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
 export class CORE_StorageEventCredentialSubjectDTO {
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== "development"})
   productId: string
 
   @IsNotEmpty()
@@ -81,8 +81,4 @@ export class AGENT_StorageEventCredentialSubjectDTO extends CORE_StorageEventCre
   @IsNotEmpty()
   @IsUUID()
   eventId: string
-
-  @IsNotEmpty()
-  @IsUUID()
-  productId: string
 }

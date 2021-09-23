@@ -5,7 +5,6 @@ import {
   IsString,
   IsDateString,
   ArrayMinSize,
-  ArrayMaxSize,
   ValidateNested,
   ValidateIf,
   Matches
@@ -15,11 +14,13 @@ import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredenti
 import { CORE_StorageEventCredentialSubjectDTO, AGENT_StorageEventCredentialSubjectDTO} from './storageEventCredentialSubject.dto'
 
 class StorageEventDetailsDTOBase {
+  @IsNotEmpty()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== "development" })
+  id: string
+
   @IsArray()
-  @ArrayMinSize(2)
-  @ArrayMaxSize(2)
-  @ValidateIf((o) => o.type.includes('VerifiableCredential') && o.type.includes('StorageEventCredential'))
-  type: string[]
+  @ArrayMinSize(1)
+  '@context': string[]
 
   @IsNotEmpty()
   @IsString()
@@ -37,19 +38,8 @@ class StorageEventDetailsDTOBase {
 }
 
 export class AGENT_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
-  @IsArray()
-  @ArrayMinSize(3)
-  @ArrayMaxSize(3)
-  @ValidateIf(
-    (o) =>
-      o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
-      o['@context'].includes('https://schema.org/') &&
-      o['@context'].includes('https://mavennet.github.io/contexts/v1.jsonld')
-  )
-  '@context': string[]
-
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== "development" })
   @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
   id: string
 
@@ -60,21 +50,6 @@ export class AGENT_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
 }
 
 export class CORE_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
-  @IsArray()
-  @ArrayMinSize(3)
-  @ArrayMaxSize(3)
-  @ValidateIf(
-    (o) =>
-      o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
-      o['@context'].includes('https://schema.org/') &&
-      o['@context'].includes('https://mavennet.github.io/contexts/crude-product-EVENT-v1.0.jsonld')
-  )
-  '@context': string[]
-
-  @IsNotEmpty()
-  @IsUrl()
-  id: string
-
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CORE_StorageEventCredentialSubjectDTO)

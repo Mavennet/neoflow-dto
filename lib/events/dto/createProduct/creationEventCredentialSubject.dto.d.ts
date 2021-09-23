@@ -1,14 +1,10 @@
 import { PlaceDTO } from '../../../general/dto/place.dto';
-declare class CreationEventCredentialSubjectDTOBase {
+export declare class CORE_CreationEventCredentialSubjectDTO {
+    productId: string;
     description: string;
     place: PlaceDTO;
     eventCreator: string;
 }
-export declare class AGENT_CreationEventCredentialSubjectDTO extends CreationEventCredentialSubjectDTOBase {
+export declare class AGENT_CreationEventCredentialSubjectDTO extends CORE_CreationEventCredentialSubjectDTO {
     eventId: string;
-    productId: string;
 }
-export declare class CORE_CreationEventCredentialSubjectDTO extends CreationEventCredentialSubjectDTOBase {
-    productId: string;
-}
-export {};
