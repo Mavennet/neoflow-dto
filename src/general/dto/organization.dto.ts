@@ -26,6 +26,10 @@ export class OrganizationDTO {
 
   @IsOptional()
   @IsString()
+  did?: string
+
+  @IsOptional()
+  @IsString()
   description: string
 
   @IsOptional()
@@ -44,4 +48,35 @@ export class OrganizationDTO {
   @IsOptional()
   @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)
   faxNumber: string
+}
+
+export abstract class COMPACT_OrganizationDTO {
+  @IsNotEmpty()
+  @IsString()
+  name: string
+
+  @IsOptional()
+  @IsString()
+  description?: string
+
+  @IsOptional()
+  @IsString()
+  did?: string
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => PostalAddressDTO)
+  address?: PostalAddressDTO
+
+  @IsOptional()
+  @IsEmail()
+  email?: string
+
+  @IsOptional()
+  @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)
+  phoneNumber?: string
+
+  @IsOptional()
+  @IsString() // would be ideal to use IsPhoneNumber(REGION_CODE)
+  faxNumber?: string
 }

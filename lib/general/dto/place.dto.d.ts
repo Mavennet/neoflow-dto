@@ -7,3 +7,14 @@ export declare class PlaceDTO {
     geo: GeoCoordinatesDTO;
     address: PostalAddressDTO;
 }
+export declare abstract class COMPACT_PlaceDTO {
+    globalLocationNumber?: string;
+    latitude: string;
+    longitude: string;
+    organizationName?: string;
+    streetAddress?: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode?: string;
+    addressCountry: string;
+}
