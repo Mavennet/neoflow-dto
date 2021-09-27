@@ -14,7 +14,7 @@ import { JSON_TYPE } from '../../general/constants'
 import { VerifiableCredentialDTO } from '../../general/dto/verifiableCredential.dto'
 import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto'
 
-export class ProductVCDTO {
+class ProductVCDTOBase {
   @IsArray()
   @ArrayMinSize(1)
   '@context': string[]
@@ -45,4 +45,7 @@ export class ProductVCDTO {
   @ValidateNested()
   @Type(() => VerifiableCredentialDTO)
   proof: VerifiableCredentialDTO
+}
+
+export class ProductVCDTO extends ProductVCDTOBase {
 }

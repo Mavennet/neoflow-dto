@@ -15,7 +15,7 @@ import { JSON_TYPE } from '../../general/constants'
 import { ProductDTO } from './product.dto'
 import { HTS_CODE } from '../constants'
 
-export class ProductCredentialSubjectDTO {
+class ProductCredentialSubjectDTOBase {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
@@ -49,4 +49,7 @@ export class ProductCredentialSubjectDTO {
   @ValidateNested({ each: true })
   @Type(() => ObservationDTO)
   observation: ObservationDTO[]
+}
+
+export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {
 }
