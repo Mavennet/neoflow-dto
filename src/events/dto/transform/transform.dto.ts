@@ -1,10 +1,23 @@
-import { IsNotEmpty, IsUUID, IsString, IsNotEmptyObject, IsArray, ArrayMinSize, ValidateNested } from 'class-validator'
-import { ApiProperty } from '@nestjs/swagger'
+import { IsNotEmpty, IsUUID, IsString, IsNotEmptyObject, IsArray, ArrayMinSize, ValidateNested, IsOptional } from 'class-validator'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { TransformProductSuccessorDTO } from './transformProductSuccessor.dto'
 import { AGENT_TransformationEventCredentialSubjectDTO } from './event.credentialSubject.dto'
-
+import { AGENT_COMPACT_CreateProductDTO } from '../createProduct'
 import { CORE_TransformationEventDetailsDTO, AGENT_TransformationEventDetailsDTO } from './event.vc.dto'
+
+export class AGENT_COMPACT_TransformProductDTO {
+  @ApiProperty()
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => AGENT_COMPACT_CreateProductDTO)
+  newProducts: AGENT_COMPACT_CreateProductDTO[]
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  sku?: string
+}
 
 export class CORE_TransformProductsDTO {
   @ApiProperty()

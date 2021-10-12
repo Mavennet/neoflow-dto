@@ -1,6 +1,11 @@
 import { TransformProductSuccessorDTO } from './transformProductSuccessor.dto';
 import { AGENT_TransformationEventCredentialSubjectDTO } from './event.credentialSubject.dto';
+import { AGENT_COMPACT_CreateProductDTO } from '../createProduct';
 import { CORE_TransformationEventDetailsDTO, AGENT_TransformationEventDetailsDTO } from './event.vc.dto';
+export declare class AGENT_COMPACT_TransformProductDTO {
+    newProducts: AGENT_COMPACT_CreateProductDTO[];
+    sku?: string;
+}
 export declare class CORE_TransformProductsDTO {
     eventId: string;
     eventVCHash: string;

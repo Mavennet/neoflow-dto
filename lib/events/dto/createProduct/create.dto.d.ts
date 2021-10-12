@@ -1,9 +1,22 @@
+import { PRODUCT_NAME, ProductVCDTO } from '../../../products';
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto';
 import { AGENT_CreationEventCredentialSubjectDTO } from './event.credentialSubject';
-import { ProductVCDTO } from '../../../products/dto/product.vc.dto';
+import { COMPACT_PlaceDTO, COMPACT_OrganizationDTO, COMPACT_MeasurementDTO, COMPACT_ObservationDTO } from '../../../general';
 import { CreationEventDetailsDTO } from './event.vc.dto';
 declare class CreateProductDTOBase {
     productId: string;
+}
+export declare class AGENT_COMPACT_CreateProductDTO {
+    productName: PRODUCT_NAME;
+    description?: string;
+    grade?: string;
+    sku?: string;
+    facility: COMPACT_PlaceDTO;
+    manufacturer: COMPACT_OrganizationDTO;
+    weight: COMPACT_MeasurementDTO;
+    width?: COMPACT_MeasurementDTO;
+    length?: COMPACT_MeasurementDTO;
+    observation: COMPACT_ObservationDTO[];
 }
 export declare class AGENT_CreateProductDTO extends CreateProductDTOBase {
     productCredentialSubject: ProductCredentialSubjectDTO;
