@@ -7,7 +7,7 @@ export class SaveS3DocumentsFolderPathDTO {
   @ApiProperty({ enum: UPLOAD_TYPE, default: [], isArray: true })
   @IsNotEmpty()
   @IsEnum(UPLOAD_TYPE)
-  uploadType: UPLOAD_TYPE[] = []
+  uploadType: UPLOAD_TYPE
 
   @ApiProperty()
   @ValidateIf((o) => o.uploadType === UPLOAD_TYPE.TRANSFER_REQUEST && !o.receiverS3DocumentsFolderPath)
