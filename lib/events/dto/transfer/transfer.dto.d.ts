@@ -10,5 +10,15 @@ export declare class CORE_TransferProductDTO {
     txTimestamp: string;
 }
 export declare class AGENT_TransferProductDTO extends CORE_TransferProductDTO {
+    requestId: number;
+    eventId: string;
+    productId: string;
     geo: AddressDTO;
+    portOfEntry?: AddressDTO;
+    portOfArrival?: AddressDTO;
+    portOfDestination?: AddressDTO;
+    countryOfDestination?: string;
+    receiptLocation?: AddressDTO;
+    receiver: string;
+    price: string;
 }

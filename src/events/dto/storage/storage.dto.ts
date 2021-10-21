@@ -15,7 +15,7 @@ import { STORAGE_EVENT_TYPE } from '../../constants'
 import { AGENT_StorageEventCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { CORE_StorageEventDetailsDTO, AGENT_StorageEventDetailsDTO } from './event.vc.dto'
 
-export class AGENT_COMPACT_StoreProductDTO {
+export class AGENT_COMPACT_StorageProductDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(STORAGE_EVENT_TYPE)

@@ -2,7 +2,7 @@ import { COMPACT_OrganizationDTO, COMPACT_MeasurementDTO, COMPACT_ObservationDTO
 import { STORAGE_EVENT_TYPE } from '../../constants';
 import { AGENT_StorageEventCredentialSubjectDTO } from './event.credentialSubject.dto';
 import { CORE_StorageEventDetailsDTO, AGENT_StorageEventDetailsDTO } from './event.vc.dto';
-export declare class AGENT_COMPACT_StoreProductDTO {
+export declare class AGENT_COMPACT_StorageProductDTO {
     eventType: STORAGE_EVENT_TYPE;
     initiator: COMPACT_OrganizationDTO;
     place: COMPACT_PlaceDTO;
