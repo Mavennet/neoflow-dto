@@ -42,7 +42,7 @@ export class CORE_TransferProductDTO {
   txTimestamp: string
 }
 
-export class AGENT_TransferProductDTO extends CORE_TransferProductDTO {
+export class AGENT_TransferProductDTO {
   @IsNotEmpty()
   @ApiProperty()
   @IsNumber()

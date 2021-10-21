@@ -66,7 +66,7 @@ class CertifyProductDTOBase {
   @IsNotEmpty()
   @ApiProperty()
   @IsDateString()
-  authDate: Date
+  authDate: string
 }
 
 export class CertifyProductDTO extends CertifyProductDTOBase {

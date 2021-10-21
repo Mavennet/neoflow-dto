@@ -9,7 +9,7 @@ export declare class CORE_TransferProductDTO {
     txHash: string;
     txTimestamp: string;
 }
-export declare class AGENT_TransferProductDTO extends CORE_TransferProductDTO {
+export declare class AGENT_TransferProductDTO {
     requestId: number;
     eventId: string;
     productId: string;

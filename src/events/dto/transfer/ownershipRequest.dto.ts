@@ -20,7 +20,7 @@ export class TransferOwnershipRequestDTO {
   @IsNotEmpty()
   @ApiProperty()
   @IsNumberString()
-  price: number
+  price: string
 
   @IsNotEmpty()
   @ApiProperty()
