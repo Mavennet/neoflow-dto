@@ -1,9 +1,9 @@
-import { QPInbondCredentialSubjectDto } from './qpInbondCredentialSubject.dto';
+import { QPInbondCredentialSubjectDTO } from './qpInbondCredentialSubject.dto';
 import { QPInBondEventVCDTO } from './qpInBondEvent.vc.dto';
 export declare class CreateQPInbondDTO {
     productId: string;
     eventId: string;
-    credentialSubject: QPInbondCredentialSubjectDto;
+    credentialSubject: QPInbondCredentialSubjectDTO;
     eventVC: QPInBondEventVCDTO;
     eventVCHash: string;
     txHash: string;

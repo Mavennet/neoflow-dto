@@ -6,3 +6,11 @@ export declare class ObservationDTO {
     property: PropertyDTO;
     measurement: MeasurementDTO;
 }
+export declare abstract class COMPACT_ObservationDTO {
+    type: JSON_TYPE[];
+    identifier?: string;
+    name: string;
+    description?: string;
+    value: string;
+    unit?: string;
+}

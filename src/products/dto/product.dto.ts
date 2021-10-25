@@ -15,7 +15,7 @@ import { JSON_TYPE } from '../../general/constants'
 import { OrganizationDTO, MeasurementDTO } from '../../general/dto'
 import { PRODUCT_NAME, CRUDE_STREAM } from '../constants'
 
-export class ProductDTO {
+class ProductDTOBase {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
@@ -48,9 +48,12 @@ export class ProductDTO {
   @IsOptional()
   @ValidateNested()
   @Type(() => MeasurementDTO)
-  wight: MeasurementDTO
+  wight: MeasurementDTO // fix attribute typo
 
   @IsOptional()
   @IsString()
   sku: string
+}
+
+export class ProductDTO extends ProductDTOBase {
 }

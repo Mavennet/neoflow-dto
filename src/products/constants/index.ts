@@ -1,4 +1,5 @@
 export * from './productCategoryType'
+export * from './productCategory'
 export * from './productName'
 export * from './originCriterion'
 export * from './crudeStream'

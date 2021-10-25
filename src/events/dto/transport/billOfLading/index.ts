@@ -1,3 +1,3 @@
-export * from './billOfLadingCredentialSubject.dto'
-export * from './oilGasBillOfLadingCredentialSubject.dto'
-export * from './oilGasBillOfLading.vc.dto'
+export * from './event.credentialSubject.dto'
+export * from './oilGas.event.credentialSubject.dto'
+export * from './oilGas.event.vc.dto'

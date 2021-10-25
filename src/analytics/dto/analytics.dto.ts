@@ -11,17 +11,17 @@ export class AnalyticsDTO extends AnalyticsDTOBase {
   @ApiProperty()
   @IsOptional()
   @IsString()
-  entryId: string
+  entryId?: string
 
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  eventType: string
+  eventType?: string
 
   @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
-  eventCreatedAt: Date
+  eventCreatedAt?: Date
 
   @ApiProperty()
   @IsNotEmpty()
@@ -36,7 +36,7 @@ export class AnalyticsDTO extends AnalyticsDTOBase {
   @ApiProperty()
   @IsOptional()
   @IsString()
-  startTransportMonth: string
+  startTransportMonth?: string
 
   @ApiProperty()
   @IsNotEmpty()
@@ -46,17 +46,17 @@ export class AnalyticsDTO extends AnalyticsDTOBase {
   @ApiProperty()
   @IsOptional()
   @IsString()
-  refineryName: string
+  refineryName?: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  qpInBond: string
+  qpInBond?: string
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  ftzNo: string
+  ftzNo?: string
 
   @ApiProperty()
   @IsNotEmpty()
@@ -66,7 +66,7 @@ export class AnalyticsDTO extends AnalyticsDTOBase {
   @ApiProperty()
   @IsOptional()
   @IsString()
-  portOfEntry: string
+  portOfEntry?: string
 
   @ApiProperty()
   @IsNotEmpty()
@@ -76,27 +76,27 @@ export class AnalyticsDTO extends AnalyticsDTOBase {
   @ApiProperty()
   @IsOptional()
   @IsString()
-  aging: string
+  aging?: string
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  sulphur: number
+  sulphur?: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  density: number
+  density?: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  tan: number
+  tan?: number
 
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  price: number
+  price?: number
 
   @ApiProperty()
   @IsNotEmpty()

@@ -2,9 +2,9 @@ import { JsonLdContext } from '../../../json-ld.context'
 import { Equals, IsNotEmpty, IsNumber, ValidateNested } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { TransferEventDTO } from './transferEvent.dto'
+import { AGENT_TransferEventDTO } from './event.dto'
 
-export class TransferProductCustodyDTO extends JsonLdContext {
+export class AGENT_TransferProductCustodyDTO extends JsonLdContext {
   @IsNotEmpty()
   @ApiProperty()
   @IsNumber()
@@ -13,8 +13,8 @@ export class TransferProductCustodyDTO extends JsonLdContext {
   @IsNotEmpty()
   @ApiProperty()
   @ValidateNested()
-  @Type(() => TransferEventDTO)
-  eventDetails: TransferEventDTO
+  @Type(() => AGENT_TransferEventDTO)
+  eventDetails: AGENT_TransferEventDTO
 
   @IsNotEmpty()
   @Equals('TransferProductAction')

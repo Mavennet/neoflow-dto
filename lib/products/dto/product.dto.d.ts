@@ -1,7 +1,7 @@
 import { JSON_TYPE } from '../../general/constants';
 import { OrganizationDTO, MeasurementDTO } from '../../general/dto';
 import { PRODUCT_NAME, CRUDE_STREAM } from '../constants';
-export declare class ProductDTO {
+declare class ProductDTOBase {
     type: JSON_TYPE[];
     manufacturer: OrganizationDTO;
     name: PRODUCT_NAME;
@@ -11,3 +11,6 @@ export declare class ProductDTO {
     wight: MeasurementDTO;
     sku: string;
 }
+export declare class ProductDTO extends ProductDTOBase {
+}
+export {};

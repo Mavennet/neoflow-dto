@@ -1,7 +1,7 @@
 import { JsonLdContext } from '../../../json-ld.context';
-import { TransferEventDTO } from './transferEvent.dto';
-export declare class TransferProductCustodyDTO extends JsonLdContext {
+import { AGENT_TransferEventDTO } from './event.dto';
+export declare class AGENT_TransferProductCustodyDTO extends JsonLdContext {
     productId: number;
-    eventDetails: TransferEventDTO;
+    eventDetails: AGENT_TransferEventDTO;
     '@type': string;
 }

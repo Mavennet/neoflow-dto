@@ -10,7 +10,7 @@ declare class CertifyProductDTOBase {
     originCriterion: ORIGIN_CRITERION;
     blanketPeriod: boolean;
     authName: string;
-    authDate: Date;
+    authDate: string;
 }
 export declare class CertifyProductDTO extends CertifyProductDTOBase {
 }

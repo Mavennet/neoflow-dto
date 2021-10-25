@@ -4,7 +4,7 @@ import { IsEnum, IsNotEmpty, IsString, ValidateIf } from 'class-validator'
 import { UPLOAD_TYPE } from '../constants'
 
 export class SaveS3DocumentsFolderPathDTO {
-  @ApiProperty()
+  @ApiProperty({ enum: UPLOAD_TYPE, isArray: true })
   @IsNotEmpty()
   @IsEnum(UPLOAD_TYPE)
   uploadType: UPLOAD_TYPE

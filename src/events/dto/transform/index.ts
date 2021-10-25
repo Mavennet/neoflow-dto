@@ -1,4 +1,4 @@
-export * from './transformationEvent.vc.dto'
-export * from './transformationEventCredentialSubject.dto'
-export * from './transformProduct.dto'
+export * from './event.vc.dto'
+export * from './event.credentialSubject.dto'
+export * from './transform.dto'
 export * from './transformProductSuccessor.dto'

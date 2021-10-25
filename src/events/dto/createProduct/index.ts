@@ -1,3 +1,3 @@
-export * from './creationEvent.vc.dto'
-export * from './creationEventCredentialSubject.dto'
-export * from './createProduct.dto'
+export * from './event.vc.dto'
+export * from './event.credentialSubject'
+export * from './create.dto'
