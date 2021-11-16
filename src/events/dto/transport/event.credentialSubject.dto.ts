@@ -7,7 +7,7 @@ import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
 class TransportationEventCredentialSubjectDTOBase {
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== "development" })
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   productId: string
 
   @IsNotEmpty()

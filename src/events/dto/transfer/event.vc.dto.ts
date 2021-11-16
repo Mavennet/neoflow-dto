@@ -1,29 +1,31 @@
-import {
-  IsNotEmpty,
-  IsUrl,
-  IsArray,
-  IsString,
-  IsDateString,
-  IsOptional,
-  IsLongitude,
-  IsLatitude,
-  IsEnum,
-  IsNumberString,
-  ArrayMinSize,
-  ArrayMaxSize,
-  ValidateNested,
-  ValidateIf,
-  Matches
-} from 'class-validator'
 import { Type } from 'class-transformer'
-import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
-import { CORE_TransferEventCredentialSubjectDTO, AGENT_TransferEventCredentialSubjectDTO } from './event.credentialSubject.dto'
-import { EVENT_TYPE } from '../../constants/eventType'
+import {
+  ArrayMinSize,
+  IsArray,
+  IsDateString,
+  IsEnum,
+  IsLatitude,
+  IsLongitude,
+  IsNotEmpty,
+  IsNumberString,
+  IsOptional,
+  IsString,
+  IsUrl,
+  Matches,
+  ValidateIf,
+  ValidateNested
+} from 'class-validator'
 import { AddressDTO } from '../../../general/dto/address.dto'
+import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
+import { EVENT_TYPE } from '../../constants/eventType'
+import {
+  AGENT_TransferEventCredentialSubjectDTO,
+  CORE_TransferEventCredentialSubjectDTO
+} from './event.credentialSubject.dto'
 
 export class CORE_TransferEventDetailsDTO {
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== "development" })
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
   id: string
 

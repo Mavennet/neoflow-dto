@@ -1,32 +1,24 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { Type } from 'class-transformer'
 import {
+  IsArray,
+  IsEnum,
   IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
   IsString,
-  IsNumberString,
   IsUUID,
-  IsEnum,
-  IsArray,
-  ValidateNested,
-  ValidateIf
+  ValidateNested
 } from 'class-validator'
-import { Type } from 'class-transformer'
 import {
-  PRODUCT_NAME,
-  ProductVCDTO
-} from '../../../products'
-
+  COMPACT_MeasurementDTO,
+  COMPACT_ObservationDTO,
+  COMPACT_OrganizationDTO,
+  COMPACT_PlaceDTO
+} from '../../../general'
+import { ProductVCDTO, PRODUCT_NAME } from '../../../products'
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
 import { AGENT_CreationEventCredentialSubjectDTO } from './event.credentialSubject'
-
-import {
-  COMPACT_PlaceDTO,
-  COMPACT_OrganizationDTO,
-  COMPACT_MeasurementDTO,
-  COMPACT_ObservationDTO
-} from '../../../general'
-
 import { CreationEventDetailsDTO } from './event.vc.dto'
 
 class CreateProductDTOBase {

@@ -1,18 +1,20 @@
-import {
-  IsNotEmpty,
-  IsUrl,
-  IsArray,
-  IsString,
-  IsDateString,
-  ArrayMinSize,
-  ArrayMaxSize,
-  ValidateNested,
-  ValidateIf,
-  Matches
-} from 'class-validator'
 import { Type } from 'class-transformer'
+import {
+  ArrayMinSize,
+  IsArray,
+  IsDateString,
+  IsNotEmpty,
+  IsString,
+  IsUrl,
+  Matches,
+  ValidateIf,
+  ValidateNested
+} from 'class-validator'
 import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
-import { CORE_TransformationEventCredentialSubjectDTO, AGENT_TransformationEventCredentialSubjectDTO } from './event.credentialSubject.dto'
+import {
+  AGENT_TransformationEventCredentialSubjectDTO,
+  CORE_TransformationEventCredentialSubjectDTO
+} from './event.credentialSubject.dto'
 
 class TransformationEventDetailsDTOBase {
   @IsArray()
@@ -20,7 +22,7 @@ class TransformationEventDetailsDTOBase {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== "development" })
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
   id: string
 
