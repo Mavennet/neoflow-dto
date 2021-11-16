@@ -23,10 +23,7 @@
     "@typescript-eslint/prefer-optional-chain": 0,
     "@typescript-eslint/restrict-plus-operands": 0,
     "@typescript-eslint/restrict-template-expressions": 0,
-    "@typescript-eslint/space-before-function-paren": [
-      "error",
-      { "anonymous": "always", "named": "never" }
-    ],
+    "@typescript-eslint/space-before-function-paren": ["error", { "anonymous": "always", "named": "never" }],
     "@typescript-eslint/strict-boolean-expressions": 0,
     "eol-last": 2,
     "import/prefer-default-export": 0,
