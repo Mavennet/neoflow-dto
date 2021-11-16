@@ -1,4 +1,4 @@
-import { AnalyticsDTO as AnalyticsDTOBase } from 'mavennet-dto';
+import { AnalyticsDTO as AnalyticsDTOBase } from '@mavennet/traceability-dto';
 export declare class AnalyticsDTO extends AnalyticsDTOBase {
     productId: string;
     entryId?: string;

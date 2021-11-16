@@ -1,1 +1,1 @@
-export { ORGANIZATION_ROLE } from 'mavennet-dto';
+export { ORGANIZATION_ROLE } from '@mavennet/traceability-dto';

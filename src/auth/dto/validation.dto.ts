@@ -1,1 +1,1 @@
-export { ValidationDTO } from 'mavennet-dto'
+export { ValidationDTO } from '@mavennet/traceability-dto'
