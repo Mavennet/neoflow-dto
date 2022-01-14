@@ -52,3 +52,18 @@ class InspectionEventDetailsDTOBase {
 
 export class InspectionEventDetailsDTO extends InspectionEventDetailsDTOBase {
 }
+
+//Disparity in code below and code in NF DTO package
+
+// export class InspectionEventDetailsDTO {
+//   @IsArray()
+//   @ArrayMinSize(3)
+//   @ArrayMaxSize(3)
+//   @ValidateIf(
+//     (o) =>
+//       o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+//       o['@context'].includes('https://schema.org/') &&
+//       o['@context'].includes('https://mavennet.github.io/contexts/crude-product-EVENT-v1.0.jsonld')
+//   )
+//   '@context': string[]
+

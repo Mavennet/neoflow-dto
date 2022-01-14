@@ -3,7 +3,17 @@ import { Type } from 'class-transformer'
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
 import { ProductVCDTO } from '../../../products/dto/product.vc.dto'
 
-export class TransformProductSuccessorDTO {
+export class TransformProductSuccessorDTOBase {
+  @IsNotEmpty()
+  @IsUUID()
+  identifier: string
+
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => ProductCredentialSubjectDTO)
+  credentialSubjects: ProductCredentialSubjectDTO
+}
+export class TransformProductSuccessorDTO extends TransformProductSuccessorDTOBase{
   @IsNotEmpty()
   @IsUUID()
   productId: string
@@ -16,13 +26,4 @@ export class TransformProductSuccessorDTO {
   @IsNotEmpty()
   @IsString()
   productVCHash: string
-
-  @IsNotEmpty()
-  @IsUUID()
-  identifier: string
-
-  @IsNotEmpty()
-  @ValidateNested()
-  @Type(() => ProductCredentialSubjectDTO)
-  credentialSubjects: ProductCredentialSubjectDTO
 }

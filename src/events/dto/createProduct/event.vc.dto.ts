@@ -52,3 +52,17 @@ class CreationEventDetailsDTOBase {
 
 export class CreationEventDetailsDTO extends CreationEventDetailsDTOBase {
 }
+
+// Disparity in code in agent/core between code in DTO package
+
+// export class CreationEventDetailsDTO {
+//   @IsArray()
+//   @ArrayMinSize(3)
+//   @ArrayMaxSize(3)
+//   @ValidateIf(
+//     (o) =>
+//       o['@context'].includes('https://www.w3.org/2018/credentials/v1') &&
+//       o['@context'].includes('https://schema.org/') &&
+//       o['@context'].includes('https://mavennet.github.io/contexts/v1.jsonld')
+//   )
+//   '@context': string[]

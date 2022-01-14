@@ -32,11 +32,28 @@ export class AGENT_COMPACT_InspectionDTO {
   observation: COMPACT_ObservationDTO[]
 }
 
-export class CORE_InspectProductDTO {
+export class InspectProductDTO {
   @IsNotEmpty()
   @IsUUID()
   productId: string
 
+  @IsNotEmpty()
+  @IsString()
+  txHash: string
+
+  @IsNotEmpty()
+  @IsString() // TODO fix data type
+  txTimestamp: string
+}
+
+export class AGENT_InspectProductDTO extends InspectProductDTO {
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => AGENT_InspectionEventCredentialSubjectDTO)
+  inspectCredentialSubject: AGENT_InspectionEventCredentialSubjectDTO
+}
+
+export class CORE_InspectProductDTO extends InspectProductDTO{
   @IsNotEmpty()
   @IsUUID()
   eventId: string
@@ -50,18 +67,4 @@ export class CORE_InspectProductDTO {
   @IsString()
   eventVCHash: string
 
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @IsNotEmpty()
-  @IsString() // TODO fix data type
-  txTimestamp: string
-}
-
-export class AGENT_InspectProductDTO extends CORE_InspectProductDTO {
-  @IsNotEmpty()
-  @ValidateNested()
-  @Type(() => AGENT_InspectionEventCredentialSubjectDTO)
-  inspectCredentialSubject: AGENT_InspectionEventCredentialSubjectDTO
 }
