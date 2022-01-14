@@ -3,7 +3,7 @@ import { Type } from 'class-transformer'
 import { QPInbondCredentialSubjectDTO } from './credentialSubject.dto'
 import { QPInBondEventVCDTO } from './event.vc.dto'
 
-export class CreateQPInbondDTO {
+export class CreateQPInbondDTOBase {
   @IsNotEmpty()
   @IsUrl()
   @ValidateIf((o) => o.productId.startsWith('http://neo-flow.com/credentials/'))
@@ -14,11 +14,16 @@ export class CreateQPInbondDTO {
   @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
   eventId: string
 
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => QPInbondCredentialSubjectDTO)
-  credentialSubject: QPInbondCredentialSubjectDTO
+  @IsNotEmpty()
+  @IsString()
+  txHash: string
 
+  @IsNotEmpty()
+  @IsString() // TODO fix data type
+  txTimestamp: string
+}
+
+export class CORE_CreateQPInbondDTO extends CreateQPInbondDTOBase{
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => QPInBondEventVCDTO)
@@ -27,12 +32,11 @@ export class CreateQPInbondDTO {
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
+}
 
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @IsNotEmpty()
-  @IsString() // TODO fix data type
-  txTimestamp: string
+export class AGENT_CreateQPInbondDTO extends CreateQPInbondDTOBase{
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => QPInbondCredentialSubjectDTO)
+  credentialSubject: QPInbondCredentialSubjectDTO
 }
