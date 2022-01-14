@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsOptional, IsString, IsLatitude, IsLongitude } from 'class-validator'
 
-export class AddressDTO {
+export class AGENT_AddressDTO{
   @IsNotEmpty()
   @IsString()
   address: string
@@ -8,6 +8,8 @@ export class AddressDTO {
   @IsOptional()
   @IsString()
   type?: string
+}
+export class CORE_AddressDTO extends AGENT_AddressDTO{
 
   @IsNotEmpty()
   @IsLatitude()
