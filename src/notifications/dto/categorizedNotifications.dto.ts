@@ -1,6 +1,6 @@
 import { IsArray, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
-import { NotificationDTO } from './'
+import { NotificationDTO } from './notification.dto'
 import { ApiProperty } from '@nestjs/swagger'
 
 export class CategorizedNotificationsDTO {

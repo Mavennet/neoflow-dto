@@ -1,4 +1,4 @@
-export declare class VerifiableCredentialDTO {
+export declare class VerifiableCredentialsDTO {
     verifiableCredential: any;
     options?: any;
 }

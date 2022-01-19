@@ -8,7 +8,7 @@ import {
     IsLongitude,
     IsLatitude
   } from 'class-validator'
-  import { EVENT_TYPE } from './entities/Event.entity'
+  import { EVENT_TYPE } from '../constants/eventType'
   
   export class EventDetailsDTO {
     @IsOptional()

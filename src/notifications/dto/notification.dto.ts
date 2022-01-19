@@ -12,7 +12,7 @@ import {
 import { ApiProperty } from '@nestjs/swagger'
 import { NOTIFICATION_TYPE } from '../constants/notificationType'
 
-export class AGENT_NotificationDTO {
+export class NotificationDTOBase {
   @IsNotEmpty()
   @ApiProperty()
   @IsNumber()
@@ -55,7 +55,7 @@ export class AGENT_NotificationDTO {
   createdAt: Date
 }
 
-export class CORE_NotificationDTO extends AGENT_NotificationDTO{
+export class NotificationDTO extends NotificationDTOBase{
   @IsNotEmpty()
   @ApiProperty()
   @IsString()

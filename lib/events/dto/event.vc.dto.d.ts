@@ -1,4 +1,4 @@
-import { EVENT_TYPE } from './entities/Event.entity';
+import { EVENT_TYPE } from '../constants/eventType';
 export declare class EventDetailsDTO {
     identifier: string;
     eventName: EVENT_TYPE;

@@ -1,5 +1,5 @@
 import { NOTIFICATION_TYPE } from '../constants/notificationType';
-export declare class AGENT_NotificationDTO {
+export declare class NotificationDTOBase {
     notificationId: number;
     notificationType: NOTIFICATION_TYPE;
     productId: string;
@@ -9,6 +9,6 @@ export declare class AGENT_NotificationDTO {
     read: boolean;
     createdAt: Date;
 }
-export declare class CORE_NotificationDTO extends AGENT_NotificationDTO {
+export declare class NotificationDTO extends NotificationDTOBase {
     senderName: string;
 }
