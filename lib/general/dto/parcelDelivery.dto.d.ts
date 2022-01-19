@@ -6,7 +6,7 @@ export declare class ParcelDeliveryDTO {
     deliveryMethod: TRANSPORTATION_TYPE;
     trackingNumber: string;
 }
-export declare class ParcelDeliveryDTOAdress extends ParcelDeliveryDTO {
+export declare class ParcelDeliveryDTOAddress extends ParcelDeliveryDTO {
     originAddress: PostalAddressDTO;
     deliveryAddress: PostalAddressDTO;
 }

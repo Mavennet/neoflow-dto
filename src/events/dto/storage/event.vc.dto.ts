@@ -55,3 +55,6 @@ export class CORE_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
   @Type(() => CORE_StorageEventCredentialSubjectDTO)
   credentialSubject: CORE_StorageEventCredentialSubjectDTO
 }
+
+//Disparity in code between package and backend component, but 
+//no issues occur when run

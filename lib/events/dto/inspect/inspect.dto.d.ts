@@ -6,14 +6,16 @@ export declare class AGENT_COMPACT_InspectionDTO {
     place: COMPACT_PlaceDTO;
     observation: COMPACT_ObservationDTO[];
 }
-export declare class CORE_InspectProductDTO {
+export declare class InspectProductDTO {
     productId: string;
-    eventId: string;
-    eventVC: InspectionEventDetailsDTO;
-    eventVCHash: string;
     txHash: string;
     txTimestamp: string;
 }
-export declare class AGENT_InspectProductDTO extends CORE_InspectProductDTO {
+export declare class AGENT_InspectProductDTO extends InspectProductDTO {
     inspectCredentialSubject: AGENT_InspectionEventCredentialSubjectDTO;
+}
+export declare class CORE_InspectProductDTO extends InspectProductDTO {
+    eventId: string;
+    eventVC: InspectionEventDetailsDTO;
+    eventVCHash: string;
 }

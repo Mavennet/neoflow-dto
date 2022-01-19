@@ -8,7 +8,6 @@ export class AddressDTO{
   @IsOptional()
   @IsString()
   type?: string
-
   //Was not in the org-agent, but some files still required latitude and longitude
   //So instead of creating a seperate CORE version, these values are set as optional
   @IsOptional()

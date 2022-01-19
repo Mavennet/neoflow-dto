@@ -5,6 +5,7 @@ import { TransformProductSuccessorDTO } from './transformProductSuccessor.dto'
 import { AGENT_TransformationEventCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { AGENT_COMPACT_CreateProductDTO } from '../createProduct'
 import { CORE_TransformationEventDetailsDTO, AGENT_TransformationEventDetailsDTO } from './event.vc.dto'
+import { SuccessorDTO } from '../../../products/dto/successor.dto'
 
 export class AGENT_COMPACT_TransformProductDTO {
   @ApiProperty()
@@ -46,12 +47,12 @@ export class CORE_TransformProductsDTO {
   @Type(() => CORE_TransformationEventDetailsDTO)
   eventVC: CORE_TransformationEventDetailsDTO
 
-  @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
-  @Type(() => TransformProductSuccessorDTO)
-  productSuccessors: TransformProductSuccessorDTO[]
+  @Type(() => SuccessorDTO)
+  successors: SuccessorDTO[]
+  
 }
 
 export class AGENT_TransformProductsDTO extends CORE_TransformProductsDTO {
@@ -60,6 +61,13 @@ export class AGENT_TransformProductsDTO extends CORE_TransformProductsDTO {
   @ValidateNested()
   @Type(() => AGENT_TransformationEventDetailsDTO)
   eventVC: AGENT_TransformationEventDetailsDTO
+
+  @ApiProperty()
+  @IsArray()
+  @ArrayMinSize(1)
+  @ValidateNested({ each: true })
+  @Type(() => TransformProductSuccessorDTO)
+  productSuccessors: TransformProductSuccessorDTO[]
 
   @ApiProperty()
   @IsArray()

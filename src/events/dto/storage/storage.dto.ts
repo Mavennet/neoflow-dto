@@ -98,3 +98,16 @@ export class AGENT_StorageProductDTO extends CORE_StorageProductDTO {
   @Type(() => AGENT_StorageEventCredentialSubjectDTO)
   storageCredentialSubject: AGENT_StorageEventCredentialSubjectDTO
 }
+
+//Old Version from Org-Agent
+// export class AGENT_StorageProductDTO {
+//   @ApiProperty()
+//   @IsNotEmpty()
+//   @IsString()
+//   productHash: string
+
+//   @IsNotEmpty()
+//   @ValidateNested()
+//   @Type(() => StorageEventCredentialSubjectDTO)
+//   storageCredentialSubject: StorageEventCredentialSubjectDTO
+// }
