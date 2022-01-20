@@ -9,7 +9,7 @@ import { ApiProperty } from '@nestjs/swagger'
 //   proof: Proof
 // }
 
-export class VerifiableCredentialDTO {
+export class CRED_VerifiableCredentialDTO {
   @ApiProperty()
   @IsNotEmpty()
   // @ValidateNested()
