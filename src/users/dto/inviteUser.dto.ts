@@ -3,7 +3,7 @@ import { IsNotEmpty, IsEnum } from 'class-validator'
 import { ROLES } from '../constants'
 import { InviteUserDTO as InviteUserDTOBase } from '@mavennet/traceability-dto'
 
-export class InviteUserDTO extends InviteUserDTOBase{
+export class InviteUserDTO extends InviteUserDTOBase {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(ROLES)
