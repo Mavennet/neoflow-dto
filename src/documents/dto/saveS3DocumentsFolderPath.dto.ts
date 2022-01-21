@@ -1,1 +1,1 @@
-export {SaveS3DocumentsFolderPathDTO} from '@mavennet/traceability-dto'
+export { SaveS3DocumentsFolderPathDTO } from '@mavennet/traceability-dto'
