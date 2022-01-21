@@ -1,7 +1,7 @@
-import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto';
-import { CORE_TransferEventCredentialSubjectDTO, AGENT_TransferEventCredentialSubjectDTO } from './event.credentialSubject.dto';
-import { EVENT_TYPE } from '../../constants/eventType';
 import { AddressDTO } from '../../../general/dto/address.dto';
+import { VerifiableCredentialDTO } from '../../../credentials/dto/verifiableCredential.dto';
+import { EVENT_TYPE } from '../../constants/eventType';
+import { AGENT_TransferEventCredentialSubjectDTO, CORE_TransferEventCredentialSubjectDTO } from './event.credentialSubject.dto';
 export declare class CORE_TransferEventDetailsDTO {
     id: string;
     '@context': string[];

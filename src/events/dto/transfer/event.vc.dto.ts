@@ -16,7 +16,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { AddressDTO } from '../../../general/dto/address.dto'
-import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
+import { VerifiableCredentialDTO } from '../../../credentials/dto/verifiableCredential.dto'
 import { EVENT_TYPE } from '../../constants/eventType'
 import {
   AGENT_TransferEventCredentialSubjectDTO,

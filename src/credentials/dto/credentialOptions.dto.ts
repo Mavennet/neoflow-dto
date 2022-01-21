@@ -1,10 +1,7 @@
-import { IsIn, IsOptional } from 'class-validator'
+import { IsOptional } from 'class-validator'
+import { CredentialOptionsDTO as CredentialOptionsDTOBase } from '@mavennet/traceability-dto'
 
-export class CredentialOptionsDTO {
-  @IsOptional()
-  @IsIn(['assertionMethod', 'authentication'])
-  proofPurpose?: 'assertionMethod' | 'authentication'
-
+export class CredentialOptionsDTO extends CredentialOptionsDTOBase  {
   @IsOptional()
   assertionMethod?: string
 
@@ -12,20 +9,8 @@ export class CredentialOptionsDTO {
   issuanceDate?: string
 
   @IsOptional()
-  issuer?: string
-
-  @IsOptional()
-  verificationMethod?: string
-
-  @IsOptional()
-  created?: string
-
-  @IsOptional()
   challenge?: string
 
   @IsOptional()
   domain?: string
-
-  @IsOptional()
-  credentialStatus?
 }

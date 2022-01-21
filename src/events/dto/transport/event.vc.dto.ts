@@ -10,7 +10,7 @@ import {
   Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
+import { VerifiableCredentialDTO } from '../../../credentials/dto/verifiableCredential.dto'
 import { CORE_TransportationEventCredentialSubjectDTO, AGENT_TransportationEventCredentialSubjectDTO } from './event.credentialSubject.dto'
 
 class TransportationEventDetailsDTOBase {

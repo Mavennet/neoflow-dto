@@ -1,6 +1,5 @@
 import { ROLES } from '../constants';
-export declare class InviteUserDTO {
-    name: string;
-    email: string;
+import { InviteUserDTO as InviteUserDTOBase } from '@mavennet/traceability-dto';
+export declare class InviteUserDTO extends InviteUserDTOBase {
     role: ROLES;
 }

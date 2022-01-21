@@ -10,7 +10,7 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator'
-import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
+import { VerifiableCredentialDTO } from '../../../credentials/dto/verifiableCredential.dto'
 import {
   AGENT_TransformationEventCredentialSubjectDTO,
   CORE_TransformationEventCredentialSubjectDTO

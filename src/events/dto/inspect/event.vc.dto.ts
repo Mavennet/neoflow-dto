@@ -11,7 +11,7 @@ import {
   Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
+import { VerifiableCredentialDTO } from '../../../credentials/dto/verifiableCredential.dto'
 import { AGENT_InspectionEventCredentialSubjectDTO } from './event.credentialSubject.dto'
 
 class InspectionEventDetailsDTOBase {

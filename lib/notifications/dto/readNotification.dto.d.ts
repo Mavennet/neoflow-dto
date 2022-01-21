@@ -1,3 +1,1 @@
-export declare class ReadNotificationDTO {
-    notificationId: number;
-}
+export { ReadNotificationDTO } from '@mavennet/traceability-dto';

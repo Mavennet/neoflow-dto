@@ -1,19 +1,8 @@
-import { IsNotEmpty, IsOptional, IsString, IsLatitude, IsLongitude } from 'class-validator'
+import {IsOptional, IsString } from 'class-validator'
+import { AddressDTO as AddressDTOBase } from '@mavennet/traceability-dto'
 
-export class AddressDTO {
-  @IsNotEmpty()
-  @IsString()
-  address: string
-
+export class AddressDTO extends AddressDTOBase{
   @IsOptional()
   @IsString()
   type?: string
-
-  @IsNotEmpty()
-  @IsLatitude()
-  latitude: string
-
-  @IsNotEmpty()
-  @IsLongitude()
-  longitude: string
 }
