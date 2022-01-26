@@ -1,3 +1,4 @@
+import { OrganizationDTO } from '../../../general/dto/organization.dto';
 import { DELIVERY_STATUS } from '../../constants/deliveryStatus';
 export declare class CreateDeliveryScheduleDTO extends Array {
     batchNumber?: number;
@@ -7,4 +8,5 @@ export declare class CreateDeliveryScheduleDTO extends Array {
     createdAt?: string;
     deliveredAt?: string;
     deliveryStatus: DELIVERY_STATUS;
+    custodian: OrganizationDTO;
 }
