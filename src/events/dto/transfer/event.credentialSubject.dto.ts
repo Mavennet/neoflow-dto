@@ -7,7 +7,6 @@ import {
   IsString,
   IsNumberString,
   ValidateNested,
-  ValidateIf,
   Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
@@ -75,7 +74,6 @@ export class CORE_TransferEventCredentialSubjectDTO {
 export class AGENT_TransferEventCredentialSubjectDTO extends CORE_TransferEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsUrl()
-  @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
   eventId: string
 
   @IsOptional()

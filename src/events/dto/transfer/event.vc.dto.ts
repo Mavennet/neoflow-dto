@@ -12,7 +12,6 @@ import {
   IsString,
   IsUrl,
   Matches,
-  ValidateIf,
   ValidateNested
 } from 'class-validator'
 import { AddressDTO } from '../../../general/dto/address.dto'
@@ -26,7 +25,6 @@ import {
 export class CORE_TransferEventDetailsDTO {
   @IsNotEmpty()
   @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
-  @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
   id: string
 
   @IsArray()

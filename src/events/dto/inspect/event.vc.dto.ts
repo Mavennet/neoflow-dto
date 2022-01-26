@@ -27,7 +27,6 @@ class InspectionEventDetailsDTOBase {
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
-  @ValidateIf((o) => o.type.includes('VerifiableCredential') && o.type.includes('InspectionEventCredential'))
   type: string[]
 
   @IsNotEmpty()
