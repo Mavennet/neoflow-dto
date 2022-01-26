@@ -1,9 +1,9 @@
 import { IsOptional } from 'class-validator'
 
-export class CreateBatchDTO {
+export class CreateDeliveryScheduleDTO {
   @IsOptional()
   batchNumber: number
-
+  
   @IsOptional()
   inBondNumber: number
 
@@ -13,7 +13,6 @@ export class CreateBatchDTO {
   @IsOptional()
   estimatedDeliveryMonth: string
 
-  // should this be date instead of string?
   @IsOptional()
   createdAt: string
 
