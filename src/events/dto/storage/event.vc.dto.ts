@@ -6,11 +6,10 @@ import {
   IsDateString,
   ArrayMinSize,
   ValidateNested,
-  ValidateIf,
   Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
+import { VerifiableCredentialDTO } from '../../../credentials/dto/verifiableCredential.dto'
 import { CORE_StorageEventCredentialSubjectDTO, AGENT_StorageEventCredentialSubjectDTO } from './event.credentialSubject.dto'
 
 class StorageEventDetailsDTOBase {
@@ -40,7 +39,6 @@ class StorageEventDetailsDTOBase {
 export class AGENT_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
   @IsNotEmpty()
   @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
-  @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
   id: string
 
   @IsNotEmpty()

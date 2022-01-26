@@ -1,3 +1,1 @@
-export declare class DeleteContractsDTO {
-    contractIds: number[];
-}
+export { DeleteContractsDTO } from '@mavennet/traceability-dto';

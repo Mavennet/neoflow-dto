@@ -7,10 +7,9 @@ import {
   IsString,
   IsUrl,
   Matches,
-  ValidateIf,
   ValidateNested
 } from 'class-validator'
-import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
+import { VerifiableCredentialDTO } from '../../../credentials/dto/verifiableCredential.dto'
 import {
   AGENT_TransformationEventCredentialSubjectDTO,
   CORE_TransformationEventCredentialSubjectDTO
@@ -23,7 +22,6 @@ class TransformationEventDetailsDTOBase {
 
   @IsNotEmpty()
   @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
-  @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
   id: string
 
   @IsArray()

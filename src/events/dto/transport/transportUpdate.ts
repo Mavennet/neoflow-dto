@@ -5,17 +5,14 @@ import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 export class AGENT_UpdateTransportProductDTO {
   @IsNotEmpty()
   @IsUrl()
-  @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
   productId: string
 
   @IsNotEmpty()
   @IsUrl()
-  @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
   eventId: string
 
   @IsNotEmpty()
   @IsUrl()
-  @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
   revokeEventId: string
 
   @IsNotEmpty()
