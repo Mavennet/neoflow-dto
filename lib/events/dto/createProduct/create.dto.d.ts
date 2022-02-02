@@ -28,5 +28,6 @@ export declare class CORE_CreateProductDTO extends CreateProductDTOBase {
     eventId: string;
     eventVC: CreationEventDetailsDTO;
     eventVCHash: string;
+    batchNumber: Number;
 }
 export {};

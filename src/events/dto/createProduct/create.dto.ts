@@ -127,4 +127,8 @@ export class CORE_CreateProductDTO extends CreateProductDTOBase {
   @ApiProperty()
   @IsString()
   eventVCHash: string
+
+  @IsNotEmpty()
+  @ApiProperty()
+  batchNumber: Number
 }
