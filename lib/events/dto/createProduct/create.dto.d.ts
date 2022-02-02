@@ -28,7 +28,5 @@ export declare class CORE_CreateProductDTO extends CreateProductDTOBase {
     eventId: string;
     eventVC: CreationEventDetailsDTO;
     eventVCHash: string;
-    txHash: string;
-    txTimestamp: string;
 }
 export {};

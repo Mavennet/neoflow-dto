@@ -127,14 +127,4 @@ export class CORE_CreateProductDTO extends CreateProductDTOBase {
   @ApiProperty()
   @IsString()
   eventVCHash: string
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsString()
-  txHash: string
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsString() // TODO fix data type
-  txTimestamp: string
 }
