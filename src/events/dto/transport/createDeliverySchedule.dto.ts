@@ -1,6 +1,7 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { IsEnum, IsNotEmptyObject, IsOptional, ValidateNested } from 'class-validator'
+import { AddressDTO } from '../../../general/dto/address.dto'
 import { OrganizationDTO } from '../../../general/dto/organization.dto'
 import { DELIVERY_STATUS, DELIVERY_MONTH } from '../../constants'
 
@@ -22,14 +23,6 @@ export class CreateDeliveryScheduleDTO extends Array {
   @IsEnum(DELIVERY_MONTH)
   estimatedDeliveryMonth?: DELIVERY_MONTH
 
-  @ApiPropertyOptional()
-  @IsOptional()
-  createdAt?: string
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  deliveredAt?: string
-
   @ApiProperty()
   @IsEnum(DELIVERY_STATUS)
   deliveryStatus: DELIVERY_STATUS
@@ -39,4 +32,10 @@ export class CreateDeliveryScheduleDTO extends Array {
   @ValidateNested()
   @Type(() => OrganizationDTO)
   custodian: OrganizationDTO
+
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => AddressDTO)
+  address: AddressDTO
 }
