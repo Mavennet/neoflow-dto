@@ -1,3 +1,4 @@
+export * from './deliveryMonth'
 export * from './deliveryStatus'
 export * from './inBondType'
 export * from './storageEventType'
