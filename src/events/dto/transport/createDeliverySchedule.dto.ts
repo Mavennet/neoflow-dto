@@ -1,8 +1,8 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { IsEnum, IsNotEmptyObject, IsOptional, IsString, ValidateNested } from 'class-validator'
+import { IsEnum, IsNotEmptyObject, IsOptional, ValidateNested } from 'class-validator'
 import { OrganizationDTO } from '../../../general/dto/organization.dto'
-import { DELIVERY_STATUS } from '../../constants/deliveryStatus'
+import { DELIVERY_STATUS, DELIVERY_MONTH } from '../../constants'
 
 export class CreateDeliveryScheduleDTO extends Array {
   @ApiPropertyOptional()
@@ -19,8 +19,8 @@ export class CreateDeliveryScheduleDTO extends Array {
 
   @ApiPropertyOptional()
   @IsOptional()
-  @IsString()
-  estimatedDeliveryMonth?: string
+  @IsEnum(DELIVERY_MONTH)
+  estimatedDeliveryMonth?: DELIVERY_MONTH
 
   @ApiPropertyOptional()
   @IsOptional()
