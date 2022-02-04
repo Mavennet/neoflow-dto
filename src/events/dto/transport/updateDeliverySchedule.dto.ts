@@ -1,23 +1,10 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { IsNotEmptyObject, IsOptional, ValidateNested } from 'class-validator'
+import { ArrayMinSize, IsArray, IsNotEmptyObject, ValidateNested } from 'class-validator'
+import { DeliveryScheduleDTO } from './deliverySchedule.dto'
 import { OrganizationDTO } from '../../../general/dto/organization.dto'
 
-import { AddressDTO } from '../../../general/dto/address.dto'
-
-export class UpdateDeliveryScheduleDTO extends Array {
-  @ApiPropertyOptional()
-  @IsOptional()
-  batchNumber?: number
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  inBondNumber?: number
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  deliveryTicketNumber?: number
-
+export class UpdateDeliveryScheduleDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
@@ -25,8 +12,9 @@ export class UpdateDeliveryScheduleDTO extends Array {
   custodian: OrganizationDTO
 
   @ApiProperty()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => AddressDTO)
-  address: AddressDTO
+  @IsArray()
+  @ArrayMinSize(1)
+  @ValidateNested({ each: true })
+  @Type(() => DeliveryScheduleDTO)
+  deliverySchedules: DeliveryScheduleDTO[]
 }
