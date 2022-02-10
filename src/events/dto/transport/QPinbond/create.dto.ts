@@ -27,12 +27,4 @@ export class CreateQPInbondDTO {
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
-
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @IsNotEmpty()
-  @IsString() // TODO fix data type
-  txTimestamp: string
 }

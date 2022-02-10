@@ -6,6 +6,4 @@ export declare class CreateQPInbondDTO {
     credentialSubject: QPInbondCredentialSubjectDTO;
     eventVC: QPInBondEventVCDTO;
     eventVCHash: string;
-    txHash: string;
-    txTimestamp: string;
 }
