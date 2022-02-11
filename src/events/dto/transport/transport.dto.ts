@@ -124,13 +124,6 @@ export class CORE_TransportProductDTO extends TransportProductDTOBase {
   @IsString()
   eventVCHash: string
 
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @IsNotEmpty()
-  @IsString() // TODO fix data type
-  txTimestamp: string
 }
 
 export class AGENT_TransportProductDTO extends TransportProductDTOBase {
