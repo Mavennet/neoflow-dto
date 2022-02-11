@@ -4,12 +4,11 @@ import { QPInBondEventVCDTO } from './event.vc.dto'
 
 export class CreateQPInbondDTO {
   @IsNotEmpty()
-  @IsUrl()
-  @ValidateIf((o) => o.productId.startsWith('http://neo-flow.com/credentials/'))
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   productId: string
 
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
   eventId: string
 

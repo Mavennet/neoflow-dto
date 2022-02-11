@@ -17,7 +17,6 @@ import { HTS_CODE, PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 export class CORE_InspectionEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
-  @ValidateIf((o) => o.productId.startsWith('http://neo-flow.com/credentials/'))
   productId: string
 
   @IsOptional()
@@ -73,7 +72,7 @@ export class CORE_InspectionEventCredentialSubjectDTO {
 
 export class AGENT_InspectionEventCredentialSubjectDTO extends CORE_InspectionEventCredentialSubjectDTO {
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
   eventId: string
 }
