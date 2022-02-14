@@ -26,6 +26,10 @@ class CreateProductDTOBase {
   @ApiProperty()
   @IsUUID()
   productId: string
+
+  @IsNotEmpty()
+  @ApiProperty()
+  batchNumber: Number
 }
 
 export class AGENT_COMPACT_CreateProductDTO {
@@ -127,8 +131,4 @@ export class CORE_CreateProductDTO extends CreateProductDTOBase {
   @ApiProperty()
   @IsString()
   eventVCHash: string
-
-  @IsNotEmpty()
-  @ApiProperty()
-  batchNumber: Number
 }
