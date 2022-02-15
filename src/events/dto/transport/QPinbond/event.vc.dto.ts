@@ -12,7 +12,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
-import { VerifiableCredentialDTO } from '../../../../general/dto'
+import { VerifiableCredentialDTO } from '../../../../credentials/dto/VerifiableCredential.dto'
 import { QPInbondCredentialSubjectDTO } from './credentialSubject.dto'
 
 export class QPInBondEventVCDTO {

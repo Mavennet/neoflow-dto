@@ -11,7 +11,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
-import { VerifiableCredentialDTO } from '../../../../general/dto/verifiableCredential.dto'
+import { VerifiableCredentialDTO } from '../../../../credentials/dto/verifiableCredential.dto'
 import { OGBillOfLadingCredentialSubjectDTO } from './oilGas.event.credentialSubject.dto'
 
 export class OGBillOfLadingVCDTO {

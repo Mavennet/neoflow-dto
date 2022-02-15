@@ -1,6 +1,4 @@
-export declare class AddressDTO {
-    address: string;
+import { AddressDTO as AddressDTOBase } from '@mavennet/traceability-dto';
+export declare class AddressDTO extends AddressDTOBase {
     type?: string;
-    latitude: string;
-    longitude: string;
 }
