@@ -140,14 +140,6 @@ export class CORE_TransportProductDTO extends TransportProductDTOBase {
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
-
-  @IsNotEmpty()
-  @IsString()
-  deliveryTicketNumber: number
-
-  @IsNotEmpty()
-  @IsString()
-  deliveredVolume: number
 }
 
 export class AGENT_TransportProductDTO extends TransportProductDTOBase {
