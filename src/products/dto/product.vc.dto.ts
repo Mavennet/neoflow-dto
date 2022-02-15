@@ -12,7 +12,7 @@ import {
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../../general/constants'
-import { VerifiableCredentialDTO } from '../../general/dto/verifiableCredential.dto'
+import { VerifiableCredentialDTO } from '../../credentials/dto/verifiableCredential.dto'
 import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto'
 
 class ProductVCDTOBase {

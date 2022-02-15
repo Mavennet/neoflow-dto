@@ -1,6 +1,6 @@
 {
   "name": "@mavennet/neoflow-dto",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,6 +25,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
+    "@types/node": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
     "class-transformer": ">=0.4.0",

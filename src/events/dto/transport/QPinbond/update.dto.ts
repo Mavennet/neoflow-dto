@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsUrl, ValidateIf, IsOptional, IsString } from 'class-validator'
+import { IsNotEmpty, IsUrl, IsOptional, IsString } from 'class-validator'
 
 export class UpdateQPInbondDTO {
   @IsNotEmpty()

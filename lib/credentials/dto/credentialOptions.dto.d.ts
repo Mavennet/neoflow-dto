@@ -1,11 +1,7 @@
-export declare class CredentialOptionsDTO {
-    proofPurpose?: 'assertionMethod' | 'authentication';
+import { CredentialOptionsDTO as CredentialOptionsDTOBase } from '@mavennet/traceability-dto';
+export declare class CredentialOptionsDTO extends CredentialOptionsDTOBase {
     assertionMethod?: string;
     issuanceDate?: string;
-    issuer?: string;
-    verificationMethod?: string;
-    created?: string;
     challenge?: string;
     domain?: string;
-    credentialStatus?: any;
 }
