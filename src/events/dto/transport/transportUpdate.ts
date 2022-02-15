@@ -4,15 +4,15 @@ import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
 export class AGENT_UpdateTransportProductDTO {
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   productId: string
 
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   eventId: string
 
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   revokeEventId: string
 
   @IsNotEmpty()

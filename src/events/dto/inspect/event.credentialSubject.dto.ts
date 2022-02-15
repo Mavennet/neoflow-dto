@@ -72,6 +72,6 @@ export class CORE_InspectionEventCredentialSubjectDTO {
 
 export class AGENT_InspectionEventCredentialSubjectDTO extends CORE_InspectionEventCredentialSubjectDTO {
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   eventId: string
 }

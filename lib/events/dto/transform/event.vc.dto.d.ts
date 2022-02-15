@@ -1,4 +1,4 @@
-import { VerifiableCredentialDTO } from '../../../credentials/dto/verifiableCredential.dto';
+import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto';
 import { AGENT_TransformationEventCredentialSubjectDTO, CORE_TransformationEventCredentialSubjectDTO } from './event.credentialSubject.dto';
 declare class TransformationEventDetailsDTOBase {
     '@context': string[];

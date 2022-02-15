@@ -1,4 +1,13 @@
-import { IsString, IsNotEmpty, IsNumber, IsUUID, IsNotEmptyObject, ValidateNested, IsOptional, Matches } from 'class-validator'
+import {
+  IsString,
+  IsNotEmpty,
+  IsNumber,
+  IsUUID,
+  IsNotEmptyObject,
+  ValidateNested,
+  IsOptional,
+  Matches
+} from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { AddressDTO } from '../../../general/dto/address.dto'
 import { Type } from 'class-transformer'
@@ -30,16 +39,6 @@ export class CORE_TransferProductDTO {
   @ApiProperty()
   @IsString()
   eventVCHash: string
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsString()
-  txHash: string
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsString() // TODO fix data type
-  txTimestamp: string
 }
 
 export class AGENT_TransferProductDTO {

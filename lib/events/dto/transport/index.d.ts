@@ -1,4 +1,7 @@
 export * from './billOfLading';
+export * from './deliverySchedule.dto';
+export * from './updateDeliverySchedule.dto';
+export * from './createDeliverySchedule.dto';
 export * from './QPinbond';
 export * from './event.vc.dto';
 export * from './event.credentialSubject.dto';

@@ -20,7 +20,7 @@ export class OGBillOfLadingVCDTO {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   id: string
 
   @IsArray()

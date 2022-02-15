@@ -1,4 +1,16 @@
-import { IsDateString, IsNotEmptyObject, IsNotEmpty, IsEnum, IsUrl, IsUUID, IsString, Validate, ValidateNested, ValidateIf } from 'class-validator'
+import {
+  IsDateString,
+  IsNotEmptyObject,
+  IsNotEmpty,
+  IsEnum,
+  IsUrl,
+  IsUUID,
+  IsString,
+  Validate,
+  ValidateNested,
+  ValidateIf,
+  IsOptional
+} from 'class-validator'
 import { Type } from 'class-transformer'
 import {
   AGENT_TransportationEventCredentialSubjectDTO,
@@ -7,14 +19,19 @@ import {
   OGBillOfLadingVCDTO
 } from '.'
 import { TRANSPORT_EVENT_TYPE } from '../../constants'
-import { COMPACT_OrganizationDTO, COMPACT_PlaceDTO, COMPACT_MeasurementDTO, COMPACT_PostalAddressDTO } from '../../../general'
+import {
+  COMPACT_OrganizationDTO,
+  COMPACT_PlaceDTO,
+  COMPACT_MeasurementDTO,
+  COMPACT_PostalAddressDTO
+} from '../../../general'
 import { ApiProperty } from '@nestjs/swagger'
 
 export class AGENT_COMPACT_TransportStartDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(TRANSPORT_EVENT_TYPE)
-  @Validate(o => o.eventType === TRANSPORT_EVENT_TYPE.START)
+  @Validate((o) => o.eventType === TRANSPORT_EVENT_TYPE.START)
   eventType: TRANSPORT_EVENT_TYPE
 
   @ApiProperty()
@@ -39,7 +56,7 @@ export class AGENT_COMPACT_TransportEndDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(TRANSPORT_EVENT_TYPE)
-  @Validate(o => o.eventType === TRANSPORT_EVENT_TYPE.END)
+  @Validate((o) => o.eventType === TRANSPORT_EVENT_TYPE.END)
   eventType: TRANSPORT_EVENT_TYPE
 
   @ApiProperty()
@@ -108,29 +125,21 @@ class TransportProductDTOBase {
 }
 
 export class CORE_TransportProductDTO extends TransportProductDTOBase {
-  @IsNotEmpty()
+  @IsOptional()
   @ValidateNested()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START)
   @Type(() => CORE_TransportationEventDetailsDTO)
-  transportVC: CORE_TransportationEventDetailsDTO
+  transportVC?: CORE_TransportationEventDetailsDTO
 
-  @IsNotEmpty()
+  @IsOptional()
   @ValidateNested()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.END)
   @Type(() => OGBillOfLadingVCDTO)
-  bolVC: OGBillOfLadingVCDTO
+  bolVC?: OGBillOfLadingVCDTO
 
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
-
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @IsNotEmpty()
-  @IsString() // TODO fix data type
-  txTimestamp: string
 }
 
 export class AGENT_TransportProductDTO extends TransportProductDTOBase {

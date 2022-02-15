@@ -1,21 +1,15 @@
 import { IsString, IsNotEmpty, IsNotEmptyObject, IsUrl, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
-import { QPInbondCredentialSubjectDTO } from './credentialSubject.dto'
 import { QPInBondEventVCDTO } from './event.vc.dto'
 
 export class CreateQPInbondDTO {
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   productId: string
 
   @IsNotEmpty()
-  @IsUrl()
+  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   eventId: string
-
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => QPInbondCredentialSubjectDTO)
-  credentialSubject: QPInbondCredentialSubjectDTO
 
   @IsNotEmptyObject()
   @ValidateNested()
@@ -25,12 +19,4 @@ export class CreateQPInbondDTO {
   @IsNotEmpty()
   @IsString()
   eventVCHash: string
-
-  @IsNotEmpty()
-  @IsString()
-  txHash: string
-
-  @IsNotEmpty()
-  @IsString() // TODO fix data type
-  txTimestamp: string
 }
