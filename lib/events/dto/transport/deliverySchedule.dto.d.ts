@@ -5,6 +5,7 @@ export declare class DeliveryScheduleDTO {
     batchNumber?: number;
     inBondNumber?: number;
     deliveryTicketNumber?: number;
+    deliveredVolume?: number;
     estimatedDeliveryMonth?: DELIVERY_MONTH;
     custodian: OrganizationDTO;
     address: AddressDTO;

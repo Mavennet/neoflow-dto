@@ -23,6 +23,11 @@ export class DeliveryScheduleDTO {
 
   @ApiPropertyOptional()
   @IsOptional()
+  @IsNumber()
+  deliveredVolume?: number
+
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsEnum(DELIVERY_MONTH)
   estimatedDeliveryMonth?: DELIVERY_MONTH
 
