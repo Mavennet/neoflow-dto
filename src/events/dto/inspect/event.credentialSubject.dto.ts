@@ -73,6 +73,5 @@ export class CORE_InspectionEventCredentialSubjectDTO {
 export class AGENT_InspectionEventCredentialSubjectDTO extends CORE_InspectionEventCredentialSubjectDTO {
   @IsNotEmpty()
   @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
-  @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
   eventId: string
 }

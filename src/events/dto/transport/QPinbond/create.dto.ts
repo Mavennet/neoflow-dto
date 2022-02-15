@@ -9,7 +9,6 @@ export class CreateQPInbondDTO {
 
   @IsNotEmpty()
   @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
-  @ValidateIf((o) => o.eventId.startsWith('http://neo-flow.com/credentials/'))
   eventId: string
 
   @IsNotEmptyObject()
