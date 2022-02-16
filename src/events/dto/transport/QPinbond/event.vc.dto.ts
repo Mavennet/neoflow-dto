@@ -7,7 +7,6 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsString,
-  IsUrl,
   Matches,
   ValidateNested
 } from 'class-validator'
@@ -21,7 +20,6 @@ export class QPInBondEventVCDTO {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   id: string
 
   @IsArray()

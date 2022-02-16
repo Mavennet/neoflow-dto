@@ -1,6 +1,5 @@
 import {
   IsNotEmpty,
-  IsUrl,
   IsArray,
   IsString,
   IsDateString,
@@ -20,7 +19,6 @@ class InspectionEventDetailsDTOBase {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
   id: string
 
@@ -50,5 +48,4 @@ class InspectionEventDetailsDTOBase {
   proof: VerifiableCredentialDTO
 }
 
-export class InspectionEventDetailsDTO extends InspectionEventDetailsDTOBase {
-}
+export class InspectionEventDetailsDTO extends InspectionEventDetailsDTOBase {}

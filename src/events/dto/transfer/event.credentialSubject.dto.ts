@@ -2,7 +2,6 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
-  IsUrl,
   IsEnum,
   IsString,
   IsNumberString,
@@ -16,7 +15,6 @@ import { TRANSFER_EVENT_TYPE } from '../../constants'
 
 export class CORE_TransferEventCredentialSubjectDTO {
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   productId: string
 
   @IsNotEmpty()
@@ -74,7 +72,6 @@ export class CORE_TransferEventCredentialSubjectDTO {
 
 export class AGENT_TransferEventCredentialSubjectDTO extends CORE_TransferEventCredentialSubjectDTO {
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   eventId: string
 
   @IsOptional()

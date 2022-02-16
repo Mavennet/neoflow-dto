@@ -2,7 +2,6 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
-  IsUrl,
   IsString,
   ValidateNested,
   ValidateIf,
@@ -16,7 +15,6 @@ import { HTS_CODE, PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
 export class CORE_InspectionEventCredentialSubjectDTO {
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   productId: string
 
   @IsOptional()
@@ -72,6 +70,5 @@ export class CORE_InspectionEventCredentialSubjectDTO {
 
 export class AGENT_InspectionEventCredentialSubjectDTO extends CORE_InspectionEventCredentialSubjectDTO {
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   eventId: string
 }

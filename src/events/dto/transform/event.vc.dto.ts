@@ -5,7 +5,6 @@ import {
   IsDateString,
   IsNotEmpty,
   IsString,
-  IsUrl,
   Matches,
   ValidateIf,
   ValidateNested
@@ -22,7 +21,6 @@ class TransformationEventDetailsDTOBase {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
   id: string
 

@@ -1,9 +1,8 @@
-import { IsArray, ArrayMinSize, IsUrl, IsOptional, IsNotEmpty } from 'class-validator'
+import { IsArray, ArrayMinSize, IsOptional, IsNotEmpty } from 'class-validator'
 
 export class CredentialDTO {
   @IsArray()
   @ArrayMinSize(1)
-  @IsUrl({}, { each: true })
   '@context'
 
   id: string

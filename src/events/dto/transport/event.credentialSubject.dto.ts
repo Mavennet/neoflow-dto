@@ -1,4 +1,13 @@
-import { IsNotEmpty, IsOptional, IsUrl, IsEnum, IsString, IsNotEmptyObject, ValidateNested, Matches, ValidateIf } from 'class-validator'
+import {
+  IsNotEmpty,
+  IsOptional,
+  IsEnum,
+  IsString,
+  IsNotEmptyObject,
+  ValidateNested,
+  Matches,
+  ValidateIf
+} from 'class-validator'
 import { Type } from 'class-transformer'
 import { AddressDTO } from '../../../general/dto/address.dto'
 
@@ -7,7 +16,6 @@ import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
 class TransportationEventCredentialSubjectDTOBase {
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   productId: string
 
   @IsNotEmpty()
@@ -79,5 +87,4 @@ export class CORE_TransportationEventCredentialSubjectDTO extends Transportation
   geo: AddressDTO
 }
 
-export class AGENT_TransportationEventCredentialSubjectDTO extends TransportationEventCredentialSubjectDTOBase {
-}
+export class AGENT_TransportationEventCredentialSubjectDTO extends TransportationEventCredentialSubjectDTOBase {}

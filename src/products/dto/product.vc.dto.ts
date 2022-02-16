@@ -1,7 +1,6 @@
 import {
   IsNotEmpty,
   IsNotEmptyObject,
-  IsUrl,
   IsString,
   IsArray,
   IsDateString,
@@ -22,7 +21,6 @@ class ProductVCDTOBase {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl({ require_tld: false })
   @ApiProperty()
   id: string
 
@@ -55,5 +53,4 @@ class ProductVCDTOBase {
   proof: VerifiableCredentialDTO
 }
 
-export class ProductVCDTO extends ProductVCDTOBase {
-}
+export class ProductVCDTO extends ProductVCDTOBase {}

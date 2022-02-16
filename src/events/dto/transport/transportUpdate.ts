@@ -1,18 +1,15 @@
-import { IsNotEmpty, IsUrl, ValidateIf, IsOptional, IsString, IsEnum, IsNumberString } from 'class-validator'
+import { IsNotEmpty, ValidateIf, IsOptional, IsString, IsEnum, IsNumberString } from 'class-validator'
 import { TRANSPORTATION_TYPE, TRANSPORT_EVENT_TYPE } from '../../constants'
 import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
 export class AGENT_UpdateTransportProductDTO {
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   productId: string
 
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   eventId: string
 
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   revokeEventId: string
 
   @IsNotEmpty()

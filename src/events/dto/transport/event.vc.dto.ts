@@ -1,6 +1,5 @@
 import {
   IsNotEmpty,
-  IsUrl,
   IsArray,
   IsString,
   IsDateString,
@@ -11,7 +10,10 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
-import { CORE_TransportationEventCredentialSubjectDTO, AGENT_TransportationEventCredentialSubjectDTO } from './event.credentialSubject.dto'
+import {
+  CORE_TransportationEventCredentialSubjectDTO,
+  AGENT_TransportationEventCredentialSubjectDTO
+} from './event.credentialSubject.dto'
 
 class TransportationEventDetailsDTOBase {
   @IsArray()
@@ -19,7 +21,6 @@ class TransportationEventDetailsDTOBase {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
   id: string
 

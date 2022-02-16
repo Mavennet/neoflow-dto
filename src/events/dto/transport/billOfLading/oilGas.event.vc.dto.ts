@@ -6,7 +6,6 @@ import {
   IsDateString,
   IsNotEmpty,
   IsString,
-  IsUrl,
   Matches,
   ValidateNested
 } from 'class-validator'
@@ -20,7 +19,6 @@ export class OGBillOfLadingVCDTO {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl({ require_tld: process.env.NODE_ENV !== 'development' })
   id: string
 
   @IsArray()
