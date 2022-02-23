@@ -29,7 +29,7 @@ class CreateProductDTOBase {
 
   @IsNotEmpty()
   @ApiProperty()
-  batchNumber: Number
+  batchNumber: string
 }
 
 export class AGENT_COMPACT_CreateProductDTO {
