@@ -9,7 +9,7 @@ export class DeliveryScheduleDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumber()
-  batchNumber?: number
+  batchNumber?: string
 
   @ApiPropertyOptional()
   @IsOptional()
@@ -19,7 +19,7 @@ export class DeliveryScheduleDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumber()
-  deliveryTicketNumber?: number
+  deliveryTicketNumber?: string
 
   @ApiPropertyOptional()
   @IsOptional()
