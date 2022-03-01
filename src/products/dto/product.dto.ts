@@ -12,20 +12,16 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../../general/constants'
-import { OrganizationDTO, MeasurementDTO } from '../../general/dto'
+import { MeasurementDTO } from '../../general/dto'
 import { PRODUCT_NAME, CRUDE_STREAM } from '../constants'
+import { ProductDTO as ProductDTOBase} from '@mavennet/traceability-dto'
 
-class ProductDTOBase {
+export class ProductDTO extends ProductDTOBase{
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
   @Validate((o) => o.type === [JSON_TYPE.PRODUCT])
   type: JSON_TYPE[]
-
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => OrganizationDTO)
-  manufacturer: OrganizationDTO
 
   @IsNotEmpty()
   @IsEnum(PRODUCT_NAME)
@@ -35,10 +31,6 @@ class ProductDTOBase {
   @IsNotEmpty()
   @IsEnum(CRUDE_STREAM)
   category: CRUDE_STREAM
-
-  @IsOptional()
-  @IsString()
-  description: string
 
   @IsNotEmptyObject()
   @ValidateNested()
@@ -53,7 +45,4 @@ class ProductDTOBase {
   @IsOptional()
   @IsString()
   sku: string
-}
-
-export class ProductDTO extends ProductDTOBase {
 }

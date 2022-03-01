@@ -1,6 +1,1 @@
-export declare class AddressDTO {
-    address: string;
-    type?: string;
-    latitude: string;
-    longitude: string;
-}
+export { AddressDTO } from '@mavennet/traceability-dto';

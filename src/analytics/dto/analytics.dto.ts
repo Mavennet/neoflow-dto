@@ -4,11 +4,6 @@ import { AnalyticsDTO as AnalyticsDTOBase } from '@mavennet/traceability-dto'
 
 export class AnalyticsDTO extends AnalyticsDTOBase {
   @ApiProperty()
-  @IsNotEmpty()
-  @IsUUID()
-  productId: string
-
-  @ApiProperty()
   @IsOptional()
   @IsString()
   entryId?: string
@@ -102,9 +97,4 @@ export class AnalyticsDTO extends AnalyticsDTOBase {
   @IsNotEmpty()
   @IsNumber()
   volume: number
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  currentMillis: number
 }
