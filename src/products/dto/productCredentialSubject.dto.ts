@@ -8,7 +8,8 @@ import {
   Matches,
   Validate,
   ArrayNotEmpty,
-  IsOptional
+  IsOptional,
+  isNotEmpty
 } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
@@ -43,6 +44,11 @@ class ProductCredentialSubjectDTOBase extends ProductCredentialSubjectDTOTrace{
   @Type(() => ObservationDTO)
   @ApiProperty({ isArray: true })
   observation: ObservationDTO[]
+
+  @ApiProperty()
+  @IsEnum(HTS_CODE)
+  @IsNotEmpty()
+  HSCode: string
 
   @ApiProperty()
   @IsOptional()
