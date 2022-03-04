@@ -37,6 +37,7 @@
     "typescript": "^4.4.3"
   },
   "dependencies": {
+    "@mavennet/neoflow-dto": "github:Mavennet/neoflow-dto#import-from-traceability",
     "@mavennet/traceability-dto": "^1.0.18",
     "@nestjs/cli": "^8.1.4",
     "@nestjs/common": "^8.1.1",

@@ -7,7 +7,8 @@ import {
   ValidateNested,
   Matches,
   Validate,
-  ArrayNotEmpty
+  ArrayNotEmpty,
+  IsOptional
 } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
@@ -15,7 +16,7 @@ import { PlaceDTO, ObservationDTO } from '../../general/dto'
 import { JSON_TYPE_NF } from '../../general/constants'
 import { ProductDTO } from './product.dto'
 import { HTS_CODE } from '../constants'
-import { ProductCredentialSubjectDTO as ProductCredentialSubjectDTOTrace } from '@mavennet/traceability-dto'
+import { IssueCredentialDTO, ProductCredentialSubjectDTO as ProductCredentialSubjectDTOTrace } from '@mavennet/traceability-dto'
 
 
 class ProductCredentialSubjectDTOBase extends ProductCredentialSubjectDTOTrace{
@@ -42,6 +43,10 @@ class ProductCredentialSubjectDTOBase extends ProductCredentialSubjectDTOTrace{
   @Type(() => ObservationDTO)
   @ApiProperty({ isArray: true })
   observation: ObservationDTO[]
+
+  @ApiProperty()
+  @IsOptional()
+  inspection
 }
 
 export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {

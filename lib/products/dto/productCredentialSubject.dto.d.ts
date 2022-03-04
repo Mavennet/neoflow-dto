@@ -7,6 +7,7 @@ declare class ProductCredentialSubjectDTOBase extends ProductCredentialSubjectDT
     UWI: string;
     product: ProductDTO;
     observation: ObservationDTO[];
+    inspection: any;
 }
 export declare class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {
 }
