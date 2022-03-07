@@ -48,6 +48,7 @@ class ProductCredentialSubjectDTOBase extends ProductCredentialSubjectDTOTrace{
   @ApiProperty()
   @IsEnum(HTS_CODE)
   @IsNotEmpty()
+  @IsString()
   HSCode: string
 
   @ApiProperty()
