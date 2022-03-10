@@ -1,3 +1,1 @@
-export declare class SocketEventDTO {
-    eventName: string;
-}
+export { SocketEventDTO } from '@mavennet/traceability-dto';
