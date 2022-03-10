@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@mavennet/neoflow-dto": "github:Mavennet/neoflow-dto#import-from-traceability",
-    "@mavennet/traceability-dto": "github:Mavennet/traceability-dto#NF-dto-migration",
+    "@mavennet/traceability-dto": "github:Mavennet/traceability-dto",
     "@nestjs/cli": "^8.1.4",
     "@nestjs/common": "^8.1.1",
     "@nestjs/core": "^8.1.1",
