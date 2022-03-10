@@ -5,7 +5,7 @@ export class PropertyDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  //Need to resolve issue with JSON types between trace and nf-dto
+  //  Need to resolve issue with JSON types between trace and nf-dto
   @Validate(
     (o) =>
       o.type === [JSON_TYPE.MECHANICAL_PROPERTY] ||
