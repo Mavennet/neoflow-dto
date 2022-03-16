@@ -1,1 +1,3 @@
-export { UpdateNotificationSettingsDTO } from '@mavennet/traceability-dto';
+export declare class UpdateNotificationSettingsDTO {
+    actionableOnly: boolean;
+}

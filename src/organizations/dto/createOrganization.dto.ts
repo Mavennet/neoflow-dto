@@ -1,7 +1,28 @@
-import { IsNotEmpty, IsNotEmptyObject, IsString } from 'class-validator'
-import { CreateOrganizationDTO as CreateOrganizationDTOBase } from '@mavennet/traceability-dto'
+import { IsNotEmpty, IsNotEmptyObject, IsEnum, IsString, Matches, IsEmail, IsPhoneNumber } from 'class-validator'
 
-export class CreateOrganizationDTO extends CreateOrganizationDTOBase {
+enum ROLES {
+  CLIENT = 'client',
+  AGENCY = 'agency',
+  BROKER = 'broker'
+}
+
+export class CreateOrganizationDTO {
+  @IsNotEmpty()
+  @IsString()
+  name: string
+
+  @IsNotEmpty()
+  @IsEmail()
+  email: string
+
+  @IsNotEmpty()
+  @IsString()
+  address: string
+
+  @IsNotEmpty()
+  @IsPhoneNumber('CA')
+  phone: string
+
   @IsNotEmpty()
   @IsString()
   mid: string
@@ -9,6 +30,19 @@ export class CreateOrganizationDTO extends CreateOrganizationDTOBase {
   @IsNotEmpty()
   @IsString()
   cbpImporterRecord: string
+
+  @IsNotEmpty()
+  @IsEnum(ROLES)
+  role: ROLES
+
+  @IsNotEmpty()
+  @IsString()
+  @Matches(/^did:/)
+  did: string
+
+  @IsNotEmpty()
+  @IsString()
+  backendLink: string
 
   @IsNotEmptyObject()
   uwi: Map<string, string>

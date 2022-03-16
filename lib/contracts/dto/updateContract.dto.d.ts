@@ -1,1 +1,5 @@
-export { UpdateContractDTO } from '@mavennet/traceability-dto';
+export declare class UpdateContractDTO {
+    contractId: number;
+    startDate: string;
+    endDate: string;
+}

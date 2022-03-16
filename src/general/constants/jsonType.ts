@@ -1,5 +1,4 @@
-export { JSON_TYPE } from '@mavennet/traceability-dto'
-export enum JSON_TYPE_NF{
+export enum JSON_TYPE {
   VERIFIABLE_CREDENTIAL = 'VerifiableCredential',
   CRUDE_OIL_PRODUCT = 'CrudeOilProduct',
   NATURAL_GAS_PRODUCT = 'NaturalGasProduct',

@@ -1,1 +1,3 @@
-export { DeleteUsersDTO } from '@mavennet/traceability-dto';
+export declare class DeleteUsersDTO {
+    emails: string[];
+}

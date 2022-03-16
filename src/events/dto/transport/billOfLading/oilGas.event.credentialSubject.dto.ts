@@ -13,14 +13,14 @@ import {
 import { Type } from 'class-transformer'
 import { BillOfLadingCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { ObservationDTO } from '../../../../general/dto'
-import { JSON_TYPE_NF } from '../../../../general/constants'
+import { JSON_TYPE } from '../../../../general/constants'
 
 export class OGBillOfLadingCredentialSubjectDTO {
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE_NF, { each: true })
-  @Validate((o) => o.type === [JSON_TYPE_NF.OG_BILL_OF_LADING])
-  type: JSON_TYPE_NF[]
+  @IsEnum(JSON_TYPE, { each: true })
+  @Validate((o) => o.type === [JSON_TYPE.OG_BILL_OF_LADING])
+  type: JSON_TYPE[]
 
   @IsNotEmpty()
   @ValidateNested()

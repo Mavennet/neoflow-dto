@@ -1,8 +1,8 @@
 import { BillOfLadingCredentialSubjectDTO } from './event.credentialSubject.dto';
 import { ObservationDTO } from '../../../../general/dto';
-import { JSON_TYPE_NF } from '../../../../general/constants';
+import { JSON_TYPE } from '../../../../general/constants';
 export declare class OGBillOfLadingCredentialSubjectDTO {
-    type: JSON_TYPE_NF[];
+    type: JSON_TYPE[];
     billOfLading: BillOfLadingCredentialSubjectDTO;
     shippingDate: string;
     arrivalDate: string;

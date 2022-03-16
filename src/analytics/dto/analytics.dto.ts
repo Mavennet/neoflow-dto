@@ -1,8 +1,13 @@
-import { IsNotEmpty, IsOptional, IsNumber, IsString, IsDateString } from 'class-validator'
+import { IsNotEmpty, IsOptional, IsNumber, IsString, IsUUID, IsDateString } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 import { AnalyticsDTO as AnalyticsDTOBase } from '@mavennet/traceability-dto'
 
 export class AnalyticsDTO extends AnalyticsDTOBase {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsUUID()
+  productId: string
+
   @ApiProperty()
   @IsOptional()
   @IsString()
@@ -97,4 +102,9 @@ export class AnalyticsDTO extends AnalyticsDTOBase {
   @IsNotEmpty()
   @IsNumber()
   volume: number
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsNumber()
+  currentMillis: number
 }

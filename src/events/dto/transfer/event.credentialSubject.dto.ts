@@ -6,6 +6,7 @@ import {
   IsString,
   IsNumberString,
   ValidateNested,
+  ValidateIf,
   Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
