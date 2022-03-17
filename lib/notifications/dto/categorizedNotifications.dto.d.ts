@@ -1,5 +1,1 @@
-import { NotificationDTO } from './';
-export declare class CategorizedNotificationsDTO {
-    new: NotificationDTO[];
-    previous: NotificationDTO[];
-}
+export { CategorizedNotificationsDTO } from '@mavennet/traceability-dto';
