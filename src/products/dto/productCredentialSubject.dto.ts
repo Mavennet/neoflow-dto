@@ -27,6 +27,7 @@ class ProductCredentialSubjectDTOBase {
   @IsNotEmpty()
   @IsEnum(HTS_CODE)
   @ApiProperty()
+  @IsString()
   HSCode: string
 
   @IsNotEmpty()
