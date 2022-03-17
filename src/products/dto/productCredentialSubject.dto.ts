@@ -12,17 +12,17 @@ import {
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { PlaceDTO, ObservationDTO } from '../../general/dto'
-import { JSON_TYPE } from '../../general/constants'
+import { JSON_TYPE_NF } from '../../general/constants'
 import { ProductDTO } from './product.dto'
 import { HTS_CODE } from '../constants'
 
 class ProductCredentialSubjectDTOBase {
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  @Validate((o) => o.type === [JSON_TYPE.CRUDE_OIL_PRODUCT] || o.type === [JSON_TYPE.NATURAL_GAS_PRODUCT])
-  @ApiProperty({ enum: JSON_TYPE, isArray: true })
-  type: JSON_TYPE[]
+  @IsEnum(JSON_TYPE_NF, { each: true })
+  @Validate((o) => o.type === [JSON_TYPE_NF.CRUDE_OIL_PRODUCT] || o.type === [JSON_TYPE_NF.NATURAL_GAS_PRODUCT])
+  @ApiProperty({ enum: JSON_TYPE_NF, isArray: true })
+  type: JSON_TYPE_NF[]
 
   @IsNotEmpty()
   @IsEnum(HTS_CODE)

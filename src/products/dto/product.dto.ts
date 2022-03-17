@@ -14,8 +14,9 @@ import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../../general/constants'
 import { OrganizationDTO, MeasurementDTO } from '../../general/dto'
 import { PRODUCT_NAME, CRUDE_STREAM } from '../constants'
+import { ProductDTO as ProductDTOBase } from '@mavennet/traceability-dto'
 
-class ProductDTOBase {
+export class ProductDTO extends ProductDTOBase {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
@@ -53,7 +54,4 @@ class ProductDTOBase {
   @IsOptional()
   @IsString()
   sku: string
-}
-
-export class ProductDTO extends ProductDTOBase {
 }
