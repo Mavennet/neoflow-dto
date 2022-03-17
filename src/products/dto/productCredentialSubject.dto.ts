@@ -43,7 +43,7 @@ class ProductCredentialSubjectDTOBase extends ProductCredentialSubjectDTOTrace {
   observation: ObservationDTO[]
 
   @ApiProperty()
-  @IsEnum(HTS_CODE)
+  //@IsEnum(HTS_CODE)
   @IsNotEmpty()
   @IsString()
   HSCode: string
