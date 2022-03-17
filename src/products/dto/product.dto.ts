@@ -23,7 +23,7 @@ export class ProductDTO extends ProductDTOBase {
   @Validate((o) => o.type === [JSON_TYPE.PRODUCT])
   type: JSON_TYPE[]
 
-  @IsOptional()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => OrganizationDTO)
   manufacturer: OrganizationDTO
