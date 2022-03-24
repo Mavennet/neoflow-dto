@@ -8,13 +8,20 @@ import {
   IsDateString,
   IsNumberString,
   Matches,
-  ValidateNested
+  ValidateNested,
+  IsNumber
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { EVENT_TYPE } from '../../constants/eventType'
 import { AddressDTO } from '../../../general/dto/address.dto'
+import { ApiProperty } from '@nestjs/swagger'
 
 export class AGENT_TransferEventDTO {
+  @IsNotEmpty()
+  @ApiProperty()
+  @IsNumber()
+  requestId: number
+
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
   eventName: EVENT_TYPE
