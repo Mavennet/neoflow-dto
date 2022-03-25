@@ -64,7 +64,7 @@ export class AGENT_TransferProductDTO {
   geo: AddressDTO
 
   @ApiPropertyOptional()
-  @IsOptional()
+  @IsNotEmpty()
   @ValidateNested()
   @Type(() => AddressDTO)
   portOfEntry?: AddressDTO

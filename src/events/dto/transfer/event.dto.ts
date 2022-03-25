@@ -18,11 +18,6 @@ import { ApiProperty } from '@nestjs/swagger'
 
 export class AGENT_TransferEventDTO {
   @IsNotEmpty()
-  @ApiProperty()
-  @IsNumber()
-  requestId: number
-
-  @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
   eventName: EVENT_TYPE
 
