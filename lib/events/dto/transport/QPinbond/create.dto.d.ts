@@ -3,5 +3,4 @@ export declare class CreateQPInbondDTO {
     productId: string;
     eventId: string;
     eventVC: QPInBondEventVCDTO;
-    eventVCHash: string;
 }
