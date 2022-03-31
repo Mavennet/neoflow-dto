@@ -5,7 +5,6 @@ export declare class CORE_TransferProductDTO {
     productId: string;
     eventId: string;
     eventVC: CORE_TransferEventDetailsDTO;
-    eventVCHash: string;
 }
 export declare class AGENT_TransferProductDTO {
     requestId: number;

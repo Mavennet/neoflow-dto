@@ -34,11 +34,6 @@ export class CORE_TransferProductDTO {
   @ValidateNested()
   @Type(() => CORE_TransferEventDetailsDTO)
   eventVC: CORE_TransferEventDetailsDTO
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsString()
-  eventVCHash: string
 }
 
 export class AGENT_TransferProductDTO {
