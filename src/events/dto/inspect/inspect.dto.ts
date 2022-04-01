@@ -1,11 +1,4 @@
-import {
-  IsNotEmpty,
-  IsNotEmptyObject,
-  IsArray,
-  IsString,
-  ValidateNested,
-  IsUUID
-} from 'class-validator'
+import { IsNotEmpty, IsNotEmptyObject, IsArray, IsString, ValidateNested, IsUUID } from 'class-validator'
 import { COMPACT_OrganizationDTO, COMPACT_PlaceDTO, COMPACT_ObservationDTO } from '../../../general'
 import { Type } from 'class-transformer'
 import { AGENT_InspectionEventCredentialSubjectDTO } from './event.credentialSubject.dto'
@@ -45,10 +38,6 @@ export class CORE_InspectProductDTO {
   @ValidateNested()
   @Type(() => InspectionEventDetailsDTO)
   eventVC: InspectionEventDetailsDTO
-
-  @IsNotEmpty()
-  @IsString()
-  eventVCHash: string
 
   @IsNotEmpty()
   @IsString()
