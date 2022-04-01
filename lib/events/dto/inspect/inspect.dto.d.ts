@@ -10,7 +10,6 @@ export declare class CORE_InspectProductDTO {
     productId: string;
     eventId: string;
     eventVC: InspectionEventDetailsDTO;
-    eventVCHash: string;
     txHash: string;
     txTimestamp: string;
 }

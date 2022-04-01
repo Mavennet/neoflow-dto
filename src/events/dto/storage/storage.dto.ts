@@ -10,7 +10,12 @@ import {
   Validate
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { COMPACT_OrganizationDTO, COMPACT_MeasurementDTO, COMPACT_ObservationDTO, COMPACT_PlaceDTO } from '../../../general'
+import {
+  COMPACT_OrganizationDTO,
+  COMPACT_MeasurementDTO,
+  COMPACT_ObservationDTO,
+  COMPACT_PlaceDTO
+} from '../../../general'
 import { STORAGE_EVENT_TYPE } from '../../constants'
 import { AGENT_StorageEventCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { CORE_StorageEventDetailsDTO, AGENT_StorageEventDetailsDTO } from './event.vc.dto'
@@ -19,7 +24,7 @@ export class AGENT_COMPACT_StorageProductDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(STORAGE_EVENT_TYPE)
-  @Validate(o => o.eventType === STORAGE_EVENT_TYPE.START)
+  @Validate((o) => o.eventType === STORAGE_EVENT_TYPE.START)
   eventType: STORAGE_EVENT_TYPE
 
   @ApiProperty()
@@ -63,11 +68,6 @@ export class CORE_StorageProductDTO {
   @ValidateNested()
   @Type(() => CORE_StorageEventDetailsDTO)
   eventVC: CORE_StorageEventDetailsDTO
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsString()
-  eventVCHash: string
 
   @IsNotEmpty()
   @ApiProperty()

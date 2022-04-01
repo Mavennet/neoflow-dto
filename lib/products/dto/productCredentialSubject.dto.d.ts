@@ -1,14 +1,14 @@
-import { ObservationDTO } from '../../general/dto';
+import { PlaceDTO, ObservationDTO } from '../../general/dto';
 import { JSON_TYPE_NF } from '../../general/constants';
 import { ProductDTO } from './product.dto';
-import { ProductCredentialSubjectDTO as ProductCredentialSubjectDTOTrace } from '@mavennet/traceability-dto';
-declare class ProductCredentialSubjectDTOBase extends ProductCredentialSubjectDTOTrace {
+declare class ProductCredentialSubjectDTOBase {
     type: JSON_TYPE_NF[];
+    HSCode: string;
     UWI: string;
+    productionDate: string;
+    facility: PlaceDTO;
     product: ProductDTO;
     observation: ObservationDTO[];
-    HSCode: string;
-    inspection: any;
 }
 export declare class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {
 }

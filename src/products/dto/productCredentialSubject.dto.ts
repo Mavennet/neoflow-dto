@@ -5,19 +5,18 @@ import {
   IsString,
   IsArray,
   ValidateNested,
+  Matches,
   Validate,
-  ArrayNotEmpty,
-  IsOptional
+  ArrayNotEmpty
 } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { ObservationDTO } from '../../general/dto'
+import { PlaceDTO, ObservationDTO } from '../../general/dto'
 import { JSON_TYPE_NF } from '../../general/constants'
 import { ProductDTO } from './product.dto'
 import { HTS_CODE } from '../constants'
-import { ProductCredentialSubjectDTO as ProductCredentialSubjectDTOTrace } from '@mavennet/traceability-dto'
 
-class ProductCredentialSubjectDTOBase extends ProductCredentialSubjectDTOTrace {
+class ProductCredentialSubjectDTOBase {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE_NF, { each: true })
@@ -26,9 +25,27 @@ class ProductCredentialSubjectDTOBase extends ProductCredentialSubjectDTOTrace {
   type: JSON_TYPE_NF[]
 
   @IsNotEmpty()
+  @IsEnum(HTS_CODE)
+  @ApiProperty()
+  @IsString()
+  HSCode: string
+
+  @IsNotEmpty()
   @IsString()
   @ApiProperty()
   UWI: string
+
+  @IsNotEmpty()
+  @IsString()
+  @Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
+  @ApiProperty()
+  productionDate: string
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => PlaceDTO)
+  @ApiProperty()
+  facility: PlaceDTO
 
   @IsNotEmptyObject()
   @ValidateNested()
@@ -41,16 +58,6 @@ class ProductCredentialSubjectDTOBase extends ProductCredentialSubjectDTOTrace {
   @Type(() => ObservationDTO)
   @ApiProperty({ isArray: true })
   observation: ObservationDTO[]
-
-  @ApiProperty()
-  @IsEnum(HTS_CODE)
-  @IsNotEmpty()
-  @IsString()
-  HSCode: string
-
-  @ApiProperty()
-  @IsOptional()
-  inspection
 }
 
 export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {

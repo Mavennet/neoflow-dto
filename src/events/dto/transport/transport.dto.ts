@@ -134,10 +134,6 @@ export class CORE_TransportProductDTO extends TransportProductDTOBase {
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.END)
   @Type(() => OGBillOfLadingVCDTO)
   bolVC?: OGBillOfLadingVCDTO
-
-  @IsNotEmpty()
-  @IsString()
-  eventVCHash: string
 }
 
 export class AGENT_TransportProductDTO extends TransportProductDTOBase {
