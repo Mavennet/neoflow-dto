@@ -27,7 +27,6 @@ declare class TransportProductDTOBase {
 export declare class CORE_TransportProductDTO extends TransportProductDTOBase {
     transportVC?: CORE_TransportationEventDetailsDTO;
     bolVC?: OGBillOfLadingVCDTO;
-    eventVCHash: string;
 }
 export declare class AGENT_TransportProductDTO extends TransportProductDTOBase {
     transportCredentialSubject: AGENT_TransportationEventCredentialSubjectDTO;

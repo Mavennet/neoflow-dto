@@ -113,11 +113,6 @@ export class CORE_CreateProductDTO extends CreateProductDTOBase {
 
   @IsNotEmpty()
   @ApiProperty()
-  @IsString()
-  productVCHash: string
-
-  @IsNotEmpty()
-  @ApiProperty()
   @IsUUID()
   eventId: string
 
@@ -126,9 +121,4 @@ export class CORE_CreateProductDTO extends CreateProductDTOBase {
   @ValidateNested()
   @Type(() => CreationEventDetailsDTO)
   eventVC: CreationEventDetailsDTO
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsString()
-  eventVCHash: string
 }
