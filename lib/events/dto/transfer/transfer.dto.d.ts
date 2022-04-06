@@ -15,7 +15,7 @@ export declare class AGENT_TransferProductDTO {
     portOfArrival?: AddressDTO;
     portOfDestination?: AddressDTO;
     countryOfDestination?: string;
-    receiptLocation?: AddressDTO;
+    receiptLocation: AddressDTO;
     receiver: string;
     price: string;
 }
