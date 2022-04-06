@@ -1,6 +1,7 @@
-import { IsNotEmpty, IsNotEmptyObject, ValidateNested } from 'class-validator'
+import { IsNotEmpty, IsNotEmptyObject, IsOptional, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
 import { QPInBondEventVCDTO } from './event.vc.dto'
+import { QPInbondCredentialSubjectDTO } from '.'
 
 export class CreateQPInbondDTO {
   @IsNotEmpty()
@@ -9,8 +10,13 @@ export class CreateQPInbondDTO {
   @IsNotEmpty()
   eventId: string
 
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => QPInBondEventVCDTO)
   eventVC: QPInBondEventVCDTO
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => QPInbondCredentialSubjectDTO)
+  credentialSubject: QPInbondCredentialSubjectDTO
 }

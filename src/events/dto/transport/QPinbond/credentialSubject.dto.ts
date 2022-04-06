@@ -43,17 +43,17 @@ export class QPInbondCredentialSubjectDTO {
   @IsEnum(IN_BOND_TYPE)
   inBondType: IN_BOND_TYPE
 
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfEntry: PlaceDTO
 
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfDestination: PlaceDTO
 
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfArrival: PlaceDTO
