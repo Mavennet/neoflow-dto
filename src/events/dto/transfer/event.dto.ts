@@ -85,5 +85,5 @@ export class AGENT_TransferEventDTO {
   @IsOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
-  receiptLocation: AddressDTO
+  receiptLocation?: AddressDTO
 }
