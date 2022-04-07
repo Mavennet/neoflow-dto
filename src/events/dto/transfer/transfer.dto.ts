@@ -85,7 +85,7 @@ export class AGENT_TransferProductDTO {
   @IsOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
-  receiptLocation: AddressDTO
+  receiptLocation?: AddressDTO
 
   @IsNotEmpty()
   @ApiProperty()
