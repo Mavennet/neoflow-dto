@@ -1,6 +1,1 @@
-import { IsArray } from 'class-validator'
-
-export class DocumentDTO {
-  @IsArray()
-  type: string[]
-}
+export { DocumentDTO } from '@mavennet/traceability-dto'

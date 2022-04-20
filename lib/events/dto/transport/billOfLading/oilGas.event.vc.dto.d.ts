@@ -1,5 +1,5 @@
 import { JSON_TYPE } from '../../../../general/constants';
-import { VerifiableCredentialDTO } from '../../../../general/dto/verifiableCredential.dto';
+import { ProofDTO } from '../../../../general/dto/proof.dto';
 import { OGBillOfLadingCredentialSubjectDTO } from './oilGas.event.credentialSubject.dto';
 export declare class OGBillOfLadingVCDTO {
     '@context': string[];
@@ -8,5 +8,5 @@ export declare class OGBillOfLadingVCDTO {
     issuer: string;
     issuanceDate: Date;
     credentialSubject: OGBillOfLadingCredentialSubjectDTO;
-    proof: VerifiableCredentialDTO;
+    proof: ProofDTO;
 }

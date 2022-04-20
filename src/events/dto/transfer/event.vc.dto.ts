@@ -15,7 +15,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { AddressDTO } from '../../../general/dto/address.dto'
-import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
+import { ProofDTO } from '../../../general/dto/proof.dto'
 import { EVENT_TYPE } from '../../constants/eventType'
 import {
   AGENT_TransferEventCredentialSubjectDTO,
@@ -51,8 +51,8 @@ export class CORE_TransferEventDetailsDTO {
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => VerifiableCredentialDTO)
-  proof: VerifiableCredentialDTO
+  @Type(() => ProofDTO)
+  proof: ProofDTO
 }
 
 export class AGENT_TransferEventDetailsDTO extends CORE_TransferEventDetailsDTO {

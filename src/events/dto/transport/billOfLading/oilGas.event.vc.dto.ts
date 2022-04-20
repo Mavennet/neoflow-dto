@@ -10,7 +10,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
-import { VerifiableCredentialDTO } from '../../../../general/dto/verifiableCredential.dto'
+import { ProofDTO } from '../../../../general/dto/proof.dto'
 import { OGBillOfLadingCredentialSubjectDTO } from './oilGas.event.credentialSubject.dto'
 
 export class OGBillOfLadingVCDTO {
@@ -42,6 +42,6 @@ export class OGBillOfLadingVCDTO {
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => VerifiableCredentialDTO)
-  proof: VerifiableCredentialDTO
+  @Type(() => ProofDTO)
+  proof: ProofDTO
 }

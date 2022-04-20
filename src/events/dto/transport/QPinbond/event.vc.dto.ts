@@ -11,7 +11,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
-import { VerifiableCredentialDTO } from '../../../../general/dto'
+import { ProofDTO } from '../../../../general/dto'
 import { QPInbondCredentialSubjectDTO } from './credentialSubject.dto'
 
 export class QPInBondEventVCDTO {
@@ -43,6 +43,6 @@ export class QPInBondEventVCDTO {
 
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => VerifiableCredentialDTO)
-  proof: VerifiableCredentialDTO
+  @Type(() => ProofDTO)
+  proof: ProofDTO
 }

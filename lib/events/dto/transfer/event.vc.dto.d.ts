@@ -1,5 +1,5 @@
 import { AddressDTO } from '../../../general/dto/address.dto';
-import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto';
+import { ProofDTO } from '../../../general/dto/proof.dto';
 import { EVENT_TYPE } from '../../constants/eventType';
 import { AGENT_TransferEventCredentialSubjectDTO, CORE_TransferEventCredentialSubjectDTO } from './event.credentialSubject.dto';
 export declare class CORE_TransferEventDetailsDTO {
@@ -9,7 +9,7 @@ export declare class CORE_TransferEventDetailsDTO {
     issuer: string;
     issuanceDate: Date;
     credentialSubject: CORE_TransferEventCredentialSubjectDTO;
-    proof: VerifiableCredentialDTO;
+    proof: ProofDTO;
 }
 export declare class AGENT_TransferEventDetailsDTO extends CORE_TransferEventDetailsDTO {
     eventName: EVENT_TYPE;
