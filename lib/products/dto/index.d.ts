@@ -1,4 +1,6 @@
 export * from './product.dto';
 export * from './product.vc.dto';
 export * from './productCredentialSubject.dto';
+export * from './retrieveBatchProducts.dto';
+export * from './productsByBatch.dto';
 export * from './sharing';
