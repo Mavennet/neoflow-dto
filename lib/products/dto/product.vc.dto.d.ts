@@ -1,5 +1,5 @@
 import { JSON_TYPE } from '../../general/constants';
-import { VerifiableCredentialDTO } from '../../general/dto/verifiableCredential.dto';
+import { ProofDTO } from '../../general/dto/proof.dto';
 import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto';
 declare class ProductVCDTOBase {
     '@context': string[];
@@ -8,7 +8,7 @@ declare class ProductVCDTOBase {
     issuer: string;
     issuanceDate: string;
     credentialSubject: ProductCredentialSubjectDTO;
-    proof: VerifiableCredentialDTO;
+    proof: ProofDTO;
 }
 export declare class ProductVCDTO extends ProductVCDTOBase {
 }

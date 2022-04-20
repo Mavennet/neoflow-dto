@@ -1,5 +1,5 @@
 import { JSON_TYPE } from '../../../../general/constants';
-import { VerifiableCredentialDTO } from '../../../../general/dto';
+import { ProofDTO } from '../../../../general/dto';
 import { QPInbondCredentialSubjectDTO } from './credentialSubject.dto';
 export declare class QPInBondEventVCDTO {
     '@context': string[];
@@ -8,5 +8,5 @@ export declare class QPInBondEventVCDTO {
     issuanceDate: string;
     issuer: string;
     credentialSubject: QPInbondCredentialSubjectDTO;
-    proof: VerifiableCredentialDTO;
+    proof: ProofDTO;
 }

@@ -1,3 +1,1 @@
-export declare class DocumentDTO {
-    type: string[];
-}
+export { DocumentDTO } from '@mavennet/traceability-dto';

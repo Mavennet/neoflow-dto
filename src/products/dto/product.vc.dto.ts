@@ -11,7 +11,7 @@ import {
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../../general/constants'
-import { VerifiableCredentialDTO } from '../../general/dto/verifiableCredential.dto'
+import { ProofDTO } from '../../general/dto/proof.dto'
 import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto'
 
 class ProductVCDTOBase {
@@ -48,9 +48,9 @@ class ProductVCDTOBase {
 
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => VerifiableCredentialDTO)
+  @Type(() => ProofDTO)
   @ApiProperty()
-  proof: VerifiableCredentialDTO
+  proof: ProofDTO
 }
 
 export class ProductVCDTO extends ProductVCDTOBase {}

@@ -10,7 +10,7 @@ import {
   Matches
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { VerifiableCredentialDTO } from '../../../general/dto/verifiableCredential.dto'
+import { ProofDTO } from '../../../general/dto/proof.dto'
 import { AGENT_InspectionEventCredentialSubjectDTO } from './event.credentialSubject.dto'
 
 class InspectionEventDetailsDTOBase {
@@ -44,8 +44,8 @@ class InspectionEventDetailsDTOBase {
 
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => VerifiableCredentialDTO)
-  proof: VerifiableCredentialDTO
+  @Type(() => ProofDTO)
+  proof: ProofDTO
 }
 
 export class InspectionEventDetailsDTO extends InspectionEventDetailsDTOBase {}
