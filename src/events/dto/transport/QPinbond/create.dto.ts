@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNotEmptyObject, IsOptional, ValidateNested } from 'class-validator'
+import { IsNotEmpty, IsOptional, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
 import { QPInBondEventVCDTO } from './event.vc.dto'
 import { QPInbondCredentialSubjectDTO } from '.'
