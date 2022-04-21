@@ -16,7 +16,7 @@
 
 ### Branches
 
-**master** - branch that is published as a package version (changes to this will initiate a package version bump)
+[**master**](https://github.com/Mavennet/neoflow-dto) - branch that is published as a package version (changes to this will initiate a package version bump)
 
 **_others_** - feature branch
 
