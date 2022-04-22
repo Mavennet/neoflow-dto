@@ -86,7 +86,7 @@ Each folder and sub-folder contains a file called index.ts. Ever wonder what it 
 export * from './random.dto'
 ```
 
-### Cannot make an instance of an abstract class. 
+### BONUS: Cannot make an instance of an abstract class. 
 
 Some DTOs are abstract classes, and probably for good reason. But if there is ever the need to create an instance of one, just create another class which extends the abstract one and export that. 
 
