@@ -4,7 +4,7 @@
 
 ## Table of Contents
 
-- [Build](#build-)
+- [Build](#build-🛠️)
 - [Installation](#installation-)
 - [Usage](#usage-)
 - [Troubleshooting](#troubleshooting-)
