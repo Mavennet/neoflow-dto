@@ -5,10 +5,10 @@
 ## Table of Contents
 
 - [Build](#build-%EF%B8%8F)
-- [Installation](#installation-⬇️)
-- [Usage](#usage-⚙️)
-- [Troubleshooting](#troubleshooting-🔍)
-- [More About the Repository](#more-about-the-repository-🤔)
+- [Installation](#installation-%EF%B8%8F)
+- [Usage](#usage-%EF%B8%8F)
+- [Troubleshooting](#troubleshooting-%EF%B8%8F)
+- [More About the Repository](#more-about-the-repository-%EF%B8%8F)
     - [Branches](#branches)
     - [Navigation](#navigation)
     - [Notes](#notes)
