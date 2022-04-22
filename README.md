@@ -7,7 +7,7 @@
 - [Build](#build-%EF%B8%8F)
 - [Installation](#installation-%EF%B8%8F)
 - [Usage](#usage-%EF%B8%8F)
-- [Troubleshooting](#troubleshooting-🔍)
+- [Troubleshooting](#troubleshooting-)
 - [More About the Repository](#more-about-the-repository-🤔)
     - [Branches](#branches)
     - [Navigation](#navigation)
