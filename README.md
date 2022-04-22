@@ -4,10 +4,11 @@
 
 ## Table of Contents
 
-- [Build](#build)
-- [Installation](#installation)
-- [Usage](#usage)
-- [More About the Repository](#more-about-the-repository)
+- [Build](#build_:hammer_and_wrench:)
+- [Installation](#installation_:arrow_down:)
+- [Usage](#usage_:gear:)
+- [Troubleshooting](#troubleshooting_:mag:)
+- [More About the Repository](#more-about-the-repository_thinking:)
     - [Branches](#branches)
     - [Navigation](#navigation)
     - [Notes](#notes)
