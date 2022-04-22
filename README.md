@@ -45,7 +45,7 @@ npm i Mavennet/neoflow-dto#branch-name
 
 ### Importing
 
-After using npm to install the package, import the DTO at the top of the file that is to use it. 
+After using [npm to install](#installation-%EF%B8%8F) the package, import the DTO at the top of the file that is to use it. 
 
 ```ts
 import { RandomDTO } from '@mavennet/neoflow-dto'
