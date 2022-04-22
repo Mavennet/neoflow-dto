@@ -61,7 +61,7 @@ There are two main mistakes people make that result in an error. Either not buil
 
 There are two parts to the package: src and lib. 
 
-##### src:
+#### src:
 Is what you are to be editing. When making changes, creating new DTOs, adding constants, etc., all this must be done here. 
 
 #### lib:
