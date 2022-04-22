@@ -2,6 +2,9 @@
 
 ![Mavennet](https://mavennet-website.s3.amazonaws.com/assets/logo-dark.png)
 
+### Build Status
+[![CI/CD](https://github.com/Mavennet/neoflow-dto/actions/workflows/release.yaml/badge.svg)](https://github.com/Mavennet/neoflow-dto/actions/workflows/release.yaml)
+
 ## Table of Contents
 
 - [Build](#build-%EF%B8%8F)
