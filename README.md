@@ -4,7 +4,7 @@
 
 ## Table of Contents
 
-- [Build](#build_:hammer_and_wrench:)
+- [Build](#build_)
 - [Installation](#installation_:arrow_down:)
 - [Usage](#usage_:gear:)
 - [Troubleshooting](#troubleshooting_:mag:)
