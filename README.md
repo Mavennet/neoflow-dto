@@ -62,6 +62,9 @@ src
 │       └── transport
 │           ├── billOfLading
 │           └── QPinbond  
+├── general
+│   ├── consts
+│   └── dto
 ├── notifications
 │   ├── consts
 │   └── dto
