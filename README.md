@@ -37,6 +37,12 @@ npm i Mavennet/neoflow-dto#branch-name
 
 ## Usage ⚙️
 
+### Repos that should use this library
+
+- [Neoflow Org. Agent Back End](https://github.com/Mavennet/neoflow-org-agent-be)
+- [Neoflow Core Back End](https://github.com/Mavennet/neoflow-core-be)
+- [Neoflow Front End](https://github.com/Mavennet/neoflow-fe)
+
 ### Importing
 
 After using npm to install the package, import the DTO at the top of the file that is to use it. 
