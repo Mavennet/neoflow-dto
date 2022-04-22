@@ -75,12 +75,14 @@ Some common issues faced are:
 
 There are two parts to the package: src and lib. 
 
-<details><summary>- src</summary>
+<details><summary>src</summary>
 
 Is what is being editing. When making changes, creating new DTOs, adding constants, etc., all this must be done here. 
 </details>
-#### lib:
+
+<details><summary>lib</summary>
 Is where the DTOs are being exported from when when any file imports them. Editing the files here is pointless as when the package is built, it gets over written.
+</details>
 
 The problem arises when changes are made to src but package is not built. Although the src contains updates files, the files are going to be imported form lib, which still has the outdates version. Make sure to build the package before pushing the changes to any branch:
 
@@ -90,7 +92,7 @@ npm run build
 
 ### 2. Did not export
 
-Each folder and sub-folder contains a file called index.ts. Ever wonder what it does? It's basically the file where DTOs and folders are being exported from. Without a file being exported, it will not be accesible in another program and will likley result in the "does not exist" error in the import statement. To solve this, add an export statement into the index file contained within the folder where the DTO file is located. 
+Each folder and sub-folder contains a file called index.ts. This is the file where DTOs and folders are being exported from. Without a file being exported, it will not be accesible in another program and will likley result in the "does not exist" error in the import statement. To solve this, add an export statement into the index file contained within the folder where the DTO file is located. 
 
 ```ts
 export * from './random.dto'
