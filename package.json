@@ -38,7 +38,9 @@
   },
   "dependencies": {
     "@mavennet/traceability-dto": "^1.0.62",
+    "@nestjs/cli": "^8.2.5",
     "@nestjs/common": "^8.4.4",
+    "@nestjs/core": "^8.4.4",
     "@nestjs/swagger": "^5.2.1"
   },
   "peerDependencies": {
