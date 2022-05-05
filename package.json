@@ -38,10 +38,8 @@
   },
   "dependencies": {
     "@mavennet/traceability-dto": "^1.0.62",
-    "@nestjs/cli": "^8.1.4",
-    "@nestjs/common": "^8.1.1",
-    "@nestjs/core": "^8.1.1",
-    "@nestjs/swagger": "^5.1.1"
+    "@nestjs/common": "^8.4.4",
+    "@nestjs/swagger": "^5.2.1"
   },
   "peerDependencies": {
     "class-transformer": ">=0.4.0",
