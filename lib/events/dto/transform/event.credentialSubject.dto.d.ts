@@ -1,13 +1,15 @@
-import { AddressDTO } from '../../../general/dto/address.dto';
+import { PlaceDTO, OrganizationDTO } from '../../../general';
 import { TRANSFORMATION_EVENT_TYPE } from '../../constants/transformationEventType';
-export declare class CORE_TransformationEventCredentialSubjectDTO {
+import { ProductDTO } from '../../../products';
+export declare class AGENT_TransformationEventCredentialSubjectDTO {
     eventType: TRANSFORMATION_EVENT_TYPE;
-    description: string;
-    geo: AddressDTO;
-    eventCreator: string;
-    productPredecessors: string[];
-    productSuccessors: string[];
+    place: PlaceDTO;
+    actor: OrganizationDTO[];
 }
-export declare class AGENT_TransformationEventCredentialSubjectDTO extends CORE_TransformationEventCredentialSubjectDTO {
+export declare class CORE_TransformationEventCredentialSubjectDTO extends AGENT_TransformationEventCredentialSubjectDTO {
     eventId: string;
+    eventTime: string;
+    products: ProductDTO[];
+    consumedProducts: string[];
+    newProducts: string[];
 }

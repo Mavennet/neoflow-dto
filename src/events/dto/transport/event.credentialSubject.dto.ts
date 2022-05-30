@@ -6,85 +6,84 @@ import {
   IsNotEmptyObject,
   ValidateNested,
   Matches,
-  ValidateIf
+  ValidateIf,
+  IsArray,
+  ArrayMinSize
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { AddressDTO } from '../../../general/dto/address.dto'
-
+import { EventDTO, PlaceDTO, OrganizationDTO } from '../../../general'
 import { TRANSPORTATION_TYPE, TRANSPORT_EVENT_TYPE } from '../../constants'
 import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 
-class TransportationEventCredentialSubjectDTOBase {
+export class AGENT_TransportationEventCredentialSubjectDTO {
   @IsNotEmpty()
-  productId: string
+  @IsEnum(TRANSPORTATION_TYPE)
+  @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START && o.category !== PRODUCT_CATEGORY_TYPE.GAS)
+  deliveryMethod: TRANSPORTATION_TYPE
 
+  @IsNotEmpty()
+  @IsString()
+  @ValidateIf(
+    (o) =>
+      o.eventType === TRANSPORT_EVENT_TYPE.START &&
+      o.deliveryMethod === TRANSPORTATION_TYPE.PIPELINE &&
+      o.category !== PRODUCT_CATEGORY_TYPE.GAS
+  )
+  batchNumber: string
+
+  @IsNotEmpty()
+  @IsString()
+  @ValidateIf(
+    (o) =>
+      o.eventType === TRANSPORT_EVENT_TYPE.START &&
+      o.deliveryMethod === TRANSPORTATION_TYPE.TRUCK &&
+      o.category !== PRODUCT_CATEGORY_TYPE.GAS
+  )
+  scn: string
+}
+
+export class CORE_TransportationEventCredentialSubjectDTO extends EventDTO {
   @IsNotEmpty()
   @IsEnum(TRANSPORT_EVENT_TYPE)
   eventType: TRANSPORT_EVENT_TYPE
 
-  @IsOptional()
-  @IsString()
-  description: string
-
-  @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  eventCreator: string
-
   @IsNotEmpty()
   @IsEnum(TRANSPORTATION_TYPE)
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START && o.category !== PRODUCT_CATEGORY_TYPE.GAS)
-  transportType: TRANSPORTATION_TYPE
-
-  @IsNotEmpty()
-  @IsString()
-  @ValidateIf(
-    (o) =>
-      o.eventType === TRANSPORT_EVENT_TYPE.START &&
-      o.transportType === TRANSPORTATION_TYPE.PIPELINE &&
-      o.category !== PRODUCT_CATEGORY_TYPE.GAS
-  )
-  batchNo: string
-
-  @IsNotEmpty()
-  @IsString()
-  @ValidateIf(
-    (o) =>
-      o.eventType === TRANSPORT_EVENT_TYPE.START &&
-      o.transportType === TRANSPORTATION_TYPE.TRUCK &&
-      o.category !== PRODUCT_CATEGORY_TYPE.GAS
-  )
-  scn: string
-
-  @IsNotEmpty()
-  @IsString()
-  @ValidateIf(
-    (o) =>
-      o.eventType === TRANSPORT_EVENT_TYPE.START &&
-      o.transportType === TRANSPORTATION_TYPE.RAIL &&
-      o.category !== PRODUCT_CATEGORY_TYPE.GAS
-  )
-  bol: string
-
-  @IsNotEmpty()
-  @IsEnum(PRODUCT_CATEGORY_TYPE)
-  category: PRODUCT_CATEGORY_TYPE
-
-  @IsNotEmpty()
-  @IsString()
-  @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START && o.category === PRODUCT_CATEGORY_TYPE.GAS)
-  displacementId: string
+  deliveryMethod: TRANSPORTATION_TYPE
 }
 
-export class CORE_TransportationEventCredentialSubjectDTO extends TransportationEventCredentialSubjectDTOBase {
-  @IsOptional()
-  @IsString()
-  description: string
+//   @IsNotEmpty()
+//   productId: string
 
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => AddressDTO)
-  geo: AddressDTO
-}
+//   @IsNotEmpty()
+//   @IsEnum(TRANSPORT_EVENT_TYPE)
+//   eventType: TRANSPORT_EVENT_TYPE
 
-export class AGENT_TransportationEventCredentialSubjectDTO extends TransportationEventCredentialSubjectDTOBase {}
+//   @IsOptional()
+//   @IsString()
+//   description: string
+
+//   @IsNotEmpty()
+//   @IsString()
+//   @Matches(/^did:/)
+//   eventCreator: string
+
+//   @IsNotEmpty()
+//   @IsString()
+//   @ValidateIf(
+//     (o) =>
+//       o.eventType === TRANSPORT_EVENT_TYPE.START &&
+//       o.deliveryMethod === TRANSPORTATION_TYPE.RAIL &&
+//       o.category !== PRODUCT_CATEGORY_TYPE.GAS
+//   )
+//   bol: string
+
+//   @IsNotEmpty()
+//   @IsEnum(PRODUCT_CATEGORY_TYPE)
+//   category: PRODUCT_CATEGORY_TYPE
+
+//   @IsNotEmpty()
+//   @IsString()
+//   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START && o.category === PRODUCT_CATEGORY_TYPE.GAS)
+//   displacementId: string

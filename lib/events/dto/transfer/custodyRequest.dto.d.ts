@@ -1,5 +1,4 @@
-import { COMPACT_PlaceDTO } from '../../../general';
-import { AddressDTO } from '../../../general/dto/address.dto';
+import { PlaceDTO, COMPACT_PlaceDTO } from '../../../general';
 export declare class COMPACT_TransferCustodyRequestDTO {
     productId: string;
     contractId?: string;
@@ -13,10 +12,10 @@ export declare class COMPACT_TransferCustodyRequestDTO {
 export declare class TransferCustodyRequestDTO {
     productId: string;
     receiver: string;
-    portOfEntry: AddressDTO;
-    portOfArrival: AddressDTO;
-    portOfDestination: AddressDTO;
+    portOfEntry: PlaceDTO;
+    portOfArrival: PlaceDTO;
+    portOfDestination: PlaceDTO;
     countryOfDestination: string;
-    receiptLocation: AddressDTO;
+    receiptLocation: PlaceDTO;
     hasDocuments: boolean;
 }

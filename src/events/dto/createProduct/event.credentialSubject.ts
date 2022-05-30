@@ -1,11 +1,11 @@
-import { IsNotEmpty, IsNotEmptyObject, IsEnum, IsUUID, IsArray, ValidateNested, ArrayMinSize } from 'class-validator'
+import { IsNotEmpty, IsNotEmptyObject, IsEnum, IsUUID, IsArray, ValidateNested, ArrayMinSize, IsDateString } from 'class-validator'
 import { Type } from 'class-transformer'
 import { PlaceDTO, OrganizationDTO } from '../../../general'
 import { ProductDTO } from '../../../products'
 import { ApiProperty } from '@nestjs/swagger'
 import { EVENT_TYPE } from '../../../events'
 
-export class CORE_CreationEventCredentialSubjectDTO {
+export class AGENT_CreationEventCredentialSubjectDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
@@ -32,9 +32,14 @@ export class CORE_CreationEventCredentialSubjectDTO {
   products: ProductDTO[]
 }
 
-export class AGENT_CreationEventCredentialSubjectDTO extends CORE_CreationEventCredentialSubjectDTO {
+export class CORE_CreationEventCredentialSubjectDTO extends AGENT_CreationEventCredentialSubjectDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
   eventId: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsDateString()
+  eventTime: string 
 }

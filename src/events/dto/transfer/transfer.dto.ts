@@ -9,7 +9,7 @@ import {
   Matches
 } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { AddressDTO } from '../../../general/dto/address.dto'
+import { PlaceDTO } from '../../../general'
 import { Type } from 'class-transformer'
 import { CORE_TransferEventDetailsDTO } from './event.vc.dto'
 
@@ -42,11 +42,6 @@ export class AGENT_TransferProductDTO {
   @IsNumber()
   requestId: number
 
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsUUID()
-  eventId: string
-
   @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
@@ -55,26 +50,26 @@ export class AGENT_TransferProductDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  geo: AddressDTO
+  @Type(() => PlaceDTO)
+  place: PlaceDTO
 
   @ApiPropertyOptional()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfEntry?: AddressDTO
+  @Type(() => PlaceDTO)
+  portOfEntry?: PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfArrival?: AddressDTO
+  @Type(() => PlaceDTO)
+  portOfArrival?: PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfDestination?: AddressDTO
+  @Type(() => PlaceDTO)
+  portOfDestination?: PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()
@@ -84,8 +79,8 @@ export class AGENT_TransferProductDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  receiptLocation?: AddressDTO
+  @Type(() => PlaceDTO)
+  receiptLocation?: PlaceDTO
 
   @IsNotEmpty()
   @ApiProperty()
