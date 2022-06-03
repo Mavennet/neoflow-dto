@@ -41,5 +41,5 @@ export class CORE_CreationEventCredentialSubjectDTO extends AGENT_CreationEventC
   @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
-  eventTime: string 
+  eventTime: string
 }

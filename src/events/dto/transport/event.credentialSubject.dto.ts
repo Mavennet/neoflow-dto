@@ -1,17 +1,10 @@
 import {
   IsNotEmpty,
-  IsOptional,
   IsEnum,
   IsString,
-  IsNotEmptyObject,
-  ValidateNested,
-  Matches,
-  ValidateIf,
-  IsArray,
-  ArrayMinSize
+  ValidateIf
 } from 'class-validator'
-import { Type } from 'class-transformer'
-import { EventDTO, PlaceDTO, OrganizationDTO } from '../../../general'
+import { EventDTO } from '../../../general'
 import { TRANSPORTATION_TYPE, TRANSPORT_EVENT_TYPE } from '../../constants'
 import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
 

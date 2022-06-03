@@ -88,5 +88,5 @@ export class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventC
 
   @IsNotEmpty()
   @IsDateString()
-  eventTime: string 
+  eventTime: string
 }

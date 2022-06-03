@@ -1,14 +1,11 @@
 import {
   IsNotEmpty,
   IsNotEmptyObject,
-  IsOptional,
   IsUUID,
   IsEnum,
-  IsString,
   IsArray,
   ArrayMinSize,
   ValidateNested,
-  Matches,
   IsDateString
 } from 'class-validator'
 import { Type } from 'class-transformer'
@@ -45,7 +42,7 @@ export class CORE_TransformationEventCredentialSubjectDTO extends AGENT_Transfor
   @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
-  eventTime: string 
+  eventTime: string
 
   @ApiProperty()
   @IsArray()

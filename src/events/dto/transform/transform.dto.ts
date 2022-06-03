@@ -1,10 +1,10 @@
-import { IsNotEmpty, IsUUID, IsString, IsNotEmptyObject, IsArray, ArrayMinSize, ValidateNested, IsOptional } from 'class-validator'
+import { IsNotEmpty, IsUUID, IsString, IsArray, ArrayMinSize, ValidateNested, IsOptional } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { TransformProductSuccessorDTO } from './transformProductSuccessor.dto'
 import { AGENT_TransformationEventCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { AGENT_COMPACT_CreateProductDTO } from '../createProduct'
-import { CORE_TransformationEventDetailsDTO, AGENT_TransformationEventDetailsDTO } from './event.vc.dto'
+import { CORE_TransformationEventDetailsDTO } from './event.vc.dto'
 import { ProductCredentialSubjectDTO, ProductDTO } from '../../../products'
 
 export class AGENT_COMPACT_TransformProductDTO {
