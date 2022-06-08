@@ -9,6 +9,6 @@ export declare class ProductDTO extends ProductDTOBase {
     category: CRUDE_STREAM;
     description: string;
     sizeOrAmount: MeasurementDTO;
-    wight: MeasurementDTO;
-    sku: string;
+    wight?: MeasurementDTO;
+    sku?: string;
 }

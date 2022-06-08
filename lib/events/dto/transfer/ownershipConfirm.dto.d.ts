@@ -1,5 +1,4 @@
-import { COMPACT_PlaceDTO } from '../../../general';
-import { AddressDTO } from '../../../general/dto/address.dto';
+import { COMPACT_PlaceDTO, PlaceDTO } from '../../../general';
 export declare class COMPACT_TransferOwnershipConfirmationDTO {
     transferOwnershipRequestId: number;
     portOfEntry?: COMPACT_PlaceDTO;
@@ -11,9 +10,9 @@ export declare class COMPACT_TransferOwnershipConfirmationDTO {
 }
 export declare class TransferOwnershipConfirmationDTO {
     transferOwnershipRequestId: number;
-    portOfEntry: AddressDTO;
-    portOfArrival: AddressDTO;
-    portOfDestination: AddressDTO;
+    portOfEntry: PlaceDTO;
+    portOfArrival: PlaceDTO;
+    portOfDestination: PlaceDTO;
     countryOfDestination: string;
     confirmationStatus: boolean;
     comment: string;

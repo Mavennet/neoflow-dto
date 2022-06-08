@@ -22,40 +22,7 @@ import {
   CORE_TransferEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 
-export class CORE_TransferEventDetailsDTO {
-  @IsNotEmpty()
-  @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
-  id: string
-
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
-
-  @IsArray()
-  @ArrayMinSize(1)
-  type: string[]
-
-  @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  issuer: string
-
-  @IsNotEmpty()
-  @IsDateString()
-  issuanceDate: Date
-
-  @IsNotEmpty()
-  @ValidateNested()
-  @Type(() => CORE_TransferEventCredentialSubjectDTO)
-  credentialSubject: CORE_TransferEventCredentialSubjectDTO
-
-  @IsNotEmpty()
-  @ValidateNested()
-  @Type(() => ProofDTO)
-  proof: ProofDTO
-}
-
-export class AGENT_TransferEventDetailsDTO extends CORE_TransferEventDetailsDTO {
+export class AGENT_TransferEventDetailsDTO {
   @IsNotEmpty()
   @IsEnum(EVENT_TYPE)
   eventName: EVENT_TYPE
@@ -118,4 +85,37 @@ export class AGENT_TransferEventDetailsDTO extends CORE_TransferEventDetailsDTO 
   @ValidateNested()
   @Type(() => AGENT_TransferEventCredentialSubjectDTO)
   credentialSubject: AGENT_TransferEventCredentialSubjectDTO
+}
+
+export class CORE_TransferEventDetailsDTO {
+  @IsNotEmpty()
+  @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
+  id: string
+
+  @IsArray()
+  @ArrayMinSize(1)
+  '@context': string[]
+
+  @IsArray()
+  @ArrayMinSize(1)
+  type: string[]
+
+  @IsNotEmpty()
+  @IsString()
+  @Matches(/^did:/)
+  issuer: string
+
+  @IsNotEmpty()
+  @IsDateString()
+  issuanceDate: Date
+
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => CORE_TransferEventCredentialSubjectDTO)
+  credentialSubject: CORE_TransferEventCredentialSubjectDTO
+
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => ProofDTO)
+  proof: ProofDTO
 }

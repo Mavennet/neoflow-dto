@@ -114,15 +114,15 @@ class TransportProductDTOBase {
   productId: string
 
   @IsNotEmpty()
-  @IsUUID()
-  eventId: string
-
-  @IsNotEmpty()
   @IsEnum(TRANSPORT_EVENT_TYPE)
   eventType: TRANSPORT_EVENT_TYPE
 }
 
 export class CORE_TransportProductDTO extends TransportProductDTOBase {
+  @IsNotEmpty()
+  @IsUUID()
+  eventId: string
+
   @IsOptional()
   @ValidateNested()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START)

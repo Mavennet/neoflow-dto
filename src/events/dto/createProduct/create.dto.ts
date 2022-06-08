@@ -24,11 +24,6 @@ import { CreationEventDetailsDTO } from './event.vc.dto'
 class CreateProductDTOBase {
   @IsNotEmpty()
   @ApiProperty()
-  @IsUUID()
-  productId: string
-
-  @IsNotEmpty()
-  @ApiProperty()
   batchNumber: string
 }
 
@@ -105,6 +100,11 @@ export class AGENT_CreateProductDTO extends CreateProductDTOBase {
 }
 
 export class CORE_CreateProductDTO extends CreateProductDTOBase {
+  @IsNotEmpty()
+  @ApiProperty()
+  @IsUUID()
+  productId: string
+
   @IsNotEmpty()
   @ApiProperty()
   @ValidateNested()

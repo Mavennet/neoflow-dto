@@ -6,75 +6,87 @@ import {
   IsString,
   IsNumberString,
   ValidateNested,
-  Matches
+  Matches,
+  IsArray,
+  ArrayMinSize,
+  IsDateString
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { AddressDTO } from '../../../general/dto/address.dto'
 import { TRANSFER_EVENT_TYPE } from '../../constants'
+import { PlaceDTO, OrganizationDTO } from '../../../general'
+import { ProductDTO } from '../../../products'
 
-export class CORE_TransferEventCredentialSubjectDTO {
-  @IsNotEmpty()
-  productId: string
-
-  @IsNotEmpty()
-  @IsString()
-  @IsEnum(TRANSFER_EVENT_TYPE)
-  eventType: TRANSFER_EVENT_TYPE
-
-  @IsOptional()
-  @IsString()
-  description: string
-
+export class AGENT_TransferEventCredentialSubjectDTO {
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  geo: AddressDTO
+  @Type(() => PlaceDTO)
+  place: PlaceDTO
 
   @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  eventCreator: string
+  @IsNumberString()
+  price: string
+
+  @IsArray()
+  @ArrayMinSize(1)
+  @ValidateNested({ each: true })
+  @Type(() => ProductDTO)
+  products: ProductDTO[]
+
+  @IsArray()
+  @ArrayMinSize(1)
+  @ValidateNested({ each: true })
+  @Type(() => OrganizationDTO)
+  actor: OrganizationDTO[]
 
   @IsOptional()
   @IsString()
   @Matches(/^did:/)
-  sender: string
+  initiator: string
 
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
   receiver: string
 
-  @IsNotEmpty()
-  @IsNumberString()
-  price: string
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => PlaceDTO)
+  portOfArrival: PlaceDTO
 
   @IsOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfArrival: AddressDTO
+  @Type(() => PlaceDTO)
+  portOfEntry: PlaceDTO
 
   @IsOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfDestination: AddressDTO
+  @Type(() => PlaceDTO)
+  portOfDestination: PlaceDTO
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => PlaceDTO)
+  receiptLocation: PlaceDTO
 
   @IsOptional()
   @IsString()
   countryOfDestination: string
-
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => AddressDTO)
-  receiptLocation: AddressDTO
 }
 
-export class AGENT_TransferEventCredentialSubjectDTO extends CORE_TransferEventCredentialSubjectDTO {
+export class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {
+  @IsArray()
+  @ArrayMinSize(1)
+  type: string[]
+
+  @IsNotEmpty()
+  @IsString()
+  @IsEnum(TRANSFER_EVENT_TYPE)
+  eventType: TRANSFER_EVENT_TYPE
+
   @IsNotEmpty()
   eventId: string
 
-  @IsOptional()
-  @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfEntry: AddressDTO
+  @IsNotEmpty()
+  @IsDateString()
+  eventTime: string
 }

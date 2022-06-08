@@ -4,7 +4,6 @@ import { ProductCredentialSubjectDTO } from '../../../products/dto/productCreden
 import { AGENT_CreationEventCredentialSubjectDTO } from './event.credentialSubject';
 import { CreationEventDetailsDTO } from './event.vc.dto';
 declare class CreateProductDTOBase {
-    productId: string;
     batchNumber: string;
 }
 export declare class AGENT_COMPACT_CreateProductDTO {
@@ -24,6 +23,7 @@ export declare class AGENT_CreateProductDTO extends CreateProductDTOBase {
     eventCredentialSubject: AGENT_CreationEventCredentialSubjectDTO;
 }
 export declare class CORE_CreateProductDTO extends CreateProductDTOBase {
+    productId: string;
     productVC: ProductVCDTO;
     eventId: string;
     eventVC: CreationEventDetailsDTO;
