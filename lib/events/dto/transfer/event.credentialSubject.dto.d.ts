@@ -1,20 +1,22 @@
-import { AddressDTO } from '../../../general/dto/address.dto';
 import { TRANSFER_EVENT_TYPE } from '../../constants';
-export declare class CORE_TransferEventCredentialSubjectDTO {
-    productId: string;
-    eventType: TRANSFER_EVENT_TYPE;
-    description: string;
-    geo: AddressDTO;
-    eventCreator: string;
-    sender: string;
+import { PlaceDTO, OrganizationDTO } from '../../../general';
+import { ProductDTO } from '../../../products';
+export declare class AGENT_TransferEventCredentialSubjectDTO {
+    place: PlaceDTO;
+    products: ProductDTO[];
+    actor: OrganizationDTO[];
+    initiator: string;
     receiver: string;
     price?: string;
-    portOfArrival: AddressDTO;
-    portOfDestination: AddressDTO;
+    portOfArrival: PlaceDTO;
+    portOfEntry: PlaceDTO;
+    portOfDestination: PlaceDTO;
+    receiptLocation: PlaceDTO;
     countryOfDestination: string;
-    receiptLocation: AddressDTO;
 }
-export declare class AGENT_TransferEventCredentialSubjectDTO extends CORE_TransferEventCredentialSubjectDTO {
+export declare class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {
+    type: string[];
+    eventType: TRANSFER_EVENT_TYPE;
     eventId: string;
-    portOfEntry: AddressDTO;
+    eventTime: string;
 }

@@ -1,10 +1,13 @@
-import { PlaceDTO } from '../../../general/dto/place.dto';
-export declare class CORE_CreationEventCredentialSubjectDTO {
-    productId: string;
-    description: string;
+import { PlaceDTO, OrganizationDTO } from '../../../general';
+import { ProductDTO } from '../../../products';
+import { EVENT_TYPE } from '../../../events';
+export declare class AGENT_CreationEventCredentialSubjectDTO {
+    eventType: EVENT_TYPE;
     place: PlaceDTO;
-    eventCreator: string;
+    actor: OrganizationDTO[];
+    products: ProductDTO[];
 }
-export declare class AGENT_CreationEventCredentialSubjectDTO extends CORE_CreationEventCredentialSubjectDTO {
+export declare class CORE_CreationEventCredentialSubjectDTO extends AGENT_CreationEventCredentialSubjectDTO {
     eventId: string;
+    eventTime: string;
 }

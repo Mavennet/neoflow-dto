@@ -12,17 +12,4 @@ export class TransformProductSuccessorDTO {
   @ValidateNested()
   @Type(() => ProductVCDTO)
   productVC: ProductVCDTO
-
-  @IsNotEmpty()
-  @IsString()
-  productVCHash: string
-
-  @IsNotEmpty()
-  @IsUUID()
-  identifier: string
-
-  @IsNotEmpty()
-  @ValidateNested()
-  @Type(() => ProductCredentialSubjectDTO)
-  credentialSubjects: ProductCredentialSubjectDTO
 }

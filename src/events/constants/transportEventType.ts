@@ -1,4 +1,4 @@
 export enum TRANSPORT_EVENT_TYPE {
-  START = 'Start',
-  END = 'End'
+  START = 'TransportStart',
+  END = 'TransportEnd'
 }

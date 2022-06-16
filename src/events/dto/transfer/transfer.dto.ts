@@ -6,12 +6,15 @@ import {
   IsNotEmptyObject,
   ValidateNested,
   IsOptional,
-  Matches
+  Matches,
+  IsArray,
+  ArrayMinSize
 } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { AddressDTO } from '../../../general/dto/address.dto'
+import { PlaceDTO, OrganizationDTO } from '../../../general'
 import { Type } from 'class-transformer'
 import { CORE_TransferEventDetailsDTO } from './event.vc.dto'
+import { ProductDTO } from '../../../products'
 
 export class CORE_TransferProductDTO {
   @IsNotEmpty()
@@ -42,11 +45,6 @@ export class AGENT_TransferProductDTO {
   @IsNumber()
   requestId: number
 
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsUUID()
-  eventId: string
-
   @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
@@ -55,26 +53,26 @@ export class AGENT_TransferProductDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  geo: AddressDTO
+  @Type(() => PlaceDTO)
+  place: PlaceDTO
 
   @ApiPropertyOptional()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfEntry?: AddressDTO
+  @Type(() => PlaceDTO)
+  portOfEntry?: PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfArrival?: AddressDTO
+  @Type(() => PlaceDTO)
+  portOfArrival?: PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfDestination?: AddressDTO
+  @Type(() => PlaceDTO)
+  portOfDestination?: PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()
@@ -84,8 +82,8 @@ export class AGENT_TransferProductDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  receiptLocation?: AddressDTO
+  @Type(() => PlaceDTO)
+  receiptLocation?: PlaceDTO
 
   @IsNotEmpty()
   @ApiProperty()
@@ -96,4 +94,16 @@ export class AGENT_TransferProductDTO {
   @IsOptional()
   @IsString()
   price: string
+
+  @IsArray()
+  @ArrayMinSize(1)
+  @ValidateNested({ each: true })
+  @Type(() => ProductDTO)
+  products: ProductDTO[]
+
+  @IsArray()
+  @ArrayMinSize(1)
+  @ValidateNested({ each: true })
+  @Type(() => OrganizationDTO)
+  actor: OrganizationDTO[]
 }

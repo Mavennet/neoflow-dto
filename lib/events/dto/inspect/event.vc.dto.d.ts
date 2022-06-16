@@ -1,14 +1,11 @@
 import { ProofDTO } from '../../../general/dto/proof.dto';
-import { AGENT_InspectionEventCredentialSubjectDTO } from './event.credentialSubject.dto';
-declare class InspectionEventDetailsDTOBase {
+import { InspectionEventCredentialSubjectDTO } from './event.credentialSubject.dto';
+export declare class InspectionEventDetailsDTO {
     '@context': string[];
     id: string;
     type: string[];
     issuer: string;
     issuanceDate: Date;
-    credentialSubject: AGENT_InspectionEventCredentialSubjectDTO;
+    credentialSubject: InspectionEventCredentialSubjectDTO;
     proof: ProofDTO;
 }
-export declare class InspectionEventDetailsDTO extends InspectionEventDetailsDTOBase {
-}
-export {};

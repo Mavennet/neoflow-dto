@@ -49,9 +49,9 @@ export class ProductDTO extends ProductDTOBase {
   @IsOptional()
   @ValidateNested()
   @Type(() => MeasurementDTO)
-  wight: MeasurementDTO // fix attribute typo
+  wight?: MeasurementDTO // fix attribute typo
 
   @IsOptional()
   @IsString()
-  sku: string
+  sku?: string
 }

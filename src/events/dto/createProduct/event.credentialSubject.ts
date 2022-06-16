@@ -1,17 +1,15 @@
-import { IsNotEmpty, IsNotEmptyObject, IsOptional, IsUUID, IsString, ValidateNested, Matches } from 'class-validator'
+import { IsNotEmpty, IsNotEmptyObject, IsEnum, IsUUID, IsArray, ValidateNested, ArrayMinSize, IsDateString } from 'class-validator'
 import { Type } from 'class-transformer'
-// import { AddressDTO } from '../../general/dto/address.dto'
-import { PlaceDTO } from '../../../general/dto/place.dto'
+import { PlaceDTO, OrganizationDTO } from '../../../general'
+import { ProductDTO } from '../../../products'
 import { ApiProperty } from '@nestjs/swagger'
+import { EVENT_TYPE } from '../../../events'
 
-export class CORE_CreationEventCredentialSubjectDTO {
-  @IsNotEmpty()
-  productId: string
-
+export class AGENT_CreationEventCredentialSubjectDTO {
   @ApiProperty()
-  @IsOptional()
-  @IsString()
-  description: string
+  @IsNotEmpty()
+  @IsEnum(EVENT_TYPE)
+  eventType: EVENT_TYPE
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -20,15 +18,28 @@ export class CORE_CreationEventCredentialSubjectDTO {
   place: PlaceDTO
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  eventCreator: string
+  @IsArray()
+  @ArrayMinSize(1)
+  @ValidateNested({ each: true })
+  @Type(() => OrganizationDTO)
+  actor: OrganizationDTO[]
+
+  @ApiProperty()
+  @IsArray()
+  @ArrayMinSize(1)
+  @ValidateNested({ each: true })
+  @Type(() => ProductDTO)
+  products: ProductDTO[]
 }
 
-export class AGENT_CreationEventCredentialSubjectDTO extends CORE_CreationEventCredentialSubjectDTO {
+export class CORE_CreationEventCredentialSubjectDTO extends AGENT_CreationEventCredentialSubjectDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
   eventId: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsDateString()
+  eventTime: string
 }
