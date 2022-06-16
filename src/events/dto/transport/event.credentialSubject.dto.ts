@@ -22,7 +22,7 @@ export class AGENT_TransportationEventCredentialSubjectDTO {
       o.deliveryMethod === TRANSPORTATION_TYPE.PIPELINE &&
       o.category !== PRODUCT_CATEGORY_TYPE.GAS
   )
-  batchNumber: string
+  trackingNumber: string
 
   @IsNotEmpty()
   @IsString()
