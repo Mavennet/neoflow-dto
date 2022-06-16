@@ -23,10 +23,11 @@ class BillOfLadingCredentialSubjectDTOBase {
   @IsString()
   billOfLadingNumber: string
 
-  @IsNotEmpty()
+  @IsArray()
+  @IsOptional()
   @ValidateNested({ each: true })
   @Type(() => DocumentDTO)
-  relatedDocuments: DocumentDTO[]
+  relatedDocuments?: DocumentDTO[]
 
   @IsNotEmpty()
   @ValidateNested()
