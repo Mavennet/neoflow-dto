@@ -8,7 +8,7 @@ export declare class CORE_TransferEventCredentialSubjectDTO {
     eventCreator: string;
     sender: string;
     receiver: string;
-    price: string;
+    price?: string;
     portOfArrival: AddressDTO;
     portOfDestination: AddressDTO;
     countryOfDestination: string;

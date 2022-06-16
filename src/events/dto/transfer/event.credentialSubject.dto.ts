@@ -45,9 +45,9 @@ export class CORE_TransferEventCredentialSubjectDTO {
   @Matches(/^did:/)
   receiver: string
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumberString()
-  price: string
+  price?: string
 
   @IsOptional()
   @ValidateNested()
