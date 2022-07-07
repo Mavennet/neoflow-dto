@@ -21,7 +21,7 @@ class TransformationEventDetailsDTOBase {
   '@context': string[]
 
   @IsNotEmpty()
-  @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
+  @Matches(/neoflow.energy$/)
   id: string
 
   @IsArray()
