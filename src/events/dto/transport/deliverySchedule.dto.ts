@@ -6,12 +6,12 @@ import { OrganizationDTO } from '../../../general/dto/organization.dto'
 import { DELIVERY_MONTH } from '../../constants'
 
 export class DeliveryScheduleDTO {
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @IsString()
-  batchNumber?: string
+  batchNumber: string
 
-  @ApiPropertyOptional()
+  @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
   inBondNumber: number
@@ -21,15 +21,15 @@ export class DeliveryScheduleDTO {
   @IsString()
   deliveryTicketNumber: string
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @IsNumber()
-  deliveredVolume?: number
+  deliveredVolume: number
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @IsEnum(DELIVERY_MONTH)
-  estimatedDeliveryMonth?: DELIVERY_MONTH
+  estimatedDeliveryMonth: DELIVERY_MONTH
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -37,7 +37,8 @@ export class DeliveryScheduleDTO {
   @Type(() => OrganizationDTO)
   custodian: OrganizationDTO
 
-  @ApiPropertyOptional()
+  @ApiProperty()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => AddressDTO)
   address: AddressDTO
