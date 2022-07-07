@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { IsEnum, IsNotEmptyObject, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator'
+import { IsEnum, IsNotEmpty, IsNotEmptyObject, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator'
 import { AddressDTO } from '../../../general/dto/address.dto'
 import { OrganizationDTO } from '../../../general/dto/organization.dto'
 import { DELIVERY_MONTH } from '../../constants'
@@ -12,14 +12,14 @@ export class DeliveryScheduleDTO {
   batchNumber?: string
 
   @ApiPropertyOptional()
-  @IsOptional()
+  @IsNotEmpty()
   @IsNumber()
-  inBondNumber?: number
+  inBondNumber: number
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @IsString()
-  deliveryTicketNumber?: string
+  deliveryTicketNumber: string
 
   @ApiPropertyOptional()
   @IsOptional()
