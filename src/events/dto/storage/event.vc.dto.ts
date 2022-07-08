@@ -40,7 +40,7 @@ class StorageEventDetailsDTOBase {
 
 export class AGENT_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
   @IsNotEmpty()
-  @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
+  @Matches(/^(?:https:\/\/api-)(?:staging|prod)\..+\.neoflow\.energy$/)
   id: string
 
   @IsNotEmpty()

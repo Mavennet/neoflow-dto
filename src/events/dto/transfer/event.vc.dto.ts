@@ -89,7 +89,7 @@ export class AGENT_TransferEventDetailsDTO {
 
 export class CORE_TransferEventDetailsDTO {
   @IsNotEmpty()
-  @ValidateIf((o) => o.id.startsWith('http://neo-flow.com/credentials/'))
+  @Matches(/^(?:https:\/\/api-)(?:staging|prod)\..+\.neoflow\.energy$/)
   id: string
 
   @IsArray()
