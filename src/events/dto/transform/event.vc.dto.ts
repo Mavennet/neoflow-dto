@@ -21,7 +21,7 @@ class TransformationEventDetailsDTOBase {
   '@context': string[]
 
   @IsNotEmpty()
-  @Matches(/neoflow.energy$/)
+  @Matches(/^(?:https:\/\/api-)(?:staging|prod)\..+\.neoflow\.energy$/)
   id: string
 
   @IsArray()
