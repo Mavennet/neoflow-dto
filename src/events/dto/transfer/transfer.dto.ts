@@ -57,7 +57,7 @@ export class AGENT_TransferProductDTO {
   place: PlaceDTO
 
   @ApiPropertyOptional()
-  @IsNotEmpty()
+  @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfEntry?: PlaceDTO
