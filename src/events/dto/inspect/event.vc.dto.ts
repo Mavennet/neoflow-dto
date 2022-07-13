@@ -35,7 +35,7 @@ export class InspectionEventDetailsDTO {
 
   @IsNotEmpty()
   @IsDateString()
-  issuanceDate: Date
+  issuanceDate: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

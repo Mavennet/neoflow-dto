@@ -35,7 +35,7 @@ class TransformationEventDetailsDTOBase {
 
   @IsNotEmpty()
   @IsDateString()
-  issuanceDate: Date
+  issuanceDate: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

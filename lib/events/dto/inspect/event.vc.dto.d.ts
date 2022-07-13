@@ -5,7 +5,7 @@ export declare class InspectionEventDetailsDTO {
     id: string;
     type: string[];
     issuer: string;
-    issuanceDate: Date;
+    issuanceDate: string | Date;
     credentialSubject: InspectionEventCredentialSubjectDTO;
     proof: ProofDTO;
 }

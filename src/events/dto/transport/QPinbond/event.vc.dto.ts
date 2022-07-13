@@ -29,7 +29,7 @@ export class QPInBondEventVCDTO {
 
   @IsNotEmpty()
   @IsDateString()
-  issuanceDate: string
+  issuanceDate: string | Date
 
   @IsNotEmpty()
   @IsString()

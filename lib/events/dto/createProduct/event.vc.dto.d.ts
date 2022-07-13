@@ -5,7 +5,7 @@ declare class CreationEventDetailsDTOBase {
     id: string;
     type: string[];
     issuer: string;
-    issuanceDate: Date;
+    issuanceDate: string | Date;
     credentialSubject: CORE_CreationEventCredentialSubjectDTO;
     proof: ProofDTO;
 }

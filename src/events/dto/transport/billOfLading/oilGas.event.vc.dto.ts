@@ -33,7 +33,7 @@ export class OGBillOfLadingVCDTO {
 
   @IsNotEmpty()
   @IsDateString()
-  issuanceDate: Date
+  issuanceDate: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

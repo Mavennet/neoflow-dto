@@ -9,7 +9,7 @@ export class CredentialOptionsDTO {
   assertionMethod?: string
 
   @IsOptional()
-  issuanceDate?: string
+  issuanceDate?: Date
 
   @IsOptional()
   issuer?: string
