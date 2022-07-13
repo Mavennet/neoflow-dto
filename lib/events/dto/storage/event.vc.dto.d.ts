@@ -4,7 +4,7 @@ declare class StorageEventDetailsDTOBase {
     id: string;
     '@context': string[];
     issuer: string;
-    issuanceDate: Date;
+    issuanceDate: string | Date;
     proof: ProofDTO;
 }
 export declare class AGENT_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {

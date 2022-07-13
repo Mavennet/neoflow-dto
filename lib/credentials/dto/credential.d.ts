@@ -3,7 +3,7 @@ export declare class CredentialDTO {
     id: string;
     type: any;
     issuer: string;
-    issuanceDate: string;
+    issuanceDate: string | Date;
     expirationDate?: string;
     credentialSubject: any;
 }

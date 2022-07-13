@@ -38,7 +38,7 @@ class ProductVCDTOBase {
   @IsNotEmpty()
   @IsDateString()
   @ApiProperty()
-  issuanceDate: string
+  issuanceDate: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

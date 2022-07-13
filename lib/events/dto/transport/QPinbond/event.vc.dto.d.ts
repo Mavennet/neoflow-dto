@@ -5,7 +5,7 @@ export declare class QPInBondEventVCDTO {
     '@context': string[];
     id: string;
     type: JSON_TYPE[];
-    issuanceDate: string;
+    issuanceDate: string | Date;
     issuer: string;
     credentialSubject: QPInbondCredentialSubjectDTO;
     proof: ProofDTO;
