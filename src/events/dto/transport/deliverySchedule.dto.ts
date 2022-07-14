@@ -1,35 +1,35 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { IsEnum, IsNotEmptyObject, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator'
+import { IsEnum, IsNotEmpty, IsNotEmptyObject, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator'
 import { AddressDTO } from '../../../general/dto/address.dto'
 import { OrganizationDTO } from '../../../general/dto/organization.dto'
 import { DELIVERY_MONTH } from '../../constants'
 
 export class DeliveryScheduleDTO {
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @IsString()
-  batchNumber?: string
+  batchNumber: string
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @IsNumber()
-  inBondNumber?: number
+  inBondNumber: number
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @IsString()
-  deliveryTicketNumber?: string
+  deliveryTicketNumber: string
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @IsNumber()
-  deliveredVolume?: number
+  deliveredVolume: number
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @IsNotEmpty()
   @IsEnum(DELIVERY_MONTH)
-  estimatedDeliveryMonth?: DELIVERY_MONTH
+  estimatedDeliveryMonth: DELIVERY_MONTH
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -37,7 +37,8 @@ export class DeliveryScheduleDTO {
   @Type(() => OrganizationDTO)
   custodian: OrganizationDTO
 
-  @ApiPropertyOptional()
+  @ApiProperty()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => AddressDTO)
   address: AddressDTO
