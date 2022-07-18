@@ -12,12 +12,12 @@ export class DeliveryScheduleDTO {
   batchNumber: string
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   inBondNumber: number
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   deliveryTicketNumber: string
 
