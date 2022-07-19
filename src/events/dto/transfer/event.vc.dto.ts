@@ -89,7 +89,7 @@ export class AGENT_TransferEventDetailsDTO {
 
 export class CORE_TransferEventDetailsDTO {
   @IsNotEmpty()
-  @Matches(/^(?:https:\/\/api-)(?:staging|prod)\..+\.neoflow\.energy$/)
+  @Matches(/^(?:https:\/\/api-)(?:staging|prod)\..+\.neoflow\.energy/)
   id: string
 
   @IsArray()
