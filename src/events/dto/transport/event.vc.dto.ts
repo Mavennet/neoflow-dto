@@ -21,7 +21,7 @@ class TransportationEventDetailsDTOBase {
   '@context': string[]
 
   @IsNotEmpty()
-  @Matches(/^(?:https:\/\/api-)(?:staging|prod)\..+\.neoflow\.energy$/)
+  @Matches(/^(?:https:\/\/api-)(?:staging|prod)\..+\.neoflow\.energy/)
   id: string
 
   @IsArray()
