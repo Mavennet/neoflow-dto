@@ -5,8 +5,8 @@ import {
   IsDateString,
   ArrayMinSize,
   ValidateNested,
-  ValidateIf,
-  Matches
+  Matches,
+  IsUrl
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { ProofDTO } from '../../../general/dto/proof.dto'
@@ -40,7 +40,7 @@ class StorageEventDetailsDTOBase {
 
 export class AGENT_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
   @IsNotEmpty()
-  @Matches(/^(?:https:\/\/api-)(?:staging|prod)\..+\.neoflow\.energy$/)
+  @Matches(/^http(?::\/\/localhost:\d{4}\/v1\/credentials\/verify|s:\/\/api\-(?:prod|staging)\..+\.neoflow\.energy)/)
   id: string
 
   @IsNotEmpty()
