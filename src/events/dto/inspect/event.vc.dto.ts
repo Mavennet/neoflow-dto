@@ -20,7 +20,7 @@ export class InspectionEventDetailsDTO {
   '@context': string[]
 
   @IsNotEmpty()
-  @Matches(/http(?::\/\/localhost:\d{4}\/v1\/credentials\/verify|s:\/\/api\-(?:prod|staging)\..+\.neoflow\.energy)/)
+  @Matches(/^http(?::\/\/localhost:\d{4}\/v1\/credentials\/verify|s:\/\/api\-(?:prod|staging)\..+\.neoflow\.energy)/)
   id: string
 
   @IsArray()
