@@ -1,6 +1,5 @@
-import { IsNotEmpty, IsUUID, IsString, ValidateNested } from 'class-validator'
+import { IsNotEmpty, IsUUID, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
-import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
 import { ProductVCDTO } from '../../../products/dto/product.vc.dto'
 
 export class TransformProductSuccessorDTO {
