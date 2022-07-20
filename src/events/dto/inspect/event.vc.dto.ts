@@ -7,7 +7,8 @@ import {
   ArrayMaxSize,
   ValidateNested,
   ValidateIf,
-  Matches
+  Matches,
+  IsUrl
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { ProofDTO } from '../../../general/dto/proof.dto'
@@ -19,7 +20,7 @@ export class InspectionEventDetailsDTO {
   '@context': string[]
 
   @IsNotEmpty()
-  @Matches(/^(?:https:\/\/api-)(?:staging|prod)\..+\.neoflow\.energy/)
+  @IsUrl()
   id: string
 
   @IsArray()

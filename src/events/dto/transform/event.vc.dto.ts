@@ -5,8 +5,8 @@ import {
   IsDateString,
   IsNotEmpty,
   IsString,
+  IsUrl,
   Matches,
-  ValidateIf,
   ValidateNested
 } from 'class-validator'
 import { ProofDTO } from '../../../general/dto/proof.dto'
@@ -21,7 +21,7 @@ class TransformationEventDetailsDTOBase {
   '@context': string[]
 
   @IsNotEmpty()
-  @Matches(/^(?:https:\/\/api-)(?:staging|prod)\..+\.neoflow\.energy/)
+  @IsUrl()
   id: string
 
   @IsArray()

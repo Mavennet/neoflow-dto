@@ -10,8 +10,8 @@ import {
   IsNumberString,
   IsOptional,
   IsString,
+  IsUrl,
   Matches,
-  ValidateIf,
   ValidateNested
 } from 'class-validator'
 import { AddressDTO } from '../../../general/dto/address.dto'
@@ -89,7 +89,7 @@ export class AGENT_TransferEventDetailsDTO {
 
 export class CORE_TransferEventDetailsDTO {
   @IsNotEmpty()
-  @Matches(/^(?:https:\/\/api-)(?:staging|prod)\..+\.neoflow\.energy/)
+  @IsUrl()
   id: string
 
   @IsArray()
