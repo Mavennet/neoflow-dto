@@ -11,5 +11,6 @@ export * from './parcelDelivery.dto';
 export * from './physicalSpecs.dto';
 export * from './place.dto';
 export * from './postalAddress.dto';
+export * from './productHash.dto';
 export * from './property.dto';
 export * from './proof.dto';

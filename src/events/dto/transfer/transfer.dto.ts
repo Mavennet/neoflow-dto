@@ -14,7 +14,6 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { PlaceDTO, OrganizationDTO } from '../../../general'
 import { Type } from 'class-transformer'
 import { CORE_TransferEventDetailsDTO } from './event.vc.dto'
-import { ProductDTO } from '../../../products'
 
 export class CORE_TransferProductDTO {
   @IsNotEmpty()
@@ -49,6 +48,11 @@ export class AGENT_TransferProductDTO {
   @IsNotEmpty()
   @IsUUID()
   productId: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  productVCHash: string
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -94,12 +98,6 @@ export class AGENT_TransferProductDTO {
   @IsOptional()
   @IsString()
   price: string
-
-  @IsArray()
-  @ArrayMinSize(1)
-  @ValidateNested({ each: true })
-  @Type(() => ProductDTO)
-  products: ProductDTO[]
 
   @IsArray()
   @ArrayMinSize(1)
