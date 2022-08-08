@@ -25,6 +25,7 @@ export declare class AGENT_CreateProductDTO extends CreateProductDTOBase {
 export declare class CORE_CreateProductDTO extends CreateProductDTOBase {
     productId: string;
     productVC: ProductVCDTO;
+    productVCHash: string;
     eventId: string;
     eventVC: CreationEventDetailsDTO;
 }

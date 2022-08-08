@@ -1,9 +1,8 @@
 import { TRANSFER_EVENT_TYPE } from '../../constants';
 import { PlaceDTO, OrganizationDTO } from '../../../general';
-import { ProductDTO } from '../../../products';
 export declare class AGENT_TransferEventCredentialSubjectDTO {
     place: PlaceDTO;
-    products: ProductDTO[];
+    products: string[];
     actor: OrganizationDTO[];
     initiator: string;
     receiver: string;

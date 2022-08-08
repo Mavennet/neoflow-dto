@@ -113,6 +113,11 @@ export class CORE_CreateProductDTO extends CreateProductDTOBase {
 
   @IsNotEmpty()
   @ApiProperty()
+  @IsString()
+  productVCHash: string
+
+  @IsNotEmpty()
+  @ApiProperty()
   @IsUUID()
   eventId: string
 

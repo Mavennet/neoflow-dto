@@ -6,13 +6,13 @@ import {
   IsArray,
   ArrayMinSize,
   ValidateNested,
-  IsDateString
+  IsDateString,
+  IsUrl
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { PlaceDTO, OrganizationDTO } from '../../../general'
 import { TRANSFORMATION_EVENT_TYPE } from '../../constants/transformationEventType'
 import { ApiProperty } from '@nestjs/swagger'
-import { ProductDTO } from '../../../products'
 
 export class AGENT_TransformationEventCredentialSubjectDTO {
   @ApiProperty()
@@ -47,15 +47,10 @@ export class CORE_TransformationEventCredentialSubjectDTO extends AGENT_Transfor
   @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
-  @ValidateNested({ each: true })
-  @Type(() => ProductDTO)
-  products: ProductDTO[]
+  @IsUrl({ each: true })
+  products: string[]
 
   @IsArray()
   @ArrayMinSize(1)
   consumedProducts: string[]
-
-  @IsArray()
-  @ArrayMinSize(1)
-  newProducts: string[]
 }

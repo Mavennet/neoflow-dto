@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsUUID, ValidateNested } from 'class-validator'
+import { IsNotEmpty, IsUUID, IsString, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
 import { ProductVCDTO } from '../../../products/dto/product.vc.dto'
 
@@ -11,4 +11,8 @@ export class TransformProductSuccessorDTO {
   @ValidateNested()
   @Type(() => ProductVCDTO)
   productVC: ProductVCDTO
+
+  @IsNotEmpty()
+  @IsString()
+  productVCHash: string
 }

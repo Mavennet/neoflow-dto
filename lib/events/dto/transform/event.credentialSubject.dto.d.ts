@@ -1,6 +1,5 @@
 import { PlaceDTO, OrganizationDTO } from '../../../general';
 import { TRANSFORMATION_EVENT_TYPE } from '../../constants/transformationEventType';
-import { ProductDTO } from '../../../products';
 export declare class AGENT_TransformationEventCredentialSubjectDTO {
     eventType: TRANSFORMATION_EVENT_TYPE;
     place: PlaceDTO;
@@ -9,7 +8,6 @@ export declare class AGENT_TransformationEventCredentialSubjectDTO {
 export declare class CORE_TransformationEventCredentialSubjectDTO extends AGENT_TransformationEventCredentialSubjectDTO {
     eventId: string;
     eventTime: string;
-    products: ProductDTO[];
+    products: string[];
     consumedProducts: string[];
-    newProducts: string[];
 }

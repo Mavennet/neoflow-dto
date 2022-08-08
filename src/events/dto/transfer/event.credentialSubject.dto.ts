@@ -9,12 +9,12 @@ import {
   Matches,
   IsArray,
   ArrayMinSize,
-  IsDateString
+  IsDateString,
+  IsUrl
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { TRANSFER_EVENT_TYPE } from '../../constants'
 import { PlaceDTO, OrganizationDTO } from '../../../general'
-import { ProductDTO } from '../../../products'
 
 export class AGENT_TransferEventCredentialSubjectDTO {
   @IsNotEmptyObject()
@@ -24,9 +24,8 @@ export class AGENT_TransferEventCredentialSubjectDTO {
 
   @IsArray()
   @ArrayMinSize(1)
-  @ValidateNested({ each: true })
-  @Type(() => ProductDTO)
-  products: ProductDTO[]
+  @IsUrl({ each: true })
+  products: string[]
 
   @IsArray()
   @ArrayMinSize(1)
