@@ -22,12 +22,6 @@ export class AGENT_CreationEventCredentialSubjectDTO {
   @ValidateNested({ each: true })
   @Type(() => OrganizationDTO)
   actor: OrganizationDTO[]
-
-  @ApiProperty()
-  @IsArray()
-  @ArrayMinSize(1)
-  @IsUrl({ each: true })
-  products: string[]
 }
 
 export class CORE_CreationEventCredentialSubjectDTO extends AGENT_CreationEventCredentialSubjectDTO {
@@ -40,4 +34,10 @@ export class CORE_CreationEventCredentialSubjectDTO extends AGENT_CreationEventC
   @IsNotEmpty()
   @IsDateString()
   eventTime: string
+
+  @ApiProperty()
+  @IsArray()
+  @ArrayMinSize(1)
+  @IsUrl({ each: true })
+  products: string[]
 }
