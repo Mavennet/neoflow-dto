@@ -24,7 +24,7 @@ export class AGENT_TransferEventCredentialSubjectDTO {
 
   @IsArray()
   @ArrayMinSize(1)
-  @IsUrl({ each: true })
+  @IsUrl({}, { each: true })
   products: string[]
 
   @IsArray()

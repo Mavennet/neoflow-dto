@@ -38,6 +38,6 @@ export class CORE_CreationEventCredentialSubjectDTO extends AGENT_CreationEventC
   @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
-  @IsUrl({ each: true })
+  @IsUrl({}, { each: true })
   products: string[]
 }
