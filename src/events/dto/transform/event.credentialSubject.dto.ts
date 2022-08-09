@@ -47,7 +47,7 @@ export class CORE_TransformationEventCredentialSubjectDTO extends AGENT_Transfor
   @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
-  @IsUrl({protocols: ['http', 'https']}, { each: true })
+  @IsUrl({ protocols: ['http', 'https'] }, { each: true })
   products: string[]
 
   @IsArray()
