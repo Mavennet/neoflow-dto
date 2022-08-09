@@ -1,6 +1,7 @@
 export * from './address.dto';
 export * from './chemicalSpecs.dto';
 export * from './documentation.dto';
+export * from './entity.dto';
 export * from './event.dto';
 export * from './gasSpecs.dto';
 export * from './geoCoordinates.dto';

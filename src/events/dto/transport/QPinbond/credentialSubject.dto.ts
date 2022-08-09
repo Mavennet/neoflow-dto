@@ -11,7 +11,7 @@ import {
   ArrayNotEmpty
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { ParcelDeliveryDTO, PlaceDTO, OrganizationDTO } from '../../../../general/dto'
+import { ParcelDeliveryDTO, PlaceDTO, EntityDTO } from '../../../../general/dto'
 import { JSON_TYPE } from '../../../../general/constants'
 import { ProductDTO } from '../../../../products/dto/product.dto'
 import { IN_BOND_TYPE } from '../../../constants'
@@ -60,13 +60,13 @@ export class QPInbondCredentialSubjectDTO {
 
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => OrganizationDTO)
-  carrier: OrganizationDTO
+  @Type(() => EntityDTO)
+  carrier: EntityDTO
 
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => OrganizationDTO)
-  recipient: OrganizationDTO
+  @Type(() => EntityDTO)
+  recipient: EntityDTO
 
   @IsNotEmptyObject()
   @ValidateNested()

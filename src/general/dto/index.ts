@@ -1,6 +1,7 @@
 export * from './address.dto'
 export * from './chemicalSpecs.dto' // to remove
 export * from './documentation.dto'
+export * from './entity.dto'
 export * from './event.dto'
 export * from './gasSpecs.dto' // to remove
 export * from './geoCoordinates.dto'

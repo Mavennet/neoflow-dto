@@ -1,4 +1,5 @@
 import {
+  IsNotEmptyObject,
   IsNotEmpty,
   IsOptional,
   IsNumberString,
@@ -12,7 +13,7 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { BillOfLadingCredentialSubjectDTO } from './event.credentialSubject.dto'
-import { ObservationDTO } from '../../../../general/dto'
+import { ObservationDTO, MeasurementDTO } from '../../../../general/dto'
 import { JSON_TYPE_NF } from '../../../../general/constants'
 
 export class OGBillOfLadingCredentialSubjectDTO {
@@ -22,7 +23,7 @@ export class OGBillOfLadingCredentialSubjectDTO {
   @Validate((o) => o.type === [JSON_TYPE_NF.OG_BILL_OF_LADING])
   type: JSON_TYPE_NF[]
 
-  @IsNotEmpty()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => BillOfLadingCredentialSubjectDTO)
   billOfLading: BillOfLadingCredentialSubjectDTO
@@ -53,13 +54,15 @@ export class OGBillOfLadingCredentialSubjectDTO {
   @IsString()
   batchNumber: string
 
-  @IsNotEmpty()
-  @IsNumberString()
-  openingVolume: string
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => MeasurementDTO)
+  openingVolume: MeasurementDTO
 
-  @IsNotEmpty()
-  @IsNumberString()
-  closingVolume: string
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => MeasurementDTO)
+  closingVolume: MeasurementDTO
 
   @IsArray()
   @ValidateNested({ each: true })
