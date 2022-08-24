@@ -57,5 +57,5 @@ export class ProductDTO extends ProductDTOBase {
 
   @IsOptional()
   @IsString()
-  batchNumber: string
+  batchNumber?: string
 }

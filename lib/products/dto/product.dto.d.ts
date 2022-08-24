@@ -11,5 +11,5 @@ export declare class ProductDTO extends ProductDTOBase {
     sizeOrAmount: MeasurementDTO;
     wight?: MeasurementDTO;
     sku?: string;
-    batchNumber: string;
+    batchNumber?: string;
 }
