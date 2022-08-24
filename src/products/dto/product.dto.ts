@@ -54,4 +54,8 @@ export class ProductDTO extends ProductDTOBase {
   @IsOptional()
   @IsString()
   sku?: string
+
+  @IsOptional()
+  @IsString()
+  batchNumber: string
 }

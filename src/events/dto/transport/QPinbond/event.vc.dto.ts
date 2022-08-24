@@ -1,5 +1,6 @@
 import { Type } from 'class-transformer'
 import {
+  IsOptional,
   ArrayContains,
   ArrayMinSize,
   IsArray,
@@ -27,9 +28,9 @@ export class QPInBondEventVCDTO {
   @ArrayContains([JSON_TYPE.VERIFIABLE_CREDENTIAL])
   type: JSON_TYPE[]
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsDateString()
-  issuanceDate: string | Date
+  issuanceDate?: string | Date
 
   @IsNotEmpty()
   @IsString()

@@ -1,5 +1,6 @@
 import { Type } from 'class-transformer'
 import {
+  IsOptional,
   ArrayContains,
   ArrayMinSize,
   IsArray,
@@ -31,9 +32,9 @@ export class OGBillOfLadingVCDTO {
   @Matches(/^did:/)
   issuer: string
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsDateString()
-  issuanceDate: string | Date
+  issuanceDate?: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

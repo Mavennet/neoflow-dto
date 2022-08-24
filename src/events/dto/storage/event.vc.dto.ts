@@ -1,4 +1,5 @@
 import {
+  IsOptional,
   IsNotEmpty,
   IsArray,
   IsString,
@@ -28,9 +29,9 @@ class StorageEventDetailsDTOBase {
   @Matches(/^did:/)
   issuer: string
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsDateString()
-  issuanceDate: string | Date
+  issuanceDate?: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

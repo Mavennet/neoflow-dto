@@ -6,7 +6,7 @@ declare class ProductVCDTOBase {
     id: string;
     type: JSON_TYPE[];
     issuer: string;
-    issuanceDate: string | Date;
+    issuanceDate?: string | Date;
     credentialSubject: ProductCredentialSubjectDTO;
     proof: ProofDTO;
 }

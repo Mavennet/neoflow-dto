@@ -1,4 +1,5 @@
 import {
+  IsOptional,
   IsNotEmpty,
   IsNotEmptyObject,
   IsString,
@@ -8,7 +9,7 @@ import {
   ValidateNested,
   Matches
 } from 'class-validator'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../../general/constants'
 import { ProofDTO } from '../../general/dto/proof.dto'
@@ -35,10 +36,10 @@ class ProductVCDTOBase {
   @ApiProperty()
   issuer: string
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsDateString()
-  @ApiProperty()
-  issuanceDate: string | Date
+  @ApiPropertyOptional()
+  issuanceDate?: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

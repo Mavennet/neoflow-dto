@@ -6,7 +6,7 @@ export declare class OGBillOfLadingVCDTO {
     id: string;
     type: JSON_TYPE[];
     issuer: string;
-    issuanceDate: string | Date;
+    issuanceDate?: string | Date;
     credentialSubject: OGBillOfLadingCredentialSubjectDTO;
     proof: ProofDTO;
 }

@@ -1,4 +1,5 @@
 import {
+  IsOptional,
   IsNotEmpty,
   IsArray,
   IsString,
@@ -34,9 +35,9 @@ class TransportationEventDetailsDTOBase {
   @Matches(/^did:/)
   issuer: string
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsDateString()
-  issuanceDate: string | Date
+  issuanceDate?: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

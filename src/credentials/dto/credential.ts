@@ -14,8 +14,8 @@ export class CredentialDTO {
   @IsNotEmpty()
   issuer: string
 
-  @IsNotEmpty()
-  issuanceDate: string | Date
+  @IsOptional()
+  issuanceDate?: string | Date
 
   @IsOptional()
   expirationDate?: string

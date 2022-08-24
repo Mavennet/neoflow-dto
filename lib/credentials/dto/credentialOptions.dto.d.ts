@@ -1,7 +1,7 @@
 export declare class CredentialOptionsDTO {
     proofPurpose?: 'assertionMethod' | 'authentication';
     assertionMethod?: string;
-    issuanceDate?: Date;
+    issuanceDate?: string | Date;
     issuer?: string;
     verificationMethod?: string;
     created?: string;
