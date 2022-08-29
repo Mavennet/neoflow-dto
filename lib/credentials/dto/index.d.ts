@@ -4,3 +4,4 @@ export * from './credentialOptions.dto';
 export * from './IssueCredential.dto';
 export * from './proof';
 export * from './VerifiableCredential.dto';
+export * from './updateStatus.dto';
