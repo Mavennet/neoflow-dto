@@ -1,4 +1,1 @@
-export declare class VerifiableCredentialDTO {
-    verifiableCredential: any;
-    options?: any;
-}
+export { VerifiableCredentialDTO } from '@mavennet/traceability-dto';
