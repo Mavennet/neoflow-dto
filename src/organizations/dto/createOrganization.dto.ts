@@ -12,4 +12,12 @@ export class CreateOrganizationDTO extends CreateOrganizationDTOBase {
 
   @IsNotEmptyObject()
   uwi: Map<string, string>
+
+  @IsNotEmpty()
+  @IsString()
+  userPoolID: string
+
+  @IsNotEmpty()
+  @IsString()
+  adminAppClientID: string
 }
