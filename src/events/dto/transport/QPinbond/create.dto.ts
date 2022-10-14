@@ -10,7 +10,7 @@ export class CreateQPInbondDTO {
   @IsNotEmpty()
   eventId: string
 
-  @IsOptional()
+  @IsNotEmpty()
   @ValidateNested()
   @Type(() => QPInBondEventVCDTO)
   eventVC: QPInBondEventVCDTO
