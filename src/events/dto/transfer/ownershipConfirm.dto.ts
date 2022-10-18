@@ -61,25 +61,25 @@ export class TransferOwnershipConfirmationDTO {
   transferOwnershipRequestId: number
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfEntry: PlaceDTO
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfArrival: PlaceDTO
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfDestination: PlaceDTO
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsString()
   countryOfDestination: string
 
@@ -89,7 +89,7 @@ export class TransferOwnershipConfirmationDTO {
   confirmationStatus: boolean
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsString()
   comment: string
 

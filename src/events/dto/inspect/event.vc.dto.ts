@@ -21,8 +21,7 @@ export class InspectionEventDetailsDTO {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl()
-  @Matches(/^http(?::\/\/localhost:\d{4}\/v1\/credentials\/verify|s:\/\/api-(?:prod|staging)\..+\.neoflow\.energy)/)
+  @IsUrl({ require_tld: false })
   id: string
 
   @IsArray()

@@ -73,30 +73,30 @@ export class UpdateTransferCustodyRequestDTO {
   receiver: string
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
   portOfEntry: AddressDTO
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
   portOfArrival: AddressDTO
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
   portOfDestination: AddressDTO
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsString()
   countryOfDestination: string
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
   receiptLocation: AddressDTO

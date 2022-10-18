@@ -21,7 +21,7 @@ class ProductCredentialSubjectDTOBase {
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE_NF, { each: true })
   @Validate((o) => o.type === [JSON_TYPE_NF.CRUDE_OIL_PRODUCT] || o.type === [JSON_TYPE_NF.NATURAL_GAS_PRODUCT])
-  @ApiProperty({ enum: JSON_TYPE_NF, isArray: true })
+  @ApiProperty()
   type: JSON_TYPE_NF[]
 
   @IsNotEmpty()
@@ -56,7 +56,7 @@ class ProductCredentialSubjectDTOBase {
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => ObservationDTO)
-  @ApiProperty({ isArray: true })
+  @ApiProperty({ isArray: true, type: ObservationDTO })
   observation: ObservationDTO[]
 }
 
