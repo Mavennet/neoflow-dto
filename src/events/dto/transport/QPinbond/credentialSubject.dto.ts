@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger'
 import {
   IsNotEmptyObject,
   IsOptional,
@@ -25,6 +26,7 @@ export class QPInbondCredentialSubjectDTO {
   @Validate((o) => o.type === [JSON_TYPE.INBOND])
   type: JSON_TYPE[]
 
+  @ApiProperty()
   @ValidateIf((o) => !o.ftzNo && !o.entryId)
   @IsNotEmpty()
   @IsString()
@@ -34,11 +36,13 @@ export class QPInbondCredentialSubjectDTO {
   @IsString()
   irsNumber: string
 
+  @ApiProperty()
   @ValidateIf((o) => !o.ftzNo && !o.inBondNumber)
   @IsNotEmpty()
   @IsString()
   entryId: string
 
+  @ApiProperty()
   @ValidateIf((o) => !o.entryId && !o.inBondNumber)
   @IsNotEmpty()
   @IsString()
