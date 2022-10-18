@@ -11,7 +11,7 @@ export class CreateDeliveryScheduleDTO {
   @Type(() => OrganizationDTO)
   custodian: OrganizationDTO
 
-  @ApiProperty()
+  @ApiProperty({ isArray: true, type: DeliveryScheduleDTO })
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })

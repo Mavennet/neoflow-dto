@@ -16,7 +16,7 @@ export class AGENT_CreationEventCredentialSubjectDTO {
   @Type(() => PlaceDTO)
   place: PlaceDTO
 
-  @ApiProperty()
+  @ApiProperty({ isArray: true, type: OrganizationDTO })
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })

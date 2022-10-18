@@ -1,3 +1,4 @@
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import {
   IsOptional,
   IsNotEmpty,
@@ -17,22 +18,27 @@ import {
 } from './event.credentialSubject.dto'
 
 class StorageEventDetailsDTOBase {
+  @ApiProperty()
   @IsNotEmpty()
+  @IsString()
   id: string
 
   @IsArray()
   @ArrayMinSize(1)
   '@context': string[]
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsString()
   @Matches(/^did:/)
   issuer: string
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsDateString()
   issuanceDate?: string | Date
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => ProofDTO)
@@ -40,10 +46,12 @@ class StorageEventDetailsDTOBase {
 }
 
 export class AGENT_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
+  @ApiProperty()
   @IsNotEmpty()
   @IsUrl({ require_tld: false })
   id: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => AGENT_StorageEventCredentialSubjectDTO)
@@ -51,6 +59,7 @@ export class AGENT_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
 }
 
 export class CORE_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CORE_StorageEventCredentialSubjectDTO)

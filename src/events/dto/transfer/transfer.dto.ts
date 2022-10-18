@@ -95,10 +95,12 @@ export class AGENT_TransferProductDTO {
   @Matches(/^did:/)
   receiver: string
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   price: string
 
+  @ApiProperty({ isArray: true, type: OrganizationDTO })
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
