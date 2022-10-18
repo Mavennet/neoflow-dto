@@ -15,7 +15,7 @@ export class InspectionEventCredentialSubjectDTO {
   @IsEnum(JSON_TYPE, { each: true })
   type: JSON_TYPE[]
 
-  @ApiProperty({ isArray: true, type: ObservationDTO })
+  @ApiProperty({ isArray: true, type: () => ObservationDTO })
   @IsArray()
   @ArrayNotEmpty()
   @ValidateNested({ each: true })

@@ -42,20 +42,14 @@ export class CORE_TransformProductsDTO {
 }
 
 export class AGENT_TransformProductsDTO {
-  @ApiProperty({
-    isArray: true,
-    type: ProductHashDTO
-  })
+  @ApiProperty({ isArray: true, type: () => ProductHashDTO })
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
   @Type(() => ProductHashDTO)
   consumedProducts: ProductHashDTO[]
 
-  @ApiProperty({
-    isArray: true,
-    type: ProductCredentialSubjectDTO
-  })
+  @ApiProperty({ isArray: true, type: () => ProductCredentialSubjectDTO })
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })

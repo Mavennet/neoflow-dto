@@ -26,20 +26,14 @@ export class AGENT_TransportationEventCredentialSubjectDTO {
   @Type(() => PlaceDTO)
   place: PlaceDTO
 
-  @ApiProperty({
-    isArray: true,
-    type: OrganizationDTO
-  })
+  @ApiProperty({ isArray: true, type: () => OrganizationDTO })
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
   @Type(() => OrganizationDTO)
   actor: OrganizationDTO[]
 
-  @ApiProperty({
-    isArray: true,
-    type: ProductHashDTO
-  })
+  @ApiProperty({ isArray: true, type: () => ProductHashDTO })
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
