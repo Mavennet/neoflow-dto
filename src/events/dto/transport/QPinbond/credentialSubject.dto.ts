@@ -9,7 +9,9 @@ import {
   Matches,
   Validate,
   IsArray,
-  ArrayNotEmpty
+  ArrayNotEmpty,
+  IsNotEmpty,
+  ValidateIf
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { ParcelDeliveryDTO, PlaceDTO, EntityDTO } from '../../../../general/dto'
@@ -25,8 +27,9 @@ export class QPInbondCredentialSubjectDTO {
   @Validate((o) => o.type === [JSON_TYPE.INBOND])
   type: JSON_TYPE[]
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @ValidateIf((o) => !o.ftzNo && !o.entryId)
+  @IsNotEmpty()
   @IsString()
   inBondNumber: string // the old qpInBondId
 
@@ -35,13 +38,15 @@ export class QPInbondCredentialSubjectDTO {
   @IsString()
   irsNumber: string
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @ValidateIf((o) => !o.ftzNo && !o.inBondNumber)
+  @IsNotEmpty()
   @IsString()
   entryId: string
 
-  @ApiPropertyOptional()
-  @IsOptional()
+  @ApiProperty()
+  @ValidateIf((o) => !o.entryId && !o.inBondNumber)
+  @IsNotEmpty()
   @IsString()
   ftzNo: string
 
