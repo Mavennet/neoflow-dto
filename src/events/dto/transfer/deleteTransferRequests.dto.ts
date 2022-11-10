@@ -1,9 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsArray, ArrayMinSize } from 'class-validator'
+import { IsNumber, IsArray, ArrayMinSize } from 'class-validator'
 
 export class DeleteTransferRequestsDTO {
-  @ApiProperty()
+  @ApiProperty({ isArray: true, type: () => Number })
   @IsArray()
+  @IsNumber({}, { each: true })
   @ArrayMinSize(1)
   transferRequestIds: number[]
 }

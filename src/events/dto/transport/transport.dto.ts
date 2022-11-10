@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger'
 import {
   IsDateString,
   IsNotEmptyObject,
@@ -24,7 +25,6 @@ import {
   COMPACT_MeasurementDTO,
   COMPACT_PostalAddressDTO
 } from '../../../general'
-import { ApiProperty } from '@nestjs/swagger'
 
 export class AGENT_COMPACT_TransportStartDTO {
   @ApiProperty()
@@ -110,9 +110,12 @@ export class AGENT_COMPACT_TransportEndDTO {
 }
 
 class TransportProductDTOBase {
+  @ApiProperty()
   @IsNotEmpty()
+  @IsString()
   productId: string
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsEnum(TRANSPORT_EVENT_TYPE)
   eventType: TRANSPORT_EVENT_TYPE
@@ -137,12 +140,14 @@ export class CORE_TransportProductDTO extends TransportProductDTOBase {
 }
 
 export class AGENT_TransportProductDTO extends TransportProductDTOBase {
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START)
   @Type(() => AGENT_TransportationEventCredentialSubjectDTO)
   transportCredentialSubject: AGENT_TransportationEventCredentialSubjectDTO
 
+  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.END)

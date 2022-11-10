@@ -78,7 +78,7 @@ export class AGENT_COMPACT_CreateProductDTO {
   @Type(() => COMPACT_MeasurementDTO)
   length?: COMPACT_MeasurementDTO
 
-  @ApiProperty({ type: [COMPACT_ObservationDTO] })
+  @ApiProperty({ type: () => COMPACT_ObservationDTO })
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => COMPACT_ObservationDTO)

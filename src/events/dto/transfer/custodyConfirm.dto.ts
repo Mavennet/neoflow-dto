@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsOptional, IsNumber, IsBoolean, IsString, ValidateIf } from 'class-validator'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class TransferCustodyConfirmationDTO {
   @IsNotEmpty()
@@ -13,7 +13,7 @@ export class TransferCustodyConfirmationDTO {
   confirmationStatus: boolean
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsString()
   comment: string
 

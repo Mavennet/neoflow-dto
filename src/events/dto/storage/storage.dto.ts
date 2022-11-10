@@ -18,7 +18,7 @@ import {
 } from '../../../general'
 import { STORAGE_EVENT_TYPE } from '../../constants'
 import { AGENT_StorageEventCredentialSubjectDTO } from './event.credentialSubject.dto'
-import { CORE_StorageEventDetailsDTO, AGENT_StorageEventDetailsDTO } from './event.vc.dto'
+import { CORE_StorageEventDetailsDTO } from './event.vc.dto'
 
 export class AGENT_COMPACT_StorageProductDTO {
   @ApiProperty()
@@ -52,7 +52,7 @@ export class AGENT_COMPACT_StorageProductDTO {
   observation: COMPACT_ObservationDTO[]
 }
 
-export class CORE_StorageProductDTO {
+export class StorageProductDTOBase {
   @IsNotEmpty()
   @ApiProperty()
   @IsUUID()
@@ -62,31 +62,17 @@ export class CORE_StorageProductDTO {
   @ApiProperty()
   @IsUUID()
   eventId: string
+}
 
+export class CORE_StorageProductDTO extends StorageProductDTOBase {
   @IsNotEmpty()
   @ApiProperty()
   @ValidateNested()
   @Type(() => CORE_StorageEventDetailsDTO)
   eventVC: CORE_StorageEventDetailsDTO
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsString()
-  txHash: string
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsString() // TODO fix data type
-  txTimestamp: string
 }
 
-export class AGENT_StorageProductDTO extends CORE_StorageProductDTO {
-  @IsNotEmpty()
-  @ApiProperty()
-  @ValidateNested()
-  @Type(() => AGENT_StorageEventDetailsDTO)
-  eventVC: AGENT_StorageEventDetailsDTO
-
+export class AGENT_StorageProductDTO extends StorageProductDTOBase {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()

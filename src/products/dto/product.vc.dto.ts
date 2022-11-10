@@ -27,7 +27,7 @@ class ProductVCDTOBase {
 
   @IsArray()
   @ArrayMinSize(1)
-  @ApiProperty({ enum: JSON_TYPE, isArray: true })
+  @ApiProperty()
   type: JSON_TYPE[]
 
   @IsNotEmpty()
