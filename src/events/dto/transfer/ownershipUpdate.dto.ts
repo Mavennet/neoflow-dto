@@ -10,7 +10,7 @@ export class UpdateTransferOwnershipRequestDTO {
   @IsOptional()
   @ApiPropertyOptional()
   @IsNumber()
-  contractId: number
+  contractId?: number
 
   @IsNotEmpty()
   @ApiProperty()

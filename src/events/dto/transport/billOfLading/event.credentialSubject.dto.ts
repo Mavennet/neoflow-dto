@@ -21,7 +21,7 @@ class BillOfLadingCredentialSubjectDTOBase {
 
   @IsOptional()
   @IsString()
-  billOfLadingNumber: string
+  billOfLadingNumber?: string
 
   @IsArray()
   @IsOptional()

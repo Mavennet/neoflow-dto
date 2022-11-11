@@ -1,14 +1,14 @@
 import { IsBoolean, IsOptional } from 'class-validator'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiPropertyOptional } from '@nestjs/swagger'
 
 export class AutoShareSettingsDTO {
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsBoolean()
-  autoShareCBP: boolean
+  autoShareCBP?: boolean
 
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsBoolean()
-  autoShareCER: boolean
+  autoShareCER?: boolean
 }

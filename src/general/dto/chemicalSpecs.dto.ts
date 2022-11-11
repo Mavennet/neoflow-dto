@@ -5,140 +5,140 @@ export class ChemicalSpecsDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  type: string
+  type?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  microCarbonResidue: string
+  microCarbonResidue?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  aromaticsTotalBTEX: string
+  aromaticsTotalBTEX?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  sedimentAndWater: string
+  sedimentAndWater?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  liquidPhaseH2S: string
+  liquidPhaseH2S?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  mercury: string // Hg
+  mercury?: string // Hg
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  oxygenates: string
+  oxygenates?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  filterableSolids: string
+  filterableSolids?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  phosphorousVolatile: string
+  phosphorousVolatile?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  mediumChainTriglycerides: string
+  mediumChainTriglycerides?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  benzene: string
+  benzene?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  particulates: string
+  particulates?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  organicChlorides: string
+  organicChlorides?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  nickel: string // Ni
+  nickel?: string // Ni
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  vanadium: string // V
+  vanadium?: string // V
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  water: string
+  water?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  molecularWeight: string
+  molecularWeight?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  sulphur: string // S
+  sulphur?: string // S
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  naphthenes: string
+  naphthenes?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  chloride: string
+  chloride?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  arsenic: string // As
+  arsenic?: string // As
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  lead: string // Pb
+  lead?: string // Pb
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  ethene: string
+  ethene?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  propane: string
+  propane?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  isoButane: string
+  isoButane?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  nButane: string
+  nButane?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  hydrocarbonsHeavier: string
+  hydrocarbonsHeavier?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  unsaturatedHydrocarbons: string
+  unsaturatedHydrocarbons?: string
 }

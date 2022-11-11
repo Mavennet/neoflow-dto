@@ -46,22 +46,22 @@ export class OGBillOfLadingCredentialSubjectDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  valuePerItem: string
+  valuePerItem?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  totalOrderValue: string
+  totalOrderValue?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  freightChargeTerms: string
+  freightChargeTerms?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  batchNumber: string
+  batchNumber?: string
 
   @ApiProperty()
   @IsNotEmptyObject()

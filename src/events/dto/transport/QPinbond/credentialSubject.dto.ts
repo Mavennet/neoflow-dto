@@ -36,7 +36,7 @@ export class QPInbondCredentialSubjectDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  irsNumber: string
+  irsNumber?: string
 
   @ApiProperty()
   @ValidateIf((o) => !o.ftzNo && !o.inBondNumber)
@@ -53,25 +53,25 @@ export class QPInbondCredentialSubjectDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsEnum(IN_BOND_TYPE)
-  inBondType: IN_BOND_TYPE
+  inBondType?: IN_BOND_TYPE
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  portOfEntry: PlaceDTO
+  portOfEntry?: PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  portOfDestination: PlaceDTO
+  portOfDestination?: PlaceDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  portOfArrival: PlaceDTO
+  portOfArrival?: PlaceDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -94,23 +94,23 @@ export class QPInbondCredentialSubjectDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  billOfLadingNumber: string
+  billOfLadingNumber?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   @Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
-  expectedDeliveryDate: string
+  expectedDeliveryDate?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  valuePerItem: string
+  valuePerItem?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  totalOrderValue: string
+  totalOrderValue?: string
 
   @ApiProperty()
   @IsNotEmptyObject()

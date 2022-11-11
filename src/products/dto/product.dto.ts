@@ -45,7 +45,7 @@ export class ProductDTO extends ProductDTOBase {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  description: string
+  description?: string
 
   @ApiProperty()
   @IsNotEmptyObject()

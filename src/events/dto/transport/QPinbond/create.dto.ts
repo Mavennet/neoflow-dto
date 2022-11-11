@@ -1,10 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNotEmpty, IsOptional, ValidateNested, IsString } from 'class-validator'
+import { IsNotEmpty, IsNotEmptyObject, ValidateNested, IsString } from 'class-validator'
 import { Type } from 'class-transformer'
 import { QPInBondEventVCDTO } from './event.vc.dto'
 import { QPInbondCredentialSubjectDTO } from '.'
 
-export class CreateQPInbondDTO {
+export class CreateQPInbondDTOBase {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
@@ -14,15 +14,20 @@ export class CreateQPInbondDTO {
   @IsNotEmpty()
   @IsString()
   eventId: string
+}
 
-  @IsNotEmpty()
-  @ValidateNested()
-  @Type(() => QPInBondEventVCDTO)
-  eventVC: QPInBondEventVCDTO
-
+export class CreateQPInbondDTO extends CreateQPInbondDTOBase {
   @ApiProperty()
-  @IsOptional()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => QPInbondCredentialSubjectDTO)
   credentialSubject: QPInbondCredentialSubjectDTO
+}
+
+export class CORE_CreateQPInbondDTO extends CreateQPInbondDTO {
+  @ApiProperty()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => QPInBondEventVCDTO)
+  eventVC: QPInBondEventVCDTO
 }

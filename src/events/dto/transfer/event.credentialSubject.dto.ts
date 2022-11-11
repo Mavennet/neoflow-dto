@@ -36,7 +36,7 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @IsOptional()
   @IsString()
   @Matches(/^did:/)
-  initiator: string
+  initiator?: string
 
   @IsNotEmpty()
   @IsString()
@@ -50,26 +50,26 @@ export class AGENT_TransferEventCredentialSubjectDTO {
   @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  portOfArrival: PlaceDTO
+  portOfArrival?: PlaceDTO
 
   @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  portOfEntry: PlaceDTO
+  portOfEntry?: PlaceDTO
 
   @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  portOfDestination: PlaceDTO
+  portOfDestination?: PlaceDTO
 
   @IsOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  receiptLocation: PlaceDTO
+  receiptLocation?: PlaceDTO
 
   @IsOptional()
   @IsString()
-  countryOfDestination: string
+  countryOfDestination?: string
 }
 
 export class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {

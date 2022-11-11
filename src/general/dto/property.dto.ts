@@ -19,7 +19,7 @@ export class PropertyDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  identifier: string
+  identifier?: string
 
   @ApiProperty()
   @IsNotEmpty()
@@ -33,5 +33,5 @@ export class PropertyDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  description: string
+  description?: string
 }

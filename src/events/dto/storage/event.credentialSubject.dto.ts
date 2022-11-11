@@ -36,7 +36,7 @@ export class CORE_StorageEventCredentialSubjectDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  description: string
+  description?: string
 
   @ApiProperty()
   @IsNotEmptyObject()

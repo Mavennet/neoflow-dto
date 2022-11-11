@@ -24,7 +24,7 @@ class CertifierDTOBase {
   @IsOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
-  geo: AddressDTO
+  geo?: AddressDTO
 }
 
 export class CertifierDTO extends CertifierDTOBase {

@@ -62,24 +62,24 @@ export class AGENT_TransferEventDTO {
   @IsOptional()
   @IsString()
   @Matches(/^did:/)
-  receiver: string
+  receiver?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
-  portOfArrival: AddressDTO
+  portOfArrival?: AddressDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
-  portOfDestination: AddressDTO
+  portOfDestination?: AddressDTO
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  countryOfDestination: string
+  countryOfDestination?: string
 
   @ApiPropertyOptional()
   @IsOptional()

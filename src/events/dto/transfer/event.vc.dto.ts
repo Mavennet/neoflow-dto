@@ -7,6 +7,7 @@ import {
   IsLatitude,
   IsLongitude,
   IsNotEmpty,
+  IsNotEmptyObject,
   IsNumberString,
   IsOptional,
   IsString,
@@ -60,28 +61,28 @@ export class AGENT_TransferEventDetailsDTO {
   @IsOptional()
   @IsString()
   @Matches(/^did:/)
-  receiver: string
+  receiver?: string
 
   @IsOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
-  portOfArrival: AddressDTO
+  portOfArrival?: AddressDTO
 
   @IsOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
-  portOfDestination: AddressDTO
+  portOfDestination?: AddressDTO
 
   @IsOptional()
   @IsString()
-  countryOfDestination: string
+  countryOfDestination?: string
 
   @IsOptional()
   @ValidateNested()
   @Type(() => AddressDTO)
-  receiptLocation: AddressDTO
+  receiptLocation?: AddressDTO
 
-  @IsNotEmpty()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => AGENT_TransferEventCredentialSubjectDTO)
   credentialSubject: AGENT_TransferEventCredentialSubjectDTO
@@ -109,12 +110,12 @@ export class CORE_TransferEventDetailsDTO {
   @IsDateString()
   issuanceDate?: string | Date
 
-  @IsNotEmpty()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => CORE_TransferEventCredentialSubjectDTO)
   credentialSubject: CORE_TransferEventCredentialSubjectDTO
 
-  @IsNotEmpty()
+  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => ProofDTO)
   proof: ProofDTO

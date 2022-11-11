@@ -18,15 +18,15 @@ export class UpdateQPInbondDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  inBondNumber: string
+  inBondNumber?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  entryId: string
+  entryId?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  ftzNo: string
+  ftzNo?: string
 }

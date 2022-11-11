@@ -5,65 +5,65 @@ export class GasSpecsDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  pressure: string
+  pressure?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  temperature: string
+  temperature?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  waterContent: string
+  waterContent?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  oxygenContent: string
+  oxygenContent?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  nitrogenContent: string
+  nitrogenContent?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  mercaptanContent: string
+  mercaptanContent?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  grossHeatingValue: string
+  grossHeatingValue?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  totalInertsContent: string
+  totalInertsContent?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  totalSulfurContent: string
+  totalSulfurContent?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  hydrocarbonDewPoint: string
+  hydrocarbonDewPoint?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  carbonDioxideContent: string
+  carbonDioxideContent?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  hydrogenSulfideContent: string
+  hydrogenSulfideContent?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  sandDustGumsAndFreeLiquid: string
+  sandDustGumsAndFreeLiquid?: string
 }
