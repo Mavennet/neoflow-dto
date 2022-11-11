@@ -10,11 +10,11 @@ export declare class COMPACT_TransferOwnershipConfirmationDTO {
 }
 export declare class TransferOwnershipConfirmationDTO {
     transferOwnershipRequestId: number;
-    portOfEntry: PlaceDTO;
-    portOfArrival: PlaceDTO;
-    portOfDestination: PlaceDTO;
-    countryOfDestination: string;
+    portOfEntry?: PlaceDTO;
+    portOfArrival?: PlaceDTO;
+    portOfDestination?: PlaceDTO;
+    countryOfDestination?: string;
     confirmationStatus: boolean;
-    comment: string;
+    comment?: string;
     hasDocuments: boolean;
 }

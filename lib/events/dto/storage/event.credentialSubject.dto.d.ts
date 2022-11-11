@@ -4,7 +4,7 @@ export declare class CORE_StorageEventCredentialSubjectDTO {
     productId: string;
     eventType: STORAGE_EVENT_TYPE;
     category: string;
-    description: string;
+    description?: string;
     geo: AddressDTO;
     eventCreator: string;
     volume: string;

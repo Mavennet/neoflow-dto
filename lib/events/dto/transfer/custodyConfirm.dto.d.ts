@@ -1,6 +1,6 @@
 export declare class TransferCustodyConfirmationDTO {
     transferCustodyRequestId: number;
     confirmationStatus: boolean;
-    comment: string;
+    comment?: string;
     hasDocuments: boolean;
 }

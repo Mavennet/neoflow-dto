@@ -12,5 +12,5 @@ export declare class AGENT_UpdateTransportProductDTO {
     bol: string;
     displacementId: string;
     closingVolume: string;
-    trackingNumber: string;
+    trackingNumber?: string;
 }

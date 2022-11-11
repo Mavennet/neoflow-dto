@@ -9,9 +9,9 @@ export declare class AGENT_TransferEventDTO {
     eventSubmitter: string;
     price: string;
     sender: string;
-    receiver: string;
-    portOfArrival: AddressDTO;
-    portOfDestination: AddressDTO;
-    countryOfDestination: string;
+    receiver?: string;
+    portOfArrival?: AddressDTO;
+    portOfDestination?: AddressDTO;
+    countryOfDestination?: string;
     receiptLocation?: AddressDTO;
 }

@@ -6,10 +6,10 @@ export declare class OGBillOfLadingCredentialSubjectDTO {
     billOfLading: BillOfLadingCredentialSubjectDTO;
     shippingDate: string;
     arrivalDate: string;
-    valuePerItem: string;
-    totalOrderValue: string;
-    freightChargeTerms: string;
-    batchNumber: string;
+    valuePerItem?: string;
+    totalOrderValue?: string;
+    freightChargeTerms?: string;
+    batchNumber?: string;
     openingVolume: MeasurementDTO;
     closingVolume: MeasurementDTO;
     observation: ObservationDTO[];
