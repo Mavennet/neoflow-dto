@@ -1,5 +1,5 @@
 import { IsBoolean, IsNotEmpty, IsString, IsNumber, IsNumberString, IsOptional } from 'class-validator'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class TransferOwnershipRequestDTO {
   @IsNotEmpty()
@@ -8,9 +8,9 @@ export class TransferOwnershipRequestDTO {
   productId: string
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsNumber()
-  contractId: number
+  contractId?: number
 
   @IsNotEmpty()
   @ApiProperty()

@@ -15,7 +15,7 @@ export class TransferCustodyConfirmationDTO {
   @IsOptional()
   @ApiPropertyOptional()
   @IsString()
-  comment: string
+  comment?: string
 
   @IsNotEmpty()
   @ApiProperty()

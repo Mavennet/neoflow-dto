@@ -1,4 +1,4 @@
 export declare class AutoShareSettingsDTO {
-    autoShareCBP: boolean;
-    autoShareCER: boolean;
+    autoShareCBP?: boolean;
+    autoShareCER?: boolean;
 }

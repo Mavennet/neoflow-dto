@@ -5,19 +5,19 @@ import { IN_BOND_TYPE } from '../../../constants';
 export declare class QPInbondCredentialSubjectDTO {
     type: JSON_TYPE[];
     inBondNumber: string;
-    irsNumber: string;
+    irsNumber?: string;
     entryId: string;
     ftzNo: string;
-    inBondType: IN_BOND_TYPE;
-    portOfEntry: PlaceDTO;
-    portOfDestination: PlaceDTO;
-    portOfArrival: PlaceDTO;
+    inBondType?: IN_BOND_TYPE;
+    portOfEntry?: PlaceDTO;
+    portOfDestination?: PlaceDTO;
+    portOfArrival?: PlaceDTO;
     carrier: EntityDTO;
     recipient: EntityDTO;
     shipment: ParcelDeliveryDTO;
-    billOfLadingNumber: string;
-    expectedDeliveryDate: string;
-    valuePerItem: string;
-    totalOrderValue: string;
+    billOfLadingNumber?: string;
+    expectedDeliveryDate?: string;
+    valuePerItem?: string;
+    totalOrderValue?: string;
     product: ProductDTO;
 }

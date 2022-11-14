@@ -11,11 +11,11 @@ export declare class AGENT_TransferEventDetailsDTO {
     eventSubmitter: string;
     price: string;
     sender: string;
-    receiver: string;
-    portOfArrival: AddressDTO;
-    portOfDestination: AddressDTO;
-    countryOfDestination: string;
-    receiptLocation: AddressDTO;
+    receiver?: string;
+    portOfArrival?: AddressDTO;
+    portOfDestination?: AddressDTO;
+    countryOfDestination?: string;
+    receiptLocation?: AddressDTO;
     credentialSubject: AGENT_TransferEventCredentialSubjectDTO;
 }
 export declare class CORE_TransferEventDetailsDTO {

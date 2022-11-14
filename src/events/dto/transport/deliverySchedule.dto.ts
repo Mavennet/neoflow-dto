@@ -14,12 +14,12 @@ export class DeliveryScheduleDTO {
   @ApiProperty()
   @IsOptional()
   @IsNumber()
-  inBondNumber: number
+  inBondNumber?: number
 
   @ApiProperty()
   @IsOptional()
   @IsString()
-  deliveryTicketNumber: string
+  deliveryTicketNumber?: string
 
   @ApiProperty()
   @IsNotEmpty()

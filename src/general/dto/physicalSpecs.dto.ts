@@ -5,47 +5,47 @@ export class PhysicalSpecsDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  type: string
+  type?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  apiGravity: string
+  apiGravity?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  viscosityAt10C: string
+  viscosityAt10C?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  viscosityAt20C: string
+  viscosityAt20C?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  viscosityAt30C: string
+  viscosityAt30C?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  viscosityAt40C: string
+  viscosityAt40C?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  viscosityAt45C: string
+  viscosityAt45C?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  pourPoint: string
+  pourPoint?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  vapourPressure: string
+  vapourPressure?: string
 
   @ApiProperty()
   @IsNotEmpty()
@@ -55,120 +55,120 @@ export class PhysicalSpecsDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  diluent: string
+  diluent?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  distillateAt350To650F: string
+  distillateAt350To650F?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  gasOilAt650To980F: string
+  gasOilAt650To980F?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  residAt980F: string
+  residAt980F?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  deemedButane: string
+  deemedButane?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  tan: string
+  tan?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  ron: string
+  ron?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  mon: string
+  mon?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  boilingPoint: string
+  boilingPoint?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  freezingPoint: string
+  freezingPoint?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  criticalTemperature: string
+  criticalTemperature?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  criticalPressure: string
+  criticalPressure?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  autoIgnitionTemperatureInAirAt1atm: string
+  autoIgnitionTemperatureInAirAt1atm?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  solubilityInTrichloroethylene: string
+  solubilityInTrichloroethylene?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  penetrationAt25C100g5sec: string
+  penetrationAt25C100g5sec?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  softeningPoint: string
+  softeningPoint?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  ductilityAt25C: string
+  ductilityAt25C?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  olefin: string
+  olefin?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  color: string
+  color?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  odor: string
+  odor?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  grossCalorificValueAt15C: string
+  grossCalorificValueAt15C?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  netCalorificValueAt15C: string
+  netCalorificValueAt15C?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  airRequiredForCombustion: string
+  airRequiredForCombustion?: string
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumberString()
-  copperCorrosionAt38CFor1Hour: string
+  copperCorrosionAt38CFor1Hour?: string
 }

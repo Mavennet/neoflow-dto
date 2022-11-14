@@ -3,7 +3,7 @@ declare class CertifierDTOBase {
     did: string;
     name: string;
     title: string;
-    geo: AddressDTO;
+    geo?: AddressDTO;
 }
 export declare class CertifierDTO extends CertifierDTOBase {
 }

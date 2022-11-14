@@ -12,10 +12,10 @@ export declare class COMPACT_TransferCustodyRequestDTO {
 export declare class TransferCustodyRequestDTO {
     productId: string;
     receiver: string;
-    portOfEntry: PlaceDTO;
-    portOfArrival: PlaceDTO;
-    portOfDestination: PlaceDTO;
-    countryOfDestination: string;
-    receiptLocation: PlaceDTO;
+    portOfEntry?: PlaceDTO;
+    portOfArrival?: PlaceDTO;
+    portOfDestination?: PlaceDTO;
+    countryOfDestination?: string;
+    receiptLocation?: PlaceDTO;
     hasDocuments: boolean;
 }

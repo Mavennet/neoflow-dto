@@ -4,14 +4,14 @@ export declare class AGENT_TransferEventCredentialSubjectDTO {
     place: PlaceDTO;
     products: string[];
     actor: OrganizationDTO[];
-    initiator: string;
+    initiator?: string;
     receiver: string;
     price?: string;
-    portOfArrival: PlaceDTO;
-    portOfEntry: PlaceDTO;
-    portOfDestination: PlaceDTO;
-    receiptLocation: PlaceDTO;
-    countryOfDestination: string;
+    portOfArrival?: PlaceDTO;
+    portOfEntry?: PlaceDTO;
+    portOfDestination?: PlaceDTO;
+    receiptLocation?: PlaceDTO;
+    countryOfDestination?: string;
 }
 export declare class CORE_TransferEventCredentialSubjectDTO extends AGENT_TransferEventCredentialSubjectDTO {
     type: string[];

@@ -74,30 +74,30 @@ export class TransferCustodyRequestDTO {
   @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  portOfEntry: PlaceDTO
+  portOfEntry?: PlaceDTO
 
   @IsOptional()
   @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  portOfArrival: PlaceDTO
+  portOfArrival?: PlaceDTO
 
   @IsOptional()
   @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  portOfDestination: PlaceDTO
+  portOfDestination?: PlaceDTO
 
   @IsOptional()
   @ApiPropertyOptional()
   @IsString()
-  countryOfDestination: string
+  countryOfDestination?: string
 
   @IsOptional()
   @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
-  receiptLocation: PlaceDTO
+  receiptLocation?: PlaceDTO
 
   @ApiProperty()
   @IsNotEmpty()

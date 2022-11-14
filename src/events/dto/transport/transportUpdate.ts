@@ -85,5 +85,5 @@ export class AGENT_UpdateTransportProductDTO {
   @IsOptional()
   @IsString()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.END)
-  trackingNumber: string
+  trackingNumber?: string
 }
