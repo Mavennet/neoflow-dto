@@ -11,7 +11,7 @@ import {
 } from 'class-validator'
 import { COMPACT_PlaceDTO } from '../../../general'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { AddressDTO } from '../../../general/dto/address.dto'
+import { PlaceDTO } from '../../../general/dto'
 import { Type } from 'class-transformer'
 
 export class COMPACT_TransferCustodyUpdateDTO {
@@ -75,20 +75,20 @@ export class UpdateTransferCustodyRequestDTO {
   @IsOptional()
   @ApiPropertyOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfEntry?: AddressDTO
+  @Type(() => PlaceDTO)
+  portOfEntry?: PlaceDTO
 
   @IsOptional()
   @ApiPropertyOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfArrival?: AddressDTO
+  @Type(() => PlaceDTO)
+  portOfArrival?: PlaceDTO
 
   @IsOptional()
   @ApiPropertyOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  portOfDestination?: AddressDTO
+  @Type(() => PlaceDTO)
+  portOfDestination?: PlaceDTO
 
   @IsOptional()
   @ApiPropertyOptional()
@@ -98,8 +98,8 @@ export class UpdateTransferCustodyRequestDTO {
   @IsOptional()
   @ApiPropertyOptional()
   @ValidateNested()
-  @Type(() => AddressDTO)
-  receiptLocation?: AddressDTO
+  @Type(() => PlaceDTO)
+  receiptLocation?: PlaceDTO
 
   @IsNotEmpty()
   @ApiProperty()
