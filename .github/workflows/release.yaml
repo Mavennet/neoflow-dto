@@ -36,6 +36,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACTION_GITHUB_TOKEN }}
       - name: Automated Version Bump
         id: bump-version
         uses: phips28/gh-action-bump-version@v9.0.1
