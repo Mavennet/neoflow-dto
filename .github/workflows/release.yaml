@@ -24,6 +24,7 @@ jobs:
       - run: npm ci
         env:
           PAT: ${{ secrets.PAT }}
+      - run: npm run lint
 
   bump-version:
     name: 'Bump Version on master'
