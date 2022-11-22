@@ -40,8 +40,7 @@ jobs:
         id: bump-version
         uses: phips28/gh-action-bump-version@v9.0.1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PAT: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           commit-message: 'CI: bumps version to {{version}}'
 
