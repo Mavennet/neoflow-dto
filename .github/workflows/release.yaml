@@ -44,7 +44,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
-          commit-message: 'CI: bumps version to {{version}}'
+          commit-message: '[no ci]: bumps version to {{version}}'
 
   publish-package:
     runs-on: ubuntu-latest
