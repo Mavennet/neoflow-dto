@@ -5,16 +5,12 @@ on:
     branches: [master]
   workflow_dispatch:
 
-env:
-  NODE_AUTH_TOKEN: ${{ secrets.PAT }}
-  PAT: ${{ secrets.PAT }}
-
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
           registry-url: https://npm.pkg.github.com/
@@ -29,14 +25,16 @@ jobs:
     needs: [lint]
     outputs:
       newTag: ${{ steps.bump-version.outputs.newTag }}
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Automated Version Bump
         id: bump-version
         uses: phips28/gh-action-bump-version@v9.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PAT: ${{ secrets.PAT }}
+          PAT: ${{ secrets.GITHUB_TOKEN }}
         with:
           commit-message: 'CI: bumps version to {{version}}'
 
@@ -59,7 +57,7 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v2
         with:
@@ -70,11 +68,8 @@ jobs:
       - run: npm ci
         env:
           NEW_TAG: ${{ needs.bump-version.outputs.newTag }}
-          PAT: ${{ secrets.PAT }}
+          PAT: ${{ secrets.GITHUB_TOKEN }}
       - run: npm version $NEW_TAG --no-git-tag-version
         env:
           NEW_TAG: ${{ needs.bump-version.outputs.newTag }}
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
-          PAT: ${{ secrets.PAT }}
