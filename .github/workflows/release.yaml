@@ -23,7 +23,7 @@ jobs:
           restore-keys: npm-
       - run: npm ci
         env:
-          PAT: ${{ secrets.GITHUB_TOKEN }}
+          PAT: ${{ secrets.PAT }}
 
   bump-version:
     name: 'Bump Version on master'
@@ -40,7 +40,7 @@ jobs:
         uses: phips28/gh-action-bump-version@v9.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PAT: ${{ secrets.GITHUB_TOKEN }}
+          PAT: ${{ secrets.PAT }}
         with:
           commit-message: 'CI: bumps version to {{version}}'
 
@@ -64,7 +64,7 @@ jobs:
           restore-keys: npm-
       - run: npm ci
         env:
-          PAT: ${{ secrets.GITHUB_TOKEN }}
+          PAT: ${{ secrets.PAT }}
       - run: npm version $NEW_TAG --no-git-tag-version
         env:
           NEW_TAG: ${{ needs.bump-version.outputs.newTag }}
