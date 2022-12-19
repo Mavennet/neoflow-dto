@@ -53,6 +53,12 @@ export class TransportationPlannedDTO {
   @Type(() => PlaceDTO)
   receiptLocation?: PlaceDTO
 
+  @IsNotEmpty()
+  @ApiProperty()
+  @IsString()
+  scheduledDate: string
+
+
   @ApiProperty()
   @IsNotEmpty()
   @IsBoolean()

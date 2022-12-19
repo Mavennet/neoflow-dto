@@ -7,5 +7,6 @@ export declare class TransportationPlannedDTO {
     portOfDestination?: PlaceDTO;
     countryOfDestination?: string;
     receiptLocation?: PlaceDTO;
+    scheduledDate: string;
     hasDocuments: boolean;
 }
