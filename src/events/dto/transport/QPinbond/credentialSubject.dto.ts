@@ -28,7 +28,7 @@ export class QPInbondCredentialSubjectDTO {
   type: JSON_TYPE[]
 
   @ApiProperty()
-  @ValidateIf((o) => !o.ftzNo && !o.entryId)
+  @ValidateIf((o) => !o.ftzNo && !o.entryNumber)
   @IsNotEmpty()
   @IsString()
   inBondNumber: string // the old qpInBondId
@@ -42,10 +42,10 @@ export class QPInbondCredentialSubjectDTO {
   @ValidateIf((o) => !o.ftzNo && !o.inBondNumber)
   @IsNotEmpty()
   @IsString()
-  entryId: string
+  entryNumber: string
 
   @ApiProperty()
-  @ValidateIf((o) => !o.entryId && !o.inBondNumber)
+  @ValidateIf((o) => !o.entryNumber && !o.inBondNumber)
   @IsNotEmpty()
   @IsString()
   ftzNo: string

@@ -3,6 +3,6 @@ export declare class UpdateQPInbondDTO {
     eventId: string;
     revokeEventId: string;
     inBondNumber?: string;
-    entryId?: string;
+    entryNumber?: string;
     ftzNo?: string;
 }

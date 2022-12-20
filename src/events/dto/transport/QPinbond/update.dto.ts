@@ -23,7 +23,7 @@ export class UpdateQPInbondDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  entryId?: string
+  entryNumber?: string
 
   @ApiPropertyOptional()
   @IsOptional()
