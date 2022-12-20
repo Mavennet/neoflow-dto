@@ -1,7 +1,7 @@
 import { PlaceDTO } from '../../../general';
 import { JSON_TYPE } from '../../../general/constants';
 import { ProofDTO } from '../../../general/dto';
-export declare class TransportationPlannedDTO {
+export declare class AGENT_TransportationPlannedDTO {
     productId: string;
     receiver: string;
     portOfEntry?: PlaceDTO;
@@ -17,11 +17,11 @@ export declare class TransportationPlanned_VC_DTO {
     id: string;
     type: JSON_TYPE[];
     issuer: string;
-    credentialSubject: TransportationPlannedDTO;
+    credentialSubject: AGENT_TransportationPlannedDTO;
     issuanceDate?: string | Date;
     proof: ProofDTO;
 }
-export declare class Core_TransportationPlannedDTO {
+export declare class CORE_TransportationPlannedDTO {
     productId: string;
     eventId: string;
     eventVC: TransportationPlanned_VC_DTO;

@@ -4,7 +4,6 @@ import {
   IsOptional,
   IsBoolean,
   IsString,
-  IsNumberString,
   Matches,
   ValidateNested,
   IsArray,
@@ -13,12 +12,12 @@ import {
   IsDateString
 } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { PlaceDTO, COMPACT_PlaceDTO } from '../../../general'
+import { PlaceDTO } from '../../../general'
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../../../general/constants'
 import { ProofDTO } from '../../../general/dto'
 
-export class TransportationPlannedDTO {
+export class AGENT_TransportationPlannedDTO {
   @IsNotEmpty()
   @ApiProperty()
   @IsString()
@@ -64,7 +63,6 @@ export class TransportationPlannedDTO {
   @IsString()
   scheduledDate: string
 
-
   @ApiProperty()
   @IsNotEmpty()
   @IsBoolean()
@@ -72,7 +70,6 @@ export class TransportationPlannedDTO {
 }
 
 export class TransportationPlanned_VC_DTO {
-
   @ApiProperty()
   @IsArray()
   @ArrayMinSize(1)
@@ -98,9 +95,8 @@ export class TransportationPlanned_VC_DTO {
   @ApiPropertyOptional()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => TransportationPlannedDTO)
-  credentialSubject: TransportationPlannedDTO
-
+  @Type(() => AGENT_TransportationPlannedDTO)
+  credentialSubject: AGENT_TransportationPlannedDTO
 
   @ApiPropertyOptional()
   @IsOptional()
@@ -114,7 +110,7 @@ export class TransportationPlanned_VC_DTO {
   proof: ProofDTO
 }
 
-export class Core_TransportationPlannedDTO {
+export class CORE_TransportationPlannedDTO {
   @IsNotEmpty()
   @ApiProperty()
   @IsString()
