@@ -1,4 +1,6 @@
 import { PlaceDTO } from '../../../general';
+import { JSON_TYPE } from '../../../general/constants';
+import { ProofDTO } from '../../../general/dto';
 export declare class TransportationPlannedDTO {
     productId: string;
     receiver: string;
@@ -9,4 +11,18 @@ export declare class TransportationPlannedDTO {
     receiptLocation?: PlaceDTO;
     scheduledDate: string;
     hasDocuments: boolean;
+}
+export declare class TransportationPlanned_VC_DTO {
+    '@context': string[];
+    id: string;
+    type: JSON_TYPE[];
+    issuer: string;
+    credentialSubject: TransportationPlannedDTO;
+    issuanceDate?: string | Date;
+    proof: ProofDTO;
+}
+export declare class Core_TransportationPlannedDTO {
+    productId: string;
+    eventId: string;
+    eventVC: TransportationPlanned_VC_DTO;
 }
