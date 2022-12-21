@@ -75,7 +75,8 @@ export class OGBillOfLadingCredentialSubjectDTO {
   @Type(() => MeasurementDTO)
   closingVolume: MeasurementDTO
 
-  @ApiProperty({ isArray: true, type: () => ObservationDTO })
+  @ApiPropertyOptional({ isArray: true, type: () => ObservationDTO })
+  @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => ObservationDTO)
