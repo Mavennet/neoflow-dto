@@ -7,6 +7,6 @@ export declare class CreateQPInbondDTOBase {
 export declare class CreateQPInbondDTO extends CreateQPInbondDTOBase {
     credentialSubject: QPInbondCredentialSubjectDTO;
 }
-export declare class CORE_CreateQPInbondDTO extends CreateQPInbondDTO {
+export declare class CORE_CreateQPInbondDTO extends CreateQPInbondDTOBase {
     eventVC: QPInBondEventVCDTO;
 }

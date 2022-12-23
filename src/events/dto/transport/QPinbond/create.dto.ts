@@ -24,7 +24,7 @@ export class CreateQPInbondDTO extends CreateQPInbondDTOBase {
   credentialSubject: QPInbondCredentialSubjectDTO
 }
 
-export class CORE_CreateQPInbondDTO extends CreateQPInbondDTO {
+export class CORE_CreateQPInbondDTO extends CreateQPInbondDTOBase {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
