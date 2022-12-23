@@ -7,6 +7,10 @@ export declare class MonthlyPipelineStatementCredentialSubject {
     consignee: OrganizationDTO;
     monthlyDeliveryStatement: MonthlyDeliveryStatementDTO;
 }
+export declare class AGENT_MonthlyPipelineStatementDTO {
+    productId: string;
+    credentialSubject: MonthlyPipelineStatementCredentialSubject;
+}
 export declare class MonthlyPipelineStatement_VC {
     '@context': string[];
     id: string;

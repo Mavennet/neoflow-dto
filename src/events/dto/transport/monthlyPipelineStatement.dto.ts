@@ -42,6 +42,19 @@ export class MonthlyPipelineStatementCredentialSubject {
   monthlyDeliveryStatement: MonthlyDeliveryStatementDTO
 }
 
+export class AGENT_MonthlyPipelineStatementDTO {
+  @IsNotEmpty()
+  @ApiProperty()
+  @IsString()
+  productId: string
+
+  @ApiPropertyOptional()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => MonthlyPipelineStatementCredentialSubject)
+  credentialSubject: MonthlyPipelineStatementCredentialSubject
+}
+
 export class MonthlyPipelineStatement_VC {
   @ApiProperty()
   @IsArray()
