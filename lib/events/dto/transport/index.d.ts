@@ -9,3 +9,4 @@ export * from './transport.dto';
 export * from './transportUpdate';
 export * from './transportationPlanned.dto';
 export * from './deliveryScheduled.dto';
+export * from './monthlyPipelineStatement.dto';
