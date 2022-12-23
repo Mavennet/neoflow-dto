@@ -1,6 +1,6 @@
 {
   "name": "@mavennet/neoflow-dto",
-  "version": "1.0.96",
+  "version": "1.0.95",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -38,7 +38,7 @@
     "typescript": "4.7.4"
   },
   "dependencies": {
-    "@mavennet/traceability-dto": "file:../../traceability-dto",
+    "@mavennet/traceability-dto": "^1.0.86",
     "@nestjs/cli": "9.0.0",
     "@nestjs/common": "9.0.5",
     "@nestjs/core": "9.0.5",
