@@ -1,4 +1,7 @@
 export * from './confirmContract.dto'
+export * from './contract.dto'
 export * from './createContract.dto'
+export * from './createTakeOrPayContract.dto'
 export * from './deleteContracts.dto'
+export * from './subContract.dto'
 export * from './updateContract.dto'
