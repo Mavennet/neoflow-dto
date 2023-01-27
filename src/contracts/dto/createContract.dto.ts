@@ -1,5 +1,6 @@
 import {
   IsNotEmpty,
+  IsPositive,
   IsNumber,
   IsEmail,
   IsBoolean,
@@ -33,10 +34,12 @@ export class CreateContractDTO extends CreateContractDTOBase {
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumber()
+  @IsPositive()
   takeOrPayVolume?: number
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsNumber()
+  @IsPositive()
   tariff?: number
 }

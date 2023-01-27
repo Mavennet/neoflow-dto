@@ -1,5 +1,6 @@
 import {
   IsNotEmpty,
+  IsPositive,
   IsOptional,
   IsDateString,
   IsNumber,
@@ -22,11 +23,13 @@ export class SubContractDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @IsPositive()
   cost: number
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @IsPositive()
   takeOrPayCommitmentBPD: number
 
   @ApiPropertyOptional()

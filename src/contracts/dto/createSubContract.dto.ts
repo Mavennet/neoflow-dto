@@ -1,4 +1,5 @@
 import {
+  IsPositive,
   IsDateString,
   IsNotEmpty,
   IsNumber,
@@ -16,11 +17,13 @@ export abstract class CreateSubContractDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @IsPositive()
   takeOrPayCommitmentBPD: number
 
   @ApiProperty()
   @IsNotEmpty()
   @IsNumber()
+  @IsPositive()
   cost: number
 
   @ApiProperty()
