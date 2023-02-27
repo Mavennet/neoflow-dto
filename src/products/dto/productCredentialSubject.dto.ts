@@ -19,11 +19,10 @@ import { ProductDTO } from './product.dto'
 class ProductCredentialSubjectDTOBase {
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE_NF, { each: true })
   @Validate(
     (o) =>
-      o.type === JSON_TYPE_NF.CRUDE_OIL_PRODUCT ||
-      o.type === JSON_TYPE_NF.NATURAL_GAS_PRODUCT
+      o.type.includes(JSON_TYPE_NF.CRUDE_OIL_PRODUCT) ||
+      o.type.includes(JSON_TYPE_NF.NATURAL_GAS_PRODUCT)
   )
   @ApiProperty()
   type: JSON_TYPE_NF[]

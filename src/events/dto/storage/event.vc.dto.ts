@@ -48,11 +48,6 @@ class StorageEventDetailsDTOBase {
 export class AGENT_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
   @ApiProperty()
   @IsNotEmpty()
-  @IsUrl({ require_tld: false })
-  id: string
-
-  @ApiProperty()
-  @IsNotEmpty()
   @ValidateNested()
   @Type(() => AGENT_StorageEventCredentialSubjectDTO)
   credentialSubject: AGENT_StorageEventCredentialSubjectDTO

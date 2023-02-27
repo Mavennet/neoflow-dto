@@ -21,15 +21,8 @@ export class ProductDTO extends ProductDTOBase {
   @ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  @Validate((o) => o.type === JSON_TYPE.PRODUCT)
+  @Validate((o) => o.type.includes(JSON_TYPE.PRODUCT))
   type: JSON_TYPE[]
-
-  @ApiProperty()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => OrganizationDTO)
-  manufacturer: OrganizationDTO
 
   @ApiProperty()
   @IsNotEmpty()
@@ -41,11 +34,6 @@ export class ProductDTO extends ProductDTOBase {
   @IsNotEmpty()
   @IsEnum(CRUDE_STREAM)
   category: CRUDE_STREAM
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsString()
-  description?: string
 
   @ApiProperty()
   @IsNotEmptyObject()

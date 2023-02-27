@@ -1,4 +1,4 @@
-import { JSON_TYPE } from '../../general/constants';
+import type { JSON_TYPE } from '../../general/constants';
 import { ProofDTO } from '../../general/dto/proof.dto';
 import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto';
 declare class ProductVCDTOBase {
