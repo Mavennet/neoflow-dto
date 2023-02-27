@@ -1,14 +1,13 @@
+import { Type } from 'class-transformer'
 import {
+  ArrayNotEmpty,
+  IsArray,
   IsNotEmpty,
   IsOptional,
   IsString,
-  IsEnum,
-  IsArray,
-  ValidateNested,
-  ArrayNotEmpty,
-  Validate
+  Validate,
+  ValidateNested
 } from 'class-validator'
-import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../../../../general/constants'
 import { DocumentDTO, ParcelDeliveryDTO } from '../../../../general/dto'
 

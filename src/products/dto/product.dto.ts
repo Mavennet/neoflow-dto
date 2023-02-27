@@ -1,21 +1,21 @@
+import { ProductDTO as ProductDTOBase } from '@mavennet/traceability-dto'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { Type } from 'class-transformer'
 import {
+  ArrayNotEmpty,
+  IsArray,
+  IsEnum,
   IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
-  IsEnum,
   IsString,
-  ValidateNested,
-  IsArray,
-  ArrayNotEmpty,
   Validate,
-  ValidateIf
+  ValidateIf,
+  ValidateNested
 } from 'class-validator'
-import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../../general/constants'
-import { OrganizationDTO, MeasurementDTO } from '../../general/dto'
-import { PRODUCT_NAME, CRUDE_STREAM } from '../constants'
-import { ProductDTO as ProductDTOBase } from '@mavennet/traceability-dto'
+import { MeasurementDTO } from '../../general/dto'
+import { CRUDE_STREAM, PRODUCT_NAME } from '../constants'
 
 export class ProductDTO extends ProductDTOBase {
   @ApiProperty()

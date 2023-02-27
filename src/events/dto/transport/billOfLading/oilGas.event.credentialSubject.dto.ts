@@ -1,21 +1,20 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import {
-  IsNotEmptyObject,
-  IsNotEmpty,
-  IsOptional,
-  IsNumberString,
-  IsString,
-  IsEnum,
-  IsArray,
-  ValidateNested,
-  Matches,
-  ArrayNotEmpty,
-  Validate
-} from 'class-validator'
 import { Type } from 'class-transformer'
-import { BillOfLadingCredentialSubjectDTO } from './event.credentialSubject.dto'
-import { ObservationDTO, MeasurementDTO } from '../../../../general/dto'
+import {
+  ArrayNotEmpty,
+  IsArray,
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsNumberString,
+  IsOptional,
+  IsString,
+  Matches,
+  Validate,
+  ValidateNested
+} from 'class-validator'
 import { JSON_TYPE_NF } from '../../../../general/constants'
+import { MeasurementDTO, ObservationDTO } from '../../../../general/dto'
+import { BillOfLadingCredentialSubjectDTO } from './event.credentialSubject.dto'
 
 export class OGBillOfLadingCredentialSubjectDTO {
   @ApiProperty()
