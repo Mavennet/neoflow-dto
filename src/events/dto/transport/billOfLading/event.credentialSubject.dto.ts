@@ -16,7 +16,7 @@ class BillOfLadingCredentialSubjectDTOBase {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  @Validate((o) => o.type === [JSON_TYPE.BILL_OF_LADING])
+  @Validate((o) => o.type === JSON_TYPE.BILL_OF_LADING)
   type: JSON_TYPE[]
 
   @IsOptional()
@@ -35,5 +35,4 @@ class BillOfLadingCredentialSubjectDTOBase {
   freight: ParcelDeliveryDTO
 }
 
-export class BillOfLadingCredentialSubjectDTO extends BillOfLadingCredentialSubjectDTOBase {
-}
+export class BillOfLadingCredentialSubjectDTO extends BillOfLadingCredentialSubjectDTOBase {}

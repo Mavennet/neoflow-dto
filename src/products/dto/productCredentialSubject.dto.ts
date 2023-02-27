@@ -1,26 +1,30 @@
-import {
-  IsNotEmpty,
-  IsNotEmptyObject,
-  IsEnum,
-  IsString,
-  IsArray,
-  ValidateNested,
-  Matches,
-  Validate,
-  ArrayNotEmpty
-} from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { PlaceDTO, ObservationDTO } from '../../general/dto'
+import {
+  ArrayNotEmpty,
+  IsArray,
+  IsEnum,
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsString,
+  Matches,
+  Validate,
+  ValidateNested
+} from 'class-validator'
 import { JSON_TYPE_NF } from '../../general/constants'
-import { ProductDTO } from './product.dto'
+import { ObservationDTO, PlaceDTO } from '../../general/dto'
 import { HTS_CODE } from '../constants'
+import { ProductDTO } from './product.dto'
 
 class ProductCredentialSubjectDTOBase {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE_NF, { each: true })
-  @Validate((o) => o.type === [JSON_TYPE_NF.CRUDE_OIL_PRODUCT] || o.type === [JSON_TYPE_NF.NATURAL_GAS_PRODUCT])
+  @Validate(
+    (o) =>
+      o.type === JSON_TYPE_NF.CRUDE_OIL_PRODUCT ||
+      o.type === JSON_TYPE_NF.NATURAL_GAS_PRODUCT
+  )
   @ApiProperty()
   type: JSON_TYPE_NF[]
 
@@ -60,5 +64,4 @@ class ProductCredentialSubjectDTOBase {
   observation: ObservationDTO[]
 }
 
-export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {
-}
+export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {}

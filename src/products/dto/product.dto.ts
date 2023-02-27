@@ -22,7 +22,7 @@ export class ProductDTO extends ProductDTOBase {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  @Validate((o) => o.type === [JSON_TYPE.PRODUCT])
+  @Validate((o) => o.type === JSON_TYPE.PRODUCT)
   type: JSON_TYPE[]
 
   @ApiProperty()

@@ -22,7 +22,7 @@ export class OGBillOfLadingCredentialSubjectDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE_NF, { each: true })
-  @Validate((o) => o.type === [JSON_TYPE_NF.OG_BILL_OF_LADING])
+  @Validate((o) => o.type === JSON_TYPE_NF.OG_BILL_OF_LADING)
   type: JSON_TYPE_NF[]
 
   @ApiProperty()
