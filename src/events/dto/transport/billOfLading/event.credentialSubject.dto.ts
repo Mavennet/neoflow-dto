@@ -1,22 +1,20 @@
+import { Type } from 'class-transformer'
 import {
+  ArrayNotEmpty,
+  IsArray,
   IsNotEmpty,
   IsOptional,
   IsString,
-  IsEnum,
-  IsArray,
-  ValidateNested,
-  ArrayNotEmpty,
-  Validate
+  Validate,
+  ValidateNested
 } from 'class-validator'
-import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../../../../general/constants'
 import { DocumentDTO, ParcelDeliveryDTO } from '../../../../general/dto'
 
 class BillOfLadingCredentialSubjectDTOBase {
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  @Validate((o) => o.type === [JSON_TYPE.BILL_OF_LADING])
+  @Validate((o) => o.type.includes(JSON_TYPE.BILL_OF_LADING))
   type: JSON_TYPE[]
 
   @IsOptional()
@@ -35,5 +33,4 @@ class BillOfLadingCredentialSubjectDTOBase {
   freight: ParcelDeliveryDTO
 }
 
-export class BillOfLadingCredentialSubjectDTO extends BillOfLadingCredentialSubjectDTOBase {
-}
+export class BillOfLadingCredentialSubjectDTO extends BillOfLadingCredentialSubjectDTOBase {}

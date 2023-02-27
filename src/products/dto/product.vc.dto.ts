@@ -11,7 +11,7 @@ import {
 } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { JSON_TYPE } from '../../general/constants'
+import type { JSON_TYPE } from '../../general/constants'
 import { ProofDTO } from '../../general/dto/proof.dto'
 import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto'
 
