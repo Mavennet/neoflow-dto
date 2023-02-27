@@ -1,21 +1,21 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { Type } from 'class-transformer'
 import {
-  IsNotEmptyObject,
-  IsOptional,
-  IsNumberString,
-  IsString,
+  ArrayNotEmpty,
+  IsArray,
   IsEnum,
-  ValidateNested,
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsNumberString,
+  IsOptional,
+  IsString,
   Matches,
   Validate,
-  IsArray,
-  ArrayNotEmpty,
-  IsNotEmpty,
-  ValidateIf
+  ValidateIf,
+  ValidateNested
 } from 'class-validator'
-import { Type } from 'class-transformer'
-import { ParcelDeliveryDTO, PlaceDTO, EntityDTO } from '../../../../general/dto'
 import { JSON_TYPE } from '../../../../general/constants'
+import { EntityDTO, ParcelDeliveryDTO, PlaceDTO } from '../../../../general/dto'
 import { ProductDTO } from '../../../../products/dto/product.dto'
 import { IN_BOND_TYPE } from '../../../constants'
 
@@ -24,7 +24,7 @@ export class QPInbondCredentialSubjectDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  @Validate((o) => o.type === [JSON_TYPE.INBOND])
+  @Validate((o) => o.type === JSON_TYPE.INBOND)
   type: JSON_TYPE[]
 
   @ApiProperty()

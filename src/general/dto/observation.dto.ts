@@ -1,5 +1,15 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { IsNotEmptyObject, IsEnum, ValidateNested, IsArray, ArrayNotEmpty, Validate, IsOptional, IsString, IsNotEmpty } from 'class-validator'
+import {
+  IsNotEmptyObject,
+  IsEnum,
+  ValidateNested,
+  IsArray,
+  ArrayNotEmpty,
+  Validate,
+  IsOptional,
+  IsString,
+  IsNotEmpty
+} from 'class-validator'
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../constants'
 import { PropertyDTO } from './property.dto'
@@ -10,7 +20,7 @@ export class ObservationDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  @Validate((o) => o.type === [JSON_TYPE.OBSERVATION])
+  @Validate((o) => o.type === JSON_TYPE.OBSERVATION)
   type: JSON_TYPE[]
 
   @ApiProperty()
@@ -31,7 +41,7 @@ export abstract class COMPACT_ObservationDTO {
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE, { each: true })
-  @Validate((o) => o.type === [JSON_TYPE.OBSERVATION])
+  @Validate((o) => o.type === JSON_TYPE.OBSERVATION)
   type: JSON_TYPE[]
 
   @ApiPropertyOptional()

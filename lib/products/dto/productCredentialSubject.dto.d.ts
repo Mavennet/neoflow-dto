@@ -1,5 +1,5 @@
-import { PlaceDTO, ObservationDTO } from '../../general/dto';
 import { JSON_TYPE_NF } from '../../general/constants';
+import { ObservationDTO, PlaceDTO } from '../../general/dto';
 import { ProductDTO } from './product.dto';
 declare class ProductCredentialSubjectDTOBase {
     type: JSON_TYPE_NF[];

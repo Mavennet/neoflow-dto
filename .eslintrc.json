@@ -3,7 +3,7 @@
     "node": true,
     "es6": true
   },
-  "extends": ["eslint:recommended", "standard-with-typescript"],
+  "extends": ["eslint:recommended","prettier", "standard-with-typescript"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
@@ -11,11 +11,11 @@
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2019,
+    "ecmaVersion": 2022,
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "@typescript-eslint/no-floating-promises": 0,
     "@typescript-eslint/no-misused-promises": 0,
@@ -25,6 +25,7 @@
     "@typescript-eslint/restrict-template-expressions": 0,
     "@typescript-eslint/space-before-function-paren": ["error", { "anonymous": "always", "named": "never" }],
     "@typescript-eslint/strict-boolean-expressions": 0,
+    "@typescript-eslint/indent": "off",
     "eol-last": 2,
     "import/prefer-default-export": 0,
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
