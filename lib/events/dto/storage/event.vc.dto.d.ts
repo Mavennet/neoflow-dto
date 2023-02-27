@@ -1,5 +1,5 @@
 import { ProofDTO } from '../../../general/dto/proof.dto';
-import { CORE_StorageEventCredentialSubjectDTO, AGENT_StorageEventCredentialSubjectDTO } from './event.credentialSubject.dto';
+import { AGENT_StorageEventCredentialSubjectDTO, CORE_StorageEventCredentialSubjectDTO } from './event.credentialSubject.dto';
 declare class StorageEventDetailsDTOBase {
     id: string;
     '@context': string[];
