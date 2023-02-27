@@ -15,8 +15,7 @@ import { DocumentDTO, ParcelDeliveryDTO } from '../../../../general/dto'
 class BillOfLadingCredentialSubjectDTOBase {
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  @Validate((o) => o.type === JSON_TYPE.BILL_OF_LADING)
+  @Validate((o) => o.type.includes(JSON_TYPE.BILL_OF_LADING))
   type: JSON_TYPE[]
 
   @IsOptional()

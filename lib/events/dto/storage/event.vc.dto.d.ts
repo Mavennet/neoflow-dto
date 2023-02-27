@@ -8,7 +8,6 @@ declare class StorageEventDetailsDTOBase {
     proof: ProofDTO;
 }
 export declare class AGENT_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {
-    id: string;
     credentialSubject: AGENT_StorageEventCredentialSubjectDTO;
 }
 export declare class CORE_StorageEventDetailsDTO extends StorageEventDetailsDTOBase {

@@ -23,8 +23,7 @@ export class QPInbondCredentialSubjectDTO {
   @ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  @Validate((o) => o.type === JSON_TYPE.INBOND)
+  @Validate((o) => o.type.includes(JSON_TYPE.INBOND))
   type: JSON_TYPE[]
 
   @ApiProperty()
