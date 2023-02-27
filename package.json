@@ -1,7 +1,7 @@
 {
   "name": "@mavennet/neoflow-dto",
   "version": "1.0.107",
-  "description": "",
+  "description": "Neoflow DTO extends @mavennet/traceability-dto",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -11,7 +11,7 @@
     "lint:fix": "eslint src --fix"
   },
   "keywords": [],
-  "author": "",
+  "author": "@mavennet",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Mavennet/neoflow-dto/issues"
