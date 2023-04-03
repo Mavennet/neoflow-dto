@@ -4,8 +4,7 @@ import {
   IsOptional,
   IsDateString,
   IsNumber,
-  IsString,
-  IsEmail
+  IsString
 } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
