@@ -3,7 +3,6 @@ export declare class SubContractDTO {
     nosPeriod: Date;
     cost: number;
     takeOrPayCommitmentBPD: number;
-    shipperEmail?: string;
     pipeline: string;
     deliveryFacility?: string;
     subContractKey: string;

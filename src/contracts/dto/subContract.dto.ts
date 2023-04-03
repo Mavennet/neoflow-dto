@@ -32,11 +32,6 @@ export class SubContractDTO {
   @IsPositive()
   takeOrPayCommitmentBPD: number
 
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsEmail()
-  shipperEmail?: string
-
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
