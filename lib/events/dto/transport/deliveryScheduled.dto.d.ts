@@ -1,14 +1,12 @@
 import { PlaceDTO } from '../../../general';
 import { JSON_TYPE, JSON_TYPE_NF } from '../../../general/constants';
 import { OrganizationDTO, ProofDTO } from '../../../general/dto';
-import { CommodityDTO } from '../../../general/dto/commodity.dto';
-import { MeasurementDTO } from '@mavennet/traceability-dto';
+import { MeasurementDTO, CommodityDTO } from '@mavennet/traceability-dto';
 export declare class AGENT_DeliveryScheduledDTO {
     type: JSON_TYPE_NF[];
     productId: string;
     transporter?: OrganizationDTO;
     consignee?: OrganizationDTO;
-    receiver?: string;
     batchNumber?: string;
     commodity?: CommodityDTO;
     portOfEntry?: PlaceDTO;

@@ -18,8 +18,7 @@ import { PlaceDTO } from '../../../general'
 import { Type } from 'class-transformer'
 import { JSON_TYPE, JSON_TYPE_NF } from '../../../general/constants'
 import { OrganizationDTO, ProofDTO } from '../../../general/dto'
-import { CommodityDTO } from '../../../general/dto/commodity.dto'
-import { ObservationDTO, MeasurementDTO } from '@mavennet/traceability-dto'
+import { MeasurementDTO, CommodityDTO } from '@mavennet/traceability-dto'
 
 export class AGENT_DeliveryScheduledDTO {
   @ApiProperty()
