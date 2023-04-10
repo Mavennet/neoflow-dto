@@ -46,12 +46,6 @@ export class AGENT_DeliveryScheduledDTO {
   @IsOptional()
   @ApiProperty()
   @IsString()
-  @Matches(/^did:/)
-  receiver?: string
-
-  @IsOptional()
-  @ApiProperty()
-  @IsString()
   batchNumber?: string
 
   @IsOptional()
