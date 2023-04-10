@@ -11,19 +11,16 @@ export class CommodityDTO {
 
   @ApiProperty()
   @IsOptional()
-  @IsNotEmpty()
   @IsString()
   commodityCode?: string
 
   @ApiProperty()
   @IsOptional()
-  @IsNotEmpty()
   @IsString()
   commodityCodeType?: string
 
   @ApiProperty()
   @IsOptional()
-  @IsNotEmpty()
   @IsString()
   description?: string
 }

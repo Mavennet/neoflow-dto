@@ -25,14 +25,12 @@ class ProductCredentialSubjectDTOBase {
   type: JSON_TYPE_NF[]
 
   @IsOptional()
-  @IsNotEmpty()
   @IsEnum(HTS_CODE)
   @ApiProperty()
   @IsString()
   HSCode?: string
 
   @IsOptional()
-  @IsNotEmpty()
   @IsString()
   @ApiProperty()
   UWI?: string

@@ -98,7 +98,6 @@ export class AGENT_CreateProductDTO extends CreateProductDTOBase {
   productCredentialSubject: ProductCredentialSubjectDTO
 
   @IsOptional()
-  @IsNotEmpty()
   @ApiProperty()
   @ValidateNested()
   @Type(() => AGENT_CreationEventCredentialSubjectDTO)

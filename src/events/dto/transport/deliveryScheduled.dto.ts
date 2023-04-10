@@ -129,7 +129,6 @@ export class AGENT_DeliveryScheduledDTO {
 
   @ApiProperty()
   @IsOptional()
-  @IsNotEmpty()
   @IsBoolean()
   hasDocuments?: boolean
 }
