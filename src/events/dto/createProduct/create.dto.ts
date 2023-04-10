@@ -48,6 +48,11 @@ export class AGENT_COMPACT_CreateProductDTO {
   @IsString()
   sku?: string
 
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  commodity?: string
+
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
@@ -92,11 +97,12 @@ export class AGENT_CreateProductDTO extends CreateProductDTOBase {
   @Type(() => ProductCredentialSubjectDTO)
   productCredentialSubject: ProductCredentialSubjectDTO
 
+  @IsOptional()
   @IsNotEmpty()
   @ApiProperty()
   @ValidateNested()
   @Type(() => AGENT_CreationEventCredentialSubjectDTO)
-  eventCredentialSubject: AGENT_CreationEventCredentialSubjectDTO
+  eventCredentialSubject?: AGENT_CreationEventCredentialSubjectDTO
 }
 
 export class CORE_CreateProductDTO extends CreateProductDTOBase {
@@ -116,14 +122,14 @@ export class CORE_CreateProductDTO extends CreateProductDTOBase {
   @IsString()
   productVCHash: string
 
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty()
   @IsUUID()
-  eventId: string
+  eventId?: string
 
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty()
   @ValidateNested()
   @Type(() => CreationEventDetailsDTO)
-  eventVC: CreationEventDetailsDTO
+  eventVC?: CreationEventDetailsDTO
 }

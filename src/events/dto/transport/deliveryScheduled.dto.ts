@@ -9,25 +9,60 @@ import {
   IsArray,
   ArrayMinSize,
   ArrayContains,
-  IsDateString
+  IsDateString,
+  ArrayNotEmpty,
+  IsEnum
 } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { PlaceDTO } from '../../../general'
 import { Type } from 'class-transformer'
-import { JSON_TYPE } from '../../../general/constants'
-import { ProofDTO } from '../../../general/dto'
+import { JSON_TYPE, JSON_TYPE_NF } from '../../../general/constants'
+import { OrganizationDTO, ProofDTO } from '../../../general/dto'
+import { CommodityDTO } from '../../../general/dto/commodity.dto'
+import { ObservationDTO, MeasurementDTO } from '@mavennet/traceability-dto'
 
 export class AGENT_DeliveryScheduledDTO {
+  @ApiProperty()
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(JSON_TYPE_NF, { each: true })
+  type: JSON_TYPE_NF[]
+
   @IsNotEmpty()
   @ApiProperty()
   @IsString()
   productId: string
 
   @IsNotEmpty()
+  @IsOptional()
+  @ApiProperty()
+  @IsString()
+  transporter?: OrganizationDTO
+
+  @IsNotEmpty()
+  @IsOptional()
+  @ApiProperty()
+  @IsString()
+  consignee?: OrganizationDTO
+
+  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty()
   @IsString()
   @Matches(/^did:/)
-  receiver: string
+  receiver?: string
+
+  @IsNotEmpty()
+  @IsOptional()
+  @ApiProperty()
+  @IsString()
+  batchNumber?: string
+
+  @IsNotEmpty()
+  @IsOptional()
+  @ApiProperty()
+  @IsString()
+  commodity?: CommodityDTO
 
   @IsOptional()
   @ApiPropertyOptional()
@@ -45,7 +80,19 @@ export class AGENT_DeliveryScheduledDTO {
   @ApiPropertyOptional()
   @ValidateNested()
   @Type(() => PlaceDTO)
+  place?: PlaceDTO
+
+  @IsOptional()
+  @ApiPropertyOptional()
+  @ValidateNested()
+  @Type(() => PlaceDTO)
   portOfDestination?: PlaceDTO
+
+  @IsOptional()
+  @ApiPropertyOptional()
+  @ValidateNested()
+  @Type(() => PlaceDTO)
+  deliveryDestination?: PlaceDTO
 
   @IsOptional()
   @ApiPropertyOptional()
@@ -58,15 +105,33 @@ export class AGENT_DeliveryScheduledDTO {
   @Type(() => PlaceDTO)
   receiptLocation?: PlaceDTO
 
+  @IsOptional()
+  @ApiPropertyOptional()
+  @ValidateNested()
+  @Type(() => MeasurementDTO)
+  injectionVolume?: MeasurementDTO
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsDateString()
+  injectionDate?: string | Date
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsDateString()
+  deliveryDate?: string | Date
+
   @IsNotEmpty()
+  @IsOptional()
   @ApiProperty()
   @IsString()
-  scheduledDate: string
+  scheduledDate?: string
 
   @ApiProperty()
+  @IsOptional()
   @IsNotEmpty()
   @IsBoolean()
-  hasDocuments: boolean
+  hasDocuments?: boolean
 }
 
 export class DeliveryScheduled_VC_DTO {

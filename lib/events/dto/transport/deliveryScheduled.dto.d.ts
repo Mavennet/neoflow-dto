@@ -1,16 +1,28 @@
 import { PlaceDTO } from '../../../general';
-import { JSON_TYPE } from '../../../general/constants';
-import { ProofDTO } from '../../../general/dto';
+import { JSON_TYPE, JSON_TYPE_NF } from '../../../general/constants';
+import { OrganizationDTO, ProofDTO } from '../../../general/dto';
+import { CommodityDTO } from '../../../general/dto/commodity.dto';
+import { MeasurementDTO } from '@mavennet/traceability-dto';
 export declare class AGENT_DeliveryScheduledDTO {
+    type: JSON_TYPE_NF[];
     productId: string;
-    receiver: string;
+    transporter?: OrganizationDTO;
+    consignee?: OrganizationDTO;
+    receiver?: string;
+    batchNumber?: string;
+    commodity?: CommodityDTO;
     portOfEntry?: PlaceDTO;
     portOfArrival?: PlaceDTO;
+    place?: PlaceDTO;
     portOfDestination?: PlaceDTO;
+    deliveryDestination?: PlaceDTO;
     countryOfDestination?: string;
     receiptLocation?: PlaceDTO;
-    scheduledDate: string;
-    hasDocuments: boolean;
+    injectionVolume?: MeasurementDTO;
+    injectionDate?: string | Date;
+    deliveryDate?: string | Date;
+    scheduledDate?: string;
+    hasDocuments?: boolean;
 }
 export declare class DeliveryScheduled_VC_DTO {
     '@context': string[];

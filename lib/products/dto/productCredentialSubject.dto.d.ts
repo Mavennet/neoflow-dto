@@ -3,12 +3,12 @@ import { ObservationDTO, PlaceDTO } from '../../general/dto';
 import { ProductDTO } from './product.dto';
 declare class ProductCredentialSubjectDTOBase {
     type: JSON_TYPE_NF[];
-    HSCode: string;
-    UWI: string;
+    HSCode?: string;
+    UWI?: string;
     productionDate: string;
-    facility: PlaceDTO;
+    facility?: PlaceDTO;
     product: ProductDTO;
-    observation: ObservationDTO[];
+    observation?: ObservationDTO[];
 }
 export declare class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {
 }
