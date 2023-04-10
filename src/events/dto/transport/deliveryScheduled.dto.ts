@@ -33,32 +33,27 @@ export class AGENT_DeliveryScheduledDTO {
   @IsString()
   productId: string
 
-  @IsNotEmpty()
   @IsOptional()
   @ApiProperty()
   @IsString()
   transporter?: OrganizationDTO
 
-  @IsNotEmpty()
   @IsOptional()
   @ApiProperty()
   @IsString()
   consignee?: OrganizationDTO
 
-  @IsNotEmpty()
   @IsOptional()
   @ApiProperty()
   @IsString()
   @Matches(/^did:/)
   receiver?: string
 
-  @IsNotEmpty()
   @IsOptional()
   @ApiProperty()
   @IsString()
   batchNumber?: string
 
-  @IsNotEmpty()
   @IsOptional()
   @ApiProperty()
   @IsString()
@@ -121,7 +116,6 @@ export class AGENT_DeliveryScheduledDTO {
   @IsDateString()
   deliveryDate?: string | Date
 
-  @IsNotEmpty()
   @IsOptional()
   @ApiProperty()
   @IsString()
