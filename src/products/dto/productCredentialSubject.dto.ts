@@ -6,6 +6,7 @@ import {
   IsEnum,
   IsNotEmpty,
   IsNotEmptyObject,
+  IsOptional,
   IsString,
   Matches,
   Validate,
@@ -19,36 +20,33 @@ import { ProductDTO } from './product.dto'
 class ProductCredentialSubjectDTOBase {
   @IsArray()
   @ArrayNotEmpty()
-  @Validate(
-    (o) =>
-      o.type.includes(JSON_TYPE_NF.CRUDE_OIL_PRODUCT) ||
-      o.type.includes(JSON_TYPE_NF.NATURAL_GAS_PRODUCT)
-  )
+  @Validate((o) => o.type.includes(JSON_TYPE_NF.CRUDE_OIL_PRODUCT) || o.type.includes(JSON_TYPE_NF.NATURAL_GAS_PRODUCT))
   @ApiProperty()
   type: JSON_TYPE_NF[]
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsEnum(HTS_CODE)
   @ApiProperty()
   @IsString()
-  HSCode: string
+  HSCode?: string
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @ApiProperty()
-  UWI: string
+  UWI?: string
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
   @ApiProperty()
   productionDate: string
 
+  @IsOptional()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => PlaceDTO)
   @ApiProperty()
-  facility: PlaceDTO
+  facility?: PlaceDTO
 
   @IsNotEmptyObject()
   @ValidateNested()
@@ -56,11 +54,12 @@ class ProductCredentialSubjectDTOBase {
   @ApiProperty()
   product: ProductDTO
 
+  @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => ObservationDTO)
   @ApiProperty({ isArray: true, type: ObservationDTO })
-  observation: ObservationDTO[]
+  observation?: ObservationDTO[]
 }
 
 export class ProductCredentialSubjectDTO extends ProductCredentialSubjectDTOBase {}

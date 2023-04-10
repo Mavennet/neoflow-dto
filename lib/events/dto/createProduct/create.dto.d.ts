@@ -11,6 +11,7 @@ export declare class AGENT_COMPACT_CreateProductDTO {
     description?: string;
     grade?: string;
     sku?: string;
+    commodity?: string;
     facility: COMPACT_PlaceDTO;
     manufacturer: COMPACT_OrganizationDTO;
     weight: COMPACT_MeasurementDTO;
@@ -20,13 +21,13 @@ export declare class AGENT_COMPACT_CreateProductDTO {
 }
 export declare class AGENT_CreateProductDTO extends CreateProductDTOBase {
     productCredentialSubject: ProductCredentialSubjectDTO;
-    eventCredentialSubject: AGENT_CreationEventCredentialSubjectDTO;
+    eventCredentialSubject?: AGENT_CreationEventCredentialSubjectDTO;
 }
 export declare class CORE_CreateProductDTO extends CreateProductDTOBase {
     productId: string;
     productVC: ProductVCDTO;
     productVCHash: string;
-    eventId: string;
-    eventVC: CreationEventDetailsDTO;
+    eventId?: string;
+    eventVC?: CreationEventDetailsDTO;
 }
 export {};

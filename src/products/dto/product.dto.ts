@@ -30,10 +30,11 @@ export class ProductDTO extends ProductDTOBase {
   name: PRODUCT_NAME
 
   @ApiProperty()
+  @IsOptional()
   @ValidateIf((o) => o.name === PRODUCT_NAME.CRUDE_OIL)
   @IsNotEmpty()
   @IsEnum(CRUDE_STREAM)
-  category: CRUDE_STREAM
+  category?: CRUDE_STREAM
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -56,4 +57,9 @@ export class ProductDTO extends ProductDTOBase {
   @IsOptional()
   @IsString()
   batchNumber?: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  commodity?: string
 }
