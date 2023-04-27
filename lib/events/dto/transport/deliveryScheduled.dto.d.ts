@@ -7,6 +7,7 @@ export declare class AGENT_DeliveryScheduledDTO {
     productId: string;
     transporter?: OrganizationDTO;
     consignee?: OrganizationDTO;
+    consignor?: OrganizationDTO;
     batchNumber?: string;
     commodity?: CommodityDTO;
     portOfEntry?: PlaceDTO;

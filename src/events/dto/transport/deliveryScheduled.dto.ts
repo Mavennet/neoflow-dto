@@ -45,6 +45,11 @@ export class AGENT_DeliveryScheduledDTO {
   @IsOptional()
   @ApiProperty()
   @IsString()
+  consignor?: OrganizationDTO
+
+  @IsOptional()
+  @ApiProperty()
+  @IsString()
   batchNumber?: string
 
   @IsOptional()
