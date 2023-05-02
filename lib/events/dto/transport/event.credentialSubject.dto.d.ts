@@ -6,8 +6,7 @@ export declare class AGENT_TransportationEventCredentialSubjectDTO {
     actor: OrganizationDTO[];
     products: ProductHashDTO[];
     deliveryMethod: TRANSPORTATION_TYPE;
-    trackingNumber: string;
-    scn: string;
+    trackingNumber?: string;
 }
 export declare class CORE_TransportationEventCredentialSubjectDTO extends EventDTO {
     eventType: TRANSPORT_EVENT_TYPE;
