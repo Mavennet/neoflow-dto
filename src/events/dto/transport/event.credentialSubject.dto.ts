@@ -7,7 +7,8 @@ import {
   IsArray,
   ArrayMinSize,
   ValidateNested,
-  IsNotEmptyObject
+  IsNotEmptyObject,
+  IsOptional
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { EventDTO, ProductHashDTO, PlaceDTO, OrganizationDTO } from '../../../general'
@@ -47,7 +48,7 @@ export class AGENT_TransportationEventCredentialSubjectDTO {
   deliveryMethod: TRANSPORTATION_TYPE
 
   @ApiPropertyOptional()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @ValidateIf(
     (o) =>
@@ -55,18 +56,7 @@ export class AGENT_TransportationEventCredentialSubjectDTO {
       o.deliveryMethod === TRANSPORTATION_TYPE.PIPELINE &&
       o.category !== PRODUCT_CATEGORY_TYPE.GAS
   )
-  trackingNumber: string
-
-  @ApiPropertyOptional()
-  @IsNotEmpty()
-  @IsString()
-  @ValidateIf(
-    (o) =>
-      o.eventType === TRANSPORT_EVENT_TYPE.START &&
-      o.deliveryMethod === TRANSPORTATION_TYPE.TRUCK &&
-      o.category !== PRODUCT_CATEGORY_TYPE.GAS
-  )
-  scn: string
+  trackingNumber?: string
 }
 
 export class CORE_TransportationEventCredentialSubjectDTO extends EventDTO {

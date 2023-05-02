@@ -30,6 +30,6 @@ export declare class CORE_TransportProductDTO extends TransportProductDTOBase {
 }
 export declare class AGENT_TransportProductDTO extends TransportProductDTOBase {
     transportCredentialSubject: AGENT_TransportationEventCredentialSubjectDTO;
-    billOfLadingCredentialSubject: OGBillOfLadingCredentialSubjectDTO;
+    billOfLadingCredentialSubject?: OGBillOfLadingCredentialSubjectDTO;
 }
 export {};
