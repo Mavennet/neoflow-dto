@@ -24,22 +24,22 @@ export class OGBillOfLadingCredentialSubjectDTO {
   type: JSON_TYPE_NF[]
 
   @ApiProperty()
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => BillOfLadingCredentialSubjectDTO)
-  billOfLading: BillOfLadingCredentialSubjectDTO
+  billOfLading?: BillOfLadingCredentialSubjectDTO
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
-  shippingDate: string
+  shippingDate?: string
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
-  arrivalDate: string
+  arrivalDate?: string
 
   @ApiPropertyOptional()
   @IsOptional()
@@ -62,21 +62,21 @@ export class OGBillOfLadingCredentialSubjectDTO {
   batchNumber?: string
 
   @ApiProperty()
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => MeasurementDTO)
-  openingVolume: MeasurementDTO
+  openingVolume?: MeasurementDTO
 
   @ApiProperty()
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => MeasurementDTO)
-  closingVolume: MeasurementDTO
+  closingVolume?: MeasurementDTO
 
   @ApiPropertyOptional({ isArray: true, type: () => ObservationDTO })
   @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => ObservationDTO)
-  observation: ObservationDTO[]
+  observation?: ObservationDTO[]
 }
