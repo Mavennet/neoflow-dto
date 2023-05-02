@@ -148,9 +148,9 @@ export class AGENT_TransportProductDTO extends TransportProductDTOBase {
   transportCredentialSubject: AGENT_TransportationEventCredentialSubjectDTO
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @ValidateNested()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.END)
   @Type(() => OGBillOfLadingCredentialSubjectDTO)
-  billOfLadingCredentialSubject: OGBillOfLadingCredentialSubjectDTO
+  billOfLadingCredentialSubject?: OGBillOfLadingCredentialSubjectDTO
 }
