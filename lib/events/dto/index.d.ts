@@ -1,5 +1,6 @@
 export * from './certify';
 export * from './createProduct';
+export * from './deliveryTicket';
 export * from './inspect';
 export * from './storage';
 export * from './transfer';
