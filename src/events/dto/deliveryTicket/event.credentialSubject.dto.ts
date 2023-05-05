@@ -27,7 +27,7 @@ export class DeliveryTicketCredentialSubjectDTO {
     ...JSON_TYPE,
     ...JSON_TYPE_NF
   }, { each: true })
-  type: (JSON_TYPE | JSON_TYPE_NF)[]
+  type: Array<JSON_TYPE | JSON_TYPE_NF>
 
   @ApiProperty()
   @IsNotEmpty()
