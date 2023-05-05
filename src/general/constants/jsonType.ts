@@ -23,5 +23,6 @@ export enum JSON_TYPE_NF {
   MONTHLY_DELIVERY_STATEMENT = 'MonthlyDeliveryStatement',
   DELIVERY_STATEMENT = 'DeliveryStatement',
   DELIVERY_SCHEDULE = 'DeliverySchedule',
-  COMMODITY = 'Commodity'
+  COMMODITY = 'Commodity',
+  OG_DELIVERY_TICKET = 'OGDeliveryTicket'
 }
