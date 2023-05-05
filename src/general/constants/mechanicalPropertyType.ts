@@ -39,8 +39,8 @@ export enum MECHANICAL_PROPERTY_TYPE {
   CHARPY_IMPACT_STRENGTH_TEST = 'Charpy Impact Strength Test',
   IZOD_IMPACT_STRENGTH_TEST = 'Izod Impact Strength Test',
 
-  GROSS_VOLUME = "Gross Volume",
-  NET_VOLUME = "Net Volume",
-  COMPOSITE_DESITY_KG_M3 = "Composite Density kg/m3",
-  API = "API"
+  GROSS_VOLUME = 'Gross Volume',
+  NET_VOLUME = 'Net Volume',
+  COMPOSITE_DESITY_KG_M3 = 'Composite Density kg/m3',
+  API = 'API'
 }
