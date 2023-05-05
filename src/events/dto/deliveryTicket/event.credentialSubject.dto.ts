@@ -14,7 +14,8 @@ import {
   OrganizationDTO,
   PlaceDTO,
   ObservationDTO,
-  JSON_TYPE
+  JSON_TYPE,
+  JSON_TYPE_NF
 } from '../../../general'
 import { ProductDTO } from '../../../products'
 
@@ -22,8 +23,11 @@ export class DeliveryTicketCredentialSubjectDTO {
   @ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  type: JSON_TYPE[]
+  @IsEnum({
+    ...JSON_TYPE,
+    ...JSON_TYPE_NF
+  }, { each: true })
+  type: (JSON_TYPE | JSON_TYPE_NF)[]
 
   @ApiProperty()
   @IsNotEmpty()
