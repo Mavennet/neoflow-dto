@@ -11,4 +11,14 @@ export class AutoShareSettingsDTO {
   @IsOptional()
   @IsBoolean()
   autoShareCER?: boolean
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsBoolean()
+  autoShareBroker?: boolean
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsBoolean()
+  autoShareEIA?: boolean
 }
