@@ -1,10 +1,11 @@
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import {
   ValidateNested,
   IsEnum,
   IsArray,
   IsDateString,
   IsNotEmpty,
+  IsOptional,
   ArrayNotEmpty,
   IsNotEmptyObject,
   IsString
@@ -39,10 +40,10 @@ export class DeliveryTicketCredentialSubjectDTO {
   @IsDateString()
   openDate: string | Date
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsDateString()
-  closeDate: string | Date
+  closeDate?: string | Date
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -72,10 +73,10 @@ export class DeliveryTicketCredentialSubjectDTO {
   @IsString()
   batchNumber: string
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsString()
-  nosMonth: string
+  nosMonth?: string
 
   @ApiProperty()
   @IsNotEmptyObject()
