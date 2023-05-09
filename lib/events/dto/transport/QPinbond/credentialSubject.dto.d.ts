@@ -6,7 +6,7 @@ export declare class QPInbondCredentialSubjectDTO {
     type: JSON_TYPE[];
     inBondNumber: string;
     irsNumber?: string;
-    entryId: string;
+    entryNumber: string;
     ftzNo: string;
     inBondType?: IN_BOND_TYPE;
     portOfEntry?: PlaceDTO;
