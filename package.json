@@ -10,9 +10,7 @@
     "build-watch": "tsc --watch -p tsconfig.json",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "postinstall": "husky install",
-    "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "@mavennet",
