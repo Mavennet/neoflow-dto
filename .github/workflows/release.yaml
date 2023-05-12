@@ -1,4 +1,4 @@
-name: CI/CD
+name: Release
 
 on:
   push:
@@ -15,12 +15,7 @@ jobs:
           node-version: '16.X'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@mavennet'
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
+          cache: 'npm'
       - run: npm ci
         env:
           PAT: ${{ secrets.PAT }}
@@ -59,12 +54,7 @@ jobs:
           node-version: '16.X'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@mavennet'
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
+          cache: 'npm'
       - run: npm ci
         env:
           PAT: ${{ secrets.PAT }}
@@ -75,8 +65,8 @@ jobs:
         env:
           PAT: ${{ secrets.PAT }}
 
-  pre-release:
-    name: 'Pre Release'
+  release:
+    name: 'Release'
     runs-on: 'ubuntu-latest'
     needs: [bump-version, publish-package]
     steps:
@@ -85,4 +75,4 @@ jobs:
           repo_token: '${{ secrets.GITHUB_TOKEN }}'
           automatic_release_tag: 'latest'
           prerelease: true
-          title: 'Development Build'
+          title: 'Development Build  ${{ needs.bump-version.outputs.newTag }}'
