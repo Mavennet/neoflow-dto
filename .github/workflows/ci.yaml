@@ -14,13 +14,8 @@ jobs:
           node-version: '16.X'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@mavennet'
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
-      - run: npm ci
+          cache: 'npm'
+      - run: npm ci --ignore-scripts
         env:
           PAT: ${{ secrets.PAT }}
       - run: npm run lint
