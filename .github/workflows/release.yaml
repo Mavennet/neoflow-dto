@@ -16,7 +16,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@mavennet'
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --omit=dev --ignore-scripts
         env:
           PAT: ${{ secrets.PAT }}
       - run: npm run lint
@@ -55,7 +55,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@mavennet'
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --omit=dev --ignore-scripts
         env:
           PAT: ${{ secrets.PAT }}
       - run: npm version $NEW_TAG --no-git-tag-version
