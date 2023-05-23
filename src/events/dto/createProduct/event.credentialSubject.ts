@@ -8,7 +8,8 @@ import {
   ArrayMinSize,
   IsDateString,
   IsUrl,
-  ArrayContains
+  ArrayContains,
+  ArrayNotEmpty
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { PlaceDTO, OrganizationDTO } from '../../../general'
@@ -54,7 +55,7 @@ export class CORE_CreationEventCredentialSubjectDTO extends AGENT_CreationEventC
 
   @ApiProperty()
   @IsArray()
-  @ArrayMinSize(1)
-  @ArrayContains([EVENT_TYPE.CREATE])
+  @ArrayNotEmpty()
+  @IsEnum(EVENT_TYPE, { each: true })
   type: EVENT_TYPE[]
 }
