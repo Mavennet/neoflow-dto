@@ -9,4 +9,5 @@ export declare class CORE_CreationEventCredentialSubjectDTO extends AGENT_Creati
     eventId: string;
     eventTime: string;
     products: string[];
+    type: EVENT_TYPE[];
 }

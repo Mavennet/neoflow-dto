@@ -1,4 +1,15 @@
-import { IsNotEmpty, IsNotEmptyObject, IsEnum, IsUUID, IsArray, ValidateNested, ArrayMinSize, IsDateString, IsUrl } from 'class-validator'
+import {
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsEnum,
+  IsUUID,
+  IsArray,
+  ValidateNested,
+  ArrayMinSize,
+  IsDateString,
+  IsUrl,
+  ArrayContains
+} from 'class-validator'
 import { Type } from 'class-transformer'
 import { PlaceDTO, OrganizationDTO } from '../../../general'
 import { ApiProperty } from '@nestjs/swagger'
@@ -40,4 +51,10 @@ export class CORE_CreationEventCredentialSubjectDTO extends AGENT_CreationEventC
   @ArrayMinSize(1)
   @IsUrl({ protocols: ['http', 'https'], require_tld: false }, { each: true })
   products: string[]
+
+  @ApiProperty()
+  @IsArray()
+  @ArrayMinSize(1)
+  @ArrayContains([EVENT_TYPE.CREATE])
+  type: EVENT_TYPE[]
 }
