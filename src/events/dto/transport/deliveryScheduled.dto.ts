@@ -11,7 +11,8 @@ import {
   ArrayContains,
   IsDateString,
   ArrayNotEmpty,
-  IsEnum
+  IsEnum,
+  IsUUID
 } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { PlaceDTO } from '../../../general'
@@ -20,17 +21,12 @@ import { JSON_TYPE, JSON_TYPE_NF } from '../../../general/constants'
 import { OrganizationDTO, ProofDTO } from '../../../general/dto'
 import { MeasurementDTO, CommodityDTO } from '@mavennet/traceability-dto'
 
-export class AGENT_DeliveryScheduledDTO {
+export class DeliveryScheduledCredentialSubjectDTO {
   @ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
   @IsEnum(JSON_TYPE_NF, { each: true })
   type: JSON_TYPE_NF[]
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsString()
-  productId: string
 
   @IsOptional()
   @ApiProperty()
@@ -124,7 +120,6 @@ export class AGENT_DeliveryScheduledDTO {
   @IsBoolean()
   hasDocuments?: boolean
 }
-
 export class DeliveryScheduled_VC_DTO {
   @ApiProperty()
   @IsArray()
@@ -151,8 +146,8 @@ export class DeliveryScheduled_VC_DTO {
   @ApiPropertyOptional()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => AGENT_DeliveryScheduledDTO)
-  credentialSubject: AGENT_DeliveryScheduledDTO
+  @Type(() => DeliveryScheduledCredentialSubjectDTO)
+  credentialSubject: DeliveryScheduledCredentialSubjectDTO
 
   @ApiPropertyOptional()
   @IsOptional()
@@ -164,6 +159,19 @@ export class DeliveryScheduled_VC_DTO {
   @ValidateNested()
   @Type(() => ProofDTO)
   proof: ProofDTO
+}
+
+export class AGENT_DeliveryScheduledDTO {
+  @ApiProperty()
+  @IsOptional()
+  @IsUUID()
+  productId?: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => DeliveryScheduledCredentialSubjectDTO)
+  credentialSubject: DeliveryScheduledCredentialSubjectDTO
 }
 
 export class CORE_DeliveryScheduledDTO {
