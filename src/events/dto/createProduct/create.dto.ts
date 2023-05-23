@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { Transform, Type } from 'class-transformer'
+import { Type } from 'class-transformer'
 import {
   IsArray,
   IsEnum,
@@ -20,9 +20,6 @@ import {
 } from '../../../general'
 import { ProductVCDTO, PRODUCT_NAME } from '../../../products'
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
-import { AGENT_CreationEventCredentialSubjectDTO } from './event.credentialSubject'
-import { DeliveryScheduledCredentialSubjectDTO, DeliveryScheduled_VC_DTO } from '../transport'
-import { CreationEventDetailsDTO } from './event.vc.dto'
 
 class CreateProductDTOBase {
   @IsNotEmpty()

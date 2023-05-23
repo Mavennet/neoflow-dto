@@ -8,7 +8,6 @@ import {
   ArrayMinSize,
   IsDateString,
   IsUrl,
-  ArrayContains,
   ArrayNotEmpty
 } from 'class-validator'
 import { Type } from 'class-transformer'
