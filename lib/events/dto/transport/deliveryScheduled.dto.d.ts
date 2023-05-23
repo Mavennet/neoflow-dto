@@ -2,9 +2,8 @@ import { PlaceDTO } from '../../../general';
 import { JSON_TYPE, JSON_TYPE_NF } from '../../../general/constants';
 import { OrganizationDTO, ProofDTO } from '../../../general/dto';
 import { MeasurementDTO, CommodityDTO } from '@mavennet/traceability-dto';
-export declare class AGENT_DeliveryScheduledDTO {
+export declare class DeliveryScheduledCredentialSubjectDTO {
     type: JSON_TYPE_NF[];
-    productId: string;
     transporter?: OrganizationDTO;
     consignee?: OrganizationDTO;
     consignor?: OrganizationDTO;
@@ -28,9 +27,13 @@ export declare class DeliveryScheduled_VC_DTO {
     id: string;
     type: JSON_TYPE[];
     issuer: string;
-    credentialSubject: AGENT_DeliveryScheduledDTO;
+    credentialSubject: DeliveryScheduledCredentialSubjectDTO;
     issuanceDate?: string | Date;
     proof: ProofDTO;
+}
+export declare class AGENT_DeliveryScheduledDTO {
+    productId?: string;
+    credentialSubject: DeliveryScheduledCredentialSubjectDTO;
 }
 export declare class CORE_DeliveryScheduledDTO {
     productId: string;

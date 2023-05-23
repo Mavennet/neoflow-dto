@@ -16,4 +16,9 @@ export class AutoShareSettingsDTO {
   @IsOptional()
   @IsBoolean()
   autoShareEIA?: boolean
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsBoolean()
+  autoSharePipeline?: boolean
 }
