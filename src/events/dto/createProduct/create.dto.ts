@@ -1,15 +1,17 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { Type } from 'class-transformer'
+import { Transform, Type } from 'class-transformer'
 import {
   IsArray,
   IsEnum,
   IsNotEmpty,
   IsNotEmptyObject,
+  IsObject,
   IsOptional,
   IsString,
   IsUUID,
   ValidateNested
 } from 'class-validator'
+
 import {
   COMPACT_MeasurementDTO,
   COMPACT_ObservationDTO,
@@ -19,6 +21,7 @@ import {
 import { ProductVCDTO, PRODUCT_NAME } from '../../../products'
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
 import { AGENT_CreationEventCredentialSubjectDTO } from './event.credentialSubject'
+import { DeliveryScheduledCredentialSubjectDTO, DeliveryScheduled_VC_DTO } from '../transport'
 import { CreationEventDetailsDTO } from './event.vc.dto'
 
 class CreateProductDTOBase {
@@ -100,8 +103,8 @@ export class AGENT_CreateProductDTO extends CreateProductDTOBase {
   @IsOptional()
   @ApiProperty()
   @ValidateNested()
-  @Type(() => AGENT_CreationEventCredentialSubjectDTO)
-  eventCredentialSubject?: AGENT_CreationEventCredentialSubjectDTO
+  @IsObject()
+  eventCredentialSubject?: any
 }
 
 export class CORE_CreateProductDTO extends CreateProductDTOBase {
@@ -129,6 +132,6 @@ export class CORE_CreateProductDTO extends CreateProductDTOBase {
   @IsOptional()
   @ApiProperty()
   @ValidateNested()
-  @Type(() => CreationEventDetailsDTO)
-  eventVC?: CreationEventDetailsDTO
+  @IsObject()
+  eventVC?: any
 }
