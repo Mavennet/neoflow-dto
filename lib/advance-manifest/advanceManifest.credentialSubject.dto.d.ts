@@ -5,7 +5,7 @@ export declare class AdvanceManifestCredentialSubjectDTO {
     scheduledDeliveries?: Array<{
         portCode: string;
         deliveryLocation: string;
-        sumOfScheduledDeliveries: number;
+        sumOfScheduledDeliveries: string;
         numberOfBatches: string;
     }>;
 }
