@@ -25,5 +25,7 @@ export enum JSON_TYPE_NF {
   DELIVERY_SCHEDULE = 'DeliverySchedule',
   COMMODITY = 'Commodity',
   OG_DELIVERY_TICKET = 'OGDeliveryTicket',
-  OG_DELIVERY_TICKET_CREDENTIAL = 'OGDeliveryTicketCredential'
+  OG_DELIVERY_TICKET_CREDENTIAL = 'OGDeliveryTicketCredential',
+  MONTHLY_ADVANCE_MANIFEST_CREDENTIAL = 'MonthlyAdvanceManifestCredential',
+  MONTHLY_ADVANCE_MANIFEST = 'MonthlyAdvanceManifest'
 }
