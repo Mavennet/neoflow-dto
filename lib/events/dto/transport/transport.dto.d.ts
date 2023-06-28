@@ -20,7 +20,7 @@ export declare class AGENT_COMPACT_TransportEndDTO {
     deliveryAddress: COMPACT_PostalAddressDTO;
 }
 declare class TransportProductDTOBase {
-    productId: string;
+    productId?: string;
     eventType: TRANSPORT_EVENT_TYPE;
 }
 export declare class CORE_TransportProductDTO extends TransportProductDTOBase {

@@ -9,7 +9,8 @@ import {
   Validate,
   ValidateNested,
   ValidateIf,
-  IsOptional
+  IsOptional,
+  IsObject
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import {
@@ -111,9 +112,9 @@ export class AGENT_COMPACT_TransportEndDTO {
 
 class TransportProductDTOBase {
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  productId: string
+  productId?: string
 
   @ApiProperty()
   @IsNotEmpty()
