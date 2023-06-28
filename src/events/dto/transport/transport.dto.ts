@@ -9,8 +9,7 @@ import {
   Validate,
   ValidateNested,
   ValidateIf,
-  IsOptional,
-  IsObject
+  IsOptional
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import {
