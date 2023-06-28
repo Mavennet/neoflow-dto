@@ -110,6 +110,11 @@ export class DeliveryScheduledCredentialSubjectDTO {
   @IsDateString()
   deliveryDate?: string | Date
 
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsDateString()
+  nominationMonth?: string | Date
+
   @IsOptional()
   @ApiProperty()
   @IsString()

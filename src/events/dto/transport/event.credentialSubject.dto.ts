@@ -35,11 +35,12 @@ export class AGENT_TransportationEventCredentialSubjectDTO {
   actor: OrganizationDTO[]
 
   @ApiProperty({ isArray: true, type: () => ProductHashDTO })
+  @IsOptional()
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
   @Type(() => ProductHashDTO)
-  products: ProductHashDTO[]
+  products?: ProductHashDTO[]
 
   @ApiPropertyOptional()
   @IsNotEmpty()

@@ -111,9 +111,9 @@ export class AGENT_COMPACT_TransportEndDTO {
 
 class TransportProductDTOBase {
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  productId: string
+  productId?: string
 
   @ApiProperty()
   @IsNotEmpty()
