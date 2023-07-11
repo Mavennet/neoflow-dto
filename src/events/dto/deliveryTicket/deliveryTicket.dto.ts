@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNotEmpty, ValidateNested, IsUUID } from 'class-validator'
+import { IsNotEmpty, ValidateNested, IsUUID, IsOptional } from 'class-validator'
 import { Type } from 'class-transformer'
 import { DeliveryTicketCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { DeliveryTicketVCDTO } from './event.vc.dto'
@@ -24,9 +24,9 @@ export class CORE_DeliveryTicketDTO {
 
 export class AGENT_DeliveryTicketDTO {
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsUUID()
-  productId: string
+  productId?: string
 
   @ApiProperty()
   @IsNotEmpty()
