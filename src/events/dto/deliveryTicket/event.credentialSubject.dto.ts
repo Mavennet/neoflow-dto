@@ -11,23 +11,20 @@ import {
   IsString
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import {
-  OrganizationDTO,
-  PlaceDTO,
-  ObservationDTO,
-  JSON_TYPE,
-  JSON_TYPE_NF
-} from '../../../general'
+import { OrganizationDTO, PlaceDTO, ObservationDTO, JSON_TYPE, JSON_TYPE_NF } from '../../../general'
 import { ProductDTO } from '../../../products'
 
 export class DeliveryTicketCredentialSubjectDTO {
   @ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
-  @IsEnum({
-    ...JSON_TYPE,
-    ...JSON_TYPE_NF
-  }, { each: true })
+  @IsEnum(
+    {
+      ...JSON_TYPE,
+      ...JSON_TYPE_NF
+    },
+    { each: true }
+  )
   type: Array<JSON_TYPE | JSON_TYPE_NF>
 
   @ApiProperty()
@@ -36,9 +33,9 @@ export class DeliveryTicketCredentialSubjectDTO {
   createdDate: string | Date
 
   @ApiProperty()
-  @IsNotEmpty()
   @IsDateString()
-  openDate: string | Date
+  @IsOptional()
+  openDate?: string | Date
 
   @ApiPropertyOptional()
   @IsOptional()
@@ -58,10 +55,10 @@ export class DeliveryTicketCredentialSubjectDTO {
   consignor: OrganizationDTO
 
   @ApiProperty()
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => OrganizationDTO)
-  consignee: OrganizationDTO
+  consignee?: OrganizationDTO
 
   @ApiProperty()
   @IsNotEmpty()
@@ -69,9 +66,9 @@ export class DeliveryTicketCredentialSubjectDTO {
   ticketControlNumber: string
 
   @ApiProperty()
-  @IsNotEmpty()
   @IsString()
-  batchNumber: string
+  @IsOptional()
+  batchNumber?: string
 
   @ApiPropertyOptional()
   @IsOptional()

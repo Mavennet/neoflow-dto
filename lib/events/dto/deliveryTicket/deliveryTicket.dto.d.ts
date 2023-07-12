@@ -6,6 +6,6 @@ export declare class CORE_DeliveryTicketDTO {
     eventVC: DeliveryTicketVCDTO;
 }
 export declare class AGENT_DeliveryTicketDTO {
-    productId: string;
+    productId?: string;
     credentialSubject: DeliveryTicketCredentialSubjectDTO;
 }
