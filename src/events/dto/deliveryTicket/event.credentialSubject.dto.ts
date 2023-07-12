@@ -55,10 +55,10 @@ export class DeliveryTicketCredentialSubjectDTO {
   consignor: OrganizationDTO
 
   @ApiProperty()
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => OrganizationDTO)
-  consignee: OrganizationDTO
+  consignee?: OrganizationDTO
 
   @ApiProperty()
   @IsNotEmpty()

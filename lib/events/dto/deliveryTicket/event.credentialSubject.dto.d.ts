@@ -7,7 +7,7 @@ export declare class DeliveryTicketCredentialSubjectDTO {
     closeDate?: string | Date;
     carrier: OrganizationDTO;
     consignor: OrganizationDTO;
-    consignee: OrganizationDTO;
+    consignee?: OrganizationDTO;
     ticketControlNumber: string;
     batchNumber?: string;
     nosMonth?: string;
