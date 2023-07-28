@@ -5,3 +5,5 @@ export * from './IssueCredential.dto';
 export * from './VerifiableCredential.dto';
 export * from './updateStatus.dto';
 export * from './verifyCredential.dto';
+export * from './credentialStatus.dto';
+export * from './verificationSuccess.dto';
