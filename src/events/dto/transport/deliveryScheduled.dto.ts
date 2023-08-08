@@ -95,10 +95,11 @@ export class DeliveryScheduledCredentialSubjectDTO {
   receiptLocation?: PlaceDTO
 
   @IsOptional()
-  @ApiPropertyOptional()
-  @ValidateNested()
+  @ApiPropertyOptional({ isArray: true, type: () => MeasurementDTO })
+  @IsArray()
+  @ValidateNested({ each: true })
   @Type(() => MeasurementDTO)
-  injectionVolume?: MeasurementDTO
+  injectionVolume?: MeasurementDTO[]
 
   @ApiPropertyOptional()
   @IsOptional()

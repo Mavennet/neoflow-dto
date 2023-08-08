@@ -73,7 +73,7 @@ export class DeliveryTicketCredentialSubjectDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
-  nosMonth?: string
+  notificationOfShipment?: string
 
   @ApiProperty()
   @IsNotEmptyObject()

@@ -15,7 +15,7 @@ import {
 } from 'class-validator'
 import { JSON_TYPE } from '../../general/constants'
 import { MeasurementDTO } from '../../general/dto'
-import { CRUDE_STREAM, PRODUCT_NAME } from '../constants'
+import { PRODUCT_NAME } from '../constants'
 
 export class ProductDTO extends ProductDTOBase {
   @ApiProperty()
@@ -33,8 +33,7 @@ export class ProductDTO extends ProductDTOBase {
   @IsOptional()
   @ValidateIf((o) => o.name === PRODUCT_NAME.CRUDE_OIL)
   @IsNotEmpty()
-  @IsEnum(CRUDE_STREAM)
-  category?: CRUDE_STREAM
+  category?: string
 
   @ApiProperty()
   @IsNotEmptyObject()

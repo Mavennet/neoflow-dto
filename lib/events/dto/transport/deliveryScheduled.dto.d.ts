@@ -16,7 +16,7 @@ export declare class DeliveryScheduledCredentialSubjectDTO {
     deliveryDestination?: PlaceDTO;
     countryOfDestination?: string;
     receiptLocation?: PlaceDTO;
-    injectionVolume?: MeasurementDTO;
+    injectionVolume?: MeasurementDTO[];
     injectionDate?: string | Date;
     deliveryDate?: string | Date;
     nominationMonth?: string | Date;

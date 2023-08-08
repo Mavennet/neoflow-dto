@@ -3,6 +3,7 @@ export enum JSON_TYPE_NF {
   VERIFIABLE_CREDENTIAL = 'VerifiableCredential',
   CRUDE_OIL_PRODUCT = 'CrudeOilProduct',
   NATURAL_GAS_PRODUCT = 'NaturalGasProduct',
+  OIL_AND_GAS_PRODUCT = 'OilAndGasProduct',
   PLACE = 'Place',
   GEO_COORDINATES = 'GeoCoordinates',
   POSTAL_ADDRESS = 'PostalAddress',
@@ -24,8 +25,8 @@ export enum JSON_TYPE_NF {
   DELIVERY_STATEMENT = 'DeliveryStatement',
   DELIVERY_SCHEDULE = 'DeliverySchedule',
   COMMODITY = 'Commodity',
-  OG_DELIVERY_TICKET = 'OGDeliveryTicket',
-  OG_DELIVERY_TICKET_CREDENTIAL = 'OGDeliveryTicketCredential',
+  OG_DELIVERY_TICKET = 'OilAndGasDeliveryTicket',
+  OG_DELIVERY_TICKET_CREDENTIAL = 'OilAndGasDeliveryTicketCredential',
   MONTHLY_ADVANCE_MANIFEST_CREDENTIAL = 'MonthlyAdvanceManifestCredential',
   MONTHLY_ADVANCE_MANIFEST = 'MonthlyAdvanceManifest'
 }
