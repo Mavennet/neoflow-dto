@@ -1,6 +1,6 @@
 import { CredentialDTO } from '@mavennet/traceability-dto'
 import { ApiProperty } from '@nestjs/swagger'
-import { ArrayMinSize, IsString, Validate, ValidateNested } from 'class-validator'
+import { ArrayMinSize, IsNotEmpty, IsString, Validate, ValidateNested } from 'class-validator'
 
 class IntentToImport {
   @ApiProperty()
@@ -9,6 +9,9 @@ class IntentToImport {
   @Validate((o) => o.type.includes('IntentToImport'))
   type: string[]
 
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
   importIntent: string
 }
 
