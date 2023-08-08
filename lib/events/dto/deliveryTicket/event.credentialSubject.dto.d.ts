@@ -10,7 +10,7 @@ export declare class DeliveryTicketCredentialSubjectDTO {
     consignee?: OrganizationDTO;
     ticketControlNumber: string;
     batchNumber?: string;
-    nosMonth?: string;
+    notificationOfShipment?: string;
     destination: PlaceDTO;
     product: ProductDTO;
     observation: ObservationDTO[];
