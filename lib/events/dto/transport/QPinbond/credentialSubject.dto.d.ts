@@ -1,5 +1,5 @@
 import { JSON_TYPE } from '../../../../general/constants';
-import { EntityDTO, ParcelDeliveryDTO, PlaceDTO } from '../../../../general/dto';
+import { OrganizationDTO, ParcelDeliveryDTO, PlaceDTO } from '../../../../general/dto';
 import { ProductDTO } from '../../../../products/dto/product.dto';
 import { IN_BOND_TYPE } from '../../../constants';
 export declare class QPInbondCredentialSubjectDTO {
@@ -12,8 +12,8 @@ export declare class QPInbondCredentialSubjectDTO {
     portOfEntry?: PlaceDTO;
     portOfDestination?: PlaceDTO;
     portOfArrival?: PlaceDTO;
-    carrier: EntityDTO;
-    recipient: EntityDTO;
+    carrier: OrganizationDTO;
+    recipient: OrganizationDTO;
     shipment: ParcelDeliveryDTO;
     billOfLadingNumber?: string;
     expectedDeliveryDate?: string;

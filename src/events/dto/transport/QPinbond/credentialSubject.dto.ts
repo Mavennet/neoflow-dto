@@ -15,7 +15,7 @@ import {
   ValidateNested
 } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
-import { EntityDTO, ParcelDeliveryDTO, PlaceDTO } from '../../../../general/dto'
+import { OrganizationDTO, ParcelDeliveryDTO, PlaceDTO } from '../../../../general/dto'
 import { ProductDTO } from '../../../../products/dto/product.dto'
 import { IN_BOND_TYPE } from '../../../constants'
 
@@ -75,14 +75,14 @@ export class QPInbondCredentialSubjectDTO {
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => EntityDTO)
-  carrier: EntityDTO
+  @Type(() => OrganizationDTO)
+  carrier: OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => EntityDTO)
-  recipient: EntityDTO
+  @Type(() => OrganizationDTO)
+  recipient: OrganizationDTO
 
   @ApiProperty()
   @IsNotEmptyObject()
