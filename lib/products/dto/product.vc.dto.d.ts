@@ -1,15 +1,5 @@
-import type { JSON_TYPE } from '../../general/constants';
-import { ProofDTO } from '../../general/dto/proof.dto';
 import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto';
-declare class ProductVCDTOBase {
-    '@context': string[];
-    id: string;
-    type: JSON_TYPE[];
-    issuer: string;
-    issuanceDate?: string | Date;
+import { VerifiableCredentialDTO } from '@mavennet/traceability-dto';
+export declare class ProductVCDTO extends VerifiableCredentialDTO implements Omit<VerifiableCredentialDTO, 'credentialSubject'> {
     credentialSubject: ProductCredentialSubjectDTO;
-    proof: ProofDTO;
 }
-export declare class ProductVCDTO extends ProductVCDTOBase {
-}
-export {};

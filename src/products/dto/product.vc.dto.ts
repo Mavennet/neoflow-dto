@@ -14,6 +14,7 @@ import { Type } from 'class-transformer'
 import type { JSON_TYPE } from '../../general/constants'
 import { ProofDTO } from '../../general/dto/proof.dto'
 import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto'
+import { VerifiableCredentialDTO } from '@mavennet/traceability-dto'
 
 class ProductVCDTOBase {
   @IsArray()
@@ -41,12 +42,6 @@ class ProductVCDTOBase {
   @ApiPropertyOptional()
   issuanceDate?: string | Date
 
-  @IsNotEmpty()
-  @ValidateNested()
-  @Type(() => ProductCredentialSubjectDTO)
-  @ApiProperty()
-  credentialSubject: ProductCredentialSubjectDTO
-
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => ProofDTO)
@@ -54,4 +49,13 @@ class ProductVCDTOBase {
   proof: ProofDTO
 }
 
-export class ProductVCDTO extends ProductVCDTOBase {}
+export class ProductVCDTO
+  extends VerifiableCredentialDTO
+  implements Omit<VerifiableCredentialDTO, 'credentialSubject'>
+{
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => ProductCredentialSubjectDTO)
+  @ApiProperty()
+  declare credentialSubject: ProductCredentialSubjectDTO
+}
