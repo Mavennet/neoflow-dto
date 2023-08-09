@@ -43,7 +43,7 @@
     "typescript": "5.0.4"
   },
   "dependencies": {
-    "@mavennet/traceability-dto": "1.0.113",
+    "@mavennet/traceability-dto": "1.0.114",
     "@nestjs/cli": "9.4.2",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.4.0",
