@@ -20,6 +20,7 @@ import {
 } from '../../../general'
 import { ProductVCDTO, PRODUCT_NAME } from '../../../products'
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
+import { VerifiableCredentialDTO } from '@mavennet/traceability-dto'
 
 class CreateProductDTOBase {
   @IsNotEmpty()
@@ -104,6 +105,19 @@ export class AGENT_CreateProductDTO extends CreateProductDTOBase {
   eventCredentialSubject?: any
 }
 
+class CreateEventDTO {
+  @IsOptional()
+  @ApiProperty()
+  @IsUUID()
+  eventId?: string
+
+  @IsOptional()
+  @ApiProperty()
+  @ValidateNested()
+  @IsObject()
+  eventVC?: VerifiableCredentialDTO
+}
+
 export class CORE_CreateProductDTO extends CreateProductDTOBase {
   @IsNotEmpty()
   @ApiProperty()
@@ -123,12 +137,7 @@ export class CORE_CreateProductDTO extends CreateProductDTOBase {
 
   @IsOptional()
   @ApiProperty()
-  @IsUUID()
-  eventId?: string
-
-  @IsOptional()
-  @ApiProperty()
   @ValidateNested()
-  @IsObject()
-  eventVC?: any
+  @Type(() => CreateEventDTO)
+  events?: CreateEventDTO[]
 }
