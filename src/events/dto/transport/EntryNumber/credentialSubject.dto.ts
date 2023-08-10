@@ -1,23 +1,6 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { Type } from 'class-transformer'
-import {
-  ArrayNotEmpty,
-  IsArray,
-  IsEnum,
-  IsNotEmpty,
-  IsNotEmptyObject,
-  IsNumberString,
-  IsOptional,
-  IsString,
-  Matches,
-  Validate,
-  ValidateIf,
-  ValidateNested
-} from 'class-validator'
+import { ApiProperty } from '@nestjs/swagger'
+import { ArrayNotEmpty, IsArray, IsNotEmpty, IsString, Validate } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
-import { OrganizationDTO, ParcelDeliveryDTO, PlaceDTO } from '../../../../general/dto'
-import { ProductDTO } from '../../../../products/dto/product.dto'
-import { IN_BOND_TYPE } from '../../../constants'
 
 export class EntryNumberCredentialSubjectDTO {
   @ApiProperty()
