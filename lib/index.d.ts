@@ -13,3 +13,4 @@ export * from './products';
 export * from './users';
 export * from './advance-manifest';
 export * from './pipeline-postarrival';
+export * from './locations';
