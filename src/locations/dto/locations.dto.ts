@@ -2,59 +2,59 @@ import { IsArray, IsString, IsObject, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
 
 class CoordinatesDto {
-	@IsString()
-	lat: string
+  @IsString()
+  lat: string
 
-	@IsString()
-	lng: string
+  @IsString()
+  lng: string
 }
 
 class PostalAddressDto {
-	@IsString()
-	streetAddress: string
+  @IsString()
+  streetAddress: string
 
-	@IsString()
+  @IsString()
   addressLocality: string
-  
-	@IsString()
+
+  @IsString()
   addressRegion: string
-  
-	@IsString()
+
+  @IsString()
   postalCode: string
-  
-	@IsString()
+
+  @IsString()
   addressCountry: string
 }
 
 class DetailsDto {
-	@IsString()
-	address: string
+  @IsString()
+  address: string
 
-	@ValidateNested()
+  @ValidateNested()
   @Type(() => CoordinatesDto)
-	coordinates: CoordinatesDto
+  coordinates: CoordinatesDto
 
-	@ValidateNested()
+  @ValidateNested()
   @Type(() => PostalAddressDto)
-	postalAddress: PostalAddressDto
+  postalAddress: PostalAddressDto
 }
 
 export class LocationDto {
-	@IsString()
+  @IsString()
   value: string
 
-	@IsString()
+  @IsString()
   label: string
-  
-	@IsString({ each: true })
+
+  @IsString({ each: true })
   alias: string[]
 
-	@IsString()
+  @IsString()
   firmsCode: string
-  
-	@IsString()
+
+  @IsString()
   portCode: string
-  
+
   @IsObject()
   details: DetailsDto
 }
