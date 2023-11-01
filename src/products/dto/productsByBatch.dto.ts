@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { ArrayMinSize, IsNotEmpty, IsString } from 'class-validator'
+import { IsNotEmpty, IsString } from 'class-validator'
 
 export class ProductsByBatchDTO {
   @IsNotEmpty()
@@ -8,7 +8,12 @@ export class ProductsByBatchDTO {
   batchNumber: string
 
   @IsNotEmpty()
-  @ArrayMinSize(1)
   @ApiProperty()
-  productIds: string[]
+  @IsString()
+  nosMonth: string
+
+  @IsNotEmpty()
+  @ApiProperty()
+  @IsString()
+  productId: string
 }

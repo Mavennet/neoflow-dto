@@ -1,4 +1,5 @@
 export declare class ProductsByBatchDTO {
     batchNumber: string;
-    productIds: string[];
+    nosMonth: string;
+    productId: string;
 }
