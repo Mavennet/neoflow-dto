@@ -4,7 +4,6 @@ export declare class AdvanceManifestVCDTO {
     '@context': string[];
     id: string;
     type: string[];
-    issuer: string;
     issuanceDate?: string | Date;
     credentialSubject: AdvanceManifestCredentialSubjectDTO;
     proof: ProofDTO;
