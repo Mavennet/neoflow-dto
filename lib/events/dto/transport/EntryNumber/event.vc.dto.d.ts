@@ -6,7 +6,6 @@ export declare class EntryNumberEventVCDTO {
     id: string;
     type: JSON_TYPE[];
     issuanceDate?: string | Date;
-    issuer: string;
     credentialSubject: EntryNumberCredentialSubjectDTO;
     proof: ProofDTO;
 }
