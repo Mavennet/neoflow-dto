@@ -9,7 +9,6 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsString,
-  Matches,
   ValidateNested
 } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
@@ -37,12 +36,6 @@ export class QPInBondEventVCDTO {
   @IsOptional()
   @IsDateString()
   issuanceDate?: string | Date
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  issuer: string
 
   @ApiPropertyOptional()
   @IsNotEmptyObject()
