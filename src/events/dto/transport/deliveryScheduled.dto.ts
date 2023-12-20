@@ -104,12 +104,22 @@ export class DeliveryScheduledCredentialSubjectDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsDateString()
-  injectionDate?: string | Date
+  injectionStartDate?: string | Date
 
   @ApiPropertyOptional()
   @IsOptional()
   @IsDateString()
-  deliveryDate?: string | Date
+  injectionEndDate?: string | Date
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsDateString()
+  deliveryStartDate?: string | Date
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsDateString()
+  deliveryEndDate?: string | Date
 
   @ApiPropertyOptional()
   @IsOptional()
