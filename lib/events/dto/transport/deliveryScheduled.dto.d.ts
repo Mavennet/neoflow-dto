@@ -17,6 +17,7 @@ export declare class DeliveryScheduledCredentialSubjectDTO {
     countryOfDestination?: string;
     receiptLocation?: PlaceDTO;
     injectionVolume?: MeasurementDTO[];
+    scheduledVolume?: MeasurementDTO[];
     injectionStartDate?: string | Date;
     injectionEndDate?: string | Date;
     deliveryStartDate?: string | Date;
@@ -35,11 +36,14 @@ export declare class DeliveryScheduled_VC_DTO {
     proof: ProofDTO;
 }
 export declare class AGENT_DeliveryScheduledDTO {
-    productId?: string;
+    productId: string;
+    gasShipmentId: string;
     credentialSubject: DeliveryScheduledCredentialSubjectDTO;
 }
 export declare class CORE_DeliveryScheduledDTO {
     productId: string;
+    gasShipmentId: string;
     eventId: string;
     eventVC: DeliveryScheduled_VC_DTO;
 }
+export type AGENT_DeliveryScheduledDTO_NO_ID = Omit<AGENT_DeliveryScheduledDTO, 'productId' | 'gasShipmentId'>;
