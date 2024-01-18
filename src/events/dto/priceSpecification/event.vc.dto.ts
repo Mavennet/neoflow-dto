@@ -25,7 +25,7 @@ export class PriceSpecificationDetailsDTO {
   id: string
 
   @IsArray()
-  @ArrayMinSize(2)
+  @ArrayMinSize(1)
   @ArrayMaxSize(2)
   @ArrayContains(['VerifiableCredential'])
   type: string[]

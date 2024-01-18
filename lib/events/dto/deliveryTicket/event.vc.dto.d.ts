@@ -1,9 +1,10 @@
 import { ProofDTO } from '../../../general/dto/proof.dto';
 import { DeliveryTicketCredentialSubjectDTO } from './event.credentialSubject.dto';
+import { JSON_TYPE_NF } from '../../../general';
 export declare class DeliveryTicketVCDTO {
     '@context': string[];
     id: string;
-    type: string[];
+    type: JSON_TYPE_NF[];
     issuer?: string;
     issuanceDate?: string | Date;
     credentialSubject: DeliveryTicketCredentialSubjectDTO;

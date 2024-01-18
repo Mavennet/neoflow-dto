@@ -9,11 +9,14 @@ import {
   ValidateNested,
   ValidateIf,
   Matches,
-  IsUrl
+  IsUrl,
+  ArrayContains,
+  IsEnum
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { ProofDTO } from '../../../general/dto/proof.dto'
 import { DeliveryTicketCredentialSubjectDTO } from './event.credentialSubject.dto'
+import { JSON_TYPE_NF } from '../../../general'
 
 export class DeliveryTicketVCDTO {
   @IsArray()
@@ -27,8 +30,9 @@ export class DeliveryTicketVCDTO {
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
-  @ValidateIf((o) => o.type.includes('VerifiableCredential') && o.type.includes('OGDeliveryTicketCredential'))
-  type: string[]
+  @ArrayContains([JSON_TYPE_NF.VERIFIABLE_CREDENTIAL, JSON_TYPE_NF.OG_DELIVERY_TICKET_CREDENTIAL])
+  @IsEnum(JSON_TYPE_NF, { each: true })
+  type: JSON_TYPE_NF[]
 
   @IsOptional()
   @IsString()
