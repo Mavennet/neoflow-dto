@@ -41,7 +41,7 @@ export enum MECHANICAL_PROPERTY_TYPE {
 
   GROSS_VOLUME = 'Gross Volume',
   NET_VOLUME = 'Net Volume',
-  DELIVERED_VOLUME = 'delivered Volume',
+  DELIVERED_VOLUME = 'Delivered Volume',
   COMPOSITE_DESITY_KG_M3 = 'Composite Density kg/m3',
   API = 'API'
 }
