@@ -16,11 +16,6 @@ export class CreateEntryNumberDTOBase {
   @IsNotEmpty()
   @IsUUID()
   gasShipmentId: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  eventId: string
 }
 
 export class CreateEntryNumberDTO extends CreateEntryNumberDTOBase {
@@ -32,6 +27,11 @@ export class CreateEntryNumberDTO extends CreateEntryNumberDTOBase {
 }
 
 export class CORE_CreateEntryNumberDTO extends CreateEntryNumberDTOBase {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  eventId: string
+
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
