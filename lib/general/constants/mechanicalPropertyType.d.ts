@@ -39,6 +39,7 @@ export declare enum MECHANICAL_PROPERTY_TYPE {
     IZOD_IMPACT_STRENGTH_TEST = "Izod Impact Strength Test",
     GROSS_VOLUME = "Gross Volume",
     NET_VOLUME = "Net Volume",
+    DELIVERED_VOLUME = "Delivered Volume",
     COMPOSITE_DESITY_KG_M3 = "Composite Density kg/m3",
     API = "API"
 }

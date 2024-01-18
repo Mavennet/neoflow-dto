@@ -12,7 +12,8 @@ import {
   IsDateString,
   ArrayNotEmpty,
   IsEnum,
-  IsUUID
+  IsUUID,
+  ValidateIf
 } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { PlaceDTO } from '../../../general'
@@ -101,6 +102,13 @@ export class DeliveryScheduledCredentialSubjectDTO {
   @Type(() => MeasurementDTO)
   injectionVolume?: MeasurementDTO[]
 
+  @IsOptional()
+  @ApiPropertyOptional({ isArray: true, type: () => MeasurementDTO })
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => MeasurementDTO)
+  scheduledVolume?: MeasurementDTO[]
+
   @ApiPropertyOptional()
   @IsOptional()
   @IsDateString()
@@ -179,9 +187,16 @@ export class DeliveryScheduled_VC_DTO {
 
 export class AGENT_DeliveryScheduledDTO {
   @ApiProperty()
-  @IsOptional()
+  @ValidateIf(o => !o.gasShipmentId || o.productId)
+  @IsNotEmpty()
   @IsUUID()
-  productId?: string
+  productId: string
+
+  @ApiProperty()
+  @ValidateIf(o => !o.productId || o.gasShipmentId)
+  @IsNotEmpty()
+  @IsUUID()
+  gasShipmentId: string
 
   @ApiProperty()
   @IsNotEmpty()
@@ -191,10 +206,17 @@ export class AGENT_DeliveryScheduledDTO {
 }
 
 export class CORE_DeliveryScheduledDTO {
-  @IsNotEmpty()
   @ApiProperty()
-  @IsString()
+  @ValidateIf(o => !o.gasShipmentId || o.productId)
+  @IsNotEmpty()
+  @IsUUID()
   productId: string
+
+  @ApiProperty()
+  @ValidateIf(o => !o.productId || o.gasShipmentId)
+  @IsNotEmpty()
+  @IsUUID()
+  gasShipmentId: string
 
   @IsNotEmpty()
   @ApiProperty()
@@ -207,3 +229,9 @@ export class CORE_DeliveryScheduledDTO {
   @Type(() => DeliveryScheduled_VC_DTO)
   eventVC: DeliveryScheduled_VC_DTO
 }
+
+export type AGENT_DeliveryScheduledDTO_NO_ID = Omit<
+  AGENT_DeliveryScheduledDTO,
+  | 'productId'
+  | 'gasShipmentId'
+>

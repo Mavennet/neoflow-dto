@@ -26,5 +26,6 @@ export declare enum CHEMICAL_PROPERTY_TYPE {
     N_BUTANE = "nButane",
     HYDROCARBONS_HEAVIER = "hydrocarbonsHeavier",
     UNSATURATED_HYDROCARBONS = "unsaturatedHydrocarbons",
-    CESIUM = "Cesium"
+    CESIUM = "Cesium",
+    HEAT_CONTENT = "Heat Content"
 }
