@@ -8,10 +8,10 @@ export declare class DeliveryTicketCredentialSubjectDTO {
     carrier: OrganizationDTO;
     consignor: OrganizationDTO;
     consignee?: OrganizationDTO;
-    ticketControlNumber: string;
+    ticketControlNumber?: string;
     batchNumber?: string;
     notificationOfShipment?: string;
     destination: PlaceDTO;
-    product: ProductDTO;
+    product?: ProductDTO;
     observation: ObservationDTO[];
 }

@@ -31,16 +31,19 @@ export class DeliveryScheduledCredentialSubjectDTO {
 
   @IsOptional()
   @ApiPropertyOptional()
+  @ValidateNested()
   @Type(() => OrganizationDTO)
   transporter?: OrganizationDTO
 
   @IsOptional()
   @ApiPropertyOptional()
+  @ValidateNested()
   @Type(() => OrganizationDTO)
   consignee?: OrganizationDTO
 
   @IsOptional()
   @ApiPropertyOptional()
+  @ValidateNested()
   @Type(() => OrganizationDTO)
   consignor?: OrganizationDTO
 
@@ -51,6 +54,7 @@ export class DeliveryScheduledCredentialSubjectDTO {
 
   @IsOptional()
   @ApiPropertyOptional()
+  @ValidateNested()
   @Type(() => CommodityDTO)
   commodity?: CommodityDTO
 

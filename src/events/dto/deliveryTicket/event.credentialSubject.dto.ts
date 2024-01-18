@@ -60,10 +60,10 @@ export class DeliveryTicketCredentialSubjectDTO {
   @Type(() => OrganizationDTO)
   consignee?: OrganizationDTO
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsString()
-  ticketControlNumber: string
+  ticketControlNumber?: string
 
   @ApiProperty()
   @IsString()
@@ -81,11 +81,11 @@ export class DeliveryTicketCredentialSubjectDTO {
   @Type(() => PlaceDTO)
   destination: PlaceDTO
 
-  @ApiProperty()
-  @IsNotEmptyObject()
+  @ApiPropertyOptional()
+  @IsOptional()
   @ValidateNested()
   @Type(() => ProductDTO)
-  product: ProductDTO
+  product?: ProductDTO
 
   @ApiProperty({ isArray: true, type: () => ObservationDTO })
   @IsArray()
