@@ -30,28 +30,28 @@ export class DeliveryScheduledCredentialSubjectDTO {
   type: JSON_TYPE_NF[]
 
   @IsOptional()
-  @ApiProperty()
-  @IsString()
+  @ApiPropertyOptional()
+  @Type(() => OrganizationDTO)
   transporter?: OrganizationDTO
 
   @IsOptional()
-  @ApiProperty()
-  @IsString()
+  @ApiPropertyOptional()
+  @Type(() => OrganizationDTO)
   consignee?: OrganizationDTO
 
   @IsOptional()
-  @ApiProperty()
-  @IsString()
+  @ApiPropertyOptional()
+  @Type(() => OrganizationDTO)
   consignor?: OrganizationDTO
 
   @IsOptional()
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsString()
   batchNumber?: string
 
   @IsOptional()
-  @ApiProperty()
-  @IsString()
+  @ApiPropertyOptional()
+  @Type(() => CommodityDTO)
   commodity?: CommodityDTO
 
   @IsOptional()
