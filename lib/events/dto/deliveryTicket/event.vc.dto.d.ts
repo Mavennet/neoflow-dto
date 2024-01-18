@@ -4,7 +4,7 @@ export declare class DeliveryTicketVCDTO {
     '@context': string[];
     id: string;
     type: string[];
-    issuer: string;
+    issuer?: string;
     issuanceDate?: string | Date;
     credentialSubject: DeliveryTicketCredentialSubjectDTO;
     proof: ProofDTO;

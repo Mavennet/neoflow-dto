@@ -30,10 +30,10 @@ export class PriceSpecificationDetailsDTO {
   @ArrayContains(['VerifiableCredential'])
   type: string[]
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Matches(/^did:/)
-  issuer: string
+  issuer?: string
 
   @IsOptional()
   @IsDateString()

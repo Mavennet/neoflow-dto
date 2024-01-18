@@ -30,10 +30,10 @@ export class DeliveryTicketVCDTO {
   @ValidateIf((o) => o.type.includes('VerifiableCredential') && o.type.includes('OGDeliveryTicketCredential'))
   type: string[]
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Matches(/^did:/)
-  issuer: string
+  issuer?: string
 
   @IsOptional()
   @IsDateString()

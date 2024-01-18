@@ -30,7 +30,7 @@ export declare class DeliveryScheduled_VC_DTO {
     '@context': string[];
     id: string;
     type: JSON_TYPE[];
-    issuer: string;
+    issuer?: string;
     credentialSubject: DeliveryScheduledCredentialSubjectDTO;
     issuanceDate?: string | Date;
     proof: ProofDTO;

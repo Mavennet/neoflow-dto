@@ -161,11 +161,11 @@ export class DeliveryScheduled_VC_DTO {
   @ArrayContains([JSON_TYPE.VERIFIABLE_CREDENTIAL])
   type: JSON_TYPE[]
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsString()
   @Matches(/^did:/)
-  issuer: string
+  issuer?: string
 
   @ApiPropertyOptional()
   @IsNotEmptyObject()
