@@ -27,7 +27,7 @@ export class TSCACertificationDetailsDTO {
   @IsArray()
   @ArrayMinSize(1)
   @ArrayMaxSize(2)
-  @ArrayContains(['VerifiableCredential'])
+  @ArrayContains(['VerifiableCredential', 'TSCACertificationCredential'])
   type: string[]
 
   @IsOptional()

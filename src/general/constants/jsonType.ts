@@ -30,5 +30,6 @@ export enum JSON_TYPE_NF {
   MONTHLY_ADVANCE_MANIFEST_CREDENTIAL = 'MonthlyAdvanceManifestCredential',
   MONTHLY_ADVANCE_MANIFEST = 'MonthlyAdvanceManifest',
   PRICE_SPECIFICATION = 'PriceSpecification',
-  TSCA_CERTIFICATION_CREDENTIAL = 'TSCACertificationCredential'
+  TSCA_CERTIFICATION_CREDENTIAL = 'TSCACertificationCredential',
+  TSCA_CERTIFICATION = 'TSCACertification'
 }
