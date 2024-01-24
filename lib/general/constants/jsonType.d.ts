@@ -29,5 +29,6 @@ export declare enum JSON_TYPE_NF {
     OG_DELIVERY_TICKET_CREDENTIAL = "OilAndGasDeliveryTicketCredential",
     MONTHLY_ADVANCE_MANIFEST_CREDENTIAL = "MonthlyAdvanceManifestCredential",
     MONTHLY_ADVANCE_MANIFEST = "MonthlyAdvanceManifest",
-    PRICE_SPECIFICATION = "PriceSpecification"
+    PRICE_SPECIFICATION = "PriceSpecification",
+    TSCA_CERTIFICATION_CREDENTIAL = "TSCACertificationCredential"
 }
