@@ -7,7 +7,6 @@ import {
   ArrayMinSize,
   ArrayMaxSize,
   ValidateNested,
-  ValidateIf,
   Matches,
   IsUrl,
   ArrayContains,
