@@ -21,6 +21,8 @@ export declare class LocationDto {
     firmsCode: string;
     portCode: string;
     details: DetailsDto;
+    isOil: boolean;
+    isGas: boolean;
 }
 export declare class LocationsDto {
     deliveryFacilities: LocationDto[];

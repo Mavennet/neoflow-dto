@@ -1,4 +1,4 @@
-import { IsArray, IsString, IsObject, ValidateNested } from 'class-validator'
+import { IsArray, IsString, IsObject, IsBoolean, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
 
 class CoordinatesDto {
@@ -57,6 +57,12 @@ export class LocationDto {
 
   @IsObject()
   details: DetailsDto
+
+  @IsBoolean()
+  isOil: boolean
+
+  @IsBoolean()
+  isGas: boolean
 }
 
 export class LocationsDto {
