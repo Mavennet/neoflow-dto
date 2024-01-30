@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { IsEnum, IsArray, IsDateString, IsNotEmpty, ArrayNotEmpty } from 'class-validator'
-import { JSON_TYPE, JSON_TYPE_NF, type MeasurementDTO } from '../general'
+import { JSON_TYPE, JSON_TYPE_NF, type MeasurementDTO, type PlaceDTO, type OrganizationDTO } from '../general'
 
 export class AdvanceManifestCredentialSubjectDTO {
   @ApiProperty()
@@ -25,8 +25,13 @@ export class AdvanceManifestCredentialSubjectDTO {
   @IsArray()
   scheduledDeliveries?: Array<{
     portCode: string
+    portOfArrival: PlaceDTO
+    portOfDestination: PlaceDTO
+    transporter: OrganizationDTO
     deliveryLocation: string
+    receiptLocation: string
     sumOfScheduledDeliveries: MeasurementDTO[]
     numberOfBatches: string
+    countOfShippers: number
   }>
 }
