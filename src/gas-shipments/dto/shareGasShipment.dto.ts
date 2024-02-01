@@ -1,7 +1,7 @@
 import {
   IsNotEmpty,
   IsUUID,
-  IsString
+  IsNumber
 } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
@@ -13,6 +13,6 @@ export class ShareGasShipmentDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
-  orgId: string
+  @IsNumber()
+  orgId: number
 }
