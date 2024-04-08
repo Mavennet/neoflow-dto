@@ -1,9 +1,9 @@
 import { IsBoolean, IsOptional } from 'class-validator'
 import { ApiPropertyOptional } from '@nestjs/swagger'
 
-export class ShowPricingSettingsDTO {
+export class SupportPricingSettingsDTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsBoolean()
-  showPricing?: boolean
+  supportPricing?: boolean
 }
