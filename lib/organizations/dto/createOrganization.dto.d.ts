@@ -5,4 +5,10 @@ export declare class CreateOrganizationDTO extends CreateOrganizationDTOBase {
     uwi: Map<string, string>;
     userPoolID: string;
     adminAppClientID: string;
+    isNF: boolean;
+    isShipper: boolean;
+    isCheckToken: boolean;
+    alias: string[];
+    profile: string;
+    portOfArrivalID: number;
 }
