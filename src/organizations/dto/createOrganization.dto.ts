@@ -23,25 +23,25 @@ export class CreateOrganizationDTO extends CreateOrganizationDTOBase {
 
   @IsNotEmpty()
   @IsBoolean()
-  isNF: boolean;
+  isNF: boolean
 
   @IsNotEmpty()
   @IsBoolean()
-  isShipper: boolean;
+  isShipper: boolean
 
   @IsNotEmpty()
   @IsBoolean()
-  isCheckToken: boolean;
+  isCheckToken: boolean
 
   @IsNotEmpty()
   @IsArray()
-  alias: string[];
+  alias: string[]
 
   @IsNotEmpty()
   @IsString()
-  profile: string;
+  profile: string
 
   @IsNotEmpty()
   @IsNumber()
-  portOfArrivalID: number;
+  portOfArrivalID: number
 }
