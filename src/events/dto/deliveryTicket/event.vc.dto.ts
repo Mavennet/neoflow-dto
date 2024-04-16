@@ -16,6 +16,7 @@ import { Type } from 'class-transformer'
 import { ProofDTO } from '../../../general/dto/proof.dto'
 import { DeliveryTicketCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { JSON_TYPE_NF } from '../../../general'
+import { TICKET_TYPE } from '../../constants'
 
 export class DeliveryTicketVCDTO {
   @IsArray()
@@ -51,4 +52,8 @@ export class DeliveryTicketVCDTO {
   @ValidateNested()
   @Type(() => ProofDTO)
   proof: ProofDTO
+
+  @IsOptional()
+  @IsEnum(TICKET_TYPE)
+  ticketType?: TICKET_TYPE
 }
