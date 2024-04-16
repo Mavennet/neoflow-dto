@@ -1,9 +1,7 @@
 import {
   IsNotEmpty,
   IsUUID,
-  IsString,
   IsArray,
-  ArrayNotEmpty,
   ValidateNested
 } from 'class-validator'
 import { Type } from 'class-transformer'
