@@ -5,3 +5,4 @@ export * from './originCriterion';
 export * from './crudeStream';
 export * from './htsCode';
 export * from './productStatus';
+export * from './valueType';
