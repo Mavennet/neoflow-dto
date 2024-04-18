@@ -8,7 +8,7 @@ export declare class PhysicalSpecsDTO {
     viscosityAt45C?: string;
     pourPoint?: string;
     vapourPressure?: string;
-    density: string;
+    density?: string;
     diluent?: string;
     distillateAt350To650F?: string;
     gasOilAt650To980F?: string;
