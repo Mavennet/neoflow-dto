@@ -48,9 +48,9 @@ export class PhysicalSpecsDTO {
   vapourPressure?: string
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumberString()
-  density: string
+  density?: string
 
   @ApiPropertyOptional()
   @IsOptional()
