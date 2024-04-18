@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNotEmpty, IsNotEmptyObject, IsUUID, ValidateIf, ValidateNested } from 'class-validator'
+import { IsNotEmpty, IsNotEmptyObject, IsOptional, IsUUID, ValidateIf, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
 import { ChemicalSpecsDTO, GasSpecsDTO, PhysicalSpecsDTO } from '../../../general/dto'
 import { PRODUCT_CATEGORY_TYPE } from '../../../products/constants'
@@ -21,11 +21,11 @@ export class AGENT_UpdateStorageProductDTO {
   revokeEventId: string
 
   @ApiProperty()
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => PhysicalSpecsDTO)
   @ValidateIf((o) => o.category !== PRODUCT_CATEGORY_TYPE.GAS)
-  physicalSpecs: PhysicalSpecsDTO
+  physicalSpecs?: PhysicalSpecsDTO
 
   @ApiProperty()
   @IsNotEmptyObject()

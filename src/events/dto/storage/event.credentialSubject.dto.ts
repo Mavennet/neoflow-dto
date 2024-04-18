@@ -68,11 +68,11 @@ export class CORE_StorageEventCredentialSubjectDTO {
   tankLocation: AddressDTO
 
   @ApiProperty()
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => PhysicalSpecsDTO)
   @ValidateIf((o) => o.category !== PRODUCT_CATEGORY_TYPE.GAS)
-  physicalSpecs: PhysicalSpecsDTO
+  physicalSpecs?: PhysicalSpecsDTO
 
   @ApiProperty()
   @IsNotEmptyObject()

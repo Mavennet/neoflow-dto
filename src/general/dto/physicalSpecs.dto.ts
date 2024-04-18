@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { IsNotEmpty, IsOptional, IsString, IsNumberString } from 'class-validator'
+import { IsOptional, IsString, IsNumberString } from 'class-validator'
 
 export class PhysicalSpecsDTO {
   @ApiPropertyOptional()

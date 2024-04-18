@@ -10,7 +10,7 @@ export declare class CORE_StorageEventCredentialSubjectDTO {
     volume: string;
     uom: string;
     tankLocation: AddressDTO;
-    physicalSpecs: PhysicalSpecsDTO;
+    physicalSpecs?: PhysicalSpecsDTO;
     chemicalSpecs: ChemicalSpecsDTO;
     gasSpecs: GasSpecsDTO;
 }

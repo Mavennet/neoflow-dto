@@ -3,7 +3,7 @@ export declare class AGENT_UpdateStorageProductDTO {
     productId: string;
     eventId: string;
     revokeEventId: string;
-    physicalSpecs: PhysicalSpecsDTO;
+    physicalSpecs?: PhysicalSpecsDTO;
     chemicalSpecs: ChemicalSpecsDTO;
     gasSpecs: GasSpecsDTO;
 }
