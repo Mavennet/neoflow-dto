@@ -1,6 +1,6 @@
 {
   "name": "@mavennet/neoflow-dto",
-  "version": "1.2.27",
+  "version": "1.2.28",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
