@@ -1,5 +1,5 @@
-import { ApiProperty } from '@nestjs/swagger'
-import { IsEnum, IsNotEmpty, IsString, IsNumber } from 'class-validator'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { IsEnum, IsNotEmpty, IsOptional, IsString, IsNumber } from 'class-validator'
 import { VALUE_TYPE } from '../constants'
 
 export class UpsertProductPriceDTO {
@@ -13,13 +13,13 @@ export class UpsertProductPriceDTO {
   @IsEnum(VALUE_TYPE)
   valueType: VALUE_TYPE
 
-  @IsNotEmpty()
-  @ApiProperty()
+  @IsOptional()
+  @ApiPropertyOptional()
   @IsNumber()
-  total: number
+  total?: number
 
-  @IsNotEmpty()
-  @ApiProperty()
+  @IsOptional()
+  @ApiPropertyOptional()
   @IsNumber()
-  unitPrice: number
+  unitPrice?: number
 }
