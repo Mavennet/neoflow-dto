@@ -1,21 +1,25 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNotEmpty, ValidateNested, IsUUID, ValidateIf } from 'class-validator'
+import { IsNotEmpty, ValidateNested, IsUUID, ValidateIf, IsOptional } from 'class-validator'
 import { Type } from 'class-transformer'
 import { DeliveryTicketCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { DeliveryTicketVCDTO } from './event.vc.dto'
 
 export class CORE_DeliveryTicketDTO {
   @ApiProperty()
-  @ValidateIf(o => !o.gasShipmentId || o.productId)
+  @ValidateIf((o) => !o.gasShipmentId || o.productId)
   @IsNotEmpty()
   @IsUUID()
   productId: string
 
   @ApiProperty()
-  @ValidateIf(o => !o.productId || o.gasShipmentId)
+  @ValidateIf((o) => !o.productId || o.gasShipmentId)
   @IsNotEmpty()
   @IsUUID()
   gasShipmentId: string
+
+  @ApiProperty()
+  @IsOptional()
+  uploadFileKey?: string
 
   @ApiProperty()
   @IsNotEmpty()
@@ -31,16 +35,20 @@ export class CORE_DeliveryTicketDTO {
 
 export class AGENT_DeliveryTicketDTO {
   @ApiProperty()
-  @ValidateIf(o => !o.gasShipmentId || o.productId)
+  @ValidateIf((o) => !o.gasShipmentId || o.productId)
   @IsNotEmpty()
   @IsUUID()
   productId: string
 
   @ApiProperty()
-  @ValidateIf(o => !o.productId || o.gasShipmentId)
+  @ValidateIf((o) => !o.productId || o.gasShipmentId)
   @IsNotEmpty()
   @IsUUID()
   gasShipmentId: string
+
+  @ApiProperty()
+  @IsOptional()
+  uploadFileKey?: string
 
   @ApiProperty()
   @IsNotEmpty()
