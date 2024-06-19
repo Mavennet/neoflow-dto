@@ -9,10 +9,10 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '16.X'
+          node-version: '20.X'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@mavennet'
           cache: 'npm'
@@ -30,12 +30,12 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT }}
       - name: Automated Version Bump
         id: bump-version
-        uses: phips28/gh-action-bump-version@v9.1.0
+        uses: phips28/gh-action-bump-version@master
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
@@ -48,10 +48,10 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '16.X'
+          node-version: '20.X'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@mavennet'
           cache: 'npm'
