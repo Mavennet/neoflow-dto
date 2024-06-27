@@ -29,6 +29,8 @@ export enum JSON_TYPE_NF {
   OG_DELIVERY_TICKET_CREDENTIAL = 'OilAndGasDeliveryTicketCredential',
   MONTHLY_ADVANCE_MANIFEST_CREDENTIAL = 'MonthlyAdvanceManifestCredential',
   MONTHLY_ADVANCE_MANIFEST = 'MonthlyAdvanceManifest',
+  MONTHLY_DELIVERY_STATEMENTS_CREDENTIAL = 'MonthlyAggregatedDeliveryStatementsCredential',
+  MONTHLY_DELIVERY_STATEMENTS = 'MonthlyAggregatedDeliveryStatements',
   PRICE_SPECIFICATION = 'PriceSpecification',
   TSCA_CERTIFICATION_CREDENTIAL = 'TSCACertificationCredential',
   TSCA_CERTIFICATION = 'TSCACertification'
