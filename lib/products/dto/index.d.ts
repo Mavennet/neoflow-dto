@@ -6,4 +6,6 @@ export * from './productsByBatch.dto';
 export * from './sharing';
 export * from './deleteProductsByBatch.dto';
 export * from './upsertProductPrice.dto';
+export * from './addProductDocument.dto';
+export * from './deleteProductDocument.dto';
 export * from './upsertProductUSMCA.dto';
