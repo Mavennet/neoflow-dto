@@ -77,6 +77,11 @@ export class PipelinePostArrivalRecord {
   @ApiProperty({ required: false })
   @IsString()
   productId?: string
+
+  @IsOptional()
+  @ApiProperty({ required: false })
+  @IsString()
+  open_date?: string
 }
 
 export class PipelinePostArrivalDto_AGENT {
