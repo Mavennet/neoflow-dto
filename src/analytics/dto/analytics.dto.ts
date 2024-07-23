@@ -46,11 +46,6 @@ export class AnalyticsDTO extends AnalyticsDTOBase {
   @ApiProperty()
   @IsOptional()
   @IsString()
-  qpInBond?: string
-
-  @ApiProperty()
-  @IsOptional()
-  @IsString()
   ftzNo?: string
 
   @ApiProperty()
