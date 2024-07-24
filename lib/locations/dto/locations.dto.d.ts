@@ -15,6 +15,7 @@ declare class DetailsDto {
     postalAddress: PostalAddressDto;
 }
 export declare class LocationDto {
+    id: number;
     value: string;
     label: string;
     alias: string[];
@@ -24,9 +25,14 @@ export declare class LocationDto {
     isOil: boolean;
     isGas: boolean;
 }
+export declare class XBorderDto {
+    receiptLocationId: number;
+    deliveryFacilityId: number;
+}
 export declare class LocationsDto {
     deliveryFacilities: LocationDto[];
     receiptLocations: LocationDto[];
     ports: LocationDto[];
+    xborderMappings: XBorderDto[];
 }
 export {};
