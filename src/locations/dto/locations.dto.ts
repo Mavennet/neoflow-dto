@@ -1,4 +1,4 @@
-import { IsArray, IsString, IsObject, IsBoolean, ValidateNested } from 'class-validator'
+import { IsArray, IsString, IsObject, IsBoolean, ValidateNested, IsNumber } from 'class-validator'
 import { Type } from 'class-transformer'
 
 class CoordinatesDto {
@@ -40,6 +40,9 @@ class DetailsDto {
 }
 
 export class LocationDto {
+  @IsNumber()
+  id: number
+
   @IsString()
   value: string
 
@@ -65,6 +68,14 @@ export class LocationDto {
   isGas: boolean
 }
 
+export class XBorderDto {
+  @IsNumber()
+  receiptLocationId: number
+
+  @IsNumber()
+  deliveryFacilityId: number
+}
+
 export class LocationsDto {
   @IsArray()
   @ValidateNested({ each: true })
@@ -80,4 +91,9 @@ export class LocationsDto {
   @ValidateNested({ each: true })
   @Type(() => LocationDto)
   ports: LocationDto[]
+
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => XBorderDto)
+  xborderMappings: XBorderDto[]
 }
