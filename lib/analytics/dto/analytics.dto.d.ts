@@ -8,7 +8,6 @@ export declare class AnalyticsDTO extends AnalyticsDTOBase {
     startTransportMonth?: string;
     buyerName: string;
     refineryName?: string;
-    qpInBond?: string;
     ftzNo?: string;
     origin: string;
     portOfEntry?: string;
