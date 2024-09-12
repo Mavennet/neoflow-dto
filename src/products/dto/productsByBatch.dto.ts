@@ -10,10 +10,20 @@ export class ProductsByBatchDTO {
   @IsNotEmpty()
   @ApiProperty()
   @IsString()
-  nosMonth: string
+  nominationMonth: string
 
   @IsNotEmpty()
   @ApiProperty()
   @IsString()
   productId: string
+
+  @IsNotEmpty()
+  @ApiProperty()
+  @IsString()
+  commodity: string
+
+  @IsNotEmpty()
+  @ApiProperty()
+  @IsString()
+  pipeline: string
 }
