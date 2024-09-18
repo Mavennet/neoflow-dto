@@ -22,6 +22,7 @@ export enum JSON_TYPE_NF {
   ED25519_SIGNATURE_2018 = 'Ed25519Signature2018',
   MONTHLY_DELIVERY_STATEMENT = 'MonthlyDeliveryStatement',
   DELIVERY_STATEMENT = 'DeliveryStatement',
+  DELIVERY_STATEMENT_CREDENTIAL = 'DeliveryStatementCredential',
   DELIVERY_SCHEDULE = 'DeliverySchedule',
   COMMODITY = 'Commodity',
   OG_DELIVERY_TICKET = 'OilAndGasDeliveryTicket',
