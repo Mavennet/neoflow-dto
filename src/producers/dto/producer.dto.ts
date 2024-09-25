@@ -78,6 +78,20 @@ export class Producer_VC_DTO {
   proof: ProofDTO
 }
 
+export class AGENT_ProducerDTO {
+  @ApiProperty()
+  @ValidateIf((obj) => !obj.productId || obj.gasShipmentId)
+  @IsNotEmpty()
+  @IsUUID()
+  gasShipmentId: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => ProducerCredentialSubjectDTO)
+  credentialSubject: ProducerCredentialSubjectDTO
+}
+
 export class CORE_ProducerDTO {
   @ApiProperty()
   @ValidateIf((obj) => !obj.productId || obj.gasShipmentId)
