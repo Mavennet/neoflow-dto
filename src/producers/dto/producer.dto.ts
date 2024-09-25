@@ -16,8 +16,8 @@ import {
 } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { JSON_TYPE, JSON_TYPE_NF } from '../general'
-import { ProofDTO } from '../general/dto'
+import { JSON_TYPE, JSON_TYPE_NF } from '../../general'
+import { ProofDTO } from '../../general/dto'
 
 export class ProducerCredentialSubjectDTO {
   @ApiProperty()
