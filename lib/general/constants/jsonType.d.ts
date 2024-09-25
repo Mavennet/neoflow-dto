@@ -33,5 +33,6 @@ export declare enum JSON_TYPE_NF {
     MONTHLY_DELIVERY_STATEMENTS = "MonthlyAggregatedDeliveryStatements",
     PRICE_SPECIFICATION = "PriceSpecification",
     TSCA_CERTIFICATION_CREDENTIAL = "TSCACertificationCredential",
-    TSCA_CERTIFICATION = "TSCACertification"
+    TSCA_CERTIFICATION = "TSCACertification",
+    NATURAL_GAS_PRODUCER_ENVIRONMENTAL_PASSPORT_CREDENTIAL = "NaturalGasProducerEnvironmentalPassportCredential"
 }
