@@ -10,9 +10,7 @@ import {
   ArrayContains,
   IsDateString,
   ArrayNotEmpty,
-  IsEnum,
-  IsUUID,
-  ValidateIf
+  IsEnum
 } from 'class-validator'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
@@ -80,12 +78,6 @@ export class Producer_VC_DTO {
 
 export class AGENT_ProducerDTO {
   @ApiProperty()
-  @ValidateIf((obj) => !obj.productId || obj.gasShipmentId)
-  @IsNotEmpty()
-  @IsUUID()
-  gasShipmentId: string
-
-  @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => ProducerCredentialSubjectDTO)
@@ -93,12 +85,6 @@ export class AGENT_ProducerDTO {
 }
 
 export class CORE_ProducerDTO {
-  @ApiProperty()
-  @ValidateIf((obj) => !obj.productId || obj.gasShipmentId)
-  @IsNotEmpty()
-  @IsUUID()
-  gasShipmentId: string
-
   @IsNotEmpty()
   @ApiProperty()
   @IsString()

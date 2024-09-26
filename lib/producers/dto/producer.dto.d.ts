@@ -15,11 +15,9 @@ export declare class Producer_VC_DTO {
     proof: ProofDTO;
 }
 export declare class AGENT_ProducerDTO {
-    gasShipmentId: string;
     credentialSubject: ProducerCredentialSubjectDTO;
 }
 export declare class CORE_ProducerDTO {
-    gasShipmentId: string;
     producerId: string;
     producerVC: Producer_VC_DTO;
 }
