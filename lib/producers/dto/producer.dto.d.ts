@@ -2,6 +2,7 @@ import { JSON_TYPE, JSON_TYPE_NF } from '../../general';
 import { ProofDTO } from '../../general/dto';
 export declare class ProducerCredentialSubjectDTO {
     type: JSON_TYPE_NF[];
+    producer: string;
     title?: string;
 }
 export declare class Producer_VC_DTO {

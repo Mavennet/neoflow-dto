@@ -24,6 +24,11 @@ export class ProducerCredentialSubjectDTO {
   @IsEnum(JSON_TYPE_NF, { each: true })
   type: JSON_TYPE_NF[]
 
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  producer: string
+
   @IsOptional()
   @ApiPropertyOptional()
   @IsString()
