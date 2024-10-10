@@ -4,4 +4,5 @@ export declare class ProductsByBatchDTO {
     productId: string;
     commodity: string;
     pipeline: string;
+    status: string;
 }
