@@ -26,4 +26,9 @@ export class ProductsByBatchDTO {
   @ApiProperty()
   @IsString()
   pipeline: string
+
+  @IsNotEmpty()
+  @ApiProperty()
+  @IsString()
+  status: string
 }
