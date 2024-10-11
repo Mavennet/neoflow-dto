@@ -7,7 +7,7 @@ export declare class DeliveryStatementVCDTO {
     id: string;
     type: JSON_TYPE_NF[];
     issuer?: string;
-    issuanceDate?: string | Date;
+    validFrom?: string | Date;
     credentialSubject: DeliveryStatementCredentialSubjectDTO;
     proof: ProofDTO;
     ticketType?: TICKET_TYPE;

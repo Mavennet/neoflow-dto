@@ -37,7 +37,7 @@ export class TSCACertificationDetailsDTO {
 
   @IsOptional()
   @IsDateString()
-  issuanceDate?: string | Date
+  validFrom?: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

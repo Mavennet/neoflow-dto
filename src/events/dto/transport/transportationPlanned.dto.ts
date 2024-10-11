@@ -101,7 +101,7 @@ export class TransportationPlanned_VC_DTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsDateString()
-  issuanceDate?: string | Date
+  validFrom?: string | Date
 
   @ApiPropertyOptional()
   @IsNotEmptyObject()

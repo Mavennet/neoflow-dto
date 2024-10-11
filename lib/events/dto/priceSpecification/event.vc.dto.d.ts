@@ -5,7 +5,7 @@ export declare class PriceSpecificationDetailsDTO {
     id: string;
     type: string[];
     issuer?: string;
-    issuanceDate?: string | Date;
+    validFrom?: string | Date;
     credentialSubject: PriceSpecificationCredentialSubjectDTO;
     proof: ProofDTO;
 }

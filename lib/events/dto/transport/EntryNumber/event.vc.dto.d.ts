@@ -5,7 +5,7 @@ export declare class EntryNumberEventVCDTO {
     '@context': string[];
     id: string;
     type: JSON_TYPE[];
-    issuanceDate?: string | Date;
+    validFrom?: string | Date;
     credentialSubject: EntryNumberCredentialSubjectDTO;
     proof: ProofDTO;
 }

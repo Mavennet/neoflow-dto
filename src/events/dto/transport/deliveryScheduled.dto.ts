@@ -180,7 +180,7 @@ export class DeliveryScheduled_VC_DTO {
   @ApiPropertyOptional()
   @IsOptional()
   @IsDateString()
-  issuanceDate?: string | Date
+  validFrom?: string | Date
 
   @ApiPropertyOptional()
   @IsNotEmptyObject()
@@ -191,13 +191,13 @@ export class DeliveryScheduled_VC_DTO {
 
 export class AGENT_DeliveryScheduledDTO {
   @ApiProperty()
-  @ValidateIf(o => !o.gasShipmentId || o.productId)
+  @ValidateIf((o) => !o.gasShipmentId || o.productId)
   @IsNotEmpty()
   @IsUUID()
   productId: string
 
   @ApiProperty()
-  @ValidateIf(o => !o.productId || o.gasShipmentId)
+  @ValidateIf((o) => !o.productId || o.gasShipmentId)
   @IsNotEmpty()
   @IsUUID()
   gasShipmentId: string
@@ -211,13 +211,13 @@ export class AGENT_DeliveryScheduledDTO {
 
 export class CORE_DeliveryScheduledDTO {
   @ApiProperty()
-  @ValidateIf(o => !o.gasShipmentId || o.productId)
+  @ValidateIf((o) => !o.gasShipmentId || o.productId)
   @IsNotEmpty()
   @IsUUID()
   productId: string
 
   @ApiProperty()
-  @ValidateIf(o => !o.productId || o.gasShipmentId)
+  @ValidateIf((o) => !o.productId || o.gasShipmentId)
   @IsNotEmpty()
   @IsUUID()
   gasShipmentId: string
@@ -234,8 +234,4 @@ export class CORE_DeliveryScheduledDTO {
   eventVC: DeliveryScheduled_VC_DTO
 }
 
-export type AGENT_DeliveryScheduledDTO_NO_ID = Omit<
-  AGENT_DeliveryScheduledDTO,
-  | 'productId'
-  | 'gasShipmentId'
->
+export type AGENT_DeliveryScheduledDTO_NO_ID = Omit<AGENT_DeliveryScheduledDTO, 'productId' | 'gasShipmentId'>

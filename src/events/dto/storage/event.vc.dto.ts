@@ -35,7 +35,7 @@ class StorageEventDetailsDTOBase {
   @ApiPropertyOptional()
   @IsOptional()
   @IsDateString()
-  issuanceDate?: string | Date
+  validFrom?: string | Date
 
   @ApiProperty()
   @IsNotEmpty()

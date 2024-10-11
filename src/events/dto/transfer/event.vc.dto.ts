@@ -108,7 +108,7 @@ export class CORE_TransferEventDetailsDTO {
 
   @IsOptional()
   @IsDateString()
-  issuanceDate?: string | Date
+  validFrom?: string | Date
 
   @IsNotEmptyObject()
   @ValidateNested()

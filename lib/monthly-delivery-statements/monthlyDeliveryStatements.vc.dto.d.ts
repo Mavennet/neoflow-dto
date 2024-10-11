@@ -4,7 +4,7 @@ export declare class MonthlyDeliveryStatementsVCDTO {
     '@context': string[];
     id: string;
     type: string[];
-    issuanceDate?: string | Date;
+    validFrom?: string | Date;
     credentialSubject: MonthlyDeliveryStatementsCredentialSubjectDTO;
     proof: ProofDTO;
 }

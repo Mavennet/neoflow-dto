@@ -32,7 +32,7 @@ export declare class DeliveryScheduled_VC_DTO {
     type: JSON_TYPE[];
     issuer?: string;
     credentialSubject: DeliveryScheduledCredentialSubjectDTO;
-    issuanceDate?: string | Date;
+    validFrom?: string | Date;
     proof: ProofDTO;
 }
 export declare class AGENT_DeliveryScheduledDTO {

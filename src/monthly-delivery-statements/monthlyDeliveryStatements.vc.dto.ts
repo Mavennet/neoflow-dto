@@ -25,12 +25,14 @@ export class MonthlyDeliveryStatementsVCDTO {
   @IsArray()
   @ArrayMinSize(2)
   @ArrayMaxSize(2)
-  @ValidateIf((o) => o.type.includes('VerifiableCredential') && o.type.includes('MonthlyMonthlyDeliveryStatementsCredential'))
+  @ValidateIf(
+    (o) => o.type.includes('VerifiableCredential') && o.type.includes('MonthlyMonthlyDeliveryStatementsCredential')
+  )
   type: string[]
 
   @IsOptional()
   @IsDateString()
-  issuanceDate?: string | Date
+  validFrom?: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

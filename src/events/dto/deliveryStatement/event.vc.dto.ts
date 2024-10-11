@@ -41,7 +41,7 @@ export class DeliveryStatementVCDTO {
 
   @IsOptional()
   @IsDateString()
-  issuanceDate?: string | Date
+  validFrom?: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

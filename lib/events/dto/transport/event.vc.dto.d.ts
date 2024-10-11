@@ -5,7 +5,7 @@ declare class TransportationEventDetailsDTOBase {
     id: string;
     type: string[];
     issuer: string;
-    issuanceDate?: string | Date;
+    validFrom?: string | Date;
     proof: ProofDTO;
 }
 export declare class CORE_TransportationEventDetailsDTO extends TransportationEventDetailsDTOBase {

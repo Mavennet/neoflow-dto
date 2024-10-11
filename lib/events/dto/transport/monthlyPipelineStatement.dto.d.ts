@@ -17,7 +17,7 @@ export declare class MonthlyPipelineStatement_VC {
     type: JSON_TYPE[];
     issuer: string;
     credentialSubject: MonthlyPipelineStatementCredentialSubject;
-    issuanceDate?: string | Date;
+    validFrom?: string | Date;
     proof: ProofDTO;
 }
 export declare class CORE_MonthlyPipelineStatementDTO {

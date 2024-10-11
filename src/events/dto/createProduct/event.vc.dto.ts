@@ -37,7 +37,7 @@ class CreationEventDetailsDTOBase {
 
   @IsOptional()
   @IsDateString()
-  issuanceDate?: string | Date
+  validFrom?: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

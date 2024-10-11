@@ -18,7 +18,7 @@ export declare class TransportationPlanned_VC_DTO {
     type: JSON_TYPE[];
     issuer: string;
     credentialSubject: AGENT_TransportationPlannedDTO;
-    issuanceDate?: string | Date;
+    validFrom?: string | Date;
     proof: ProofDTO;
 }
 export declare class CORE_TransportationPlannedDTO {

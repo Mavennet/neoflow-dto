@@ -36,7 +36,7 @@ class TransportationEventDetailsDTOBase {
 
   @IsOptional()
   @IsDateString()
-  issuanceDate?: string | Date
+  validFrom?: string | Date
 
   @IsNotEmpty()
   @ValidateNested()

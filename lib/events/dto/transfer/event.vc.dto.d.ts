@@ -23,7 +23,7 @@ export declare class CORE_TransferEventDetailsDTO {
     '@context': string[];
     type: string[];
     issuer: string;
-    issuanceDate?: string | Date;
+    validFrom?: string | Date;
     credentialSubject: CORE_TransferEventCredentialSubjectDTO;
     proof: ProofDTO;
 }
