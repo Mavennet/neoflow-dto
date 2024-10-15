@@ -1,17 +1,16 @@
-import {
-  IsOptional,
-  IsNotEmpty,
-  IsArray,
-  IsString,
-  IsDateString,
-  ArrayMinSize,
-  ArrayMaxSize,
-  ValidateNested,
-  Matches,
-  IsUrl,
-  ArrayContains
-} from 'class-validator'
 import { Type } from 'class-transformer'
+import {
+  ArrayContains,
+  ArrayMaxSize,
+  ArrayMinSize,
+  IsArray,
+  IsDateString,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  Matches,
+  ValidateNested
+} from 'class-validator'
 import { ProofDTO } from '../../../general/dto/proof.dto'
 import { PriceSpecificationCredentialSubjectDTO } from './event.credentialSubject.dto'
 

@@ -1,19 +1,18 @@
+import { ApiProperty } from '@nestjs/swagger'
+import { Type } from 'class-transformer'
 import {
+  ArrayMinSize,
+  ArrayNotEmpty,
+  IsArray,
+  IsDateString,
+  IsEnum,
   IsNotEmpty,
   IsNotEmptyObject,
-  IsEnum,
   IsUUID,
-  IsArray,
-  ValidateNested,
-  ArrayMinSize,
-  IsDateString,
-  IsUrl,
-  ArrayNotEmpty
+  ValidateNested
 } from 'class-validator'
-import { Type } from 'class-transformer'
-import { PlaceDTO, OrganizationDTO } from '../../../general'
-import { ApiProperty } from '@nestjs/swagger'
 import { EVENT_TYPE } from '../../../events'
+import { OrganizationDTO, PlaceDTO } from '../../../general'
 
 export class AGENT_CreationEventCredentialSubjectDTO {
   @ApiProperty()

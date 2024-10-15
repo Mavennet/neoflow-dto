@@ -1,19 +1,18 @@
-import {
-  IsOptional,
-  IsNotEmpty,
-  IsArray,
-  IsString,
-  IsDateString,
-  ArrayMinSize,
-  ValidateNested,
-  Matches,
-  IsUrl
-} from 'class-validator'
 import { Type } from 'class-transformer'
+import {
+  ArrayMinSize,
+  IsArray,
+  IsDateString,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  Matches,
+  ValidateNested
+} from 'class-validator'
 import { ProofDTO } from '../../../general/dto/proof.dto'
 import {
-  CORE_TransportationEventCredentialSubjectDTO,
-  AGENT_TransportationEventCredentialSubjectDTO
+  AGENT_TransportationEventCredentialSubjectDTO,
+  CORE_TransportationEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
 
 class TransportationEventDetailsDTOBase {

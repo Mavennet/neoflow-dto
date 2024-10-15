@@ -1,18 +1,17 @@
+import { ApiProperty } from '@nestjs/swagger'
+import { Type } from 'class-transformer'
 import {
+  ArrayMinSize,
+  IsArray,
+  IsDateString,
+  IsEnum,
   IsNotEmpty,
   IsNotEmptyObject,
   IsUUID,
-  IsEnum,
-  IsArray,
-  ArrayMinSize,
-  ValidateNested,
-  IsDateString,
-  IsUrl
+  ValidateNested
 } from 'class-validator'
-import { Type } from 'class-transformer'
-import { PlaceDTO, OrganizationDTO } from '../../../general'
+import { OrganizationDTO, PlaceDTO } from '../../../general'
 import { TRANSFORMATION_EVENT_TYPE } from '../../constants/transformationEventType'
-import { ApiProperty } from '@nestjs/swagger'
 
 export class AGENT_TransformationEventCredentialSubjectDTO {
   @ApiProperty()

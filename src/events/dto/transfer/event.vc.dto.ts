@@ -12,8 +12,7 @@ import {
   IsOptional,
   IsString,
   Matches,
-  ValidateNested,
-  IsUrl
+  ValidateNested
 } from 'class-validator'
 import { AddressDTO } from '../../../general/dto/address.dto'
 import { ProofDTO } from '../../../general/dto/proof.dto'

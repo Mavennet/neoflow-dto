@@ -1,14 +1,13 @@
 import { Type } from 'class-transformer'
 import {
-  IsOptional,
   ArrayMinSize,
   IsArray,
   IsDateString,
   IsNotEmpty,
+  IsOptional,
   IsString,
   Matches,
-  ValidateNested,
-  IsUrl
+  ValidateNested
 } from 'class-validator'
 import { ProofDTO } from '../../../general/dto/proof.dto'
 import {

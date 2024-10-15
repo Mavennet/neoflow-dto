@@ -1,20 +1,19 @@
+import { Type } from 'class-transformer'
 import {
+  ArrayMinSize,
+  IsArray,
+  IsDateString,
+  IsEnum,
   IsNotEmpty,
   IsNotEmptyObject,
-  IsOptional,
-  IsEnum,
-  IsString,
   IsNumberString,
-  ValidateNested,
+  IsOptional,
+  IsString,
   Matches,
-  IsArray,
-  ArrayMinSize,
-  IsDateString,
-  IsUrl
+  ValidateNested
 } from 'class-validator'
-import { Type } from 'class-transformer'
+import { OrganizationDTO, PlaceDTO } from '../../../general'
 import { TRANSFER_EVENT_TYPE } from '../../constants'
-import { PlaceDTO, OrganizationDTO } from '../../../general'
 
 export class AGENT_TransferEventCredentialSubjectDTO {
   @IsNotEmptyObject()

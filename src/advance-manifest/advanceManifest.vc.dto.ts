@@ -1,15 +1,14 @@
+import { Type } from 'class-transformer'
 import {
-  IsOptional,
-  IsNotEmpty,
+  ArrayMaxSize,
+  ArrayMinSize,
   IsArray,
   IsDateString,
-  ArrayMinSize,
-  ArrayMaxSize,
-  ValidateNested,
+  IsNotEmpty,
+  IsOptional,
   ValidateIf,
-  IsUrl
+  ValidateNested
 } from 'class-validator'
-import { Type } from 'class-transformer'
 import { ProofDTO } from '../general/dto/proof.dto'
 import { AdvanceManifestCredentialSubjectDTO } from './advanceManifest.credentialSubject.dto'
 
