@@ -1,5 +1,5 @@
 import { ProofDTO } from '../../../general/dto/proof.dto';
-import { CORE_TransportationEventCredentialSubjectDTO, AGENT_TransportationEventCredentialSubjectDTO } from './event.credentialSubject.dto';
+import { AGENT_TransportationEventCredentialSubjectDTO, CORE_TransportationEventCredentialSubjectDTO } from './event.credentialSubject.dto';
 declare class TransportationEventDetailsDTOBase {
     '@context': string[];
     id: string;

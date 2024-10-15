@@ -1,5 +1,5 @@
+import { OrganizationDTO, PlaceDTO } from '../../../general';
 import { TRANSFER_EVENT_TYPE } from '../../constants';
-import { PlaceDTO, OrganizationDTO } from '../../../general';
 export declare class AGENT_TransferEventCredentialSubjectDTO {
     place: PlaceDTO;
     products: string[];

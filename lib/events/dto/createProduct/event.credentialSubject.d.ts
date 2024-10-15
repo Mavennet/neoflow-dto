@@ -1,5 +1,5 @@
-import { PlaceDTO, OrganizationDTO } from '../../../general';
 import { EVENT_TYPE } from '../../../events';
+import { OrganizationDTO, PlaceDTO } from '../../../general';
 export declare class AGENT_CreationEventCredentialSubjectDTO {
     eventType: EVENT_TYPE;
     place: PlaceDTO;
