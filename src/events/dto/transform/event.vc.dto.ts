@@ -22,7 +22,6 @@ class TransformationEventDetailsDTOBase {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl({ require_tld: false })
   id: string
 
   @IsArray()

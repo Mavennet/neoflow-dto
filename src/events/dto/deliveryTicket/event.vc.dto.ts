@@ -24,7 +24,6 @@ export class DeliveryTicketVCDTO {
   '@context': string[]
 
   @IsNotEmpty()
-  @IsUrl({ require_tld: false })
   id: string
 
   @IsArray()

@@ -90,7 +90,6 @@ export class AGENT_TransferEventDetailsDTO {
 
 export class CORE_TransferEventDetailsDTO {
   @IsNotEmpty()
-  @IsUrl({ require_tld: false })
   id: string
 
   @IsArray()
