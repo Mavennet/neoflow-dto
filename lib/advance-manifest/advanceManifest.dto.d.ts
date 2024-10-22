@@ -1,5 +1,5 @@
-import { AdvanceManifestVCDTO } from './advanceManifest.vc.dto';
+import { EnvelopedVerifiableCredential } from '../credentials';
 export declare class CORE_AdvanceManifestDTO {
     eventId: string;
-    eventVC: AdvanceManifestVCDTO;
+    eventVC: EnvelopedVerifiableCredential;
 }

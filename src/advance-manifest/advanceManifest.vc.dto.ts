@@ -9,7 +9,6 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator'
-import { ProofDTO } from '../general/dto/proof.dto'
 import { AdvanceManifestCredentialSubjectDTO } from './advanceManifest.credentialSubject.dto'
 
 export class AdvanceManifestVCDTO {
@@ -34,9 +33,4 @@ export class AdvanceManifestVCDTO {
   @ValidateNested()
   @Type(() => AdvanceManifestCredentialSubjectDTO)
   credentialSubject: AdvanceManifestCredentialSubjectDTO
-
-  @IsNotEmpty()
-  @ValidateNested()
-  @Type(() => ProofDTO)
-  proof: ProofDTO
 }
