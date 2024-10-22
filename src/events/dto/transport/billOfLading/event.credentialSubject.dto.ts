@@ -1,21 +1,12 @@
 import { Type } from 'class-transformer'
-import {
-  ArrayNotEmpty,
-  IsArray,
-  IsNotEmpty,
-  IsOptional,
-  IsString,
-  Validate,
-  ValidateNested
-} from 'class-validator'
+import { Equals, IsArray, IsNotEmpty, IsOptional, IsString, Validate, ValidateNested } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
 import { DocumentDTO, ParcelDeliveryDTO } from '../../../../general/dto'
 
 class BillOfLadingCredentialSubjectDTOBase {
-  @IsArray()
-  @ArrayNotEmpty()
-  @Validate((o) => o.type.includes(JSON_TYPE.BILL_OF_LADING))
-  type: JSON_TYPE[]
+  @IsString()
+  @Equals(JSON_TYPE.BILL_OF_LADING)
+  type: JSON_TYPE.BILL_OF_LADING
 
   @IsOptional()
   @IsString()

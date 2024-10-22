@@ -3,7 +3,7 @@ import { JSON_TYPE } from '../../general/constants';
 import { MeasurementDTO } from '../../general/dto';
 import { PRODUCT_NAME } from '../constants';
 export declare class ProductDTO extends ProductDTOBase {
-    type: JSON_TYPE[];
+    type: JSON_TYPE.PRODUCT;
     name: PRODUCT_NAME;
     category?: string;
     sizeOrAmount: MeasurementDTO;

@@ -1,13 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import {
-  IsNotEmpty,
-  IsOptional,
-  IsString,
-  IsEnum,
-  IsArray,
-  ArrayNotEmpty,
-  Validate
-} from 'class-validator'
+import { IsNotEmpty, IsOptional, IsString, IsEnum, IsArray, ArrayNotEmpty, Validate } from 'class-validator'
 import {
   JSON_TYPE_NF as JSON_TYPE,
   MECHANICAL_PROPERTY_TYPE,
@@ -21,11 +13,11 @@ export class PropertyDTO {
   @ArrayNotEmpty()
   @Validate(
     (o) =>
-      o.type.includes(JSON_TYPE.MECHANICAL_PROPERTY) ||
-      o.type.includes(JSON_TYPE.CHEMICAL_PROPERTY) ||
-      o.type.includes(JSON_TYPE.GAS_PROPERTY)
+      o.type === JSON_TYPE.MECHANICAL_PROPERTY ||
+      o.type === JSON_TYPE.CHEMICAL_PROPERTY ||
+      o.type === JSON_TYPE.GAS_PROPERTY
   )
-  type: JSON_TYPE[]
+  type: JSON_TYPE.MECHANICAL_PROPERTY | JSON_TYPE.CHEMICAL_PROPERTY | JSON_TYPE.GAS_PROPERTY
 
   @ApiPropertyOptional()
   @IsOptional()

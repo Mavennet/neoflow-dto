@@ -10,25 +10,9 @@ import {
   ValidateNested
 } from 'class-validator'
 import { AdvanceManifestCredentialSubjectDTO } from './advanceManifest.credentialSubject.dto'
+import { CredentialDTO } from '../credentials'
 
-export class AdvanceManifestVCDTO {
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
-
-  @IsNotEmpty()
-  id: string
-
-  @IsArray()
-  @ArrayMinSize(2)
-  @ArrayMaxSize(2)
-  @ValidateIf((o) => o.type.includes('VerifiableCredential') && o.type.includes('MonthlyAdvanceManifestCredential'))
-  type: string[]
-
-  @IsOptional()
-  @IsDateString()
-  validFrom?: string | Date
-
+export class AdvanceManifestVCDTO extends CredentialDTO<AdvanceManifestCredentialSubjectDTO> {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => AdvanceManifestCredentialSubjectDTO)

@@ -15,6 +15,7 @@ import { OrganizationDTO, MonthlyDeliveryStatementDTO } from '../../../general'
 import { Type } from 'class-transformer'
 import { JSON_TYPE } from '../../../general/constants'
 import { ProofDTO } from '../../../general/dto'
+import { CredentialDTO } from '@mavennet/traceability-dto'
 
 export class MonthlyPipelineStatementCredentialSubject {
   @ApiPropertyOptional()
@@ -55,45 +56,12 @@ export class AGENT_MonthlyPipelineStatementDTO {
   credentialSubject: MonthlyPipelineStatementCredentialSubject
 }
 
-export class MonthlyPipelineStatement_VC {
-  @ApiProperty()
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  id: string
-
-  @ApiProperty()
-  @IsArray()
-  @ArrayMinSize(1)
-  @ArrayContains([JSON_TYPE.VERIFIABLE_CREDENTIAL])
-  type: JSON_TYPE[]
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  issuer: string
-
+export class MonthlyPipelineStatementVC extends CredentialDTO<MonthlyPipelineStatementCredentialSubject> {
   @ApiPropertyOptional()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => MonthlyPipelineStatementCredentialSubject)
   credentialSubject: MonthlyPipelineStatementCredentialSubject
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsDateString()
-  validFrom?: string | Date
-
-  @ApiPropertyOptional()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => ProofDTO)
-  proof: ProofDTO
 }
 
 export class CORE_MonthlyPipelineStatementDTO {
@@ -110,6 +78,6 @@ export class CORE_MonthlyPipelineStatementDTO {
   @ApiPropertyOptional()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => MonthlyPipelineStatement_VC)
-  eventVC: MonthlyPipelineStatement_VC
+  @Type(() => MonthlyPipelineStatementVC)
+  eventVC: MonthlyPipelineStatementVC
 }

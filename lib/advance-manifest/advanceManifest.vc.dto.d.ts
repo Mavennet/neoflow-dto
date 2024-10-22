@@ -1,8 +1,5 @@
 import { AdvanceManifestCredentialSubjectDTO } from './advanceManifest.credentialSubject.dto';
-export declare class AdvanceManifestVCDTO {
-    '@context': string[];
-    id: string;
-    type: string[];
-    validFrom?: string | Date;
+import { CredentialDTO } from '../credentials';
+export declare class AdvanceManifestVCDTO extends CredentialDTO<AdvanceManifestCredentialSubjectDTO> {
     credentialSubject: AdvanceManifestCredentialSubjectDTO;
 }

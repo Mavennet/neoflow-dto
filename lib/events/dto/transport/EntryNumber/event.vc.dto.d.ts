@@ -1,11 +1,5 @@
-import { JSON_TYPE } from '../../../../general/constants';
-import { ProofDTO } from '../../../../general/dto';
+import { CredentialDTO } from '@mavennet/traceability-dto';
 import { EntryNumberCredentialSubjectDTO } from './credentialSubject.dto';
-export declare class EntryNumberEventVCDTO {
-    '@context': string[];
-    id: string;
-    type: JSON_TYPE[];
-    validFrom?: string | Date;
+export declare class EntryNumberEventVCDTO extends CredentialDTO<EntryNumberCredentialSubjectDTO> {
     credentialSubject: EntryNumberCredentialSubjectDTO;
-    proof: ProofDTO;
 }

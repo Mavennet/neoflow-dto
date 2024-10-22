@@ -2,6 +2,7 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
   ArrayNotEmpty,
+  Equals,
   IsArray,
   IsNotEmpty,
   IsNotEmptyObject,
@@ -16,10 +17,10 @@ import { PropertyDTO } from './property.dto'
 
 export class ObservationDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @Validate((o) => o.type.includes(JSON_TYPE.OBSERVATION))
-  type: JSON_TYPE[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE.OBSERVATION)
+  type: JSON_TYPE.OBSERVATION
 
   @ApiProperty()
   @IsNotEmptyObject()
@@ -36,10 +37,10 @@ export class ObservationDTO {
 
 export abstract class COMPACT_ObservationDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @Validate((o) => o.type.includes(JSON_TYPE.OBSERVATION))
-  type: JSON_TYPE[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE.OBSERVATION)
+  type: JSON_TYPE.OBSERVATION
 
   @ApiPropertyOptional()
   @IsOptional()

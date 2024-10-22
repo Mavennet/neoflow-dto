@@ -8,7 +8,9 @@ import {
   IsOptional,
   ArrayNotEmpty,
   IsNotEmptyObject,
-  IsString
+  IsString,
+  Validate,
+  Equals
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { OrganizationDTO, PlaceDTO, ObservationDTO, JSON_TYPE, JSON_TYPE_NF } from '../../../general'
@@ -16,16 +18,10 @@ import { ProductDTO } from '../../../products'
 
 export class DeliveryStatementCredentialSubjectDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(
-    {
-      ...JSON_TYPE,
-      ...JSON_TYPE_NF
-    },
-    { each: true }
-  )
-  type: Array<JSON_TYPE | JSON_TYPE_NF>
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE_NF.DELIVERY_STATEMENT)
+  type: JSON_TYPE_NF.DELIVERY_STATEMENT
 
   @ApiProperty()
   @IsNotEmpty()

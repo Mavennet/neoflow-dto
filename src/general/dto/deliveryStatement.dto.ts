@@ -1,16 +1,16 @@
+import { ObservationDTO } from '@mavennet/traceability-dto'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { IsEnum, ValidateNested, IsArray, ArrayNotEmpty, IsOptional, IsString, IsNotEmpty } from 'class-validator'
 import { Type } from 'class-transformer'
+import { Equals, IsArray, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator'
 import { JSON_TYPE_NF } from '../constants'
 import { MeasurementDTO } from './measurement.dto'
-import { ObservationDTO } from '@mavennet/traceability-dto'
 
 export abstract class DeliveryStatementDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE_NF, { each: true })
-  type: JSON_TYPE_NF[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE_NF.DELIVERY_STATEMENT)
+  type: JSON_TYPE_NF.DELIVERY_STATEMENT
 
   @ApiPropertyOptional()
   @IsOptional()
@@ -32,10 +32,10 @@ export abstract class DeliveryStatementDTO {
 
 export class MonthlyDeliveryStatementDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE_NF, { each: true })
-  type: JSON_TYPE_NF[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE_NF.MONTHLY_DELIVERY_STATEMENTS)
+  type: JSON_TYPE_NF.MONTHLY_DELIVERY_STATEMENTS
 
   @ApiProperty()
   @IsNotEmpty()

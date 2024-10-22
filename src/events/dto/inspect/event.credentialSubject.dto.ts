@@ -1,19 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger'
-import {
-  ValidateNested,
-  IsEnum,
-  IsArray,
-  ArrayNotEmpty
-} from 'class-validator'
 import { Type } from 'class-transformer'
-import { ObservationDTO, JSON_TYPE } from '../../../general'
+import { ArrayNotEmpty, Equals, IsArray, IsNotEmpty, IsString, ValidateNested } from 'class-validator'
+import { JSON_TYPE, ObservationDTO } from '../../../general'
 
 export class InspectionEventCredentialSubjectDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE, { each: true })
-  type: JSON_TYPE[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE.INSPECTION_REPORT)
+  type: JSON_TYPE.INSPECTION_REPORT
 
   @ApiProperty({ isArray: true, type: () => ObservationDTO })
   @IsArray()

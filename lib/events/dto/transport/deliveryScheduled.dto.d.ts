@@ -1,9 +1,9 @@
+import { CommodityDTO, CredentialDTO, MeasurementDTO } from '@mavennet/traceability-dto';
 import { PlaceDTO } from '../../../general';
-import { JSON_TYPE, JSON_TYPE_NF } from '../../../general/constants';
-import { OrganizationDTO, ProofDTO } from '../../../general/dto';
-import { MeasurementDTO, CommodityDTO } from '@mavennet/traceability-dto';
+import { JSON_TYPE_NF } from '../../../general/constants';
+import { OrganizationDTO } from '../../../general/dto';
 export declare class DeliveryScheduledCredentialSubjectDTO {
-    type: JSON_TYPE_NF[];
+    type: JSON_TYPE_NF.DELIVERY_SCHEDULE;
     transporter?: OrganizationDTO;
     consignee?: OrganizationDTO;
     consignor?: OrganizationDTO;
@@ -26,14 +26,8 @@ export declare class DeliveryScheduledCredentialSubjectDTO {
     scheduledDate?: string;
     hasDocuments?: boolean;
 }
-export declare class DeliveryScheduled_VC_DTO {
-    '@context': string[];
-    id: string;
-    type: JSON_TYPE[];
-    issuer?: string;
+export declare class DeliveryScheduledVCDTO extends CredentialDTO<DeliveryScheduledCredentialSubjectDTO> {
     credentialSubject: DeliveryScheduledCredentialSubjectDTO;
-    validFrom?: string | Date;
-    proof: ProofDTO;
 }
 export declare class AGENT_DeliveryScheduledDTO {
     productId: string;
@@ -44,6 +38,6 @@ export declare class CORE_DeliveryScheduledDTO {
     productId: string;
     gasShipmentId: string;
     eventId: string;
-    eventVC: DeliveryScheduled_VC_DTO;
+    eventVC: DeliveryScheduledVCDTO;
 }
 export type AGENT_DeliveryScheduledDTO_NO_ID = Omit<AGENT_DeliveryScheduledDTO, 'productId' | 'gasShipmentId'>;

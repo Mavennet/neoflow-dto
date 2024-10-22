@@ -18,9 +18,11 @@ import {
   COMPACT_OrganizationDTO,
   COMPACT_PlaceDTO
 } from '../../../general'
-import { ProductVCDTO, PRODUCT_NAME } from '../../../products'
+import { PRODUCT_NAME, ProductVCDTO } from '../../../products'
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
-import { VerifiableCredentialDTO } from '@mavennet/traceability-dto'
+import { DeliveryTicketCredentialSubjectDTO, DeliveryTicketVCDTO } from '../deliveryTicket'
+import { IntentToImportVCDTO } from '../intentToImport/event.vc.dto'
+import { DeliveryScheduledCredentialSubjectDTO, DeliveryScheduledVCDTO } from '../transport'
 
 class CreateProductDTOBase {
   @IsNotEmpty()
@@ -98,11 +100,19 @@ export class AGENT_CreateProductDTO extends CreateProductDTOBase {
   @Type(() => ProductCredentialSubjectDTO)
   productCredentialSubject: ProductCredentialSubjectDTO
 
+  // TODO: should this be a narray or a single object? it should definitely use a specified type.
+  // eventCredentialSubject?: DeliveryTicketCredentialSubjectDTO | DeliveryScheduledCredentialSubjectDTO
   @IsOptional()
   @ApiProperty()
   @ValidateNested()
   @IsObject()
-  eventCredentialSubject?: any
+  eventCredentialSubject?: DeliveryTicketCredentialSubjectDTO | DeliveryScheduledCredentialSubjectDTO
+
+  @IsOptional()
+  @ApiProperty()
+  @ValidateNested()
+  @IsObject()
+  eventCredentialSubjects?: DeliveryTicketCredentialSubjectDTO[]
 }
 
 class CreateEventDTO {
@@ -115,7 +125,7 @@ class CreateEventDTO {
   @ApiProperty()
   @ValidateNested()
   @IsObject()
-  eventVC?: VerifiableCredentialDTO
+  eventVC?: DeliveryTicketVCDTO | DeliveryScheduledVCDTO | IntentToImportVCDTO
 }
 
 export class CORE_CreateProductDTO extends CreateProductDTOBase {

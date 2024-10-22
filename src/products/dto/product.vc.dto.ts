@@ -4,9 +4,7 @@ import { Type } from 'class-transformer'
 import { IsNotEmpty, ValidateNested } from 'class-validator'
 import { ProductCredentialSubjectDTO } from './productCredentialSubject.dto'
 
-export class ProductVCDTO
-  extends VerifiableCredentialDTO
-  implements Omit<VerifiableCredentialDTO, 'credentialSubject'> {
+export class ProductVCDTO extends VerifiableCredentialDTO<ProductCredentialSubjectDTO> {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => ProductCredentialSubjectDTO)

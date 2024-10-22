@@ -2,6 +2,7 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
   ArrayNotEmpty,
+  Equals,
   IsArray,
   IsNotEmpty,
   IsNotEmptyObject,
@@ -18,10 +19,10 @@ import { BillOfLadingCredentialSubjectDTO } from './event.credentialSubject.dto'
 
 export class OGBillOfLadingCredentialSubjectDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @Validate((o) => o.type.includes(JSON_TYPE_NF.OG_BILL_OF_LADING))
-  type: JSON_TYPE_NF[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE_NF.OG_BILL_OF_LADING)
+  type: JSON_TYPE_NF.OG_BILL_OF_LADING
 
   @ApiProperty()
   @IsNotEmptyObject()

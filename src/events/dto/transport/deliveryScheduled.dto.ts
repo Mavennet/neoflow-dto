@@ -1,33 +1,29 @@
+import { CommodityDTO, CredentialDTO, MeasurementDTO } from '@mavennet/traceability-dto'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { Type } from 'class-transformer'
 import {
+  Equals,
+  IsArray,
+  IsBoolean,
+  IsDateString,
   IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
-  IsBoolean,
   IsString,
-  Matches,
-  ValidateNested,
-  IsArray,
-  ArrayMinSize,
-  ArrayContains,
-  IsDateString,
-  ArrayNotEmpty,
-  IsEnum,
   IsUUID,
-  ValidateIf
+  ValidateIf,
+  ValidateNested
 } from 'class-validator'
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { PlaceDTO } from '../../../general'
-import { Type } from 'class-transformer'
-import { JSON_TYPE, JSON_TYPE_NF } from '../../../general/constants'
-import { OrganizationDTO, ProofDTO } from '../../../general/dto'
-import { MeasurementDTO, CommodityDTO } from '@mavennet/traceability-dto'
+import { JSON_TYPE_NF } from '../../../general/constants'
+import { OrganizationDTO } from '../../../general/dto'
 
 export class DeliveryScheduledCredentialSubjectDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE_NF, { each: true })
-  type: JSON_TYPE_NF[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE_NF.DELIVERY_SCHEDULE)
+  type: JSON_TYPE_NF.DELIVERY_SCHEDULE
 
   @IsOptional()
   @ApiPropertyOptional()
@@ -148,45 +144,12 @@ export class DeliveryScheduledCredentialSubjectDTO {
   @IsBoolean()
   hasDocuments?: boolean
 }
-export class DeliveryScheduled_VC_DTO {
-  @ApiProperty()
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  id: string
-
-  @ApiProperty()
-  @IsArray()
-  @ArrayMinSize(1)
-  @ArrayContains([JSON_TYPE.VERIFIABLE_CREDENTIAL])
-  type: JSON_TYPE[]
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsString()
-  @Matches(/^did:/)
-  issuer?: string
-
+export class DeliveryScheduledVCDTO extends CredentialDTO<DeliveryScheduledCredentialSubjectDTO> {
   @ApiPropertyOptional()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => DeliveryScheduledCredentialSubjectDTO)
   credentialSubject: DeliveryScheduledCredentialSubjectDTO
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsDateString()
-  validFrom?: string | Date
-
-  @ApiPropertyOptional()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => ProofDTO)
-  proof: ProofDTO
 }
 
 export class AGENT_DeliveryScheduledDTO {
@@ -230,8 +193,8 @@ export class CORE_DeliveryScheduledDTO {
   @ApiPropertyOptional()
   @IsNotEmptyObject()
   @ValidateNested()
-  @Type(() => DeliveryScheduled_VC_DTO)
-  eventVC: DeliveryScheduled_VC_DTO
+  @Type(() => DeliveryScheduledVCDTO)
+  eventVC: DeliveryScheduledVCDTO
 }
 
 export type AGENT_DeliveryScheduledDTO_NO_ID = Omit<AGENT_DeliveryScheduledDTO, 'productId' | 'gasShipmentId'>

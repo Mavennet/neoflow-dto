@@ -6,17 +6,18 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsString,
-  ValidateNested
+  ValidateNested,
+  Equals
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { JSON_TYPE_NF, OrganizationDTO } from '../../../general'
 
 export class TSCACertificationCredentialSubjectDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(JSON_TYPE_NF, { each: true })
-  type: JSON_TYPE_NF[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE_NF.TSCA_CERTIFICATION)
+  type: JSON_TYPE_NF.TSCA_CERTIFICATION
 
   @ApiProperty()
   @IsNotEmpty()

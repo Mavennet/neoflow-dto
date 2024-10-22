@@ -1,7 +1,9 @@
 import { COMPACT_MeasurementDTO, COMPACT_ObservationDTO, COMPACT_OrganizationDTO, COMPACT_PlaceDTO } from '../../../general';
-import { ProductVCDTO, PRODUCT_NAME } from '../../../products';
+import { PRODUCT_NAME, ProductVCDTO } from '../../../products';
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto';
-import { VerifiableCredentialDTO } from '@mavennet/traceability-dto';
+import { DeliveryTicketCredentialSubjectDTO, DeliveryTicketVCDTO } from '../deliveryTicket';
+import { IntentToImportVCDTO } from '../intentToImport/event.vc.dto';
+import { DeliveryScheduledCredentialSubjectDTO, DeliveryScheduledVCDTO } from '../transport';
 declare class CreateProductDTOBase {
     batchNumber: string;
 }
@@ -20,11 +22,12 @@ export declare class AGENT_COMPACT_CreateProductDTO {
 }
 export declare class AGENT_CreateProductDTO extends CreateProductDTOBase {
     productCredentialSubject: ProductCredentialSubjectDTO;
-    eventCredentialSubject?: any;
+    eventCredentialSubject?: DeliveryTicketCredentialSubjectDTO | DeliveryScheduledCredentialSubjectDTO;
+    eventCredentialSubjects?: DeliveryTicketCredentialSubjectDTO[];
 }
 declare class CreateEventDTO {
     eventId?: string;
-    eventVC?: VerifiableCredentialDTO;
+    eventVC?: DeliveryTicketVCDTO | DeliveryScheduledVCDTO | IntentToImportVCDTO;
 }
 export declare class CORE_CreateProductDTO extends CreateProductDTOBase {
     productId: string;
