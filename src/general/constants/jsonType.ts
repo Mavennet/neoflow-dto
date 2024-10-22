@@ -4,6 +4,7 @@ export enum JSON_TYPE_NF {
   CRUDE_OIL_PRODUCT = 'CrudeOilProduct',
   NATURAL_GAS_PRODUCT = 'NaturalGasProduct',
   OIL_AND_GAS_PRODUCT = 'OilAndGasProduct',
+  OIL_AND_GAS_PRODUCT_CREDENTIAL = 'OilAndGasProductCredential',
   PLACE = 'Place',
   GEO_COORDINATES = 'GeoCoordinates',
   POSTAL_ADDRESS = 'PostalAddress',

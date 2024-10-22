@@ -2,6 +2,7 @@ import { ApiProperty } from '@nestjs/swagger'
 import { IsNotEmpty, ValidateNested, IsUUID } from 'class-validator'
 import { Type } from 'class-transformer'
 import { EnvelopedVerifiableCredential } from '../credentials'
+import { AdvanceManifestVCDTO } from './advanceManifest.vc.dto'
 
 export class CORE_AdvanceManifestDTO {
   @ApiProperty()
@@ -12,6 +13,5 @@ export class CORE_AdvanceManifestDTO {
   @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => EnvelopedVerifiableCredential)
-  eventVC: EnvelopedVerifiableCredential
+  eventVC: EnvelopedVerifiableCredential | AdvanceManifestVCDTO
 }
