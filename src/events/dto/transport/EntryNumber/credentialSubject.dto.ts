@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Equals, IsNotEmpty, IsString, Validate } from 'class-validator'
+import { Equals, IsNotEmpty, IsString } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
 
 export class EntryNumberCredentialSubjectDTO {

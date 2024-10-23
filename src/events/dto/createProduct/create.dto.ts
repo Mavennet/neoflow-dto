@@ -20,9 +20,9 @@ import {
 } from '../../../general'
 import { PRODUCT_NAME, ProductVCDTO } from '../../../products'
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
-import { DeliveryTicketCredentialSubjectDTO, DeliveryTicketVCDTO } from '../deliveryTicket'
-import { IntentToImportVCDTO } from '../intentToImport/event.vc.dto'
-import { DeliveryScheduledCredentialSubjectDTO, DeliveryScheduledVCDTO } from '../transport'
+import { type DeliveryTicketCredentialSubjectDTO, type DeliveryTicketVCDTO } from '../deliveryTicket'
+import { type IntentToImportVCDTO } from '../intentToImport/event.vc.dto'
+import { type DeliveryScheduledCredentialSubjectDTO, type DeliveryScheduledVCDTO } from '../transport'
 
 class CreateProductDTOBase {
   @IsNotEmpty()

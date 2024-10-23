@@ -1,7 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
-  ArrayNotEmpty,
   Equals,
   IsArray,
   IsEnum,
@@ -9,7 +8,6 @@ import {
   IsOptional,
   IsString,
   Matches,
-  Validate,
   ValidateNested
 } from 'class-validator'
 import { JSON_TYPE_NF } from '../../general/constants'

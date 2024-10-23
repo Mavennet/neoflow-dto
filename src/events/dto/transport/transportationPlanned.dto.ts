@@ -1,22 +1,8 @@
-import {
-  IsNotEmpty,
-  IsNotEmptyObject,
-  IsOptional,
-  IsBoolean,
-  IsString,
-  Matches,
-  ValidateNested,
-  IsArray,
-  ArrayMinSize,
-  ArrayContains,
-  IsDateString
-} from 'class-validator'
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { PlaceDTO } from '../../../general'
-import { Type } from 'class-transformer'
-import { JSON_TYPE } from '../../../general/constants'
-import { ProofDTO } from '../../../general/dto'
 import { CredentialDTO } from '@mavennet/traceability-dto'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { Type } from 'class-transformer'
+import { IsBoolean, IsNotEmpty, IsNotEmptyObject, IsOptional, IsString, Matches, ValidateNested } from 'class-validator'
+import { PlaceDTO } from '../../../general'
 
 export class AGENT_TransportationPlannedDTO {
   @IsNotEmpty()

@@ -1,5 +1,5 @@
 import { Type } from 'class-transformer'
-import { Equals, IsArray, IsNotEmpty, IsOptional, IsString, Validate, ValidateNested } from 'class-validator'
+import { Equals, IsArray, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
 import { DocumentDTO, ParcelDeliveryDTO } from '../../../../general/dto'
 

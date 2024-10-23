@@ -2,15 +2,12 @@ import { ProductDTO as ProductDTOBase } from '@mavennet/traceability-dto'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
-  ArrayNotEmpty,
   Equals,
-  IsArray,
   IsEnum,
   IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
   IsString,
-  Validate,
   ValidateIf,
   ValidateNested
 } from 'class-validator'

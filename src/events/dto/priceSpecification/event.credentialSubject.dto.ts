@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsEnum, IsNumber, IsArray, ArrayNotEmpty, IsNotEmpty, IsString, Equals } from 'class-validator'
+import { Equals, IsNotEmpty, IsNumber, IsString } from 'class-validator'
 import { JSON_TYPE_NF } from '../../../general'
 
 export class PriceSpecificationCredentialSubjectDTO {

@@ -1,15 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
-import {
-  IsEnum,
-  IsArray,
-  ArrayNotEmpty,
-  IsNotEmpty,
-  IsNotEmptyObject,
-  IsString,
-  ValidateNested,
-  Equals
-} from 'class-validator'
 import { Type } from 'class-transformer'
+import { Equals, IsNotEmpty, IsNotEmptyObject, IsString, ValidateNested } from 'class-validator'
 import { JSON_TYPE_NF, OrganizationDTO } from '../../../general'
 
 export class TSCACertificationCredentialSubjectDTO {

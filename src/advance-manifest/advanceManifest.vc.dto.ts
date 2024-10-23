@@ -1,16 +1,7 @@
 import { Type } from 'class-transformer'
-import {
-  ArrayMaxSize,
-  ArrayMinSize,
-  IsArray,
-  IsDateString,
-  IsNotEmpty,
-  IsOptional,
-  ValidateIf,
-  ValidateNested
-} from 'class-validator'
-import { AdvanceManifestCredentialSubjectDTO } from './advanceManifest.credentialSubject.dto'
+import { IsNotEmpty, ValidateNested } from 'class-validator'
 import { CredentialDTO } from '../credentials'
+import { AdvanceManifestCredentialSubjectDTO } from './advanceManifest.credentialSubject.dto'
 
 export class AdvanceManifestVCDTO extends CredentialDTO<AdvanceManifestCredentialSubjectDTO> {
   @IsNotEmpty()
