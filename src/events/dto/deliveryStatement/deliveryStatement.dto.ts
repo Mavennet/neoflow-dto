@@ -2,7 +2,7 @@ import { ApiProperty } from '@nestjs/swagger'
 import { IsNotEmpty, ValidateNested, IsUUID, ValidateIf, IsOptional } from 'class-validator'
 import { Type } from 'class-transformer'
 import { DeliveryStatementCredentialSubjectDTO } from './event.credentialSubject.dto'
-import { DeliveryStatementVCDTO } from './event.vc.dto'
+import { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto'
 
 export class CORE_DeliveryStatementDTO {
   @ApiProperty()
@@ -29,8 +29,8 @@ export class CORE_DeliveryStatementDTO {
   @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => DeliveryStatementVCDTO)
-  eventVC: DeliveryStatementVCDTO
+  @Type(() => EnvelopedVerifiableCredential)
+  eventVC: EnvelopedVerifiableCredential
 }
 
 export class AGENT_DeliveryStatementDTO {

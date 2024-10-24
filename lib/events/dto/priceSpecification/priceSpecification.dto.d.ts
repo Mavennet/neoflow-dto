@@ -1,9 +1,9 @@
 import { PriceSpecificationCredentialSubjectDTO } from './event.credentialSubject.dto';
-import { PriceSpecificationDetailsDTO } from './event.vc.dto';
+import { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto';
 export declare class CORE_PriceSpecificationDTO {
     gasShipmentId: string;
     eventId: string;
-    eventVC: PriceSpecificationDetailsDTO;
+    eventVC: EnvelopedVerifiableCredential;
 }
 export declare class AGENT_PriceSpecificationDTO {
     gasShipmentId: string;

@@ -1,9 +1,9 @@
 import { TSCACertificationCredentialSubjectDTO } from './event.credentialSubject.dto';
-import { TSCACertificationDetailsDTO } from './event.vc.dto';
+import { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto';
 export declare class CORE_TSCACertificationDTO {
     gasShipmentId: string;
     eventId: string;
-    eventVC: TSCACertificationDetailsDTO;
+    eventVC: EnvelopedVerifiableCredential;
 }
 export declare class AGENT_TSCACertificationDTO {
     gasShipmentId: string;
