@@ -1,7 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { IsUUID, IsNotEmpty, IsNotEmptyObject, ValidateNested, IsString, ValidateIf } from 'class-validator'
 import { Type } from 'class-transformer'
-import { EntryNumberEventVCDTO } from './event.vc.dto'
 import { EntryNumberCredentialSubjectDTO } from '.'
 import { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto'
 
