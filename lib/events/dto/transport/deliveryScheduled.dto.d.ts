@@ -1,4 +1,4 @@
-import { CommodityDTO, CredentialDTO, MeasurementDTO } from '@mavennet/traceability-dto';
+import { CommodityDTO, CredentialDTO, EnvelopedVerifiableCredential, MeasurementDTO } from '@mavennet/traceability-dto';
 import { PlaceDTO } from '../../../general';
 import { JSON_TYPE_NF } from '../../../general/constants';
 import { OrganizationDTO } from '../../../general/dto';
@@ -39,5 +39,11 @@ export declare class CORE_DeliveryScheduledDTO {
     gasShipmentId: string;
     eventId: string;
     eventVC: DeliveryScheduledVCDTO;
+}
+export declare class CORE_AddScheduledVolumeDTO {
+    productId: string;
+    gasShipmentId: string;
+    eventId: string;
+    eventVC: EnvelopedVerifiableCredential;
 }
 export type AGENT_DeliveryScheduledDTO_NO_ID = Omit<AGENT_DeliveryScheduledDTO, 'productId' | 'gasShipmentId'>;

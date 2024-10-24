@@ -1,4 +1,4 @@
-import { CommodityDTO, CredentialDTO, MeasurementDTO } from '@mavennet/traceability-dto'
+import { CommodityDTO, CredentialDTO, EnvelopedVerifiableCredential, MeasurementDTO } from '@mavennet/traceability-dto'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
@@ -195,6 +195,31 @@ export class CORE_DeliveryScheduledDTO {
   @ValidateNested()
   @Type(() => DeliveryScheduledVCDTO)
   eventVC: DeliveryScheduledVCDTO
+}
+
+export class CORE_AddScheduledVolumeDTO {
+  @ApiProperty()
+  @ValidateIf((o) => !o.gasShipmentId || o.productId)
+  @IsNotEmpty()
+  @IsUUID()
+  productId: string
+
+  @ApiProperty()
+  @ValidateIf((o) => !o.productId || o.gasShipmentId)
+  @IsNotEmpty()
+  @IsUUID()
+  gasShipmentId: string
+
+  @IsNotEmpty()
+  @ApiProperty()
+  @IsString()
+  eventId: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => EnvelopedVerifiableCredential)
+  eventVC: EnvelopedVerifiableCredential
 }
 
 export type AGENT_DeliveryScheduledDTO_NO_ID = Omit<AGENT_DeliveryScheduledDTO, 'productId' | 'gasShipmentId'>
