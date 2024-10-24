@@ -1,12 +1,5 @@
-import { JSON_TYPE } from '../../../../general/constants';
-import { ProofDTO } from '../../../../general/dto/proof.dto';
+import { CredentialDTO } from '@mavennet/traceability-dto';
 import { OGBillOfLadingCredentialSubjectDTO } from './oilGas.event.credentialSubject.dto';
-export declare class OGBillOfLadingVCDTO {
-    '@context': string[];
-    id: string;
-    type: JSON_TYPE[];
-    issuer: string;
-    validFrom?: string | Date;
+export declare class OGBillOfLadingVCDTO extends CredentialDTO<OGBillOfLadingCredentialSubjectDTO> {
     credentialSubject: OGBillOfLadingCredentialSubjectDTO;
-    proof: ProofDTO;
 }

@@ -1,21 +1,8 @@
-import {
-  IsNotEmpty,
-  IsNotEmptyObject,
-  IsOptional,
-  IsBoolean,
-  IsString,
-  Matches,
-  ValidateNested,
-  IsArray,
-  ArrayMinSize,
-  ArrayContains,
-  IsDateString
-} from 'class-validator'
+import { CredentialDTO } from '@mavennet/traceability-dto'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { PlaceDTO } from '../../../general'
 import { Type } from 'class-transformer'
-import { JSON_TYPE } from '../../../general/constants'
-import { ProofDTO } from '../../../general/dto'
+import { IsBoolean, IsNotEmpty, IsNotEmptyObject, IsOptional, IsString, Matches, ValidateNested } from 'class-validator'
+import { PlaceDTO } from '../../../general'
 
 export class AGENT_TransportationPlannedDTO {
   @IsNotEmpty()
@@ -69,45 +56,12 @@ export class AGENT_TransportationPlannedDTO {
   hasDocuments: boolean
 }
 
-export class TransportationPlanned_VC_DTO {
-  @ApiProperty()
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  id: string
-
-  @ApiProperty()
-  @IsArray()
-  @ArrayMinSize(1)
-  @ArrayContains([JSON_TYPE.VERIFIABLE_CREDENTIAL])
-  type: JSON_TYPE[]
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  issuer: string
-
+export class TransportationPlanned_VC_DTO extends CredentialDTO<AGENT_TransportationPlannedDTO> {
   @ApiPropertyOptional()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => AGENT_TransportationPlannedDTO)
   credentialSubject: AGENT_TransportationPlannedDTO
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsDateString()
-  validFrom?: string | Date
-
-  @ApiPropertyOptional()
-  @IsNotEmptyObject()
-  @ValidateNested()
-  @Type(() => ProofDTO)
-  proof: ProofDTO
 }
 
 export class CORE_TransportationPlannedDTO {

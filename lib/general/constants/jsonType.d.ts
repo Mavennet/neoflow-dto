@@ -4,6 +4,7 @@ export declare enum JSON_TYPE_NF {
     CRUDE_OIL_PRODUCT = "CrudeOilProduct",
     NATURAL_GAS_PRODUCT = "NaturalGasProduct",
     OIL_AND_GAS_PRODUCT = "OilAndGasProduct",
+    OIL_AND_GAS_PRODUCT_CREDENTIAL = "OilAndGasProductCredential",
     PLACE = "Place",
     GEO_COORDINATES = "GeoCoordinates",
     POSTAL_ADDRESS = "PostalAddress",
@@ -24,6 +25,7 @@ export declare enum JSON_TYPE_NF {
     DELIVERY_STATEMENT = "DeliveryStatement",
     DELIVERY_STATEMENT_CREDENTIAL = "DeliveryStatementCredential",
     DELIVERY_SCHEDULE = "DeliverySchedule",
+    DELIVERY_SCHEDULE_CREDENTIAL = "DeliveryScheduleCredential",
     COMMODITY = "Commodity",
     OG_DELIVERY_TICKET = "OilAndGasDeliveryTicket",
     OG_DELIVERY_TICKET_CREDENTIAL = "OilAndGasDeliveryTicketCredential",
@@ -33,5 +35,7 @@ export declare enum JSON_TYPE_NF {
     MONTHLY_DELIVERY_STATEMENTS = "MonthlyAggregatedDeliveryStatements",
     PRICE_SPECIFICATION = "PriceSpecification",
     TSCA_CERTIFICATION_CREDENTIAL = "TSCACertificationCredential",
-    TSCA_CERTIFICATION = "TSCACertification"
+    TSCA_CERTIFICATION = "TSCACertification",
+    INTENT_TO_IMPORT = "IntentToImport",
+    INTENT_TO_IMPORT_CREDENTIAL = "IntentToImportCredential"
 }

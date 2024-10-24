@@ -1,6 +1,6 @@
-import { JSON_TYPE, JSON_TYPE_NF, type MeasurementDTO, type PlaceDTO, type OrganizationDTO } from '../general';
+import { JSON_TYPE_NF, type MeasurementDTO, type OrganizationDTO, type PlaceDTO } from '../general';
 export declare class AdvanceManifestCredentialSubjectDTO {
-    type: Array<JSON_TYPE | JSON_TYPE_NF>;
+    type: JSON_TYPE_NF.MONTHLY_ADVANCE_MANIFEST;
     date: string;
     scheduledDeliveries?: Array<{
         portCode: string;

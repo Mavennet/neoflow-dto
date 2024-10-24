@@ -1,5 +1,5 @@
-import { EntryNumberEventVCDTO } from './event.vc.dto';
 import { EntryNumberCredentialSubjectDTO } from '.';
+import { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto';
 export declare class CreateEntryNumberDTOBase {
     productId: string;
     gasShipmentId: string;
@@ -9,5 +9,5 @@ export declare class CreateEntryNumberDTO extends CreateEntryNumberDTOBase {
 }
 export declare class CORE_CreateEntryNumberDTO extends CreateEntryNumberDTOBase {
     eventId: string;
-    eventVC: EntryNumberEventVCDTO;
+    eventVC: EnvelopedVerifiableCredential;
 }

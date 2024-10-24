@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { IsNotEmpty, ValidateNested, IsUUID } from 'class-validator'
-import { Type } from 'class-transformer'
 import { EnvelopedVerifiableCredential } from '../credentials'
+import { Type } from 'class-transformer'
 
 export class CORE_AdvanceManifestDTO {
   @ApiProperty()

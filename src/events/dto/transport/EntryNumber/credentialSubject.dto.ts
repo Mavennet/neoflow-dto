@@ -1,13 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { ArrayNotEmpty, IsArray, IsNotEmpty, IsString, Validate } from 'class-validator'
+import { Equals, IsNotEmpty, IsString } from 'class-validator'
 import { JSON_TYPE } from '../../../../general/constants'
 
 export class EntryNumberCredentialSubjectDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @Validate((o) => o.type.includes(JSON_TYPE.ENTRY_NUMBER))
-  type: JSON_TYPE[]
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE.ENTRY_NUMBER)
+  type: JSON_TYPE.ENTRY_NUMBER
 
   @ApiProperty()
   @IsNotEmpty()

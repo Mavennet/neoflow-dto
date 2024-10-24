@@ -1,31 +1,25 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { Type } from 'class-transformer'
 import {
-  ValidateNested,
-  IsEnum,
+  ArrayNotEmpty,
+  Equals,
   IsArray,
   IsDateString,
   IsNotEmpty,
-  IsOptional,
-  ArrayNotEmpty,
   IsNotEmptyObject,
-  IsString
+  IsOptional,
+  IsString,
+  ValidateNested
 } from 'class-validator'
-import { Type } from 'class-transformer'
-import { OrganizationDTO, PlaceDTO, ObservationDTO, JSON_TYPE, JSON_TYPE_NF } from '../../../general'
+import { JSON_TYPE_NF, ObservationDTO, OrganizationDTO, PlaceDTO } from '../../../general'
 import { ProductDTO } from '../../../products'
 
 export class DeliveryTicketCredentialSubjectDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(
-    {
-      ...JSON_TYPE,
-      ...JSON_TYPE_NF
-    },
-    { each: true }
-  )
-  type: Array<JSON_TYPE | JSON_TYPE_NF>
+  @IsString()
+  @IsNotEmpty()
+  @Equals(JSON_TYPE_NF.OG_DELIVERY_TICKET)
+  type: JSON_TYPE_NF.OG_DELIVERY_TICKET
 
   @ApiProperty()
   @IsNotEmpty()

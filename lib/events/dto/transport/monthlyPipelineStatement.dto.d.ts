@@ -1,6 +1,5 @@
-import { OrganizationDTO, MonthlyDeliveryStatementDTO } from '../../../general';
-import { JSON_TYPE } from '../../../general/constants';
-import { ProofDTO } from '../../../general/dto';
+import { CredentialDTO } from '@mavennet/traceability-dto';
+import { MonthlyDeliveryStatementDTO, OrganizationDTO } from '../../../general';
 export declare class MonthlyPipelineStatementCredentialSubject {
     carrier: OrganizationDTO;
     shipper: OrganizationDTO;
@@ -11,17 +10,11 @@ export declare class AGENT_MonthlyPipelineStatementDTO {
     productId: string;
     credentialSubject: MonthlyPipelineStatementCredentialSubject;
 }
-export declare class MonthlyPipelineStatement_VC {
-    '@context': string[];
-    id: string;
-    type: JSON_TYPE[];
-    issuer: string;
+export declare class MonthlyPipelineStatementVC extends CredentialDTO<MonthlyPipelineStatementCredentialSubject> {
     credentialSubject: MonthlyPipelineStatementCredentialSubject;
-    validFrom?: string | Date;
-    proof: ProofDTO;
 }
 export declare class CORE_MonthlyPipelineStatementDTO {
     productId: string;
     eventId: string;
-    eventVC: MonthlyPipelineStatement_VC;
+    eventVC: MonthlyPipelineStatementVC;
 }

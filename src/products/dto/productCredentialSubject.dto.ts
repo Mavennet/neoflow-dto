@@ -1,14 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
-  ArrayNotEmpty,
+  Equals,
   IsArray,
   IsEnum,
   IsNotEmptyObject,
   IsOptional,
   IsString,
   Matches,
-  Validate,
   ValidateNested
 } from 'class-validator'
 import { JSON_TYPE_NF } from '../../general/constants'
@@ -17,11 +16,10 @@ import { HTS_CODE } from '../constants'
 import { ProductDTO } from './product.dto'
 
 class ProductCredentialSubjectDTOBase {
-  @IsArray()
-  @ArrayNotEmpty()
-  @Validate((o) => o.type.includes(JSON_TYPE_NF.CRUDE_OIL_PRODUCT) || o.type.includes(JSON_TYPE_NF.NATURAL_GAS_PRODUCT))
+  @IsString()
+  @Equals(JSON_TYPE_NF.OIL_AND_GAS_PRODUCT)
   @ApiProperty()
-  type: JSON_TYPE_NF[]
+  type: JSON_TYPE_NF.OIL_AND_GAS_PRODUCT
 
   @IsOptional()
   @IsEnum(HTS_CODE)

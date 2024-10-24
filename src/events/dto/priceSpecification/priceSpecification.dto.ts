@@ -2,7 +2,7 @@ import { ApiProperty } from '@nestjs/swagger'
 import { IsNotEmpty, ValidateNested, IsUUID } from 'class-validator'
 import { Type } from 'class-transformer'
 import { PriceSpecificationCredentialSubjectDTO } from './event.credentialSubject.dto'
-import { PriceSpecificationDetailsDTO } from './event.vc.dto'
+import { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto'
 
 export class CORE_PriceSpecificationDTO {
   @ApiProperty()
@@ -18,8 +18,8 @@ export class CORE_PriceSpecificationDTO {
   @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => PriceSpecificationDetailsDTO)
-  eventVC: PriceSpecificationDetailsDTO
+  @Type(() => EnvelopedVerifiableCredential)
+  eventVC: EnvelopedVerifiableCredential
 }
 
 export class AGENT_PriceSpecificationDTO {

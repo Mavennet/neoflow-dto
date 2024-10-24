@@ -1,14 +1,7 @@
-import { JSON_TYPE_NF } from '../../../general';
-import { ProofDTO } from '../../../general/dto/proof.dto';
+import { CredentialDTO } from '../../../credentials';
 import { TICKET_TYPE } from '../../constants';
 import { DeliveryStatementCredentialSubjectDTO } from './event.credentialSubject.dto';
-export declare class DeliveryStatementVCDTO {
-    '@context': string[];
-    id: string;
-    type: JSON_TYPE_NF[];
-    issuer?: string;
-    validFrom?: string | Date;
+export declare class DeliveryStatementVCDTO extends CredentialDTO<DeliveryStatementCredentialSubjectDTO> {
     credentialSubject: DeliveryStatementCredentialSubjectDTO;
-    proof: ProofDTO;
     ticketType?: TICKET_TYPE;
 }

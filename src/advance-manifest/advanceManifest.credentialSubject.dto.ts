@@ -1,19 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsEnum, IsArray, IsDateString, IsNotEmpty, ArrayNotEmpty } from 'class-validator'
-import { JSON_TYPE, JSON_TYPE_NF, type MeasurementDTO, type PlaceDTO, type OrganizationDTO } from '../general'
+import { IsArray, IsDateString, IsNotEmpty, IsString } from 'class-validator'
+import { JSON_TYPE_NF, type MeasurementDTO, type OrganizationDTO, type PlaceDTO } from '../general'
 
 export class AdvanceManifestCredentialSubjectDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(
-    {
-      ...JSON_TYPE,
-      ...JSON_TYPE_NF
-    },
-    { each: true }
-  )
-  type: Array<JSON_TYPE | JSON_TYPE_NF>
+  @IsNotEmpty()
+  @IsString()
+  type: JSON_TYPE_NF.MONTHLY_ADVANCE_MANIFEST
 
   @ApiProperty()
   @IsNotEmpty()

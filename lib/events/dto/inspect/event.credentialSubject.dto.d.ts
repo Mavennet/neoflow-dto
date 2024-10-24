@@ -1,5 +1,5 @@
-import { ObservationDTO, JSON_TYPE } from '../../../general';
+import { JSON_TYPE, ObservationDTO } from '../../../general';
 export declare class InspectionEventCredentialSubjectDTO {
-    type: JSON_TYPE[];
+    type: JSON_TYPE.INSPECTION_REPORT;
     observation: ObservationDTO[];
 }
