@@ -9,8 +9,7 @@ import {
 
 export class PropertyDTO {
   @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
+  @IsNotEmpty()
   @Validate(
     (o) =>
       o.type === JSON_TYPE.MECHANICAL_PROPERTY ||
