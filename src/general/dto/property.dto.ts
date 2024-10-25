@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { IsNotEmpty, IsOptional, IsString, IsEnum, IsArray, ArrayNotEmpty, Validate } from 'class-validator'
+import { IsNotEmpty, IsOptional, IsString, IsEnum, Validate } from 'class-validator'
 import {
   JSON_TYPE_NF as JSON_TYPE,
   MECHANICAL_PROPERTY_TYPE,
