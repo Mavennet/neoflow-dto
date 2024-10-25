@@ -5,26 +5,28 @@ import {
   Equals,
   IsArray,
   IsDateString,
+  IsEnum,
   IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
   IsString,
   ValidateNested
 } from 'class-validator'
-import { JSON_TYPE_NF, ObservationDTO, OrganizationDTO, PlaceDTO } from '../../../general'
+import { JSON_TYPE, JSON_TYPE_NF, ObservationDTO, OrganizationDTO, PlaceDTO } from '../../../general'
 import { ProductDTO } from '../../../products'
 
 export class DeliveryStatementCredentialSubjectDTO {
   @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
-  @Equals(JSON_TYPE_NF.DELIVERY_STATEMENT)
-  type: JSON_TYPE_NF.DELIVERY_STATEMENT
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsDateString()
-  createdDate: string | Date
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(
+    {
+      ...JSON_TYPE,
+      ...JSON_TYPE_NF
+    },
+    { each: true }
+  )
+  type: Array<JSON_TYPE | JSON_TYPE_NF>
 
   @ApiProperty()
   @IsDateString()

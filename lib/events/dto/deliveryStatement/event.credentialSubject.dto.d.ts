@@ -1,8 +1,7 @@
-import { JSON_TYPE_NF, ObservationDTO, OrganizationDTO, PlaceDTO } from '../../../general';
+import { JSON_TYPE, JSON_TYPE_NF, ObservationDTO, OrganizationDTO, PlaceDTO } from '../../../general';
 import { ProductDTO } from '../../../products';
 export declare class DeliveryStatementCredentialSubjectDTO {
-    type: JSON_TYPE_NF.DELIVERY_STATEMENT;
-    createdDate: string | Date;
+    type: Array<JSON_TYPE | JSON_TYPE_NF>;
     openDate?: string | Date;
     closeDate?: string | Date;
     carrier: OrganizationDTO;

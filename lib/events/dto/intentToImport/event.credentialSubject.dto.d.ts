@@ -1,5 +1,5 @@
-import { JSON_TYPE_NF } from '../../../general';
+import { JSON_TYPE } from '../../../general';
 export declare class IntentToImportCredentialSubjectDTO {
-    type: JSON_TYPE_NF.INTENT_TO_IMPORT;
+    type: JSON_TYPE[];
     importIntent: string;
 }
