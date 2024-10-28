@@ -1,16 +1,26 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { Equals, IsNotEmpty, IsNotEmptyObject, IsOptional, IsString, ValidateNested } from 'class-validator'
+import {
+  ArrayNotEmpty,
+  Equals,
+  IsArray,
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsOptional,
+  IsString,
+  Validate,
+  ValidateNested
+} from 'class-validator'
 import { JSON_TYPE } from '../constants'
 import { MeasurementDTO } from './measurement.dto'
 import { PropertyDTO } from './property.dto'
 
 export class ObservationDTO {
   @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
-  @Equals(JSON_TYPE.OBSERVATION)
-  type: JSON_TYPE.OBSERVATION
+  @IsArray()
+  @ArrayNotEmpty()
+  @Validate((o) => o.type.includes(JSON_TYPE.OBSERVATION))
+  type: JSON_TYPE[]
 
   @ApiProperty()
   @IsNotEmptyObject()
