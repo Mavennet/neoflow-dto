@@ -21,12 +21,6 @@ import { JSON_TYPE_NF } from '../../../general/constants'
 import { OrganizationDTO } from '../../../general/dto'
 
 export class DeliveryScheduledCredentialSubjectDTO {
-  // @ApiProperty()
-  // @IsString()
-  // @IsNotEmpty()
-  // @Equals(JSON_TYPE_NF.DELIVERY_SCHEDULE)
-  // type: JSON_TYPE_NF.DELIVERY_SCHEDULE
-
   @ApiProperty()
   @IsArray()
   @ArrayNotEmpty()
