@@ -2,7 +2,7 @@ import { JSON_TYPE } from '../constants';
 import { MeasurementDTO } from './measurement.dto';
 import { PropertyDTO } from './property.dto';
 export declare class ObservationDTO {
-    type: JSON_TYPE.OBSERVATION;
+    type: JSON_TYPE[];
     property: PropertyDTO;
     measurement: MeasurementDTO;
 }
