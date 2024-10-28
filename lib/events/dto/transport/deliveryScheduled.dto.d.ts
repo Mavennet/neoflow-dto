@@ -3,7 +3,7 @@ import { PlaceDTO } from '../../../general';
 import { JSON_TYPE_NF } from '../../../general/constants';
 import { OrganizationDTO } from '../../../general/dto';
 export declare class DeliveryScheduledCredentialSubjectDTO {
-    type: JSON_TYPE_NF.DELIVERY_SCHEDULE;
+    type: JSON_TYPE_NF[];
     transporter?: OrganizationDTO;
     consignee?: OrganizationDTO;
     consignor?: OrganizationDTO;
@@ -11,7 +11,6 @@ export declare class DeliveryScheduledCredentialSubjectDTO {
     commodity?: CommodityDTO;
     portOfEntry?: PlaceDTO;
     portOfArrival?: PlaceDTO;
-    place?: PlaceDTO;
     portOfDestination?: PlaceDTO;
     deliveryDestination?: PlaceDTO;
     countryOfDestination?: string;
@@ -24,7 +23,6 @@ export declare class DeliveryScheduledCredentialSubjectDTO {
     deliveryEndDate?: string | Date;
     nominationMonth?: string | Date;
     scheduledDate?: string;
-    hasDocuments?: boolean;
 }
 export declare class DeliveryScheduledVCDTO extends CredentialDTO<DeliveryScheduledCredentialSubjectDTO> {
     credentialSubject: DeliveryScheduledCredentialSubjectDTO;

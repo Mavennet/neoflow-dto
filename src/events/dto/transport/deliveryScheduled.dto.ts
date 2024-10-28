@@ -2,10 +2,12 @@ import { CommodityDTO, CredentialDTO, EnvelopedVerifiableCredential, Measurement
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
+  ArrayNotEmpty,
   Equals,
   IsArray,
   IsBoolean,
   IsDateString,
+  IsEnum,
   IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
@@ -20,10 +22,10 @@ import { OrganizationDTO } from '../../../general/dto'
 
 export class DeliveryScheduledCredentialSubjectDTO {
   @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
-  @Equals(JSON_TYPE_NF.DELIVERY_SCHEDULE)
-  type: JSON_TYPE_NF.DELIVERY_SCHEDULE
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(JSON_TYPE_NF, { each: true })
+  type: JSON_TYPE_NF[]
 
   @IsOptional()
   @ApiPropertyOptional()
@@ -65,12 +67,6 @@ export class DeliveryScheduledCredentialSubjectDTO {
   @ValidateNested()
   @Type(() => PlaceDTO)
   portOfArrival?: PlaceDTO
-
-  @IsOptional()
-  @ApiPropertyOptional()
-  @ValidateNested()
-  @Type(() => PlaceDTO)
-  place?: PlaceDTO
 
   @IsOptional()
   @ApiPropertyOptional()
@@ -138,11 +134,6 @@ export class DeliveryScheduledCredentialSubjectDTO {
   @ApiProperty()
   @IsString()
   scheduledDate?: string
-
-  @ApiProperty()
-  @IsOptional()
-  @IsBoolean()
-  hasDocuments?: boolean
 }
 export class DeliveryScheduledVCDTO extends CredentialDTO<DeliveryScheduledCredentialSubjectDTO> {
   @ApiPropertyOptional()
