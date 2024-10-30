@@ -1,5 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsUUID, IsNotEmpty, IsNotEmptyObject, ValidateNested, IsString, ValidateIf } from 'class-validator'
+import {
+  IsUUID,
+  IsNotEmpty,
+  IsNotEmptyObject,
+  ValidateNested,
+  IsString,
+  ValidateIf,
+  IsObject,
+  IsOptional
+} from 'class-validator'
 import { Type } from 'class-transformer'
 import { EntryNumberCredentialSubjectDTO } from '.'
 import { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto'
@@ -24,6 +33,11 @@ export class CreateEntryNumberDTO extends CreateEntryNumberDTOBase {
   @ValidateNested()
   @Type(() => EntryNumberCredentialSubjectDTO)
   credentialSubject: EntryNumberCredentialSubjectDTO
+
+  @ApiProperty()
+  @IsObject()
+  @IsOptional()
+  portEntry?: any
 }
 
 export class CORE_CreateEntryNumberDTO extends CreateEntryNumberDTOBase {

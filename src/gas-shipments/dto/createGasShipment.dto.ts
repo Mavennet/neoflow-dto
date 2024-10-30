@@ -1,7 +1,4 @@
-import {
-  IsNotEmpty,
-  IsString
-} from 'class-validator'
+import { IsNotEmpty, IsObject, IsString } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
 export class CreateGasShipmentDTO {
@@ -17,8 +14,8 @@ export class CreateGasShipmentDTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
-  receiptLocation: string
+  @IsObject()
+  receiptLocation: any
 
   @ApiProperty()
   @IsNotEmpty()
