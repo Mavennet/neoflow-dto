@@ -6,6 +6,7 @@ export declare class CreateEntryNumberDTOBase {
 }
 export declare class CreateEntryNumberDTO extends CreateEntryNumberDTOBase {
     credentialSubject: EntryNumberCredentialSubjectDTO;
+    portEntry?: any;
 }
 export declare class CORE_CreateEntryNumberDTO extends CreateEntryNumberDTOBase {
     eventId: string;
