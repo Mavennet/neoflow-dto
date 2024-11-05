@@ -1,7 +1,7 @@
 import { JSON_TYPE_NF, ObservationDTO, OrganizationDTO, PlaceDTO } from '../../../general';
 import { ProductDTO } from '../../../products';
 export declare class DeliveryTicketCredentialSubjectDTO {
-    type: JSON_TYPE_NF.OG_DELIVERY_TICKET;
+    type: JSON_TYPE_NF[];
     createdDate: string | Date;
     openDate?: string | Date;
     closeDate?: string | Date;

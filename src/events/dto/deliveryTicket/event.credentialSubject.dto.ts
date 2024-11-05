@@ -5,6 +5,7 @@ import {
   Equals,
   IsArray,
   IsDateString,
+  IsEnum,
   IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
@@ -16,10 +17,10 @@ import { ProductDTO } from '../../../products'
 
 export class DeliveryTicketCredentialSubjectDTO {
   @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
-  @Equals(JSON_TYPE_NF.OG_DELIVERY_TICKET)
-  type: JSON_TYPE_NF.OG_DELIVERY_TICKET
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(JSON_TYPE_NF, { each: true })
+  type: JSON_TYPE_NF[]
 
   @ApiProperty()
   @IsNotEmpty()
