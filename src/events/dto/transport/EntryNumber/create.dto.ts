@@ -10,7 +10,7 @@ import {
   IsOptional
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { EntryNumberCredentialSubjectDTO } from '.'
+import { EntryNumberCredentialSubjectDTO, EntryNumberEventVCDTO } from '.'
 import { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto'
 
 export class CreateEntryNumberDTOBase {
@@ -51,4 +51,18 @@ export class CORE_CreateEntryNumberDTO extends CreateEntryNumberDTOBase {
   @ValidateNested()
   @Type(() => EnvelopedVerifiableCredential)
   eventVC: EnvelopedVerifiableCredential
+}
+
+// TODO: REMOVE ONCE OIL USES ENVELOPED CREDENTIAL
+export class CORE_CreateEntryNumberDTO_OIL extends CreateEntryNumberDTOBase {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  eventId: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => EntryNumberEventVCDTO)
+  eventVC: EntryNumberEventVCDTO
 }
