@@ -1,5 +1,5 @@
-import { USMCA_STATUS } from '../constants';
+import { CLAIM_STATUS } from '../constants';
 export declare class UpsertProductUSMCADTO {
     productId: string;
-    usmca: USMCA_STATUS;
+    usmca: CLAIM_STATUS;
 }

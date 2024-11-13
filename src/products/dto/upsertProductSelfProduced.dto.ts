@@ -2,7 +2,7 @@ import { ApiProperty } from '@nestjs/swagger'
 import { IsEnum, IsNotEmpty, IsString } from 'class-validator'
 import { CLAIM_STATUS } from '../constants'
 
-export class UpsertProductUSMCADTO {
+export class UpsertProductSelfProducedDTO {
   @IsNotEmpty()
   @ApiProperty()
   @IsString()
@@ -11,5 +11,5 @@ export class UpsertProductUSMCADTO {
   @IsNotEmpty()
   @ApiProperty()
   @IsEnum(CLAIM_STATUS)
-  usmca: CLAIM_STATUS
+  selfProduced: CLAIM_STATUS
 }
