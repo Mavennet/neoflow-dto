@@ -36,9 +36,4 @@ export class MonthlyDeliveryStatementsVCDTO {
   @ValidateNested()
   @Type(() => MonthlyDeliveryStatementsCredentialSubjectDTO)
   credentialSubject: MonthlyDeliveryStatementsCredentialSubjectDTO
-
-  @IsNotEmpty()
-  @ValidateNested()
-  @Type(() => ProofDTO)
-  proof: ProofDTO
 }
