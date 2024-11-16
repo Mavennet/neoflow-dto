@@ -25,9 +25,9 @@ import { type IntentToImportVCDTO } from '../intentToImport/event.vc.dto'
 import { type DeliveryScheduledCredentialSubjectDTO, type DeliveryScheduledVCDTO } from '../transport'
 
 class CreateProductDTOBase {
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty()
-  batchNumber: string
+  batchNumber?: string
 }
 
 export class AGENT_COMPACT_CreateProductDTO {
