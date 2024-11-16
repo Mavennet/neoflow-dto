@@ -5,7 +5,7 @@ import { type DeliveryTicketCredentialSubjectDTO, type DeliveryTicketVCDTO } fro
 import { type IntentToImportVCDTO } from '../intentToImport/event.vc.dto';
 import { type DeliveryScheduledCredentialSubjectDTO, type DeliveryScheduledVCDTO } from '../transport';
 declare class CreateProductDTOBase {
-    batchNumber: string;
+    batchNumber?: string;
 }
 export declare class AGENT_COMPACT_CreateProductDTO {
     productName: PRODUCT_NAME;

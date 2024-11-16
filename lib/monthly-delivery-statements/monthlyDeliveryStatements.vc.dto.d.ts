@@ -1,4 +1,3 @@
-import { ProofDTO } from '../general/dto/proof.dto';
 import { MonthlyDeliveryStatementsCredentialSubjectDTO } from './monthlyDeliveryStatements.credentialSubject.dto';
 export declare class MonthlyDeliveryStatementsVCDTO {
     '@context': string[];
@@ -6,5 +5,4 @@ export declare class MonthlyDeliveryStatementsVCDTO {
     type: string[];
     validFrom?: string | Date;
     credentialSubject: MonthlyDeliveryStatementsCredentialSubjectDTO;
-    proof: ProofDTO;
 }
