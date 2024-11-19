@@ -1,1 +1,6 @@
-export { ORGANIZATION_ROLE } from '@mavennet/traceability-dto'
+export enum ORGANIZATION_ROLE {
+  CLIENT = 'client',
+  AGENCY = 'agency',
+  BROKER = 'broker',
+  PIPELINE = 'pipeline'
+}
