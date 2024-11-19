@@ -1,3 +1,10 @@
-import { AddCredentialDTO as AddCredentialDTOBase } from '@mavennet/traceability-dto';
-export declare class AddCredentialDTO extends AddCredentialDTOBase {
+import { ProofDTO } from '../../general';
+export declare class AddCredentialDTO {
+    id: string;
+    '@context': string[];
+    type: string[];
+    issuer: string;
+    proof: ProofDTO;
+    credentialSubject: JSON;
+    credentialStatus?: JSON;
 }

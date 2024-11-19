@@ -1,1 +1,5 @@
-export { VerificationSuccessDTO } from '@mavennet/traceability-dto'
+export class VerificationSuccessDTO {
+  verified: boolean
+  checks: string[]
+  errors: any[]
+}

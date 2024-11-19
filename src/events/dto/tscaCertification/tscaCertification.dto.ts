@@ -2,7 +2,7 @@ import { ApiProperty } from '@nestjs/swagger'
 import { IsNotEmpty, ValidateNested, IsUUID } from 'class-validator'
 import { Type } from 'class-transformer'
 import { TSCACertificationCredentialSubjectDTO } from './event.credentialSubject.dto'
-import { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto'
+import { EnvelopedVerifiableCredential } from '../../../credentials'
 
 export class CORE_TSCACertificationDTO {
   @ApiProperty()

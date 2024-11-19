@@ -1,6 +1,10 @@
 import { CreateSubContractDTO } from './createSubContract.dto';
-import { CreateContractDTO as CreateContractDTOBase } from '@mavennet/traceability-dto';
-export declare class CreateContractDTO extends CreateContractDTOBase {
+export declare class CreateContractDTO {
+    sender: string;
+    receiver: string;
+    destination: string;
+    startDate: string;
+    endDate: string;
     isMonthly: boolean;
     signedInEmail?: string;
     createSubContracts?: CreateSubContractDTO[];

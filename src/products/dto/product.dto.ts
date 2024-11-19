@@ -1,4 +1,3 @@
-import { ProductDTO as ProductDTOBase } from '@mavennet/traceability-dto'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
@@ -9,11 +8,46 @@ import {
   IsOptional,
   IsString,
   ValidateIf,
-  ValidateNested
+  ValidateNested,
+  IsArray,
+  ArrayNotEmpty,
+  Validate,
+  IsUUID
 } from 'class-validator'
 import { JSON_TYPE } from '../../general/constants'
-import { MeasurementDTO } from '../../general/dto'
+import { MeasurementDTO, OrganizationDTO } from '../../general/dto'
 import { PRODUCT_NAME } from '../constants'
+
+export abstract class ProductDTOBase {
+  @ApiProperty()
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(JSON_TYPE, { each: true })
+  @Validate((o) => o.type.includes(JSON_TYPE.PRODUCT))
+  abstract type: any
+
+  @ApiProperty()
+  @IsOptional()
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => OrganizationDTO)
+  manufacturer?: OrganizationDTO
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsUUID()
+  productID?: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  abstract name: string
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  description?: string
+}
 
 export class ProductDTO extends ProductDTOBase {
   @ApiProperty()

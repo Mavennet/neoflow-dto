@@ -1,7 +1,47 @@
-import { IsArray, IsBoolean, IsNotEmpty, IsNotEmptyObject, IsNumber, IsString } from 'class-validator'
-import { CreateOrganizationDTO as CreateOrganizationDTOBase } from '@mavennet/traceability-dto'
+import {
+  IsArray,
+  IsBoolean,
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsNumber,
+  IsString,
+  Matches,
+  IsEmail,
+  IsPhoneNumber,
+  IsEnum
+} from 'class-validator'
+import { ORGANIZATION_ROLE } from '../constants'
 
-export class CreateOrganizationDTO extends CreateOrganizationDTOBase {
+export class CreateOrganizationDTO {
+  @IsNotEmpty()
+  @IsString()
+  name: string
+
+  @IsNotEmpty()
+  @IsEmail()
+  email: string
+
+  @IsNotEmpty()
+  @IsString()
+  address: string
+
+  @IsNotEmpty()
+  @IsPhoneNumber('CA')
+  phone: string
+
+  @IsNotEmpty()
+  @IsEnum(ORGANIZATION_ROLE)
+  role: ORGANIZATION_ROLE
+
+  @IsNotEmpty()
+  @IsString()
+  @Matches(/^did:/)
+  did: string
+
+  @IsNotEmpty()
+  @IsString()
+  backendLink: string
+
   @IsNotEmpty()
   @IsString()
   mid: string

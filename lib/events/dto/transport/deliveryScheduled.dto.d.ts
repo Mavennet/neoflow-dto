@@ -1,4 +1,6 @@
-import { CommodityDTO, CredentialDTO, EnvelopedVerifiableCredential, MeasurementDTO } from '@mavennet/traceability-dto';
+import { CredentialDTO, EnvelopedVerifiableCredential } from '../../../credentials';
+import { MeasurementDTO } from '../../../general/dto/measurement.dto';
+import { CommodityDTO } from '../../../general/dto/commodity.dto';
 import { PlaceDTO } from '../../../general';
 import { JSON_TYPE_NF } from '../../../general/constants';
 import { OrganizationDTO } from '../../../general/dto';

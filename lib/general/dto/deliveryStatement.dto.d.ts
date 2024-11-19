@@ -1,4 +1,4 @@
-import { ObservationDTO } from '@mavennet/traceability-dto';
+import { ObservationDTO } from './observation.dto';
 import { JSON_TYPE_NF } from '../constants';
 import { MeasurementDTO } from './measurement.dto';
 export declare abstract class DeliveryStatementDTO {

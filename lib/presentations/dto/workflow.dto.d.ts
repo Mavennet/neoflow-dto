@@ -1,1 +1,5 @@
-export { WorkflowDTO } from '@mavennet/traceability-dto';
+export declare class WorkflowDTO {
+    type: string[];
+    instance: string[];
+    definition: string[];
+}

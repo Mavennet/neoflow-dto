@@ -1,7 +1,22 @@
-import { AddressDTO as AddressDTOBase } from '@mavennet/traceability-dto'
-import { IsOptional, IsString } from 'class-validator'
+import { IsOptional, IsNotEmpty, IsString, IsLatitude, IsLongitude } from 'class-validator'
+import { ApiProperty } from '@nestjs/swagger'
 
-export class AddressDTO extends AddressDTOBase {
+export abstract class AddressDTO {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  address: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsLatitude()
+  latitude: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsLongitude()
+  longitude: string
+
   @IsOptional()
   @IsString()
   type?: string

@@ -1,11 +1,11 @@
-import { CommodityDTO, CredentialDTO, EnvelopedVerifiableCredential, MeasurementDTO } from '@mavennet/traceability-dto'
+import { CredentialDTO, EnvelopedVerifiableCredential } from '../../../credentials'
+import { MeasurementDTO } from '../../../general/dto/measurement.dto'
+import { CommodityDTO } from '../../../general/dto/commodity.dto'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
   ArrayNotEmpty,
-  Equals,
   IsArray,
-  IsBoolean,
   IsDateString,
   IsEnum,
   IsNotEmpty,

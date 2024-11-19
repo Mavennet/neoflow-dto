@@ -2,11 +2,9 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
   ArrayNotEmpty,
-  Equals,
   IsArray,
   IsDateString,
   IsEnum,
-  IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
   IsString,
