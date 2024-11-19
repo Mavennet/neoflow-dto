@@ -1,4 +1,4 @@
-import { CredentialDTO } from '@mavennet/traceability-dto'
+import { CredentialDTO } from '../../../credentials'
 import { Type } from 'class-transformer'
 import { IsEnum, IsNotEmpty, IsOptional, ValidateNested } from 'class-validator'
 import { TICKET_TYPE } from '../../constants'

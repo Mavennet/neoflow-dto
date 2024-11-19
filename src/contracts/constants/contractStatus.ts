@@ -1,1 +1,6 @@
-export { CONTRACT_STATUS } from '@mavennet/traceability-dto'
+export enum CONTRACT_STATUS {
+  INITIATED = 'INITIATED',
+  ACTIVE = 'ACTIVE',
+  REJECTED = 'REJECTED',
+  EXPIRED = 'EXPIRED'
+}

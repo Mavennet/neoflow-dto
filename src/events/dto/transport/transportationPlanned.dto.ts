@@ -1,4 +1,4 @@
-import { CredentialDTO } from '@mavennet/traceability-dto'
+import { CredentialDTO } from '../../../credentials'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { IsBoolean, IsNotEmpty, IsNotEmptyObject, IsOptional, IsString, Matches, ValidateNested } from 'class-validator'

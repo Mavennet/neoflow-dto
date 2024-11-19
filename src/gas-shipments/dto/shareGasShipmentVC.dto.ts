@@ -1,12 +1,7 @@
-import {
-  IsNotEmpty,
-  IsUUID,
-  IsArray,
-  ValidateNested
-} from 'class-validator'
+import { IsNotEmpty, IsUUID, IsArray, ValidateNested } from 'class-validator'
 import { Type } from 'class-transformer'
 import { ApiProperty } from '@nestjs/swagger'
-import { VCAccessibilityDTO } from '@mavennet/traceability-dto'
+import { VCAccessibilityDTO } from '../../products/dto/sharing/vcAccessibility.dto'
 
 export class ShareGasShipmentVCDTO {
   @ApiProperty()

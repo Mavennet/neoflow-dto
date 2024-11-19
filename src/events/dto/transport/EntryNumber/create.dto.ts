@@ -11,7 +11,7 @@ import {
 } from 'class-validator'
 import { Type } from 'class-transformer'
 import { EntryNumberCredentialSubjectDTO, EntryNumberEventVCDTO } from '.'
-import { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto'
+import { EnvelopedVerifiableCredential } from '../../../../credentials'
 
 export class CreateEntryNumberDTOBase {
   @ApiProperty()

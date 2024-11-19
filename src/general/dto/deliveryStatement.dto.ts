@@ -1,4 +1,4 @@
-import { ObservationDTO } from '@mavennet/traceability-dto'
+import { ObservationDTO } from './observation.dto'
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { Equals, IsArray, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator'

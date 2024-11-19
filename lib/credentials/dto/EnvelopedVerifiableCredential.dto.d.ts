@@ -1,1 +1,5 @@
-export { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto';
+export declare class EnvelopedVerifiableCredential {
+    '@context': string[];
+    id: string;
+    type: string;
+}

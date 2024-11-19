@@ -9,7 +9,6 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator'
-import { ProofDTO } from '../general/dto/proof.dto'
 import { MonthlyDeliveryStatementsCredentialSubjectDTO } from './monthlyDeliveryStatements.credentialSubject.dto'
 
 export class MonthlyDeliveryStatementsVCDTO {

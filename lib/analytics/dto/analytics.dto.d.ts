@@ -1,5 +1,6 @@
-import { AnalyticsDTO as AnalyticsDTOBase } from '@mavennet/traceability-dto';
-export declare class AnalyticsDTO extends AnalyticsDTOBase {
+export declare class AnalyticsDTO {
+    currentMillis: number;
+    productId: string;
     entryId?: string;
     eventType?: string;
     eventCreatedAt?: Date;

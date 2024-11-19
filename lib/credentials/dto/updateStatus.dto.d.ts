@@ -1,1 +1,9 @@
-export { UpdateStatusDTO } from '@mavennet/traceability-dto';
+declare class credentialStatusType {
+    type: string;
+    status: string;
+}
+export declare class UpdateStatusDTO {
+    credentialId: string;
+    credentialStatus: credentialStatusType[];
+}
+export {};

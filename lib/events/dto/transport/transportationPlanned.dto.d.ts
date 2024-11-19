@@ -1,4 +1,4 @@
-import { CredentialDTO } from '@mavennet/traceability-dto';
+import { CredentialDTO } from '../../../credentials';
 import { PlaceDTO } from '../../../general';
 export declare class AGENT_TransportationPlannedDTO {
     productId: string;

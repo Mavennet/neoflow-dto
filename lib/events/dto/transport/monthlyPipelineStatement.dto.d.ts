@@ -1,4 +1,4 @@
-import { CredentialDTO } from '@mavennet/traceability-dto';
+import { CredentialDTO } from '../../../credentials';
 import { MonthlyDeliveryStatementDTO, OrganizationDTO } from '../../../general';
 export declare class MonthlyPipelineStatementCredentialSubject {
     carrier: OrganizationDTO;

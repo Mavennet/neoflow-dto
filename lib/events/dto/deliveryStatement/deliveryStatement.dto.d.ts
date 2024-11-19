@@ -1,5 +1,5 @@
 import { DeliveryStatementCredentialSubjectDTO } from './event.credentialSubject.dto';
-import { EnvelopedVerifiableCredential } from '@mavennet/traceability-dto';
+import { EnvelopedVerifiableCredential } from '../../../credentials';
 export declare class CORE_DeliveryStatementDTO {
     productId: string;
     gasShipmentId: string;
