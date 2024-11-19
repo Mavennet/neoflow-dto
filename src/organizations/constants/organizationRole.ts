@@ -1,5 +1,6 @@
 export enum ORGANIZATION_ROLE {
   CLIENT = 'client',
   AGENCY = 'agency',
-  BROKER = 'broker'
+  BROKER = 'broker',
+  PIPELINE = 'pipeline'
 }
