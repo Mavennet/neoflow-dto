@@ -16,3 +16,4 @@ export * from './productHash.dto';
 export * from './property.dto';
 export * from './proof.dto';
 export * from './deliveryStatement.dto';
+export * from './issuer.dto';
