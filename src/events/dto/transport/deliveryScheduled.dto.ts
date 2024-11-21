@@ -103,6 +103,13 @@ export class DeliveryScheduledCredentialSubjectDTO {
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => MeasurementDTO)
+  deliveryVolume?: MeasurementDTO[]
+
+  @IsOptional()
+  @ApiPropertyOptional({ isArray: true, type: () => MeasurementDTO })
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => MeasurementDTO)
   scheduledVolume?: MeasurementDTO[]
 
   @ApiPropertyOptional()
