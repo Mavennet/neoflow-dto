@@ -1,6 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsEnum, IsNotEmpty, IsString } from 'class-validator'
-import { CLAIM_STATUS } from '../constants'
+import { IsBoolean, IsNotEmpty, IsString } from 'class-validator'
 
 export class UpsertProductUSMCADTO {
   @IsNotEmpty()
@@ -10,6 +9,6 @@ export class UpsertProductUSMCADTO {
 
   @IsNotEmpty()
   @ApiProperty()
-  @IsEnum(CLAIM_STATUS)
-  usmca: CLAIM_STATUS
+  @IsBoolean()
+  usmca: boolean
 }
