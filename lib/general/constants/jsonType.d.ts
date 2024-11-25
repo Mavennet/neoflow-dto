@@ -64,7 +64,5 @@ export declare enum JSON_TYPE_NF {
     TSCA_CERTIFICATION = "TSCACertification",
     INTENT_TO_IMPORT = "IntentToImport",
     INTENT_TO_IMPORT_CREDENTIAL = "IntentToImportCredential",
-    OPEN_API_SCECIFICATION_VALIDATOR_2022 = "OpenApiSpecificationValidator2022",
-    USMCA_AND_SELF_PRODUCED = "USMCAAndSelfProduced",
-    USMCA_AND_SELF_PRODUCED_CREDENTIAL = "USMCAAndSelfProducedCredential"
+    OPEN_API_SCECIFICATION_VALIDATOR_2022 = "OpenApiSpecificationValidator2022"
 }
