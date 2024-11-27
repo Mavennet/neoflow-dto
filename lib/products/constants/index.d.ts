@@ -7,3 +7,4 @@ export * from './htsCode';
 export * from './productStatus';
 export * from './valueType';
 export * from './claimStatus';
+export * from './pipelines';
