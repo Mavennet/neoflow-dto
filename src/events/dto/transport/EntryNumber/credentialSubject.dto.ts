@@ -19,8 +19,7 @@ export class EntryNumberCredentialSubjectDTO {
   @IsBoolean()
   usmca: boolean
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiProperty({ required: false })
   @IsBoolean()
-  selfProduced: boolean
+  selfProduced?: boolean
 }
