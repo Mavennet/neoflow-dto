@@ -14,42 +14,16 @@ import {
   AGENT_TransportationEventCredentialSubjectDTO,
   CORE_TransportationEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
+import { CredentialDTO } from '../../../credentials'
 
-class TransportationEventDetailsDTOBase {
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
-
-  @IsNotEmpty()
-  id: string
-
-  @IsArray()
-  @ArrayMinSize(1)
-  type: string[]
-
-  @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  issuer: string
-
-  @IsOptional()
-  @IsDateString()
-  validFrom?: string | Date
-
-  @IsNotEmpty()
-  @ValidateNested()
-  @Type(() => ProofDTO)
-  proof: ProofDTO
-}
-
-export class CORE_TransportationEventDetailsDTO extends TransportationEventDetailsDTOBase {
+export class CORE_TransportationEventDetailsDTO extends CredentialDTO<CORE_TransportationEventCredentialSubjectDTO> {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CORE_TransportationEventCredentialSubjectDTO)
   credentialSubject: CORE_TransportationEventCredentialSubjectDTO
 }
 
-export class AGENT_TransportationEventDetailsDTO extends TransportationEventDetailsDTOBase {
+export class AGENT_TransportationEventDetailsDTO extends CredentialDTO<AGENT_TransportationEventCredentialSubjectDTO> {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => AGENT_TransportationEventCredentialSubjectDTO)
