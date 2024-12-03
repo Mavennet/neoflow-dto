@@ -13,6 +13,7 @@ import {
 } from 'class-validator'
 import { ProofDTO } from '../../../general/dto/proof.dto'
 import { InspectionEventCredentialSubjectDTO } from './event.credentialSubject.dto'
+import { IssuerDTO } from '../../../general'
 
 export class InspectionEventDetailsDTO {
   @IsArray()
@@ -29,9 +30,8 @@ export class InspectionEventDetailsDTO {
   type: string[]
 
   @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  issuer: string
+  @Type(() => IssuerDTO)
+  issuer: IssuerDTO
 
   @IsOptional()
   @IsDateString()

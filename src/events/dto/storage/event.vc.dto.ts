@@ -15,6 +15,7 @@ import {
   AGENT_StorageEventCredentialSubjectDTO,
   CORE_StorageEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
+import { IssuerDTO } from '../../../general'
 
 class StorageEventDetailsDTOBase {
   @ApiProperty()
@@ -28,9 +29,8 @@ class StorageEventDetailsDTOBase {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  issuer: string
+  @Type(() => IssuerDTO)
+  issuer: IssuerDTO
 
   @ApiPropertyOptional()
   @IsOptional()

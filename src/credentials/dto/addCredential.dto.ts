@@ -1,6 +1,6 @@
 import { Type } from 'class-transformer'
 import { ArrayNotEmpty, IsNotEmpty, IsOptional, IsString, IsUrl, Validate, ValidateNested } from 'class-validator'
-import { ProofDTO } from '../../general'
+import { IssuerDTO, ProofDTO } from '../../general'
 
 export class AddCredentialDTO {
   @IsString()
@@ -16,8 +16,8 @@ export class AddCredentialDTO {
   type: string[]
 
   @IsNotEmpty()
-  @IsString()
-  issuer: string
+  @Type(() => IssuerDTO)
+  issuer: IssuerDTO
 
   @IsNotEmpty()
   @ValidateNested()

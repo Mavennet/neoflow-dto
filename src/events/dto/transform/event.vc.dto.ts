@@ -14,6 +14,7 @@ import {
   AGENT_TransformationEventCredentialSubjectDTO,
   CORE_TransformationEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
+import { IssuerDTO } from '../../../general'
 
 class TransformationEventDetailsDTOBase {
   @IsArray()
@@ -28,9 +29,8 @@ class TransformationEventDetailsDTOBase {
   type: string[]
 
   @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  issuer: string
+  @Type(() => IssuerDTO)
+  issuer: IssuerDTO
 
   @IsOptional()
   @IsDateString()
