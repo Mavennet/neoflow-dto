@@ -23,6 +23,7 @@ import { ProductCredentialSubjectDTO } from '../../../products/dto/productCreden
 import { type DeliveryTicketCredentialSubjectDTO, type DeliveryTicketVCDTO } from '../deliveryTicket'
 import { type IntentToImportVCDTO } from '../intentToImport/event.vc.dto'
 import { type DeliveryScheduledCredentialSubjectDTO, type DeliveryScheduledVCDTO } from '../transport'
+import { EnvelopedVerifiableCredential } from '../../../credentials'
 
 class CreateProductDTOBase {
   @IsOptional()
@@ -125,7 +126,7 @@ class CreateEventDTO {
   @ApiProperty()
   @ValidateNested()
   @IsObject()
-  eventVC?: DeliveryTicketVCDTO | DeliveryScheduledVCDTO | IntentToImportVCDTO
+  eventVC?: EnvelopedVerifiableCredential
 }
 
 export class CORE_CreateProductDTO extends CreateProductDTOBase {
@@ -137,8 +138,8 @@ export class CORE_CreateProductDTO extends CreateProductDTOBase {
   @IsNotEmpty()
   @ApiProperty()
   @ValidateNested()
-  @Type(() => ProductVCDTO)
-  productVC: ProductVCDTO
+  @Type(() => EnvelopedVerifiableCredential)
+  productVC: EnvelopedVerifiableCredential
 
   @IsNotEmpty()
   @ApiProperty()

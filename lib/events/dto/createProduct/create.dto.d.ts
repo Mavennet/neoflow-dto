@@ -1,9 +1,9 @@
 import { COMPACT_MeasurementDTO, COMPACT_ObservationDTO, COMPACT_OrganizationDTO, COMPACT_PlaceDTO } from '../../../general';
-import { PRODUCT_NAME, ProductVCDTO } from '../../../products';
+import { PRODUCT_NAME } from '../../../products';
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto';
-import { type DeliveryTicketCredentialSubjectDTO, type DeliveryTicketVCDTO } from '../deliveryTicket';
-import { type IntentToImportVCDTO } from '../intentToImport/event.vc.dto';
-import { type DeliveryScheduledCredentialSubjectDTO, type DeliveryScheduledVCDTO } from '../transport';
+import { type DeliveryTicketCredentialSubjectDTO } from '../deliveryTicket';
+import { type DeliveryScheduledCredentialSubjectDTO } from '../transport';
+import { EnvelopedVerifiableCredential } from '../../../credentials';
 declare class CreateProductDTOBase {
     batchNumber?: string;
 }
@@ -27,11 +27,11 @@ export declare class AGENT_CreateProductDTO extends CreateProductDTOBase {
 }
 declare class CreateEventDTO {
     eventId?: string;
-    eventVC?: DeliveryTicketVCDTO | DeliveryScheduledVCDTO | IntentToImportVCDTO;
+    eventVC?: EnvelopedVerifiableCredential;
 }
 export declare class CORE_CreateProductDTO extends CreateProductDTOBase {
     productId: string;
-    productVC: ProductVCDTO;
+    productVC: EnvelopedVerifiableCredential;
     productVCHash: string;
     events?: CreateEventDTO[];
 }
