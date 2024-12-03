@@ -1,21 +1,12 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import {
-  ArrayMinSize,
-  IsArray,
-  IsDateString,
-  IsNotEmpty,
-  IsOptional,
-  IsString,
-  Matches,
-  ValidateNested
-} from 'class-validator'
+import { ArrayMinSize, IsArray, IsDateString, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator'
+import { IssuerDTO } from '../../../general'
 import { ProofDTO } from '../../../general/dto/proof.dto'
 import {
   AGENT_StorageEventCredentialSubjectDTO,
   CORE_StorageEventCredentialSubjectDTO
 } from './event.credentialSubject.dto'
-import { IssuerDTO } from '../../../general'
 
 class StorageEventDetailsDTOBase {
   @ApiProperty()

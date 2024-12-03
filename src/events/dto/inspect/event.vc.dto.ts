@@ -6,14 +6,12 @@ import {
   IsDateString,
   IsNotEmpty,
   IsOptional,
-  IsString,
-  Matches,
   ValidateIf,
   ValidateNested
 } from 'class-validator'
+import { IssuerDTO } from '../../../general'
 import { ProofDTO } from '../../../general/dto/proof.dto'
 import { InspectionEventCredentialSubjectDTO } from './event.credentialSubject.dto'
-import { IssuerDTO } from '../../../general'
 
 export class InspectionEventDetailsDTO {
   @IsArray()
