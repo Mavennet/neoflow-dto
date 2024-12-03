@@ -1,36 +1,9 @@
 import { Type } from 'class-transformer'
-import {
-  ArrayMaxSize,
-  ArrayMinSize,
-  IsArray,
-  IsDateString,
-  IsNotEmpty,
-  IsOptional,
-  ValidateIf,
-  ValidateNested
-} from 'class-validator'
+import { IsNotEmpty, ValidateNested } from 'class-validator'
+import { CredentialDTO } from '../credentials'
 import { MonthlyDeliveryStatementsCredentialSubjectDTO } from './monthlyDeliveryStatements.credentialSubject.dto'
 
-export class MonthlyDeliveryStatementsVCDTO {
-  @IsArray()
-  @ArrayMinSize(1)
-  '@context': string[]
-
-  @IsNotEmpty()
-  id: string
-
-  @IsArray()
-  @ArrayMinSize(2)
-  @ArrayMaxSize(2)
-  @ValidateIf(
-    (o) => o.type.includes('VerifiableCredential') && o.type.includes('MonthlyMonthlyDeliveryStatementsCredential')
-  )
-  type: string[]
-
-  @IsOptional()
-  @IsDateString()
-  validFrom?: string | Date
-
+export class MonthlyDeliveryStatementsVCDTO extends CredentialDTO<MonthlyDeliveryStatementsCredentialSubjectDTO> {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => MonthlyDeliveryStatementsCredentialSubjectDTO)

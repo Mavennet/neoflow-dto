@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { IsNotEmpty, ValidateNested, IsUUID } from 'class-validator'
 import { Type } from 'class-transformer'
-import { MonthlyDeliveryStatementsVCDTO } from './monthlyDeliveryStatements.vc.dto'
+import { EnvelopedVerifiableCredential } from '../credentials'
 
 export class CORE_MonthlyDeliveryStatementsDTO {
   @ApiProperty()
@@ -12,6 +12,6 @@ export class CORE_MonthlyDeliveryStatementsDTO {
   @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => MonthlyDeliveryStatementsVCDTO)
-  eventVC: MonthlyDeliveryStatementsVCDTO
+  @Type(() => EnvelopedVerifiableCredential)
+  eventVC: EnvelopedVerifiableCredential
 }
