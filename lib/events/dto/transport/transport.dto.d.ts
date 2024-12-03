@@ -1,6 +1,7 @@
-import { AGENT_TransportationEventCredentialSubjectDTO, OGBillOfLadingCredentialSubjectDTO, CORE_TransportationEventDetailsDTO, OGBillOfLadingVCDTO } from '.';
+import { AGENT_TransportationEventCredentialSubjectDTO, OGBillOfLadingCredentialSubjectDTO } from '.';
 import { TRANSPORT_EVENT_TYPE } from '../../constants';
 import { COMPACT_OrganizationDTO, COMPACT_PlaceDTO, COMPACT_MeasurementDTO, COMPACT_PostalAddressDTO } from '../../../general';
+import { EnvelopedVerifiableCredential } from '../../../credentials';
 export declare class AGENT_COMPACT_TransportStartDTO {
     eventType: TRANSPORT_EVENT_TYPE;
     initiator: COMPACT_OrganizationDTO;
@@ -25,8 +26,8 @@ declare class TransportProductDTOBase {
 }
 export declare class CORE_TransportProductDTO extends TransportProductDTOBase {
     eventId: string;
-    transportVC?: CORE_TransportationEventDetailsDTO;
-    bolVC?: OGBillOfLadingVCDTO;
+    transportVC?: EnvelopedVerifiableCredential;
+    bolVC?: EnvelopedVerifiableCredential;
 }
 export declare class AGENT_TransportProductDTO extends TransportProductDTOBase {
     transportCredentialSubject: AGENT_TransportationEventCredentialSubjectDTO;

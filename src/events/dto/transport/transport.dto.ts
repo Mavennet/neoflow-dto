@@ -25,6 +25,7 @@ import {
   COMPACT_MeasurementDTO,
   COMPACT_PostalAddressDTO
 } from '../../../general'
+import { EnvelopedVerifiableCredential } from '../../../credentials'
 
 export class AGENT_COMPACT_TransportStartDTO {
   @ApiProperty()
@@ -129,14 +130,14 @@ export class CORE_TransportProductDTO extends TransportProductDTOBase {
   @IsOptional()
   @ValidateNested()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START)
-  @Type(() => CORE_TransportationEventDetailsDTO)
-  transportVC?: CORE_TransportationEventDetailsDTO
+  @Type(() => EnvelopedVerifiableCredential)
+  transportVC?: EnvelopedVerifiableCredential
 
   @IsOptional()
   @ValidateNested()
   @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.END)
-  @Type(() => OGBillOfLadingVCDTO)
-  bolVC?: OGBillOfLadingVCDTO
+  @Type(() => EnvelopedVerifiableCredential)
+  bolVC?: EnvelopedVerifiableCredential
 }
 
 export class AGENT_TransportProductDTO extends TransportProductDTOBase {
