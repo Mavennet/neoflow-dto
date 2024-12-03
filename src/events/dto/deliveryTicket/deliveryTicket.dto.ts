@@ -3,6 +3,7 @@ import { IsNotEmpty, ValidateNested, IsUUID, ValidateIf, IsOptional } from 'clas
 import { Type } from 'class-transformer'
 import { DeliveryTicketCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { DeliveryTicketVCDTO } from './event.vc.dto'
+import { EnvelopedVerifiableCredential } from '../../../credentials'
 
 export class CORE_DeliveryTicketDTO {
   @ApiProperty()
@@ -29,8 +30,8 @@ export class CORE_DeliveryTicketDTO {
   @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => DeliveryTicketVCDTO)
-  eventVC: DeliveryTicketVCDTO
+  @Type(() => EnvelopedVerifiableCredential)
+  eventVC: EnvelopedVerifiableCredential
 }
 
 export class AGENT_DeliveryTicketDTO {

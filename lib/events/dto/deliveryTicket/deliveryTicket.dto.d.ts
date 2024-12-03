@@ -1,11 +1,11 @@
 import { DeliveryTicketCredentialSubjectDTO } from './event.credentialSubject.dto';
-import { DeliveryTicketVCDTO } from './event.vc.dto';
+import { EnvelopedVerifiableCredential } from '../../../credentials';
 export declare class CORE_DeliveryTicketDTO {
     productId: string;
     gasShipmentId: string;
     uploadFileKey?: string;
     eventId: string;
-    eventVC: DeliveryTicketVCDTO;
+    eventVC: EnvelopedVerifiableCredential;
 }
 export declare class AGENT_DeliveryTicketDTO {
     productId: string;
