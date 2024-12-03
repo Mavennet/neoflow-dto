@@ -1,10 +1,11 @@
+import { IssuerDTO } from '../../../general';
 import { ProofDTO } from '../../../general/dto/proof.dto';
 import { AGENT_TransformationEventCredentialSubjectDTO, CORE_TransformationEventCredentialSubjectDTO } from './event.credentialSubject.dto';
 declare class TransformationEventDetailsDTOBase {
     '@context': string[];
     id: string;
     type: string[];
-    issuer: string;
+    issuer: IssuerDTO;
     validFrom?: string | Date;
     proof: ProofDTO;
 }

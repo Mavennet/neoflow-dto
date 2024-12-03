@@ -1,14 +1,6 @@
 import { Type } from 'class-transformer'
-import {
-  ArrayMinSize,
-  IsArray,
-  IsDateString,
-  IsNotEmpty,
-  IsOptional,
-  IsString,
-  Matches,
-  ValidateNested
-} from 'class-validator'
+import { ArrayMinSize, IsArray, IsDateString, IsNotEmpty, IsOptional, ValidateNested } from 'class-validator'
+import { IssuerDTO } from '../../../general'
 import { ProofDTO } from '../../../general/dto/proof.dto'
 import {
   AGENT_TransformationEventCredentialSubjectDTO,
@@ -28,9 +20,8 @@ class TransformationEventDetailsDTOBase {
   type: string[]
 
   @IsNotEmpty()
-  @IsString()
-  @Matches(/^did:/)
-  issuer: string
+  @Type(() => IssuerDTO)
+  issuer: IssuerDTO
 
   @IsOptional()
   @IsDateString()

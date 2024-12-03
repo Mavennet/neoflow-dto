@@ -12,7 +12,7 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator'
-import type { IssuerDTO } from '../../general/dto/issuer.dto'
+import { IssuerDTO } from '../../general/dto/issuer.dto'
 import { Type } from 'class-transformer'
 import { type CredentialStatusDTO } from './credentialStatus.dto'
 import { CredentialSchema } from './credentialSchema.dto'
@@ -37,7 +37,8 @@ export abstract class CredentialDTO<T> {
 
   @ApiProperty()
   @IsNotEmpty()
-  issuer: string | IssuerDTO
+  @Type(() => IssuerDTO)
+  issuer: IssuerDTO
 
   @ApiProperty()
   @IsNotEmpty()
