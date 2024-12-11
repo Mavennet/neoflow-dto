@@ -9,7 +9,7 @@ export declare class CreateOrganizationDTO {
     backendLink: string;
     mid: string;
     cbpImporterRecord: string;
-    uwi: Map<string, string>;
+    uwi: string;
     userPoolID: string;
     adminAppClientID: string;
     isNF: boolean;
