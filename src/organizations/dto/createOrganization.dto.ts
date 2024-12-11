@@ -50,7 +50,8 @@ export class CreateOrganizationDTO {
   @IsString()
   cbpImporterRecord: string
 
-  @IsNotEmptyObject()
+  @IsNotEmpty()
+  @IsString()
   uwi: string
 
   @IsNotEmpty()
