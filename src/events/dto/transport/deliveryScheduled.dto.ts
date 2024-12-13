@@ -143,7 +143,7 @@ export class DeliveryScheduledCredentialSubjectDTO {
   scheduledDate?: string
 }
 export class DeliveryScheduledVCDTO extends CredentialDTO<DeliveryScheduledCredentialSubjectDTO> {
-  @ApiPropertyOptional()
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => DeliveryScheduledCredentialSubjectDTO)
@@ -188,7 +188,7 @@ export class CORE_DeliveryScheduledDTO {
   @IsString()
   eventId: string
 
-  @ApiPropertyOptional()
+  @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => DeliveryScheduledVCDTO)
