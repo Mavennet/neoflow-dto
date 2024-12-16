@@ -33,10 +33,6 @@ class DetailsDto {
   @ValidateNested()
   @Type(() => CoordinatesDto)
   coordinates: CoordinatesDto
-
-  @ValidateNested()
-  @Type(() => PostalAddressDto)
-  postalAddress: PostalAddressDto
 }
 
 export class LocationDto {
