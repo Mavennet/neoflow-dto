@@ -1,33 +1,10 @@
-import {
-  IsArray,
-  IsBoolean,
-  IsNotEmpty,
-  IsNotEmptyObject,
-  IsNumber,
-  IsString,
-  Matches,
-  IsEmail,
-  IsPhoneNumber,
-  IsEnum
-} from 'class-validator'
+import { IsArray, IsBoolean, IsNotEmpty, IsNumber, IsString, Matches, IsEnum } from 'class-validator'
 import { ORGANIZATION_ROLE } from '../constants'
 
 export class CreateOrganizationDTO {
   @IsNotEmpty()
   @IsString()
   name: string
-
-  @IsNotEmpty()
-  @IsEmail()
-  email: string
-
-  @IsNotEmpty()
-  @IsString()
-  address: string
-
-  @IsNotEmpty()
-  @IsPhoneNumber('CA')
-  phone: string
 
   @IsNotEmpty()
   @IsEnum(ORGANIZATION_ROLE)
@@ -45,14 +22,6 @@ export class CreateOrganizationDTO {
   @IsNotEmpty()
   @IsString()
   mid: string
-
-  @IsNotEmpty()
-  @IsString()
-  cbpImporterRecord: string
-
-  @IsNotEmpty()
-  @IsString()
-  uwi: string
 
   @IsNotEmpty()
   @IsString()
