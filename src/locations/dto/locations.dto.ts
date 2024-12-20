@@ -1,4 +1,4 @@
-import { IsArray, IsString, IsObject, IsBoolean, ValidateNested, IsNumber } from 'class-validator'
+import { IsArray, IsString, IsObject, IsBoolean, ValidateNested, IsNumber, IsOptional } from 'class-validator'
 import { Type } from 'class-transformer'
 
 class CoordinatesDto {
@@ -10,8 +10,9 @@ class CoordinatesDto {
 }
 
 class PostalAddressDto {
+  @IsOptional()
   @IsString()
-  streetAddress: string
+  streetAddress?: string
 
   @IsString()
   addressLocality: string
@@ -19,8 +20,9 @@ class PostalAddressDto {
   @IsString()
   addressRegion: string
 
+  @IsOptional()
   @IsString()
-  postalCode: string
+  postalCode?: string
 
   @IsString()
   addressCountry: string
@@ -33,6 +35,9 @@ class DetailsDto {
   @ValidateNested()
   @Type(() => CoordinatesDto)
   coordinates: CoordinatesDto
+
+  @IsObject()
+  postalAddress: PostalAddressDto
 }
 
 export class LocationDto {
