@@ -82,6 +82,11 @@ export class PipelinePostArrivalRecord {
   @ApiProperty({ required: false })
   @IsString()
   open_date?: string
+
+  @IsOptional()
+  @ApiProperty({ required: false })
+  @IsString()
+  nominationMonth?: string
 }
 
 export class PipelinePostArrivalDto_AGENT {

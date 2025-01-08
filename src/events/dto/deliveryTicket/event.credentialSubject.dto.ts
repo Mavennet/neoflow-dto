@@ -69,6 +69,11 @@ export class DeliveryTicketCredentialSubjectDTO {
   @IsString()
   notificationOfShipment?: string
 
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  nominationMonth?: string
+
   @ApiProperty()
   @IsNotEmptyObject()
   @ValidateNested()

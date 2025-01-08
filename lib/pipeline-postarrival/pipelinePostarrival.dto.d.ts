@@ -19,6 +19,7 @@ export declare class PipelinePostArrivalRecord {
     nsv_bbl?: string;
     productId?: string;
     open_date?: string;
+    nominationMonth?: string;
 }
 export declare class PipelinePostArrivalDto_AGENT {
     records: PipelinePostArrivalRecord[];

@@ -1,9 +1,9 @@
+import { EnvelopedVerifiableCredential } from '../../../credentials';
 import { COMPACT_MeasurementDTO, COMPACT_ObservationDTO, COMPACT_OrganizationDTO, COMPACT_PlaceDTO } from '../../../general';
 import { PRODUCT_NAME } from '../../../products';
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto';
 import { type DeliveryTicketCredentialSubjectDTO } from '../deliveryTicket';
 import { type DeliveryScheduledCredentialSubjectDTO } from '../transport';
-import { EnvelopedVerifiableCredential } from '../../../credentials';
 declare class CreateProductDTOBase {
     batchNumber?: string;
 }
