@@ -12,18 +12,17 @@ import {
   ValidateNested
 } from 'class-validator'
 
+import { EnvelopedVerifiableCredential } from '../../../credentials'
 import {
   COMPACT_MeasurementDTO,
   COMPACT_ObservationDTO,
   COMPACT_OrganizationDTO,
   COMPACT_PlaceDTO
 } from '../../../general'
-import { PRODUCT_NAME, ProductVCDTO } from '../../../products'
+import { PRODUCT_NAME } from '../../../products'
 import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
-import { type DeliveryTicketCredentialSubjectDTO, type DeliveryTicketVCDTO } from '../deliveryTicket'
-import { type IntentToImportVCDTO } from '../intentToImport/event.vc.dto'
-import { type DeliveryScheduledCredentialSubjectDTO, type DeliveryScheduledVCDTO } from '../transport'
-import { EnvelopedVerifiableCredential } from '../../../credentials'
+import { type DeliveryTicketCredentialSubjectDTO } from '../deliveryTicket'
+import { type DeliveryScheduledCredentialSubjectDTO } from '../transport'
 
 class CreateProductDTOBase {
   @IsOptional()

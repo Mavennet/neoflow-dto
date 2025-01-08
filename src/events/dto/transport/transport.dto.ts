@@ -12,12 +12,7 @@ import {
   IsOptional
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import {
-  AGENT_TransportationEventCredentialSubjectDTO,
-  OGBillOfLadingCredentialSubjectDTO,
-  CORE_TransportationEventDetailsDTO,
-  OGBillOfLadingVCDTO
-} from '.'
+import { AGENT_TransportationEventCredentialSubjectDTO, OGBillOfLadingCredentialSubjectDTO } from '.'
 import { TRANSPORT_EVENT_TYPE } from '../../constants'
 import {
   COMPACT_OrganizationDTO,

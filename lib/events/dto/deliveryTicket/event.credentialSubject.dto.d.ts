@@ -11,6 +11,7 @@ export declare class DeliveryTicketCredentialSubjectDTO {
     ticketControlNumber?: string;
     batchNumber?: string;
     notificationOfShipment?: string;
+    nominationMonth?: string;
     destination: PlaceDTO;
     product?: ProductDTO;
     observation: ObservationDTO[];
