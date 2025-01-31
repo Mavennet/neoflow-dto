@@ -11,6 +11,10 @@ export class ProductsByBatchDTO {
   @IsArray()
   ticketNumber: string[]
 
+  @ApiProperty()
+  @IsArray()
+  pipelineTicketNumber: string[]
+
   @IsNotEmpty()
   @ApiProperty()
   @IsString()
