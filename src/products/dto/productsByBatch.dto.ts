@@ -1,11 +1,15 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNotEmpty, IsString } from 'class-validator'
+import { IsArray, IsNotEmpty, IsString } from 'class-validator'
 
 export class ProductsByBatchDTO {
   @IsNotEmpty()
   @ApiProperty()
   @IsString()
   batchNumber: string
+
+  @ApiProperty()
+  @IsArray()
+  ticketNumber: string[]
 
   @IsNotEmpty()
   @ApiProperty()
