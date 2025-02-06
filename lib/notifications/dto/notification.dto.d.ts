@@ -3,6 +3,7 @@ export declare abstract class NotificationDTO {
     notificationId: number;
     notificationType: NOTIFICATION_TYPE;
     productId: string;
+    batchNumber: string;
     contractId: number;
     transferRequestId: number;
     sender: string;

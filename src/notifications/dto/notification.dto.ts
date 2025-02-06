@@ -25,6 +25,10 @@ export abstract class NotificationDTO {
   productId: string
 
   @IsOptional()
+  @IsString()
+  batchNumber: string
+
+  @IsOptional()
   @IsNumber()
   contractId: number
 
