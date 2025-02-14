@@ -26,8 +26,4 @@ export class UpdateStatusDTO {
   @ValidateNested({ each: true })
   @Type(() => credentialStatusType)
   credentialStatus: credentialStatusType[]
-
-  @ApiProperty()
-  @IsString()
-  productId: string
 }
