@@ -5,6 +5,5 @@ declare class credentialStatusType {
 export declare class UpdateStatusDTO {
     credentialId: string;
     credentialStatus: credentialStatusType[];
-    productId?: string;
 }
 export {};
