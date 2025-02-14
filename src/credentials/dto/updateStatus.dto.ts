@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Equals, IsString, IsNotEmpty, IsArray, ArrayMinSize, ValidateNested } from 'class-validator'
+import { Equals, IsString, IsNotEmpty, IsArray, ArrayMinSize, ValidateNested, IsOptional } from 'class-validator'
 import { Type } from 'class-transformer'
 
 class credentialStatusType {
@@ -28,6 +28,7 @@ export class UpdateStatusDTO {
   credentialStatus: credentialStatusType[]
 
   @ApiProperty()
+  @IsOptional()
   @IsString()
-  productId: string
+  productId?: string
 }
