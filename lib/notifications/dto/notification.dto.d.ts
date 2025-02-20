@@ -10,4 +10,5 @@ export declare abstract class NotificationDTO {
     senderName: string;
     read: boolean;
     createdAt: Date;
+    summaryProducts: string[];
 }

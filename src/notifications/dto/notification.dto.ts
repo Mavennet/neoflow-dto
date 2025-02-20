@@ -7,7 +7,8 @@ import {
   IsDateString,
   IsEnum,
   IsBoolean,
-  Matches
+  Matches,
+  IsArray
 } from 'class-validator'
 import { NOTIFICATION_TYPE } from '../constants'
 
@@ -52,4 +53,8 @@ export abstract class NotificationDTO {
   @IsNotEmpty()
   @IsDateString()
   createdAt: Date
+
+  @IsOptional()
+  @IsArray()
+  summaryProducts: string[]
 }
