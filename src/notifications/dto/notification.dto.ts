@@ -12,6 +12,11 @@ import {
 } from 'class-validator'
 import { NOTIFICATION_TYPE } from '../constants'
 
+interface SummaryProduct {
+  id: string
+  batchNumber: string
+}
+
 export abstract class NotificationDTO {
   @IsNotEmpty()
   @IsNumber()
@@ -56,5 +61,5 @@ export abstract class NotificationDTO {
 
   @IsOptional()
   @IsArray()
-  summaryProducts: string[]
+  summaryProducts: SummaryProduct[]
 }

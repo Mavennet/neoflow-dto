@@ -1,4 +1,8 @@
 import { NOTIFICATION_TYPE } from '../constants';
+interface SummaryProduct {
+    id: string;
+    batchNumber: string;
+}
 export declare abstract class NotificationDTO {
     notificationId: number;
     notificationType: NOTIFICATION_TYPE;
@@ -10,5 +14,6 @@ export declare abstract class NotificationDTO {
     senderName: string;
     read: boolean;
     createdAt: Date;
-    summaryProducts: string[];
+    summaryProducts: SummaryProduct[];
 }
+export {};
