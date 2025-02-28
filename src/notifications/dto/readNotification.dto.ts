@@ -5,5 +5,5 @@ export abstract class ReadNotificationDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsNumberString()
-  notificationId: number
+  notificationId: string
 }

@@ -7,9 +7,15 @@ import {
   IsDateString,
   IsEnum,
   IsBoolean,
-  Matches
+  Matches,
+  IsArray
 } from 'class-validator'
 import { NOTIFICATION_TYPE } from '../constants'
+
+interface SummaryProduct {
+  id: string
+  batchNumber: string
+}
 
 export abstract class NotificationDTO {
   @IsNotEmpty()
@@ -23,6 +29,10 @@ export abstract class NotificationDTO {
   @IsOptional()
   @IsUUID()
   productId: string
+
+  @IsOptional()
+  @IsString()
+  batchNumber: string
 
   @IsOptional()
   @IsNumber()
@@ -48,4 +58,8 @@ export abstract class NotificationDTO {
   @IsNotEmpty()
   @IsDateString()
   createdAt: Date
+
+  @IsOptional()
+  @IsArray()
+  summaryProducts: SummaryProduct[]
 }
