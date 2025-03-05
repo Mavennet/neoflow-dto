@@ -10,6 +10,11 @@ export class DeleteProductsByBatchDTO {
   @IsNotEmpty()
   @ApiProperty()
   @IsString()
+  shipper: string
+
+  @IsNotEmpty()
+  @ApiProperty()
+  @IsString()
   batch: string
 
   @IsNotEmpty()
