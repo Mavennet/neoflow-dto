@@ -1,10 +1,4 @@
-import {
-  IsNotEmpty,
-  IsUUID,
-  IsArray,
-  ArrayMinSize,
-  IsString
-} from 'class-validator'
+import { IsNotEmpty, IsUUID, IsArray, ArrayMinSize, IsString, IsNumber } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
 export class ShareProductDTO {
@@ -13,9 +7,9 @@ export class ShareProductDTO {
   @IsUUID()
   productId: string
 
-  @ApiProperty()
+  @ApiProperty({ type: [Number] })
   @IsArray()
   @ArrayMinSize(1)
-  @IsString({ each: true })
-  orgs: string[]
+  @IsNumber({}, { each: true })
+  orgs: number[]
 }
