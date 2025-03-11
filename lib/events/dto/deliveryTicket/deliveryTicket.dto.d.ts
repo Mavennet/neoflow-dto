@@ -14,12 +14,12 @@ export declare class AGENT_DeliveryTicketDTO {
   credentialSubject: DeliveryTicketCredentialSubjectDTO
 }
 
-export declare enum STATUS {
+export declare enum DELIVERY_TICKET_STATUS {
   SUCCESS = 'SUCCESS',
   DUPLICATE = 'DUPLICATE'
 }
 
 export declare class CORE_DeliveryTicketResponseDto {
-  deliveryTicketStatus: STATUS
+  deliveryTicketStatus: STATDELIVERY_TICKET_STATUSUS
   eventVC?: EnvelopedVerifiableCredential
 }
