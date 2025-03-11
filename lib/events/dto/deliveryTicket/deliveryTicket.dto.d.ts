@@ -15,7 +15,7 @@ export declare class AGENT_DeliveryTicketDTO {
 }
 
 export declare enum STATUS {
-  SUCESS = 'SUCESS',
+  SUCCESS = 'SUCCESS',
   DUPLICATE = 'DUPLICATE'
 }
 
