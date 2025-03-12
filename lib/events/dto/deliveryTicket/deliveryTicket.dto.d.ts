@@ -20,6 +20,6 @@ export declare enum DELIVERY_TICKET_STATUS {
 }
 
 export declare class CORE_DeliveryTicketResponseDto {
-  deliveryTicketStatus: STATDELIVERY_TICKET_STATUSUS
+  deliveryTicketStatus: DELIVERY_TICKET_STATUS
   eventVC?: EnvelopedVerifiableCredential
 }
