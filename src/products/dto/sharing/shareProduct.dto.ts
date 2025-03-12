@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsUUID, IsArray, ArrayMinSize, IsString, IsNumber } from 'class-validator'
+import { IsNotEmpty, IsUUID, IsArray, ArrayMinSize, IsNumber } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
 export class ShareProductDTO {
