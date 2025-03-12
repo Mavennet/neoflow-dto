@@ -1,4 +1,4 @@
 export declare class ShareProductDTO {
     productId: string;
-    orgs: string[];
+    orgs: number[];
 }
