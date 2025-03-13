@@ -14,7 +14,7 @@ export declare class AGENT_DeliveryTicketDTO {
   credentialSubject: DeliveryTicketCredentialSubjectDTO
 }
 
-export declare enum DELIVERY_TICKET_STATUS {
+export enum DELIVERY_TICKET_STATUS {
   SUCCESS = 'SUCCESS',
   DUPLICATE = 'DUPLICATE'
 }
