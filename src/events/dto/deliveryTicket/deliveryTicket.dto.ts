@@ -56,3 +56,21 @@ export class AGENT_DeliveryTicketDTO {
   @Type(() => DeliveryTicketCredentialSubjectDTO)
   credentialSubject: DeliveryTicketCredentialSubjectDTO
 }
+
+export enum DELIVERY_TICKET_STATUS {
+  SUCCESS = 'SUCCESS',
+  DUPLICATE = 'DUPLICATE'
+}
+
+export class CORE_DeliveryTicketResponseDto {
+  @ApiProperty()
+  @IsNotEmpty()
+  @ValidateNested()
+  deliveryTicketStatus: DELIVERY_TICKET_STATUS
+
+  @ApiProperty()
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => EnvelopedVerifiableCredential)
+  eventVC?: EnvelopedVerifiableCredential
+}
