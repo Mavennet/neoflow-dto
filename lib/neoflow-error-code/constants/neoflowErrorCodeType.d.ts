@@ -3,6 +3,13 @@ export declare enum ErrorSourceRepo {
     AGENT = "A",
     FRONTEND = "F"
 }
+export declare enum ErrorOrganizationType {
+    CLIENT = "1",
+    SHIPPER = "2",
+    PIPELINE = "3",
+    AGENCY = "4",
+    BROKER = "5"
+}
 export declare enum ErrorGroup {
     DELIVERY_SCHEDULE = "01",
     SHIPPER_POSTARRIVAL = "02"
