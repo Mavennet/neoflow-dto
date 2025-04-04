@@ -5,14 +5,6 @@ export enum ErrorSourceRepo {
   FRONTEND = 'F'
 }
 
-// enum ErrorOrganizationType {
-//   CLIENT = '1',
-//   SHIPPER = '2',
-//   PIPELINE = '3',
-//   AGENCY = '4',
-//   BROKER = '5'
-// }
-
 export enum ErrorGroup {
   DELIVERY_SCHEDULE = '01',
   SHIPPER_POSTARRIVAL = '02'
@@ -31,3 +23,11 @@ export enum ErrorCode {
   TMPL_PAIRING_FAILED = '10',
   UNKNOWN_ERROR = '99'
 }
+
+// enum ErrorOrganizationType {
+//   CLIENT = '1',
+//   SHIPPER = '2',
+//   PIPELINE = '3',
+//   AGENCY = '4',
+//   BROKER = '5'
+// }
