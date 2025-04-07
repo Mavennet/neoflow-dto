@@ -9,10 +9,18 @@ import {
   Validate,
   ValidateNested,
   ValidateIf,
-  IsOptional
+  IsOptional,
+  IsObject,
+  IsArray,
+  ArrayMinSize,
+  IsDate
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { AGENT_TransportationEventCredentialSubjectDTO, OGBillOfLadingCredentialSubjectDTO } from '.'
+import {
+  OGBillOfLadingCredentialSubjectDTO,
+  type TransportEventCredentialSubjectDTO,
+  type TransportStartVCDTO
+} from '.'
 import { TRANSPORT_EVENT_TYPE } from '../../constants'
 import {
   COMPACT_OrganizationDTO,
@@ -20,7 +28,7 @@ import {
   COMPACT_MeasurementDTO,
   COMPACT_PostalAddressDTO
 } from '../../../general'
-import { EnvelopedVerifiableCredential } from '../../../credentials'
+import { CredentialDTO, EnvelopedVerifiableCredential } from '../../../credentials'
 
 export class AGENT_COMPACT_TransportStartDTO {
   @ApiProperty()
@@ -105,48 +113,36 @@ export class AGENT_COMPACT_TransportEndDTO {
   deliveryAddress: COMPACT_PostalAddressDTO
 }
 
-class TransportProductDTOBase {
-  @ApiProperty()
-  @IsOptional()
+export class TransportProductDataDto {
+  @IsNotEmpty()
   @IsString()
-  productId?: string
+  batchNumber: string
 
-  @ApiProperty()
   @IsNotEmpty()
-  @IsEnum(TRANSPORT_EVENT_TYPE)
-  eventType: TRANSPORT_EVENT_TYPE
+  @IsString()
+  shipper: string
+
+  @IsNotEmpty()
+  @IsString()
+  pipeline: string
+
+  @IsNotEmpty()
+  @IsDateString()
+  nominationMonth: string
+
+  @IsNotEmpty()
+  @IsString()
+  commodity: string
 }
 
-export class CORE_TransportProductDTO extends TransportProductDTOBase {
-  @IsNotEmpty()
-  @IsUUID()
-  eventId: string
-
-  @IsOptional()
-  @ValidateNested()
-  @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START)
-  @Type(() => EnvelopedVerifiableCredential)
-  transportVC?: EnvelopedVerifiableCredential
-
-  @IsOptional()
-  @ValidateNested()
-  @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.END)
-  @Type(() => EnvelopedVerifiableCredential)
-  bolVC?: EnvelopedVerifiableCredential
-}
-
-export class AGENT_TransportProductDTO extends TransportProductDTOBase {
-  @ApiProperty()
+export class CORE_TransportProductDTO {
   @IsNotEmpty()
   @ValidateNested()
-  @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.START)
-  @Type(() => AGENT_TransportationEventCredentialSubjectDTO)
-  transportCredentialSubject: AGENT_TransportationEventCredentialSubjectDTO
+  @Type(() => TransportProductDataDto)
+  productData: TransportProductDataDto
 
-  @ApiProperty()
-  @IsOptional()
-  @ValidateNested()
-  @ValidateIf((o) => o.eventType === TRANSPORT_EVENT_TYPE.END)
-  @Type(() => OGBillOfLadingCredentialSubjectDTO)
-  billOfLadingCredentialSubject?: OGBillOfLadingCredentialSubjectDTO
+  @IsNotEmpty()
+  @IsObject()
+  @Type(() => EnvelopedVerifiableCredential)
+  vc: EnvelopedVerifiableCredential
 }

@@ -12,9 +12,10 @@ import {
   IsArray,
   ArrayNotEmpty,
   Validate,
-  IsUUID
+  IsUUID,
+  ArrayContains
 } from 'class-validator'
-import { JSON_TYPE } from '../../general/constants'
+import { JSON_TYPE, JSON_TYPE_NF } from '../../general/constants'
 import { MeasurementDTO, OrganizationDTO } from '../../general/dto'
 import { PRODUCT_NAME } from '../constants'
 
@@ -51,10 +52,11 @@ export abstract class ProductDTOBase {
 
 export class ProductDTO extends ProductDTOBase {
   @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
-  @Equals(JSON_TYPE.PRODUCT)
-  type: JSON_TYPE.PRODUCT
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(JSON_TYPE_NF, { each: true })
+  @ArrayContains([JSON_TYPE_NF.PRODUCT])
+  type: JSON_TYPE_NF[]
 
   @ApiProperty()
   @IsNotEmpty()

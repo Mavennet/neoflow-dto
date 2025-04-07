@@ -12,7 +12,7 @@ import {
   ValidateNested
 } from 'class-validator'
 
-import { EnvelopedVerifiableCredential } from '../../../credentials'
+import { type EnvelopedVerifiableCredential } from '../../../credentials'
 import {
   COMPACT_MeasurementDTO,
   COMPACT_ObservationDTO,
@@ -20,15 +20,9 @@ import {
   COMPACT_PlaceDTO
 } from '../../../general'
 import { PRODUCT_NAME } from '../../../products'
-import { ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
+import { type ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
 import { type DeliveryTicketCredentialSubjectDTO } from '../deliveryTicket'
-import { type DeliveryScheduledCredentialSubjectDTO } from '../transport'
-
-class CreateProductDTOBase {
-  @IsOptional()
-  @ApiProperty()
-  batchNumber?: string
-}
+import { type TransportEventCredentialSubjectDTO, type DeliveryScheduledCredentialSubjectDTO } from '../transport'
 
 export class AGENT_COMPACT_CreateProductDTO {
   @ApiProperty()
@@ -93,61 +87,21 @@ export class AGENT_COMPACT_CreateProductDTO {
   observation: COMPACT_ObservationDTO[]
 }
 
-export class AGENT_CreateProductDTO extends CreateProductDTOBase {
+export class CORE_CreateProductDTO {
+  @ApiProperty()
+  @IsArray()
   @IsNotEmpty()
-  @ApiProperty()
-  @ValidateNested()
-  @Type(() => ProductCredentialSubjectDTO)
-  productCredentialSubject: ProductCredentialSubjectDTO
-
-  // TODO: should this be a narray or a single object? it should definitely use a specified type.
-  // eventCredentialSubject?: DeliveryTicketCredentialSubjectDTO | DeliveryScheduledCredentialSubjectDTO
-  @IsOptional()
-  @ApiProperty()
-  @ValidateNested()
-  @IsObject()
-  eventCredentialSubject?: DeliveryTicketCredentialSubjectDTO | DeliveryScheduledCredentialSubjectDTO
-
-  @IsOptional()
-  @ApiProperty()
-  @ValidateNested()
-  @IsObject()
-  eventCredentialSubjects?: DeliveryTicketCredentialSubjectDTO[]
+  vcs: EnvelopedVerifiableCredential[]
 }
 
-class CreateEventDTO {
-  @IsOptional()
-  @ApiProperty()
-  @IsUUID()
-  eventId?: string
-
-  @IsOptional()
-  @ApiProperty()
-  @ValidateNested()
-  @IsObject()
-  eventVC?: EnvelopedVerifiableCredential
-}
-
-export class CORE_CreateProductDTO extends CreateProductDTOBase {
+export class AGENT_CreateProductDTO {
   @IsNotEmpty()
   @ApiProperty()
-  @IsUUID()
-  productId: string
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @ValidateNested()
-  @Type(() => EnvelopedVerifiableCredential)
-  productVC: EnvelopedVerifiableCredential
-
-  @IsNotEmpty()
-  @ApiProperty()
-  @IsString()
-  productVCHash: string
-
-  @IsOptional()
-  @ApiProperty()
-  @ValidateNested()
-  @Type(() => CreateEventDTO)
-  events?: CreateEventDTO[]
+  @IsArray()
+  credentialSubjects: Array<
+    | DeliveryScheduledCredentialSubjectDTO
+    | DeliveryTicketCredentialSubjectDTO
+    | ProductCredentialSubjectDTO
+    | TransportEventCredentialSubjectDTO
+  >
 }
