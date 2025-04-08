@@ -1,16 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import {
-  IsArray,
-  IsEnum,
-  IsNotEmpty,
-  IsNotEmptyObject,
-  IsObject,
-  IsOptional,
-  IsString,
-  IsUUID,
-  ValidateNested
-} from 'class-validator'
+import { IsArray, IsEnum, IsNotEmpty, IsNotEmptyObject, IsOptional, IsString, ValidateNested } from 'class-validator'
 
 import { type EnvelopedVerifiableCredential } from '../../../credentials'
 import {

@@ -8,19 +8,9 @@ import {
   IsString,
   Validate,
   ValidateNested,
-  ValidateIf,
-  IsOptional,
-  IsObject,
-  IsArray,
-  ArrayMinSize,
-  IsDate
+  IsObject
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import {
-  OGBillOfLadingCredentialSubjectDTO,
-  type TransportEventCredentialSubjectDTO,
-  type TransportStartVCDTO
-} from '.'
 import { TRANSPORT_EVENT_TYPE } from '../../constants'
 import {
   COMPACT_OrganizationDTO,
@@ -28,7 +18,7 @@ import {
   COMPACT_MeasurementDTO,
   COMPACT_PostalAddressDTO
 } from '../../../general'
-import { CredentialDTO, EnvelopedVerifiableCredential } from '../../../credentials'
+import { EnvelopedVerifiableCredential } from '../../../credentials'
 
 export class AGENT_COMPACT_TransportStartDTO {
   @ApiProperty()
