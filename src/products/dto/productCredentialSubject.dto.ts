@@ -1,7 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
-  Equals,
+  ArrayContains,
+  ArrayNotEmpty,
   IsArray,
   IsEnum,
   IsNotEmptyObject,
@@ -16,10 +17,12 @@ import { HTS_CODE } from '../constants'
 import { ProductDTO } from './product.dto'
 
 class ProductCredentialSubjectDTOBase {
-  @IsString()
-  @Equals(JSON_TYPE_NF.OIL_AND_GAS_PRODUCT)
   @ApiProperty()
-  type: JSON_TYPE_NF.OIL_AND_GAS_PRODUCT
+  @IsArray()
+  @ArrayNotEmpty()
+  @IsEnum(JSON_TYPE_NF, { each: true })
+  @ArrayContains([JSON_TYPE_NF.OIL_AND_GAS_PRODUCT])
+  type: JSON_TYPE_NF[]
 
   @IsOptional()
   @IsEnum(HTS_CODE)

@@ -1,4 +1,4 @@
-import { JSON_TYPE } from '../../general/constants';
+import { JSON_TYPE_NF } from '../../general/constants';
 import { MeasurementDTO, OrganizationDTO } from '../../general/dto';
 import { PRODUCT_NAME } from '../constants';
 export declare abstract class ProductDTOBase {
@@ -9,7 +9,7 @@ export declare abstract class ProductDTOBase {
     description?: string;
 }
 export declare class ProductDTO extends ProductDTOBase {
-    type: JSON_TYPE.PRODUCT;
+    type: JSON_TYPE_NF[];
     name: PRODUCT_NAME;
     category?: string;
     sizeOrAmount: MeasurementDTO;

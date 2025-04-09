@@ -15,16 +15,11 @@ export class CORE_DeliveryTicketDTO {
   @ValidateIf((o) => !o.productId || o.gasShipmentId)
   @IsNotEmpty()
   @IsUUID()
-  gasShipmentId: string
+  gasShipmentId?: string
 
   @ApiProperty()
   @IsOptional()
   uploadFileKey?: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsUUID()
-  eventId: string
 
   @ApiProperty()
   @IsNotEmpty()

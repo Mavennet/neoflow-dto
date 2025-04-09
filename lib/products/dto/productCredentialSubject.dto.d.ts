@@ -2,7 +2,7 @@ import { JSON_TYPE_NF } from '../../general/constants';
 import { ObservationDTO, PlaceDTO } from '../../general/dto';
 import { ProductDTO } from './product.dto';
 declare class ProductCredentialSubjectDTOBase {
-    type: JSON_TYPE_NF.OIL_AND_GAS_PRODUCT;
+    type: JSON_TYPE_NF[];
     HSCode?: string;
     UWI?: string;
     productionDate: string;
