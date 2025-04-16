@@ -5,7 +5,7 @@ export declare class USMCACredentialSubjectDTO {
     type: JSON_TYPE_NF.USMCA_CLAIMS;
     variousImporters: boolean;
     exporterDetails: ContactFormDTO;
-    producerDetails: ContactFormDTO[];
+    producerDetails?: ContactFormDTO;
     importerDetails: ContactFormDTO;
-    goods: GoodsDTO;
+    goods: GoodsDTO[];
 }
