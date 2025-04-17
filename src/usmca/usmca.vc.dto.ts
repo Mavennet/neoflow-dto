@@ -80,7 +80,7 @@ export class CORE_USMCADTO {
   @IsOptional()
   @ApiProperty()
   @IsBoolean()
-  variousImporters?: boolean
+  variousProducers?: boolean
 
   @ApiProperty()
   @IsNotEmpty()
