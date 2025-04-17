@@ -33,7 +33,6 @@ export class USMCACredentialSubjectDTO {
   @ApiProperty()
   importerDetails: ContactFormDTO
 
-  @IsNotEmptyObject()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => GoodsDTO)
