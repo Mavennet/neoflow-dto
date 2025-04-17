@@ -1,10 +1,4 @@
 // enum to indicate the source of the error
-export enum ErrorSourceRepo {
-  CORE = 'C',
-  AGENT = 'A',
-  FRONTEND = 'F'
-}
-
 export enum ErrorOrganizationType {
   CLIENT = '1',
   SHIPPER = '2',
@@ -15,7 +9,8 @@ export enum ErrorOrganizationType {
 
 export enum ErrorGroup {
   DELIVERY_SCHEDULE = '01',
-  SHIPPER_POSTARRIVAL = '02'
+  SHIPPER_POSTARRIVAL = '02',
+  DELIVERY_TICKET = '03',
 }
 
 export enum ErrorCode {
@@ -29,5 +24,6 @@ export enum ErrorCode {
   SCHEDULE_PROCEDURE_FAILED = '08',
   TABLE_SNAPSHOT_FAILED = '09',
   TMPL_PAIRING_FAILED = '10',
+  UNAUTHORIZED = '11',
   UNKNOWN_ERROR = '99'
 }
