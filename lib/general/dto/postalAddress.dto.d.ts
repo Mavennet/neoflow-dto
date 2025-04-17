@@ -1,6 +1,6 @@
 import { JSON_TYPE } from '../constants';
 export declare abstract class PostalAddressDTO {
-    type: JSON_TYPE.POSTAL_ADDRESS;
+    type: JSON_TYPE[];
     streetAddress?: string;
     addressLocality: string;
     addressRegion: string;

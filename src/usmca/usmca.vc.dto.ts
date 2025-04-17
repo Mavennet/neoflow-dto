@@ -7,7 +7,6 @@ import {
   IsNotEmpty,
   IsNotEmptyObject,
   IsOptional,
-  IsUUID,
   ValidateNested
 } from 'class-validator'
 import { USMCACredentialSubjectDTO } from './usmcaCredentialSubject.dto'
@@ -95,7 +94,6 @@ export class CORE_USMCADTO {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsUUID()
   certificationId: string
 
   @ApiProperty()
