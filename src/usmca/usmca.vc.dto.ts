@@ -96,7 +96,7 @@ export class CORE_USMCADTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsUUID()
-  cefrtificationId: string
+  certificationId: string
 
   @ApiProperty()
   @IsNotEmpty()

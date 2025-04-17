@@ -19,6 +19,6 @@ export declare class CORE_USMCADTO {
     variousImporters?: boolean;
     validFrom: string | Date;
     validUntil: string | Date;
-    cefrtificationId: string;
+    certificationId: string;
     certificationVC: EnvelopedVerifiableCredential;
 }
