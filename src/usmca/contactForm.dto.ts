@@ -7,6 +7,11 @@ export class ContactFormDTO {
   @IsString()
   @IsNotEmpty()
   @ApiProperty()
+  organization: string
+
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty()
   title: string
 
   @IsString()
