@@ -16,6 +16,7 @@ export declare class CORE_USMCADTO {
     producerDetails?: ContactFormDTO;
     importerDetails: ContactFormDTO;
     goods: GoodsDTO[];
+    variousImporters?: boolean;
     validFrom: string | Date;
     validUntil: string | Date;
     cefrtificationId: string;

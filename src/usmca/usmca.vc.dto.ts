@@ -2,6 +2,7 @@ import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import {
   IsArray,
+  IsBoolean,
   IsDateString,
   IsNotEmpty,
   IsNotEmptyObject,
@@ -76,6 +77,11 @@ export class CORE_USMCADTO {
   @Type(() => ContactFormDTO)
   @ApiProperty({ isArray: true, type: GoodsDTO })
   goods: GoodsDTO[]
+
+  @IsOptional()
+  @ApiProperty()
+  @IsBoolean()
+  variousImporters?: boolean
 
   @ApiProperty()
   @IsNotEmpty()
