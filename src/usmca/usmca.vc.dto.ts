@@ -74,7 +74,7 @@ export class CORE_USMCADTO {
   @IsNotEmptyObject()
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => ContactFormDTO)
+  @Type(() => GoodsDTO)
   @ApiProperty({ isArray: true, type: GoodsDTO })
   goods: GoodsDTO[]
 
