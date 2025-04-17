@@ -13,7 +13,7 @@ export class USMCACredentialSubjectDTO {
 
   @IsBoolean()
   @ApiProperty()
-  variousImporters: boolean
+  variousProducers: boolean
 
   @IsNotEmptyObject()
   @ValidateNested()
