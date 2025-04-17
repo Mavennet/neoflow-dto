@@ -33,6 +33,12 @@ export class AGENT_USMCADTO {
   issuer: IssuerDTO
 
   @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => ContactFormDTO)
+  @ApiProperty()
+  certifierDetails: ContactFormDTO
+
+  @IsNotEmptyObject()
   @ApiProperty()
   @ValidateNested()
   @Type(() => USMCACredentialSubjectDTO)

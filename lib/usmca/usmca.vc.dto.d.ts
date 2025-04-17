@@ -7,6 +7,7 @@ export declare class AGENT_USMCADTO {
     validFrom: string | Date;
     validUntil: string | Date;
     issuer: IssuerDTO;
+    certifierDetails: ContactFormDTO;
     credentialSubject: USMCACredentialSubjectDTO;
 }
 export declare class CORE_USMCADTO {
