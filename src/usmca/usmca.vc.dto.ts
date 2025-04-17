@@ -1,8 +1,19 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { IsDateString, IsNotEmpty, IsNotEmptyObject, ValidateNested } from 'class-validator'
+import {
+  IsArray,
+  IsDateString,
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsOptional,
+  IsUUID,
+  ValidateNested
+} from 'class-validator'
 import { USMCACredentialSubjectDTO } from './usmcaCredentialSubject.dto'
 import { IssuerDTO } from '../general'
+import { ContactFormDTO } from './contactForm.dto'
+import { GoodsDTO } from './goods.dto'
+import { EnvelopedVerifiableCredential } from '../credentials'
 
 export class AGENT_USMCADTO {
   @ApiProperty()
@@ -26,4 +37,58 @@ export class AGENT_USMCADTO {
   @ValidateNested()
   @Type(() => USMCACredentialSubjectDTO)
   credentialSubject: USMCACredentialSubjectDTO
+}
+
+export class CORE_USMCADTO {
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => ContactFormDTO)
+  @ApiProperty()
+  certifierDetails: ContactFormDTO
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => ContactFormDTO)
+  @ApiProperty()
+  exporterDetails: ContactFormDTO
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => ContactFormDTO)
+  @ApiProperty()
+  producerDetails?: ContactFormDTO
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => ContactFormDTO)
+  @ApiProperty()
+  importerDetails: ContactFormDTO
+
+  @IsNotEmptyObject()
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => ContactFormDTO)
+  @ApiProperty({ isArray: true, type: GoodsDTO })
+  goods: GoodsDTO[]
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsDateString()
+  validFrom: string | Date
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsDateString()
+  validUntil: string | Date
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsUUID()
+  cefrtificationId: string
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @ValidateNested()
+  @Type(() => EnvelopedVerifiableCredential)
+  certificationVC: EnvelopedVerifiableCredential
 }
