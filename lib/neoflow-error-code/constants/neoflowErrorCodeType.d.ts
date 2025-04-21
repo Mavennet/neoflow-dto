@@ -1,18 +1,15 @@
-export declare enum ErrorSourceRepo {
-    CORE = "C",
-    AGENT = "A",
-    FRONTEND = "F"
-}
 export declare enum ErrorOrganizationType {
     CLIENT = "1",
     SHIPPER = "2",
     PIPELINE = "3",
     AGENCY = "4",
-    BROKER = "5"
+    BROKER = "5",
+    UNKNOWN = "0"
 }
 export declare enum ErrorGroup {
     DELIVERY_SCHEDULE = "01",
-    SHIPPER_POSTARRIVAL = "02"
+    SHIPPER_POSTARRIVAL = "02",
+    DELIVERY_TICKET = "03"
 }
 export declare enum ErrorCode {
     INVALID_FILE_TYPE = "01",
@@ -25,5 +22,6 @@ export declare enum ErrorCode {
     SCHEDULE_PROCEDURE_FAILED = "08",
     TABLE_SNAPSHOT_FAILED = "09",
     TMPL_PAIRING_FAILED = "10",
+    UNAUTHORIZED = "11",
     UNKNOWN_ERROR = "99"
 }
