@@ -4,13 +4,14 @@ export enum ErrorOrganizationType {
   SHIPPER = '2',
   PIPELINE = '3',
   AGENCY = '4',
-  BROKER = '5'
+  BROKER = '5',
+  UNKNOWN = '0'
 }
 
 export enum ErrorGroup {
   DELIVERY_SCHEDULE = '01',
   SHIPPER_POSTARRIVAL = '02',
-  DELIVERY_TICKET = '03',
+  DELIVERY_TICKET = '03'
 }
 
 export enum ErrorCode {
