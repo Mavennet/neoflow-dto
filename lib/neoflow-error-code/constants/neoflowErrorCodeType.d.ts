@@ -16,9 +16,8 @@ export declare enum ErrorGroup {
 export declare enum ErrorCode {
     INVALID_FILE_TYPE = "01",
     INVALID_RECORDS = "02",
-    INVALID_INPUT = "03",
-    INVALID_DATE = "04",
-    INVALID_TIME = "05",
+    INVALID_CREATOR = "03",
+    INVALID_FORMAT = "04",
     PRODUCT_CREATION = "11",
     PRODUCT_GET = "12",
     PRODUCT_UPDATE = "13",
