@@ -11,7 +11,7 @@ export declare class AGENT_USMCADTO {
     credentialSubject: USMCACredentialSubjectDTO;
 }
 export declare class CORE_USMCADTO {
-    index?: number | string;
+    index?: number;
     certifierDetails: ContactFormDTO;
     exporterDetails: ContactFormDTO;
     producerDetails?: ContactFormDTO;
