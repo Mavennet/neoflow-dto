@@ -53,13 +53,11 @@ export class CORE_USMCADTO {
   @IsOptional()
   index?: number
 
-  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => ContactFormDTO)
   @ApiProperty()
   certifierDetails: ContactFormDTO
 
-  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => ContactFormDTO)
   @ApiProperty()
@@ -71,7 +69,6 @@ export class CORE_USMCADTO {
   @ApiProperty()
   producerDetails?: ContactFormDTO
 
-  @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => ContactFormDTO)
   @ApiProperty()
@@ -89,18 +86,15 @@ export class CORE_USMCADTO {
   variousProducers?: boolean
 
   @ApiProperty()
-  @IsNotEmpty()
   @IsDateString()
   validFrom: string | Date
 
   @ApiProperty()
-  @IsNotEmpty()
   @IsDateString()
   validUntil: string | Date
 
   @ApiProperty()
   @IsString()
-  @IsNotEmpty()
   certificationId?: string
 }
 
