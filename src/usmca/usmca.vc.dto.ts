@@ -47,6 +47,11 @@ export class AGENT_USMCADTO {
 }
 
 export class CORE_USMCADTO {
+  @ApiProperty()
+  @IsString()
+  @IsOptional()
+  index?: string
+
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => ContactFormDTO)
