@@ -24,7 +24,8 @@ export declare enum JSON_TYPE {
     COMMODITY = "Commodity",
     StatusList2021Entry = "StatusList2021Entry",
     ENTRY_NUMBER = "EntryNumber",
-    USMCA_PRODUCT = "USMCAProduct"
+    USMCA_PRODUCT = "USMCAProduct",
+    USMCA_CERTIFICATION_OF_ORIGIN = "USMCACertificationOfOrigin"
 }
 export declare enum JSON_TYPE_NF {
     VERIFIABLE_CREDENTIAL = "VerifiableCredential",
@@ -66,5 +67,8 @@ export declare enum JSON_TYPE_NF {
     INTENT_TO_IMPORT = "IntentToImport",
     INTENT_TO_IMPORT_CREDENTIAL = "IntentToImportCredential",
     OPEN_API_SCECIFICATION_VALIDATOR_2022 = "OpenApiSpecificationValidator2022",
+    EVENT = "Event",
+    EVENT_CREDENTIAL = "EventCredential",
+    TRANSPORT_EVENT = "TransportEvent",
     USMCA_CLAIMS = "USMCAClaims"
 }
