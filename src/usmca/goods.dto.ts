@@ -58,9 +58,8 @@ export class DraftGoodsDTO {
   ch99TariffClassification?: string
 
   @IsOptional()
-  @IsEnum(ORIGIN_CRITERIA)
-  @ApiProperty({ required: false, enum: ORIGIN_CRITERIA })
-  originCriteria?: ORIGIN_CRITERIA
+  @ApiProperty({ required: false, enum: ORIGIN_CRITERIA, type: 'string' })
+  originCriteria?: string | ORIGIN_CRITERIA
 
   @IsOptional()
   @IsString()
