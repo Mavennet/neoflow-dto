@@ -77,7 +77,7 @@ export class AGENT_COMPACT_CreateProductDTO {
   observation: COMPACT_ObservationDTO[]
 }
 
-export class CORE_CreateProductDTO {
+export class CORE_EnvelopedVCDTO {
   @ApiProperty()
   @IsArray()
   @IsNotEmpty()

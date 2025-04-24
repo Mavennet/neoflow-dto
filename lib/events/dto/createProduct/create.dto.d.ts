@@ -17,7 +17,7 @@ export declare class AGENT_COMPACT_CreateProductDTO {
     length?: COMPACT_MeasurementDTO;
     observation: COMPACT_ObservationDTO[];
 }
-export declare class CORE_CreateProductDTO {
+export declare class CORE_EnvelopedVCDTO {
     vcs: EnvelopedVerifiableCredential[];
 }
 export declare class AGENT_CreateProductDTO {
