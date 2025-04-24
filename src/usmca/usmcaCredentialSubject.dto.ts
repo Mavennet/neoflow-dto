@@ -1,0 +1,41 @@
+import { Equals, IsArray, IsBoolean, IsNotEmptyObject, IsOptional, IsString, ValidateNested } from 'class-validator'
+import { JSON_TYPE_NF } from '../general'
+import { ApiProperty } from '@nestjs/swagger'
+import { Type } from 'class-transformer'
+import { ContactFormDTO } from './contactForm.dto'
+import { GoodsDTO } from './goods.dto'
+
+export class USMCACredentialSubjectDTO {
+  @IsString()
+  @Equals(JSON_TYPE_NF.USMCA_CLAIMS)
+  @ApiProperty()
+  type: JSON_TYPE_NF.USMCA_CLAIMS
+
+  @IsBoolean()
+  @ApiProperty()
+  variousProducers: boolean
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => ContactFormDTO)
+  @ApiProperty()
+  exporterDetails: ContactFormDTO
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => ContactFormDTO)
+  @ApiProperty()
+  producerDetails?: ContactFormDTO
+
+  @IsNotEmptyObject()
+  @ValidateNested()
+  @Type(() => ContactFormDTO)
+  @ApiProperty()
+  importerDetails: ContactFormDTO
+
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => GoodsDTO)
+  @ApiProperty({ isArray: true, type: GoodsDTO })
+  goods: GoodsDTO[]
+}

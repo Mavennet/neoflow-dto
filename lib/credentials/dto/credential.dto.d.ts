@@ -7,7 +7,7 @@ export declare abstract class CredentialDTO<T> {
     type: string[];
     issuer: IssuerDTO;
     validFrom: string | Date;
-    validUntil?: string;
+    validUntil?: string | Date;
     abstract credentialSubject: T;
     credentialStatus?: CredentialStatusDTO[];
     credentialSchema?: CredentialSchema;
