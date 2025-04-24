@@ -18,3 +18,4 @@ export * from './locations';
 export * from './monthly-delivery-statements';
 export * from './producer';
 export * from './neoflow-error-code';
+export * from './usmca';

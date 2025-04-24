@@ -48,7 +48,7 @@ export abstract class CredentialDTO<T> {
   @ApiPropertyOptional()
   @IsOptional()
   @IsDateString()
-  validUntil?: string
+  validUntil?: string | Date
 
   @ApiProperty()
   @IsNotEmpty()
