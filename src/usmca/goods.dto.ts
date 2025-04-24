@@ -1,4 +1,4 @@
-import { Equals, IsEnum, IsNotEmpty, IsString } from 'class-validator'
+import { Equals, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator'
 import { JSON_TYPE } from '../general'
 import { ApiProperty } from '@nestjs/swagger'
 import { ORIGIN_CRITERIA } from './constants/originCriteria'
@@ -34,4 +34,35 @@ export class GoodsDTO {
   @IsNotEmpty()
   @ApiProperty()
   countryOfOrigin: string
+}
+
+export class DraftGoodsDTO {
+  @IsOptional()
+  @IsString()
+  @ApiProperty({ required: false })
+  type?: string | JSON_TYPE.USMCA_PRODUCT
+
+  @IsOptional()
+  @IsString()
+  @ApiProperty({ required: false })
+  streamType?: string
+
+  @IsOptional()
+  @IsString()
+  @ApiProperty({ required: false })
+  ch27TariffClassification?: string
+
+  @IsOptional()
+  @IsString()
+  @ApiProperty({ required: false })
+  ch99TariffClassification?: string
+
+  @IsOptional()
+  @ApiProperty({ required: false, enum: ORIGIN_CRITERIA, type: 'string' })
+  originCriteria?: string | ORIGIN_CRITERIA
+
+  @IsOptional()
+  @IsString()
+  @ApiProperty({ required: false })
+  countryOfOrigin?: string
 }

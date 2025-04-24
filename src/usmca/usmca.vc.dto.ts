@@ -6,14 +6,15 @@ import {
   IsDateString,
   IsNotEmpty,
   IsNotEmptyObject,
+  IsNumber,
   IsOptional,
   IsString,
   ValidateNested
 } from 'class-validator'
 import { USMCACredentialSubjectDTO } from './usmcaCredentialSubject.dto'
 import { IssuerDTO } from '../general'
-import { ContactFormDTO } from './contactForm.dto'
-import { GoodsDTO } from './goods.dto'
+import { ContactFormDTO, DraftContactFormDTO } from './contactForm.dto'
+import { DraftGoodsDTO, GoodsDTO } from './goods.dto'
 import { EnvelopedVerifiableCredential } from '../credentials'
 
 export class AGENT_USMCADTO {
@@ -47,6 +48,11 @@ export class AGENT_USMCADTO {
 }
 
 export class CORE_USMCADTO {
+  @ApiProperty()
+  @IsNumber()
+  @IsOptional()
+  index?: number
+
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => ContactFormDTO)
@@ -95,11 +101,71 @@ export class CORE_USMCADTO {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
-  certificationId: string
+  certificationId?: string
+}
 
+export class CORE_GENERATED_USMCADTO extends CORE_USMCADTO {
   @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => EnvelopedVerifiableCredential)
   certificationVC: EnvelopedVerifiableCredential
+}
+
+export class CORE_DRAFT_USMCADTO {
+  @ApiProperty({ required: false })
+  @IsNumber()
+  @IsOptional()
+  index?: number
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => DraftContactFormDTO)
+  @ApiProperty({ required: false })
+  certifierDetails?: DraftContactFormDTO
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => DraftContactFormDTO)
+  @ApiProperty({ required: false })
+  exporterDetails?: DraftContactFormDTO
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => DraftContactFormDTO)
+  @ApiProperty({ required: false })
+  producerDetails?: DraftContactFormDTO
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => DraftContactFormDTO)
+  @ApiProperty({ required: false })
+  importerDetails?: DraftContactFormDTO
+
+  @IsOptional()
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => DraftGoodsDTO)
+  @ApiProperty({ isArray: true, type: DraftGoodsDTO, required: false })
+  goods?: DraftGoodsDTO[]
+
+  @IsOptional()
+  @ApiProperty({ required: false })
+  @IsBoolean()
+  variousProducers?: boolean
+
+  @ApiProperty({ required: false })
+  @IsDateString()
+  @IsOptional()
+  validFrom?: string | Date
+
+  @ApiProperty({ required: false })
+  @IsDateString()
+  @IsOptional()
+  validUntil?: string | Date
+
+  @ApiProperty({ required: false })
+  @IsString()
+  @IsOptional()
+  certificationId?: string
 }

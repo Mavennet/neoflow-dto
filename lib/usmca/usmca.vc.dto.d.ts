@@ -1,7 +1,7 @@
 import { USMCACredentialSubjectDTO } from './usmcaCredentialSubject.dto';
 import { IssuerDTO } from '../general';
-import { ContactFormDTO } from './contactForm.dto';
-import { GoodsDTO } from './goods.dto';
+import { ContactFormDTO, DraftContactFormDTO } from './contactForm.dto';
+import { DraftGoodsDTO, GoodsDTO } from './goods.dto';
 import { EnvelopedVerifiableCredential } from '../credentials';
 export declare class AGENT_USMCADTO {
     validFrom: string | Date;
@@ -11,6 +11,7 @@ export declare class AGENT_USMCADTO {
     credentialSubject: USMCACredentialSubjectDTO;
 }
 export declare class CORE_USMCADTO {
+    index?: number;
     certifierDetails: ContactFormDTO;
     exporterDetails: ContactFormDTO;
     producerDetails?: ContactFormDTO;
@@ -19,6 +20,20 @@ export declare class CORE_USMCADTO {
     variousProducers?: boolean;
     validFrom: string | Date;
     validUntil: string | Date;
-    certificationId: string;
+    certificationId?: string;
+}
+export declare class CORE_GENERATED_USMCADTO extends CORE_USMCADTO {
     certificationVC: EnvelopedVerifiableCredential;
+}
+export declare class CORE_DRAFT_USMCADTO {
+    index?: number;
+    certifierDetails?: DraftContactFormDTO;
+    exporterDetails?: DraftContactFormDTO;
+    producerDetails?: DraftContactFormDTO;
+    importerDetails?: DraftContactFormDTO;
+    goods?: DraftGoodsDTO[];
+    variousProducers?: boolean;
+    validFrom?: string | Date;
+    validUntil?: string | Date;
+    certificationId?: string;
 }
