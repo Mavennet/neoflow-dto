@@ -1,8 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { IsArray, IsEnum, IsNotEmpty, IsNotEmptyObject, IsOptional, IsString, ValidateNested } from 'class-validator'
-
-import { type EnvelopedVerifiableCredential } from '../../../credentials'
 import {
   COMPACT_MeasurementDTO,
   COMPACT_ObservationDTO,
@@ -75,13 +73,6 @@ export class AGENT_COMPACT_CreateProductDTO {
   @ValidateNested({ each: true })
   @Type(() => COMPACT_ObservationDTO)
   observation: COMPACT_ObservationDTO[]
-}
-
-export class CORE_EnvelopedVCDTO {
-  @ApiProperty()
-  @IsArray()
-  @IsNotEmpty()
-  vcs: EnvelopedVerifiableCredential[]
 }
 
 export class AGENT_CreateProductDTO {
