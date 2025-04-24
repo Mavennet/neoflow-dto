@@ -24,7 +24,8 @@ export declare enum JSON_TYPE {
     COMMODITY = "Commodity",
     StatusList2021Entry = "StatusList2021Entry",
     ENTRY_NUMBER = "EntryNumber",
-    USMCA_PRODUCT = "USMCAProduct"
+    USMCA_PRODUCT = "USMCAProduct",
+    USMCA_CERTIFICATION_OF_ORIGIN = "USMCACertificationOfOrigin"
 }
 export declare enum JSON_TYPE_NF {
     VERIFIABLE_CREDENTIAL = "VerifiableCredential",
