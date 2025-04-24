@@ -97,7 +97,9 @@ export class CORE_USMCADTO {
   @IsNotEmpty()
   @IsDateString()
   validUntil: string | Date
+}
 
+export class CORE_GENERATED_USMCADTO extends CORE_USMCADTO {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
