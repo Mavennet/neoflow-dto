@@ -20,8 +20,8 @@ export declare class CORE_USMCADTO {
     variousProducers?: boolean;
     validFrom: string | Date;
     validUntil: string | Date;
+    certificationId?: string;
 }
 export declare class CORE_GENERATED_USMCADTO extends CORE_USMCADTO {
-    certificationId: string;
     certificationVC: EnvelopedVerifiableCredential;
 }
