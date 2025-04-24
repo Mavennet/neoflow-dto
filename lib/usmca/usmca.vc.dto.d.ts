@@ -12,14 +12,14 @@ export declare class AGENT_USMCADTO {
 }
 export declare class CORE_USMCADTO {
     index?: number;
-    certifierDetails: ContactFormDTO;
-    exporterDetails: ContactFormDTO;
+    certifierDetails?: ContactFormDTO;
+    exporterDetails?: ContactFormDTO;
     producerDetails?: ContactFormDTO;
-    importerDetails: ContactFormDTO;
-    goods: GoodsDTO[];
+    importerDetails?: ContactFormDTO;
+    goods?: GoodsDTO[];
     variousProducers?: boolean;
-    validFrom: string | Date;
-    validUntil: string | Date;
+    validFrom?: string | Date;
+    validUntil?: string | Date;
     certificationId?: string;
 }
 export declare class CORE_GENERATED_USMCADTO extends CORE_USMCADTO {

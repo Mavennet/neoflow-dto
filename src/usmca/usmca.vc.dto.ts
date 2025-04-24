@@ -48,53 +48,60 @@ export class AGENT_USMCADTO {
 }
 
 export class CORE_USMCADTO {
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsNumber()
   @IsOptional()
   index?: number
 
   @ValidateNested()
   @Type(() => ContactFormDTO)
-  @ApiProperty()
-  certifierDetails: ContactFormDTO
+  @ApiProperty({ required: false })
+  @IsOptional()
+  certifierDetails?: ContactFormDTO
 
   @ValidateNested()
   @Type(() => ContactFormDTO)
-  @ApiProperty()
-  exporterDetails: ContactFormDTO
+  @ApiProperty({ required: false })
+  @IsOptional()
+  exporterDetails?: ContactFormDTO
 
   @IsOptional()
   @ValidateNested()
   @Type(() => ContactFormDTO)
-  @ApiProperty()
+  @ApiProperty({ required: false })
   producerDetails?: ContactFormDTO
 
   @ValidateNested()
   @Type(() => ContactFormDTO)
-  @ApiProperty()
-  importerDetails: ContactFormDTO
+  @ApiProperty({ required: false })
+  @IsOptional()
+  importerDetails?: ContactFormDTO
 
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => GoodsDTO)
-  @ApiProperty({ isArray: true, type: GoodsDTO })
-  goods: GoodsDTO[]
+  @ApiProperty({ isArray: true, type: GoodsDTO, required: false })
+  @IsOptional()
+  goods?: GoodsDTO[]
 
   @IsOptional()
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsBoolean()
   variousProducers?: boolean
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsDateString()
-  validFrom: string | Date
+  @IsOptional()
+  validFrom?: string | Date
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsDateString()
-  validUntil: string | Date
+  @IsOptional()
+  validUntil?: string | Date
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsString()
+  @IsOptional()
   certificationId?: string
 }
 
