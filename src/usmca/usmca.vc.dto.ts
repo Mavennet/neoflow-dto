@@ -6,6 +6,7 @@ import {
   IsDateString,
   IsNotEmpty,
   IsNotEmptyObject,
+  IsNumberString,
   IsOptional,
   IsString,
   ValidateNested
@@ -48,9 +49,9 @@ export class AGENT_USMCADTO {
 
 export class CORE_USMCADTO {
   @ApiProperty()
-  @IsString()
+  @IsNumberString()
   @IsOptional()
-  index?: string
+  index?: number | string
 
   @IsNotEmptyObject()
   @ValidateNested()
