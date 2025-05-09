@@ -1,36 +1,46 @@
-// enum to indicate the source of the error
-export enum ErrorOrganizationType {
-  CLIENT = '1',
-  SHIPPER = '2',
-  PIPELINE = '3',
-  AGENCY = '4',
-  BROKER = '5',
-  UNKNOWN = '0'
+export declare enum ErrorOrganizationType {
+  CLIENT = "1",
+  SHIPPER = "2",
+  PIPELINE = "3",
+  AGENCY = "4",
+  BROKER = "5",
+  UNKNOWN = "0"
 }
-
-export enum ErrorGroup {
-  DELIVERY_SCHEDULE = '01',
-  SHIPPER_POSTARRIVAL = '02',
-  DELIVERY_TICKET = '03',
-  ORGANIZATION = '04',
-  UNKNOWN_GROUP = '99'
+export declare enum ErrorGroup {
+  DELIVERY_SCHEDULE = "01",
+  SHIPPER_POSTARRIVAL = "02",
+  DELIVERY_TICKET = "03",
+  ORGANIZATION = "04",
+  ADVANCE_MANIFEST = "05",
+  CONTRACT = "06",
+  CREDENTIAL = "07",
+  DOCUMENT = "08",
+  REVOCATION = "09",
+  EVENT = "10",
+  UNKNOWN_GROUP = "99"
 }
-
-export enum ErrorCode {
-  INVALID_FILE_TYPE = '01',
-  INVALID_RECORDS = '02',
-  INVALID_CREATOR = '03',
-  INVALID_FORMAT = '04',
-  PRODUCT_CREATION = '11',
-  PRODUCT_GET = '12',
-  PRODUCT_UPDATE = '13',
-  PRODUCT_DELETE = '14',
-  PRODUCT_NOT_FOUND = '15',
-  SCHEDULE_PROCEDURE_FAILED = '21',
-  TABLE_SNAPSHOT_FAILED = '22',
-  TMPL_PAIRING_FAILED = '23',
-  DUPLICATE_BATCH = '31',
-  UNAUTHORIZED = '32',
-  NOT_FOUND = '33',
-  UNKNOWN_ERROR = '99'
+  
+export declare enum ErrorCode {
+  UNAUTHORIZED = "01",
+  NOT_FOUND = "02",
+  INVALID_FILE = "03",
+  INVALID_INPUT_DETAIL = "04",
+  INVALID_FORMAT = "05",
+  INVALID_CREDENTIAL = "06",
+  INVALID_DATE = "07",
+  CREATION_FAILED = "10",
+  FILE_UPLOAD_FAILED = "11",
+  REVOKE_FAILED = "12",
+  DELETE_FAILED = "13",
+  DB_OPERATION_FAILED = "14",
+  S3_OPERATION_FAILED = "15",
+  HTTP_OPERATION_FAILED = "16",
+  CONTRACT_OPERATION_FAILED = "17",
+  VERIFICATION_FAILED = "18",
+  REVOCATION_FAILED = "19",
+  EVENT_OPERATION_FAILED = "20",
+  EXISTING = "30",
+  REPEATED_ACTION = "31",
+  NULL_INPUT = "32",
+  UNKNOWN_ERROR = "99"
 }
