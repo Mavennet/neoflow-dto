@@ -1,16 +1,16 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsArray, IsDateString, IsNotEmpty, IsString } from 'class-validator'
+import { IsArray, IsDate, IsNotEmpty } from 'class-validator'
 
 export class StreamCoverageDTO {
   @ApiProperty()
   @IsNotEmpty()
-  @IsDateString()
-  validFrom: string | Date
+  @IsDate()
+  validFrom: Date
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsDateString()
-  validUntil: string | Date
+  @IsDate()
+  validUntil: Date
 
   @ApiProperty()
   @IsNotEmpty()

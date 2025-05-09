@@ -1,5 +1,5 @@
 export declare class StreamCoverageDTO {
-    validFrom: string | Date;
-    validUntil: string | Date;
+    validFrom: Date;
+    validUntil: Date;
     streams: string[];
 }
