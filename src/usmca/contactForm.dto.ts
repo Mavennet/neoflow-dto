@@ -2,6 +2,37 @@ import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { IsNotEmpty, IsString, ValidateNested, IsOptional } from 'class-validator'
 
+export class DraftPostalAddressDTO {
+  @IsOptional()
+  @ApiProperty({ required: false })
+  type?: string[]
+
+  @IsString()
+  @IsOptional()
+  @ApiProperty({ required: false })
+  streetAddress?: string
+
+  @IsString()
+  @IsOptional()
+  @ApiProperty({ required: false })
+  addressLocality?: string
+
+  @IsString()
+  @IsOptional()
+  @ApiProperty({ required: false })
+  addressRegion?: string
+
+  @IsString()
+  @IsOptional()
+  @ApiProperty({ required: false })
+  postalCode?: string
+
+  @IsString()
+  @IsOptional()
+  @ApiProperty({ required: false })
+  addressCountry?: string
+}
+
 export class ContactFormDTO {
   @IsString()
   @IsNotEmpty()
@@ -38,37 +69,6 @@ export class ContactFormDTO {
   @Type(() => DraftPostalAddressDTO)
   @ApiProperty()
   location?: DraftPostalAddressDTO
-}
-
-export class DraftPostalAddressDTO {
-  @IsOptional()
-  @ApiProperty({ required: false })
-  type?: string[]
-
-  @IsString()
-  @IsOptional()
-  @ApiProperty({ required: false })
-  streetAddress?: string
-
-  @IsString()
-  @IsOptional()
-  @ApiProperty({ required: false })
-  addressLocality?: string
-
-  @IsString()
-  @IsOptional()
-  @ApiProperty({ required: false })
-  addressRegion?: string
-
-  @IsString()
-  @IsOptional()
-  @ApiProperty({ required: false })
-  postalCode?: string
-
-  @IsString()
-  @IsOptional()
-  @ApiProperty({ required: false })
-  addressCountry?: string
 }
 
 export class DraftContactFormDTO {

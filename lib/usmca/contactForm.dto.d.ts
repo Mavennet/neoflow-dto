@@ -1,3 +1,11 @@
+export declare class DraftPostalAddressDTO {
+    type?: string[];
+    streetAddress?: string;
+    addressLocality?: string;
+    addressRegion?: string;
+    postalCode?: string;
+    addressCountry?: string;
+}
 export declare class ContactFormDTO {
     organization: string;
     title?: string;
@@ -6,14 +14,6 @@ export declare class ContactFormDTO {
     phone?: string;
     email?: string;
     location?: DraftPostalAddressDTO;
-}
-export declare class DraftPostalAddressDTO {
-    type?: string[];
-    streetAddress?: string;
-    addressLocality?: string;
-    addressRegion?: string;
-    postalCode?: string;
-    addressCountry?: string;
 }
 export declare class DraftContactFormDTO {
     organization?: string;
