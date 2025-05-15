@@ -1,7 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { IsNotEmpty, IsString, ValidateNested, IsOptional } from 'class-validator'
-import { PostalAddressDTO } from '../general'
 
 export class ContactFormDTO {
   @IsString()
@@ -36,9 +35,9 @@ export class ContactFormDTO {
 
   @IsOptional()
   @ValidateNested()
-  @Type(() => PostalAddressDTO)
+  @Type(() => DraftPostalAddressDTO)
   @ApiProperty()
-  location?: PostalAddressDTO
+  location?: DraftPostalAddressDTO
 }
 
 export class DraftPostalAddressDTO {
