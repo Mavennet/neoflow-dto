@@ -1,12 +1,12 @@
 import { PostalAddressDTO } from '../general';
 export declare class ContactFormDTO {
     organization: string;
-    title: string;
-    firstName: string;
-    lastName: string;
-    phone: string;
-    email: string;
-    location: PostalAddressDTO;
+    title?: string;
+    firstName?: string;
+    lastName?: string;
+    phone?: string;
+    email?: string;
+    location?: PostalAddressDTO;
 }
 export declare class DraftPostalAddressDTO {
     type?: string[];

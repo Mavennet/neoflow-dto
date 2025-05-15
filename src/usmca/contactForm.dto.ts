@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { IsNotEmpty, IsNotEmptyObject, IsString, ValidateNested, IsOptional } from 'class-validator'
+import { IsNotEmpty, IsString, ValidateNested, IsOptional } from 'class-validator'
 import { PostalAddressDTO } from '../general'
 
 export class ContactFormDTO {
@@ -10,35 +10,35 @@ export class ContactFormDTO {
   organization: string
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty()
-  title: string
+  title?: string
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty()
-  firstName: string
+  firstName?: string
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty()
-  lastName: string
+  lastName?: string
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty()
-  phone: string
+  phone?: string
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   @ApiProperty()
-  email: string
+  email?: string
 
-  @IsNotEmptyObject()
+  @IsOptional()
   @ValidateNested()
   @Type(() => PostalAddressDTO)
   @ApiProperty()
-  location: PostalAddressDTO
+  location?: PostalAddressDTO
 }
 
 export class DraftPostalAddressDTO {
