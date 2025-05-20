@@ -11,7 +11,7 @@ class PricingStreams {
   estimatedValue: number
 }
 
-export class upsertEstimatedValueDTO {
+export class UpsertEstimatedValueDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsDate()
