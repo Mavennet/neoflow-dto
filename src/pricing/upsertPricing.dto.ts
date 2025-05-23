@@ -11,20 +11,20 @@ export class UpsertPricingDTO {
   id?: number
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsDate()
-  startDate: Date
+  startDate?: Date
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsDate()
-  endDate: Date
+  endDate?: Date
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsArray()
   @Type(() => PricingStreams)
-  streams: PricingStreams[]
+  streams?: PricingStreams[]
 
   @ApiProperty()
   @IsNotEmpty()
