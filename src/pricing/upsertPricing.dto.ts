@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsArray, IsDate, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator'
+import { IsArray, IsDate, IsEnum, IsNotEmpty, IsNumber, IsOptional } from 'class-validator'
 import { PricingStreams } from './pricingStreams.dto'
 import { Type } from 'class-transformer'
 import { PRICING_STATUS } from './constants'
@@ -7,8 +7,8 @@ import { PRICING_STATUS } from './constants'
 export class UpsertPricingDTO {
   @ApiProperty()
   @IsOptional()
-  @IsString()
-  id?: string
+  @IsNumber()
+  id?: number
 
   @ApiProperty()
   @IsNotEmpty()
