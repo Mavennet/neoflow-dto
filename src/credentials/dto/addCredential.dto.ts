@@ -5,6 +5,7 @@ import { IssuerDTO, ProofDTO } from '../../general'
 export class AddCredentialDTO {
   @IsString()
   id: string
+
   @IsUrl({}, { each: true })
   @Validate((o) => o['@context'].includes('https://www.w3.org/ns/credentials/v2'))
   @ArrayNotEmpty()
