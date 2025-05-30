@@ -1,4 +1,4 @@
 export declare class GetStreamsDTO {
-    startDate: Date;
-    endDate: Date;
+    startDate: string;
+    endDate: string;
 }

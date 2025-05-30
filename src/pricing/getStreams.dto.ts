@@ -1,12 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsDate } from 'class-validator'
+import { IsString } from 'class-validator'
 
 export class GetStreamsDTO {
   @ApiProperty()
-  @IsDate()
-  startDate: Date
+  @IsString()
+  startDate: string
 
   @ApiProperty()
-  @IsDate()
-  endDate: Date
+  @IsString()
+  endDate: string
 }
