@@ -7,7 +7,8 @@ export class IssuerDTO {
     description: "Array of types, expected to be ['Organization']",
     readOnly: true,
     default: ['Organization'],
-    enum: ['Organization']
+    enum: ['Organization'],
+    type: [String]
   })
   @IsArray()
   @ArrayMinSize(1)
