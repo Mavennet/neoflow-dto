@@ -2,7 +2,7 @@ import { ApiProperty } from '@nestjs/swagger'
 import { IsNotEmpty, ValidateNested, IsUUID } from 'class-validator'
 import { Type } from 'class-transformer'
 import { InspectionEventCredentialSubjectDTO } from './event.credentialSubject.dto'
-import { InspectionEventDetailsDTO } from './event.vc.dto'
+import { EnvelopedVerifiableCredential } from '../../../credentials'
 
 export class CORE_InspectProductDTO {
   @ApiProperty()
@@ -18,8 +18,8 @@ export class CORE_InspectProductDTO {
   @ApiProperty()
   @IsNotEmpty()
   @ValidateNested()
-  @Type(() => InspectionEventDetailsDTO)
-  eventVC: InspectionEventDetailsDTO
+  @Type(() => EnvelopedVerifiableCredential)
+  eventVC: EnvelopedVerifiableCredential
 }
 
 export class AGENT_InspectProductDTO {
