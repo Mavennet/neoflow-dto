@@ -16,7 +16,8 @@ import {
   COMPACT_OrganizationDTO,
   COMPACT_PlaceDTO,
   COMPACT_MeasurementDTO,
-  COMPACT_PostalAddressDTO
+  COMPACT_PostalAddressDTO,
+  WrappedEnvelopedVCDTO
 } from '../../../general'
 import { EnvelopedVerifiableCredential } from '../../../credentials'
 
@@ -133,6 +134,6 @@ export class CORE_TransportProductDTO {
 
   @IsNotEmpty()
   @IsObject()
-  @Type(() => EnvelopedVerifiableCredential)
-  vc: EnvelopedVerifiableCredential
+  @Type(() => WrappedEnvelopedVCDTO)
+  vc: WrappedEnvelopedVCDTO
 }

@@ -1,6 +1,5 @@
 import { TRANSPORT_EVENT_TYPE } from '../../constants';
-import { COMPACT_OrganizationDTO, COMPACT_PlaceDTO, COMPACT_MeasurementDTO, COMPACT_PostalAddressDTO } from '../../../general';
-import { EnvelopedVerifiableCredential } from '../../../credentials';
+import { COMPACT_OrganizationDTO, COMPACT_PlaceDTO, COMPACT_MeasurementDTO, COMPACT_PostalAddressDTO, WrappedEnvelopedVCDTO } from '../../../general';
 export declare class AGENT_COMPACT_TransportStartDTO {
     eventType: TRANSPORT_EVENT_TYPE;
     initiator: COMPACT_OrganizationDTO;
@@ -28,5 +27,5 @@ export declare class TransportProductDataDto {
 }
 export declare class CORE_TransportProductDTO {
     productData: TransportProductDataDto;
-    vc: EnvelopedVerifiableCredential;
+    vc: WrappedEnvelopedVCDTO;
 }

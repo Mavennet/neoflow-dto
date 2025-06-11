@@ -1,11 +1,21 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
-import { IsArray, IsEnum, IsNotEmpty, IsNotEmptyObject, IsOptional, IsString, ValidateNested } from 'class-validator'
+import {
+  IsArray,
+  IsEnum,
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsOptional,
+  IsString,
+  IsUUID,
+  ValidateNested
+} from 'class-validator'
 import {
   COMPACT_MeasurementDTO,
   COMPACT_ObservationDTO,
   COMPACT_OrganizationDTO,
-  COMPACT_PlaceDTO
+  COMPACT_PlaceDTO,
+  WrappedEnvelopedVCDTO
 } from '../../../general'
 import { PRODUCT_NAME } from '../../../products'
 import { type ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto'
@@ -85,4 +95,18 @@ export class AGENT_CreateProductDTO {
     | ProductCredentialSubjectDTO
     | TransportEventCredentialSubjectDTO
   >
+}
+
+export class CORE_CreateProductDTO {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsUUID()
+  productId: string
+
+  @ApiProperty({ type: [WrappedEnvelopedVCDTO], description: 'List of wrapped verifiable credentials' })
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => WrappedEnvelopedVCDTO)
+  @IsNotEmpty()
+  vcs: WrappedEnvelopedVCDTO[]
 }
