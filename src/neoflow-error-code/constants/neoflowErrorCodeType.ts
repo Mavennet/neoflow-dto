@@ -50,6 +50,7 @@ export const ErrorGroup = {
   READ_FILE: '29',
   USER: '30',
   VAULT: '31',
+  ONBOARDING_FORM: '32',
   UNKNOWN_GROUP: '99'
 } as const
 
@@ -80,5 +81,6 @@ export const ErrorCode = {
   USER_OPERATION_FAILED: '33', // When a user operation fails
   FILE_ANALYSIS_FAILED: '34', // When file analysis fails eg. OCR
   FILE_UPLOAD_FAILED: '35', // When file does not meet the required format or isn't valid for any reason
+  FORM_SUBMISSION_FAILED: '36', // When a form submission fails
   UNKNOWN_ERROR: '99'
 } as const
