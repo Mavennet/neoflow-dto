@@ -38,6 +38,7 @@ export declare const ErrorGroup: {
     readonly READ_FILE: "29";
     readonly USER: "30";
     readonly VAULT: "31";
+    readonly ONBOARDING_FORM: "32";
     readonly UNKNOWN_GROUP: "99";
 };
 export declare const ErrorCode: {
@@ -66,5 +67,6 @@ export declare const ErrorCode: {
     readonly USER_OPERATION_FAILED: "33";
     readonly FILE_ANALYSIS_FAILED: "34";
     readonly FILE_UPLOAD_FAILED: "35";
+    readonly FORM_SUBMISSION_FAILED: "36";
     readonly UNKNOWN_ERROR: "99";
 };
