@@ -1,6 +1,21 @@
-import { EventDTO } from '../../../general';
-import { TRANSPORTATION_TYPE, TRANSPORT_EVENT_TYPE } from '../../constants';
-export declare class TransportEventCredentialSubjectDTO extends EventDTO {
-    eventType: TRANSPORT_EVENT_TYPE;
-    deliveryMethod: TRANSPORTATION_TYPE;
+import { JSON_TYPE_NF } from '../../../general';
+declare class LocationDTO {
+    type: string;
+    street: string;
+    locality: string;
+    region: string;
+    postalCode: string;
+    country: string;
 }
+export declare class TransportEventCredentialSubjectDTO {
+    type: JSON_TYPE_NF;
+    epcList: string[];
+    bizStep: string;
+    action: string;
+    disposition: string;
+    sourceList: LocationDTO[];
+    destinationList: LocationDTO[];
+    eventTime: string;
+    eventId: string;
+}
+export {};

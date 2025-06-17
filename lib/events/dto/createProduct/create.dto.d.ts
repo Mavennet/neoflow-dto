@@ -1,4 +1,4 @@
-import { COMPACT_MeasurementDTO, COMPACT_ObservationDTO, COMPACT_OrganizationDTO, COMPACT_PlaceDTO } from '../../../general';
+import { COMPACT_MeasurementDTO, COMPACT_ObservationDTO, COMPACT_OrganizationDTO, COMPACT_PlaceDTO, WrappedEnvelopedVCDTO } from '../../../general';
 import { PRODUCT_NAME } from '../../../products';
 import { type ProductCredentialSubjectDTO } from '../../../products/dto/productCredentialSubject.dto';
 import { type DeliveryTicketCredentialSubjectDTO } from '../deliveryTicket';
@@ -18,4 +18,8 @@ export declare class AGENT_COMPACT_CreateProductDTO {
 }
 export declare class AGENT_CreateProductDTO {
     credentialSubjects: Array<DeliveryScheduledCredentialSubjectDTO | DeliveryTicketCredentialSubjectDTO | ProductCredentialSubjectDTO | TransportEventCredentialSubjectDTO>;
+}
+export declare class CORE_CreateProductDTO {
+    productId: string;
+    vcs: WrappedEnvelopedVCDTO[];
 }

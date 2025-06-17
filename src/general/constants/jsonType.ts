@@ -69,6 +69,7 @@ export enum JSON_TYPE_NF {
   INTENT_TO_IMPORT_CREDENTIAL = 'IntentToImportCredential',
   OPEN_API_SCECIFICATION_VALIDATOR_2022 = 'OpenApiSpecificationValidator2022',
   EVENT = 'Event',
+  OBJECT_EVENT = 'ObjectEvent',
   EVENT_CREDENTIAL = 'EventCredential',
   TRANSPORT_EVENT = 'TransportEvent',
   USMCA_CLAIMS = 'USMCAClaims'
