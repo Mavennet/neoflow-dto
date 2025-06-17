@@ -19,7 +19,6 @@ import {
   COMPACT_PostalAddressDTO,
   WrappedEnvelopedVCDTO
 } from '../../../general'
-import { EnvelopedVerifiableCredential } from '../../../credentials'
 
 export class AGENT_COMPACT_TransportStartDTO {
   @ApiProperty()
