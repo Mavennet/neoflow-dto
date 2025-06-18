@@ -1,8 +1,8 @@
-import { type EnvelopedVerifiableCredential } from '../../credentials'
+import { type EnvelopedVerifiableCredential } from '../../credentials';
 export declare class WrappedEnvelopedVCDTO {
-  eventId: string
-  vc: EnvelopedVerifiableCredential
+    eventId: string;
+    vc: EnvelopedVerifiableCredential;
 }
 export declare class CORE_EnvelopedVCDTO {
-  vcs: WrappedEnvelopedVCDTO[]
+    vcs: WrappedEnvelopedVCDTO[];
 }

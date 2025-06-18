@@ -21,5 +21,6 @@ export declare class AGENT_CreateProductDTO {
 }
 export declare class CORE_CreateProductDTO {
     productId: string;
+    workflowId: string;
     vcs: WrappedEnvelopedVCDTO[];
 }
