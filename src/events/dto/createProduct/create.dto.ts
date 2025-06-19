@@ -103,6 +103,11 @@ export class CORE_CreateProductDTO {
   @IsUUID()
   productId: string
 
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  workflowId: string
+
   @ApiProperty({ type: [WrappedEnvelopedVCDTO], description: 'List of wrapped verifiable credentials' })
   @IsArray()
   @ValidateNested({ each: true })
