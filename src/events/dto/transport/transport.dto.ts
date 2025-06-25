@@ -127,9 +127,9 @@ export class TransportProductDataDto {
 
 export class CORE_TransportProductDTO {
   @IsNotEmpty()
-  @ValidateNested()
-  @Type(() => TransportProductDataDto)
-  productData: TransportProductDataDto
+  @IsString()
+  @IsUUID()
+  productId: string
 
   @IsNotEmpty()
   @IsObject()
