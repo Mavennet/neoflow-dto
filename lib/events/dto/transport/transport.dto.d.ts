@@ -26,6 +26,6 @@ export declare class TransportProductDataDto {
     commodity: string;
 }
 export declare class CORE_TransportProductDTO {
-    productData: TransportProductDataDto;
+    productId: string;
     vc: WrappedEnvelopedVCDTO;
 }
