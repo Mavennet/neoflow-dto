@@ -18,6 +18,7 @@ export declare class PipelinePostArrivalRecord {
     gsv_bbl?: string;
     nsv_bbl?: string;
     productId?: string;
+    workflowId?: string;
     open_date?: string;
     nominationMonth?: string;
 }

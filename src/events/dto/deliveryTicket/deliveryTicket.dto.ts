@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNotEmpty, ValidateNested, IsUUID, ValidateIf, IsOptional } from 'class-validator'
+import { IsNotEmpty, ValidateNested, IsUUID, ValidateIf, IsOptional, IsString } from 'class-validator'
 import { Type } from 'class-transformer'
 import { DeliveryTicketCredentialSubjectDTO } from './event.credentialSubject.dto'
 import { EnvelopedVerifiableCredential } from '../../../credentials'
@@ -35,6 +35,11 @@ export class AGENT_DeliveryTicketDTO {
   @IsNotEmpty()
   @IsUUID()
   productId: string
+
+  @IsOptional()
+  @IsNotEmpty()
+  @IsString()
+  workflowId: string
 
   @ApiProperty()
   @ValidateIf((o) => !o.productId || o.gasShipmentId)
