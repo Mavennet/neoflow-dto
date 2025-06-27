@@ -81,6 +81,11 @@ export class PipelinePostArrivalRecord {
   @IsOptional()
   @ApiProperty({ required: false })
   @IsString()
+  workflowId?: string
+
+  @IsOptional()
+  @ApiProperty({ required: false })
+  @IsString()
   open_date?: string
 
   @IsOptional()
