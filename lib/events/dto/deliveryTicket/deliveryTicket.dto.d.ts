@@ -9,6 +9,7 @@ export declare class CORE_DeliveryTicketDTO {
 }
 export declare class AGENT_DeliveryTicketDTO {
     productId: string;
+    workflowId: string;
     gasShipmentId: string;
     uploadFileKey?: string;
     credentialSubject: DeliveryTicketCredentialSubjectDTO;
