@@ -95,5 +95,5 @@ export class DeliveryTicketCredentialSubjectDTO {
 
   @ApiProperty()
   @IsString()
-  carrierCode?: string
+  carrierCode: string
 }
