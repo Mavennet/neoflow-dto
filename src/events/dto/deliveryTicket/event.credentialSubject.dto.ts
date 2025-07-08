@@ -92,4 +92,8 @@ export class DeliveryTicketCredentialSubjectDTO {
   @ValidateNested({ each: true })
   @Type(() => ObservationDTO)
   observation: ObservationDTO[]
+
+  @ApiProperty()
+  @IsString()
+  carrierCode?: string
 }
