@@ -95,5 +95,9 @@ export class DeliveryTicketCredentialSubjectDTO {
 
   @ApiProperty()
   @IsString()
-  carrierCode: string
+  standardCarrierAlphaCode: string
+
+  @ApiProperty()
+  @IsString()
+  harmonizedTariffSchedule: string
 }
