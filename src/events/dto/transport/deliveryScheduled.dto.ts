@@ -148,10 +148,6 @@ export class DeliveryScheduledCredentialSubjectDTO {
 
   @ApiProperty()
   @IsString()
-  harmonizedTariffSchedule: string
-
-  @ApiProperty()
-  @IsString()
   exportProvinceCode: string
 }
 export class DeliveryScheduledVCDTO extends CredentialDTO<DeliveryScheduledCredentialSubjectDTO> {
