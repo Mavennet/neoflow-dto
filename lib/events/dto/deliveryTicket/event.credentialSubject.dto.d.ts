@@ -15,5 +15,6 @@ export declare class DeliveryTicketCredentialSubjectDTO {
     destination: PlaceDTO;
     product?: ProductDTO;
     observation: ObservationDTO[];
-    carrierCode: string;
+    standardCarrierAlphaCode: string;
+    harmonizedTariffSchedule: string;
 }
