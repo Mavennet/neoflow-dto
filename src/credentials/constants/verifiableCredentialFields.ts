@@ -1,15 +1,17 @@
-export const standardCarrierAlphaCode = {
+// SCAC
+export const StandardCarrierAlphaCode = {
   ENBRIDGE: '1',
   SOUTHBOW: '2',
   KEYSTONE: '3'
 } as const
 
-export const harmonizedTariffSchedule = {
+// HTS
+export const HarmonizedTariffSchedule = {
   API_LOW: '2709.00.10',
   API_HIGH: '2709.00.20'
 } as const
 
-export const exportProvinceCode = {
+export const ExportProvinceCode = {
   ALBERTA: 'XA',
   BRITISH_COLUMBIA: 'XC',
   MANITOBA: 'XM',
