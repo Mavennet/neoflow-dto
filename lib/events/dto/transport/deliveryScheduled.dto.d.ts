@@ -26,6 +26,9 @@ export declare class DeliveryScheduledCredentialSubjectDTO {
     deliveryEndDate?: string | Date;
     nominationMonth?: string | Date;
     scheduledDate?: string;
+    standardCarrierAlphaCode: string;
+    harmonizedTariffSchedule: string;
+    exportProvinceCode: string;
 }
 export declare class DeliveryScheduledVCDTO extends CredentialDTO<DeliveryScheduledCredentialSubjectDTO> {
     credentialSubject: DeliveryScheduledCredentialSubjectDTO;

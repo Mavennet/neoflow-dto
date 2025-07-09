@@ -141,6 +141,18 @@ export class DeliveryScheduledCredentialSubjectDTO {
   @ApiProperty()
   @IsString()
   scheduledDate?: string
+
+  @ApiProperty()
+  @IsString()
+  standardCarrierAlphaCode: string
+
+  @ApiProperty()
+  @IsString()
+  harmonizedTariffSchedule: string
+
+  @ApiProperty()
+  @IsString()
+  exportProvinceCode: string
 }
 export class DeliveryScheduledVCDTO extends CredentialDTO<DeliveryScheduledCredentialSubjectDTO> {
   @ApiProperty()
