@@ -5,4 +5,4 @@ export * from './mechanicalPropertyType';
 export * from './proofPurposeType';
 export * from './keyTypes';
 export * from './s3BucketName';
-export * from './rollbackAction';
+export * from './rollBackAction';
