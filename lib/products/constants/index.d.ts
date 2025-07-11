@@ -11,4 +11,3 @@ export * from './pipelines';
 export * from './productStatus';
 export * from './exportProvinceCode';
 export * from './standardCarrierAlphaCode';
-export * from './carrierBondNumber';
