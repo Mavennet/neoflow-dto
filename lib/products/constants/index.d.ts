@@ -9,3 +9,5 @@ export * from './valueType';
 export * from './claimStatus';
 export * from './pipelines';
 export * from './productStatus';
+export * from './exportProvinceCode';
+export * from './standardCarrierAlphaCode';
