@@ -1,6 +1,8 @@
 export declare const ExportProvinceCode: {
     readonly ALBERTA: "XA";
+    readonly AB: "XA";
     readonly BRITISH_COLUMBIA: "XC";
+    readonly BC: "XC";
     readonly MANITOBA: "XM";
     readonly NEW_BRUNSWICK: "XB";
     readonly NEWFOUNDLAND_LABRADOR: "XW";

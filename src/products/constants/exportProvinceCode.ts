@@ -1,6 +1,8 @@
 export const ExportProvinceCode = {
   ALBERTA: 'XA',
+  AB: 'XA',
   BRITISH_COLUMBIA: 'XC',
+  BC: 'XC',
   MANITOBA: 'XM',
   NEW_BRUNSWICK: 'XB',
   NEWFOUNDLAND_LABRADOR: 'XW',
